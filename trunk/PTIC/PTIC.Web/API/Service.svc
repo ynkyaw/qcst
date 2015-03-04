@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PTIC.Web.API.Contract.Service" CodeBehind="Service.svc.cs" %>

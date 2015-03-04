@@ -1,0 +1,27 @@
+D:\AGL\PTIC\PTIC.Common\bin\Debug\PTIC.Common.dll
+D:\AGL\PTIC\PTIC.Common\bin\Debug\PTIC.Common.pdb
+D:\AGL\PTIC\PTIC.Common\bin\Debug\log4net.dll
+D:\AGL\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\AGL\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+D:\AGL\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\AGL\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\AGL\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.Unity.dll
+D:\AGL\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\AGL\PTIC\PTIC.Common\obj\Debug\PTIC.Common.ErrorMessages.resources
+D:\AGL\PTIC\PTIC.Common\obj\Debug\PTIC.Common.csproj.GenerateResource.Cache
+D:\AGL\PTIC\PTIC.Common\obj\Debug\PTIC.Common.dll
+D:\AGL\PTIC\PTIC.Common\obj\Debug\PTIC.Common.pdb
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\PTIC.Common.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\PTIC.Common.pdb
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\log4net.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.Unity.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\obj\Debug\PTIC.Common.csprojResolveAssemblyReference.cache
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\obj\Debug\PTIC.Common.ErrorMessages.resources
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\obj\Debug\PTIC.Common.csproj.GenerateResource.Cache
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\obj\Debug\PTIC.Common.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Common\obj\Debug\PTIC.Common.pdb

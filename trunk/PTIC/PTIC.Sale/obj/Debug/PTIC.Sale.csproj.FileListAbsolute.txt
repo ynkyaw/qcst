@@ -1,0 +1,36 @@
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\PTIC.Sale.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\PTIC.Sale.pdb
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\AGL.Util.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.Unity.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\PTIC.Common.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\log4net.dll
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\AGL.Util.pdb
+D:\AGL\PTIC\PTIC.Sale\bin\Debug\PTIC.Common.pdb
+D:\AGL\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.csprojResolveAssemblyReference.cache
+D:\AGL\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.ErrorMessages.resources
+D:\AGL\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.csproj.GenerateResource.Cache
+D:\AGL\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.dll
+D:\AGL\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.pdb
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\PTIC.Sale.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\PTIC.Sale.pdb
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\AGL.Util.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.Unity.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\PTIC.Common.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\log4net.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\AGL.Util.pdb
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\bin\Debug\PTIC.Common.pdb
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.csprojResolveAssemblyReference.cache
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.ErrorMessages.resources
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.csproj.GenerateResource.Cache
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.dll
+D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\PTIC.Sale\obj\Debug\PTIC.Sale.pdb
