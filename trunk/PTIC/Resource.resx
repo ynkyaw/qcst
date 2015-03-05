@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EnterPwd" xml:space="preserve">
+    <value>** Please enter password. **</value>
+  </data>
+  <data name="IncorrectPwd" xml:space="preserve">
+    <value>** Incorrect password! **</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="notification_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\notification_right.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notification_wrong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\notification_wrong.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDataTransfer" xml:space="preserve">
+    <value>Data Transfer</value>
+  </data>
+  <data name="btnDelivery" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="btnHO" xml:space="preserve">
+    <value>H.O ပစ္စည်းအဝင်အထွက်</value>
+  </data>
+  <data name="btnMobilePOS" xml:space="preserve">
+    <value>Mobile POS</value>
+  </data>
+  <data name="btnMsgInOut" xml:space="preserve">
+    <value>စာဝင် / စာထွက်</value>
+  </data>
+  <data name="btnOrder" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="btnReport" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="btnSales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="btnService" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="btnSetup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="btnTrip" xml:space="preserve">
+    <value>ခရီးစဉ်</value>
+  </data>
+  <data name="chkShowNotification" xml:space="preserve">
+    <value>Show Notification</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>ဘဏ်</value>
+  </data>
+  <data name="BatterySetting" xml:space="preserve">
+    <value>အိုးသစ္ႏွင့္ အိုးခြံသတ္မွတ္ခ်က္</value>
+  </data>
+  <data name="Brand" xml:space="preserve">
+    <value>အမှတ်တံဆိပ်</value>
+  </data>
+  <data name="btnCashDiscount" xml:space="preserve">
+    <value>Cash Discount</value>
+  </data>
+  <data name="btnCategory" xml:space="preserve">
+    <value>ထုတ်ကုန်အမျိုးအစား</value>
+  </data>
+  <data name="btnCustomerClass" xml:space="preserve">
+    <value>Customer Class</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>ဖျက်မည်</value>
+  </data>
+  <data name="btnPkgCommission" xml:space="preserve">
+    <value>ပါကင်‌လျှော့‌ဈေး</value>
+  </data>
+  <data name="btnPriceChange" xml:space="preserve">
+    <value>Price Change</value>
+  </data>
+  <data name="btnProduct" xml:space="preserve">
+    <value>ထုတ်ကုန်</value>
+  </data>
+  <data name="btnRoute" xml:space="preserve">
+    <value>လမ်းကြောင်း</value>
+  </data>
+  <data name="btnSaleAssignDev" xml:space="preserve">
+    <value>Assign Device</value>
+  </data>
+  <data name="btnSaleCustomer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="btnSalesCommission" xml:space="preserve">
+    <value>Sales Commission</value>
+  </data>
+  <data name="btnSalesType" xml:space="preserve">
+    <value>Sales Type</value>
+  </data>
+  <data name="btnSaleUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>သိမ်းမည်</value>
+  </data>
+  <data name="btnSubCategory" xml:space="preserve">
+    <value>ထုတ်ကုန်အမျိုးအစားခွဲ</value>
+  </data>
+  <data name="btnTown" xml:space="preserve">
+    <value>မြို့</value>
+  </data>
+  <data name="btnTownship" xml:space="preserve">
+    <value>မြို့နယ်</value>
+  </data>
+  <data name="btnTransportGate" xml:space="preserve">
+    <value>ပို့‌ဆောင်‌ရေးဂိတ်</value>
+  </data>
+  <data name="btnTripSetup" xml:space="preserve">
+    <value>ခရီးစဉ်</value>
+  </data>
+  <data name="chkIsOwnerBrand" xml:space="preserve">
+    <value>Company ထုတ်ပစ္စည်း</value>
+  </data>
+  <data name="frmBrand" xml:space="preserve">
+    <value>Product Brand</value>
+  </data>
+  <data name="lblBrandName" xml:space="preserve">
+    <value>အမှတ်တံဆိပ်</value>
+  </data>
+  <data name="lblConfirmBrand" xml:space="preserve">
+    <value>Brand အတည်ပြုသည့်‌နေ့</value>
+  </data>
+  <data name="lblRemark" xml:space="preserve">
+    <value>မှတ်ချက်</value>
+  </data>
+  <data name="lblStartBrand" xml:space="preserve">
+    <value>Brand စတင်သုံးစွဲသည့်‌နေ့</value>
+  </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>ထုတ်ကုန်အမျိုးအစား</value>
+  </data>
+  <data name="errFailedToSave" xml:space="preserve">
+    <value>Failed to save data!</value>
+  </data>
+  <data name="btnAdd" xml:space="preserve">
+    <value>ထည့်မည်</value>
+  </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>ပြင်မည်</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>ပိတ်မည်</value>
+  </data>
+  <data name="SubCategory" xml:space="preserve">
+    <value>ထုတ်ကုန်အမျိုးအစားခွဲ</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="errRequiredFields" xml:space="preserve">
+    <value>ထည့်သွင်း‌ပေးရန်လိုအပ်‌သော အချက်အလက်များ</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>ထုတ်ကုန်</value>
+  </data>
+  <data name="errSelectModifyRecord" xml:space="preserve">
+    <value>ပြင်လို‌သော စာ‌ကြောင်းကို‌ရွေးပါ။</value>
+  </data>
+  <data name="errSelectRowToDelete" xml:space="preserve">
+    <value>ပယ်ဖျက်လို‌သော Row ကို‌ရွေးချယ်‌ပေးပါ။</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>အိုးခွံအ‌ရေအတွက်</value>
+  </data>
+  <data name="TranDate" xml:space="preserve">
+    <value>သတ်မှတ်သည့်‌နေ့</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>အိုးခွံအ‌လေးချိန်</value>
+  </data>
+  <data name="deleteConfirmation" xml:space="preserve">
+    <value>Delete Confirmation</value>
+  </data>
+  <data name="qstSureToDeleteRow" xml:space="preserve">
+    <value>Are you sure to delete a selected row?</value>
+  </data>
+  <data name="Delivered" xml:space="preserve">
+    <value>Delivered</value>
+  </data>
+  <data name="Undelivered" xml:space="preserve">
+    <value>Undelivered</value>
+  </data>
+  <data name="msgSuccessfullySaved" xml:space="preserve">
+    <value>Successfully Saved.</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="EndUser" xml:space="preserve">
+    <value>End User</value>
+  </data>
+  <data name="Government" xml:space="preserve">
+    <value>Government</value>
+  </data>
+  <data name="RetailOutlet" xml:space="preserve">
+    <value>Retail Outlet</value>
+  </data>
+  <data name="errDBorNet" xml:space="preserve">
+    <value>Please check your network setting or database</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>ထည့်မည်</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>ပြင်မည်</value>
+  </data>
+  <data name="qstSureToDeleteMarketingDetail" xml:space="preserve">
+    <value>Are you sure to delete this marketing detail?</value>
+  </data>
+  <data name="errSelectRowToEdit" xml:space="preserve">
+    <value>Select a row to be edited!</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WholesaleOutlet" xml:space="preserve">
+    <value>Wholesale Outlet</value>
+  </data>
+  <data name="qstSureToDeleteMobileServiceDetail" xml:space="preserve">
+    <value>Are you sure to delete this mobile service detail?</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>ကြည့်မည်</value>
+  </data>
+  <data name="btn_green_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btn_green_vertical.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Planned" xml:space="preserve">
+    <value>Planned</value>
+  </data>
+  <data name="NotPlanned" xml:space="preserve">
+    <value>Not planned</value>
+  </data>
+  <data name="errQty" xml:space="preserve">
+    <value>Invalid Quantity!</value>
+  </data>
+  <data name="errCustomer" xml:space="preserve">
+    <value>Customer မရှိ‌သေးပါ</value>
+  </data>
+  <data name="errPlanDate" xml:space="preserve">
+    <value>Date ‌ရွေးပါ။</value>
+  </data>
+  <data name="ContactPersonName" xml:space="preserve">
+    <value>ဆက်သွယ်ရမည့်သူအမည်</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Customer အမည္</value>
+  </data>
+  <data name="FillFields" xml:space="preserve">
+    <value>You need to enter following field(s):\n</value>
+  </data>
+  <data name="FailedToLoadData" xml:space="preserve">
+    <value>Failed to load data!</value>
+  </data>
+  <data name="errNeedToSaveRoute" xml:space="preserve">
+    <value>လမ်း‌ကြောင်းအရင်သိမ်း‌ပေးပါ။</value>
+  </data>
+  <data name="errNeedToSaveTrip" xml:space="preserve">
+    <value>ခရီးစဉ်ကို အရင်သိမ်း‌ပေးပါ။</value>
+  </data>
+  <data name="errSuccessfullyDeleted" xml:space="preserve">
+    <value>Record has been deleted successfully.</value>
+  </data>
+  <data name="errDateTime" xml:space="preserve">
+    <value>Your current DateTime is Wrong ! Check your computer clock.</value>
+  </data>
+  <data name="msg_text_err_failed_to_load_invoices" xml:space="preserve">
+    <value>Unable to load invoices vouchers!</value>
+  </data>
+  <data name="msg_title_err_failed_to_load_data" xml:space="preserve">
+    <value>Failed to load data</value>
+  </data>
+  <data name="errMustFillQty" xml:space="preserve">
+    <value>Quantity must be filled!</value>
+  </data>
+  <data name="errQtyMustBeInt" xml:space="preserve">
+    <value>Quantity must be integer!</value>
+  </data>
+  <data name="msgCaptionReturnToCustomer" xml:space="preserve">
+    <value>Are you sure you want to return service battery to customer?</value>
+  </data>
+  <data name="msgSureToReturn" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="btn_green_right_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btn_green_right_arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\marker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DuplicateProduct" xml:space="preserve">
+    <value>ထုတ်ကုန်ထပ်နေသည်။</value>
+  </data>
+  <data name="MustIntegerQty" xml:space="preserve">
+    <value>ကိန်းဂဏန်းသာဖြည့်ပါ။</value>
+  </data>
+  <data name="RequiredQty" xml:space="preserve">
+    <value>ဖြည့်စွက်ရန်လိုအပ်သည်။</value>
+  </data>
+  <data name="Restrist" xml:space="preserve">
+    <value>သတိပေးချက်</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>သတိပေးချက်</value>
+  </data>
+  <data name="err_fill_return_no" xml:space="preserve">
+    <value>စာအမှတ် ဖြည့်သွင်းရန်လိုအပ်သည်။</value>
+  </data>
+  <data name="err_prohibit_save_returned_ap" xml:space="preserve">
+    <value>အပ်နှံပြီး POSM စာရင်းများကို ပြန်လည်ပြင်ဆင်၍မရပါ။
+Row အသစ်ထည့်သွင်းခြင်း နှင့် ဖျက်ခြင်းများကိုသာလျှင် System မှ လုပ်ဆောင်သွားမည်ဖြစ်သည်။</value>
+  </data>
+  <data name="msg_txt_fill_customer_name" xml:space="preserve">
+    <value>Customer အမည် ဖြည့်သွင်းပေးပါ။</value>
+  </data>
+  <data name="msg_txt_fill_order_receiver_name" xml:space="preserve">
+    <value>Order လက်ခံသူ ဖြည့်သွင်းပေးပါ။</value>
+  </data>
+  <data name="msg_hd_require_field_values" xml:space="preserve">
+    <value>Require field values</value>
+  </data>
+  <data name="msg_txt_fill_order_details" xml:space="preserve">
+    <value>Order မှာယူမှုစာရင်း မှန်ကန်စွာ ဖြည့်သွင်းပေးပါ။</value>
+  </data>
+  <data name="errImageCountOver" xml:space="preserve">
+    <value>ဓာတ်ပုံအရေအတွက် ကျော်လွန်နေပါသည်။</value>
+  </data>
+  <data name="DefinePrice" xml:space="preserve">
+    <value>ရောင်းဈေးမရှိသေးပါ။ သတ်မှတ်ရန်လိုအပ်ပါမည်။</value>
+  </data>
+  <data name="errCantDelete" xml:space="preserve">
+    <value>အသုံးပြုထားသည်။ ဖျက်ခွင့်မရှိပါ။</value>
+  </data>
+  <data name="errStateDivisionMustFill" xml:space="preserve">
+    <value>တိုင်းဒေသကြီး (သို့) ပြည်နယ် ဖြည့်ရန် လိုအပ်သည်။</value>
+  </data>
+  <data name="errTownMustFill" xml:space="preserve">
+    <value>မြို့အမည် ဖြည့်ရန် လိုအပ်သည်။</value>
+  </data>
+  <data name="errTownshipMustFill" xml:space="preserve">
+    <value>မြို့နယ်အမည် ဖြည့်ရန် လိုအပ်သည်။</value>
+  </data>
+  <data name="errSelectRow" xml:space="preserve">
+    <value>Please Select Row!</value>
+  </data>
+  <data name="msgSureSave" xml:space="preserve">
+    <value>Are you sure want to Save? Please check Departments and Employees are corrected.</value>
+  </data>
+  <data name="warn_hd_insufficient_qty" xml:space="preserve">
+    <value>လက်ကျန်</value>
+  </data>
+  <data name="warn_txt_insufficient_ap_qty" xml:space="preserve">
+    <value>လက်ကျန် '{0}' သာကျန်ရှိသဖြင့် မလုံလောက်ပါ။</value>
+  </data>
+  <data name="msg_hd_ap" xml:space="preserve">
+    <value>A &amp; P Material</value>
+  </data>
+  <data name="warn_txt_ap_doesnot_exist_in_dept" xml:space="preserve">
+    <value>ရွေးချယ်ထားသော A &amp; P Material သည်  {0} ဌာန တွင် မရှိပါ။</value>
+  </data>
+  <data name="err_fill_date" xml:space="preserve">
+    <value>နေ့စွဲရွေးချယ်ပေးပါ။</value>
+  </data>
+  <data name="err_fill_department" xml:space="preserve">
+    <value>ဌာနအမည် ရွေးချယ်ပေးပါ။</value>
+  </data>
+  <data name="err_fill_incharge" xml:space="preserve">
+    <value>တာဝန်ခံ ရွေးချယ်ပေးပါ။</value>
+  </data>
+  <data name="CVC_Battery" xml:space="preserve">
+    <value>CVC အိုးအပြီးပေးရန်</value>
+  </data>
+  <data name="NewBattery" xml:space="preserve">
+    <value>အိုးသစ်ပေးရန်</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>အခြား</value>
+  </data>
+  <data name="Repair" xml:space="preserve">
+    <value>ပြုပြင်ပေးရန်</value>
+  </data>
+  <data name="errduplicateVanTripStaff" xml:space="preserve">
+    <value>ခရီးစဉ်ရက်တူပါက ခရီးစဉ်အမည် ၊ မော်တော်ယာဉ် ၊ တာဝန်ခံအမည်များထပ်၍ မရပါ။</value>
+  </data>
+  <data name="errduplicateTrip" xml:space="preserve">
+    <value>ခရီးစဉ်မှားယွင်းနေပါသည်။</value>
+  </data>
+  <data name="msg_txt_require_delivery_qty" xml:space="preserve">
+    <value>ပို့ရမည့်အ‌ရေအတွက် ဖြည့်သွင်းပေးပါ။</value>
+  </data>
+  <data name="msg_txt_err_missing_field_value" xml:space="preserve">
+    <value>Some fields are missing! Please fill it.</value>
+  </data>
+  <data name="errDel" xml:space="preserve">
+    <value>စီစဉ်ပြီးသော စာရင်းများကို ဖျက်ခွင့်မရှိပါ။</value>
+  </data>
+  <data name="msg_qst_lost_order" xml:space="preserve">
+    <value>မပို့နိုင်သော Order စာရင်း သို့ ပေးပို့လိုပါသလား?</value>
+  </data>
+  <data name="errTownEmpty" xml:space="preserve">
+    <value>မြို့အမည်  ဖြည့်ရန် လိုအပ်သည်။</value>
+  </data>
+</root>
