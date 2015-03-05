@@ -18,6 +18,10 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
     public partial class frmCompanyPlan : Form
     {
 
+        /**
+         * Test Commit to Google code SVN
+         * */
+
         DataTable allTownship = null;
         DataTable allCustomer = null;
         public frmCompanyPlan()
