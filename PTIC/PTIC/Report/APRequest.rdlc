@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!fromDate.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> ) နေ့ရက်တွင် ဝယ်ယူ၊သုံးစွဲရန် COO ခွင့်ပြုထားသော A&amp;P/POSM ( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!POSM.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> ) အတွက် Unit Cost ( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!UnitCost.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Format>#,0;(#,0)</Format>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> ) ကျပ် ၊ အ​​​​ရေအတွက် ( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!Qty.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> )စုစုပေါင်းကုန်ကျငွေ ( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!Total.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Format>#,0;(#,0)</Format>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> ) ကျပ် အား ဝယ်ယူ/သုံးစွဲခွင့်ပြုပါရန် COO အား တောင်းခံပါသည်။</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.46889in</Top>
+        <Left>0.72396in</Left>
+        <Height>0.88542in</Height>
+        <Width>5.05208in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>တောင်းခံသူ</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Requester.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.72931in</Top>
+        <Left>0.31958in</Left>
+        <Height>0.46875in</Height>
+        <Width>1.28125in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ခွင့်ပြုသူ</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Accepter.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.72931in</Top>
+        <Left>4.93417in</Left>
+        <Height>0.46875in</Height>
+        <Width>1.28125in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>အကြောင်းအရာ ။           ။ POSM တောင်းခံခြင်းကိစ္စ</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.02778in</Top>
+        <Left>0.31958in</Left>
+        <Height>0.28125in</Height>
+        <Width>5.05208in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>2.2675in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="fromDate">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="POSM">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UnitCost">
+      <DataType>Float</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Qty">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Total">
+      <DataType>Float</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Requester">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Accepter">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>6.5in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Proven Industry Co.,Ltd</Value>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>14pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>0.34042in</Top>
+          <Left>2.16146in</Left>
+          <Height>0.29167in</Height>
+          <Width>2.17708in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <rd:ReportID>171f4996-1e7d-40e9-88fe-1e2c256ee93b</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>
