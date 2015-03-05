@@ -1,8 +1,0 @@
-D:\AGL\PTIC\AGL.UI.Controls\bin\Debug\AGL.UI.Controls.dll
-D:\AGL\PTIC\AGL.UI.Controls\bin\Debug\AGL.UI.Controls.pdb
-D:\AGL\PTIC\AGL.UI.Controls\obj\Debug\AGL.UI.Controls.dll
-D:\AGL\PTIC\AGL.UI.Controls\obj\Debug\AGL.UI.Controls.pdb
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.UI.Controls\bin\Debug\AGL.UI.Controls.dll
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.UI.Controls\bin\Debug\AGL.UI.Controls.pdb
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.UI.Controls\obj\Debug\AGL.UI.Controls.dll
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.UI.Controls\obj\Debug\AGL.UI.Controls.pdb

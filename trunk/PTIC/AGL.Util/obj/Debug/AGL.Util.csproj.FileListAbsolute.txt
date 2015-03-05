@@ -1,8 +1,0 @@
-D:\AGL\PTIC\AGL.Util\bin\Debug\AGL.Util.dll
-D:\AGL\PTIC\AGL.Util\bin\Debug\AGL.Util.pdb
-D:\AGL\PTIC\AGL.Util\obj\Debug\AGL.Util.dll
-D:\AGL\PTIC\AGL.Util\obj\Debug\AGL.Util.pdb
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.Util\bin\Debug\AGL.Util.dll
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.Util\bin\Debug\AGL.Util.pdb
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.Util\obj\Debug\AGL.Util.dll
-D:\C# Windows Project\Alpha_V_1.0.1\PTIC\PTIC\AGL.Util\obj\Debug\AGL.Util.pdb
