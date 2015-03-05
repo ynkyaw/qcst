@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="G:\Webservice" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="agl-server/PTICWebservice/" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Assets/JS/bootstrap-affix.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="bin/PTIC.Web.dll" publishTime="02/17/2015 13:42:26" />
+    <file relUrl="Assets/JS/bootstrap-tooltip.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/JS/holder/holder.js" publishTime="09/16/2014 22:40:55" />
+    <file relUrl="bin/log4net.dll" publishTime="09/13/2014 06:13:55" />
+    <file relUrl="Assets/JS/bootstrap-alert.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/JS/bootstrap-tab.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="bin/AGL.Util.dll" publishTime="02/17/2015 13:42:22" />
+    <file relUrl="Assets/JS/bootstrap-popover.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/JS/bootstrap-collapse.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="bin/PTIC.Common.dll" publishTime="02/17/2015 13:42:22" />
+    <file relUrl="bin/PTIC.Marketing.pdb" publishTime="02/17/2015 13:42:25" />
+    <file relUrl="bin/AGL.Util.pdb" publishTime="02/17/2015 13:42:22" />
+    <file relUrl="Assets/JS/bootstrap-typeahead.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="index.html" publishTime="02/05/2015 10:35:34" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Configuration.dll" publishTime="10/15/2014 11:28:16" />
+    <file relUrl="Assets/JS/bootstrap.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="bin/PTIC.Sale.pdb" publishTime="02/17/2015 13:42:24" />
+    <file relUrl="Assets/JS/application.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="10/15/2014 11:28:16" />
+    <file relUrl="bin/PTIC.Sale.dll" publishTime="02/17/2015 13:42:24" />
+    <file relUrl="Assets/JS/google-code-prettify/prettify.js" publishTime="09/16/2014 22:40:43" />
+    <file relUrl="bin/PTIC.Common.pdb" publishTime="02/17/2015 13:42:22" />
+    <file relUrl="Assets/JS/bootstrap-button.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="10/15/2014 11:28:16" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Validation.dll" publishTime="10/15/2014 11:28:16" />
+    <file relUrl="bin/Microsoft.Practices.ServiceLocation.dll" publishTime="10/15/2014 11:28:16" />
+    <file relUrl="Assets/JS/bootstrap.min.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/JS/bootstrap-carousel.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/CSS/docs.css" publishTime="09/16/2014 22:40:00" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Interception.dll" publishTime="10/15/2014 11:28:16" />
+    <file relUrl="bin/PTIC.Web.pdb" publishTime="02/17/2015 13:42:26" />
+    <file relUrl="Assets/JS/google-code-prettify/prettify.css" publishTime="09/16/2014 22:40:43" />
+    <file relUrl="bin/PTIC.Marketing.dll" publishTime="02/17/2015 13:42:25" />
+    <file relUrl="Assets/JS/bootstrap-transition.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Web.config" publishTime="02/17/2015 13:43:04" />
+    <file relUrl="Assets/JS/bootstrap-scrollspy.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/JS/bootstrap-dropdown.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="API/Service.svc" publishTime="09/13/2014 06:14:19" />
+    <file relUrl="Assets/JS/jquery.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/JS/html5shiv.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/JS/bootstrap-modal.js" publishTime="09/16/2014 22:40:36" />
+    <file relUrl="Assets/CSS/bootstrap-responsive.css" publishTime="09/16/2014 22:40:00" />
+    <file relUrl="Assets/CSS/bootstrap.css" publishTime="01/07/2015 19:06:01" />
+  </publishProfile>
+</publishData>
