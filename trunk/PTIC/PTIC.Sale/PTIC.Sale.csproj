@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BFB88324-E8D0-4D67-A84F-261EE287DD36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PTIC.Sale</RootNamespace>
+    <AssemblyName>PTIC.Sale</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PTIC\Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PTIC\Lib\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PTIC\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PTIC\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PTIC\Lib\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PTIC\Lib\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\BankBL.cs" />
+    <Compile Include="BL\BatterySettingBL.cs" />
+    <Compile Include="BL\BrandBL.cs" />
+    <Compile Include="BL\CategoryBL.cs" />
+    <Compile Include="BL\ContactPersonBL.cs" />
+    <Compile Include="BL\CustomerBL.cs" />
+    <Compile Include="BL\CustomerClassBL.cs" />
+    <Compile Include="BL\CusTypeBL.cs" />
+    <Compile Include="BL\DeliveryBL.cs" />
+    <Compile Include="BL\DeliveryDetailBL.cs" />
+    <Compile Include="BL\DeliveryNoteBL.cs" />
+    <Compile Include="BL\FGReceiveBL.cs" />
+    <Compile Include="BL\FGRequestBL.cs" />
+    <Compile Include="BL\FG_ReceiveBL.cs" />
+    <Compile Include="BL\FinishedGoodBL.cs" />
+    <Compile Include="BL\FormulaBL.cs" />
+    <Compile Include="BL\InvoiceBL.cs" />
+    <Compile Include="BL\MultiInvoicesPaymentBL.cs" />
+    <Compile Include="BL\OwnerBL.cs" />
+    <Compile Include="BL\PackingDiscountBL.cs" />
+    <Compile Include="BL\OrderBL.cs" />
+    <Compile Include="BL\OrderDetailBL.cs" />
+    <Compile Include="BL\PaymentBL.cs" />
+    <Compile Include="BL\PriceChangeBL.cs" />
+    <Compile Include="BL\ProductBL.cs" />
+    <Compile Include="BL\RouteBL.cs" />
+    <Compile Include="BL\RoutePlanBL.cs" />
+    <Compile Include="BL\SaleReturnInBL.cs" />
+    <Compile Include="BL\SalesDetailBL.cs" />
+    <Compile Include="BL\SalesPlanBL.cs" />
+    <Compile Include="BL\SalesServiceBL.cs" />
+    <Compile Include="BL\SDivisionBL.cs" />
+    <Compile Include="BL\ServicedCustomerBL.cs" />
+    <Compile Include="BL\ShowRoomMovementBL.cs" />
+    <Compile Include="BL\SubCategoryBL.cs" />
+    <Compile Include="BL\SvcFactBL.cs" />
+    <Compile Include="BL\SvcFactoryFunctionBL.cs" />
+    <Compile Include="BL\SvcFactoryRecordBL.cs" />
+    <Compile Include="BL\SvcFunctionBL.cs" />
+    <Compile Include="BL\SvcTestBL.cs" />
+    <Compile Include="BL\TownBL.cs" />
+    <Compile Include="BL\TownshipBL.cs" />
+    <Compile Include="BL\TownshipInRouteBL.cs" />
+    <Compile Include="BL\VehicleBL.cs" />
+    <Compile Include="BL\WarehouseBL.cs" />
+    <Compile Include="DA\ContactPersonDA.cs" />
+    <Compile Include="DA\CusTypeDA.cs" />
+    <Compile Include="DA\DeliveryNoteDA.cs" />
+    <Compile Include="DA\FGReceiveDA.cs" />
+    <Compile Include="DA\FGRequestDA.cs" />
+    <Compile Include="DA\FG_ReceiveDA.cs" />
+    <Compile Include="DA\FG_ReceiveDetailDA.cs" />
+    <Compile Include="DA\FinishedGoodDA.cs" />
+    <Compile Include="DA\FormulaDA.cs" />
+    <Compile Include="DA\InvoiceDA.cs" />
+    <Compile Include="DA\MultiInvoicesPaymentDA.cs" />
+    <Compile Include="DA\OwnerDA.cs" />
+    <Compile Include="DA\PaymentDA.cs" />
+    <Compile Include="DA\RoutePlanDA.cs" />
+    <Compile Include="DA\SaleReturnInDA.cs" />
+    <Compile Include="DA\SalesDetailDA.cs" />
+    <Compile Include="DA\SalesPlanDA.cs" />
+    <Compile Include="DA\SalesServiceDA.cs" />
+    <Compile Include="DA\ServicedCustomerDA.cs" />
+    <Compile Include="DA\ShowRoomMovementDA.cs" />
+    <Compile Include="DA\SPDetailDA.cs" />
+    <Compile Include="DA\SvcFactDA.cs" />
+    <Compile Include="DA\SvcFactoryFunctionDA.cs" />
+    <Compile Include="DA\SvcFactoryRecordDA.cs" />
+    <Compile Include="DA\SvcFunctionDA.cs" />
+    <Compile Include="DA\SvcTestDA.cs" />
+    <Compile Include="DA\TownshipInRouteDA.cs" />
+    <Compile Include="BL\TransportGateBL.cs" />
+    <Compile Include="BL\TransportTypeBL.cs" />
+    <Compile Include="BL\TripBL.cs" />
+    <Compile Include="BL\UserBL.cs" />
+    <Compile Include="DA\BankDA.cs" />
+    <Compile Include="DA\BatterySettingDA.cs" />
+    <Compile Include="DA\BrandDA.cs" />
+    <Compile Include="BL\CashDiscountBL.cs" />
+    <Compile Include="DA\CashDiscountDA.cs" />
+    <Compile Include="DA\CategoryDA.cs" />
+    <Compile Include="DA\CustomerDA.cs" />
+    <Compile Include="DA\CustomerClassDA.cs" />
+    <Compile Include="DA\DeliveryDA.cs" />
+    <Compile Include="DA\DeliveryDetailDA.cs" />
+    <Compile Include="DA\PackingDiscountDA.cs" />
+    <Compile Include="DA\DataAccess.cs" />
+    <Compile Include="DA\OrderDA.cs" />
+    <Compile Include="DA\OrderDetailDA.cs" />
+    <Compile Include="DA\PriceChangeDA.cs" />
+    <Compile Include="DA\ProductDA.cs" />
+    <Compile Include="BL\SaleCommissionBL.cs" />
+    <Compile Include="DA\RouteDA.cs" />
+    <Compile Include="DA\SaleCommissionDA.cs" />
+    <Compile Include="DA\SDivisionDA.cs" />
+    <Compile Include="DA\SubCategoryDA.cs" />
+    <Compile Include="DA\TownDA.cs" />
+    <Compile Include="BL\TownInTripBL.cs" />
+    <Compile Include="DA\TownInTripDA.cs" />
+    <Compile Include="DA\TownshipDA.cs" />
+    <Compile Include="DA\TransportGateDA.cs" />
+    <Compile Include="DA\TransportTypeDA.cs" />
+    <Compile Include="DA\TripDA.cs" />
+    <Compile Include="DA\UserDA.cs" />
+    <Compile Include="DA\VehicleDA.cs" />
+    <Compile Include="DA\WarehouseDA.cs" />
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Bank.cs" />
+    <Compile Include="Entities\BatterySetting.cs" />
+    <Compile Include="Entities\Brand.cs" />
+    <Compile Include="Entities\CashDiscount.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\CommDiscount.cs" />
+    <Compile Include="Entities\ContactPerson.cs" />
+    <Compile Include="Entities\CustomerClass.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\CusType.cs" />
+    <Compile Include="Entities\Delivery.cs" />
+    <Compile Include="Entities\DeliveryDetail.cs" />
+    <Compile Include="Entities\DeliveryNote.cs" />
+    <Compile Include="Entities\DeliveryNoteDetail.cs" />
+    <Compile Include="Entities\FGReceive.cs" />
+    <Compile Include="Entities\FGReceiveDetail.cs" />
+    <Compile Include="Entities\FGRequest.cs" />
+    <Compile Include="Entities\FGRequestDetail.cs" />
+    <Compile Include="DA\FGRequestDetailDA.cs" />
+    <Compile Include="Entities\FG_Receive.cs" />
+    <Compile Include="Entities\FG_ReceiveDetail.cs" />
+    <Compile Include="Entities\FinishedGood.cs" />
+    <Compile Include="Entities\Formula.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\Owner.cs" />
+    <Compile Include="Entities\PackingDiscount.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderDetail.cs" />
+    <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Entities\PriceChange.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Route.cs" />
+    <Compile Include="Entities\RoutePlan.cs" />
+    <Compile Include="Entities\SaleCommission.cs" />
+    <Compile Include="Entities\SaleDetail.cs" />
+    <Compile Include="Entities\SaleReturnIn.cs" />
+    <Compile Include="Entities\SalesPlan.cs" />
+    <Compile Include="Entities\SalesPlanDetail.cs" />
+    <Compile Include="Entities\SalesService.cs" />
+    <Compile Include="Entities\SDivision.cs" />
+    <Compile Include="Entities\ServiceBatteryStatus.cs" />
+    <Compile Include="Entities\ServicedCustomer.cs" />
+    <Compile Include="Entities\ShowRoomMovement.cs" />
+    <Compile Include="Entities\SubCategory.cs" />
+    <Compile Include="Entities\SvcFact.cs" />
+    <Compile Include="Entities\SvcFactoryFunction.cs" />
+    <Compile Include="Entities\SvcFactoryRecord.cs" />
+    <Compile Include="Entities\SvcFunction.cs" />
+    <Compile Include="Entities\SvcTest.cs" />
+    <Compile Include="Entities\Tax.cs" />
+    <Compile Include="Entities\Town.cs" />
+    <Compile Include="Entities\TownInTrip.cs" />
+    <Compile Include="Entities\Township.cs" />
+    <Compile Include="Entities\TownshipInRoute.cs" />
+    <Compile Include="Entities\TransportGate.cs" />
+    <Compile Include="Entities\TransportType.cs" />
+    <Compile Include="Entities\Trip.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\WareHouse.cs" />
+    <Compile Include="ErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AGL.Util\AGL.Util.csproj">
+      <Project>{13994880-966E-458D-9F5C-BC413E51D0D4}</Project>
+      <Name>AGL.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PTIC.Common\PTIC.Common.csproj">
+      <Project>{1ECA1186-492E-4574-AB87-ECEA663BBCAC}</Project>
+      <Name>PTIC.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ErrorMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
