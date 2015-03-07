@@ -30,10 +30,10 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             LoadingDataGrid();
             SqlConnection conn = null;
             conn = DBManager.GetInstance().GetDbConnection();
-            DataTable  mobileserviceplanTbl = new MobileServicePlanBL().GetAll();
+            DataTable  CompanyPlanTbl = new CompanyPlanBL().GetAll();
 
-            dgvMobileServicePlan.AutoGenerateColumns = false; // Autogenerate Columns False
-            dgvMobileServicePlan.DataSource = mobileserviceplanTbl;
+            dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
+            dgvCompanyPlan.DataSource = CompanyPlanTbl;
 
 
         }
@@ -67,12 +67,12 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         private void btnNew_Click(object sender, EventArgs e)
         {
             btnNew.Enabled = false;
-            if (dgvMobileServicePlan == null) return;
+            if (dgvCompanyPlan == null) return;
 
-            DataUtil.AddNewRow(dgvMobileServicePlan.DataSource as DataTable);
+            DataUtil.AddNewRow(dgvCompanyPlan.DataSource as DataTable);
         }
 
-        private void dgvMobileServicePlan_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        private void dgvCompanyPlan_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (e.Control is DataGridViewComboBoxEditingControl)
             {
@@ -83,17 +83,20 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
         }
 
-        private void dgvMobileServicePlan_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dgvCompanyPlan_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgvColTownship.Index)
             {
-                int townshipId = (int)DataTypeParser.Parse(dgvMobileServicePlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, typeof(int), -1);
-                DataRow[] dr = allCustomer.Select(string.Format("townshipid={0}", townshipId));
-                if (dr.Length > 0)
+                if (dgvCompanyPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    dgvColCusName.DataSource = dr.CopyToDataTable();
-                    dgvColCusName.DisplayMember = "CusName";
-                    dgvColCusName.ValueMember = "ID";
+                    int townshipId = (int)DataTypeParser.Parse(dgvCompanyPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, typeof(int), -1);
+                    DataRow[] dr = allCustomer.Select(string.Format("townshipid={0}", townshipId));
+                    if (dr.Length > 0)
+                    {
+                        dgvColCusName.DataSource = dr.CopyToDataTable();
+                        dgvColCusName.DisplayMember = "CusName";
+                        dgvColCusName.ValueMember = "ID";
+                    }
                 }
             }
         }
