@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PTIC.Marketing.Entities
 {
-    class CompanyPlan
+    public class CompanyPlan
     {
         private int id;
 

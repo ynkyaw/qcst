@@ -27,15 +27,15 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         public frmCompanyPlan()
         {
             InitializeComponent();
-            LoadingDataGrid();
+            
             SqlConnection conn = null;
             conn = DBManager.GetInstance().GetDbConnection();
             DataTable CompanyPlanTbl = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
+           
 
             dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
             dgvCompanyPlan.DataSource = CompanyPlanTbl;
-
-
+            LoadingDataGrid();
         }
 
 
@@ -93,9 +93,19 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                     DataRow[] dr = allCustomer.Select(string.Format("townshipid={0}", townshipId));
                     if (dr.Length > 0)
                     {
-                        dgvColCusName.DataSource = dr.CopyToDataTable();
-                        dgvColCusName.DisplayMember = "CusName";
-                        dgvColCusName.ValueMember = "ID";
+                        if (dgvCompanyPlan.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewComboBoxCell)
+                        {
+                            int custId = (int)DataTypeParser.Parse(dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColCusName.Index].Value, typeof(int), -1);
+                            dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColCusName.Index].Value = DBNull.Value;
+                            (dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColCusName.Index] as DataGridViewComboBoxCell).DataSource = dr.CopyToDataTable();
+                            (dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColCusName.Index] as DataGridViewComboBoxCell).DisplayMember = "CusName";
+                            (dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColCusName.Index] as DataGridViewComboBoxCell).ValueMember = "ID";
+                            if (dr.CopyToDataTable().Select("ID=" + custId).Length > 0)
+                            {
+                                dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColCusName.Index].Value = custId;
+                            }
+                            
+                        }
                     }
                 }
             }

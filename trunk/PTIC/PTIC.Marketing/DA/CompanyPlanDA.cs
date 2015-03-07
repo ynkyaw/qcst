@@ -28,12 +28,12 @@ namespace PTIC.Marketing.DA
                 table = new DataTable(tableName);
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId]";
-                command.CommandText += ",[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone";
+                //command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = " SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId]";
+                command.CommandText += " ,[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone";
                 command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
-                command.CommandText += "ON (CompanyPlan.CustomerId = cp.CusID)";
-                command.CommandText += "where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
+                command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID)";
+                command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
             }
@@ -184,11 +184,11 @@ namespace PTIC.Marketing.DA
                     //cmd.Parameters.AddWithValue("@p_SvcPlanNo", CompanyPlan.SvcPlanNo);
                     //cmd.Parameters["@p_SvcPlanNo"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_SvcPlanDate", newCompanyPlan.SvcPlanDate);
-                    cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
+                    //cmd.Parameters.AddWithValue("@p_SvcPlanDate", newCompanyPlan.SvcPlanDate);
+                    //cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_InitialCompanyPlanID", newCompanyPlan.InitialCompanyPlanID);
-                    cmd.Parameters["@p_InitialCompanyPlanID"].Direction = ParameterDirection.Input;
+                    //cmd.Parameters.AddWithValue("@p_InitialCompanyPlanID", newCompanyPlan.InitialCompanyPlanID);
+                    //cmd.Parameters["@p_InitialCompanyPlanID"].Direction = ParameterDirection.Input;
 
                     cmd.Parameters.AddWithValue("@p_Status", newCompanyPlan.Status);
                     cmd.Parameters["@p_Status"].Direction = ParameterDirection.Input;
@@ -219,7 +219,7 @@ namespace PTIC.Marketing.DA
                 foreach (CompanyPlan newCompanyPlan in CompanyPlan)
                 {
 
-                    cmd.Parameters.AddWithValue("@p_CompanyPlanID", newCompanyPlan.ID);
+                    cmd.Parameters.AddWithValue("@p_CompanyPlanID", newCompanyPlan.Id);
                     cmd.Parameters["@p_CompanyPlanID"].Direction = ParameterDirection.Input;
 
                     cmd.Parameters.AddWithValue("@p_TownshipID", newCompanyPlan.TownshipID);
@@ -231,8 +231,8 @@ namespace PTIC.Marketing.DA
                     //cmd.Parameters.AddWithValue("@p_SvcPlanNo", CompanyPlan.SvcPlanNo);
                     //cmd.Parameters["@p_SvcPlanNo"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_SvcPlanDate", newCompanyPlan.SvcPlanDate);
-                    cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
+                    //cmd.Parameters.AddWithValue("@p_SvcPlanDate", newCompanyPlan.SvcPlanDate);
+                    //cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
 
                     affectedrow += cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
@@ -270,13 +270,13 @@ namespace PTIC.Marketing.DA
                 {
                     if (status == Common.Enum.FormStatus.Confirmed)
                     {
-                        cmd.Parameters.AddWithValue("@p_SvcPlanDate", plan.SvcPlanDate);
+                        //cmd.Parameters.AddWithValue("@p_SvcPlanDate", plan.SvcPlanDate);
                         cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
                     }
                     cmd.Parameters.AddWithValue("@p_Status", (int)status);
                     cmd.Parameters["@p_Status"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_ID", plan.ID);
+                    cmd.Parameters.AddWithValue("@p_ID", plan.Id);
                     cmd.Parameters["@p_ID"].Direction = ParameterDirection.Input;
 
                     cmd.ExecuteNonQuery();
@@ -312,7 +312,7 @@ namespace PTIC.Marketing.DA
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "usp_CompanyPlanDeleteByID";
 
-                cmd.Parameters.AddWithValue("@p_MobileServiePlanID", CompanyPlan.ID);
+                cmd.Parameters.AddWithValue("@p_MobileServiePlanID", CompanyPlan.Id);
                 cmd.Parameters["@p_MobileServiePlanID"].Direction = ParameterDirection.Input;
 
                 return cmd.ExecuteNonQuery();

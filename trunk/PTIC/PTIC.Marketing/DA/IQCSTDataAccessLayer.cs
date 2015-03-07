@@ -8,9 +8,9 @@ namespace PTIC.Marketing.DA
 {
     interface IQCSTDataAccessLayer
     {
-        public int Insert(object obj);
-        public int Update(object obj);
-        public DataTable SelectAll();
-        public object SelectById(int id);
+         int Insert(object obj);
+         int Update(object obj);
+         DataTable SelectAll();
+         object SelectById(int id);
     }
 }

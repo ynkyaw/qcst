@@ -70,7 +70,7 @@ namespace PTIC.Marketing.BL
                 }
 
 
-                DataTable dtinitialMarketingPlan = new CompanyPlanBL().GetAll();
+                DataTable dtinitialMarketingPlan = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
                 foreach (DataRow row in dtinitialMarketingPlan.Rows)
                 {
                     foreach (CompanyPlan plan in CompanyPlan)
@@ -119,7 +119,7 @@ namespace PTIC.Marketing.BL
                         return null;
                 }
 
-                DataTable dtinitialMarketingPlan = new CompanyPlanBL().GetAll();
+                DataTable dtinitialMarketingPlan = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
                 foreach (DataRow row in dtinitialMarketingPlan.Rows)
                 {
                     foreach (CompanyPlan plan in CompanyPlan)
