@@ -21,6 +21,7 @@ namespace PTIC.Marketing.BL
         #region INSERT
         public int Add(AnswerForm newAnswerForm, RetailerSuggestion newRetailerSuggestion, List<RetailerAnswer> newRetailerAnswers)
         {
+
             return RetailerAnswerDA.Insert(newAnswerForm, newRetailerSuggestion, newRetailerAnswers);
         }
         #endregion

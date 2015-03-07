@@ -146,7 +146,7 @@
     <Compile Include="DA\AP_SubCategoryDA.cs" />
     <Compile Include="DA\A_P_UsageDA.cs" />
     <Compile Include="DA\A_P_UsageDetailDA.cs" />
-    <Compile Include="DA\CompanyPlanDAO.cs" />
+    <Compile Include="DA\CompanyPlanDA.cs" />
     <Compile Include="DA\CompetitorBrandInMarketingDetailDA.cs" />
     <Compile Include="DA\CompetitorDA.cs" />
     <Compile Include="DA\CompetitorActivityDA.cs" />
@@ -162,6 +162,7 @@
     <Compile Include="DA\InitialMarketingPlanDA.cs" />
     <Compile Include="DA\InitialMobileServicePlanDA.cs" />
     <Compile Include="DA\InitialTeleMarketingPlanDA.cs" />
+    <Compile Include="DA\IQCSTDataAccessLayer.cs" />
     <Compile Include="DA\IssueDetailDA.cs" />
     <Compile Include="DA\MarketingDetailDA.cs" />
     <Compile Include="DA\MarketingPlanDA.cs" />
