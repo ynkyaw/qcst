@@ -178,11 +178,11 @@ namespace PTIC.Marketing.DA
                     cmd.Parameters.AddWithValue("@p_MSuvDetailID", insertedMobileServiceDetailID);
                     cmd.Parameters["@p_MSuvDetailID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_BrandID", newMobileServiceRecord.BrandID);
-                    cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
+                    //cmd.Parameters.AddWithValue("@p_BrandID", newMobileServiceRecord.BrandID);
+                    //cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_ProductID", newMobileServiceRecord.ProductID);
-                    cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
+                    //cmd.Parameters.AddWithValue("@p_ProductID", newMobileServiceRecord.ProductID);
+                    //cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
 
                     cmd.Parameters.AddWithValue("@p_UsedPlace", newMobileServiceRecord.UsedPlace);
                     cmd.Parameters["@p_UsedPlace"].Direction = ParameterDirection.Input;

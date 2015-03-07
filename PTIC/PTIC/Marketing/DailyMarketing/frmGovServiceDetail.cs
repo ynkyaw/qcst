@@ -346,8 +346,8 @@ namespace PTIC.Marketing.DailyMarketing
                         {
                            //MSuvDetailID = (int)DataTypeParser.Parse(row["MSuvDetailID"], typeof(int), -1),
                             MSuvDetailID = (int)DataTypeParser.Parse(_service.ID, typeof(int), -1),
-                            BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
-                            ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                            //BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
+                            //ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
                             UsedPlace = (string)DataTypeParser.Parse(row["UsedPlace"], typeof(string), string.Empty),
                             MachineNo = (string)DataTypeParser.Parse(row["MachineNo"], typeof(string), string.Empty),
                             ProductionDate = (string)DataTypeParser.Parse(row["ProductionDate"], typeof(string), string.Empty),
@@ -375,8 +375,8 @@ namespace PTIC.Marketing.DailyMarketing
                             ID = (int)DataTypeParser.Parse(row["MobileServiceRecordID"], typeof(int), -1),
                            // MSuvDetailID = (int)DataTypeParser.Parse(row["MSuvDetailID"], typeof(int), -1),
                             MSuvDetailID = (int)DataTypeParser.Parse(_service.ID, typeof(int), -1),
-                            BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
-                            ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                            //BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
+                            //ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
                             UsedPlace = (string)DataTypeParser.Parse(row["UsedPlace"], typeof(string), string.Empty),
                             MachineNo = (string)DataTypeParser.Parse(row["MachineNo"], typeof(string), string.Empty),
                             ProductionDate = (string)DataTypeParser.Parse(row["ProductionDate"], typeof(string), string.Empty),
@@ -406,8 +406,8 @@ namespace PTIC.Marketing.DailyMarketing
                         MobileServiceRecord newMobileServiceRecord = new MobileServiceRecord()
                         {
                             MSuvDetailID = (int)DataTypeParser.Parse(row.Cells["colMSuvDetailID"].Value, typeof(int), -1),
-                            BrandID = (int)DataTypeParser.Parse(row.Cells["colBrand"].Value, typeof(int), -1),
-                            ProductID = (int)DataTypeParser.Parse(row.Cells["colProduct"].Value, typeof(int), -1),
+                            //BrandID = (int)DataTypeParser.Parse(row.Cells["colBrand"].Value, typeof(int), -1),
+                            //ProductID = (int)DataTypeParser.Parse(row.Cells["colProduct"].Value, typeof(int), -1),
                             UsedPlace = (string)DataTypeParser.Parse(row.Cells["colUsedPlace"].Value, typeof(string), string.Empty),
                             MachineNo = (string)DataTypeParser.Parse(row.Cells["colMachineNo"].Value, typeof(string), string.Empty),
                             ProductionDate = (string)DataTypeParser.Parse(row.Cells["colProductionDate"].Value, typeof(string), string.Empty),
