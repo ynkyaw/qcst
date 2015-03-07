@@ -28,12 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.colEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvSelectedEmployees = new System.Windows.Forms.DataGridView();
+            this.colselEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colselPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colselDept = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colselEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmployeeInTripPlanDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,15 +55,6 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTripPlanDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colselEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colselPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colselDept = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colselEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmployeeInTripPlanDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -79,14 +79,14 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmployees.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colEmployeeName,
@@ -104,6 +104,38 @@
             this.dgvEmployees.Size = new System.Drawing.Size(597, 204);
             this.dgvEmployees.TabIndex = 172;
             this.dgvEmployees.DoubleClick += new System.EventHandler(this.dgvEmployees_DoubleClick);
+            // 
+            // colEmployeeName
+            // 
+            this.colEmployeeName.DataPropertyName = "EmpName";
+            this.colEmployeeName.HeaderText = "ဝန်ထမ်းအမည်";
+            this.colEmployeeName.Name = "colEmployeeName";
+            this.colEmployeeName.ReadOnly = true;
+            this.colEmployeeName.Width = 150;
+            // 
+            // colPosition
+            // 
+            this.colPosition.DataPropertyName = "PostName";
+            this.colPosition.HeaderText = "ရာထူး";
+            this.colPosition.Name = "colPosition";
+            this.colPosition.ReadOnly = true;
+            this.colPosition.Width = 150;
+            // 
+            // colDepartment
+            // 
+            this.colDepartment.DataPropertyName = "DeptName";
+            this.colDepartment.HeaderText = "ဌာန";
+            this.colDepartment.Name = "colDepartment";
+            this.colDepartment.ReadOnly = true;
+            this.colDepartment.Width = 150;
+            // 
+            // colEmployeeID
+            // 
+            this.colEmployeeID.DataPropertyName = "EmployeeID";
+            this.colEmployeeID.HeaderText = "EmployeeID";
+            this.colEmployeeID.Name = "colEmployeeID";
+            this.colEmployeeID.ReadOnly = true;
+            this.colEmployeeID.Visible = false;
             // 
             // groupBox2
             // 
@@ -123,14 +155,14 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSelectedEmployees.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSelectedEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSelectedEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSelectedEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSelectedEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colselEmpName,
@@ -149,6 +181,46 @@
             this.dgvSelectedEmployees.Size = new System.Drawing.Size(597, 135);
             this.dgvSelectedEmployees.TabIndex = 173;
             this.dgvSelectedEmployees.DoubleClick += new System.EventHandler(this.dgvSelectedEmployees_DoubleClick);
+            // 
+            // colselEmpName
+            // 
+            this.colselEmpName.DataPropertyName = "EmpName";
+            this.colselEmpName.HeaderText = "ဝန်ထမ်းအမည်";
+            this.colselEmpName.Name = "colselEmpName";
+            this.colselEmpName.ReadOnly = true;
+            this.colselEmpName.Width = 150;
+            // 
+            // colselPos
+            // 
+            this.colselPos.DataPropertyName = "PostName";
+            this.colselPos.HeaderText = "ရာထူး";
+            this.colselPos.Name = "colselPos";
+            this.colselPos.ReadOnly = true;
+            this.colselPos.Width = 150;
+            // 
+            // colselDept
+            // 
+            this.colselDept.DataPropertyName = "DeptName";
+            this.colselDept.HeaderText = "ဌာန";
+            this.colselDept.Name = "colselDept";
+            this.colselDept.ReadOnly = true;
+            this.colselDept.Width = 150;
+            // 
+            // colselEmpID
+            // 
+            this.colselEmpID.DataPropertyName = "EmployeeID";
+            this.colselEmpID.HeaderText = "EmployeeID";
+            this.colselEmpID.Name = "colselEmpID";
+            this.colselEmpID.ReadOnly = true;
+            this.colselEmpID.Visible = false;
+            // 
+            // colEmployeeInTripPlanDetailID
+            // 
+            this.colEmployeeInTripPlanDetailID.DataPropertyName = "ID";
+            this.colEmployeeInTripPlanDetailID.HeaderText = "ID";
+            this.colEmployeeInTripPlanDetailID.Name = "colEmployeeInTripPlanDetailID";
+            this.colEmployeeInTripPlanDetailID.ReadOnly = true;
+            this.colEmployeeInTripPlanDetailID.Visible = false;
             // 
             // btnSave
             // 
@@ -243,81 +315,9 @@
             this.colTripPlanDetailID.ReadOnly = true;
             this.colTripPlanDetailID.Visible = false;
             // 
-            // colEmployeeName
-            // 
-            this.colEmployeeName.DataPropertyName = "EmpName";
-            this.colEmployeeName.HeaderText = "ဝန်ထမ်းအမည်";
-            this.colEmployeeName.Name = "colEmployeeName";
-            this.colEmployeeName.ReadOnly = true;
-            this.colEmployeeName.Width = 150;
-            // 
-            // colPosition
-            // 
-            this.colPosition.DataPropertyName = "PostName";
-            this.colPosition.HeaderText = "ရာထူး";
-            this.colPosition.Name = "colPosition";
-            this.colPosition.ReadOnly = true;
-            this.colPosition.Width = 150;
-            // 
-            // colDepartment
-            // 
-            this.colDepartment.DataPropertyName = "DeptName";
-            this.colDepartment.HeaderText = "ဌာန";
-            this.colDepartment.Name = "colDepartment";
-            this.colDepartment.ReadOnly = true;
-            this.colDepartment.Width = 150;
-            // 
-            // colEmployeeID
-            // 
-            this.colEmployeeID.DataPropertyName = "EmployeeID";
-            this.colEmployeeID.HeaderText = "EmployeeID";
-            this.colEmployeeID.Name = "colEmployeeID";
-            this.colEmployeeID.ReadOnly = true;
-            this.colEmployeeID.Visible = false;
-            // 
-            // colselEmpName
-            // 
-            this.colselEmpName.DataPropertyName = "EmpName";
-            this.colselEmpName.HeaderText = "ဝန်ထမ်းအမည်";
-            this.colselEmpName.Name = "colselEmpName";
-            this.colselEmpName.ReadOnly = true;
-            this.colselEmpName.Width = 150;
-            // 
-            // colselPos
-            // 
-            this.colselPos.DataPropertyName = "PostName";
-            this.colselPos.HeaderText = "ရာထူး";
-            this.colselPos.Name = "colselPos";
-            this.colselPos.ReadOnly = true;
-            this.colselPos.Width = 150;
-            // 
-            // colselDept
-            // 
-            this.colselDept.DataPropertyName = "DeptName";
-            this.colselDept.HeaderText = "ဌာန";
-            this.colselDept.Name = "colselDept";
-            this.colselDept.ReadOnly = true;
-            this.colselDept.Width = 150;
-            // 
-            // colselEmpID
-            // 
-            this.colselEmpID.DataPropertyName = "EmployeeID";
-            this.colselEmpID.HeaderText = "EmployeeID";
-            this.colselEmpID.Name = "colselEmpID";
-            this.colselEmpID.ReadOnly = true;
-            this.colselEmpID.Visible = false;
-            // 
-            // colEmployeeInTripPlanDetailID
-            // 
-            this.colEmployeeInTripPlanDetailID.DataPropertyName = "ID";
-            this.colEmployeeInTripPlanDetailID.HeaderText = "ID";
-            this.colEmployeeInTripPlanDetailID.Name = "colEmployeeInTripPlanDetailID";
-            this.colEmployeeInTripPlanDetailID.ReadOnly = true;
-            this.colEmployeeInTripPlanDetailID.Visible = false;
-            // 
             // frmEmployeePicker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 454);
             this.ControlBox = false;
@@ -331,6 +331,7 @@
             this.Name = "frmEmployeePicker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "သွားမည့်ဝန်ထမ်းများရွေးချယ်ခြင်း";
+            this.Load += new System.EventHandler(this.frmEmployeePicker_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.groupBox2.ResumeLayout(false);

@@ -81,6 +81,7 @@ namespace PTIC.Marketing.MarketingPlan
             //DataRow selectedRow = null;
             try
             {
+                string[] empIdList = null;
                 conn = DBManager.GetInstance().GetDbConnection();
                 // Load Employee
                 DataTable dtEmployees = new EmployeeBL().GetAll();
@@ -98,15 +99,16 @@ namespace PTIC.Marketing.MarketingPlan
                 string empList = string.Empty;
                 if (selectedEmp != null && selectedEmp.Count>0)
                 {
-                    string [] empIdList = new string[selectedEmp.Count+1];
+                    empIdList = new string[selectedEmp.Count];
                     int index=0;
 
                     foreach(Employee emp in selectedEmp){
                         empIdList[index++]= string.Empty + emp.ID;
                     }
 
-                    empIdList[empIdList.Length - 1] = _ManagerID + string.Empty;
+                    //empIdList[empIdList.Length - 1] = _ManagerID + string.Empty;
                     empList = "'" + string.Join("','",empIdList) + "'";
+                    empList += ",'" + _ManagerID + "'";
 
                     DataRow[] dr = dtEmployeeByDept.Select("EmployeeID NOT IN (" + empList + ")");
                     allEmpTable = dr.CopyToDataTable();
@@ -134,7 +136,8 @@ namespace PTIC.Marketing.MarketingPlan
 
                 if (selectedEmp != null && selectedEmp.Count > 0)
                 {
-                    dtSelectedEmployees = dtEmployeeByDept.Select("EmployeeID IN (" + empList + ")").CopyToDataTable();
+
+                    dtSelectedEmployees = dtEmployeeByDept.Select("EmployeeID IN (" + "'" + string.Join("','", empIdList) + "'" + ")").CopyToDataTable();
                 }
                 dgvSelectedEmployees.DataSource = dtSelectedEmployees;
                 
@@ -262,5 +265,10 @@ namespace PTIC.Marketing.MarketingPlan
             this.Close();
         }
         #endregion
+
+        private void frmEmployeePicker_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
