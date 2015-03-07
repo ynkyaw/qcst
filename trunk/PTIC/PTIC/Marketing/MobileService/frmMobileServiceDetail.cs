@@ -422,6 +422,7 @@ namespace PTIC.VC.Marketing.MobileService
                 // Load Vehicle
                 cmbVehicle.DataSource = new VehicleBL().GetAll();
 
+                /*
                 // Load Brand
                 colBrand.DataSource = new BrandBL().GetOwnBrands();
                 // Load Product
@@ -432,11 +433,13 @@ namespace PTIC.VC.Marketing.MobileService
 
                 colProduct.DisplayMember = "ProductName";
                 colProduct.ValueMember = "ProductID";
+                 */ 
             }
             catch (Exception e)
             {
                 _logger.Error(e);
-                ToastMessageBox.Show(Resource.errFailedToSave);
+                throw e;
+                //ToastMessageBox.Show(Resource.errFailedToSave);
             }
         }
 
@@ -485,13 +488,15 @@ namespace PTIC.VC.Marketing.MobileService
                     DataView dvInsert = new DataView(dt, string.Empty, string.Empty, DataViewRowState.Added);
                     foreach (DataRow row in dvInsert.ToTable().Rows)
                     {
-                        if (row.IsNull("ProductID"))
-                            continue;
+                        //if (row.IsNull("ProductID"))
+                        //    continue;
                         MobileServiceRecord newMobileServiceRecord = new MobileServiceRecord()
                         {
                             MSuvDetailID = (int)DataTypeParser.Parse(row["MSuvDetailID"], typeof(int), msDetail.ID),
-                            BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
-                            ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                            //BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
+                            //ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                            Brand = (string)DataTypeParser.Parse(row["Brand"], typeof(string), null),
+                            Product = (string)DataTypeParser.Parse(row["Product"], typeof(string), null),
                             UsedPlace = (string)DataTypeParser.Parse(row["UsedPlace"], typeof(string), string.Empty),
                             MachineNo = (string)DataTypeParser.Parse(row["MachineNo"], typeof(string), string.Empty),
                             ProductionDate = (string)DataTypeParser.Parse(row["ProductionDate"], typeof(string), string.Empty),
@@ -518,8 +523,10 @@ namespace PTIC.VC.Marketing.MobileService
                         {
                             ID = (int)DataTypeParser.Parse(row["MobileServiceRecordID"], typeof(int), -1),
                             MSuvDetailID = (int)DataTypeParser.Parse(row["MSuvDetailID"], typeof(int), -1),
-                            BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
-                            ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                            //BrandID = (int)DataTypeParser.Parse(row["BrandID"], typeof(int), -1),
+                            //ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                            Brand = (string)DataTypeParser.Parse(row["Brand"], typeof(string), null),
+                            Product = (string)DataTypeParser.Parse(row["Product"], typeof(string), null),
                             UsedPlace = (string)DataTypeParser.Parse(row["UsedPlace"], typeof(string), string.Empty),
                             MachineNo = (string)DataTypeParser.Parse(row["MachineNo"], typeof(string), string.Empty),
                             ProductionDate = (string)DataTypeParser.Parse(row["ProductionDate"], typeof(string), string.Empty),
@@ -550,8 +557,10 @@ namespace PTIC.VC.Marketing.MobileService
                         MobileServiceRecord newMobileServiceRecord = new MobileServiceRecord()
                         {
                             MSuvDetailID = (int)DataTypeParser.Parse(row.Cells["colMSuvDetailID"].Value, typeof(int), -1),
-                            BrandID = (int)DataTypeParser.Parse(row.Cells["colBrand"].Value, typeof(int), -1),
-                            ProductID = (int)DataTypeParser.Parse(row.Cells["colProduct"].Value, typeof(int), -1),
+                            //BrandID = (int)DataTypeParser.Parse(row.Cells["colBrand"].Value, typeof(int), -1),
+                            //ProductID = (int)DataTypeParser.Parse(row.Cells["colProduct"].Value, typeof(int), -1),
+                            Brand = (string)DataTypeParser.Parse(row.Cells[colBrand.Index].Value, typeof(string), null),
+                            Product = (string)DataTypeParser.Parse(row.Cells[colProduct.Index].Value, typeof(string), null),
                             UsedPlace = (string)DataTypeParser.Parse(row.Cells["colUsedPlace"].Value, typeof(string), string.Empty),
                             MachineNo = (string)DataTypeParser.Parse(row.Cells["colMachineNo"].Value, typeof(string), string.Empty),
                             ProductionDate = (string)DataTypeParser.Parse(row.Cells["colProductionDate"].Value, typeof(string), string.Empty),
@@ -586,12 +595,13 @@ namespace PTIC.VC.Marketing.MobileService
                         this.Close();
                 }
                 else
-                    ToastMessageBox.Show(Resource.errFailedToSave);
+                    ToastMessageBox.Show(Resource.errFailedToSave, Color.Red);
             }
             catch (Exception e)
             {
-                ToastMessageBox.Show(Resource.errFailedToSave);
+                //ToastMessageBox.Show(Resource.errFailedToSave);
                 _logger.Error(e);
+                throw e;
             }
         }
 

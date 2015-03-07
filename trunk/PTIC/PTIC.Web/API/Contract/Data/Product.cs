@@ -24,6 +24,8 @@ namespace PTIC.Web.API.Contract.Data
         public string RetailSaleNo { get; set; }
         [DataMember]
         public decimal RetailSalePrice { get; set; }
+        [DataMember]
+        public bool HasDiscount { get; set; }
         #endregion
     }
 }

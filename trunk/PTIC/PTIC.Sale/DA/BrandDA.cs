@@ -338,7 +338,7 @@ namespace PTIC.Sale.DA
             return dt;
         }
 
-        public static DataTable SelectAllCompetitorBy(string CompetitorBrand , string CompetitorProduct)
+        public static DataTable SelectAllCompetitorBy(string CompetitorBrand , string CompetitorProduct,int BrandID)
         {
             DataTable table = null;
             try
@@ -351,12 +351,15 @@ namespace PTIC.Sale.DA
                                         +"CompetitorBrand.ID,CompetitorProduct.CompanyName "
                                         +"FROM CompetitorBrand "
                                          +"INNER JOIN CompetitorProduct ON CompetitorProduct.BrandID = CompetitorBrand.ID "
-                                        + "WHERE CompetitorProduct.IsDeleted =0 AND CompetitorBrand.IsDeleted=0 AND CompetitorBrand = @p_CompetitorBrand AND CompetitorProduct.CProductName = @p_CompetitorProduct";
+                                        + "WHERE CompetitorProduct.IsDeleted =0 AND CompetitorBrand.IsDeleted=0 AND CompetitorBrand = @p_CompetitorBrand AND CompetitorProduct.CProductName = @p_CompetitorProduct AND CompetitorBrand.ID != @p_CompetitorBrandID";
 
                 command.Parameters.AddWithValue("@p_CompetitorBrand", CompetitorBrand);
                 command.Parameters["@p_CompetitorBrand"].Direction = ParameterDirection.Input;
 
                 command.Parameters.AddWithValue("@p_CompetitorProduct", CompetitorProduct);
+                command.Parameters["@p_CompetitorProduct"].Direction = ParameterDirection.Input;
+
+                command.Parameters.AddWithValue("@p_CompetitorBrandID", BrandID);
                 command.Parameters["@p_CompetitorProduct"].Direction = ParameterDirection.Input;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);

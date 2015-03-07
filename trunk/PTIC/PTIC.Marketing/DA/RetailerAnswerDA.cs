@@ -127,14 +127,12 @@ namespace PTIC.Marketing.DA
             }
             catch (SqlException sqle)
             {
-
                 if (conn.State == ConnectionState.Open)
                 {
                     transaction.Rollback();
                     return insertedAnswerFormID = -1;
                 }
             }
-
             finally
             {
                 transaction.Dispose();

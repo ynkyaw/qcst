@@ -215,10 +215,19 @@ namespace PTIC.Marketing.Telemarketing
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            btnNew.Enabled = false;
-            if (dgvIntialTeleMarketingPlan == null) return;
-            DataUtil.AddNewRow(dgvIntialTeleMarketingPlan.DataSource as DataTable);
-            dgvIntialTeleMarketingPlan.CurrentCell = dgvIntialTeleMarketingPlan.Rows[dgvIntialTeleMarketingPlan.Rows.Count - 1].Cells[0];
+            if (dgvIntialTeleMarketingPlan.CurrentRow == null)
+            {
+                DataUtil.AddInitialNewRow(dgvIntialTeleMarketingPlan);
+            }
+            else if ((int)DataTypeParser.Parse(dgvIntialTeleMarketingPlan.CurrentRow.Cells[colTeleMarketingPlanID.Index].Value, typeof(int), -1) != -1)
+            {
+                DataUtil.AddNewRow(dgvIntialTeleMarketingPlan.DataSource as DataTable);
+                dgvIntialTeleMarketingPlan[colIntialPlanDate.Index, dgvIntialTeleMarketingPlan.CurrentRow.Index + 1].Selected = true;
+            }
+
+            //if (dgvIntialTeleMarketingPlan == null) return;
+            //DataUtil.AddNewRow(dgvIntialTeleMarketingPlan.DataSource as DataTable);
+            //dgvIntialTeleMarketingPlan.CurrentCell = dgvIntialTeleMarketingPlan.Rows[dgvIntialTeleMarketingPlan.Rows.Count - 1].Cells[0];
         }
 
         private void dgvIntialTeleMarketingPlan_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
