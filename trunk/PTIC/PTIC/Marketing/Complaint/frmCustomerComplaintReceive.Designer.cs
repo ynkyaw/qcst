@@ -110,7 +110,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(170, 10);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(213, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(223, 19);
             this.lblHeaderPCat.TabIndex = 46;
             this.lblHeaderPCat.Text = ">   Complaint Receive Form";
             // 
@@ -123,7 +123,7 @@
             this.lblHeader.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.Location = new System.Drawing.Point(8, 10);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(156, 20);
+            this.lblHeader.Size = new System.Drawing.Size(167, 19);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Customer Complaint";
             this.lblHeader.Click += new System.EventHandler(this.lblHeader_Click);
@@ -136,7 +136,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(-580, 210);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 20);
+            this.label2.Size = new System.Drawing.Size(113, 19);
             this.label2.TabIndex = 244;
             this.label2.Text = "သတင်းရရှိသည့်စနစ်";
             // 
@@ -195,7 +195,7 @@
             this.cmbAccepter.Location = new System.Drawing.Point(456, 45);
             this.cmbAccepter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbAccepter.Name = "cmbAccepter";
-            this.cmbAccepter.Size = new System.Drawing.Size(150, 27);
+            this.cmbAccepter.Size = new System.Drawing.Size(150, 25);
             this.cmbAccepter.TabIndex = 3;
             // 
             // dtpInformDate
@@ -206,7 +206,7 @@
             this.dtpInformDate.Location = new System.Drawing.Point(167, 45);
             this.dtpInformDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpInformDate.Name = "dtpInformDate";
-            this.dtpInformDate.Size = new System.Drawing.Size(150, 28);
+            this.dtpInformDate.Size = new System.Drawing.Size(150, 25);
             this.dtpInformDate.TabIndex = 1;
             // 
             // label10
@@ -215,7 +215,7 @@
             this.label10.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(18, 13);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 20);
+            this.label10.Size = new System.Drawing.Size(113, 19);
             this.label10.TabIndex = 279;
             this.label10.Text = "သတင်းရရှိသည့်စနစ်";
             // 
@@ -227,7 +227,7 @@
             this.txtNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNo.Name = "txtNo";
             this.txtNo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNo.Size = new System.Drawing.Size(150, 28);
+            this.txtNo.Size = new System.Drawing.Size(150, 25);
             this.txtNo.TabIndex = 5;
             // 
             // label21
@@ -236,7 +236,7 @@
             this.label21.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(618, 49);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(62, 20);
+            this.label21.Size = new System.Drawing.Size(56, 19);
             this.label21.TabIndex = 294;
             this.label21.Text = "စာအမှတ်";
             // 
@@ -246,7 +246,7 @@
             this.label18.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(618, 13);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(79, 20);
+            this.label18.Size = new System.Drawing.Size(85, 19);
             this.label18.TabIndex = 289;
             this.label18.Text = "Service No";
             // 
@@ -257,7 +257,7 @@
             this.txtSerialNo.Location = new System.Drawing.Point(703, 11);
             this.txtSerialNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSerialNo.Name = "txtSerialNo";
-            this.txtSerialNo.Size = new System.Drawing.Size(150, 28);
+            this.txtSerialNo.Size = new System.Drawing.Size(150, 25);
             this.txtSerialNo.TabIndex = 4;
             // 
             // groupBox1
@@ -301,7 +301,7 @@
             this.rdoNotFinished.Checked = true;
             this.rdoNotFinished.Location = new System.Drawing.Point(84, 15);
             this.rdoNotFinished.Name = "rdoNotFinished";
-            this.rdoNotFinished.Size = new System.Drawing.Size(53, 24);
+            this.rdoNotFinished.Size = new System.Drawing.Size(49, 23);
             this.rdoNotFinished.TabIndex = 1;
             this.rdoNotFinished.TabStop = true;
             this.rdoNotFinished.Text = "မပြီး";
@@ -312,7 +312,7 @@
             this.rdoFinished.AutoSize = true;
             this.rdoFinished.Location = new System.Drawing.Point(24, 15);
             this.rdoFinished.Name = "rdoFinished";
-            this.rdoFinished.Size = new System.Drawing.Size(44, 24);
+            this.rdoFinished.Size = new System.Drawing.Size(41, 23);
             this.rdoFinished.TabIndex = 0;
             this.rdoFinished.Text = "ပြီး";
             this.rdoFinished.UseVisualStyleBackColor = true;
@@ -338,7 +338,7 @@
             this.txtShop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtShop.Name = "txtShop";
             this.txtShop.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtShop.Size = new System.Drawing.Size(261, 28);
+            this.txtShop.Size = new System.Drawing.Size(261, 25);
             this.txtShop.TabIndex = 2;
             this.txtShop.Visible = false;
             // 
@@ -351,7 +351,7 @@
             this.cmbShop.Location = new System.Drawing.Point(213, 38);
             this.cmbShop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbShop.Name = "cmbShop";
-            this.cmbShop.Size = new System.Drawing.Size(261, 27);
+            this.cmbShop.Size = new System.Drawing.Size(261, 25);
             this.cmbShop.TabIndex = 4;
             // 
             // rdoOther
@@ -359,7 +359,7 @@
             this.rdoOther.AutoSize = true;
             this.rdoOther.Location = new System.Drawing.Point(23, 57);
             this.rdoOther.Name = "rdoOther";
-            this.rdoOther.Size = new System.Drawing.Size(64, 24);
+            this.rdoOther.Size = new System.Drawing.Size(59, 23);
             this.rdoOther.TabIndex = 1;
             this.rdoOther.Text = "အခြား";
             this.rdoOther.UseVisualStyleBackColor = true;
@@ -371,7 +371,7 @@
             this.rdoOutlet.Checked = true;
             this.rdoOutlet.Location = new System.Drawing.Point(23, 27);
             this.rdoOutlet.Name = "rdoOutlet";
-            this.rdoOutlet.Size = new System.Drawing.Size(169, 24);
+            this.rdoOutlet.Size = new System.Drawing.Size(176, 23);
             this.rdoOutlet.TabIndex = 0;
             this.rdoOutlet.TabStop = true;
             this.rdoOutlet.Text = "ဝယ်ယူသည့်ဆိုင် (Outlet)";
@@ -398,7 +398,7 @@
             this.label17.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(15, 281);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(159, 20);
+            this.label17.Size = new System.Drawing.Size(147, 19);
             this.label17.TabIndex = 268;
             this.label17.Text = "မှတ်ချက် / အကြောင်းအရာ";
             // 
@@ -467,7 +467,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(561, 34);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(177, 20);
+            this.label13.Size = new System.Drawing.Size(174, 19);
             this.label13.TabIndex = 260;
             this.label13.Text = "(၅) မီးလာချိန် (နာရီစုစုပေါင်း)";
             // 
@@ -479,7 +479,7 @@
             this.txtElectricTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtElectricTime.Name = "txtElectricTime";
             this.txtElectricTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtElectricTime.Size = new System.Drawing.Size(303, 28);
+            this.txtElectricTime.Size = new System.Drawing.Size(303, 25);
             this.txtElectricTime.TabIndex = 4;
             // 
             // label11
@@ -490,7 +490,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(15, 140);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 20);
+            this.label11.Size = new System.Drawing.Size(136, 19);
             this.label11.TabIndex = 256;
             this.label11.Text = "(၃) အသုံးပြုသည့်ကာလ";
             // 
@@ -502,7 +502,7 @@
             this.txtPeriod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPeriod.Name = "txtPeriod";
             this.txtPeriod.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPeriod.Size = new System.Drawing.Size(303, 28);
+            this.txtPeriod.Size = new System.Drawing.Size(303, 25);
             this.txtPeriod.TabIndex = 2;
             // 
             // label9
@@ -547,7 +547,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(15, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 20);
+            this.label8.Size = new System.Drawing.Size(180, 19);
             this.label8.TabIndex = 251;
             this.label8.Text = "(၁) အသုံးပြုသည့် Size(Amp)";
             // 
@@ -557,7 +557,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(329, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 20);
+            this.label6.Size = new System.Drawing.Size(94, 19);
             this.label6.TabIndex = 286;
             this.label6.Text = "သတင်းလက်ခံသူ";
             // 
@@ -567,7 +567,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(329, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 20);
+            this.label3.Size = new System.Drawing.Size(87, 19);
             this.label3.TabIndex = 284;
             this.label3.Text = "သတင်းပေးပို့သူ";
             // 
@@ -578,7 +578,7 @@
             this.txtInformer.Location = new System.Drawing.Point(456, 11);
             this.txtInformer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInformer.Name = "txtInformer";
-            this.txtInformer.Size = new System.Drawing.Size(150, 28);
+            this.txtInformer.Size = new System.Drawing.Size(150, 25);
             this.txtInformer.TabIndex = 2;
             // 
             // label4
@@ -587,7 +587,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 20);
+            this.label4.Size = new System.Drawing.Size(130, 19);
             this.label4.TabIndex = 282;
             this.label4.Text = "သတင်းပေးပို့သည့်အချိန်";
             // 
@@ -607,7 +607,7 @@
             this.cmbInfoSys.Location = new System.Drawing.Point(167, 10);
             this.cmbInfoSys.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbInfoSys.Name = "cmbInfoSys";
-            this.cmbInfoSys.Size = new System.Drawing.Size(150, 27);
+            this.cmbInfoSys.Size = new System.Drawing.Size(150, 25);
             this.cmbInfoSys.TabIndex = 0;
             // 
             // txtRefNo
@@ -619,7 +619,7 @@
             this.txtRefNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRefNo.Name = "txtRefNo";
             this.txtRefNo.ReadOnly = true;
-            this.txtRefNo.Size = new System.Drawing.Size(140, 28);
+            this.txtRefNo.Size = new System.Drawing.Size(140, 25);
             this.txtRefNo.TabIndex = 7;
             // 
             // label1
@@ -628,7 +628,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(863, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(65, 19);
             this.label1.TabIndex = 277;
             this.label1.Text = "Ref No :";
             // 
@@ -640,7 +640,7 @@
             this.dtpReceivedDate.Location = new System.Drawing.Point(931, 11);
             this.dtpReceivedDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpReceivedDate.Name = "dtpReceivedDate";
-            this.dtpReceivedDate.Size = new System.Drawing.Size(140, 28);
+            this.dtpReceivedDate.Size = new System.Drawing.Size(140, 25);
             this.dtpReceivedDate.TabIndex = 6;
             // 
             // label5
@@ -649,7 +649,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(863, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 20);
+            this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 275;
             this.label5.Text = "‌နေ့စွဲ :";
             // 
@@ -685,7 +685,7 @@
             this.cmbReceivedViaBy.Location = new System.Drawing.Point(22, 61);
             this.cmbReceivedViaBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbReceivedViaBy.Name = "cmbReceivedViaBy";
-            this.cmbReceivedViaBy.Size = new System.Drawing.Size(150, 27);
+            this.cmbReceivedViaBy.Size = new System.Drawing.Size(150, 25);
             this.cmbReceivedViaBy.TabIndex = 11;
             // 
             // cmbRepairedBy
@@ -704,7 +704,7 @@
             this.cmbRepairedBy.Location = new System.Drawing.Point(474, 26);
             this.cmbRepairedBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbRepairedBy.Name = "cmbRepairedBy";
-            this.cmbRepairedBy.Size = new System.Drawing.Size(150, 27);
+            this.cmbRepairedBy.Size = new System.Drawing.Size(150, 25);
             this.cmbRepairedBy.TabIndex = 1;
             this.cmbRepairedBy.Visible = false;
             // 
@@ -724,7 +724,7 @@
             this.cmbCheckedBy.Location = new System.Drawing.Point(896, 26);
             this.cmbCheckedBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCheckedBy.Name = "cmbCheckedBy";
-            this.cmbCheckedBy.Size = new System.Drawing.Size(150, 27);
+            this.cmbCheckedBy.Size = new System.Drawing.Size(150, 25);
             this.cmbCheckedBy.TabIndex = 2;
             // 
             // label12
@@ -735,7 +735,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(927, 2);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 20);
+            this.label12.Size = new System.Drawing.Size(85, 19);
             this.label12.TabIndex = 10;
             this.label12.Text = "Checked By";
             // 
@@ -756,7 +756,7 @@
             this.cmbReceivedBy.Location = new System.Drawing.Point(22, 26);
             this.cmbReceivedBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbReceivedBy.Name = "cmbReceivedBy";
-            this.cmbReceivedBy.Size = new System.Drawing.Size(150, 27);
+            this.cmbReceivedBy.Size = new System.Drawing.Size(150, 25);
             this.cmbReceivedBy.TabIndex = 0;
             // 
             // label23
@@ -767,7 +767,7 @@
             this.label23.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(54, 3);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(89, 20);
+            this.label23.Size = new System.Drawing.Size(93, 19);
             this.label23.TabIndex = 6;
             this.label23.Text = "Received By";
             // 
@@ -779,14 +779,14 @@
             this.label24.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(506, 2);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(87, 20);
+            this.label24.Size = new System.Drawing.Size(93, 19);
             this.label24.TabIndex = 8;
             this.label24.Text = "Repaired By";
             this.label24.Visible = false;
             // 
             // frmCustomerComplaintReceive
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1109, 677);
