@@ -21,9 +21,9 @@ namespace PTIC.Marketing.BL
     public class CompanyPlanBL : BaseBusinessLogic
     {
         #region SELECT
-        public DataTable GetAll()
+        public DataTable SelectCompanyPlanUnConfirmedList()
         {
-            return CompanyPlanDA.SelectCompanyPlan();
+            return CompanyPlanDA.SelectCompanyPlanUnConfirmedList();
         }
 
         public DataTable GetReportedCompanyPlan()

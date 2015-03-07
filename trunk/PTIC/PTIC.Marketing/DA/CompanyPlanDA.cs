@@ -19,7 +19,7 @@ namespace PTIC.Marketing.DA
     public class CompanyPlanDA
     {
         #region SELECT
-        public static DataTable SelectCompanyPlan()
+        public static DataTable SelectCompanyPlanUnConfirmedList()
         {
             DataTable table = null;
             string tableName = "CompanyPlanTable";
@@ -29,8 +29,11 @@ namespace PTIC.Marketing.DA
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "SELECT * FROM COMPANY";
-
+                command.CommandText = "SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId]";
+                command.CommandText += ",[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone";
+                command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
+                command.CommandText += "ON (CompanyPlan.CustomerId = cp.CusID)";
+                command.CommandText += "where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
             }
