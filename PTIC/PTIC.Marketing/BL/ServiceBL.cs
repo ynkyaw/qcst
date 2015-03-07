@@ -25,14 +25,14 @@ namespace PTIC.Marketing.BL
         #endregion
 
         #region INSERT
-        public int? Add(Service service, List<ServiceDetail> serviceDetail,SqlConnection conn)
+        public int? Add(Service service, List<ServiceDetail> serviceDetail)
         {
-            return ServiceDA.Insert(service, serviceDetail, conn);
+            return ServiceDA.Insert(service, serviceDetail);
         }
 
-        public int? Add(MobileServiceDetail moblieServiceDetail, List<MobileServiceRecord> mobileServiceRecord, SqlConnection conn)
+        public int? Add(MobileServiceDetail moblieServiceDetail, List<MobileServiceRecord> mobileServiceRecord)
         {
-            return ServiceDA.Insert(moblieServiceDetail, mobileServiceRecord, conn);
+            return ServiceDA.Insert(moblieServiceDetail, mobileServiceRecord);
         }
         #endregion
 
@@ -49,6 +49,6 @@ namespace PTIC.Marketing.BL
             return ServiceDA.DeleteByServiceID(ServiceID, conn);
         }     
         #endregion
-        //
+        
     }
 }
