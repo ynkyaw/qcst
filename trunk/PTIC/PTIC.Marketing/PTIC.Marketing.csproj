@@ -84,6 +84,7 @@
     <Compile Include="BL\AP_MaterialBL.cs" />
     <Compile Include="BL\A_P_UsageBL.cs" />
     <Compile Include="BL\A_P_UsageDetailBL.cs" />
+    <Compile Include="BL\CompanyPlanBL.cs" />
     <Compile Include="BL\CompetitorActivityBL.cs" />
     <Compile Include="BL\CompetitorBL.cs" />
     <Compile Include="BL\CompetitorBrandInMarketingDetailBL.cs" />
