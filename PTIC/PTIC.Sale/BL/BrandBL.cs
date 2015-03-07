@@ -43,9 +43,9 @@ namespace PTIC.Sale.BL
         #endregion
 
         #region SELECT BY BRNADID
-        public DataTable GetCompetitorBrandProductBy(string CompetitorBrand , string CompetitorProduct)
+        public DataTable GetCompetitorBrandProductBy(string CompetitorBrand , string CompetitorProduct,int BrandID)
         {
-            return BrandDA.SelectAllCompetitorBy(CompetitorBrand, CompetitorProduct);
+            return BrandDA.SelectAllCompetitorBy(CompetitorBrand, CompetitorProduct,BrandID);
         }
 
         public DataTable GetAllByBrandID(int id,SqlConnection conn)
@@ -80,7 +80,7 @@ namespace PTIC.Sale.BL
             if (!vResults.IsValid)
                 return 0;
             // duplicate field validation via db
-            DataTable duplicateData = this.GetCompetitorBrandProductBy(newBrand.BrandName,newBrand.CompetitorProduct);
+            DataTable duplicateData = this.GetCompetitorBrandProductBy(newBrand.BrandName,newBrand.CompetitorProduct,0);
             if (duplicateData != null && duplicateData.Rows.Count > 0)
             {
                 base.ValidationResults = new ValidationResults();
@@ -120,7 +120,7 @@ namespace PTIC.Sale.BL
             if (!vResults.IsValid)
                 return 0;
             // duplicate field validation via db
-            DataTable duplicateData = this.GetCompetitorBrandProductBy(brand.BrandName, brand.CompetitorProduct);
+            DataTable duplicateData = this.GetCompetitorBrandProductBy(brand.BrandName, brand.CompetitorProduct,brand.ID);
             if (duplicateData != null && duplicateData.Rows.Count > 0)
             {
                 base.ValidationResults = new ValidationResults();

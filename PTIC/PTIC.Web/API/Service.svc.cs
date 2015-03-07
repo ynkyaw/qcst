@@ -265,7 +265,8 @@ namespace PTIC.Web.API.Contract
                     {
                         ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
                         ProductName = (string)DataTypeParser.Parse(row["ProductName"], typeof(string), string.Empty),
-                        NoPerPack = (int)DataTypeParser.Parse(row["NoPerPack"], typeof(int), string.Empty)
+                        NoPerPack = (int)DataTypeParser.Parse(row["NoPerPack"], typeof(int), string.Empty),
+                        HasDiscount = (bool)DataTypeParser.Parse(row["HasDiscount"],typeof(bool),true)
                     });
                 }
             }
@@ -1052,6 +1053,57 @@ namespace PTIC.Web.API.Contract
             }
         }
 
+        public void AddOrder(Data.Order newOrder, Data.Customer newCustomer)
+        {
+            if (newOrder == null)
+                return;
+
+            OrderBL orderSaver = null;
+            int customerID = -1;
+            try
+            {
+                orderSaver = new OrderBL();
+                
+                if (newCustomer == null) // new customer
+                    customerID = (int)DataTypeParser.Parse(newOrder.CusID, typeof(int), -1);
+                else // existing customer
+                    customerID = (int)DataTypeParser.Parse(AddCustomer(newCustomer), typeof(int), -1);
+                // Set order
+                Sale.Entities.Order order = new Sale.Entities.Order()
+                {
+                    //CusID = (int)DataTypeParser.Parse(newOrder.CusID, typeof(int), -1),
+                    CusID = customerID,
+                    OrderReceieverID = (int)DataTypeParser.Parse(newOrder.OrderReceieverID, typeof(int), -1),
+                    OrderDate = newOrder.OrderDate,
+                    //IsMain = false,
+                    //IsDevice = false
+                };
+                // Set order detail
+                List<Sale.Entities.OrderDetail> orderDetails = new List<Sale.Entities.OrderDetail>();
+                foreach (PTIC.Web.API.Contract.Data.OrderDetail detail in newOrder.OrderDetails)
+                {
+                    orderDetails.Add(new Sale.Entities.OrderDetail()
+                    {
+                        //ID = (int)DataTypeParser.Parse(detail.OrderDetailID, typeof(int), -1),
+                        //OrderID = (int)DataTypeParser.Parse(row.Cells["colDetailOrderID"].Value, typeof(int), -1),
+                        ProductID = (int)DataTypeParser.Parse(detail.ProductID, typeof(int), -1),
+                        WSPrice = (decimal)DataTypeParser.Parse(detail.WSPrice, typeof(decimal), 0),
+                        RSPrice = (decimal)DataTypeParser.Parse(detail.RSPrice, typeof(decimal), 0),
+                        Qty = (int)DataTypeParser.Parse(detail.Qty, typeof(int), 0),
+                        Amount = (decimal)DataTypeParser.Parse(detail.Amount, typeof(decimal), 0),
+                        Remark = (string)DataTypeParser.Parse(detail.Remark, typeof(string), null),
+                    });
+                }
+                // Save a new order into DB
+                // TODO: all orders must be under one transaction
+                orderSaver.Add(order, orderDetails);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public List<PTIC.Web.API.Contract.Data.OrderDetail> GetOrderDetailByOrderID(string order_id)
         {
             if (string.IsNullOrEmpty(order_id))
@@ -1335,6 +1387,6 @@ namespace PTIC.Web.API.Contract
             }
         }
         #endregion
-
+        
     }
 }

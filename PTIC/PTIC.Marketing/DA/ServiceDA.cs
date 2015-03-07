@@ -15,8 +15,7 @@ using PTIC.Common;
 namespace PTIC.Marketing.DA
 {
     class ServiceDA
-    { //
-
+    {
         #region SelectAll
 
         public static DataTable SelectAll(SqlConnection conn)
@@ -35,6 +34,7 @@ namespace PTIC.Marketing.DA
             }
             catch (SqlException sqle)
             {
+                throw;
             }
             return dataSet.Tables["APTypeTable"];
         }
@@ -67,17 +67,16 @@ namespace PTIC.Marketing.DA
         #endregion
 
         #region INSERT
-
-
-
-        public static int? Insert(MobileServiceDetail newMobileServiceDetail, List<MobileServiceRecord> mobileServiceRecords, SqlConnection conn)
+        public static int? Insert(MobileServiceDetail newMobileServiceDetail, List<MobileServiceRecord> mobileServiceRecords)
         {
+            SqlConnection conn = null;
             SqlTransaction transaction = null;
             SqlCommand cmd = null;
             int? insertedServiceID = null;
 
             try
             {
+                conn = DBManager.GetInstance().GetDbConnection();
                 transaction = conn.BeginTransaction();
                 cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -134,11 +133,17 @@ namespace PTIC.Marketing.DA
                     cmd.Parameters.AddWithValue("@p_MSuvDetailID", insertedServiceID);
                     cmd.Parameters["@p_MSuvDetailID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_BrandID", newMobileServiceRecord.BrandID);
-                    cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
+                    //cmd.Parameters.AddWithValue("@p_BrandID", newMobileServiceRecord.BrandID);
+                    //cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_ProductID", newMobileServiceRecord.ProductID);
-                    cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
+                    //cmd.Parameters.AddWithValue("@p_ProductID", newMobileServiceRecord.ProductID);
+                    //cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
+
+                    cmd.Parameters.AddWithValue("@p_Brand", newMobileServiceRecord.Brand);
+                    cmd.Parameters["@p_Brand"].Direction = ParameterDirection.Input;
+
+                    cmd.Parameters.AddWithValue("@p_Product", newMobileServiceRecord.Product);
+                    cmd.Parameters["@p_Product"].Direction = ParameterDirection.Input;
 
                     cmd.Parameters.AddWithValue("@p_UsedPlace", newMobileServiceRecord.UsedPlace);
                     cmd.Parameters["@p_UsedPlace"].Direction = ParameterDirection.Input;
@@ -202,18 +207,18 @@ namespace PTIC.Marketing.DA
                 cmd.Dispose();
             }
             return insertedServiceID;
-
         }
 
-
-        public static int? Insert(Service service,List<ServiceDetail> serviceDetails, SqlConnection conn)
+        public static int? Insert(Service service,List<ServiceDetail> serviceDetails)
         {
+            SqlConnection conn = null;
             SqlTransaction transaction = null;
             SqlCommand cmd = null;
             int? insertedServiceID = null;
 
             try
             {
+                conn = DBManager.GetInstance().GetDbConnection();
                 transaction = conn.BeginTransaction();
 
                 cmd.Connection = conn;

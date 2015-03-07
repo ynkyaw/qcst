@@ -49,25 +49,6 @@
             this.dtpAppointedDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvServiceRecord = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsedPlace = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMachineNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBrand = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colProduct = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colProductionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChargingAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOutAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colServing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMobileServiceRecordID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMSuvDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.cmbVehicle = new System.Windows.Forms.ComboBox();
@@ -123,6 +104,25 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsedPlace = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMachineNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChargingAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOutAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colServing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMobileServiceRecordID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMSuvDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -341,171 +341,6 @@
             this.dgvServiceRecord.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvServiceRecord_DataBindingComplete);
             this.dgvServiceRecord.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvServiceRecord_DataError);
             this.dgvServiceRecord.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvServiceRecord_EditingControlShowing);
-            // 
-            // No
-            // 
-            this.No.HeaderText = "စဉ်";
-            this.No.Name = "No";
-            this.No.Visible = false;
-            this.No.Width = 30;
-            // 
-            // colUsedPlace
-            // 
-            this.colUsedPlace.DataPropertyName = "UsedPlace";
-            this.colUsedPlace.HeaderText = "အသုံးပြု‌နေ‌သော ‌နေရာ";
-            this.colUsedPlace.Items.AddRange(new object[] {
-            "Car",
-            "Inverter",
-            "Forklift",
-            "Generator",
-            "Buggy",
-            "Other"});
-            this.colUsedPlace.Name = "colUsedPlace";
-            this.colUsedPlace.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colUsedPlace.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colMachineNo
-            // 
-            this.colMachineNo.DataPropertyName = "MachineNo";
-            this.colMachineNo.HeaderText = "စက်/ယာဉ်အမှတ်";
-            this.colMachineNo.Name = "colMachineNo";
-            this.colMachineNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colBrand
-            // 
-            this.colBrand.DataPropertyName = "BrandID";
-            this.colBrand.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.colBrand.HeaderText = "အသုံးပြု‌နေ‌သော အမှတ်တံဆိပ်";
-            this.colBrand.Name = "colBrand";
-            this.colBrand.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colBrand.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colBrand.Width = 110;
-            // 
-            // colProduct
-            // 
-            this.colProduct.DataPropertyName = "ProductID";
-            this.colProduct.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.colProduct.HeaderText = "အသုံးပြု‌နေ‌သော ပစ္စည်းအမည်";
-            this.colProduct.Name = "colProduct";
-            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colProduct.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colProduct.Width = 110;
-            // 
-            // colProductionDate
-            // 
-            this.colProductionDate.DataPropertyName = "ProductionDate";
-            this.colProductionDate.HeaderText = "ထုတ်လုပ်သည့် ‌နေ့စွဲ";
-            this.colProductionDate.Name = "colProductionDate";
-            this.colProductionDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colProductionDate.Width = 90;
-            // 
-            // colVolt
-            // 
-            this.colVolt.DataPropertyName = "Volt";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colVolt.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colVolt.HeaderText = "Volt";
-            this.colVolt.Name = "colVolt";
-            this.colVolt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVolt.Width = 50;
-            // 
-            // colChargingAmp
-            // 
-            this.colChargingAmp.DataPropertyName = "ChargingAmp";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colChargingAmp.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colChargingAmp.HeaderText = "Charging In (Amps)";
-            this.colChargingAmp.Name = "colChargingAmp";
-            this.colChargingAmp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colChargingAmp.Width = 80;
-            // 
-            // colOutAmp
-            // 
-            this.colOutAmp.DataPropertyName = "OutAmp";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colOutAmp.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colOutAmp.HeaderText = "Motor Out (Amps)";
-            this.colOutAmp.Name = "colOutAmp";
-            // 
-            // colAcid1
-            // 
-            this.colAcid1.DataPropertyName = "Acid1";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colAcid1.HeaderText = "Acid Level 1";
-            this.colAcid1.Name = "colAcid1";
-            this.colAcid1.Width = 50;
-            // 
-            // colAcid2
-            // 
-            this.colAcid2.DataPropertyName = "Acid2";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colAcid2.HeaderText = "Acid Level 2";
-            this.colAcid2.Name = "colAcid2";
-            this.colAcid2.Width = 50;
-            // 
-            // colAcid3
-            // 
-            this.colAcid3.DataPropertyName = "Acid3";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid3.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colAcid3.HeaderText = "Acid Level 3";
-            this.colAcid3.Name = "colAcid3";
-            this.colAcid3.Width = 50;
-            // 
-            // colAcid4
-            // 
-            this.colAcid4.DataPropertyName = "Acid4";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid4.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colAcid4.HeaderText = "Acid Level 4";
-            this.colAcid4.Name = "colAcid4";
-            this.colAcid4.Width = 50;
-            // 
-            // colAcid5
-            // 
-            this.colAcid5.DataPropertyName = "Acid5";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid5.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colAcid5.HeaderText = "Acid Level 5";
-            this.colAcid5.Name = "colAcid5";
-            this.colAcid5.Width = 50;
-            // 
-            // colAcid6
-            // 
-            this.colAcid6.DataPropertyName = "Acid6";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid6.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colAcid6.HeaderText = "Acid Level 6";
-            this.colAcid6.Name = "colAcid6";
-            this.colAcid6.Width = 50;
-            // 
-            // colServing
-            // 
-            this.colServing.DataPropertyName = "Serving";
-            this.colServing.HeaderText = "Service ‌ပေးခဲ့မှု";
-            this.colServing.Name = "colServing";
-            // 
-            // colMobileServiceRecordID
-            // 
-            this.colMobileServiceRecordID.DataPropertyName = "MobileServiceRecordID";
-            this.colMobileServiceRecordID.HeaderText = "MobileServiceRecordID";
-            this.colMobileServiceRecordID.Name = "colMobileServiceRecordID";
-            this.colMobileServiceRecordID.Visible = false;
-            // 
-            // colMSuvDetailID
-            // 
-            this.colMSuvDetailID.HeaderText = "MSuvDetailID";
-            this.colMSuvDetailID.Name = "colMSuvDetailID";
-            this.colMSuvDetailID.Visible = false;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "Delete";
-            this.colDelete.Image = global::PTIC.Resource.delete;
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Visible = false;
             // 
             // radioButton4
             // 
@@ -1074,6 +909,167 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "Service ‌ပေးခဲ့မှု";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
+            // No
+            // 
+            this.No.HeaderText = "စဉ်";
+            this.No.Name = "No";
+            this.No.Visible = false;
+            this.No.Width = 30;
+            // 
+            // colUsedPlace
+            // 
+            this.colUsedPlace.DataPropertyName = "UsedPlace";
+            this.colUsedPlace.HeaderText = "အသုံးပြု‌နေ‌သော ‌နေရာ";
+            this.colUsedPlace.Items.AddRange(new object[] {
+            "Car",
+            "Inverter",
+            "Forklift",
+            "Generator",
+            "Buggy",
+            "Other"});
+            this.colUsedPlace.Name = "colUsedPlace";
+            this.colUsedPlace.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colUsedPlace.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colMachineNo
+            // 
+            this.colMachineNo.DataPropertyName = "MachineNo";
+            this.colMachineNo.HeaderText = "စက်/ယာဉ်အမှတ်";
+            this.colMachineNo.Name = "colMachineNo";
+            this.colMachineNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colBrand
+            // 
+            this.colBrand.DataPropertyName = "Brand";
+            this.colBrand.HeaderText = "အသုံးပြု‌နေ‌သော အမှတ်တံဆိပ်";
+            this.colBrand.Name = "colBrand";
+            this.colBrand.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colBrand.Width = 110;
+            // 
+            // colProduct
+            // 
+            this.colProduct.DataPropertyName = "Product";
+            this.colProduct.HeaderText = "အသုံးပြု‌နေ‌သော ပစ္စည်းအမည်";
+            this.colProduct.Name = "colProduct";
+            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colProduct.Width = 110;
+            // 
+            // colProductionDate
+            // 
+            this.colProductionDate.DataPropertyName = "ProductionDate";
+            this.colProductionDate.HeaderText = "ထုတ်လုပ်သည့် ‌နေ့စွဲ";
+            this.colProductionDate.Name = "colProductionDate";
+            this.colProductionDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colProductionDate.Width = 90;
+            // 
+            // colVolt
+            // 
+            this.colVolt.DataPropertyName = "Volt";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colVolt.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colVolt.HeaderText = "Volt";
+            this.colVolt.Name = "colVolt";
+            this.colVolt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVolt.Width = 50;
+            // 
+            // colChargingAmp
+            // 
+            this.colChargingAmp.DataPropertyName = "ChargingAmp";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colChargingAmp.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colChargingAmp.HeaderText = "Charging In (Amps)";
+            this.colChargingAmp.Name = "colChargingAmp";
+            this.colChargingAmp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colChargingAmp.Width = 80;
+            // 
+            // colOutAmp
+            // 
+            this.colOutAmp.DataPropertyName = "OutAmp";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colOutAmp.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colOutAmp.HeaderText = "Motor Out (Amps)";
+            this.colOutAmp.Name = "colOutAmp";
+            // 
+            // colAcid1
+            // 
+            this.colAcid1.DataPropertyName = "Acid1";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colAcid1.HeaderText = "Acid Level 1";
+            this.colAcid1.Name = "colAcid1";
+            this.colAcid1.Width = 50;
+            // 
+            // colAcid2
+            // 
+            this.colAcid2.DataPropertyName = "Acid2";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colAcid2.HeaderText = "Acid Level 2";
+            this.colAcid2.Name = "colAcid2";
+            this.colAcid2.Width = 50;
+            // 
+            // colAcid3
+            // 
+            this.colAcid3.DataPropertyName = "Acid3";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid3.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colAcid3.HeaderText = "Acid Level 3";
+            this.colAcid3.Name = "colAcid3";
+            this.colAcid3.Width = 50;
+            // 
+            // colAcid4
+            // 
+            this.colAcid4.DataPropertyName = "Acid4";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid4.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colAcid4.HeaderText = "Acid Level 4";
+            this.colAcid4.Name = "colAcid4";
+            this.colAcid4.Width = 50;
+            // 
+            // colAcid5
+            // 
+            this.colAcid5.DataPropertyName = "Acid5";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid5.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colAcid5.HeaderText = "Acid Level 5";
+            this.colAcid5.Name = "colAcid5";
+            this.colAcid5.Width = 50;
+            // 
+            // colAcid6
+            // 
+            this.colAcid6.DataPropertyName = "Acid6";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid6.DefaultCellStyle = dataGridViewCellStyle10;
+            this.colAcid6.HeaderText = "Acid Level 6";
+            this.colAcid6.Name = "colAcid6";
+            this.colAcid6.Width = 50;
+            // 
+            // colServing
+            // 
+            this.colServing.DataPropertyName = "Serving";
+            this.colServing.HeaderText = "Service ‌ပေးခဲ့မှု";
+            this.colServing.Name = "colServing";
+            // 
+            // colMobileServiceRecordID
+            // 
+            this.colMobileServiceRecordID.DataPropertyName = "MobileServiceRecordID";
+            this.colMobileServiceRecordID.HeaderText = "MobileServiceRecordID";
+            this.colMobileServiceRecordID.Name = "colMobileServiceRecordID";
+            this.colMobileServiceRecordID.Visible = false;
+            // 
+            // colMSuvDetailID
+            // 
+            this.colMSuvDetailID.HeaderText = "MSuvDetailID";
+            this.colMSuvDetailID.Name = "colMSuvDetailID";
+            this.colMSuvDetailID.Visible = false;
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.Image = global::PTIC.Resource.delete;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Visible = false;
+            // 
             // frmMobileServiceDetail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1167,11 +1163,12 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnDeleteServiceRecord;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewComboBoxColumn colUsedPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMachineNo;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colBrand;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBrand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductionDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVolt;
         private System.Windows.Forms.DataGridViewTextBoxColumn colChargingAmp;
@@ -1186,7 +1183,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMobileServiceRecordID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMSuvDetailID;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
-        private System.Windows.Forms.Button btnDeleteServiceRecord;
     }
 }
 

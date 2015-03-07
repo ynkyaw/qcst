@@ -1,5 +1,4 @@
 ﻿using System;
-using PTIC.Common;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
@@ -159,11 +158,8 @@ namespace PTIC.VC.Marketing.A_P
 
         public void LoadNBind()
         {
-            SqlConnection conn = null;
             try
             {
-                conn = DBManager.GetInstance().GetDbConnection();
-                
                 //  GetEnquiryDate
                 DateTime Date = (DateTime)DataTypeParser.Parse(dtpEnquiryDate.Value, typeof(DateTime), DateTime.Now);
                 //  Current Month
@@ -201,7 +197,6 @@ namespace PTIC.VC.Marketing.A_P
                 colAPSubCat.DisplayMember = "APSubCategoryName";
                 colAPSubCat.ValueMember = "AP_SubCategoryID";
 
-
                 bdunfilteredPOSM = new BindingSource();
                 DataView undv = new DataView(dtPOSM);
 
@@ -209,7 +204,6 @@ namespace PTIC.VC.Marketing.A_P
                 colPosm.DataSource = bdunfilteredPOSM;
                 colPosm.DisplayMember = "APMaterialName";
                 colPosm.ValueMember = "AP_MaterialID";
-
 
                 bdfilteredPOSM = new BindingSource();
                 DataView fdv = new DataView(dtPOSM);
@@ -223,10 +217,9 @@ namespace PTIC.VC.Marketing.A_P
                 colAPSubCat.DisplayMember = "APSubCategoryName";
                 colAPSubCat.ValueMember = "AP_SubCategoryID";
             }
-            catch (SqlException Sqle)
+            catch (Exception e)
             {
-
-                throw Sqle;
+                throw e;
             }
         }
 

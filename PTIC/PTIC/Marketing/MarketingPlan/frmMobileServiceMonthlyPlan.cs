@@ -112,26 +112,26 @@ namespace PTIC.VC.Marketing.DailyMarketing
             int? sup = null;
             if (dt == null)
                 return;
-            
+
             MobileServicePlanBL mobileServicePlanSaver = null;
             try
-            {                
+            {
                 mobileServicePlanSaver = new MobileServicePlanBL();
 
                 List<MobileServicePlan> insertMobileServicePlan = new List<MobileServicePlan>();
                 List<MobileServicePlan> updateMobileServicePlan = new List<MobileServicePlan>();
                 List<MobileServicePlan> deleteMobileServicePlan = new List<MobileServicePlan>();
-                
+
                 // insert
                 DataView dvInsert = new DataView(dt, string.Empty, string.Empty, DataViewRowState.Added);
                 foreach (DataRow row in dvInsert.ToTable().Rows)
                 {
                     MobileServicePlan mobileserviceplan = new MobileServicePlan()
                     {
-                         TownshipID = (int)DataTypeParser.Parse(row["ID"].ToString(), typeof(int), -1),
-                         CustomerID = (int)DataTypeParser.Parse(row["CustomerID"].ToString(), typeof(int), -1),
-                         SvcPlanDate = (DateTime)DataTypeParser.Parse(row["SvcPlanDate"].ToString(), typeof(DateTime), null)
-                   
+                        TownshipID = (int)DataTypeParser.Parse(row["ID"].ToString(), typeof(int), -1),
+                        CustomerID = (int)DataTypeParser.Parse(row["CustomerID"].ToString(), typeof(int), -1),
+                        SvcPlanDate = (DateTime)DataTypeParser.Parse(row["SvcPlanDate"].ToString(), typeof(DateTime), null)
+
                     };
 
                     insertMobileServicePlan.Add(mobileserviceplan);
@@ -162,7 +162,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 {
                     MobileServicePlan mobileserviceplan = new MobileServicePlan()
                     {
-                       ID = (int)DataTypeParser.Parse(row["MobileServicePlanID"].ToString(), typeof(int), -1)
+                        ID = (int)DataTypeParser.Parse(row["MobileServicePlanID"].ToString(), typeof(int), -1)
                     };
 
                     if (mobileserviceplan.ID != -1)
@@ -170,8 +170,8 @@ namespace PTIC.VC.Marketing.DailyMarketing
                         deleteMobileServicePlan.Add(mobileserviceplan);
                         MobileServicePlanID = mobileserviceplan.ID;
                         sup = MobileServicePlanDA.DeleteByID(mobileserviceplan);
-                    }            
-                                      
+                    }
+
                 }
 
                 // update
@@ -205,11 +205,11 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     //    updateMobileServicePlan.Add(mobileserviceplan);
                     //    MobileServicePlanID = mobileserviceplan.ID;
                     //}
-                    
+
                 }
 
 
-                 if (MobileServicePlanID == -1) // Add new order and details
+                if (MobileServicePlanID == -1) // Add new order and details
                 {
                     if (insertMobileServicePlan.Count >= 0)
                     {
@@ -267,14 +267,15 @@ namespace PTIC.VC.Marketing.DailyMarketing
                             return;
                         }
                     }
-                    
+
                 }
 
 
-                if (sup.HasValue  && sup.Value >= 0)
+                if (sup.HasValue && sup.Value >= 0)
                 {
                     LoadNBindGrid();
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
+                    btnSave.Enabled = true;
                 }
                 else
                 {
@@ -303,27 +304,27 @@ namespace PTIC.VC.Marketing.DailyMarketing
             int affectedrow = -1;
             if (MessageBox.Show("Are you sure want to delete Row(s)?", "Remove confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
-                int MobileServicePlanID = (int)DataTypeParser.Parse(dgvMobileServicePlan.CurrentRow.Cells["colMobileServicePlanID"].Value,typeof(int),-1);
-                if(MobileServicePlanID != -1)
+                int MobileServicePlanID = (int)DataTypeParser.Parse(dgvMobileServicePlan.CurrentRow.Cells["colMobileServicePlanID"].Value, typeof(int), -1);
+                if (MobileServicePlanID != -1)
                 {
                     MobileServicePlan mobileserviceplan = new MobileServicePlan()
                     {
                         ID = MobileServicePlanID
                     };
                     affectedrow = MobileServicePlanDA.DeleteByID(mobileserviceplan);
-                    foreach (DataGridViewRow item in this.dgvMobileServicePlan.SelectedRows)
+                    if (affectedrow > 0)
                     {
-                        dgvMobileServicePlan.Rows.RemoveAt(item.Index);
-                    }
-
-                    if (affectedrow != -1)
-                    {
+                        foreach (DataGridViewRow item in this.dgvMobileServicePlan.SelectedRows)
+                        {
+                            dgvMobileServicePlan.Rows.RemoveAt(item.Index);
+                        }
                         ClearButton();
                         ToastMessageBox.Show(Resource.errSuccessfullyDeleted);
                     }
                     else
                     {
                         ClearButton();
+                        MessageBox.Show("အသေးစိတ်အချက် အလက်များဖြည့်သွင်းပြီးဖြစ်၍ ဖျက်ခွင့်မရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
                 if (dgvMobileServicePlan.RowCount == 0)
@@ -332,10 +333,10 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     mobileserviceplanTbl.Rows.Add(newRow);
                     this.dgvMobileServicePlan.DataSource = mobileserviceplanTbl;
                 }
-                
+
             }
         }
-        
+
         private void dgvMobileServicePlan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewComboBoxCell currentcmb;
@@ -467,11 +468,11 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     {
                         return base.ProcessCmdKey(ref msg, keyData);
                     }
-                    
+
                     if (iRow + 1 >= dgvMobileServicePlan.Rows.Count)
                     {
                         DataUtil.AddNewRow(dgvMobileServicePlan.DataSource as DataTable);
-                        dgvMobileServicePlan[0, iRow + 1].Selected = true;
+                        dgvMobileServicePlan[dgvColPlanDate.Index, iRow + 1].Selected = true;
                     }
                     else
                     {
@@ -593,10 +594,17 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            btnNew.Enabled = false;
             if (dgvMobileServicePlan == null) return;
+            if (dgvMobileServicePlan.CurrentRow == null)
+            {
+                DataUtil.AddInitialNewRow(dgvMobileServicePlan);
+            }
+            else if ((int)DataTypeParser.Parse(dgvMobileServicePlan.CurrentRow.Cells[colMobileServicePlanID.Index].Value, typeof(int), -1) != -1)
+            {
+                DataUtil.AddNewRow(dgvMobileServicePlan.DataSource as DataTable);
+                dgvMobileServicePlan[dgvColPlanDate.Index, dgvMobileServicePlan.CurrentRow.Index + 1].Selected = true;
+            }
 
-            DataUtil.AddNewRow(dgvMobileServicePlan.DataSource as DataTable);
         }
 
         private void btnReport_Click(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace PTIC.Web.API.Contract
     [ServiceContract]
     public interface IOrderService
     {
+        /*
         [OperationContract]
         [WebInvoke(Method = "POST",
             RequestFormat = WebMessageFormat.Json,
@@ -21,5 +22,14 @@ namespace PTIC.Web.API.Contract
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "order/add")]
         void AddOrder(List<Order> newOrders);
+         */ 
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "order/add")]
+        void AddOrder(Order newOrder, Customer newCustomer);
     }
 }

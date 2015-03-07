@@ -58,11 +58,17 @@ namespace PTIC.Marketing.DA
                 cmd.Parameters.AddWithValue("@p_MSuvDetailID", newMobileServiceRecord.MSuvDetailID);
                 cmd.Parameters["@p_MSuvDetailID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_BrandID", newMobileServiceRecord.BrandID);
-                cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
+                //cmd.Parameters.AddWithValue("@p_BrandID", newMobileServiceRecord.BrandID);
+                //cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_ProductID", newMobileServiceRecord.ProductID);
-                cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
+                //cmd.Parameters.AddWithValue("@p_ProductID", newMobileServiceRecord.ProductID);
+                //cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_Brand", newMobileServiceRecord.Brand);
+                cmd.Parameters["@p_Brand"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_Product", newMobileServiceRecord.Product);
+                cmd.Parameters["@p_Product"].Direction = ParameterDirection.Input;
 
                 cmd.Parameters.AddWithValue("@p_UsedPlace", newMobileServiceRecord.UsedPlace);
                 cmd.Parameters["@p_UsedPlace"].Direction = ParameterDirection.Input;
@@ -129,11 +135,17 @@ namespace PTIC.Marketing.DA
                 cmd.Parameters.AddWithValue("@p_MSuvDetailID", mdMobileServiceRecord.MSuvDetailID);
                 cmd.Parameters["@p_MSuvDetailID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_BrandID", mdMobileServiceRecord.BrandID);
-                cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
+                //cmd.Parameters.AddWithValue("@p_BrandID", mdMobileServiceRecord.BrandID);
+                //cmd.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_ProductID", mdMobileServiceRecord.ProductID);
-                cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
+                //cmd.Parameters.AddWithValue("@p_ProductID", mdMobileServiceRecord.ProductID);
+                //cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_Brand", mdMobileServiceRecord.Brand);
+                cmd.Parameters["@p_Brand"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_Product", mdMobileServiceRecord.Product);
+                cmd.Parameters["@p_Product"].Direction = ParameterDirection.Input;
 
                 cmd.Parameters.AddWithValue("@p_UsedPlace", mdMobileServiceRecord.UsedPlace);
                 cmd.Parameters["@p_UsedPlace"].Direction = ParameterDirection.Input;

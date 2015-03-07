@@ -15,8 +15,10 @@ namespace PTIC.Marketing.Entities
         #region Properties
         public int ID { get; set; }
         public int MSuvDetailID { get; set; }
-        public int BrandID { get; set; }
-        public int ProductID { get; set; }
+        //public int BrandID { get; set; } 
+        //public int ProductID { get; set; } 
+        public string Brand { get; set; }
+        public string Product { get; set; }
         public string UsedPlace { get; set; }
         public string MachineNo { get; set; }
         public string ProductionDate { get; set; }

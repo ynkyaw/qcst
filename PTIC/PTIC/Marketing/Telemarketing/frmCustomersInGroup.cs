@@ -272,6 +272,11 @@ namespace PTIC.Marketing.Telemarketing
                 int iRow = dgvGroupCustomer.CurrentCell.RowIndex;
                 if (iColumn == dgvGroupCustomer.Columns[colAddress.Index].Index)
                 {
+                    if ((int)DataTypeParser.Parse(dgvGroupCustomer.CurrentRow.Cells[colCustomersInGroupID.Index].Value, typeof(int), -1) == -1)
+                    {
+                        return base.ProcessCmdKey(ref msg, keyData);
+                    }
+
                     if (iRow + 1 >= dgvGroupCustomer.Rows.Count)
                     {
                         DataTable dtAPEnquiry = dgvGroupCustomer.DataSource as DataTable;
@@ -302,8 +307,17 @@ namespace PTIC.Marketing.Telemarketing
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            DataUtil.AddNewRow(dgvGroupCustomer.DataSource as DataTable);
-            dgvGroupCustomer.CurrentCell = dgvGroupCustomer.Rows[dgvGroupCustomer.Rows.Count - 1].Cells[0];
+            if (dgvGroupCustomer.CurrentRow == null)
+            {
+                DataUtil.AddInitialNewRow(dgvGroupCustomer);
+            }
+            else if ((int)DataTypeParser.Parse(dgvGroupCustomer.CurrentRow.Cells[colCustomersInGroupID.Index].Value, typeof(int), -1) != -1)
+            {
+                DataUtil.AddNewRow(dgvGroupCustomer.DataSource as DataTable);
+                dgvGroupCustomer.CurrentCell = dgvGroupCustomer.Rows[dgvGroupCustomer.Rows.Count - 1].Cells[0];
+            }
+
+           
         }
 
         private void dgvGroupCustomer_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -339,7 +353,7 @@ namespace PTIC.Marketing.Telemarketing
         {
             var dgv = sender as DataGridView;
 
-            if (e.ColumnIndex == colCustomerName.Index && IsInitial == false)
+            if ((e.ColumnIndex == colCustomerName.Index || e.ColumnIndex == colCustomerType.Index || e.ColumnIndex == colPhone.Index || e.ColumnIndex == colAddress.Index) && IsInitial == false)
             {
                 foreach (DataRow r in dtGroupCustomer.Rows)
                 {

@@ -30,9 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvMobileServicePlan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.lblMarketing = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.dgvMobileServicePlan = new System.Windows.Forms.DataGridView();
             this.colMobileServicePlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSvcNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColPlanDate = new AGL.UI.Controls.CalendarColumn();
@@ -61,8 +61,8 @@
             this.dgvColCusName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgvColContactPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMobileServicePlan)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReport
@@ -127,7 +127,7 @@
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEndDate.Location = new System.Drawing.Point(209, 51);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(158, 25);
+            this.dtpEndDate.Size = new System.Drawing.Size(158, 28);
             this.dtpEndDate.TabIndex = 134;
             // 
             // label3
@@ -145,7 +145,7 @@
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStartDate.Location = new System.Drawing.Point(11, 50);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(158, 25);
+            this.dtpStartDate.Size = new System.Drawing.Size(158, 28);
             this.dtpStartDate.TabIndex = 132;
             // 
             // label1
@@ -154,9 +154,52 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label1.Location = new System.Drawing.Point(377, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 19);
+            this.label1.Size = new System.Drawing.Size(133, 20);
             this.label1.TabIndex = 131;
             this.label1.Text = "ထိ ဈေးကွက်အစီအစဉ်";
+            // 
+            // dgvMobileServicePlan
+            // 
+            this.dgvMobileServicePlan.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvMobileServicePlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMobileServicePlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMobileServicePlan.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMobileServicePlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMobileServicePlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMobileServicePlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMobileServicePlanID,
+            this.dgvSvcNo,
+            this.dgvColPlanDate,
+            this.dgvColTownship,
+            this.dgvColCusType,
+            this.dgvColCusName,
+            this.dgvColContactPerson,
+            this.dgvColPhone});
+            this.dgvMobileServicePlan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvMobileServicePlan.Location = new System.Drawing.Point(11, 85);
+            this.dgvMobileServicePlan.MultiSelect = false;
+            this.dgvMobileServicePlan.Name = "dgvMobileServicePlan";
+            this.dgvMobileServicePlan.RowHeadersWidth = 50;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvMobileServicePlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMobileServicePlan.RowTemplate.Height = 28;
+            this.dgvMobileServicePlan.Size = new System.Drawing.Size(1216, 501);
+            this.dgvMobileServicePlan.TabIndex = 141;
+            this.dgvMobileServicePlan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMobileServicePlan_CellClick);
+            this.dgvMobileServicePlan.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMobileServicePlan_CellLeave);
+            this.dgvMobileServicePlan.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvMobileServicePlan_DataBindingComplete);
+            this.dgvMobileServicePlan.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvMobileServicePlan_DataError);
+            this.dgvMobileServicePlan.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvMobileServicePlan_EditingControlShowing);
             // 
             // panel2
             // 
@@ -166,7 +209,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1107, 44);
+            this.panel2.Size = new System.Drawing.Size(1243, 44);
             this.panel2.TabIndex = 142;
             // 
             // lblHeaderPCat
@@ -203,9 +246,9 @@
             // calendarColumn1
             // 
             this.calendarColumn1.DataPropertyName = "SvcPlanDate";
-            dataGridViewCellStyle1.Format = "dd-MMM-yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.calendarColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle5.NullValue = null;
+            this.calendarColumn1.DefaultCellStyle = dataGridViewCellStyle5;
             this.calendarColumn1.HeaderText = "သြားရမည့္ေန႕";
             this.calendarColumn1.Name = "calendarColumn1";
             this.calendarColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -254,46 +297,6 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // dgvMobileServicePlan
-            // 
-            this.dgvMobileServicePlan.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvMobileServicePlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMobileServicePlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMobileServicePlan.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMobileServicePlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvMobileServicePlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMobileServicePlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMobileServicePlanID,
-            this.dgvSvcNo,
-            this.dgvColPlanDate,
-            this.dgvColTownship,
-            this.dgvColCusType,
-            this.dgvColCusName,
-            this.dgvColContactPerson,
-            this.dgvColPhone});
-            this.dgvMobileServicePlan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvMobileServicePlan.Location = new System.Drawing.Point(11, 89);
-            this.dgvMobileServicePlan.MultiSelect = false;
-            this.dgvMobileServicePlan.Name = "dgvMobileServicePlan";
-            this.dgvMobileServicePlan.RowHeadersWidth = 50;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvMobileServicePlan.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvMobileServicePlan.RowTemplate.Height = 28;
-            this.dgvMobileServicePlan.Size = new System.Drawing.Size(1084, 501);
-            this.dgvMobileServicePlan.TabIndex = 155;
-            this.dgvMobileServicePlan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMobileServicePlan_CellClick);
-            this.dgvMobileServicePlan.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMobileServicePlan_CellLeave);
-            // 
             // colMobileServicePlanID
             // 
             this.colMobileServicePlanID.DataPropertyName = "MobileServicePlanID";
@@ -312,9 +315,9 @@
             // dgvColPlanDate
             // 
             this.dgvColPlanDate.DataPropertyName = "SvcPlanDate";
-            dataGridViewCellStyle4.Format = "dd-MMM-yyyy";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dgvColPlanDate.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dgvColPlanDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvColPlanDate.HeaderText = "သွားရမည့်နေ့";
             this.dgvColPlanDate.Name = "dgvColPlanDate";
             this.dgvColPlanDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -368,13 +371,13 @@
             // 
             // frmMobileServiceMonthlyPlan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 634);
-            this.Controls.Add(this.dgvMobileServicePlan);
+            this.ClientSize = new System.Drawing.Size(1243, 634);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dgvMobileServicePlan);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnSave);
@@ -392,9 +395,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mobile Service Plan";
             this.Load += new System.EventHandler(this.frmMobileServiceMonthlyPlan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMobileServicePlan)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMobileServicePlan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,6 +414,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvMobileServicePlan;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblHeaderPCat;
         private System.Windows.Forms.Label lblMarketing;
@@ -421,7 +425,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.DataGridView dgvMobileServicePlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMobileServicePlanID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSvcNo;
         private AGL.UI.Controls.CalendarColumn dgvColPlanDate;
