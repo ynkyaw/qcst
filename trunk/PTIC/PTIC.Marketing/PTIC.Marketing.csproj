@@ -146,6 +146,7 @@
     <Compile Include="DA\AP_SubCategoryDA.cs" />
     <Compile Include="DA\A_P_UsageDA.cs" />
     <Compile Include="DA\A_P_UsageDetailDA.cs" />
+    <Compile Include="DA\CompanyPlanDAO.cs" />
     <Compile Include="DA\CompetitorBrandInMarketingDetailDA.cs" />
     <Compile Include="DA\CompetitorDA.cs" />
     <Compile Include="DA\CompetitorActivityDA.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Entities\A_P_Type.cs" />
     <Compile Include="Entities\A_P_Usage.cs" />
     <Compile Include="Entities\A_P_UsageDetail.cs" />
+    <Compile Include="Entities\CompanyPlan.cs" />
     <Compile Include="Entities\Competitor.cs" />
     <Compile Include="Entities\CompetitorActivity.cs" />
     <Compile Include="Entities\CompetitorBrandInMarketingDetail.cs" />

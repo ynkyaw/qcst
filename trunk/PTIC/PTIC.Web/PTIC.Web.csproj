@@ -106,6 +106,7 @@
     <Compile Include="API\Contract\Data\CommDiscount.cs" />
     <Compile Include="API\Contract\Data\CompetitorBrand.cs" />
     <Compile Include="API\Contract\Data\Employee.cs" />
+    <Compile Include="API\Contract\Data\SalesReturn.cs" />
     <Compile Include="API\Contract\Data\Tax.cs" />
     <Compile Include="API\Contract\Data\Vehicle.cs" />
     <Compile Include="API\Contract\IAP_MaterialService.cs" />

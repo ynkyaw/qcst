@@ -361,7 +361,6 @@
             this.dgvTripPlanDetail.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTripPlanDetail_DataBindingComplete);
             this.dgvTripPlanDetail.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTripPlanDetail_DataError);
             this.dgvTripPlanDetail.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTripPlanDetail_RowHeaderMouseDoubleClick);
-            //this.dgvTripPlanDetail.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvTripPlanDetail_RowPostPaint);
             // 
             // clnTripPlanNo
             // 
@@ -505,6 +504,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(1109, 71);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
