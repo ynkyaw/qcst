@@ -32,21 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -62,10 +47,52 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHProduct = new System.Windows.Forms.Label();
             this.lblSetup = new System.Windows.Forms.Label();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrandID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFormula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFormulaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsedPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNoPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMinOrderQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConLength = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConThick = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmps = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFreeConWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLeadWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHasDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -95,33 +122,6 @@
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBrandID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFormula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFormulaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsedPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNoPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMinOrderQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConLength = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConThick = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmps = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFreeConWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLeadWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHasDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
@@ -211,7 +211,7 @@
             this.colLeadWeight,
             this.colRemark,
             this.colHasDiscount});
-            this.dgvProduct.Location = new System.Drawing.Point(12, 60);
+            this.dgvProduct.Location = new System.Drawing.Point(17, 49);
             this.dgvProduct.MinimumSize = new System.Drawing.Size(939, 472);
             this.dgvProduct.MultiSelect = false;
             this.dgvProduct.Name = "dgvProduct";
@@ -232,6 +232,281 @@
             this.dgvProduct.Size = new System.Drawing.Size(939, 472);
             this.dgvProduct.TabIndex = 53;
             this.dgvProduct.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvProduct_RowPostPaint);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.No.DefaultCellStyle = dataGridViewCellStyle3;
+            this.No.HeaderText = "စဉ်";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 44;
+            // 
+            // colProductID
+            // 
+            this.colProductID.DataPropertyName = "ProductID";
+            this.colProductID.HeaderText = "Product ID";
+            this.colProductID.Name = "colProductID";
+            this.colProductID.ReadOnly = true;
+            this.colProductID.Visible = false;
+            // 
+            // colBrandID
+            // 
+            this.colBrandID.DataPropertyName = "BrandID";
+            this.colBrandID.HeaderText = "Brand ID";
+            this.colBrandID.Name = "colBrandID";
+            this.colBrandID.ReadOnly = true;
+            this.colBrandID.Visible = false;
+            // 
+            // colCategoryID
+            // 
+            this.colCategoryID.DataPropertyName = "CategoryID";
+            this.colCategoryID.HeaderText = "Category ID";
+            this.colCategoryID.Name = "colCategoryID";
+            this.colCategoryID.ReadOnly = true;
+            this.colCategoryID.Visible = false;
+            // 
+            // colSubCategoryID
+            // 
+            this.colSubCategoryID.DataPropertyName = "SubCategoryID";
+            this.colSubCategoryID.HeaderText = "SubCategory ID";
+            this.colSubCategoryID.Name = "colSubCategoryID";
+            this.colSubCategoryID.ReadOnly = true;
+            this.colSubCategoryID.Visible = false;
+            // 
+            // colFormula
+            // 
+            this.colFormula.DataPropertyName = "Formula";
+            this.colFormula.HeaderText = "Formula";
+            this.colFormula.Name = "colFormula";
+            this.colFormula.ReadOnly = true;
+            this.colFormula.Visible = false;
+            // 
+            // colFormulaID
+            // 
+            this.colFormulaID.DataPropertyName = "ConvertFormulaID";
+            this.colFormulaID.HeaderText = "";
+            this.colFormulaID.Name = "colFormulaID";
+            this.colFormulaID.ReadOnly = true;
+            this.colFormulaID.Visible = false;
+            // 
+            // colProductCode
+            // 
+            this.colProductCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colProductCode.DataPropertyName = "ProductCode";
+            this.colProductCode.HeaderText = "Product Code";
+            this.colProductCode.Name = "colProductCode";
+            this.colProductCode.ReadOnly = true;
+            this.colProductCode.Visible = false;
+            // 
+            // colBrandName
+            // 
+            this.colBrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colBrandName.DataPropertyName = "BrandName";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.colBrandName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colBrandName.HeaderText = "ကုန်အမှတ်တံဆိပ်";
+            this.colBrandName.Name = "colBrandName";
+            this.colBrandName.ReadOnly = true;
+            this.colBrandName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colBrandName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colBrandName.Width = 54;
+            // 
+            // colCategory
+            // 
+            this.colCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colCategory.DataPropertyName = "CategoryName";
+            this.colCategory.HeaderText = "ထုတ်ကုန်အမျိုးအစား";
+            this.colCategory.Name = "colCategory";
+            this.colCategory.ReadOnly = true;
+            this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCategory.Width = 71;
+            // 
+            // colSubCategory
+            // 
+            this.colSubCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colSubCategory.DataPropertyName = "SubCategoryName";
+            this.colSubCategory.HeaderText = "ထုတ်ကုန်အမျိုးအစားခွဲ";
+            this.colSubCategory.Name = "colSubCategory";
+            this.colSubCategory.ReadOnly = true;
+            this.colSubCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSubCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSubCategory.Width = 71;
+            // 
+            // colProductName
+            // 
+            this.colProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colProductName.DataPropertyName = "ProductName";
+            this.colProductName.HeaderText = "ထုတ်ကုန်";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.ReadOnly = true;
+            this.colProductName.Width = 61;
+            // 
+            // colUsedPlace
+            // 
+            this.colUsedPlace.DataPropertyName = "UsedPlace";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colUsedPlace.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colUsedPlace.HeaderText = "အသုံးပြုသည့်‌နေရာ";
+            this.colUsedPlace.Name = "colUsedPlace";
+            this.colUsedPlace.ReadOnly = true;
+            // 
+            // colNoPerPack
+            // 
+            this.colNoPerPack.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colNoPerPack.DataPropertyName = "NoPerPack";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNoPerPack.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colNoPerPack.HeaderText = "ပါကင်သတ်မှတ်ချက်";
+            this.colNoPerPack.Name = "colNoPerPack";
+            this.colNoPerPack.ReadOnly = true;
+            this.colNoPerPack.Width = 70;
+            // 
+            // colMinOrderQty
+            // 
+            this.colMinOrderQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colMinOrderQty.DataPropertyName = "MinOrderQty";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colMinOrderQty.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colMinOrderQty.HeaderText = "အနည်းဆုံးလက်ကျန်";
+            this.colMinOrderQty.Name = "colMinOrderQty";
+            this.colMinOrderQty.ReadOnly = true;
+            this.colMinOrderQty.Width = 84;
+            // 
+            // colConLength
+            // 
+            this.colConLength.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colConLength.DataPropertyName = "ConLength";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colConLength.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colConLength.HeaderText = "အိုးအလျား";
+            this.colConLength.Name = "colConLength";
+            this.colConLength.ReadOnly = true;
+            this.colConLength.Width = 73;
+            // 
+            // colConBase
+            // 
+            this.colConBase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colConBase.DataPropertyName = "ConBase";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colConBase.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colConBase.HeaderText = "အိုးအနံ";
+            this.colConBase.Name = "colConBase";
+            this.colConBase.ReadOnly = true;
+            this.colConBase.Width = 53;
+            // 
+            // colConHeight
+            // 
+            this.colConHeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colConHeight.DataPropertyName = "ConHeight";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colConHeight.DefaultCellStyle = dataGridViewCellStyle10;
+            this.colConHeight.HeaderText = "အိုးအမြင့်";
+            this.colConHeight.Name = "colConHeight";
+            this.colConHeight.ReadOnly = true;
+            this.colConHeight.Width = 61;
+            // 
+            // colConThick
+            // 
+            this.colConThick.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colConThick.DataPropertyName = "ConThick";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colConThick.DefaultCellStyle = dataGridViewCellStyle11;
+            this.colConThick.HeaderText = "အိုးအထူ";
+            this.colConThick.Name = "colConThick";
+            this.colConThick.ReadOnly = true;
+            this.colConThick.Width = 63;
+            // 
+            // colVolt
+            // 
+            this.colVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colVolt.DataPropertyName = "Volt";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colVolt.DefaultCellStyle = dataGridViewCellStyle12;
+            this.colVolt.HeaderText = "Volt";
+            this.colVolt.Name = "colVolt";
+            this.colVolt.ReadOnly = true;
+            this.colVolt.Width = 61;
+            // 
+            // colPlate
+            // 
+            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colPlate.DataPropertyName = "Plate";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPlate.DefaultCellStyle = dataGridViewCellStyle13;
+            this.colPlate.HeaderText = "ဆဲလ်တစ်ခုရှိ Plate ပြား";
+            this.colPlate.Name = "colPlate";
+            this.colPlate.ReadOnly = true;
+            this.colPlate.Width = 117;
+            // 
+            // colAmps
+            // 
+            this.colAmps.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colAmps.DataPropertyName = "Amps";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = "0.00";
+            this.colAmps.DefaultCellStyle = dataGridViewCellStyle14;
+            this.colAmps.HeaderText = "အားသွင်းရန် Amps";
+            this.colAmps.Name = "colAmps";
+            this.colAmps.ReadOnly = true;
+            this.colAmps.Width = 84;
+            // 
+            // colAcid
+            // 
+            this.colAcid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colAcid.DataPropertyName = "Acid";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "N2";
+            this.colAcid.DefaultCellStyle = dataGridViewCellStyle15;
+            this.colAcid.HeaderText = "Acid မပါအ‌လေးချိန်";
+            this.colAcid.Name = "colAcid";
+            this.colAcid.ReadOnly = true;
+            this.colAcid.Width = 83;
+            // 
+            // colFreeConWeight
+            // 
+            this.colFreeConWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colFreeConWeight.DataPropertyName = "FreeConWeight";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "N2";
+            this.colFreeConWeight.DefaultCellStyle = dataGridViewCellStyle16;
+            this.colFreeConWeight.HeaderText = "လိုအပ်‌သော Acid";
+            this.colFreeConWeight.Name = "colFreeConWeight";
+            this.colFreeConWeight.ReadOnly = true;
+            this.colFreeConWeight.Width = 105;
+            // 
+            // colLeadWeight
+            // 
+            this.colLeadWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colLeadWeight.DataPropertyName = "LeadWeight";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "N2";
+            this.colLeadWeight.DefaultCellStyle = dataGridViewCellStyle17;
+            this.colLeadWeight.HeaderText = "ခဲအ‌လေးချိန်";
+            this.colLeadWeight.Name = "colLeadWeight";
+            this.colLeadWeight.ReadOnly = true;
+            this.colLeadWeight.Width = 74;
+            // 
+            // colRemark
+            // 
+            this.colRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colRemark.DataPropertyName = "Remark";
+            this.colRemark.HeaderText = "မှတ်ချက်";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.ReadOnly = true;
+            this.colRemark.Width = 56;
+            // 
+            // colHasDiscount
+            // 
+            this.colHasDiscount.DataPropertyName = "hasDiscount";
+            this.colHasDiscount.HeaderText = "Discount";
+            this.colHasDiscount.Name = "colHasDiscount";
+            this.colHasDiscount.ReadOnly = true;
+            this.colHasDiscount.Visible = false;
             // 
             // btnEdit
             // 
@@ -534,282 +809,6 @@
             this.dataGridViewTextBoxColumn26.HeaderText = "မှတ်ချက်";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
             this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.No.DefaultCellStyle = dataGridViewCellStyle3;
-            this.No.HeaderText = "စဉ်";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.Width = 47;
-            // 
-            // colProductID
-            // 
-            this.colProductID.DataPropertyName = "ProductID";
-            this.colProductID.HeaderText = "Product ID";
-            this.colProductID.Name = "colProductID";
-            this.colProductID.ReadOnly = true;
-            this.colProductID.Visible = false;
-            // 
-            // colBrandID
-            // 
-            this.colBrandID.DataPropertyName = "BrandID";
-            this.colBrandID.HeaderText = "Brand ID";
-            this.colBrandID.Name = "colBrandID";
-            this.colBrandID.ReadOnly = true;
-            this.colBrandID.Visible = false;
-            // 
-            // colCategoryID
-            // 
-            this.colCategoryID.DataPropertyName = "CategoryID";
-            this.colCategoryID.HeaderText = "Category ID";
-            this.colCategoryID.Name = "colCategoryID";
-            this.colCategoryID.ReadOnly = true;
-            this.colCategoryID.Visible = false;
-            // 
-            // colSubCategoryID
-            // 
-            this.colSubCategoryID.DataPropertyName = "SubCategoryID";
-            this.colSubCategoryID.HeaderText = "SubCategory ID";
-            this.colSubCategoryID.Name = "colSubCategoryID";
-            this.colSubCategoryID.ReadOnly = true;
-            this.colSubCategoryID.Visible = false;
-            // 
-            // colFormula
-            // 
-            this.colFormula.DataPropertyName = "Formula";
-            this.colFormula.HeaderText = "Formula";
-            this.colFormula.Name = "colFormula";
-            this.colFormula.ReadOnly = true;
-            this.colFormula.Visible = false;
-            // 
-            // colFormulaID
-            // 
-            this.colFormulaID.DataPropertyName = "ConvertFormulaID";
-            this.colFormulaID.HeaderText = "";
-            this.colFormulaID.Name = "colFormulaID";
-            this.colFormulaID.ReadOnly = true;
-            this.colFormulaID.Visible = false;
-            // 
-            // colProductCode
-            // 
-            this.colProductCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colProductCode.DataPropertyName = "ProductCode";
-            this.colProductCode.HeaderText = "Product Code";
-            this.colProductCode.Name = "colProductCode";
-            this.colProductCode.ReadOnly = true;
-            this.colProductCode.Visible = false;
-            this.colProductCode.Width = 113;
-            // 
-            // colBrandName
-            // 
-            this.colBrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colBrandName.DataPropertyName = "BrandName";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.colBrandName.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colBrandName.HeaderText = "ကုန်အမှတ်တံဆိပ်";
-            this.colBrandName.Name = "colBrandName";
-            this.colBrandName.ReadOnly = true;
-            this.colBrandName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colBrandName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colBrandName.Width = 89;
-            // 
-            // colCategory
-            // 
-            this.colCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colCategory.DataPropertyName = "CategoryName";
-            this.colCategory.HeaderText = "ထုတ်ကုန်အမျိုးအစား";
-            this.colCategory.Name = "colCategory";
-            this.colCategory.ReadOnly = true;
-            this.colCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCategory.Width = 71;
-            // 
-            // colSubCategory
-            // 
-            this.colSubCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colSubCategory.DataPropertyName = "SubCategoryName";
-            this.colSubCategory.HeaderText = "ထုတ်ကုန်အမျိုးအစားခွဲ";
-            this.colSubCategory.Name = "colSubCategory";
-            this.colSubCategory.ReadOnly = true;
-            this.colSubCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSubCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSubCategory.Width = 71;
-            // 
-            // colProductName
-            // 
-            this.colProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colProductName.DataPropertyName = "ProductName";
-            this.colProductName.HeaderText = "ထုတ်ကုန်";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.ReadOnly = true;
-            this.colProductName.Width = 61;
-            // 
-            // colUsedPlace
-            // 
-            this.colUsedPlace.DataPropertyName = "UsedPlace";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colUsedPlace.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colUsedPlace.HeaderText = "အသုံးပြုသည့်‌နေရာ";
-            this.colUsedPlace.Name = "colUsedPlace";
-            this.colUsedPlace.ReadOnly = true;
-            // 
-            // colNoPerPack
-            // 
-            this.colNoPerPack.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colNoPerPack.DataPropertyName = "NoPerPack";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNoPerPack.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colNoPerPack.HeaderText = "ပါကင်သတ်မှတ်ချက်";
-            this.colNoPerPack.Name = "colNoPerPack";
-            this.colNoPerPack.ReadOnly = true;
-            this.colNoPerPack.Width = 70;
-            // 
-            // colMinOrderQty
-            // 
-            this.colMinOrderQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colMinOrderQty.DataPropertyName = "MinOrderQty";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colMinOrderQty.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colMinOrderQty.HeaderText = "အနည်းဆုံးလက်ကျန်";
-            this.colMinOrderQty.Name = "colMinOrderQty";
-            this.colMinOrderQty.ReadOnly = true;
-            this.colMinOrderQty.Width = 65;
-            // 
-            // colConLength
-            // 
-            this.colConLength.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colConLength.DataPropertyName = "ConLength";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colConLength.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colConLength.HeaderText = "အိုးအလျား";
-            this.colConLength.Name = "colConLength";
-            this.colConLength.ReadOnly = true;
-            this.colConLength.Width = 73;
-            // 
-            // colConBase
-            // 
-            this.colConBase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colConBase.DataPropertyName = "ConBase";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colConBase.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colConBase.HeaderText = "အိုးအနံ";
-            this.colConBase.Name = "colConBase";
-            this.colConBase.ReadOnly = true;
-            this.colConBase.Width = 47;
-            // 
-            // colConHeight
-            // 
-            this.colConHeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colConHeight.DataPropertyName = "ConHeight";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colConHeight.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colConHeight.HeaderText = "အိုးအမြင့်";
-            this.colConHeight.Name = "colConHeight";
-            this.colConHeight.ReadOnly = true;
-            this.colConHeight.Width = 49;
-            // 
-            // colConThick
-            // 
-            this.colConThick.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colConThick.DataPropertyName = "ConThick";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colConThick.DefaultCellStyle = dataGridViewCellStyle11;
-            this.colConThick.HeaderText = "အိုးအထူ";
-            this.colConThick.Name = "colConThick";
-            this.colConThick.ReadOnly = true;
-            this.colConThick.Width = 53;
-            // 
-            // colVolt
-            // 
-            this.colVolt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colVolt.DataPropertyName = "Volt";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colVolt.DefaultCellStyle = dataGridViewCellStyle12;
-            this.colVolt.HeaderText = "Volt";
-            this.colVolt.Name = "colVolt";
-            this.colVolt.ReadOnly = true;
-            this.colVolt.Width = 61;
-            // 
-            // colPlate
-            // 
-            this.colPlate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colPlate.DataPropertyName = "Plate";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colPlate.DefaultCellStyle = dataGridViewCellStyle13;
-            this.colPlate.HeaderText = "ဆဲလ်တစ်ခုရှိ Plate ပြား";
-            this.colPlate.Name = "colPlate";
-            this.colPlate.ReadOnly = true;
-            this.colPlate.Width = 83;
-            // 
-            // colAmps
-            // 
-            this.colAmps.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colAmps.DataPropertyName = "Amps";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = "0.00";
-            this.colAmps.DefaultCellStyle = dataGridViewCellStyle14;
-            this.colAmps.HeaderText = "အားသွင်းရန် Amps";
-            this.colAmps.Name = "colAmps";
-            this.colAmps.ReadOnly = true;
-            this.colAmps.Width = 69;
-            // 
-            // colAcid
-            // 
-            this.colAcid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colAcid.DataPropertyName = "Acid";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "N2";
-            this.colAcid.DefaultCellStyle = dataGridViewCellStyle15;
-            this.colAcid.HeaderText = "Acid မပါအ‌လေးချိန်";
-            this.colAcid.Name = "colAcid";
-            this.colAcid.ReadOnly = true;
-            this.colAcid.Width = 74;
-            // 
-            // colFreeConWeight
-            // 
-            this.colFreeConWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colFreeConWeight.DataPropertyName = "FreeConWeight";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "N2";
-            this.colFreeConWeight.DefaultCellStyle = dataGridViewCellStyle16;
-            this.colFreeConWeight.HeaderText = "လိုအပ်‌သော Acid";
-            this.colFreeConWeight.Name = "colFreeConWeight";
-            this.colFreeConWeight.ReadOnly = true;
-            this.colFreeConWeight.Width = 79;
-            // 
-            // colLeadWeight
-            // 
-            this.colLeadWeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colLeadWeight.DataPropertyName = "LeadWeight";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "N2";
-            this.colLeadWeight.DefaultCellStyle = dataGridViewCellStyle17;
-            this.colLeadWeight.HeaderText = "ခဲအ‌လေးချိန်";
-            this.colLeadWeight.Name = "colLeadWeight";
-            this.colLeadWeight.ReadOnly = true;
-            this.colLeadWeight.Width = 59;
-            // 
-            // colRemark
-            // 
-            this.colRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colRemark.DataPropertyName = "Remark";
-            this.colRemark.HeaderText = "မှတ်ချက်";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
-            this.colRemark.Width = 56;
-            // 
-            // colHasDiscount
-            // 
-            this.colHasDiscount.DataPropertyName = "hasDiscount";
-            this.colHasDiscount.HeaderText = "Discount";
-            this.colHasDiscount.Name = "colHasDiscount";
-            this.colHasDiscount.ReadOnly = true;
-            this.colHasDiscount.Visible = false;
             // 
             // frmProducts
             // 
