@@ -30,7 +30,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             LoadingDataGrid();
             SqlConnection conn = null;
             conn = DBManager.GetInstance().GetDbConnection();
-            DataTable  CompanyPlanTbl = new CompanyPlanBL().GetAll();
+            DataTable CompanyPlanTbl = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
 
             dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
             dgvCompanyPlan.DataSource = CompanyPlanTbl;
