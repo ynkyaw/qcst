@@ -86,7 +86,7 @@ namespace PTIC.VC.Sale.CashCollection
         public frmReceipt(string InvoiceNo)
         {
             InitializeComponent();
-            //LoadNBindInvoiceProductList(InvoiceNo);
+            LoadNBindInvoiceProductList(InvoiceNo);
             txtInvoiceNo.Text = InvoiceNo;
         }
 
@@ -112,6 +112,7 @@ namespace PTIC.VC.Sale.CashCollection
                 if (dtSaleDetail.Rows.Count > 0)
                 {
                     dgvReceipt.DataSource = dtSaleDetail;
+
                     txtTown.Text = (string)DataTypeParser.Parse(dtSaleDetail.Rows[0]["Town"].ToString(), typeof(string), null);
                     txtCusName.Text = (string)DataTypeParser.Parse(dtSaleDetail.Rows[0]["CusName"].ToString(), typeof(string), null);
                     txtContactPerson.Text = (string)DataTypeParser.Parse(dtSaleDetail.Rows[0]["ConPersonName"].ToString(), typeof(string), null);
