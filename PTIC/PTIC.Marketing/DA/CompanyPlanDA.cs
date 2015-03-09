@@ -208,6 +208,7 @@ namespace PTIC.Marketing.DA
 
                 foreach (CompanyPlan newCompanyPlan in CompanyPlan)
                 {
+                    cmd.Parameters.AddWithValue("@TownshipId", newCompanyPlan.TownshipID);
                     cmd.Parameters.AddWithValue("@CompanyPlanNo", newCompanyPlan.CompanyPanNo);
                     cmd.Parameters.AddWithValue("@TargetedDate", newCompanyPlan.TargetedDate);
                     cmd.Parameters.AddWithValue("@CustomerId", newCompanyPlan.CustomerID);
@@ -216,8 +217,9 @@ namespace PTIC.Marketing.DA
                     cmd.Parameters.AddWithValue("@CreatedDate", newCompanyPlan.IsConfirmed);
                     cmd.Parameters.AddWithValue("@LastModifedDate", newCompanyPlan.LastModifiedDate);
                     cmd.Parameters.AddWithValue("@IsDeleted", newCompanyPlan.IsDeleted);
-                    cmd.Parameters.Clear();
+                    
                     affectedrow += cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
                 }
                 transaction.Commit();
                 return affectedrow;
@@ -230,37 +232,30 @@ namespace PTIC.Marketing.DA
         #endregion
 
         #region UPDATE CompanyPlan
-        public static int? UpdateCompanyPlanByID(List<CompanyPlan> CompanyPlan)
+        public static int? UpdateCompanyPlanByID(CompanyPlan CompanyPlan)
         {
+            int affectedrow = 0;
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = DBManager.GetInstance().GetDbConnection();
-                int affectedrow = 0;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "usp_CompanyPlanUpdateByID";
 
-                foreach (CompanyPlan newCompanyPlan in CompanyPlan)
-                {
+                cmd.CommandText = "UPDATE COMPANYPLAN SET [TargetedDate]=@p_TargetedDate, [TownshipId]=@p_TownshipID,[CustomerId]=@p_CusID WHERE ID=@p_CompanyPlanID";
 
-                    cmd.Parameters.AddWithValue("@p_CompanyPlanID", newCompanyPlan.Id);
-                    cmd.Parameters["@p_CompanyPlanID"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_TargetedDate", CompanyPlan.CustomerID);
+                cmd.Parameters["@p_TargetedDate"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_TownshipID", newCompanyPlan.TownshipID);
-                    cmd.Parameters["@p_TownshipID"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_CompanyPlanID", CompanyPlan.Id);
+                cmd.Parameters["@p_CompanyPlanID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_CusID", newCompanyPlan.CustomerID);
-                    cmd.Parameters["@p_CusID"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_TownshipID", CompanyPlan.TownshipID);
+                cmd.Parameters["@p_TownshipID"].Direction = ParameterDirection.Input;
 
-                    //cmd.Parameters.AddWithValue("@p_SvcPlanNo", CompanyPlan.SvcPlanNo);
-                    //cmd.Parameters["@p_SvcPlanNo"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_CusID", CompanyPlan.CustomerID);
+                cmd.Parameters["@p_CusID"].Direction = ParameterDirection.Input;
 
-                    //cmd.Parameters.AddWithValue("@p_SvcPlanDate", newCompanyPlan.SvcPlanDate);
-                    //cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
-
-                    affectedrow += cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                }
+                affectedrow = cmd.ExecuteNonQuery();
+                
                 return affectedrow;
             }
             catch (SqlException sqle)
@@ -332,13 +327,8 @@ namespace PTIC.Marketing.DA
                 SqlCommand cmd = new SqlCommand();
                 SqlConnection conn = DBManager.GetInstance().GetDbConnection();
                 cmd.Connection = conn;
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "usp_CompanyPlanDeleteByID";
-
-                cmd.Parameters.AddWithValue("@p_MobileServiePlanID", CompanyPlan.Id);
-                cmd.Parameters["@p_MobileServiePlanID"].Direction = ParameterDirection.Input;
-
+                cmd.CommandText = "DELETE  FROM CompanyPlan WHERE ID = @p_Id";
+                cmd.Parameters.AddWithValue("@p_Id", CompanyPlan.Id);
                 return cmd.ExecuteNonQuery();
             }
             catch (SqlException sqle)

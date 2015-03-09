@@ -63,8 +63,21 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
             dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
             dgvCompanyPlan.DataSource = CompanyPlanTbl;
-        
-        } 
+            SetReadOnlyRows(false);
+        }
+
+        #region
+        private void SetReadOnlyRows(bool isEdit) 
+        {
+            foreach (DataGridViewRow dgvr in dgvCompanyPlan.Rows) 
+            {
+                dgvr.ReadOnly = (string.IsNullOrEmpty(dgvr.Cells[colCompanyPlanID.Index].Value + "") || isEdit);
+            }
+        }
+
+        #endregion  
+
+
         #endregion
 
 
@@ -113,10 +126,50 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                     }
                 }
             }
+            else if (e.ColumnIndex == dgvColCusName.Index)
+            {
+                int custId = (int)DataTypeParser.Parse(dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColCusName.Index].Value, typeof(int), -1);
+                DataTable contactPerson = new ContactPersonBL().GetAll(custId);
+                if (contactPerson.Rows.Count > 0) 
+                {
+                    dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColContactPerson.Index].Value = contactPerson.Rows[0]["ConPersonName"];
+                    dgvCompanyPlan.Rows[e.RowIndex].Cells[dgvColPhone.Index].Value = contactPerson.Rows[0]["MobilePhone"];
+                }
+
+
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!btnNew.Enabled && !btnEdit.Enabled) 
+            {
+                foreach (DataGridViewRow dgvr in dgvCompanyPlan.Rows) 
+                {
+                    if (!dgvr.ReadOnly) 
+                    {
+
+                        CompanyPlan cmpPlan = new CompanyPlan();
+                        cmpPlan.CreatedDate = DateTime.Now;
+                        cmpPlan.TargetedDate = (DateTime)DataTypeParser.Parse(dgvr.Cells[dgvColTargetedDate.Index].Value, typeof(DateTime), null);
+                        cmpPlan.IsConfirmed = false;
+                        cmpPlan.CompanyPanNo = (string)DataTypeParser.Parse(dgvr.Cells[dgvCompanyPlanNo.Index].Value, typeof(string), string.Empty);
+                        cmpPlan.IsDeleted = false;
+                        cmpPlan.LastModifiedDate = DateTime.Now;
+                        cmpPlan.Status = 0;
+                        cmpPlan.TownshipID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColTownship.Index].Value, typeof(int), -1);
+                        cmpPlan.CustomerID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColCusName.Index].Value, typeof(int), -1);
+                        cmpPlan.Id = (int)DataTypeParser.Parse(dgvr.Cells[colCompanyPlanID.Index].Value, typeof(int), -1);
+                        new CompanyPlanBL().Update();
+
+                        LoadCompanyPlan();
+                        break;
+                    }
+                
+                }
+            }
+
             List<CompanyPlan> companyPlanList = new List<CompanyPlan> ();
             foreach (DataGridViewRow dgvr in dgvCompanyPlan.Rows) 
             {
@@ -166,8 +219,20 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
             try
             {
-
-                new CompanyPlanBL().Insert(companyPlanList);
+                if (companyPlanList.Count > 0)
+                {
+                   int? i = new CompanyPlanBL().Insert(companyPlanList);
+                   if (i.HasValue)
+                   {
+                       btnNew.Enabled = true;
+                       MessageBox.Show("Success!");
+                   }
+                   else 
+                   {
+                       MessageBox.Show(Resource.errFailedToSave);
+                   }
+                }
+                
             }
             catch (Exception err)
             {
@@ -209,6 +274,41 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         private void dtpEndDate_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvCompanyPlan.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Please Select Only Row to edit!");
+                return;
+            }
+            else 
+            {
+
+
+
+                SetReadOnlyRows(true);
+                dgvCompanyPlan.SelectedRows[0].ReadOnly = false;
+                btnNew.Enabled = btnDelete.Enabled = btnEdit.Enabled = false;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            CompanyPlan cmpPlan=new CompanyPlan ();
+
+            try
+            {
+                new CompanyPlanBL().Delete(cmpPlan, DBManager.GetInstance().GetDbConnection());
+            }
+            catch (Exception err) 
+            {
+            
+            }
+
+            LoadCompanyPlan();
         }
     }
 }

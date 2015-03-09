@@ -63,7 +63,8 @@ namespace PTIC.Marketing.BL
                 {
                     foreach (CompanyPlan plan in CompanyPlan)
                     {
-                        if (plan.TargetedDate == ((DateTime)DataTypeParser.Parse(row["TargetedDate"], typeof(DateTime), DateTime.MinValue)).Date && plan.CustomerID == (int)DataTypeParser.Parse(row["CustomerID"], typeof(int), null))
+                        DateTime dbDate=((DateTime)DataTypeParser.Parse(row["TargetedDate"], typeof(DateTime), DateTime.MinValue)).Date ;
+                        if (plan.TargetedDate ==dbDate && plan.CustomerID == (int)DataTypeParser.Parse(row["CustomerID"], typeof(int), null))
                         {
                             base.ValidationResults.AddResult(
                             new ValidationResult("Duplicate Not Allowed!",
@@ -86,42 +87,11 @@ namespace PTIC.Marketing.BL
         #endregion
 
         #region Update
-        public int? Update(List<CompanyPlan> CompanyPlan)
+        public int? Update(CompanyPlan CompanyPlan)
         {
             try
             {
-                if (CompanyPlan == null)
-                {
-                    base.ValidationResults.AddResult(
-                        new ValidationResult("Mobile Service Plan အချက်အလက်များ ဖြည့်သွင်းပေးပါ။",
-                            null, "CompanyPlan", null, null));
-                    return null;
-                }
-                // InitialMarketingPlan
-                Validator<CompanyPlan> initialMarketingValidator = base.ValidationManager.CreateValidator<CompanyPlan>();
-                foreach (CompanyPlan plan in CompanyPlan)
-                {
-                    ValidationResults vInvResults = initialMarketingValidator.Validate(plan);
-                    base.ValidationResults = vInvResults;
-                    if (!vInvResults.IsValid)
-                        return null;
-                }
-
-                DataTable dtinitialMarketingPlan = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
-                foreach (DataRow row in dtinitialMarketingPlan.Rows)
-                {
-                    foreach (CompanyPlan plan in CompanyPlan)
-                    {
-                        if (plan.CreatedDate == (DateTime)DataTypeParser.Parse(row["SvcPlanDate"], typeof(DateTime), DateTime.MinValue) && plan.CustomerID == (int)DataTypeParser.Parse(row["CustomerID"], typeof(int), null))
-                        {
-                            base.ValidationResults.AddResult(
-                            new ValidationResult("Duplicate Not Allowed!",
-                                null, "CompanyPlan", null, null));
-                            return null;
-                        }
-                    }
-                }
-
+                
                 return CompanyPlanDA.UpdateCompanyPlanByID(CompanyPlan);
 
             }
