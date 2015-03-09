@@ -140,11 +140,12 @@ namespace  PTIC.Marketing.DA
         #endregion
 
         #region INSERT
-        public static int Insert(TripPlan tripPlan, List<TripPlanDetail> tripPlanDetails)
+        public static int Insert(TripPlan tripPlan, List<TripPlanDetail> tripPlanDetails,out int insertedId)
         {
             SqlConnection conn = null;
             SqlTransaction transaction = null;
             SqlCommand cmd = null;
+            int idInserted = 0;
             int affectedRows = 0;
             try
             {
@@ -177,11 +178,17 @@ namespace  PTIC.Marketing.DA
                 cmd.Parameters["@p_IsSale"].Direction = ParameterDirection.Input;
 
                 object insertedIDObj = cmd.ExecuteScalar();
+                
+                int.TryParse(insertedIDObj+string.Empty,out idInserted);
+                
+                insertedId = idInserted;
+
                 if (insertedIDObj.GetType() == typeof(DBNull))
                     return 0;
 
                 int insertedOrderID = (int)insertedIDObj;
                 // clear parameters of usp_TripPlanInsert
+                tripPlan.ID = insertedOrderID;
                 cmd.Parameters.Clear();
                  
                 // insert new order details
@@ -274,6 +281,7 @@ namespace  PTIC.Marketing.DA
                 transaction.Dispose();
                 cmd.Dispose();
             }
+            insertedId = idInserted;
             return affectedRows;
         }
 
