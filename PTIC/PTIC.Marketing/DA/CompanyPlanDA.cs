@@ -59,7 +59,7 @@ namespace PTIC.Marketing.DA
                 command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
                 command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID)";
                 command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
-                command.CommandText += " and CreatedDate Between @p_startDate and @p_endDate";
+                command.CommandText += " and TargetedDate Between @p_startDate and @p_endDate";
                 command.Parameters.AddWithValue("@p_startDate", dtStart);
                 command.Parameters.AddWithValue("@p_endDate", dtEnd);
 

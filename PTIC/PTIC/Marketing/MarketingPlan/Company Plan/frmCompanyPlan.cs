@@ -174,6 +174,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                     }
                 
                 }
+                return;
             }
 
             List<CompanyPlan> companyPlanList = new List<CompanyPlan> ();
@@ -231,6 +232,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                    if (i.HasValue)
                    {
                        btnNew.Enabled = true;
+                       LoadCompanyPlan();
                        MessageBox.Show("Success!");
                    }
                    else 
@@ -257,7 +259,6 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             SqlConnection conn = null;
             conn = DBManager.GetInstance().GetDbConnection();
             DataTable CompanyPlanTbl = new CompanyPlanBL().SelectCompanyPlanUnConfirmedListByDateRange(dtpStartDate.Value,dtpEndDate.Value);
-
 
             dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
             dgvCompanyPlan.DataSource = CompanyPlanTbl;
