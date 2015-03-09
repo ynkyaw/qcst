@@ -107,9 +107,11 @@ namespace PTIC.VC.Sale.CashCollection
                 this._dtCashDiscount = new CashDiscountBL().GetAll();
 
                 dgvReceipt.AutoGenerateColumns = false;
-                dgvReceipt.DataSource = dtSaleDetail;
+                dgvReceipt.DataSource = null;
+               
                 if (dtSaleDetail.Rows.Count > 0)
                 {
+                    dgvReceipt.DataSource = dtSaleDetail;
                     txtTown.Text = (string)DataTypeParser.Parse(dtSaleDetail.Rows[0]["Town"].ToString(), typeof(string), null);
                     txtCusName.Text = (string)DataTypeParser.Parse(dtSaleDetail.Rows[0]["CusName"].ToString(), typeof(string), null);
                     txtContactPerson.Text = (string)DataTypeParser.Parse(dtSaleDetail.Rows[0]["ConPersonName"].ToString(), typeof(string), null);
@@ -324,14 +326,12 @@ namespace PTIC.VC.Sale.CashCollection
 
         private void txtInvoiceNo_Enter(object sender, EventArgs e)
         {
-            string InvoiceID = (string)DataTypeParser.Parse(txtInvoiceNo.Text, typeof(string), 0);
-            LoadNBindInvoiceProductList(InvoiceID);
+            
         }
 
         private void txtInvoiceNo_TextChanged(object sender, EventArgs e)
         {
-            string InvoiceID = (string)DataTypeParser.Parse(txtInvoiceNo.Text, typeof(string), string.Empty);
-            LoadNBindInvoiceProductList(InvoiceID);
+            
         }
 
         private void dgvReceipt_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -723,6 +723,17 @@ namespace PTIC.VC.Sale.CashCollection
                 MessageBox.Show("ပေးငွေပမာဏသည့် ကျန်ငွေထက်များနေသည်။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;
             }
+        }
+
+        private void txtInvoiceNo_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInvoiceNo_Leave(object sender, EventArgs e)
+        {
+            string InvoiceID = (string)DataTypeParser.Parse(txtInvoiceNo.Text, typeof(string), 0);
+            LoadNBindInvoiceProductList(InvoiceID);
         }
 
     }

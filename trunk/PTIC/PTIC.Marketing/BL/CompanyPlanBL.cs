@@ -25,6 +25,11 @@ namespace PTIC.Marketing.BL
         {
             return CompanyPlanDA.SelectCompanyPlanUnConfirmedList();
         }
+        public DataTable SelectCompanyPlanUnConfirmedListByDateRange(DateTime startDate,DateTime endDate)
+        {
+            return CompanyPlanDA.SelectCompanyPlanUnConfirmedListByDateRange(startDate,endDate);
+        }
+
 
         public DataTable GetReportedCompanyPlan()
         {
@@ -52,30 +57,13 @@ namespace PTIC.Marketing.BL
         {
             try
             {
-                if (CompanyPlan == null)
-                {
-                    base.ValidationResults.AddResult(
-                        new ValidationResult("Mobile Service Plan အချက်အလက်များ ဖြည့်သွင်းပေးပါ။",
-                            null, "CompanyPlan", null, null));
-                    return null;
-                }
-                // InitialMarketingPlan
-                Validator<CompanyPlan> initialMarketingValidator = base.ValidationManager.CreateValidator<CompanyPlan>();
-                foreach (CompanyPlan plan in CompanyPlan)
-                {
-                    ValidationResults vInvResults = initialMarketingValidator.Validate(plan);
-                    base.ValidationResults = vInvResults;
-                    if (!vInvResults.IsValid)
-                        return null;
-                }
-
-
+                
                 DataTable dtinitialMarketingPlan = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
                 foreach (DataRow row in dtinitialMarketingPlan.Rows)
                 {
                     foreach (CompanyPlan plan in CompanyPlan)
                     {
-                        if (plan.CreatedDate == ((DateTime)DataTypeParser.Parse(row["SvcPlanDate"], typeof(DateTime), DateTime.MinValue)).Date && plan.CustomerID == (int)DataTypeParser.Parse(row["CustomerID"], typeof(int), null))
+                        if (plan.TargetedDate == ((DateTime)DataTypeParser.Parse(row["TargetedDate"], typeof(DateTime), DateTime.MinValue)).Date && plan.CustomerID == (int)DataTypeParser.Parse(row["CustomerID"], typeof(int), null))
                         {
                             base.ValidationResults.AddResult(
                             new ValidationResult("Duplicate Not Allowed!",

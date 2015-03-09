@@ -44,6 +44,35 @@ namespace PTIC.Marketing.DA
             return table;
         }
 
+        public static DataTable SelectCompanyPlanUnConfirmedListByDateRange(DateTime dtStart,DateTime dtEnd)
+        {
+            DataTable table = null;
+            string tableName = "CompanyPlanTable";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+                //command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = " SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId]";
+                command.CommandText += " ,[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone";
+                command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
+                command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID)";
+                command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
+                command.CommandText += " and CreatedDate Between @p_startDate and @p_endDate";
+                command.Parameters.AddWithValue("@p_startDate", dtStart);
+                command.Parameters.AddWithValue("@p_endDate", dtEnd);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return table;
+        }
+
         private static DataTable SelectCompanyPlanBy(PTIC.Common.Enum.FormStatus formStatus)
         {
             DataTable table = null;
@@ -166,36 +195,31 @@ namespace PTIC.Marketing.DA
             SqlCommand cmd = null;
             try
             {
-                // transaction = conn.BeginTransaction();
+                
+                
+                SqlConnection con = DBManager.GetInstance().GetDbConnection();
                 cmd = new SqlCommand();
-                cmd.Connection = DBManager.GetInstance().GetDbConnection();
-                cmd.CommandType = CommandType.StoredProcedure;
+
+                transaction = con.BeginTransaction("SampleTransaction");
+                cmd.Connection = con;
                 cmd.Transaction = transaction;
-                cmd.CommandText = "usp_CompanyPlanInsert";
+                cmd.CommandText = "INSERT INTO [CompanyPlan]([CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId],[Status],[IsConfirmed],[CreatedDate],[LastModifedDate],[IsDeleted])";
+                cmd.CommandText += " VALUES(@CompanyPlanNo,@TargetedDate,@TownshipId,@CustomerId,@Status,@IsConfirmed,@CreatedDate,@LastModifedDate,@IsDeleted)";
 
                 foreach (CompanyPlan newCompanyPlan in CompanyPlan)
                 {
-                    cmd.Parameters.AddWithValue("@p_CusID", newCompanyPlan.CustomerID);
-                    cmd.Parameters["@p_CusID"].Direction = ParameterDirection.Input;
-
-                    cmd.Parameters.AddWithValue("@p_TownshipID", newCompanyPlan.TownshipID);
-                    cmd.Parameters["@p_TownshipID"].Direction = ParameterDirection.Input;
-
-                    //cmd.Parameters.AddWithValue("@p_SvcPlanNo", CompanyPlan.SvcPlanNo);
-                    //cmd.Parameters["@p_SvcPlanNo"].Direction = ParameterDirection.Input;
-
-                    //cmd.Parameters.AddWithValue("@p_SvcPlanDate", newCompanyPlan.SvcPlanDate);
-                    //cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
-
-                    //cmd.Parameters.AddWithValue("@p_InitialCompanyPlanID", newCompanyPlan.InitialCompanyPlanID);
-                    //cmd.Parameters["@p_InitialCompanyPlanID"].Direction = ParameterDirection.Input;
-
-                    cmd.Parameters.AddWithValue("@p_Status", newCompanyPlan.Status);
-                    cmd.Parameters["@p_Status"].Direction = ParameterDirection.Input;
-
-                    affectedrow += cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@CompanyPlanNo", newCompanyPlan.CompanyPanNo);
+                    cmd.Parameters.AddWithValue("@TargetedDate", newCompanyPlan.TargetedDate);
+                    cmd.Parameters.AddWithValue("@CustomerId", newCompanyPlan.CustomerID);
+                    cmd.Parameters.AddWithValue("@Status", newCompanyPlan.Status);
+                    cmd.Parameters.AddWithValue("@IsConfirmed", newCompanyPlan.IsConfirmed);
+                    cmd.Parameters.AddWithValue("@CreatedDate", newCompanyPlan.IsConfirmed);
+                    cmd.Parameters.AddWithValue("@LastModifedDate", newCompanyPlan.LastModifiedDate);
+                    cmd.Parameters.AddWithValue("@IsDeleted", newCompanyPlan.IsDeleted);
                     cmd.Parameters.Clear();
+                    affectedrow += cmd.ExecuteNonQuery();
                 }
+                transaction.Commit();
                 return affectedrow;
             }
             catch (SqlException sqle)

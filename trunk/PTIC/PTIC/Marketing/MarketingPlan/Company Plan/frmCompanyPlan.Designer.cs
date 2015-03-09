@@ -60,6 +60,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.colCompanyPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCompanyPlanNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColTargetedDate = new AGL.UI.Controls.CalendarColumn();
@@ -114,7 +115,7 @@
             // btnReport
             // 
             this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReport.Location = new System.Drawing.Point(392, 588);
+            this.btnReport.Location = new System.Drawing.Point(553, 588);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(109, 32);
             this.btnReport.TabIndex = 153;
@@ -171,6 +172,7 @@
             this.button1.TabIndex = 156;
             this.button1.Text = "အကုန်ကြည့်မည်";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -254,12 +256,13 @@
             this.dgvCompanyPlan.Size = new System.Drawing.Size(1021, 501);
             this.dgvCompanyPlan.TabIndex = 154;
             this.dgvCompanyPlan.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompanyPlan_CellEndEdit);
+            this.dgvCompanyPlan.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvCompanyPlan_RowPostPaint);
             // 
             // btnConfirm
             // 
             this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnConfirm.Enabled = false;
-            this.btnConfirm.Location = new System.Drawing.Point(519, 588);
+            this.btnConfirm.Location = new System.Drawing.Point(680, 588);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(109, 32);
             this.btnConfirm.TabIndex = 152;
@@ -270,17 +273,18 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.Location = new System.Drawing.Point(138, 588);
+            this.btnSave.Location = new System.Drawing.Point(126, 588);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 32);
             this.btnSave.TabIndex = 151;
             this.btnSave.Text = "သိမ်းမည်";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.Location = new System.Drawing.Point(265, 588);
+            this.btnDelete.Location = new System.Drawing.Point(356, 588);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 32);
             this.btnDelete.TabIndex = 150;
@@ -295,6 +299,7 @@
             this.btnSearch.TabIndex = 149;
             this.btnSearch.Text = "ရှာမည်";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dtpEndDate
             // 
@@ -303,6 +308,7 @@
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(111, 25);
             this.dtpEndDate.TabIndex = 148;
+            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
             // 
             // label3
             // 
@@ -321,6 +327,7 @@
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(109, 25);
             this.dtpStartDate.TabIndex = 146;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // label1
             // 
@@ -331,6 +338,16 @@
             this.label1.Size = new System.Drawing.Size(121, 19);
             this.label1.TabIndex = 145;
             this.label1.Text = "ထိ ဈေးကွက်အစီအစဉ်";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEdit.Location = new System.Drawing.Point(241, 588);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 32);
+            this.btnEdit.TabIndex = 158;
+            this.btnEdit.Text = "ပြင်မည်";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // colCompanyPlanID
             // 
@@ -344,8 +361,6 @@
             this.dgvCompanyPlanNo.DataPropertyName = "CompanyPlanNo";
             this.dgvCompanyPlanNo.HeaderText = "Company Plan No";
             this.dgvCompanyPlanNo.Name = "dgvCompanyPlanNo";
-            this.dgvCompanyPlanNo.ReadOnly = true;
-            this.dgvCompanyPlanNo.Visible = false;
             // 
             // dgvColTargetedDate
             // 
@@ -408,6 +423,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 624);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
@@ -460,6 +476,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompanyPlanID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCompanyPlanNo;
         private AGL.UI.Controls.CalendarColumn dgvColTargetedDate;

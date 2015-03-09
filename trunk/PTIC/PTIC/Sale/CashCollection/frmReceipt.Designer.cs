@@ -93,9 +93,6 @@
             this.txtOtherAmt = new System.Windows.Forms.TextBox();
             this.txtTotalPack = new System.Windows.Forms.TextBox();
             this.dgvReceipt = new System.Windows.Forms.DataGridView();
-            this.txtPriceRemark = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCurrentPayment = new AGL.UI.Controls.EditTextBox();
             this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +104,9 @@
             this.colNoPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColInvoiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHasDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPriceRemark = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCurrentPayment = new AGL.UI.Controls.EditTextBox();
             this.txtDiscountItemAmt = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -459,6 +459,8 @@
             this.txtInvoiceNo.TabStop = false;
             this.txtInvoiceNo.TextChanged += new System.EventHandler(this.txtInvoiceNo_TextChanged);
             this.txtInvoiceNo.Enter += new System.EventHandler(this.txtInvoiceNo_Enter);
+            this.txtInvoiceNo.Leave += new System.EventHandler(this.txtInvoiceNo_Leave);
+            this.txtInvoiceNo.Validated += new System.EventHandler(this.txtInvoiceNo_Validated);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -731,45 +733,6 @@
             this.dgvReceipt.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvReceipt_DataBindingComplete);
             this.dgvReceipt.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvReceipt_DataError);
             // 
-            // txtPriceRemark
-            // 
-            this.txtPriceRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPriceRemark.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriceRemark.Location = new System.Drawing.Point(163, 555);
-            this.txtPriceRemark.Multiline = true;
-            this.txtPriceRemark.Name = "txtPriceRemark";
-            this.txtPriceRemark.ReadOnly = true;
-            this.txtPriceRemark.Size = new System.Drawing.Size(699, 51);
-            this.txtPriceRemark.TabIndex = 241;
-            this.txtPriceRemark.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.label13.Location = new System.Drawing.Point(12, 567);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(134, 19);
-            this.label13.TabIndex = 247;
-            this.label13.Text = "** ဈေးနှုန်းမှတ်ချက် **";
-            // 
-            // txtCurrentPayment
-            // 
-            this.txtCurrentPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCurrentPayment.ErrorColor = System.Drawing.Color.Empty;
-            this.txtCurrentPayment.ErrorMessage = "Number Only!";
-            this.txtCurrentPayment.Location = new System.Drawing.Point(557, 512);
-            this.txtCurrentPayment.MaxLength = 13;
-            this.txtCurrentPayment.Name = "txtCurrentPayment";
-            this.txtCurrentPayment.Size = new System.Drawing.Size(120, 25);
-            this.txtCurrentPayment.TabIndex = 5;
-            this.txtCurrentPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCurrentPayment.ValidationExpression = "^[0-9]+$";
-            this.txtCurrentPayment.TextChanged += new System.EventHandler(this.txtBoxPayment_TextChanged);
-            this.txtCurrentPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_KeyPress);
-            this.txtCurrentPayment.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPayment_Validating);
-            // 
             // colProduct
             // 
             this.colProduct.DataPropertyName = "ProductName";
@@ -861,6 +824,45 @@
             this.colHasDiscount.HeaderText = "HasDiscount";
             this.colHasDiscount.Name = "colHasDiscount";
             this.colHasDiscount.Visible = false;
+            // 
+            // txtPriceRemark
+            // 
+            this.txtPriceRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPriceRemark.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPriceRemark.Location = new System.Drawing.Point(163, 555);
+            this.txtPriceRemark.Multiline = true;
+            this.txtPriceRemark.Name = "txtPriceRemark";
+            this.txtPriceRemark.ReadOnly = true;
+            this.txtPriceRemark.Size = new System.Drawing.Size(699, 51);
+            this.txtPriceRemark.TabIndex = 241;
+            this.txtPriceRemark.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label13.Location = new System.Drawing.Point(12, 567);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(134, 19);
+            this.label13.TabIndex = 247;
+            this.label13.Text = "** ဈေးနှုန်းမှတ်ချက် **";
+            // 
+            // txtCurrentPayment
+            // 
+            this.txtCurrentPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCurrentPayment.ErrorColor = System.Drawing.Color.Empty;
+            this.txtCurrentPayment.ErrorMessage = "Number Only!";
+            this.txtCurrentPayment.Location = new System.Drawing.Point(557, 512);
+            this.txtCurrentPayment.MaxLength = 13;
+            this.txtCurrentPayment.Name = "txtCurrentPayment";
+            this.txtCurrentPayment.Size = new System.Drawing.Size(120, 25);
+            this.txtCurrentPayment.TabIndex = 5;
+            this.txtCurrentPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCurrentPayment.ValidationExpression = "^[0-9]+$";
+            this.txtCurrentPayment.TextChanged += new System.EventHandler(this.txtBoxPayment_TextChanged);
+            this.txtCurrentPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_KeyPress);
+            this.txtCurrentPayment.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPayment_Validating);
             // 
             // txtDiscountItemAmt
             // 
