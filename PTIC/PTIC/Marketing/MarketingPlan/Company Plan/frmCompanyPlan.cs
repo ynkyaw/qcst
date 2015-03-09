@@ -27,20 +27,14 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         public frmCompanyPlan()
         {
             InitializeComponent();
-            
-            SqlConnection conn = null;
-            conn = DBManager.GetInstance().GetDbConnection();
-            DataTable CompanyPlanTbl = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
-           
-
-            dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
-            dgvCompanyPlan.DataSource = CompanyPlanTbl;
             LoadingDataGrid();
+            LoadCompanyPlan();
+            
         }
 
 
         #region 
-        public void LoadingDataGrid()
+        private void LoadingDataGrid()
         {
 
             #region LoadTownship
@@ -60,7 +54,17 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             #endregion
         }
 
+        private void LoadCompanyPlan() 
+        {
+            SqlConnection conn = null;
+            conn = DBManager.GetInstance().GetDbConnection();
+            DataTable CompanyPlanTbl = new CompanyPlanBL().SelectCompanyPlanUnConfirmedList();
 
+
+            dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
+            dgvCompanyPlan.DataSource = CompanyPlanTbl;
+        
+        } 
         #endregion
 
 
@@ -109,6 +113,102 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                     }
                 }
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            List<CompanyPlan> companyPlanList = new List<CompanyPlan> ();
+            foreach (DataGridViewRow dgvr in dgvCompanyPlan.Rows) 
+            {
+                string companyId = dgvr.Cells[colCompanyPlanID.Index].Value+string.Empty;
+                if (companyId.Equals(string.Empty))
+                {
+                    CompanyPlan cmpPlan = new CompanyPlan();
+                    cmpPlan.CreatedDate = DateTime.Now;
+                    cmpPlan.TargetedDate = (DateTime)DataTypeParser.Parse(dgvr.Cells[dgvColTargetedDate.Index].Value, typeof(DateTime), null);
+                    cmpPlan.IsConfirmed = false;
+                    cmpPlan.CompanyPanNo = (string) DataTypeParser.Parse(dgvr.Cells[dgvCompanyPlanNo.Index].Value,typeof(string),string.Empty);
+                    cmpPlan.IsDeleted = false;
+                    cmpPlan.LastModifiedDate = DateTime.Now;
+                    cmpPlan.Status = 0;
+                    cmpPlan.TownshipID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColTownship.Index].Value, typeof(int), -1);
+                    cmpPlan.CustomerID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColCusName.Index].Value, typeof(int), -1);
+
+                    if (cmpPlan.TownshipID == -1)
+                    {
+                      MessageBox.Show(string.Format("Choose Township for new inserted Complan Plan at Row {0} of Data List!",dgvr.Index));
+                      break;
+                    }
+                    else if(cmpPlan.CustomerID==-1)
+                    {
+                        MessageBox.Show(string.Format("Choose Customer for new inserted Complan Plan at Row {0} of Data List!", dgvr.Index));
+                        break;
+                    }
+                    else if (!cmpPlan.TargetedDate.HasValue)
+                    {
+                        MessageBox.Show(string.Format("Choose Targeted Date for new inserted Complan Plan at Row {0} of Data List!", dgvr.Index));
+                        break;
+                    }
+                    else 
+                    {
+                       companyPlanList.Add(cmpPlan);
+
+                    }
+                        
+                }
+
+                    
+                    
+                    
+                    
+                
+            }
+
+            try
+            {
+
+                new CompanyPlanBL().Insert(companyPlanList);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Failed To Insert New Data!\n Please Contact your network administrator!\n" + err.Message);
+            }
+
+        }
+
+        private void dgvCompanyPlan_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+           
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = null;
+            conn = DBManager.GetInstance().GetDbConnection();
+            DataTable CompanyPlanTbl = new CompanyPlanBL().SelectCompanyPlanUnConfirmedListByDateRange(dtpStartDate.Value,dtpEndDate.Value);
+
+
+            dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
+            dgvCompanyPlan.DataSource = CompanyPlanTbl;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadCompanyPlan();
+        }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpStartDate.Value > dtpEndDate.Value) 
+            {
+                dtpEndDate.Value = dtpStartDate.Value;
+            }
+            dtpEndDate.MinDate = dtpStartDate.Value;
+        }
+
+        private void dtpEndDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

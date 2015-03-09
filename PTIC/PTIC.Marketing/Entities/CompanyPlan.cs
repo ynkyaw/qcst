@@ -15,21 +15,21 @@ namespace PTIC.Marketing.Entities
             set { id = value; }
         }
 
-        private string _mobilePanNo;
+        private string _companyPlan;
 
-        private DateTime _targetedDate;
+        private DateTime? _targetedDate;
 
-        public DateTime TargetedDate
+        public DateTime? TargetedDate
         {
             get { return _targetedDate; }
             set { _targetedDate = value; }
         }
 
 
-        public string MobilePanNo
+        public string CompanyPanNo
         {
-            get { return _mobilePanNo; }
-            set { _mobilePanNo = value; }
+            get { return _companyPlan; }
+            set { _companyPlan = value; }
         }
         private int _townshipID;
 
