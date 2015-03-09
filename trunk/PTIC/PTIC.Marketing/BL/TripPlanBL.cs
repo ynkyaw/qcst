@@ -84,16 +84,19 @@ namespace PTIC.Marketing.BL
         /// <returns>Return affected row count</returns>
         public int Add(TripPlan newTripPlan, SqlConnection conn)
         {
-            return TripPlanDA.Insert(newTripPlan, conn);
+            
+            int effectedRows = TripPlanDA.Insert(newTripPlan, conn);
+            return effectedRows;
         }
 
-        public int Add(TripPlan newTripPlan, List<TripPlanDetail> newTripPlanDetails)
+        public int Add(TripPlan newTripPlan, List<TripPlanDetail> newTripPlanDetails, out int insertedId)
         {
             if (newTripPlan == null)
             {
                 base.ValidationResults.AddResult(
                     new ValidationResult("ခရီးစဉ် Plan ကို ပြည့်စုံမှန်ကန်စွာ ဖြည့်သွင်းပေးပါရန်။",
                         null, "NullTripPlan", null, null));
+                insertedId = 0;
                 return 0;
             }
             else if (newTripPlanDetails == null || newTripPlanDetails.Count < 1)
@@ -101,6 +104,7 @@ namespace PTIC.Marketing.BL
                 base.ValidationResults.AddResult(
                     new ValidationResult("Trip Detail ဖြည့်သွင်းပေးပါရန်။",
                         null, "NullTripPlanDetailList", null, null));
+                insertedId = 0;
                 return 0;
             }
 
@@ -109,8 +113,10 @@ namespace PTIC.Marketing.BL
             ValidationResults vTPResults = tpValidator.Validate(newTripPlan);
             base.ValidationResults = vTPResults;
             if (!vTPResults.IsValid)
+            {
+                insertedId = 0;
                 return 0;
-            
+            }
             //− ခရီးစဉ်အမှတ် မထပ်ရ in each new rows
             var duplicatedTripPlanNo = newTripPlanDetails.GroupBy(x => new { x.TripPlanNo }).Where(x => x.Skip(1).Any()).ToArray();
             if (duplicatedTripPlanNo.Any())
@@ -118,6 +124,7 @@ namespace PTIC.Marketing.BL
                 base.ValidationResults.AddResult(
                     new ValidationResult(ErrorMessages.TripPlanDetail_TripPlanNo_Duplicate,
                         null, "TripPlanDetail_TripPlanNo_Duplicate", null, null));
+                insertedId = 0;
                 return 0;
             }
               
@@ -132,7 +139,10 @@ namespace PTIC.Marketing.BL
                 ValidationResults vResults = detailValidator.Validate(detail);
                 base.ValidationResults = vResults;
                 if (!vResults.IsValid)
+                {
+                    insertedId = 0;
                     return 0;
+                }
                 //− ခရီးစဉ်တာဝန်ခံသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။
                 var duplicatedManager = from dts in newTripPlanDetails
                                         where dts.ManagerID == detail.ManagerID
@@ -144,6 +154,7 @@ namespace PTIC.Marketing.BL
                     base.ValidationResults.AddResult(
                     new ValidationResult(ErrorMessages.TripPlanDetail_ManagerID_Duplicate,
                         null, "TripPlanDetail_ManagerID_Duplicate", null, null));
+                    insertedId = 0;
                     return 0;
                 }                
                 //- အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။                
@@ -159,6 +170,7 @@ namespace PTIC.Marketing.BL
                         base.ValidationResults.AddResult(
                         new ValidationResult(ErrorMessages.TripPlanDetail_duplicatedVan_Duplicate,
                             null, "TripPlanDetail_duplicatedVan_Duplicate", null, null));
+                        insertedId = 0;
                         return 0;
                     }
                 }                
@@ -174,6 +186,8 @@ namespace PTIC.Marketing.BL
                     base.ValidationResults.AddResult(
                         new ValidationResult(ErrorMessages.TripPlanDetail_TripPlanNo_Duplicate,
                             null, "TripPlanDetail_TripPlanNo_Duplicate", null, null));
+                    insertedId = 0;
+
                     return 0;
                 }
             }
@@ -181,13 +195,15 @@ namespace PTIC.Marketing.BL
             try
             {
                 // Save into db
-                return TripPlanDA.Insert(newTripPlan, newTripPlanDetails);
+                return TripPlanDA.Insert(newTripPlan, newTripPlanDetails, out insertedId);
             }
             catch (Exception e)
             {
                 base.ValidationResults.AddResult(
                     new ValidationResult(e.Message,
                         null, "TripPlanDetailBL", null, null));
+                insertedId = 0;
+
                 return 0;
             }
         }

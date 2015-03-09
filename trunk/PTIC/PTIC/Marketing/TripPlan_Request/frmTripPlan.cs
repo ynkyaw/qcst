@@ -442,7 +442,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
             Save();
             EditFlag = false;
 
-            LoadNBindTripPlanAndDetails(dtFromDate.Value, dtToDate.Value,Program.module==Program.Module.Sale);
+            LoadNBindTripPlanAndDetails(_tripPlan);
         }
 
         /// <summary>
@@ -586,7 +586,11 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 if (_tripPlan == null) // Add new 
                 {
                     // Add into db
-                    affectedRows = tripPlanSaver.Add(tripPlan, insertTripPlanDetails);
+                    int insertedId = 0;
+                    affectedRows = tripPlanSaver.Add(tripPlan, insertTripPlanDetails,out insertedId);
+
+                    _tripPlan = tripPlan;
+                    _tripPlan.ID = insertedId;
                     // Check field validation failed or not
                     if (!tripPlanSaver.ValidationResults.IsValid)
                     {
