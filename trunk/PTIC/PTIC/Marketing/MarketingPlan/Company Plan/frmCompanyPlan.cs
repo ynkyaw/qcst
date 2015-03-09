@@ -150,20 +150,26 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                     if (!dgvr.ReadOnly) 
                     {
 
-                        CompanyPlan cmpPlan = new CompanyPlan();
-                        cmpPlan.CreatedDate = DateTime.Now;
-                        cmpPlan.TargetedDate = (DateTime)DataTypeParser.Parse(dgvr.Cells[dgvColTargetedDate.Index].Value, typeof(DateTime), null);
-                        cmpPlan.IsConfirmed = false;
-                        cmpPlan.CompanyPanNo = (string)DataTypeParser.Parse(dgvr.Cells[dgvCompanyPlanNo.Index].Value, typeof(string), string.Empty);
-                        cmpPlan.IsDeleted = false;
-                        cmpPlan.LastModifiedDate = DateTime.Now;
-                        cmpPlan.Status = 0;
-                        cmpPlan.TownshipID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColTownship.Index].Value, typeof(int), -1);
-                        cmpPlan.CustomerID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColCusName.Index].Value, typeof(int), -1);
-                        cmpPlan.Id = (int)DataTypeParser.Parse(dgvr.Cells[colCompanyPlanID.Index].Value, typeof(int), -1);
-                        new CompanyPlanBL().Update();
-
-                        LoadCompanyPlan();
+                        try
+                        {
+                            CompanyPlan cmpPlan = new CompanyPlan();
+                            cmpPlan.CreatedDate = DateTime.Now;
+                            cmpPlan.TargetedDate = (DateTime)DataTypeParser.Parse(dgvr.Cells[dgvColTargetedDate.Index].Value, typeof(DateTime), null);
+                            cmpPlan.IsConfirmed = false;
+                            cmpPlan.CompanyPanNo = (string)DataTypeParser.Parse(dgvr.Cells[dgvCompanyPlanNo.Index].Value, typeof(string), string.Empty);
+                            cmpPlan.IsDeleted = false;
+                            cmpPlan.LastModifiedDate = DateTime.Now;
+                            cmpPlan.Status = 0;
+                            cmpPlan.TownshipID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColTownship.Index].Value, typeof(int), -1);
+                            cmpPlan.CustomerID = (int)DataTypeParser.Parse(dgvr.Cells[dgvColCusName.Index].Value, typeof(int), -1);
+                            cmpPlan.Id = (int)DataTypeParser.Parse(dgvr.Cells[colCompanyPlanID.Index].Value, typeof(int), -1);
+                            new CompanyPlanBL().Update(cmpPlan);
+                            LoadCompanyPlan();
+                        }
+                        catch (Exception err) 
+                        {
+                        
+                        }
                         break;
                     }
                 
