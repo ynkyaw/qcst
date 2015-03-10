@@ -447,7 +447,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
             Save();
             EditFlag = false;
 
-            LoadNBindTripPlanAndDetails(_tripPlan);
+            //LoadNBindTripPlanAndDetails(_tripPlan);
         }
 
         /// <summary>
@@ -690,6 +690,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     TripPlanSaveEventArgs args = new TripPlanSaveEventArgs(true);
                     TripPlanSavedHandler(this, args);
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
+                    LoadNBindTripPlanAndDetails(_tripPlan);
                     //this.Close();
                 }
                 else
