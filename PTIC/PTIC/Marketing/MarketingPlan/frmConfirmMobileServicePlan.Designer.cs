@@ -156,6 +156,7 @@
             // 
             // colSelect
             // 
+            this.colSelect.DataPropertyName = "IsConfirmed";
             this.colSelect.HeaderText = "Select";
             this.colSelect.Name = "colSelect";
             this.colSelect.Width = 50;

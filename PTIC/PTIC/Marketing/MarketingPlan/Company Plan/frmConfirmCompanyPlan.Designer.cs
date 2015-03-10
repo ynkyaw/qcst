@@ -35,20 +35,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.lblMarketing = new System.Windows.Forms.Label();
-            this.colCusType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnReject = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.dgvCompanyPlan = new System.Windows.Forms.DataGridView();
+            this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colPlanDate = new AGL.UI.Controls.CalendarColumn();
+            this.dgvColTownship = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colCompanyPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContactPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReject = new System.Windows.Forms.Button();
-            this.colMobileServicePlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTownship = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.colSvcNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMobileServicePlan = new System.Windows.Forms.DataGridView();
-            this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colPlanDate = new AGL.UI.Controls.CalendarColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMobileServicePlan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompanyPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -87,15 +85,105 @@
             this.lblMarketing.TabIndex = 0;
             this.lblMarketing.Text = "Planning";
             // 
-            // colCusType
+            // btnReject
             // 
-            this.colCusType.DataPropertyName = "CusType";
-            this.colCusType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colCusType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colCusType.HeaderText = "Customer အမျိုးအစား";
-            this.colCusType.Name = "colCusType";
-            this.colCusType.ReadOnly = true;
-            this.colCusType.Width = 120;
+            this.btnReject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReject.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReject.Location = new System.Drawing.Point(123, 616);
+            this.btnReject.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(95, 34);
+            this.btnReject.TabIndex = 154;
+            this.btnReject.Text = "Reject";
+            this.btnReject.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnConfirm.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(10, 616);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(95, 34);
+            this.btnConfirm.TabIndex = 153;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // dgvCompanyPlan
+            // 
+            this.dgvCompanyPlan.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvCompanyPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCompanyPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCompanyPlan.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompanyPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCompanyPlan.ColumnHeadersHeight = 50;
+            this.dgvCompanyPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCompanyPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSelect,
+            this.colPlanDate,
+            this.dgvColTownship,
+            this.colCompanyPlanID,
+            this.colCusName,
+            this.colContactPerson,
+            this.colPhone});
+            this.dgvCompanyPlan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvCompanyPlan.Location = new System.Drawing.Point(-8, 62);
+            this.dgvCompanyPlan.MultiSelect = false;
+            this.dgvCompanyPlan.Name = "dgvCompanyPlan";
+            this.dgvCompanyPlan.RowHeadersWidth = 50;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvCompanyPlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCompanyPlan.RowTemplate.Height = 28;
+            this.dgvCompanyPlan.Size = new System.Drawing.Size(1064, 547);
+            this.dgvCompanyPlan.TabIndex = 152;
+            // 
+            // colSelect
+            // 
+            this.colSelect.HeaderText = "Select";
+            this.colSelect.Name = "colSelect";
+            // 
+            // colPlanDate
+            // 
+            this.colPlanDate.DataPropertyName = "TargetedDate";
+            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colPlanDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colPlanDate.HeaderText = "သွားရမည့်နေ့";
+            this.colPlanDate.Name = "colPlanDate";
+            this.colPlanDate.ReadOnly = true;
+            this.colPlanDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPlanDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colPlanDate.Width = 150;
+            // 
+            // dgvColTownship
+            // 
+            this.dgvColTownship.DataPropertyName = "TownshipID";
+            this.dgvColTownship.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dgvColTownship.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dgvColTownship.HeaderText = "မြို့နယ်";
+            this.dgvColTownship.Name = "dgvColTownship";
+            this.dgvColTownship.ReadOnly = true;
+            this.dgvColTownship.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvColTownship.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvColTownship.Width = 130;
+            // 
+            // colCompanyPlanID
+            // 
+            this.colCompanyPlanID.DataPropertyName = "CompanyPlanID";
+            this.colCompanyPlanID.HeaderText = "MobileServicePlanID";
+            this.colCompanyPlanID.Name = "colCompanyPlanID";
+            this.colCompanyPlanID.Visible = false;
             // 
             // colCusName
             // 
@@ -113,7 +201,7 @@
             this.colContactPerson.HeaderText = "ဆက်သွယ်မည့်သူအမည်";
             this.colContactPerson.Name = "colContactPerson";
             this.colContactPerson.ReadOnly = true;
-            this.colContactPerson.Width = 140;
+            this.colContactPerson.Width = 180;
             // 
             // colPhone
             // 
@@ -125,113 +213,6 @@
             this.colPhone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colPhone.Width = 130;
             // 
-            // btnReject
-            // 
-            this.btnReject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReject.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReject.Location = new System.Drawing.Point(123, 616);
-            this.btnReject.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReject.Name = "btnReject";
-            this.btnReject.Size = new System.Drawing.Size(95, 34);
-            this.btnReject.TabIndex = 154;
-            this.btnReject.Text = "Reject";
-            this.btnReject.UseVisualStyleBackColor = true;
-            // 
-            // colMobileServicePlanID
-            // 
-            this.colMobileServicePlanID.DataPropertyName = "MobileServicePlanID";
-            this.colMobileServicePlanID.HeaderText = "MobileServicePlanID";
-            this.colMobileServicePlanID.Name = "colMobileServicePlanID";
-            this.colMobileServicePlanID.Visible = false;
-            // 
-            // colTownship
-            // 
-            this.colTownship.DataPropertyName = "TownshipID";
-            this.colTownship.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colTownship.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colTownship.HeaderText = "မြို့နယ်";
-            this.colTownship.Name = "colTownship";
-            this.colTownship.ReadOnly = true;
-            this.colTownship.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTownship.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colTownship.Width = 130;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnConfirm.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(10, 616);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(95, 34);
-            this.btnConfirm.TabIndex = 153;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            // 
-            // colSvcNo
-            // 
-            this.colSvcNo.DataPropertyName = "SvcPlanNo";
-            this.colSvcNo.HeaderText = "Service Plan No";
-            this.colSvcNo.Name = "colSvcNo";
-            this.colSvcNo.ReadOnly = true;
-            // 
-            // dgvMobileServicePlan
-            // 
-            this.dgvMobileServicePlan.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvMobileServicePlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMobileServicePlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMobileServicePlan.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMobileServicePlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMobileServicePlan.ColumnHeadersHeight = 50;
-            this.dgvMobileServicePlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvMobileServicePlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSelect,
-            this.colPlanDate,
-            this.colSvcNo,
-            this.colTownship,
-            this.colMobileServicePlanID,
-            this.colCusType,
-            this.colCusName,
-            this.colContactPerson,
-            this.colPhone});
-            this.dgvMobileServicePlan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvMobileServicePlan.Location = new System.Drawing.Point(10, 58);
-            this.dgvMobileServicePlan.MultiSelect = false;
-            this.dgvMobileServicePlan.Name = "dgvMobileServicePlan";
-            this.dgvMobileServicePlan.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvMobileServicePlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvMobileServicePlan.RowTemplate.Height = 28;
-            this.dgvMobileServicePlan.Size = new System.Drawing.Size(1064, 547);
-            this.dgvMobileServicePlan.TabIndex = 152;
-            // 
-            // colSelect
-            // 
-            this.colSelect.HeaderText = "Select";
-            this.colSelect.Name = "colSelect";
-            this.colSelect.Width = 50;
-            // 
-            // colPlanDate
-            // 
-            this.colPlanDate.DataPropertyName = "SvcPlanDate";
-            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colPlanDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colPlanDate.HeaderText = "သွားရမည့်နေ့";
-            this.colPlanDate.Name = "colPlanDate";
-            this.colPlanDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colPlanDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // frmConfirmCompanyPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -240,14 +221,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.dgvMobileServicePlan);
+            this.Controls.Add(this.dgvCompanyPlan);
             this.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmConfirmCompanyPlan";
             this.Text = "frmCompanyConfirmList";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMobileServicePlan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompanyPlan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,17 +238,15 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblHeaderPCat;
         private System.Windows.Forms.Label lblMarketing;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colCusType;
+        private System.Windows.Forms.Button btnReject;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.DataGridView dgvCompanyPlan;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colSelect;
+        private AGL.UI.Controls.CalendarColumn colPlanDate;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvColTownship;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCompanyPlanID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContactPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
-        private System.Windows.Forms.Button btnReject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMobileServicePlanID;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colTownship;
-        private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSvcNo;
-        private System.Windows.Forms.DataGridView dgvMobileServicePlan;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colSelect;
-        private AGL.UI.Controls.CalendarColumn colPlanDate;
     }
 }
