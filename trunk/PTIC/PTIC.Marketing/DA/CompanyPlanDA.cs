@@ -76,21 +76,21 @@ namespace PTIC.Marketing.DA
         private static DataTable SelectCompanyPlanBy(PTIC.Common.Enum.FormStatus formStatus)
         {
             DataTable table = null;
-            string tableName = "MoblieServicePlanTable";
+            string tableName = "CompanyPlanTable";
             try
             {
                 table = new DataTable(tableName);
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.CommandText = "usp_CompanyPlanSelectBy";
-
+                command.CommandText = " SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId],[CusName]";
+                command.CommandText += " ,[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone,[IsConfirmed]";
+                command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
+                command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID) Inner Join Customer cust ON (CompanyPlan.CustomerId=cust.ID)";
+                command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0 AND STATUS=@p_Status";
                 command.Parameters.AddWithValue("@p_Status", (int)formStatus);
-                command.Parameters["@p_Status"].Direction = ParameterDirection.Input;
-
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
+                command.Parameters.Clear();
             }
             catch (SqlException sqle)
             {

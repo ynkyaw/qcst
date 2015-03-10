@@ -103,6 +103,12 @@ namespace PTIC.VC.Marketing
             this.Close();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UIManager.MdiChildOpenForm(typeof(PTIC.Marketing.MarketingPlan.Company_Plan.frmConfirmCompanyPlan));
+            this.Close();
+        }
+
        
                 
     }
