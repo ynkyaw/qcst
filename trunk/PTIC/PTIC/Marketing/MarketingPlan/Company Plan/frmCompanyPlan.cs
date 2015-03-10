@@ -11,6 +11,10 @@ using PTIC.Marketing.DA;
 using PTIC.Util;
 using PTIC.Sale.BL;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using PTIC.VC.Marketing;
 using Microsoft.Practices.EnterpriseLibrary.Validation;
 
 namespace PTIC.Marketing.MarketingPlan.Company_Plan
@@ -316,6 +320,12 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             }
 
             LoadCompanyPlan();
+        }
+
+        private void lblMarketing_Click(object sender, EventArgs e)
+        {
+            UIManager.MdiChildOpenForm(typeof(frmMarketingPlanPage));
+            this.Close();
         }
     }
 }
