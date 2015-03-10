@@ -1168,7 +1168,10 @@ namespace PTIC.VC.Sale.Services
                 {
                     ////ID = this._svcTestID.Value,
                     //ID = this._svcTestID,
+                    
                     SalesServiceID = (int)DataTypeParser.Parse(this._salesService.ID, typeof(int), 0),
+                    DateAdded = DateTime.Now,
+                    LastModified=DateTime.Now,
                     TestVolt = (int)DataTypeParser.Parse(txtTestVolt.Text, typeof(int), 0),
                     TestService = (int)DataTypeParser.Parse(cmbTestService.SelectedIndex, typeof(int), 0),
                     TestFault = (string)DataTypeParser.Parse(txtTestFault.Text, typeof(string), null),
@@ -1370,8 +1373,9 @@ namespace PTIC.VC.Sale.Services
                     SalesServiceID = (int)DataTypeParser.Parse(this._salesService.ID, typeof(int), 0),
                     FaultRemark = (string)DataTypeParser.Parse(txtTestFaultFact.Text, typeof(string), string.Empty),
                     AGM_Remark = (string)DataTypeParser.Parse(txtAgmRemark.Text, typeof(string), string.Empty),
-                    DateAdded = (DateTime)DataTypeParser.Parse(DateTime.Now, typeof(DateTime), DateTime.Now),
-                    IsDeleted = false
+                    DateAdded = DateTime.Now,
+                    IsDeleted = false,
+                    LastModified=DateTime.Now
 
                 };
                 sup = new SvcFactoryRecordBL().Add(svcFactoryRecord);
@@ -1414,7 +1418,8 @@ namespace PTIC.VC.Sale.Services
                 svcFactoryFunction.FaultBy = Convert.ToChar(cmbCP.SelectedItem);
                 svcFactoryFunction.Remark = (string)DataTypeParser.Parse(txtFactoryFunctionRemark.Text, typeof(string), string.Empty);
                 svcFactoryFunction.SvcCheck = (string)DataTypeParser.Parse(txtTestAfterSvc.Text, typeof(string), string.Empty);
-                svcFactoryFunction.DateAdded = (DateTime)DataTypeParser.Parse(DateTime.Now, typeof(DateTime), DateTime.Now);
+                svcFactoryFunction.DateAdded = DateTime.Now;
+                svcFactoryFunction.LastModified = DateTime.Now;
                 svcFactoryFunction.IsDeleted = false;
 
                 sup = new SvcFactoryFunctionBL().Add(svcFactoryFunction);
@@ -1455,6 +1460,9 @@ namespace PTIC.VC.Sale.Services
                 // Set service Function 
                 SvcFunction _svcFunction = new SvcFunction();
                 _svcFunction = svcFunction;
+                _svcFunction.DateAdded = DateTime.Now;
+                _svcFunction.LastModified = DateTime.Now;
+
                 sup = new SvcFunctionBL().AddSvcFunction(_svcFunction);
                 if (sup > 0)
                 {
