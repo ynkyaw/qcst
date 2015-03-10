@@ -272,25 +272,29 @@ namespace PTIC.Marketing.DA
                 string cmdUpdate = string.Empty;
                 if (status == Common.Enum.FormStatus.Confirmed)
                     cmdUpdate = "UPDATE [CompanyPlan] SET"
-                                           + " [SvcPlanDate] = @p_SvcPlanDate"
+                                           + " [TargetedDate] = @p_TargetedDate"
                                            + " ,[Status] = @p_Status"
+                                           + ",[IsConfirmed]=1"
                                          + " WHERE [ID] = @p_ID";
                 else
                     cmdUpdate = "UPDATE [CompanyPlan] SET"
                                            + " [Status] = @p_Status"
                                          + " WHERE [ID] = @p_ID";
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = DBManager.GetInstance().GetDbConnection();
-
+                SqlConnection conn=DBManager.GetInstance().GetDbConnection();
+                SqlTransaction trans = conn.BeginTransaction("CompanyPlanConfirm");
+                cmd.Connection = conn;
+                cmd.Transaction = trans;
+                
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = cmdUpdate;
-
+                int effectedRowsCount = 0;
                 foreach (CompanyPlan plan in CompanyPlans)
                 {
                     if (status == Common.Enum.FormStatus.Confirmed)
                     {
-                        //cmd.Parameters.AddWithValue("@p_SvcPlanDate", plan.SvcPlanDate);
-                        cmd.Parameters["@p_SvcPlanDate"].Direction = ParameterDirection.Input;
+                        cmd.Parameters.AddWithValue("@p_TargetedDate", plan.TargetedDate);
+                        cmd.Parameters["@p_TargetedDate"].Direction = ParameterDirection.Input;
                     }
                     cmd.Parameters.AddWithValue("@p_Status", (int)status);
                     cmd.Parameters["@p_Status"].Direction = ParameterDirection.Input;
@@ -298,9 +302,11 @@ namespace PTIC.Marketing.DA
                     cmd.Parameters.AddWithValue("@p_ID", plan.Id);
                     cmd.Parameters["@p_ID"].Direction = ParameterDirection.Input;
 
-                    cmd.ExecuteNonQuery();
+                    
+                    effectedRowsCount += cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                 }
+                trans.Commit();
             }
             catch (SqlException sqle)
             {
