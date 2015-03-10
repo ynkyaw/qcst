@@ -2279,7 +2279,7 @@
             this.lblHeaderPCat.AutoSize = true;
             this.lblHeaderPCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblHeaderPCat.Location = new System.Drawing.Point(85, 11);
+            this.lblHeaderPCat.Location = new System.Drawing.Point(104, 11);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
             this.lblHeaderPCat.Size = new System.Drawing.Size(128, 19);
             this.lblHeaderPCat.TabIndex = 48;

@@ -46,6 +46,11 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             
         }
 
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 
