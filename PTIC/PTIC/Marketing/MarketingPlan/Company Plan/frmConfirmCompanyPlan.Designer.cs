@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.lblMarketing = new System.Windows.Forms.Label();
@@ -96,6 +96,7 @@
             this.btnReject.TabIndex = 154;
             this.btnReject.Text = "Reject";
             this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // btnConfirm
             // 
@@ -113,20 +114,20 @@
             // dgvCompanyPlan
             // 
             this.dgvCompanyPlan.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvCompanyPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvCompanyPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCompanyPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCompanyPlan.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompanyPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompanyPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCompanyPlan.ColumnHeadersHeight = 50;
             this.dgvCompanyPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCompanyPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -142,8 +143,8 @@
             this.dgvCompanyPlan.MultiSelect = false;
             this.dgvCompanyPlan.Name = "dgvCompanyPlan";
             this.dgvCompanyPlan.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvCompanyPlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvCompanyPlan.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCompanyPlan.RowTemplate.Height = 28;
             this.dgvCompanyPlan.Size = new System.Drawing.Size(1064, 547);
             this.dgvCompanyPlan.TabIndex = 152;
@@ -156,9 +157,9 @@
             // colPlanDate
             // 
             this.colPlanDate.DataPropertyName = "TargetedDate";
-            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colPlanDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colPlanDate.DefaultCellStyle = dataGridViewCellStyle7;
             this.colPlanDate.HeaderText = "သွားရမည့်နေ့";
             this.colPlanDate.Name = "colPlanDate";
             this.colPlanDate.ReadOnly = true;

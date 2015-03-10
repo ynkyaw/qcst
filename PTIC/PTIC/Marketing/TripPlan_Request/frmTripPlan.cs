@@ -173,9 +173,14 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 {
                     TripPlan tripPlan = new TripPlan()
                     {
-                        TripPlanName = (string)DataTypeParser.Parse(selectedRow.Cells[colTripPlanName.Index].Value, typeof(string), string.Empty)
+                        TripPlanName = (string)DataTypeParser.Parse(selectedRow.Cells[colTripPlanName.Index].Value, typeof(string), string.Empty),
+                        ID = (int)DataTypeParser.Parse(selectedRow.Cells[colTripPlanID.Index].Value, typeof(int), -1)
                     };
                     this._tripPlan = tripPlan;
+                }
+                else if (_tripPlan.ID == 0) 
+                {
+                    _tripPlan.ID = (int)DataTypeParser.Parse(selectedRow.Cells[colTripPlanID.Index].Value, typeof(int), -1);
                 }
 
                 frmTripDetailPlan frm = new frmTripDetailPlan(_tripPlan, mTripPlanDetail, requestFlag);
