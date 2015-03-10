@@ -11,13 +11,15 @@ using PTIC.Marketing.DA;
 using PTIC.Marketing.Entities;
 using PTIC.Sale.BL;
 using PTIC.Sale.DA;
+using PTIC.VC.Marketing;
 using PTIC.VC.Util;
+
 namespace PTIC.Marketing.MarketingPlan.Company_Plan
 {
     public partial class frmConfirmCompanyPlan : Form
     {
         DataTable allTownship = null;
-        DataTable allCustomer = null;
+        
 
         public frmConfirmCompanyPlan()
         {
@@ -87,6 +89,12 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
             }
             LoadingUnConfirmCompanyPlanList();
+        }
+
+        private void lblMarketing_Click(object sender, EventArgs e)
+        {
+            UIManager.MdiChildOpenForm(typeof(frmMarketingPlanPage));
+            this.Close();
         }
 
     }
