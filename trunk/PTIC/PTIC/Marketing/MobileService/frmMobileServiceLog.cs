@@ -184,9 +184,11 @@ namespace PTIC.VC.Marketing.MobileService
             InitializeComponent();
             // Disable auto generating columns
             dgvMobileServiceLog.AutoGenerateColumns = false;
+
             // Configure logger 
             XmlConfigurator.Configure();            
             // Load log first and last date of this month
+
             DateTime curDate = DateTime.Now;
             int intMonth = curDate.Month;
             int intYear = curDate.Year;
