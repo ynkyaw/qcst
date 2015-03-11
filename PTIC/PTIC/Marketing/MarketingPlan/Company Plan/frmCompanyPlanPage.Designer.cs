@@ -61,7 +61,7 @@
             // btnMobileServiceDetail
             // 
             this.btnMobileServiceDetail.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnMobileServiceDetail.Location = new System.Drawing.Point(32, 188);
+            this.btnMobileServiceDetail.Location = new System.Drawing.Point(32, 162);
             this.btnMobileServiceDetail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnMobileServiceDetail.Name = "btnMobileServiceDetail";
             this.btnMobileServiceDetail.Size = new System.Drawing.Size(198, 60);
@@ -72,7 +72,7 @@
             // btnMobileServiceLog
             // 
             this.btnMobileServiceLog.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnMobileServiceLog.Location = new System.Drawing.Point(32, 112);
+            this.btnMobileServiceLog.Location = new System.Drawing.Point(32, 83);
             this.btnMobileServiceLog.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnMobileServiceLog.Name = "btnMobileServiceLog";
             this.btnMobileServiceLog.Size = new System.Drawing.Size(198, 60);
