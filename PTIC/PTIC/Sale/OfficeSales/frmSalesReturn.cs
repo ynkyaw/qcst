@@ -23,6 +23,10 @@ namespace PTIC.VC.Sale.OfficeSales
         /// <summary>
         /// Record table for different Product
         /// </summary>
+        /// 
+
+        bool _isAfterSave = false;
+
         private DataTable _dtProduct = null;
 
         /// <summary>
@@ -401,8 +405,11 @@ namespace PTIC.VC.Sale.OfficeSales
                 if (sup > 0)
                 {
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved, Color.GreenYellow);
+                    dgvSalesReturn.DataSource = null;
+                    _isAfterSave = true;
                     LoadNBindSalesReturn((int)DataTypeParser.Parse(cmbCustomer.SelectedValue, typeof(int), 0), (DateTime)DataTypeParser.Parse(dtpReturnDate.Value, typeof(DateTime), DateTime.Now));
                     LoadNBind();
+                    _isAfterSave = false;
                 }
             }
             catch (SqlException Sqle)
@@ -419,98 +426,102 @@ namespace PTIC.VC.Sale.OfficeSales
             int SelectedInvoiceID = (int)DataTypeParser.Parse(dgv.CurrentRow.Cells[colInvoiceID.Index].Value, typeof(int), -1);
             DataTable dtBalanceAmount = new SaleReturnInBL().GetBalanceAmountToReturn(SelectedInvoiceID);
 
-            if (e.ColumnIndex == colProduct.Index || e.ColumnIndex == colQty.Index)
+            if (!_isAfterSave)
             {
-                foreach (DataGridViewRow row in dgv.Rows)
+                if (e.ColumnIndex == colProduct.Index || e.ColumnIndex == colQty.Index)
                 {
-                    if (row.Index != e.RowIndex & !row.IsNewRow)
+                    foreach (DataGridViewRow row in dgv.Rows)
                     {
-                        if (row.Cells["colProduct"].FormattedValue.ToString() == "" && e.FormattedValue.ToString() == "") return;
-                        if (row.Cells["colProduct"].FormattedValue.ToString() == e.FormattedValue.ToString() && row.Cells[colInvoiceID.Index].FormattedValue.ToString() == dgv.CurrentRow.Cells[colInvoiceID.Index].FormattedValue.ToString() && row.Index != dgv.CurrentRow.Index)
+                        if (row.Index != e.RowIndex & !row.IsNewRow)
                         {
-                            dgv.Rows[e.RowIndex].ErrorText = "Duplicate not allowed";
-                            MessageBox.Show("Duplicate Not Allowed!");
-                            // return;
+                            if (row.Cells["colProduct"].FormattedValue.ToString() == "" && e.FormattedValue.ToString() == "") return;
+                            if (row.Cells["colProduct"].FormattedValue.ToString() == e.FormattedValue.ToString() && row.Cells[colInvoiceID.Index].FormattedValue.ToString() == dgv.CurrentRow.Cells[colInvoiceID.Index].FormattedValue.ToString() && row.Index != dgv.CurrentRow.Index)
+                            {
+                                dgv.Rows[e.RowIndex].ErrorText = "Duplicate not allowed";
+                                MessageBox.Show("Duplicate Not Allowed!");
+                                // return;
+                            }
+                            else
+                            {
+                                dgv.Rows[e.RowIndex].ErrorText = String.Empty;
+                            }
                         }
-                        else
+
+                        if (row.Cells[colInvoiceID.Index].FormattedValue.ToString() == row.Cells[colInvoiceID.Index].FormattedValue.ToString())
                         {
-                            dgv.Rows[e.RowIndex].ErrorText = String.Empty;
+                            TotalAmount = +(int)DataTypeParser.Parse(row.Cells[colQty.Index].Value, typeof(int), 0) * (decimal)DataTypeParser.Parse(row.Cells[colPrice.Index].Value, typeof(decimal), 0);
+
                         }
                     }
 
-                    if (row.Cells[colInvoiceID.Index].FormattedValue.ToString() == row.Cells[colInvoiceID.Index].FormattedValue.ToString())
+                    if (dtBalanceAmount.Rows.Count > 0)
                     {
-                        TotalAmount = +(int)DataTypeParser.Parse(row.Cells[colQty.Index].Value, typeof(int), 0) * (decimal)DataTypeParser.Parse(row.Cells[colPrice.Index].Value, typeof(decimal), 0);
-
+                        if (TotalAmount >= (decimal)DataTypeParser.Parse(dtBalanceAmount.Rows[0]["TotalBalance"], typeof(decimal), 0))
+                        {
+                            dgv.Rows[e.RowIndex].ErrorText = "Wrong Amount";
+                            MessageBox.Show("အကြွေးလက်ကျန်ငွေထက် ကျော်လွန်၍ Return လုပ်ခွင့်မရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
                     }
                 }
 
-                if (dtBalanceAmount.Rows.Count > 0)
+
+                DataTable dt = new SaleReturnInBL().GetSaleQtyToReturn((int)DataTypeParser.Parse(dgv.CurrentRow.Cells[colSalesDetailsID.Index].Value, typeof(int), 0), (int)DataTypeParser.Parse(dgv.CurrentRow.Cells[colProduct.Index].Value, typeof(int), 0));
+                if (dt.Rows.Count > 0)
                 {
-                    if (TotalAmount >= (decimal)DataTypeParser.Parse(dtBalanceAmount.Rows[0]["TotalBalance"], typeof(decimal), 0))
+                    //Logic Leak Error
+                    //if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1)
+                    if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1)
                     {
-                        dgv.Rows[e.RowIndex].ErrorText = "Wrong Amount";
-                        MessageBox.Show("အကြွေးလက်ကျန်ငွေထက် ကျော်လွန်၍ Return လုပ်ခွင့်မရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                }
-            }
-
-
-            DataTable dt = new SaleReturnInBL().GetSaleQtyToReturn((int)DataTypeParser.Parse(dgv.CurrentRow.Cells[colSalesDetailsID.Index].Value, typeof(int), 0), (int)DataTypeParser.Parse(dgv.CurrentRow.Cells[colProduct.Index].Value, typeof(int), 0));
-            if (dt.Rows.Count > 0)
-            {
-                //Logic Leak Error
-                //if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1)
-                if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1)
-                {
-                    Qtyleft = (int)DataTypeParser.Parse(dt.Rows[0]["SaleDetailQty"], typeof(int), 0);
-                }
-                else
-                {
-                    Qtyleft = (int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), 0);
-                }
-            }
-
-            if (e.ColumnIndex == dgv.CurrentRow.Cells[colQty.Index].ColumnIndex)
-            {
-                int newInteger;
-                if (dgv.Rows[e.RowIndex].IsNewRow) { return; }
-                if (e.FormattedValue.ToString() == null || e.FormattedValue.ToString() == "")
-                {
-                    //e.Cancel = true;             
-                    btnSave.Enabled = false;
-                    dgv.Rows[e.RowIndex].ErrorText = "Amount must be fill";
-                }
-                if ((int)DataTypeParser.Parse(e.FormattedValue.ToString(), typeof(int), 0) > Qtyleft)
-                {
-                    if (dgv.CurrentRow.Cells[colInvoiceNo.Index].Value.ToString() != string.Empty)
-                    {
-                        dgv.Rows[e.RowIndex].ErrorText = "Amount is Invalid!";
-                        MessageBox.Show("Amount is Invalid { " + Qtyleft + " }");
-                        dgv.CurrentRow.Cells[colQty.Index].Value = Qtyleft;
-                        return;
+                        Qtyleft = (int)DataTypeParser.Parse(dt.Rows[0]["SaleDetailQty"], typeof(int), 0);
                     }
                     else
                     {
-                        btnSave.Enabled = false;
-                        dgv.Rows[e.RowIndex].ErrorText = "Amount is Invalid";
+                        Qtyleft = (int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), 0);
                     }
                 }
-                else if (!int.TryParse(e.FormattedValue.ToString(),
-                        out newInteger) || newInteger < 0)
+
+                if (e.ColumnIndex == dgv.CurrentRow.Cells[colQty.Index].ColumnIndex)
                 {
-                    //e.Cancel = true;
-                    btnSave.Enabled = false;
-                    dgv.Rows[e.RowIndex].ErrorText = "Amount must be integer";
-                }
-                else
-                {
-                    btnSave.Enabled = true;
-                    dgv.Rows[e.RowIndex].ErrorText = string.Empty;
+                    int newInteger;
+                    if (dgv.Rows[e.RowIndex].IsNewRow) { return; }
+                    if (e.FormattedValue.ToString() == null || e.FormattedValue.ToString() == "")
+                    {
+                        //e.Cancel = true;             
+                        btnSave.Enabled = false;
+                        dgv.Rows[e.RowIndex].ErrorText = "Amount must be fill";
+                    }
+                    if ((int)DataTypeParser.Parse(e.FormattedValue.ToString(), typeof(int), 0) > Qtyleft)
+                    {
+                        if (dgv.CurrentRow.Cells[colInvoiceNo.Index].Value.ToString() != string.Empty && !_isAfterSave)
+                        {
+                            dgv.Rows[e.RowIndex].ErrorText = "Amount is Invalid!";
+                            MessageBox.Show("Amount is Invalid { " + Qtyleft + " }");
+                            dgv.CurrentRow.Cells[colQty.Index].Value = Qtyleft;
+                            return;
+                        }
+                        else
+                        {
+                            btnSave.Enabled = false;
+                            dgv.Rows[e.RowIndex].ErrorText = "Amount is Invalid";
+                        }
+                    }
+                    else if (!int.TryParse(e.FormattedValue.ToString(),
+                            out newInteger) || newInteger < 0)
+                    {
+                        //e.Cancel = true;
+                        btnSave.Enabled = false;
+                        dgv.Rows[e.RowIndex].ErrorText = "Amount must be integer";
+                    }
+                    else
+                    {
+                        btnSave.Enabled = true;
+                        dgv.Rows[e.RowIndex].ErrorText = string.Empty;
+                    }
                 }
             }
-
+           
+           
         }
 
         private void rdoVenNo_CheckedChanged(object sender, EventArgs e)
