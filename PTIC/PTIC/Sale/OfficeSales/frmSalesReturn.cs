@@ -460,7 +460,9 @@ namespace PTIC.VC.Sale.OfficeSales
             DataTable dt = new SaleReturnInBL().GetSaleQtyToReturn((int)DataTypeParser.Parse(dgv.CurrentRow.Cells[colSalesDetailsID.Index].Value, typeof(int), 0), (int)DataTypeParser.Parse(dgv.CurrentRow.Cells[colProduct.Index].Value, typeof(int), 0));
             if (dt.Rows.Count > 0)
             {
-                if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), 0) == 0)
+                //Logic Leak Error
+                //if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1) old code
+                if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1)
                 {
                     Qtyleft = (int)DataTypeParser.Parse(dt.Rows[0]["SaleDetailQty"], typeof(int), 0);
                 }
