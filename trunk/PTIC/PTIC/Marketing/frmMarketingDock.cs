@@ -15,6 +15,7 @@ using PTIC.Marketing.Survey;
 using PTIC.Marketing.MessageInOut;
 using PTIC.Marketing.TripPlan_Request;
 using PTIC.Marketing.Complaint;
+using PTIC.Marketing.MarketingPlan.Company_Plan;
 
 namespace PTIC.VC.Marketing
 {
@@ -83,6 +84,11 @@ namespace PTIC.VC.Marketing
         private void btnMessageInOut_Click(object sender, EventArgs e)
         {
             UIManager.MdiChildOpenForm(typeof(frmMsgInOutPage));
+        }
+
+        private void btnCompanyPlan_Click(object sender, EventArgs e)
+        {
+            UIManager.MdiChildOpenForm(typeof(frmCompanyPlanPage));
         }
     }
 }

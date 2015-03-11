@@ -352,6 +352,12 @@
     <Compile Include="Marketing\frmMarketingReportPage.Designer.cs">
       <DependentUpon>frmMarketingReportPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marketing\MarketingPlan\Company Plan\frmCompanyPlanLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\MarketingPlan\Company Plan\frmCompanyPlanLog.Designer.cs">
+      <DependentUpon>frmCompanyPlanLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marketing\MarketingPlan\Company Plan\frmCompanyPlanPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1487,6 +1493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Marketing\MarketingPlan\Company Plan\frmCompanyPlan.resx">
       <DependentUpon>frmCompanyPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\MarketingPlan\Company Plan\frmCompanyPlanLog.resx">
+      <DependentUpon>frmCompanyPlanLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marketing\MarketingPlan\Company Plan\frmCompanyPlanPage.resx">
       <DependentUpon>frmCompanyPlanPage.cs</DependentUpon>
