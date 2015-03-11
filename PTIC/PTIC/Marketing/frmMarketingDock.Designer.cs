@@ -41,6 +41,7 @@
             this.chkShowNoti = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnMessageInOut = new System.Windows.Forms.Button();
+            this.btnCompanyPlan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMarketingSetup
@@ -48,7 +49,7 @@
             this.btnMarketingSetup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMarketingSetup.AutoSize = true;
             this.btnMarketingSetup.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnMarketingSetup.Location = new System.Drawing.Point(11, 612);
+            this.btnMarketingSetup.Location = new System.Drawing.Point(11, 661);
             this.btnMarketingSetup.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnMarketingSetup.Name = "btnMarketingSetup";
             this.btnMarketingSetup.Size = new System.Drawing.Size(150, 45);
@@ -118,7 +119,7 @@
             this.btnAandP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAandP.AutoSize = true;
             this.btnAandP.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnAandP.Location = new System.Drawing.Point(11, 241);
+            this.btnAandP.Location = new System.Drawing.Point(11, 290);
             this.btnAandP.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnAandP.Name = "btnAandP";
             this.btnAandP.Size = new System.Drawing.Size(150, 45);
@@ -132,7 +133,7 @@
             this.btnCRM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCRM.AutoSize = true;
             this.btnCRM.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnCRM.Location = new System.Drawing.Point(12, 294);
+            this.btnCRM.Location = new System.Drawing.Point(12, 343);
             this.btnCRM.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnCRM.Name = "btnCRM";
             this.btnCRM.Size = new System.Drawing.Size(150, 45);
@@ -146,7 +147,7 @@
             this.btnSurvey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSurvey.AutoSize = true;
             this.btnSurvey.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnSurvey.Location = new System.Drawing.Point(12, 347);
+            this.btnSurvey.Location = new System.Drawing.Point(12, 396);
             this.btnSurvey.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnSurvey.Name = "btnSurvey";
             this.btnSurvey.Size = new System.Drawing.Size(150, 45);
@@ -160,7 +161,7 @@
             this.btnMsgInOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMsgInOut.AutoSize = true;
             this.btnMsgInOut.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnMsgInOut.Location = new System.Drawing.Point(12, 400);
+            this.btnMsgInOut.Location = new System.Drawing.Point(12, 449);
             this.btnMsgInOut.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnMsgInOut.Name = "btnMsgInOut";
             this.btnMsgInOut.Size = new System.Drawing.Size(150, 45);
@@ -174,7 +175,7 @@
             this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReport.AutoSize = true;
             this.btnReport.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnReport.Location = new System.Drawing.Point(11, 559);
+            this.btnReport.Location = new System.Drawing.Point(11, 608);
             this.btnReport.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(150, 45);
@@ -187,7 +188,7 @@
             // 
             this.chkShowNoti.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkShowNoti.AutoSize = true;
-            this.chkShowNoti.Location = new System.Drawing.Point(12, 674);
+            this.chkShowNoti.Location = new System.Drawing.Point(12, 723);
             this.chkShowNoti.Name = "chkShowNoti";
             this.chkShowNoti.Size = new System.Drawing.Size(109, 17);
             this.chkShowNoti.TabIndex = 11;
@@ -200,7 +201,7 @@
             this.button1.AutoSize = true;
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.button1.Location = new System.Drawing.Point(11, 453);
+            this.button1.Location = new System.Drawing.Point(11, 502);
             this.button1.MinimumSize = new System.Drawing.Size(150, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 45);
@@ -213,7 +214,7 @@
             this.btnMessageInOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMessageInOut.AutoSize = true;
             this.btnMessageInOut.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnMessageInOut.Location = new System.Drawing.Point(11, 506);
+            this.btnMessageInOut.Location = new System.Drawing.Point(11, 555);
             this.btnMessageInOut.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnMessageInOut.Name = "btnMessageInOut";
             this.btnMessageInOut.Size = new System.Drawing.Size(150, 45);
@@ -222,6 +223,19 @@
             this.btnMessageInOut.UseVisualStyleBackColor = true;
             this.btnMessageInOut.Click += new System.EventHandler(this.btnMessageInOut_Click);
             // 
+            // btnCompanyPlan
+            // 
+            this.btnCompanyPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCompanyPlan.AutoSize = true;
+            this.btnCompanyPlan.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.btnCompanyPlan.Location = new System.Drawing.Point(11, 239);
+            this.btnCompanyPlan.MinimumSize = new System.Drawing.Size(150, 45);
+            this.btnCompanyPlan.Name = "btnCompanyPlan";
+            this.btnCompanyPlan.Size = new System.Drawing.Size(150, 45);
+            this.btnCompanyPlan.TabIndex = 14;
+            this.btnCompanyPlan.Text = "Company Plan";
+            this.btnCompanyPlan.UseVisualStyleBackColor = true;
+            // 
             // frmMarketingDock
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -229,6 +243,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(172, 756);
+            this.Controls.Add(this.btnCompanyPlan);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMessageInOut);
             this.Controls.Add(this.chkShowNoti);
@@ -270,5 +285,6 @@
         private System.Windows.Forms.CheckBox chkShowNoti;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnMessageInOut;
+        private System.Windows.Forms.Button btnCompanyPlan;
     }
 }
