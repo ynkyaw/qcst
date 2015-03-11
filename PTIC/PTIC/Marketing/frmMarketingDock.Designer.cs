@@ -235,6 +235,7 @@
             this.btnCompanyPlan.TabIndex = 14;
             this.btnCompanyPlan.Text = "Company Plan";
             this.btnCompanyPlan.UseVisualStyleBackColor = true;
+            this.btnCompanyPlan.Click += new System.EventHandler(this.btnCompanyPlan_Click);
             // 
             // frmMarketingDock
             // 
