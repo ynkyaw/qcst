@@ -25,9 +25,15 @@ namespace PTIC.Marketing.BL
         {
             return CompanyPlanDA.SelectCompanyPlanUnConfirmedList();
         }
+
         public DataTable SelectCompanyPlanUnConfirmedListByDateRange(DateTime startDate,DateTime endDate)
         {
             return CompanyPlanDA.SelectCompanyPlanUnConfirmedListByDateRange(startDate,endDate);
+        }
+
+        public DataTable SelectCompanyPlanConfirmedList()
+        {
+            return CompanyPlanDA.SelectCompanyPlanUnConfirmedList();
         }
 
 

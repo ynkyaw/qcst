@@ -14,11 +14,33 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         public frmCompanyPlanLog()
         {
             InitializeComponent();
+
+            
         }
 
         private void lblMobileServiceSetup_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCompanyPlanLog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        #region
+        private void LoadCompanyPlanDetails() 
+        {
+            DataTable approveCompanyPlan = new DataTable();
+        
+        }
+        #endregion
     }
 }
