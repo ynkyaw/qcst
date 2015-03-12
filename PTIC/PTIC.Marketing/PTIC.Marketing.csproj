@@ -213,6 +213,7 @@
     <Compile Include="Entities\A_P_Usage.cs" />
     <Compile Include="Entities\A_P_UsageDetail.cs" />
     <Compile Include="Entities\CompanyPlan.cs" />
+    <Compile Include="Entities\CompanyPlanDetail.cs" />
     <Compile Include="Entities\Competitor.cs" />
     <Compile Include="Entities\CompetitorActivity.cs" />
     <Compile Include="Entities\CompetitorBrandInMarketingDetail.cs" />
