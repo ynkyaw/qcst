@@ -102,8 +102,23 @@ namespace PTIC.Marketing.Entities
             get { return _approvedBy; }
             set { _approvedBy = value; }
         }
-        
 
+        private List<Sale.Entities.Brand> _ownBrandList;
+
+        public List<Sale.Entities.Brand> OwnBrandList
+        {
+            get { return _ownBrandList; }
+            set { _ownBrandList = value; }
+        }
+
+        private List<Competitor> _otherBrandList;
+
+        internal List<Competitor> OtherBrandList
+        {
+            get { return _otherBrandList; }
+            set { _otherBrandList = value; }
+        }
+        
         
 
 
