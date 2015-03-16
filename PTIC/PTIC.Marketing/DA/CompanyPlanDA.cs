@@ -138,6 +138,50 @@ namespace PTIC.Marketing.DA
             return table;
         }
 
+
+        private static DataTable SelectCompanyPlanDetailsById(int CmpDtlId)
+        {
+            DataTable table = null;
+            string tableName = "CompanyPlanDetails";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+                command.CommandText = "SELECT * FROM CompanyPlanDetails WHERE ID =@id";
+                
+                command.Parameters.AddWithValue("@id", CmpDtlId);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+                command.Parameters.Clear();
+
+
+                if (table.Rows.Count == 1) 
+                {
+                    CompanyPlanDetail cmpDtl = new CompanyPlanDetail();
+                    cmpDtl.ApprovedBy = (string)table.Rows[0]["ApprovedBy"];
+                    cmpDtl.ArrivedTime = (DateTime)table.Rows[0]["ArrivedTime"];
+                    cmpDtl.ArrivedDate = (DateTime)table.Rows[0]["ArrivedDate"];
+                    cmpDtl.CarCountInCompany = (int)table.Rows[0]["CarCountInCompany"];
+                    cmpDtl.CheckedBy = (string)table.Rows[0]["CheckedBy"];
+                    cmpDtl.ConditionOfOtherBrands = (string)table.Rows[0]["CheckedBy"];
+                    cmpDtl.DepatureTime = (DateTime)table.Rows[0]["DepatureTime"];
+                    cmpDtl.HasOrder = (bool)table.Rows[0]["HasOrder"];
+                    cmpDtl.MainTopic = (string)table.Rows[0]["MainTopic"];
+                    cmpDtl.PreparedBy = (string)table.Rows[0]["PreparedBy"];
+                
+                }
+
+
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return table;
+        }
+
+
         private static DataTable SelectCompanyPlanBy(PTIC.Common.Enum.FormStatus formStatus)
         {
             DataTable table = null;
