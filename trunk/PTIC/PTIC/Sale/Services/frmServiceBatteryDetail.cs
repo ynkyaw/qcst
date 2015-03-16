@@ -19,6 +19,7 @@ using PTIC.Formatting;
 using PTIC.Util;
 using PTIC.Common.BL;
 using Microsoft.Practices.EnterpriseLibrary.Validation;
+using PTIC.VC.Validation;
 
 namespace PTIC.VC.Sale.Services
 {
@@ -500,7 +501,7 @@ namespace PTIC.VC.Sale.Services
 
         private void txtTestRecPlus1_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            //KeyPressfunction.CheckChar(sender, e);
+            KeyPressfunction.CheckChar(sender, e);
         }
 
         private void txtFun3Volt_TextChanged(object sender, EventArgs e)
@@ -848,7 +849,7 @@ namespace PTIC.VC.Sale.Services
             if (dtSvcTest.Rows.Count < 1)
                 return;
             DataRow row = dtSvcTest.Rows[0];
-            btnSvcTest.Enabled = false;
+            //btnSvcTest.Enabled = false;
             txtTestVolt.Text = row["TestVolt"].ToString();
             cmbTestService.SelectedIndex = (int)DataTypeParser.Parse(row["TestService"], typeof(int), -1);
             txtTestFault.Text = row["TestFault"].ToString();
@@ -1513,7 +1514,7 @@ namespace PTIC.VC.Sale.Services
             dtpFun2Date.Value = (DateTime)DataTypeParser.Parse(row2["SvcDate"], typeof(DateTime), DateTime.Now);
             dtpFun2From.Value = (DateTime)DataTypeParser.Parse(row2["FromTime"], typeof(DateTime), DateTime.Now);
             dtpFun2To.Value = (DateTime)DataTypeParser.Parse(row2["ToTime"], typeof(DateTime), DateTime.Now);
-            cmbSvcFun2.SelectedIndex = (int)DataTypeParser.Parse(row2["Function"].ToString(), typeof(int), -1);
+            cmbSvcFun2.SelectedIndex = (int)DataTypeParser.Parse(row2["SvcFunctions"], typeof(int), -1);
             txtFun2Volt.Text = row2["Volt"].ToString();
             txtFun2P1.Text = row2["RecPlus1"].ToString();
             txtFun2P2.Text = row2["RecPlus2"].ToString();
@@ -1647,6 +1648,16 @@ namespace PTIC.VC.Sale.Services
             {
                 dtpContactDateToCus.Visible = false;
             }
+        }
+
+        private void txtTestVolt_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Validation.KeyPressfunction.CheckInt(sender, e);
+        }      
+        
+        private void cmbTestService_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
 
        

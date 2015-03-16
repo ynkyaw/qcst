@@ -195,6 +195,11 @@ namespace PTIC.Sale.Services
             // TODO: set call back handler
             UIManager.MdiChildOpenForm(frmDetail);
         }
+
+        private void dgvServiceBatteries_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
                 
         
     }

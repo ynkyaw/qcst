@@ -176,6 +176,7 @@ namespace PTIC.VC.Sale.Services
                     saleserivice.Whereami = (int)DataTypeParser.Parse(row.Cells[colWhereami.Index].Value, typeof(int), -1);
                     saleserivice.ProductID = (int)DataTypeParser.Parse(row.Cells[colProductID.Index].Value, typeof(int), -1);
                     serviceStauts.InForwardMainStore = true;
+                    saleserivice.ReceivedDate = (DateTime)DataTypeParser.Parse(row.Cells[colReceivedDate.Index].Value, typeof(DateTime), DateTime.Now);
                     saleserivice.ReturnedDate = DateTime.MinValue;
                     serviceStauts.CurrentWarehouseID = (int)DataTypeParser.Parse(row.Cells[colCurWarehouseID.Index].Value, typeof(int), -1);
                     serviceStauts.CurrentVehicleID = (int)DataTypeParser.Parse(row.Cells[colCurVehicleID.Index].Value, typeof(int), -1);

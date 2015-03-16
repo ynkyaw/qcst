@@ -9,6 +9,7 @@ namespace PTIC.Sale.Entities
     {
         public int ID {get;set;}
 	    public string ReqVouNo {get;set;}
+        public string IssueVouNo { get; set; }
         public DateTime IssueDate { get; set; }
 	    public DateTime ReqDate {get;set;}
 	    public DateTime RequireDate {get;set;}

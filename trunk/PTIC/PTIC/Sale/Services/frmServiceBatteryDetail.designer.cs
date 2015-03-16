@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.tabPageTransferReturn = new System.Windows.Forms.TabPage();
-            this.gpBxBackward = new System.Windows.Forms.GroupBox();
-            this.picReturn = new System.Windows.Forms.PictureBox();
-            this.picBackwardShowroom = new System.Windows.Forms.PictureBox();
-            this.picBackwardVehicle = new System.Windows.Forms.PictureBox();
-            this.picBackwardServiceTeam = new System.Windows.Forms.PictureBox();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnBackwardVehicle = new System.Windows.Forms.Button();
-            this.btnBackwardShowroom = new System.Windows.Forms.Button();
-            this.btnBackwardServiceTeam = new System.Windows.Forms.Button();
             this.gpBxForward = new System.Windows.Forms.GroupBox();
             this.picForwardShowroom = new System.Windows.Forms.PictureBox();
             this.picForwardServiceTeam = new System.Windows.Forms.PictureBox();
@@ -47,6 +38,15 @@
             this.btnForwardServiceTeam = new System.Windows.Forms.Button();
             this.btnForwardShowroom = new System.Windows.Forms.Button();
             this.btnForwardVehicle = new System.Windows.Forms.Button();
+            this.gpBxBackward = new System.Windows.Forms.GroupBox();
+            this.picReturn = new System.Windows.Forms.PictureBox();
+            this.picBackwardShowroom = new System.Windows.Forms.PictureBox();
+            this.picBackwardVehicle = new System.Windows.Forms.PictureBox();
+            this.picBackwardServiceTeam = new System.Windows.Forms.PictureBox();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnBackwardVehicle = new System.Windows.Forms.Button();
+            this.btnBackwardShowroom = new System.Windows.Forms.Button();
+            this.btnBackwardServiceTeam = new System.Windows.Forms.Button();
             this.tabPageSvcFunction = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -243,16 +243,16 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTransferReturn.SuspendLayout();
-            this.gpBxBackward.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReturn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackwardShowroom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackwardVehicle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackwardServiceTeam)).BeginInit();
             this.gpBxForward.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picForwardShowroom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picForwardServiceTeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picForwardFactory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picForwardVehicle)).BeginInit();
+            this.gpBxBackward.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picReturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackwardShowroom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackwardVehicle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackwardServiceTeam)).BeginInit();
             this.tabPageSvcFunction.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -278,105 +278,6 @@
             this.tabPageTransferReturn.TabIndex = 3;
             this.tabPageTransferReturn.Text = "Transfer / Return";
             // 
-            // gpBxBackward
-            // 
-            this.gpBxBackward.Controls.Add(this.picReturn);
-            this.gpBxBackward.Controls.Add(this.picBackwardShowroom);
-            this.gpBxBackward.Controls.Add(this.picBackwardVehicle);
-            this.gpBxBackward.Controls.Add(this.picBackwardServiceTeam);
-            this.gpBxBackward.Controls.Add(this.btnReturn);
-            this.gpBxBackward.Controls.Add(this.btnBackwardVehicle);
-            this.gpBxBackward.Controls.Add(this.btnBackwardShowroom);
-            this.gpBxBackward.Controls.Add(this.btnBackwardServiceTeam);
-            this.gpBxBackward.Location = new System.Drawing.Point(28, 224);
-            this.gpBxBackward.Name = "gpBxBackward";
-            this.gpBxBackward.Size = new System.Drawing.Size(956, 190);
-            this.gpBxBackward.TabIndex = 1;
-            this.gpBxBackward.TabStop = false;
-            this.gpBxBackward.Text = "Backward";
-            // picReturn
-            // 
-            this.picReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picReturn.Location = new System.Drawing.Point(704, 40);
-            this.picReturn.Name = "picReturn";
-            this.picReturn.Size = new System.Drawing.Size(20, 30);
-            this.picReturn.TabIndex = 13;
-            this.picReturn.TabStop = false;
-            // 
-            // picBackwardShowroom
-            // 
-            this.picBackwardShowroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBackwardShowroom.Location = new System.Drawing.Point(390, 40);
-            this.picBackwardShowroom.Name = "picBackwardShowroom";
-            this.picBackwardShowroom.Size = new System.Drawing.Size(20, 30);
-            this.picBackwardShowroom.TabIndex = 12;
-            this.picBackwardShowroom.TabStop = false;
-            // 
-            // picBackwardVehicle
-            // 
-            this.picBackwardVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBackwardVehicle.Location = new System.Drawing.Point(547, 40);
-            this.picBackwardVehicle.Name = "picBackwardVehicle";
-            this.picBackwardVehicle.Size = new System.Drawing.Size(20, 30);
-            this.picBackwardVehicle.TabIndex = 11;
-            this.picBackwardVehicle.TabStop = false;
-            // 
-            // picBackwardServiceTeam
-            // 
-            this.picBackwardServiceTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBackwardServiceTeam.Location = new System.Drawing.Point(233, 40);
-            this.picBackwardServiceTeam.Name = "picBackwardServiceTeam";
-            this.picBackwardServiceTeam.Size = new System.Drawing.Size(20, 30);
-            this.picBackwardServiceTeam.TabIndex = 9;
-            this.picBackwardServiceTeam.TabStop = false;
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturn.Location = new System.Drawing.Point(642, 75);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(140, 40);
-            this.btnReturn.TabIndex = 8;
-            this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // btnBackwardVehicle
-            // 
-            this.btnBackwardVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBackwardVehicle.Location = new System.Drawing.Point(486, 75);
-            this.btnBackwardVehicle.Name = "btnBackwardVehicle";
-            this.btnBackwardVehicle.Size = new System.Drawing.Size(140, 40);
-            this.btnBackwardVehicle.TabIndex = 7;
-            this.btnBackwardVehicle.Text = "အရောင်းကား";
-            this.btnBackwardVehicle.UseVisualStyleBackColor = true;
-            this.btnBackwardVehicle.BackgroundImageChanged += new System.EventHandler(this.buttonTransfer_BackgroundImageChanged);
-            this.btnBackwardVehicle.Click += new System.EventHandler(this.btnBackVen_Click);
-            // 
-            // btnBackwardShowroom
-            // 
-            this.btnBackwardShowroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBackwardShowroom.Location = new System.Drawing.Point(330, 75);
-            this.btnBackwardShowroom.Name = "btnBackwardShowroom";
-            this.btnBackwardShowroom.Size = new System.Drawing.Size(140, 40);
-            this.btnBackwardShowroom.TabIndex = 6;
-            this.btnBackwardShowroom.Text = "Showroom";
-            this.btnBackwardShowroom.UseVisualStyleBackColor = true;
-            this.btnBackwardShowroom.BackgroundImageChanged += new System.EventHandler(this.buttonTransfer_BackgroundImageChanged);
-            this.btnBackwardShowroom.Click += new System.EventHandler(this.btnBackShowRoom_Click);
-            // 
-            // btnBackwardServiceTeam
-            // 
-            this.btnBackwardServiceTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBackwardServiceTeam.Location = new System.Drawing.Point(174, 75);
-            this.btnBackwardServiceTeam.Name = "btnBackwardServiceTeam";
-            this.btnBackwardServiceTeam.Size = new System.Drawing.Size(140, 40);
-            this.btnBackwardServiceTeam.TabIndex = 5;
-            this.btnBackwardServiceTeam.Text = "Service Team";
-            this.btnBackwardServiceTeam.UseVisualStyleBackColor = true;
-            this.btnBackwardServiceTeam.BackgroundImageChanged += new System.EventHandler(this.buttonTransfer_BackgroundImageChanged);
-            this.btnBackwardServiceTeam.Click += new System.EventHandler(this.btnBackSubStore_Click);
-            // 
             // gpBxForward
             // 
             this.gpBxForward.BackColor = System.Drawing.Color.Transparent;
@@ -394,6 +295,7 @@
             this.gpBxForward.TabIndex = 0;
             this.gpBxForward.TabStop = false;
             this.gpBxForward.Text = "Forward";
+            // 
             // picForwardShowroom
             // 
             this.picForwardShowroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -478,6 +380,106 @@
             this.btnForwardVehicle.BackgroundImageChanged += new System.EventHandler(this.buttonTransfer_BackgroundImageChanged);
             this.btnForwardVehicle.Click += new System.EventHandler(this.btnVen_Click);
             // 
+            // gpBxBackward
+            // 
+            this.gpBxBackward.Controls.Add(this.picReturn);
+            this.gpBxBackward.Controls.Add(this.picBackwardShowroom);
+            this.gpBxBackward.Controls.Add(this.picBackwardVehicle);
+            this.gpBxBackward.Controls.Add(this.picBackwardServiceTeam);
+            this.gpBxBackward.Controls.Add(this.btnReturn);
+            this.gpBxBackward.Controls.Add(this.btnBackwardVehicle);
+            this.gpBxBackward.Controls.Add(this.btnBackwardShowroom);
+            this.gpBxBackward.Controls.Add(this.btnBackwardServiceTeam);
+            this.gpBxBackward.Location = new System.Drawing.Point(28, 224);
+            this.gpBxBackward.Name = "gpBxBackward";
+            this.gpBxBackward.Size = new System.Drawing.Size(956, 190);
+            this.gpBxBackward.TabIndex = 1;
+            this.gpBxBackward.TabStop = false;
+            this.gpBxBackward.Text = "Backward";
+            // 
+            // picReturn
+            // 
+            this.picReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picReturn.Location = new System.Drawing.Point(704, 40);
+            this.picReturn.Name = "picReturn";
+            this.picReturn.Size = new System.Drawing.Size(20, 30);
+            this.picReturn.TabIndex = 13;
+            this.picReturn.TabStop = false;
+            // 
+            // picBackwardShowroom
+            // 
+            this.picBackwardShowroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBackwardShowroom.Location = new System.Drawing.Point(390, 40);
+            this.picBackwardShowroom.Name = "picBackwardShowroom";
+            this.picBackwardShowroom.Size = new System.Drawing.Size(20, 30);
+            this.picBackwardShowroom.TabIndex = 12;
+            this.picBackwardShowroom.TabStop = false;
+            // 
+            // picBackwardVehicle
+            // 
+            this.picBackwardVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBackwardVehicle.Location = new System.Drawing.Point(547, 40);
+            this.picBackwardVehicle.Name = "picBackwardVehicle";
+            this.picBackwardVehicle.Size = new System.Drawing.Size(20, 30);
+            this.picBackwardVehicle.TabIndex = 11;
+            this.picBackwardVehicle.TabStop = false;
+            // 
+            // picBackwardServiceTeam
+            // 
+            this.picBackwardServiceTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBackwardServiceTeam.Location = new System.Drawing.Point(233, 40);
+            this.picBackwardServiceTeam.Name = "picBackwardServiceTeam";
+            this.picBackwardServiceTeam.Size = new System.Drawing.Size(20, 30);
+            this.picBackwardServiceTeam.TabIndex = 9;
+            this.picBackwardServiceTeam.TabStop = false;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturn.Location = new System.Drawing.Point(642, 75);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(140, 40);
+            this.btnReturn.TabIndex = 8;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnBackwardVehicle
+            // 
+            this.btnBackwardVehicle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBackwardVehicle.Location = new System.Drawing.Point(486, 75);
+            this.btnBackwardVehicle.Name = "btnBackwardVehicle";
+            this.btnBackwardVehicle.Size = new System.Drawing.Size(140, 40);
+            this.btnBackwardVehicle.TabIndex = 7;
+            this.btnBackwardVehicle.Text = "အရောင်းကား";
+            this.btnBackwardVehicle.UseVisualStyleBackColor = true;
+            this.btnBackwardVehicle.BackgroundImageChanged += new System.EventHandler(this.buttonTransfer_BackgroundImageChanged);
+            this.btnBackwardVehicle.Click += new System.EventHandler(this.btnBackVen_Click);
+            // 
+            // btnBackwardShowroom
+            // 
+            this.btnBackwardShowroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBackwardShowroom.Location = new System.Drawing.Point(330, 75);
+            this.btnBackwardShowroom.Name = "btnBackwardShowroom";
+            this.btnBackwardShowroom.Size = new System.Drawing.Size(140, 40);
+            this.btnBackwardShowroom.TabIndex = 6;
+            this.btnBackwardShowroom.Text = "Showroom";
+            this.btnBackwardShowroom.UseVisualStyleBackColor = true;
+            this.btnBackwardShowroom.BackgroundImageChanged += new System.EventHandler(this.buttonTransfer_BackgroundImageChanged);
+            this.btnBackwardShowroom.Click += new System.EventHandler(this.btnBackShowRoom_Click);
+            // 
+            // btnBackwardServiceTeam
+            // 
+            this.btnBackwardServiceTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBackwardServiceTeam.Location = new System.Drawing.Point(174, 75);
+            this.btnBackwardServiceTeam.Name = "btnBackwardServiceTeam";
+            this.btnBackwardServiceTeam.Size = new System.Drawing.Size(140, 40);
+            this.btnBackwardServiceTeam.TabIndex = 5;
+            this.btnBackwardServiceTeam.Text = "Service Team";
+            this.btnBackwardServiceTeam.UseVisualStyleBackColor = true;
+            this.btnBackwardServiceTeam.BackgroundImageChanged += new System.EventHandler(this.buttonTransfer_BackgroundImageChanged);
+            this.btnBackwardServiceTeam.Click += new System.EventHandler(this.btnBackSubStore_Click);
+            // 
             // tabPageSvcFunction
             // 
             this.tabPageSvcFunction.AutoScroll = true;
@@ -551,6 +553,7 @@
             this.cmbCP.Name = "cmbCP";
             this.cmbCP.Size = new System.Drawing.Size(54, 27);
             this.cmbCP.TabIndex = 1;
+            this.cmbCP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTestService_KeyDown);
             // 
             // label19
             // 
@@ -683,6 +686,7 @@
             this.cmbSvcFun3.Name = "cmbSvcFun3";
             this.cmbSvcFun3.Size = new System.Drawing.Size(182, 27);
             this.cmbSvcFun3.TabIndex = 41;
+            this.cmbSvcFun3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTestService_KeyDown);
             // 
             // cmbSvcFun1
             // 
@@ -695,6 +699,7 @@
             this.cmbSvcFun1.Name = "cmbSvcFun1";
             this.cmbSvcFun1.Size = new System.Drawing.Size(179, 27);
             this.cmbSvcFun1.TabIndex = 40;
+            this.cmbSvcFun1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTestService_KeyDown);
             // 
             // btnSvnFunction3
             // 
@@ -775,6 +780,7 @@
             this.cmbSvcFun2.Name = "cmbSvcFun2";
             this.cmbSvcFun2.Size = new System.Drawing.Size(182, 27);
             this.cmbSvcFun2.TabIndex = 39;
+            this.cmbSvcFun2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTestService_KeyDown);
             // 
             // dtpFun2To
             // 
@@ -827,7 +833,7 @@
             this.txtFun2Volt.Size = new System.Drawing.Size(40, 28);
             this.txtFun2Volt.TabIndex = 7;
             this.txtFun2Volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtFun2Volt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestRecPlus1_KeyPress_1);
+            this.txtFun2Volt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestVolt_KeyPress_1);
             // 
             // txtFun2M6
             // 
@@ -1096,7 +1102,7 @@
             this.txtFun3Volt.TabIndex = 23;
             this.txtFun3Volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFun3Volt.TextChanged += new System.EventHandler(this.txtFun3Volt_TextChanged);
-            this.txtFun3Volt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestRecPlus1_KeyPress_1);
+            this.txtFun3Volt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestVolt_KeyPress_1);
             // 
             // label41
             // 
@@ -1144,7 +1150,7 @@
             this.txtFun1Volt.Size = new System.Drawing.Size(47, 28);
             this.txtFun1Volt.TabIndex = 4;
             this.txtFun1Volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtFun1Volt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestRecPlus1_KeyPress_1);
+            this.txtFun1Volt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestVolt_KeyPress_1);
             // 
             // txtFun3M5
             // 
@@ -1558,6 +1564,7 @@
             this.cmbTestService.Name = "cmbTestService";
             this.cmbTestService.Size = new System.Drawing.Size(119, 27);
             this.cmbTestService.TabIndex = 14;
+            this.cmbTestService.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTestService_KeyDown);
             // 
             // txtTestRemark
             // 
@@ -1616,7 +1623,7 @@
             this.txtTestVolt.Size = new System.Drawing.Size(70, 28);
             this.txtTestVolt.TabIndex = 12;
             this.txtTestVolt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTestVolt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestRecPlus1_KeyPress_1);
+            this.txtTestVolt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestVolt_KeyPress_1);
             // 
             // txtTestRecMinus5
             // 
@@ -1884,6 +1891,7 @@
             this.cmbSupportToCustomer.Name = "cmbSupportToCustomer";
             this.cmbSupportToCustomer.Size = new System.Drawing.Size(185, 27);
             this.cmbSupportToCustomer.TabIndex = 0;
+            this.cmbSupportToCustomer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTestService_KeyDown);
             // 
             // label68
             // 
@@ -2233,6 +2241,7 @@
             // txtJobNo
             // 
             this.txtJobNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJobNo.Enabled = false;
             this.txtJobNo.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.txtJobNo.Location = new System.Drawing.Point(150, 20);
             this.txtJobNo.Name = "txtJobNo";
@@ -2629,16 +2638,16 @@
             this.Text = "Service Battery Detail";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmServiceBatteryDetail_FormClosed);
             this.tabPageTransferReturn.ResumeLayout(false);
-            this.gpBxBackward.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picReturn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackwardShowroom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackwardVehicle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackwardServiceTeam)).EndInit();
             this.gpBxForward.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picForwardShowroom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picForwardServiceTeam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picForwardFactory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picForwardVehicle)).EndInit();
+            this.gpBxBackward.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picReturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackwardShowroom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackwardVehicle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackwardServiceTeam)).EndInit();
             this.tabPageSvcFunction.ResumeLayout(false);
             this.tabPageSvcFunction.PerformLayout();
             this.groupBox8.ResumeLayout(false);
