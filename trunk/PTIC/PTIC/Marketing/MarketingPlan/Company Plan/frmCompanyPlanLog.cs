@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PTIC.Marketing.BL;
+
+
 
 namespace PTIC.Marketing.MarketingPlan.Company_Plan
 {
@@ -14,7 +17,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         public frmCompanyPlanLog()
         {
             InitializeComponent();
-
+            LoadCompanyPlanDetails();
             
         }
 
@@ -38,8 +41,9 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         #region
         private void LoadCompanyPlanDetails() 
         {
-            DataTable approveCompanyPlan = new DataTable();
-        
+            DataTable approveCompanyPlan = new CompanyPlanBL().SelectCompanyPlanLog();
+            dgvMobileServiceLog.AutoGenerateColumns = false;
+            dgvMobileServiceLog.DataSource = approveCompanyPlan;
         }
         #endregion
     }
