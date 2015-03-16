@@ -19,22 +19,61 @@ namespace PTIC.Marketing.DA
     public class CompanyPlanDA
     {
         #region SELECT
-        public static DataTable SelectCompanyPlanUnConfirmedList()
+        public static DataTable SelectCompanyPlanLog()
         {
             DataTable table = null;
-            string tableName = "CompanyPlanTable";
+            string tableName = "CompanyPlanLog";
             try
             {
                 table = new DataTable(tableName);
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                //command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = " SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId]";
-                command.CommandText += " ,[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone";
-                command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
-                command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID)";
-                command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
+                
+                command.CommandText = "SELECT cmp.Id as cmpId,Convert(varchar,cmpDtl.ArrivedDate,7) as ArrivedDate,";
+                command.CommandText += " Convert(varchar,cmp.TargetedDate,7) as TargetedDate,cust.CusName,cmpDtl.ID as CmpDtlId,";
+                command.CommandText += " cp.ConPersonName,cp.MobilePhone,Convert(varchar,cmpDtl.ArrivedTime,8) as ArrivedTime,";
+                command.CommandText += " Convert(varchar,cmpDtl.DepatureTime,8) as DepatureTime,cmpDtl.CarCountInCompany,";
+                command.CommandText += " dbo.GetUsedBrand(cmpDtl.ID) as UsedBrand,cmpDtl.ToyoComment,cmpDtl.MainTopic,";
+                command.CommandText += " cmpDtl.HasOrder,cmpDtl.ConditionOfOtherBrands,emp.EmpName,cmpDtl.Remark";
+                command.CommandText += " FROM CompanyPlan cmp JOIN ContactPerson CP ON CMP.CustomerId=CP.CusID";
+                command.CommandText += " JOIN Customer cust ON CUST.ID= CMP.CustomerId LEFT JOIN (CompanyPlanDetails cmpDtl JOIN Employee emp ON cmpDtl.EmpId=emp.ID) ";
+                command.CommandText += " ON CMP.ID=cmpDtl.CompanyPlanId WHERE CMP.ISCONFIRMED=1";
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+               
+                adapter.Fill(table);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return table;
+        }
+
+        public static DataTable SelectCompanyPlanLogWithDateRange(DateTime startDate,DateTime endDate)
+        {
+            DataTable table = null;
+            string tableName = "CompanyPlanLog";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+
+                command.CommandText = "SELECT cmp.Id as cmpId,Convert(varchar,cmpDtl.ArrivedDate,7) as ArrivedDate,";
+                command.CommandText += " Convert(varchar,cmp.TargetedDate,7) as TargetedDate,cust.CusName,cmpDtl.ID as CmpDtlId,";
+                command.CommandText += " cp.ConPersonName,cp.MobilePhone,Convert(varchar,cmpDtl.ArrivedTime,8) as ArrivedTime,";
+                command.CommandText += " Convert(varchar,cmpDtl.DepatureTime,8) as DepatureTime,cmpDtl.CarCountInCompany,";
+                command.CommandText += " dbo.GetUsedBrand(cmpDtl.ID) as UsedBrand,cmpDtl.ToyoComment,cmpDtl.MainTopic,";
+                command.CommandText += " cmpDtl.HasOrder,cmpDtl.ConditionOfOtherBrands,emp.EmpName,cmpDtl.Remark";
+                command.CommandText += " FROM CompanyPlan cmp JOIN ContactPerson CP ON CMP.CustomerId=CP.CusID";
+                command.CommandText += " JOIN Customer cust ON CUST.ID= CMP.CustomerId LEFT JOIN (CompanyPlanDetails cmpDtl JOIN Employee emp ON cmpDtl.EmpId=emp.ID) ";
+                command.CommandText += " ON CMP.ID=cmpDtl.CompanyPlanId WHERE CMP.ISCONFIRMED=1 AND CMP.TargetedDate BETWEEN @startDate  AND @endDate ";
+                command.Parameters.AddWithValue("@startDate", startDate);
+                command.Parameters.AddWithValue("@endDate", endDate);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+
                 adapter.Fill(table);
             }
             catch (SqlException sqle)

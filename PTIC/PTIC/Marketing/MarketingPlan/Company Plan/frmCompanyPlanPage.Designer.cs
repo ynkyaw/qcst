@@ -79,6 +79,7 @@
             this.btnMobileServiceLog.TabIndex = 45;
             this.btnMobileServiceLog.Text = "ComplanPlan Log";
             this.btnMobileServiceLog.UseVisualStyleBackColor = true;
+            this.btnMobileServiceLog.Click += new System.EventHandler(this.btnMobileServiceLog_Click);
             // 
             // frmCompanyPlanPage
             // 

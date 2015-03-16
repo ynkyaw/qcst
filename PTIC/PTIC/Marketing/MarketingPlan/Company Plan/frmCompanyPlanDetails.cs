@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace PTIC.Marketing.MarketingPlan.Company_Plan
 {
-    public partial class frmCompanyPlanPage : Form
+    public partial class frmCompanyPlanDetails : Form
     {
-        public frmCompanyPlanPage()
+        public frmCompanyPlanDetails()
         {
             InitializeComponent();
-        }
-
-        private void btnMobileServiceLog_Click(object sender, EventArgs e)
-        {
-            UIManager.MdiChildOpenForm(typeof(frmCompanyPlanLog));
         }
     }
 }

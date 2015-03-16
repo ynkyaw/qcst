@@ -22,9 +22,9 @@ namespace PTIC.Marketing.Entities
             get { return _companyPlanId; }
             set { _companyPlanId = value; }
         }
-        private string _carCountInCompany;
+        private int _carCountInCompany;
 
-        public string CarCountInCompany
+        public int CarCountInCompany
         {
             get { return _carCountInCompany; }
             set { _carCountInCompany = value; }
@@ -61,11 +61,47 @@ namespace PTIC.Marketing.Entities
             set { _arrivedTime = value; }
         }
         private DateTime _depatureTime;
+
+        public DateTime DepatureTime
+        {
+            get { return _depatureTime; }
+            set { _depatureTime = value; }
+        }
         private bool _hasOrder;
+
+        public bool HasOrder
+        {
+            get { return _hasOrder; }
+            set { _hasOrder = value; }
+        }
         private string _conditionOfOtherBrands;
+
+        public string ConditionOfOtherBrands
+        {
+            get { return _conditionOfOtherBrands; }
+            set { _conditionOfOtherBrands = value; }
+        }
         private string _preparedBy;
+
+        public string PreparedBy
+        {
+            get { return _preparedBy; }
+            set { _preparedBy = value; }
+        }
         private string _checkedBy;
+
+        public string CheckedBy
+        {
+            get { return _checkedBy; }
+            set { _checkedBy = value; }
+        }
         private string _approvedBy;
+
+        public string ApprovedBy
+        {
+            get { return _approvedBy; }
+            set { _approvedBy = value; }
+        }
         
 
         
