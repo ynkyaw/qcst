@@ -15,5 +15,20 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         {
             InitializeComponent();
         }
+
+        public frmCompanyPlanDetails(int CmpDtlId)
+        {
+            InitializeComponent();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteServiceRecord_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

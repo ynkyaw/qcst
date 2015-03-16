@@ -46,5 +46,14 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             dgvMobileServiceLog.DataSource = approveCompanyPlan;
         }
         #endregion
+
+        private void dgvMobileServiceLog_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == colServiceDetail.Index)
+            {
+                frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails();
+                UIManager.OpenForm(frmCmpDtl);
+            }
+        }
     }
 }
