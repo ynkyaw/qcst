@@ -113,13 +113,20 @@ namespace PTIC.Marketing.Entities
 
         private List<Competitor> _otherBrandList;
 
-        internal List<Competitor> OtherBrandList
+        public List<Competitor> OtherBrandList
         {
             get { return _otherBrandList; }
             set { _otherBrandList = value; }
         }
-        
-        
+
+        private DateTime _arrivedDate;
+
+        public DateTime ArrivedDate
+        {
+            get { return _arrivedDate; }
+            set { _arrivedDate = value; }
+        }
+
 
 
     }
