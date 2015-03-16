@@ -131,13 +131,13 @@ namespace PTIC.Sale.Entities
                 results.AddResult(
                     new ValidationResult(ErrorMessages.SalesService_Taker_Require,
                         null, "RequireTaker", null, null));
-            else if(
-                ID > 0
-                && (string.IsNullOrEmpty(JobNo) || JobNo.Length < 1)
-                )
-                results.AddResult(
-                    new ValidationResult(ErrorMessages.SalesService_JobNo_Require,
-                        null, "RequireJobNo", null, null));
+            //else if(
+            //    ID > 0
+            //    && (string.IsNullOrEmpty(JobNo) || JobNo.Length < 1)
+            //    )
+            //    results.AddResult(
+            //        new ValidationResult(ErrorMessages.SalesService_JobNo_Require,
+            //            null, "RequireJobNo", null, null));
         }
         #endregion
     }

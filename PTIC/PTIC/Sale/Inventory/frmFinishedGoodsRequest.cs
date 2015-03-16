@@ -68,8 +68,9 @@ namespace PTIC.VC.Sale.Inventory
             btnRequest.Enabled = false;
             LoadNBindData();
             this.FGRequstID = FGRequestID;
+            dgvStockInFactory.AutoGenerateColumns = false;
             LoadNBindFGRequestDetails();
-            //  LoadNBindFinishedGood();
+            LoadNBindFinishedGood();
             //   DataUtil.AddInitialNewRow(dgvFGRequest);
             DataUtil.AddInitialNewRow(dgvFinishedGoods);
         }
@@ -247,6 +248,7 @@ namespace PTIC.VC.Sale.Inventory
                     {
                         LoadNBindData();
                         LoadNBindFGRequestDetails();
+                        LoadNBindFinishedGood();
                     }
                 }
                 else
@@ -1061,7 +1063,7 @@ namespace PTIC.VC.Sale.Inventory
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {            
             int? ProductID = (int?)DataTypeParser.Parse(dgvFinishedGoods.CurrentRow.Cells[colFGProduct.Index].Value, typeof(int), null);
             int Qty = (int)DataTypeParser.Parse(dgvFinishedGoods.CurrentRow.Cells[clnFGQty.Index].Value, typeof(int), 0);
             if (ProductID != null && Qty > 0)
@@ -1123,6 +1125,35 @@ namespace PTIC.VC.Sale.Inventory
             if (_txtQty != null)
             {
                 _txtQty.KeyPress -= new KeyPressEventHandler(Control_KeyPress);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFGDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvFinishedGoods.CurrentRow.IsNewRow || dgvFinishedGoods.SelectedRows.Count < 1)
+            {
+                ToastMessageBox.Show(Resource.errSelectRowToDelete);
+                return;
+            }
+            if (MessageBox.Show(Resource.qstSureToDeleteRow, Resource.deleteConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == System.Windows.Forms.DialogResult.No)
+                return;
+
+            DataGridViewRow selectedRow = dgvFinishedGoods.CurrentRow;
+            int FinishedGoodID = (int)DataTypeParser.Parse(selectedRow.Cells["colFinishedGoodID"].Value, typeof(int), -1);
+            if (FinishedGoodID == -1)
+            {
+                dgvFinishedGoods.Rows.RemoveAt(dgvFinishedGoods.CurrentRow.Index);
+                if (dgvFinishedGoods.Rows.Count < 1)
+                {
+                    DataUtil.AddInitialNewRow(dgvFinishedGoods);
+                }
+                ToastMessageBox.Show(Resource.errSuccessfullyDeleted, Color.Green);
             }
         }
 

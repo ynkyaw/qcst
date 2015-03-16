@@ -44,9 +44,6 @@
             this.pnlFilt = new System.Windows.Forms.Panel();
             this.lblFilter = new System.Windows.Forms.Label();
             this.dgvServiceBatteries = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDetail = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.colReceivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsReturned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJobNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +75,9 @@
             this.colDateToCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaleServicedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colServicedCustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.pnlFilter.SuspendLayout();
             this.pnlFilt.SuspendLayout();
@@ -180,7 +180,7 @@
             this.lblFilter.ForeColor = System.Drawing.Color.Blue;
             this.lblFilter.Location = new System.Drawing.Point(3, 0);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(145, 20);
+            this.lblFilter.Size = new System.Drawing.Size(142, 20);
             this.lblFilter.TabIndex = 1;
             this.lblFilter.Text = "▲ Hide Advance Search";
             this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
@@ -242,36 +242,7 @@
             this.dgvServiceBatteries.Size = new System.Drawing.Size(982, 300);
             this.dgvServiceBatteries.TabIndex = 199;
             this.dgvServiceBatteries.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvServiceBatteries_DataBindingComplete);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnDetail);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 416);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 41);
-            this.panel1.TabIndex = 200;
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnDetail.Location = new System.Drawing.Point(14, 6);
-            this.btnDetail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(111, 30);
-            this.btnDetail.TabIndex = 3;
-            this.btnDetail.Text = "Detail";
-            this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dgvServiceBatteries);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 116);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(982, 300);
-            this.panel4.TabIndex = 201;
+            this.dgvServiceBatteries.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvServiceBatteries_DataError);
             // 
             // colReceivedDate
             // 
@@ -523,6 +494,36 @@
             this.colServicedCustomerID.Name = "colServicedCustomerID";
             this.colServicedCustomerID.ReadOnly = true;
             this.colServicedCustomerID.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDetail);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 416);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(982, 41);
+            this.panel1.TabIndex = 200;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.btnDetail.Location = new System.Drawing.Point(14, 6);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(111, 30);
+            this.btnDetail.TabIndex = 3;
+            this.btnDetail.Text = "Detail";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dgvServiceBatteries);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 116);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(982, 300);
+            this.panel4.TabIndex = 201;
             // 
             // frmServiceBatteries
             // 

@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using PTIC.Sale.BL;
 using PTIC.VC.Util;
 using PTIC.Util;
+using System.Linq;
 
 namespace PTIC.VC.Sale.Services
 {
@@ -161,7 +162,14 @@ namespace PTIC.VC.Sale.Services
             this.salesService = salesService;
             this.serviceBatteryStatus = serviceBatteryStatus;
             this._placeToTransfer = PlaceToTransfer;
-            LoadData();
+
+            // Selcet Max Date list from salesService List
+            var maxReceivedList = salesService.Where(s => s.ReceivedDate == salesService.Max(x => x.ReceivedDate))
+                        .FirstOrDefault();
+
+            dtTransferOrReturnDate.MinDate = Convert.ToDateTime(maxReceivedList.ReceivedDate);
+            
+            LoadData();          
            
             if (_placeToTransfer == (int)PTIC.Common.Enum.SalesServiceWhereami.Vehicle)
             {
