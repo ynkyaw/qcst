@@ -42,9 +42,9 @@ namespace PTIC.Marketing.BL
             return CompanyPlanDA.SelectReportedCompanyPlan();
         }
 
-        public DataTable GetMobileServiceLogsBy(DateTime startDate, DateTime endDate)
+        public CompanyPlanDetail SelectCompanyPlanDetailsById(int CmpDtlId)
         {
-            return CompanyPlanDA.SelectMobileServiceLogsBy(startDate, endDate);
+            return CompanyPlanDA.SelectCompanyPlanDetailsById(CmpDtlId);
         }
 
         public DataTable GetMobileServiceLogsWithoutDetailsBy(DateTime startDate, DateTime endDate)

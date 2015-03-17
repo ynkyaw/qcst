@@ -38,6 +38,49 @@ namespace PTIC.Sale.DA
             }
             return table;
         }
+
+        public PTIC.Sale.Entities.ContactPerson GetContactInfoByCustomerId(int id)
+        {
+            Entities.ContactPerson contactInfo = new Entities.ContactPerson();
+            DataTable table = null;
+            try
+            {
+                table = new DataTable("ContactPersonTable");
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "select * from ContactPerson where CusID=@p_CusID";
+
+                command.Parameters.AddWithValue("@p_CusID", id);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+
+                if (table.Rows.Count == 1) 
+                {
+
+                    contactInfo.ContactPersonName = (string)table.Rows[0]["ConPersonName"];
+                    contactInfo.MobilePhone = (string)table.Rows[0]["ConPersonName"];
+                
+                
+                
+                
+                
+                }
+
+
+
+
+
+            }
+            catch (SqlException sqle)
+            {
+                throw;
+            }
+
+
+
+            return contactInfo;
+        }
         #endregion
     }
 }

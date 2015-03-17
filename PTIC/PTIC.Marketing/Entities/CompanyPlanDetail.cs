@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PTIC.Marketing.Entities
 {
-    class CompanyPlanDetail
+    public class CompanyPlanDetail
     {
         private int _companyPlanDetailId;
 
@@ -103,17 +103,17 @@ namespace PTIC.Marketing.Entities
             set { _approvedBy = value; }
         }
 
-        private List<Sale.Entities.Brand> _ownBrandList;
+        private List<int> _ownBrandList;
 
-        public List<Sale.Entities.Brand> OwnBrandList
+        public List<int> OwnBrandList
         {
             get { return _ownBrandList; }
             set { _ownBrandList = value; }
         }
 
-        private List<Competitor> _otherBrandList;
+        private List<int> _otherBrandList;
 
-        public List<Competitor> OtherBrandList
+        public List<int> OtherBrandList
         {
             get { return _otherBrandList; }
             set { _otherBrandList = value; }

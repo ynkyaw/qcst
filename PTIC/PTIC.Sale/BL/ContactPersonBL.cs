@@ -19,6 +19,12 @@ namespace PTIC.Sale.BL
         {
             return ContactPersonDA.SelectAll(cusID);
         }
+
+
+        public PTIC.Sale.Entities.ContactPerson GetContactInfoByCustomerId(int id) 
+        {
+            return ContactPersonDA.GetContactInfoByCustomerId(id);
+        }
         #endregion
     }
 }
