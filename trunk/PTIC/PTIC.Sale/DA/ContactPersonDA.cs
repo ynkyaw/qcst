@@ -59,7 +59,7 @@ namespace PTIC.Sale.DA
                 {
 
                     contactInfo.ContactPersonName = (string)table.Rows[0]["ConPersonName"];
-                    contactInfo.MobilePhone = (string)table.Rows[0]["ConPersonName"];
+                    contactInfo.MobilePhone = (string)table.Rows[0]["MobilePhone"];
                 
                 
                 
