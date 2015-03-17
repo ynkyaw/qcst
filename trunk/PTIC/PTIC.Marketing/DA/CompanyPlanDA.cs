@@ -139,9 +139,10 @@ namespace PTIC.Marketing.DA
         }
 
 
-        private static DataTable SelectCompanyPlanDetailsById(int CmpDtlId)
+        public static CompanyPlanDetail SelectCompanyPlanDetailsById(int CmpDtlId)
         {
             DataTable table = null;
+            CompanyPlanDetail cmpDtl = null;
             string tableName = "CompanyPlanDetails";
             try
             {
@@ -154,11 +155,11 @@ namespace PTIC.Marketing.DA
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
                 command.Parameters.Clear();
-
+                
 
                 if (table.Rows.Count == 1) 
                 {
-                    CompanyPlanDetail cmpDtl = new CompanyPlanDetail();
+                    cmpDtl = new CompanyPlanDetail();
                     cmpDtl.ApprovedBy = (string)table.Rows[0]["ApprovedBy"];
                     cmpDtl.ArrivedTime = (DateTime)table.Rows[0]["ArrivedTime"];
                     cmpDtl.ArrivedDate = (DateTime)table.Rows[0]["ArrivedDate"];
@@ -169,7 +170,35 @@ namespace PTIC.Marketing.DA
                     cmpDtl.HasOrder = (bool)table.Rows[0]["HasOrder"];
                     cmpDtl.MainTopic = (string)table.Rows[0]["MainTopic"];
                     cmpDtl.PreparedBy = (string)table.Rows[0]["PreparedBy"];
-                
+                    cmpDtl.TargetedEmpId = (int)table.Rows[0]["EmpId"];
+                    cmpDtl.ToyoComment = (string)table.Rows[0]["ToyoComment"];
+
+                    command=new SqlCommand ();
+                    command.Connection = DBManager.GetInstance().GetDbConnection();
+                    command.CommandText = "SELECT [BrandId] FROM [CompanyPlanDtl_UseBrand] WHERE BrandId is not null and isDelete=0 and CompanyPlanDetailsID=@id";
+
+                    command.Parameters.AddWithValue("@id", CmpDtlId);
+                    List<int> ownBrandList = new List<int>();
+                    DataTable brandList = new DataTable();
+                    new SqlDataAdapter(command).Fill(brandList);
+                    foreach(DataRow dr in brandList.Rows)
+                    {
+                        ownBrandList.Add((int)dr["[BrandId]");
+                    }
+                    
+                    command=new SqlCommand ();
+                    command.Connection = DBManager.GetInstance().GetDbConnection();
+                    command.CommandText = "SELECT CompetitorBrandId FROM [CompanyPlanDtl_UseBrand] WHERE CompetitorBrandId is not null and isDelete=0 and CompanyPlanDetailsID=@id";
+
+                    command.Parameters.AddWithValue("@id", CmpDtlId);
+                    List<int> otherBrandList = new List<int>();
+                    DataTable other_brandList = new DataTable();
+                    new SqlDataAdapter(command).Fill(brandList);
+                    foreach(DataRow dr in other_brandList.Rows)
+                    {
+                        otherBrandList.Add((int)dr["[CompetitorBrandId]");
+                    }
+                    
                 }
 
 
@@ -178,7 +207,7 @@ namespace PTIC.Marketing.DA
             {
                 return null;
             }
-            return table;
+            return cmpDtl;
         }
 
 
