@@ -29,15 +29,31 @@ namespace PTIC.Sale.BL
             return BrandDA.SelectAllByIsOwnBrand(true);
         }
 
+      
+
         public DataTable GetCompetitorBrands()
         {
             //return BrandDA.SelectAllByIsOwnBrand(false, conn);
             return BrandDA.SelectAllCompetitor();
+            
+            
         }
+
+      
 
         public DataTable GetAllCompetitorBrand()
         {
             return BrandDA.SelectAllCompetitorBrands();
+        }
+
+        public DataTable SelectUsedOwnBrandByCompanyPlanDtlId(int id)
+        {
+            return BrandDA.SelectUsedOwnBrandByCompanyPlanDtlId(id);
+        }
+
+        public DataTable SelectUsedOtherBrandByCompanyPlanDtlId(int id)
+        {
+            return BrandDA.SelectUsedOtherBrandByCompanyPlanDtlId(id);
         }
 
         #endregion

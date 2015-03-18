@@ -52,6 +52,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             if (e.ColumnIndex == colServiceDetail.Index)
             {
                 int cmpDtlId = (int) PTIC.VC.Util.DataTypeParser.Parse(dgvMobileServiceLog.Rows[e.RowIndex].Cells[colCompanyPlanDetailID.Index].Value, typeof(int), -1);
+                int cmpId= (int) PTIC.VC.Util.DataTypeParser.Parse(dgvMobileServiceLog.Rows[e.RowIndex].Cells[colCompanyId.Index].Value, typeof(int), -1);
                 if (cmpDtlId == -1)
                 {
                     frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails();
@@ -59,7 +60,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                 }
                 else 
                 {
-                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(cmpDtlId);
+                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(cmpDtlId,cmpId);
                     UIManager.OpenForm(frmCmpDtl);
                 }
             }

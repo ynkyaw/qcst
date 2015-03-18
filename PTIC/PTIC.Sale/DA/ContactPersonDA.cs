@@ -39,7 +39,7 @@ namespace PTIC.Sale.DA
             return table;
         }
 
-        public PTIC.Sale.Entities.ContactPerson GetContactInfoByCustomerId(int id)
+        public static PTIC.Sale.Entities.ContactPerson GetContactInfoByCustomerId(int id)
         {
             Entities.ContactPerson contactInfo = new Entities.ContactPerson();
             DataTable table = null;
@@ -48,7 +48,7 @@ namespace PTIC.Sale.DA
                 table = new DataTable("ContactPersonTable");
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                command.CommandType = CommandType.StoredProcedure;
+                //command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "select * from ContactPerson where CusID=@p_CusID";
 
                 command.Parameters.AddWithValue("@p_CusID", id);

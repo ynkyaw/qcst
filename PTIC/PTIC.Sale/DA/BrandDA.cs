@@ -47,10 +47,11 @@ namespace PTIC.Sale.DA
         public static DataTable SelectAllCompetitor()
         {
             DataTable dt;
-
+            List<Brand> brandList = new List<Brand>();
             try
             {
                 dt = b.SelectByQuery("SELECT CompetitorBrand As BrandName,ID As BrandID FROM CompetitorBrand WHERE IsDeleted =0");
+                
             }
             catch (Exception ex)
             {
@@ -58,14 +59,17 @@ namespace PTIC.Sale.DA
             }
             return dt;
         }
+       
+
 
 
         public static DataTable SelectAllByIsOwnBrand(bool check)
         {
-            DataSet dataSet = null;
+            DataTable dataSet = null;
+           
             try
             {
-                dataSet = new DataSet();
+                dataSet = new DataTable();
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
                 command.CommandType = CommandType.StoredProcedure;
@@ -75,14 +79,18 @@ namespace PTIC.Sale.DA
                 command.Parameters["@p_isownbrand"].Direction = ParameterDirection.Input;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, "BrandTable");
+                adapter.Fill(dataSet);
+           
+
             }
             catch (SqlException sqle)
             {
                 throw;
             }
-            return dataSet.Tables["BrandTable"];
+            return dataSet;
         }
+
+        
         #endregion
 
         #region SELECTBYBRANDID
@@ -112,6 +120,43 @@ namespace PTIC.Sale.DA
 
             return dataSet.Tables["BrandTable"];
         }
+
+        #region Use Brand Selection for CompanyPlan Details
+
+        public static DataTable SelectUsedOwnBrandByCompanyPlanDtlId(int id) 
+        {
+            DataTable dt;
+            List<Brand> brandList = new List<Brand>();
+            try
+            {
+                dt = b.SelectByQuery("SELECT CAST(CASE WHEN Brand.ID IN (SELECT BrandId FROM CompanyPlanDtl_UseBrand WHERE CompanyPlanDtl_UseBrand.CompanyPlanDetailsID=" + id + ") THEN 1 else 0 end AS BIT) as Selected,Brand.ID,BrandName FROM Brand where IsDeleted=0");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        
+        }
+
+        public static DataTable SelectUsedOtherBrandByCompanyPlanDtlId(int id)
+        {
+            DataTable dt;
+            List<Brand> brandList = new List<Brand>();
+            try
+            {
+                dt = b.SelectByQuery("SELECT CASE WHEN ID IN (SELECT CompanyPlanDtl_UseBrand.CompetitorBrandId FROM CompanyPlanDtl_UseBrand WHERE CompanyPlanDtl_UseBrand.CompanyPlanDetailsID=" + id + ") THEN 1 else 0 end as Selected,ID,CompetitorBrand.CompetitorBrand as BrandName FROM CompetitorBrand where IsDeleted=0");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+
+        }
+        #endregion
 
         #region INSERT
         public static int Insert(Brand brand, SqlConnection conn)

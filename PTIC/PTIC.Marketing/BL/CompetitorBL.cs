@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace PTIC.Marketing.BL
 {
-    class CompetitorBL
+    public class CompetitorBL
     {
         //
 
