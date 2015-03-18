@@ -28,62 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCompany = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMobileServiceSetup = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtContactPerson = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMobile = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCompanyCarCount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtToyo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtMainTopic = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbEmp = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtpArrived = new System.Windows.Forms.DateTimePicker();
+            this.dtpDepature = new System.Windows.Forms.DateTimePicker();
+            this.dtpVisitDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdoOrder = new System.Windows.Forms.RadioButton();
+            this.rdoNoOrder = new System.Windows.Forms.RadioButton();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtOtherBrandCondition = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cmbPrepareBy = new System.Windows.Forms.ComboBox();
+            this.cmbCheckedBy = new System.Windows.Forms.ComboBox();
+            this.cmbApprovedBy = new System.Windows.Forms.ComboBox();
             this.btnDeleteServiceRecord = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dgvOwnBrand = new System.Windows.Forms.DataGridView();
+            this.dgvOtherBrand = new System.Windows.Forms.DataGridView();
+            this.colSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBrandId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOtherSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOtherBrandId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOtherBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOwnBrand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOtherBrand)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbCompany
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(165, 65);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 25);
-            this.comboBox1.TabIndex = 0;
+            this.cmbCompany.FormattingEnabled = true;
+            this.cmbCompany.Location = new System.Drawing.Point(165, 65);
+            this.cmbCompany.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCompany.Name = "cmbCompany";
+            this.cmbCompany.Size = new System.Drawing.Size(140, 25);
+            this.cmbCompany.TabIndex = 0;
+            this.cmbCompany.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -128,12 +142,12 @@
             this.lblHeader.TabIndex = 45;
             this.lblHeader.Text = ">    Company Plan Log";
             // 
-            // textBox1
+            // txtContactPerson
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 25);
-            this.textBox1.TabIndex = 138;
+            this.txtContactPerson.Location = new System.Drawing.Point(165, 116);
+            this.txtContactPerson.Name = "txtContactPerson";
+            this.txtContactPerson.Size = new System.Drawing.Size(140, 25);
+            this.txtContactPerson.TabIndex = 138;
             // 
             // label2
             // 
@@ -153,12 +167,12 @@
             this.label3.TabIndex = 141;
             this.label3.Text = "Phone No";
             // 
-            // textBox2
+            // txtMobile
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 163);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 25);
-            this.textBox2.TabIndex = 140;
+            this.txtMobile.Location = new System.Drawing.Point(165, 163);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(140, 25);
+            this.txtMobile.TabIndex = 140;
             // 
             // label4
             // 
@@ -169,13 +183,13 @@
             this.label4.TabIndex = 143;
             this.label4.Text = "Company ရှိ\r\nကားအစီးအရေ";
             // 
-            // textBox3
+            // txtCompanyCarCount
             // 
-            this.textBox3.Location = new System.Drawing.Point(165, 209);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(104, 25);
-            this.textBox3.TabIndex = 142;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCompanyCarCount.Location = new System.Drawing.Point(165, 209);
+            this.txtCompanyCarCount.Name = "txtCompanyCarCount";
+            this.txtCompanyCarCount.Size = new System.Drawing.Size(104, 25);
+            this.txtCompanyCarCount.TabIndex = 142;
+            this.txtCompanyCarCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -195,13 +209,13 @@
             this.label7.TabIndex = 146;
             this.label7.Text = "Toyo အပေါ်သုံးသပ်ချက်";
             // 
-            // textBox4
+            // txtToyo
             // 
-            this.textBox4.Location = new System.Drawing.Point(165, 258);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(170, 48);
-            this.textBox4.TabIndex = 145;
+            this.txtToyo.Location = new System.Drawing.Point(165, 258);
+            this.txtToyo.Multiline = true;
+            this.txtToyo.Name = "txtToyo";
+            this.txtToyo.Size = new System.Drawing.Size(170, 48);
+            this.txtToyo.TabIndex = 145;
             // 
             // label6
             // 
@@ -212,13 +226,13 @@
             this.label6.TabIndex = 148;
             this.label6.Text = "အဓိကပြောကြားခဲ့သော\r\nအကြောင်းအရင်း";
             // 
-            // textBox5
+            // txtMainTopic
             // 
-            this.textBox5.Location = new System.Drawing.Point(165, 328);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(170, 48);
-            this.textBox5.TabIndex = 147;
+            this.txtMainTopic.Location = new System.Drawing.Point(165, 328);
+            this.txtMainTopic.Multiline = true;
+            this.txtMainTopic.Name = "txtMainTopic";
+            this.txtMainTopic.Size = new System.Drawing.Size(170, 48);
+            this.txtMainTopic.TabIndex = 147;
             // 
             // label8
             // 
@@ -229,14 +243,14 @@
             this.label8.TabIndex = 150;
             this.label8.Text = "ဝန်ထမ်း အမည်";
             // 
-            // comboBox2
+            // cmbEmp
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(529, 65);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(150, 25);
-            this.comboBox2.TabIndex = 149;
+            this.cmbEmp.FormattingEnabled = true;
+            this.cmbEmp.Location = new System.Drawing.Point(564, 65);
+            this.cmbEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbEmp.Name = "cmbEmp";
+            this.cmbEmp.Size = new System.Drawing.Size(135, 25);
+            this.cmbEmp.TabIndex = 149;
             // 
             // label9
             // 
@@ -265,33 +279,36 @@
             this.label11.TabIndex = 156;
             this.label11.Text = "သွားရောက်သည့်နေ့";
             // 
-            // dateTimePicker1
+            // dtpArrived
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(529, 160);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 25);
-            this.dateTimePicker1.TabIndex = 157;
+            this.dtpArrived.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpArrived.Location = new System.Drawing.Point(564, 160);
+            this.dtpArrived.Name = "dtpArrived";
+            this.dtpArrived.ShowUpDown = true;
+            this.dtpArrived.Size = new System.Drawing.Size(135, 25);
+            this.dtpArrived.TabIndex = 157;
             // 
-            // dateTimePicker2
+            // dtpDepature
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(529, 206);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(150, 25);
-            this.dateTimePicker2.TabIndex = 158;
+            this.dtpDepature.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpDepature.Location = new System.Drawing.Point(564, 206);
+            this.dtpDepature.Name = "dtpDepature";
+            this.dtpDepature.ShowUpDown = true;
+            this.dtpDepature.Size = new System.Drawing.Size(135, 25);
+            this.dtpDepature.TabIndex = 158;
             // 
-            // dateTimePicker3
+            // dtpVisitDate
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(529, 113);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(150, 25);
-            this.dateTimePicker3.TabIndex = 159;
+            this.dtpVisitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVisitDate.Location = new System.Drawing.Point(564, 113);
+            this.dtpVisitDate.Name = "dtpVisitDate";
+            this.dtpVisitDate.Size = new System.Drawing.Size(135, 25);
+            this.dtpVisitDate.TabIndex = 159;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkedListBox2);
-            this.groupBox1.Controls.Add(this.checkedListBox1);
+            this.groupBox1.Controls.Add(this.dgvOtherBrand);
+            this.groupBox1.Controls.Add(this.dgvOwnBrand);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(402, 240);
             this.groupBox1.Name = "groupBox1";
@@ -300,36 +317,64 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "လက်ရှိအသုံးပြုနေသော Brand ";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 21);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(291, 27);
+            this.panel1.TabIndex = 0;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(166, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 17);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Other Brand";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 17);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Own Brand";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(35, 400);
+            this.label12.Location = new System.Drawing.Point(42, 404);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(80, 17);
             this.label12.TabIndex = 162;
             this.label12.Text = "Order  မှာယူမှု";
             // 
-            // radioButton1
+            // rdoOrder
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(165, 398);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(33, 21);
-            this.radioButton1.TabIndex = 165;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ရှိ";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoOrder.AutoSize = true;
+            this.rdoOrder.Location = new System.Drawing.Point(21, 20);
+            this.rdoOrder.Name = "rdoOrder";
+            this.rdoOrder.Size = new System.Drawing.Size(33, 21);
+            this.rdoOrder.TabIndex = 165;
+            this.rdoOrder.TabStop = true;
+            this.rdoOrder.Text = "ရှိ";
+            this.rdoOrder.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoNoOrder
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(204, 398);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(40, 21);
-            this.radioButton2.TabIndex = 166;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "မရှိ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoNoOrder.AutoSize = true;
+            this.rdoNoOrder.Location = new System.Drawing.Point(60, 20);
+            this.rdoNoOrder.Name = "rdoNoOrder";
+            this.rdoNoOrder.Size = new System.Drawing.Size(40, 21);
+            this.rdoNoOrder.TabIndex = 166;
+            this.rdoNoOrder.TabStop = true;
+            this.rdoNoOrder.Text = "မရှိ";
+            this.rdoNoOrder.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -340,18 +385,18 @@
             this.label13.TabIndex = 168;
             this.label13.Text = "ပြိုင်ဖက်အခြေအနေ";
             // 
-            // textBox6
+            // txtOtherBrandCondition
             // 
-            this.textBox6.Location = new System.Drawing.Point(529, 397);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(170, 48);
-            this.textBox6.TabIndex = 167;
+            this.txtOtherBrandCondition.Location = new System.Drawing.Point(529, 397);
+            this.txtOtherBrandCondition.Multiline = true;
+            this.txtOtherBrandCondition.Name = "txtOtherBrandCondition";
+            this.txtOtherBrandCondition.Size = new System.Drawing.Size(170, 48);
+            this.txtOtherBrandCondition.TabIndex = 167;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(35, 487);
+            this.label14.Location = new System.Drawing.Point(35, 498);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(81, 17);
             this.label14.TabIndex = 169;
@@ -360,7 +405,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(284, 487);
+            this.label15.Location = new System.Drawing.Point(284, 498);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(74, 17);
             this.label15.TabIndex = 170;
@@ -369,38 +414,38 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(526, 487);
+            this.label16.Location = new System.Drawing.Point(526, 498);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(81, 17);
             this.label16.TabIndex = 171;
             this.label16.Text = "Approved By";
             // 
-            // comboBox3
+            // cmbPrepareBy
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(38, 521);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(140, 25);
-            this.comboBox3.TabIndex = 172;
+            this.cmbPrepareBy.FormattingEnabled = true;
+            this.cmbPrepareBy.Location = new System.Drawing.Point(38, 521);
+            this.cmbPrepareBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbPrepareBy.Name = "cmbPrepareBy";
+            this.cmbPrepareBy.Size = new System.Drawing.Size(140, 25);
+            this.cmbPrepareBy.TabIndex = 172;
             // 
-            // comboBox4
+            // cmbCheckedBy
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(287, 521);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(140, 25);
-            this.comboBox4.TabIndex = 173;
+            this.cmbCheckedBy.FormattingEnabled = true;
+            this.cmbCheckedBy.Location = new System.Drawing.Point(287, 521);
+            this.cmbCheckedBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCheckedBy.Name = "cmbCheckedBy";
+            this.cmbCheckedBy.Size = new System.Drawing.Size(140, 25);
+            this.cmbCheckedBy.TabIndex = 173;
             // 
-            // comboBox5
+            // cmbApprovedBy
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(529, 521);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(140, 25);
-            this.comboBox5.TabIndex = 174;
+            this.cmbApprovedBy.FormattingEnabled = true;
+            this.cmbApprovedBy.Location = new System.Drawing.Point(529, 521);
+            this.cmbApprovedBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbApprovedBy.Name = "cmbApprovedBy";
+            this.cmbApprovedBy.Size = new System.Drawing.Size(140, 25);
+            this.cmbApprovedBy.TabIndex = 174;
             // 
             // btnDeleteServiceRecord
             // 
@@ -428,93 +473,175 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // panel1
+            // groupBox2
             // 
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 21);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(291, 27);
-            this.panel1.TabIndex = 0;
+            this.groupBox2.Controls.Add(this.rdoOrder);
+            this.groupBox2.Controls.Add(this.rdoNoOrder);
+            this.groupBox2.Location = new System.Drawing.Point(165, 382);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(117, 47);
+            this.groupBox2.TabIndex = 252;
+            this.groupBox2.TabStop = false;
             // 
-            // label17
+            // button1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 9);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 17);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Own Brand";
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(288, 395);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 34);
+            this.button1.TabIndex = 253;
+            this.button1.Text = "---";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // checkBox1
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(166, 9);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(81, 17);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Other Brand";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(45, 457);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(83, 21);
+            this.checkBox1.TabIndex = 255;
+            this.checkBox1.Text = "Services";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
+            // dateTimePicker1
             // 
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(3, 48);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(134, 88);
-            this.checkedListBox1.TabIndex = 1;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(165, 452);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(135, 25);
+            this.dateTimePicker1.TabIndex = 256;
             // 
-            // checkedListBox2
+            // dgvOwnBrand
             // 
-            this.checkedListBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(137, 48);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(157, 88);
-            this.checkedListBox2.TabIndex = 2;
+            this.dgvOwnBrand.AllowUserToAddRows = false;
+            this.dgvOwnBrand.AllowUserToDeleteRows = false;
+            this.dgvOwnBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOwnBrand.ColumnHeadersVisible = false;
+            this.dgvOwnBrand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSelected,
+            this.colBrandId,
+            this.colBrandName});
+            this.dgvOwnBrand.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvOwnBrand.Location = new System.Drawing.Point(3, 48);
+            this.dgvOwnBrand.Name = "dgvOwnBrand";
+            this.dgvOwnBrand.ReadOnly = true;
+            this.dgvOwnBrand.RowHeadersVisible = false;
+            this.dgvOwnBrand.Size = new System.Drawing.Size(140, 88);
+            this.dgvOwnBrand.TabIndex = 1;
+            this.dgvOwnBrand.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOwnBrand_CellContentClick);
+            // 
+            // dgvOtherBrand
+            // 
+            this.dgvOtherBrand.AllowUserToAddRows = false;
+            this.dgvOtherBrand.AllowUserToDeleteRows = false;
+            this.dgvOtherBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOtherBrand.ColumnHeadersVisible = false;
+            this.dgvOtherBrand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOtherSelected,
+            this.colOtherBrandId,
+            this.colOtherBrandName});
+            this.dgvOtherBrand.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOtherBrand.Location = new System.Drawing.Point(143, 48);
+            this.dgvOtherBrand.Name = "dgvOtherBrand";
+            this.dgvOtherBrand.ReadOnly = true;
+            this.dgvOtherBrand.RowHeadersVisible = false;
+            this.dgvOtherBrand.Size = new System.Drawing.Size(151, 88);
+            this.dgvOtherBrand.TabIndex = 2;
+            this.dgvOtherBrand.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOtherBrand_CellContentClick);
+            // 
+            // colSelected
+            // 
+            this.colSelected.DataPropertyName = "Selected";
+            this.colSelected.HeaderText = " ";
+            this.colSelected.Name = "colSelected";
+            this.colSelected.ReadOnly = true;
+            this.colSelected.Width = 40;
+            // 
+            // colBrandId
+            // 
+            this.colBrandId.DataPropertyName = "BrandId";
+            this.colBrandId.HeaderText = "BrandId";
+            this.colBrandId.Name = "colBrandId";
+            this.colBrandId.ReadOnly = true;
+            this.colBrandId.Visible = false;
+            // 
+            // colBrandName
+            // 
+            this.colBrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBrandName.DataPropertyName = "BrandName";
+            this.colBrandName.HeaderText = "BrandName";
+            this.colBrandName.Name = "colBrandName";
+            this.colBrandName.ReadOnly = true;
+            // 
+            // colOtherSelected
+            // 
+            this.colOtherSelected.DataPropertyName = "Selected";
+            this.colOtherSelected.HeaderText = "";
+            this.colOtherSelected.Name = "colOtherSelected";
+            this.colOtherSelected.ReadOnly = true;
+            this.colOtherSelected.Width = 40;
+            // 
+            // colOtherBrandId
+            // 
+            this.colOtherBrandId.DataPropertyName = "BrandId";
+            this.colOtherBrandId.HeaderText = "OtherBrand";
+            this.colOtherBrandId.Name = "colOtherBrandId";
+            this.colOtherBrandId.ReadOnly = true;
+            this.colOtherBrandId.Visible = false;
+            // 
+            // colOtherBrandName
+            // 
+            this.colOtherBrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colOtherBrandName.DataPropertyName = "BrandName";
+            this.colOtherBrandName.HeaderText = "BrandName";
+            this.colOtherBrandName.Name = "colOtherBrandName";
+            this.colOtherBrandName.ReadOnly = true;
             // 
             // frmCompanyPlanDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 626);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDeleteServiceRecord);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbApprovedBy);
+            this.Controls.Add(this.cmbCheckedBy);
+            this.Controls.Add(this.cmbPrepareBy);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.txtOtherBrandCondition);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpVisitDate);
+            this.Controls.Add(this.dtpDepature);
+            this.Controls.Add(this.dtpArrived);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbEmp);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtMainTopic);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtToyo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtCompanyCarCount);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtMobile);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtContactPerson);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbCompany);
             this.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCompanyPlanDetails";
@@ -524,6 +651,10 @@
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOwnBrand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOtherBrand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,48 +662,58 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCompany;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblMobileServiceSetup;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtContactPerson;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMobile;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCompanyCarCount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtToyo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtMainTopic;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbEmp;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtpArrived;
+        private System.Windows.Forms.DateTimePicker dtpDepature;
+        private System.Windows.Forms.DateTimePicker dtpVisitDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdoOrder;
+        private System.Windows.Forms.RadioButton rdoNoOrder;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtOtherBrandCondition;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cmbPrepareBy;
+        private System.Windows.Forms.ComboBox cmbCheckedBy;
+        private System.Windows.Forms.ComboBox cmbApprovedBy;
         private System.Windows.Forms.Button btnDeleteServiceRecord;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dgvOtherBrand;
+        private System.Windows.Forms.DataGridView dgvOwnBrand;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBrandId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBrandName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOtherSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOtherBrandId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOtherBrandName;
     }
 }

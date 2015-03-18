@@ -28,8 +28,8 @@ namespace PTIC.Marketing.DA
                 table = new DataTable(tableName);
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                
-                command.CommandText = "SELECT cmp.Id as cmpId,Convert(varchar,cmpDtl.ArrivedDate,7) as ArrivedDate,";
+
+                command.CommandText = "SELECT cmp.Id as cmpId,Convert(varchar,cmpDtl.ArrivedDate,7) as ArrivedDate,CMP.CustomerId as CompanyId,";
                 command.CommandText += " Convert(varchar,cmp.TargetedDate,7) as TargetedDate,cust.CusName,cmpDtl.ID as CmpDtlId,";
                 command.CommandText += " cp.ConPersonName,cp.MobilePhone,Convert(varchar,cmpDtl.ArrivedTime,8) as ArrivedTime,";
                 command.CommandText += " Convert(varchar,cmpDtl.DepatureTime,8) as DepatureTime,cmpDtl.CarCountInCompany,";
@@ -183,7 +183,7 @@ namespace PTIC.Marketing.DA
                     new SqlDataAdapter(command).Fill(brandList);
                     foreach(DataRow dr in brandList.Rows)
                     {
-                        ownBrandList.Add((int)dr["[BrandId]");
+                        ownBrandList.Add((int)dr["BrandId"]);
                     }
                     
                     command=new SqlCommand ();
@@ -196,7 +196,7 @@ namespace PTIC.Marketing.DA
                     new SqlDataAdapter(command).Fill(brandList);
                     foreach(DataRow dr in other_brandList.Rows)
                     {
-                        otherBrandList.Add((int)dr["[CompetitorBrandId]");
+                        otherBrandList.Add((int)dr["CompetitorBrandId"]);
                     }
                     
                 }

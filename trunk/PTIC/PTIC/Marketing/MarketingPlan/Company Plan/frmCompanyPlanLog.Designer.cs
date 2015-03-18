@@ -37,21 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvMobileServiceLog = new System.Windows.Forms.DataGridView();
-            this.colCompanyPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCompanyPlanDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCompanyPlanNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTargetedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colarrivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConPersonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMobilePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colArrivedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDepatureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCmpCarCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colServiceDetail = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colIsServiced = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFilter = new System.Windows.Forms.Panel();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,6 +55,22 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompanyPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompanyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompanyPlanDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompanyPlanNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTargetedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colarrivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConPersonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMobilePhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colArrivedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepatureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCmpCarCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colServiceDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colIsServiced = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMobileServiceLog)).BeginInit();
@@ -122,6 +123,7 @@
             this.dgvMobileServiceLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMobileServiceLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCompanyPlanID,
+            this.colCompanyId,
             this.colCompanyPlanDetailID,
             this.colCompanyPlanNo,
             this.colTargetedDate,
@@ -145,136 +147,6 @@
             this.dgvMobileServiceLog.Size = new System.Drawing.Size(1010, 402);
             this.dgvMobileServiceLog.TabIndex = 135;
             this.dgvMobileServiceLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMobileServiceLog_CellContentClick);
-            // 
-            // colCompanyPlanID
-            // 
-            this.colCompanyPlanID.DataPropertyName = "CmpId";
-            this.colCompanyPlanID.HeaderText = "CompanyPlanID";
-            this.colCompanyPlanID.Name = "colCompanyPlanID";
-            this.colCompanyPlanID.ReadOnly = true;
-            this.colCompanyPlanID.Visible = false;
-            // 
-            // colCompanyPlanDetailID
-            // 
-            this.colCompanyPlanDetailID.DataPropertyName = "CmpDtlId";
-            this.colCompanyPlanDetailID.HeaderText = "CompanyPlanDetail ID";
-            this.colCompanyPlanDetailID.Name = "colCompanyPlanDetailID";
-            this.colCompanyPlanDetailID.ReadOnly = true;
-            this.colCompanyPlanDetailID.Visible = false;
-            // 
-            // colCompanyPlanNo
-            // 
-            this.colCompanyPlanNo.DataPropertyName = "CompanyPlanNo";
-            this.colCompanyPlanNo.HeaderText = "CompanyPlan No";
-            this.colCompanyPlanNo.Name = "colCompanyPlanNo";
-            this.colCompanyPlanNo.ReadOnly = true;
-            this.colCompanyPlanNo.Visible = false;
-            // 
-            // colTargetedDate
-            // 
-            this.colTargetedDate.DataPropertyName = "TargetedDate";
-            dataGridViewCellStyle2.Format = "dd-MMM-yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colTargetedDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colTargetedDate.HeaderText = "သွားရမည့်‌နေ့";
-            this.colTargetedDate.Name = "colTargetedDate";
-            this.colTargetedDate.ReadOnly = true;
-            this.colTargetedDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTargetedDate.Width = 90;
-            // 
-            // colarrivedDate
-            // 
-            this.colarrivedDate.DataPropertyName = "ArrivedDate";
-            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
-            this.colarrivedDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colarrivedDate.HeaderText = "သွားသည့်နေ့";
-            this.colarrivedDate.Name = "colarrivedDate";
-            this.colarrivedDate.ReadOnly = true;
-            // 
-            // colCusName
-            // 
-            this.colCusName.DataPropertyName = "CusName";
-            this.colCusName.HeaderText = "Customer အမည်";
-            this.colCusName.Name = "colCusName";
-            this.colCusName.ReadOnly = true;
-            this.colCusName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCusName.Width = 110;
-            // 
-            // colConPersonName
-            // 
-            this.colConPersonName.DataPropertyName = "ConPersonName";
-            this.colConPersonName.HeaderText = "ဆက်သွယ်ရမည့်သူ အမည်";
-            this.colConPersonName.Name = "colConPersonName";
-            this.colConPersonName.ReadOnly = true;
-            this.colConPersonName.Width = 130;
-            // 
-            // colMobilePhone
-            // 
-            this.colMobilePhone.DataPropertyName = "MobilePhone";
-            this.colMobilePhone.HeaderText = "ဖုန်းနံပါတ်";
-            this.colMobilePhone.Name = "colMobilePhone";
-            this.colMobilePhone.ReadOnly = true;
-            this.colMobilePhone.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colEmpName
-            // 
-            this.colEmpName.DataPropertyName = "EmpName";
-            this.colEmpName.HeaderText = "သွားသည့်ဝန်ထမ်း";
-            this.colEmpName.Name = "colEmpName";
-            this.colEmpName.ReadOnly = true;
-            this.colEmpName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEmpName.Visible = false;
-            this.colEmpName.Width = 150;
-            // 
-            // colArrivedTime
-            // 
-            this.colArrivedTime.DataPropertyName = "ArrivedTime";
-            this.colArrivedTime.HeaderText = "ရောက်ရှိချိန်";
-            this.colArrivedTime.Name = "colArrivedTime";
-            this.colArrivedTime.ReadOnly = true;
-            // 
-            // colDepatureTime
-            // 
-            this.colDepatureTime.DataPropertyName = "DepatureTime";
-            this.colDepatureTime.HeaderText = "ပြန်ချိန်";
-            this.colDepatureTime.Name = "colDepatureTime";
-            this.colDepatureTime.ReadOnly = true;
-            // 
-            // colCmpCarCount
-            // 
-            this.colCmpCarCount.DataPropertyName = "CarCountInCompany";
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCmpCarCount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colCmpCarCount.HeaderText = "Company ရှိကားအစီးရေ";
-            this.colCmpCarCount.Name = "colCmpCarCount";
-            this.colCmpCarCount.ReadOnly = true;
-            // 
-            // colServiceDetail
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.NullValue = "ထည့်မည်";
-            this.colServiceDetail.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colServiceDetail.HeaderText = "Plan Details";
-            this.colServiceDetail.Name = "colServiceDetail";
-            this.colServiceDetail.ReadOnly = true;
-            this.colServiceDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colServiceDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colIsServiced
-            // 
-            this.colIsServiced.DataPropertyName = "HasOrder";
-            this.colIsServiced.HeaderText = "Order ";
-            this.colIsServiced.Name = "colIsServiced";
-            this.colIsServiced.ReadOnly = true;
-            this.colIsServiced.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colIsServiced.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colRemark
-            // 
-            this.colRemark.DataPropertyName = "Remark";
-            this.colRemark.HeaderText = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
             // 
             // pnlFilter
             // 
@@ -446,6 +318,144 @@
             this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn8.Width = 110;
             // 
+            // colCompanyPlanID
+            // 
+            this.colCompanyPlanID.DataPropertyName = "CmpId";
+            this.colCompanyPlanID.HeaderText = "CompanyPlanID";
+            this.colCompanyPlanID.Name = "colCompanyPlanID";
+            this.colCompanyPlanID.ReadOnly = true;
+            this.colCompanyPlanID.Visible = false;
+            // 
+            // colCompanyId
+            // 
+            this.colCompanyId.DataPropertyName = "CompanyId";
+            this.colCompanyId.HeaderText = "CompanyId";
+            this.colCompanyId.Name = "colCompanyId";
+            this.colCompanyId.ReadOnly = true;
+            this.colCompanyId.Visible = false;
+            // 
+            // colCompanyPlanDetailID
+            // 
+            this.colCompanyPlanDetailID.DataPropertyName = "CmpDtlId";
+            this.colCompanyPlanDetailID.HeaderText = "CompanyPlanDetail ID";
+            this.colCompanyPlanDetailID.Name = "colCompanyPlanDetailID";
+            this.colCompanyPlanDetailID.ReadOnly = true;
+            this.colCompanyPlanDetailID.Visible = false;
+            // 
+            // colCompanyPlanNo
+            // 
+            this.colCompanyPlanNo.DataPropertyName = "CompanyPlanNo";
+            this.colCompanyPlanNo.HeaderText = "CompanyPlan No";
+            this.colCompanyPlanNo.Name = "colCompanyPlanNo";
+            this.colCompanyPlanNo.ReadOnly = true;
+            this.colCompanyPlanNo.Visible = false;
+            // 
+            // colTargetedDate
+            // 
+            this.colTargetedDate.DataPropertyName = "TargetedDate";
+            dataGridViewCellStyle2.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colTargetedDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colTargetedDate.HeaderText = "သွားရမည့်‌နေ့";
+            this.colTargetedDate.Name = "colTargetedDate";
+            this.colTargetedDate.ReadOnly = true;
+            this.colTargetedDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTargetedDate.Width = 90;
+            // 
+            // colarrivedDate
+            // 
+            this.colarrivedDate.DataPropertyName = "ArrivedDate";
+            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
+            this.colarrivedDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colarrivedDate.HeaderText = "သွားသည့်နေ့";
+            this.colarrivedDate.Name = "colarrivedDate";
+            this.colarrivedDate.ReadOnly = true;
+            // 
+            // colCusName
+            // 
+            this.colCusName.DataPropertyName = "CusName";
+            this.colCusName.HeaderText = "Customer အမည်";
+            this.colCusName.Name = "colCusName";
+            this.colCusName.ReadOnly = true;
+            this.colCusName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCusName.Width = 110;
+            // 
+            // colConPersonName
+            // 
+            this.colConPersonName.DataPropertyName = "ConPersonName";
+            this.colConPersonName.HeaderText = "ဆက်သွယ်ရမည့်သူ အမည်";
+            this.colConPersonName.Name = "colConPersonName";
+            this.colConPersonName.ReadOnly = true;
+            this.colConPersonName.Width = 130;
+            // 
+            // colMobilePhone
+            // 
+            this.colMobilePhone.DataPropertyName = "MobilePhone";
+            this.colMobilePhone.HeaderText = "ဖုန်းနံပါတ်";
+            this.colMobilePhone.Name = "colMobilePhone";
+            this.colMobilePhone.ReadOnly = true;
+            this.colMobilePhone.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colEmpName
+            // 
+            this.colEmpName.DataPropertyName = "EmpName";
+            this.colEmpName.HeaderText = "သွားသည့်ဝန်ထမ်း";
+            this.colEmpName.Name = "colEmpName";
+            this.colEmpName.ReadOnly = true;
+            this.colEmpName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEmpName.Visible = false;
+            this.colEmpName.Width = 150;
+            // 
+            // colArrivedTime
+            // 
+            this.colArrivedTime.DataPropertyName = "ArrivedTime";
+            this.colArrivedTime.HeaderText = "ရောက်ရှိချိန်";
+            this.colArrivedTime.Name = "colArrivedTime";
+            this.colArrivedTime.ReadOnly = true;
+            // 
+            // colDepatureTime
+            // 
+            this.colDepatureTime.DataPropertyName = "DepatureTime";
+            this.colDepatureTime.HeaderText = "ပြန်ချိန်";
+            this.colDepatureTime.Name = "colDepatureTime";
+            this.colDepatureTime.ReadOnly = true;
+            // 
+            // colCmpCarCount
+            // 
+            this.colCmpCarCount.DataPropertyName = "CarCountInCompany";
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCmpCarCount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colCmpCarCount.HeaderText = "Company ရှိကားအစီးရေ";
+            this.colCmpCarCount.Name = "colCmpCarCount";
+            this.colCmpCarCount.ReadOnly = true;
+            // 
+            // colServiceDetail
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.NullValue = "ထည့်မည်";
+            this.colServiceDetail.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colServiceDetail.HeaderText = "Plan Details";
+            this.colServiceDetail.Name = "colServiceDetail";
+            this.colServiceDetail.ReadOnly = true;
+            this.colServiceDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colServiceDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colIsServiced
+            // 
+            this.colIsServiced.DataPropertyName = "HasOrder";
+            this.colIsServiced.HeaderText = "Order ";
+            this.colIsServiced.Name = "colIsServiced";
+            this.colIsServiced.ReadOnly = true;
+            this.colIsServiced.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colIsServiced.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colRemark
+            // 
+            this.colRemark.DataPropertyName = "Remark";
+            this.colRemark.HeaderText = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.ReadOnly = true;
+            // 
             // frmCompanyPlanLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -495,6 +505,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompanyPlanID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCompanyId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompanyPlanDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompanyPlanNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTargetedDate;
