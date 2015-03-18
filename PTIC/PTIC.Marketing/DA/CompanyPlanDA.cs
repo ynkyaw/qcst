@@ -160,6 +160,7 @@ namespace PTIC.Marketing.DA
                 if (table.Rows.Count == 1) 
                 {
                     cmpDtl = new CompanyPlanDetail();
+                    cmpDtl.CompanyPlanDetailId = CmpDtlId;
                     cmpDtl.ApprovedBy = (string)table.Rows[0]["ApprovedBy"];
                     cmpDtl.ArrivedTime = (DateTime)table.Rows[0]["ArrivedTime"];
                     cmpDtl.ArrivedDate = (DateTime)table.Rows[0]["ArrivedDate"];
