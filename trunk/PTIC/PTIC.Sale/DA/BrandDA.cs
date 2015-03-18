@@ -146,7 +146,7 @@ namespace PTIC.Sale.DA
             List<Brand> brandList = new List<Brand>();
             try
             {
-                dt = b.SelectByQuery("SELECT CASE WHEN ID IN (SELECT CompanyPlanDtl_UseBrand.CompetitorBrandId FROM CompanyPlanDtl_UseBrand WHERE CompanyPlanDtl_UseBrand.CompanyPlanDetailsID=" + id + ") THEN 1 else 0 end as Selected,ID,CompetitorBrand.CompetitorBrand as BrandName FROM CompetitorBrand where IsDeleted=0");
+                dt = b.SelectByQuery("SELECT  CAST(CASE WHEN ID IN (SELECT CompanyPlanDtl_UseBrand.CompetitorBrandId FROM CompanyPlanDtl_UseBrand WHERE CompanyPlanDtl_UseBrand.CompanyPlanDetailsID=" + id + ") THEN 1 else 0 end as bit) as Selected,ID,CompetitorBrand.CompetitorBrand as BrandName FROM CompetitorBrand where IsDeleted=0");
 
             }
             catch (Exception ex)

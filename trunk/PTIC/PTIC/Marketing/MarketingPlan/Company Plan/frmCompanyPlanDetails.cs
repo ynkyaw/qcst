@@ -142,7 +142,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         {
             if (e.ColumnIndex == colSelected.Index)
             {
-                DataGridViewCheckBoxCell cell = dgvOwnBrand.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                DataGridViewCheckBoxCell cell = dgvOtherBrand.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
                 cell.Value = !((bool)cell.Value);
             }
 

@@ -78,7 +78,7 @@
             this.colSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colBrandId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOtherSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOtherSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colOtherBrandId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOtherBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
@@ -581,6 +581,8 @@
             this.colOtherSelected.HeaderText = "";
             this.colOtherSelected.Name = "colOtherSelected";
             this.colOtherSelected.ReadOnly = true;
+            this.colOtherSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colOtherSelected.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colOtherSelected.Width = 40;
             // 
             // colOtherBrandId
@@ -712,7 +714,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelected;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colOtherSelected;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colOtherSelected;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOtherBrandId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOtherBrandName;
     }
