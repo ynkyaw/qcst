@@ -69,10 +69,10 @@
             this.cmbApprovedBy = new System.Windows.Forms.ComboBox();
             this.btnDeleteServiceRecord = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpHasOrder = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpServiceDate = new System.Windows.Forms.DateTimePicker();
             this.dgvOwnBrand = new System.Windows.Forms.DataGridView();
             this.dgvOtherBrand = new System.Windows.Forms.DataGridView();
             this.colSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -84,7 +84,7 @@
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpHasOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOwnBrand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherBrand)).BeginInit();
             this.SuspendLayout();
@@ -473,15 +473,15 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // groupBox2
+            // grpHasOrder
             // 
-            this.groupBox2.Controls.Add(this.rdoOrder);
-            this.groupBox2.Controls.Add(this.rdoNoOrder);
-            this.groupBox2.Location = new System.Drawing.Point(165, 382);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(117, 47);
-            this.groupBox2.TabIndex = 252;
-            this.groupBox2.TabStop = false;
+            this.grpHasOrder.Controls.Add(this.rdoOrder);
+            this.grpHasOrder.Controls.Add(this.rdoNoOrder);
+            this.grpHasOrder.Location = new System.Drawing.Point(165, 382);
+            this.grpHasOrder.Name = "grpHasOrder";
+            this.grpHasOrder.Size = new System.Drawing.Size(117, 47);
+            this.grpHasOrder.TabIndex = 252;
+            this.grpHasOrder.TabStop = false;
             // 
             // button1
             // 
@@ -494,6 +494,7 @@
             this.button1.TabIndex = 253;
             this.button1.Text = "---";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 
@@ -505,13 +506,13 @@
             this.checkBox1.Text = "Services";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtpServiceDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(165, 452);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 25);
-            this.dateTimePicker1.TabIndex = 256;
+            this.dtpServiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpServiceDate.Location = new System.Drawing.Point(165, 452);
+            this.dtpServiceDate.Name = "dtpServiceDate";
+            this.dtpServiceDate.Size = new System.Drawing.Size(135, 25);
+            this.dtpServiceDate.TabIndex = 256;
             // 
             // dgvOwnBrand
             // 
@@ -606,10 +607,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 626);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpServiceDate);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpHasOrder);
             this.Controls.Add(this.btnDeleteServiceRecord);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbApprovedBy);
@@ -653,8 +654,8 @@
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpHasOrder.ResumeLayout(false);
+            this.grpHasOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOwnBrand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherBrand)).EndInit();
             this.ResumeLayout(false);
@@ -705,10 +706,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpHasOrder;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpServiceDate;
         private System.Windows.Forms.DataGridView dgvOtherBrand;
         private System.Windows.Forms.DataGridView dgvOwnBrand;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelected;

@@ -53,14 +53,15 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             {
                 int cmpDtlId = (int) PTIC.VC.Util.DataTypeParser.Parse(dgvMobileServiceLog.Rows[e.RowIndex].Cells[colCompanyPlanDetailID.Index].Value, typeof(int), -1);
                 int cmpId= (int) PTIC.VC.Util.DataTypeParser.Parse(dgvMobileServiceLog.Rows[e.RowIndex].Cells[colCompanyId.Index].Value, typeof(int), -1);
+                int complanyPlanId = (int)PTIC.VC.Util.DataTypeParser.Parse(dgvMobileServiceLog.Rows[e.RowIndex].Cells[colCompanyPlanID.Index].Value, typeof(int), -1);
                 if (cmpDtlId == -1)
                 {
-                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails();
+                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(complanyPlanId);
                     UIManager.OpenForm(frmCmpDtl);
                 }
                 else 
                 {
-                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(cmpDtlId,cmpId);
+                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(cmpDtlId, cmpId, complanyPlanId);
                     UIManager.OpenForm(frmCmpDtl);
                 }
             }
