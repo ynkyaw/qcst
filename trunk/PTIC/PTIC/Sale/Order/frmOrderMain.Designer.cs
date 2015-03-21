@@ -59,7 +59,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetup.Location = new System.Drawing.Point(8, 9);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(135, 20);
+            this.lblSetup.Size = new System.Drawing.Size(145, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "Order && Delivery";
             // 
@@ -153,7 +153,7 @@
             // 
             // frmOrderMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 574);
             this.Controls.Add(this.btnDeliveryNoteList);
