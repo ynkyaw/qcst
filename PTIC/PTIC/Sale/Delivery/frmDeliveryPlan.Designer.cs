@@ -32,20 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbVehicle = new System.Windows.Forms.ComboBox();
             this.dgvUnplannedOrders = new System.Windows.Forms.DataGridView();
-            this.colOrderDate = new AGL.UI.Controls.CalendarColumn();
-            this.colOrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTown = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRouteName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTripName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIsDelivered = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
@@ -55,12 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblDelivery = new System.Windows.Forms.Label();
             this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
-            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliveryQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOrderID_OrderDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblBrand = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -98,12 +84,41 @@
             this.lblFilter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnOrderLost = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colOrderDate = new AGL.UI.Controls.CalendarColumn();
+            this.colOrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTown = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRouteName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTripName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIsDelivered = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliverDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOrderQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemainQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliverQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBalanceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOrderRemain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliveryQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOrderID_OrderDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnplannedOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlFilter.SuspendLayout();
             this.pnlFilt.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbVehicle
@@ -117,7 +132,7 @@
             this.cmbVehicle.Location = new System.Drawing.Point(866, 397);
             this.cmbVehicle.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbVehicle.Name = "cmbVehicle";
-            this.cmbVehicle.Size = new System.Drawing.Size(199, 27);
+            this.cmbVehicle.Size = new System.Drawing.Size(199, 25);
             this.cmbVehicle.TabIndex = 186;
             this.cmbVehicle.ValueMember = "VehicleID";
             // 
@@ -126,10 +141,7 @@
             this.dgvUnplannedOrders.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvUnplannedOrders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUnplannedOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvUnplannedOrders.BackgroundColor = System.Drawing.Color.White;
+            this.dgvUnplannedOrders.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvUnplannedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnplannedOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOrderDate,
@@ -141,92 +153,23 @@
             this.colIsDelivered,
             this.colStatus,
             this.colOrderID});
-            this.dgvUnplannedOrders.Location = new System.Drawing.Point(16, 5);
+            this.dgvUnplannedOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUnplannedOrders.Location = new System.Drawing.Point(0, 0);
             this.dgvUnplannedOrders.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dgvUnplannedOrders.MultiSelect = false;
             this.dgvUnplannedOrders.Name = "dgvUnplannedOrders";
             this.dgvUnplannedOrders.ReadOnly = true;
+            this.dgvUnplannedOrders.RowHeadersVisible = false;
             this.dgvUnplannedOrders.RowHeadersWidth = 50;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.dgvUnplannedOrders.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUnplannedOrders.RowTemplate.Height = 28;
             this.dgvUnplannedOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUnplannedOrders.Size = new System.Drawing.Size(1049, 302);
+            this.dgvUnplannedOrders.Size = new System.Drawing.Size(630, 313);
             this.dgvUnplannedOrders.TabIndex = 182;
             this.dgvUnplannedOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnplannedOrders_CellClick);
             this.dgvUnplannedOrders.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrders_DataBindingComplete);
             this.dgvUnplannedOrders.SelectionChanged += new System.EventHandler(this.dgvUnplannedOrders_SelectionChanged);
-            // 
-            // colOrderDate
-            // 
-            this.colOrderDate.DataPropertyName = "OrderDate";
-            this.colOrderDate.HeaderText = "Order ‌နေ့စွဲ";
-            this.colOrderDate.Name = "colOrderDate";
-            this.colOrderDate.ReadOnly = true;
-            this.colOrderDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colOrderDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colOrderNo
-            // 
-            this.colOrderNo.DataPropertyName = "OrderNo";
-            this.colOrderNo.HeaderText = "Order No.";
-            this.colOrderNo.Name = "colOrderNo";
-            this.colOrderNo.ReadOnly = true;
-            // 
-            // colCusName
-            // 
-            this.colCusName.DataPropertyName = "CusName";
-            this.colCusName.HeaderText = "Customer အမည်";
-            this.colCusName.Name = "colCusName";
-            this.colCusName.ReadOnly = true;
-            this.colCusName.Width = 165;
-            // 
-            // colTown
-            // 
-            this.colTown.DataPropertyName = "Town";
-            this.colTown.HeaderText = "မြို့";
-            this.colTown.Name = "colTown";
-            this.colTown.ReadOnly = true;
-            this.colTown.Width = 130;
-            // 
-            // colRouteName
-            // 
-            this.colRouteName.DataPropertyName = "RouteName";
-            this.colRouteName.HeaderText = "လမ်း‌ကြောင်း";
-            this.colRouteName.Name = "colRouteName";
-            this.colRouteName.ReadOnly = true;
-            this.colRouteName.Width = 120;
-            // 
-            // colTripName
-            // 
-            this.colTripName.DataPropertyName = "TripName";
-            this.colTripName.HeaderText = "ခရီးစဉ်";
-            this.colTripName.Name = "colTripName";
-            this.colTripName.ReadOnly = true;
-            this.colTripName.Width = 180;
-            // 
-            // colIsDelivered
-            // 
-            this.colIsDelivered.DataPropertyName = "IsDelivered";
-            this.colIsDelivered.HeaderText = "Is Delivered";
-            this.colIsDelivered.Name = "colIsDelivered";
-            this.colIsDelivered.ReadOnly = true;
-            this.colIsDelivered.Visible = false;
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Visible = false;
-            // 
-            // colOrderID
-            // 
-            this.colOrderID.DataPropertyName = "OrderID";
-            this.colOrderID.HeaderText = "Order ID";
-            this.colOrderID.Name = "colOrderID";
-            this.colOrderID.ReadOnly = true;
-            this.colOrderID.Visible = false;
             // 
             // btnDelete
             // 
@@ -264,7 +207,7 @@
             this.dtpDeliveryDate.Location = new System.Drawing.Point(866, 350);
             this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(199, 28);
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(199, 25);
             this.dtpDeliveryDate.TabIndex = 179;
             // 
             // cmbTransportGate
@@ -278,7 +221,7 @@
             this.cmbTransportGate.Location = new System.Drawing.Point(868, 529);
             this.cmbTransportGate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbTransportGate.Name = "cmbTransportGate";
-            this.cmbTransportGate.Size = new System.Drawing.Size(197, 27);
+            this.cmbTransportGate.Size = new System.Drawing.Size(197, 25);
             this.cmbTransportGate.TabIndex = 185;
             this.cmbTransportGate.ValueMember = "TransportGateID";
             // 
@@ -293,7 +236,7 @@
             this.cmbTransportType.Location = new System.Drawing.Point(866, 485);
             this.cmbTransportType.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbTransportType.Name = "cmbTransportType";
-            this.cmbTransportType.Size = new System.Drawing.Size(199, 27);
+            this.cmbTransportType.Size = new System.Drawing.Size(199, 25);
             this.cmbTransportType.TabIndex = 184;
             this.cmbTransportType.ValueMember = "TransportTypeID";
             this.cmbTransportType.SelectedIndexChanged += new System.EventHandler(this.cmbTransportType_SelectedIndexChanged);
@@ -309,7 +252,7 @@
             this.cmbSalePerson.Location = new System.Drawing.Point(866, 441);
             this.cmbSalePerson.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbSalePerson.Name = "cmbSalePerson";
-            this.cmbSalePerson.Size = new System.Drawing.Size(199, 27);
+            this.cmbSalePerson.Size = new System.Drawing.Size(199, 25);
             this.cmbSalePerson.TabIndex = 183;
             this.cmbSalePerson.ValueMember = "EmployeeID";
             // 
@@ -320,7 +263,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(718, 444);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 20);
+            this.label6.Size = new System.Drawing.Size(106, 19);
             this.label6.TabIndex = 177;
             this.label6.Text = "အ‌ရောင်းဝန်ထမ်း";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -334,7 +277,7 @@
             this.lblDelivery.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDelivery.Location = new System.Drawing.Point(12, 11);
             this.lblDelivery.Name = "lblDelivery";
-            this.lblDelivery.Size = new System.Drawing.Size(71, 20);
+            this.lblDelivery.Size = new System.Drawing.Size(81, 19);
             this.lblDelivery.TabIndex = 4;
             this.lblDelivery.Text = "Delivery";
             this.lblDelivery.Click += new System.EventHandler(this.lblDelivery_Click);
@@ -359,75 +302,25 @@
             this.dgvOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductName,
             this.colQty,
+            this.colOrderRemain,
             this.colDeliveryQty,
             this.colRemark,
             this.colOrderID_OrderDetail,
             this.colProductID});
-            this.dgvOrderDetails.Location = new System.Drawing.Point(17, 356);
+            this.dgvOrderDetails.Location = new System.Drawing.Point(3, 357);
             this.dgvOrderDetails.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
+            this.dgvOrderDetails.RowHeadersVisible = false;
             this.dgvOrderDetails.RowHeadersWidth = 50;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvOrderDetails.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvOrderDetails.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvOrderDetails.RowTemplate.Height = 28;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(681, 184);
+            this.dgvOrderDetails.Size = new System.Drawing.Size(654, 184);
             this.dgvOrderDetails.TabIndex = 170;
             this.dgvOrderDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellEndEdit);
             this.dgvOrderDetails.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvOrderDetails_CellValidating);
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             this.dgvOrderDetails.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvOrderDetails_DataError);
-            // 
-            // colProductName
-            // 
-            this.colProductName.DataPropertyName = "ProductName";
-            this.colProductName.HeaderText = "ထုတ်ကုန်အမည်";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.ReadOnly = true;
-            // 
-            // colQty
-            // 
-            this.colQty.DataPropertyName = "Qty";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colQty.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colQty.HeaderText = "Order မှာသည့် အ‌ရေအတွက်";
-            this.colQty.MaxInputLength = 5;
-            this.colQty.Name = "colQty";
-            this.colQty.ReadOnly = true;
-            this.colQty.Width = 150;
-            // 
-            // colDeliveryQty
-            // 
-            this.colDeliveryQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.NullValue = "0";
-            this.colDeliveryQty.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colDeliveryQty.HeaderText = "ပို့ရမည့်အ‌ရေအတွက်";
-            this.colDeliveryQty.MaxInputLength = 5;
-            this.colDeliveryQty.Name = "colDeliveryQty";
-            this.colDeliveryQty.Width = 147;
-            // 
-            // colRemark
-            // 
-            this.colRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRemark.DataPropertyName = "Remark";
-            this.colRemark.HeaderText = "Order မှတ်ချက်";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
-            // 
-            // colOrderID_OrderDetail
-            // 
-            this.colOrderID_OrderDetail.DataPropertyName = "OrderID";
-            this.colOrderID_OrderDetail.HeaderText = "Order ID";
-            this.colOrderID_OrderDetail.Name = "colOrderID_OrderDetail";
-            this.colOrderID_OrderDetail.ReadOnly = true;
-            this.colOrderID_OrderDetail.Visible = false;
-            // 
-            // colProductID
-            // 
-            this.colProductID.DataPropertyName = "ProductID";
-            this.colProductID.HeaderText = "Product ID";
-            this.colProductID.Name = "colProductID";
-            this.colProductID.Visible = false;
             // 
             // lblBrand
             // 
@@ -438,7 +331,7 @@
             this.lblBrand.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblBrand.Location = new System.Drawing.Point(77, 11);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(129, 20);
+            this.lblBrand.Size = new System.Drawing.Size(118, 19);
             this.lblBrand.TabIndex = 3;
             this.lblBrand.Text = ">    ပို့ရန်စီစဉ်ခြင်း";
             // 
@@ -449,7 +342,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(718, 532);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 20);
+            this.label5.Size = new System.Drawing.Size(138, 19);
             this.label5.TabIndex = 176;
             this.label5.Text = "ပို့‌ဆောင်မည့်ဂိတ်အမည်";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -461,7 +354,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(718, 488);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 20);
+            this.label4.Size = new System.Drawing.Size(105, 19);
             this.label4.TabIndex = 175;
             this.label4.Text = "ပို့‌ဆောင်‌ရေးစနစ်";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -473,7 +366,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(718, 400);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 20);
+            this.label3.Size = new System.Drawing.Size(122, 19);
             this.label3.TabIndex = 174;
             this.label3.Text = "အ‌ရောင်းကားနံပါတ်";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -485,9 +378,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(12, 331);
+            this.label1.Location = new System.Drawing.Point(3, 332);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 20);
+            this.label1.Size = new System.Drawing.Size(149, 19);
             this.label1.TabIndex = 171;
             this.label1.Text = "စီစဉ်မည့်ထုတ်ကုန်စာရင်း";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -499,7 +392,7 @@
             this.lblDate.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(718, 357);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(62, 20);
+            this.lblDate.Size = new System.Drawing.Size(58, 19);
             this.lblDate.TabIndex = 172;
             this.lblDate.Text = "ပို့မည့်‌နေ့";
             // 
@@ -665,7 +558,7 @@
             // 
             this.txtKW_Customer.Location = new System.Drawing.Point(131, 16);
             this.txtKW_Customer.Name = "txtKW_Customer";
-            this.txtKW_Customer.Size = new System.Drawing.Size(196, 28);
+            this.txtKW_Customer.Size = new System.Drawing.Size(196, 25);
             this.txtKW_Customer.TabIndex = 20;
             // 
             // dtp_KW_OrderDate
@@ -675,7 +568,7 @@
             this.dtp_KW_OrderDate.Location = new System.Drawing.Point(671, 16);
             this.dtp_KW_OrderDate.Name = "dtp_KW_OrderDate";
             this.dtp_KW_OrderDate.ShowCheckBox = true;
-            this.dtp_KW_OrderDate.Size = new System.Drawing.Size(125, 28);
+            this.dtp_KW_OrderDate.Size = new System.Drawing.Size(125, 25);
             this.dtp_KW_OrderDate.TabIndex = 19;
             // 
             // label8
@@ -683,7 +576,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(591, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 20);
+            this.label8.Size = new System.Drawing.Size(76, 19);
             this.label8.TabIndex = 18;
             this.label8.Text = "Order နေ့စွဲ";
             // 
@@ -691,7 +584,7 @@
             // 
             this.txtKW_OrderNo.Location = new System.Drawing.Point(434, 16);
             this.txtKW_OrderNo.Name = "txtKW_OrderNo";
-            this.txtKW_OrderNo.Size = new System.Drawing.Size(133, 28);
+            this.txtKW_OrderNo.Size = new System.Drawing.Size(133, 25);
             this.txtKW_OrderNo.TabIndex = 17;
             // 
             // label7
@@ -699,7 +592,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(356, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 20);
+            this.label7.Size = new System.Drawing.Size(77, 19);
             this.label7.TabIndex = 15;
             this.label7.Text = "Order No.";
             // 
@@ -708,7 +601,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.Size = new System.Drawing.Size(110, 19);
             this.label2.TabIndex = 13;
             this.label2.Text = "Customer အမည်";
             // 
@@ -741,15 +634,15 @@
             this.lblFilter.ForeColor = System.Drawing.Color.Blue;
             this.lblFilter.Location = new System.Drawing.Point(7, 6);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(147, 17);
+            this.lblFilter.Size = new System.Drawing.Size(146, 16);
             this.lblFilter.TabIndex = 1;
             this.lblFilter.Text = "▼ Show Advance Search";
             this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.splitContainer1);
             this.panel2.Controls.Add(this.btnOrderLost);
-            this.panel2.Controls.Add(this.dgvUnplannedOrders);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dgvOrderDetails);
             this.panel2.Controls.Add(this.cmbVehicle);
@@ -783,9 +676,224 @@
             this.btnOrderLost.UseVisualStyleBackColor = true;
             this.btnOrderLost.Click += new System.EventHandler(this.btnOrderLost_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(12, 6);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvUnplannedOrders);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.label9);
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Size = new System.Drawing.Size(1053, 313);
+            this.splitContainer1.SplitterDistance = 630;
+            this.splitContainer1.TabIndex = 188;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDeliverDate,
+            this.colOrderQty,
+            this.colRemainQty,
+            this.colDeliverQty,
+            this.colBalanceQty});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 47);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(419, 266);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // colOrderDate
+            // 
+            this.colOrderDate.DataPropertyName = "OrderDate";
+            this.colOrderDate.HeaderText = "Order ‌နေ့စွဲ";
+            this.colOrderDate.Name = "colOrderDate";
+            this.colOrderDate.ReadOnly = true;
+            this.colOrderDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colOrderDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colOrderNo
+            // 
+            this.colOrderNo.DataPropertyName = "OrderNo";
+            this.colOrderNo.HeaderText = "Order No.";
+            this.colOrderNo.Name = "colOrderNo";
+            this.colOrderNo.ReadOnly = true;
+            // 
+            // colCusName
+            // 
+            this.colCusName.DataPropertyName = "CusName";
+            this.colCusName.HeaderText = "Customer အမည်";
+            this.colCusName.Name = "colCusName";
+            this.colCusName.ReadOnly = true;
+            this.colCusName.Width = 165;
+            // 
+            // colTown
+            // 
+            this.colTown.DataPropertyName = "Town";
+            this.colTown.HeaderText = "မြို့";
+            this.colTown.Name = "colTown";
+            this.colTown.ReadOnly = true;
+            this.colTown.Visible = false;
+            this.colTown.Width = 130;
+            // 
+            // colRouteName
+            // 
+            this.colRouteName.DataPropertyName = "RouteName";
+            this.colRouteName.HeaderText = "လမ်း‌ကြောင်း";
+            this.colRouteName.Name = "colRouteName";
+            this.colRouteName.ReadOnly = true;
+            this.colRouteName.Width = 120;
+            // 
+            // colTripName
+            // 
+            this.colTripName.DataPropertyName = "TripName";
+            this.colTripName.HeaderText = "ခရီးစဉ်";
+            this.colTripName.Name = "colTripName";
+            this.colTripName.ReadOnly = true;
+            this.colTripName.Width = 180;
+            // 
+            // colIsDelivered
+            // 
+            this.colIsDelivered.DataPropertyName = "IsDelivered";
+            this.colIsDelivered.HeaderText = "Is Delivered";
+            this.colIsDelivered.Name = "colIsDelivered";
+            this.colIsDelivered.ReadOnly = true;
+            this.colIsDelivered.Visible = false;
+            // 
+            // colStatus
+            // 
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Visible = false;
+            // 
+            // colOrderID
+            // 
+            this.colOrderID.DataPropertyName = "OrderID";
+            this.colOrderID.HeaderText = "Order ID";
+            this.colOrderID.Name = "colOrderID";
+            this.colOrderID.ReadOnly = true;
+            this.colOrderID.Visible = false;
+            // 
+            // colDeliverDate
+            // 
+            this.colDeliverDate.HeaderText = "Date";
+            this.colDeliverDate.Name = "colDeliverDate";
+            this.colDeliverDate.ReadOnly = true;
+            // 
+            // colOrderQty
+            // 
+            this.colOrderQty.HeaderText = "Order Qty";
+            this.colOrderQty.Name = "colOrderQty";
+            this.colOrderQty.ReadOnly = true;
+            this.colOrderQty.Width = 80;
+            // 
+            // colRemainQty
+            // 
+            this.colRemainQty.HeaderText = "ပို့ရန်ကျန်";
+            this.colRemainQty.Name = "colRemainQty";
+            this.colRemainQty.ReadOnly = true;
+            this.colRemainQty.Width = 90;
+            // 
+            // colDeliverQty
+            // 
+            this.colDeliverQty.HeaderText = "Deliver Qty";
+            this.colDeliverQty.Name = "colDeliverQty";
+            this.colDeliverQty.ReadOnly = true;
+            this.colDeliverQty.Width = 80;
+            // 
+            // colBalanceQty
+            // 
+            this.colBalanceQty.HeaderText = "Balance";
+            this.colBalanceQty.Name = "colBalanceQty";
+            this.colBalanceQty.ReadOnly = true;
+            this.colBalanceQty.Width = 80;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(157, 19);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Delivery History of ";
+            // 
+            // colProductName
+            // 
+            this.colProductName.DataPropertyName = "ProductName";
+            this.colProductName.HeaderText = "ထုတ်ကုန်အမည်";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.ReadOnly = true;
+            // 
+            // colQty
+            // 
+            this.colQty.DataPropertyName = "Qty";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colQty.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colQty.HeaderText = "Order မှာသည့် အ‌ရေအတွက်";
+            this.colQty.MaxInputLength = 5;
+            this.colQty.Name = "colQty";
+            this.colQty.ReadOnly = true;
+            this.colQty.Width = 150;
+            // 
+            // colOrderRemain
+            // 
+            this.colOrderRemain.DataPropertyName = "RemainQty";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colOrderRemain.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colOrderRemain.HeaderText = "ပို့ရန်ကျန် အ‌ရေအတွက်";
+            this.colOrderRemain.Name = "colOrderRemain";
+            // 
+            // colDeliveryQty
+            // 
+            this.colDeliveryQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.NullValue = "0";
+            this.colDeliveryQty.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colDeliveryQty.HeaderText = "ပို့ရမည့်အ‌ရေအတွက်";
+            this.colDeliveryQty.MaxInputLength = 5;
+            this.colDeliveryQty.Name = "colDeliveryQty";
+            this.colDeliveryQty.Width = 90;
+            // 
+            // colRemark
+            // 
+            this.colRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRemark.DataPropertyName = "Remark";
+            this.colRemark.HeaderText = "Order မှတ်ချက်";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.ReadOnly = true;
+            // 
+            // colOrderID_OrderDetail
+            // 
+            this.colOrderID_OrderDetail.DataPropertyName = "OrderID";
+            this.colOrderID_OrderDetail.HeaderText = "Order ID";
+            this.colOrderID_OrderDetail.Name = "colOrderID_OrderDetail";
+            this.colOrderID_OrderDetail.ReadOnly = true;
+            this.colOrderID_OrderDetail.Visible = false;
+            // 
+            // colProductID
+            // 
+            this.colProductID.DataPropertyName = "ProductID";
+            this.colProductID.HeaderText = "Product ID";
+            this.colProductID.Name = "colProductID";
+            this.colProductID.Visible = false;
+            // 
             // frmDeliveryPlan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 733);
             this.Controls.Add(this.panel2);
@@ -808,6 +916,12 @@
             this.pnlFilt.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -849,15 +963,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private AGL.UI.Controls.CalendarColumn colOrderDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTown;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRouteName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTripName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIsDelivered;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderID;
         private System.Windows.Forms.Panel pnlFilter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
@@ -871,8 +976,26 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnViewAll;
         private System.Windows.Forms.Button btnOrderLost;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private AGL.UI.Controls.CalendarColumn colOrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTown;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRouteName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTripName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIsDelivered;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderID;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliverDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRemainQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliverQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBalanceQty;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderRemain;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeliveryQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderID_OrderDetail;

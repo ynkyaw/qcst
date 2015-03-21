@@ -293,6 +293,36 @@ namespace PTIC.Sale.DA
             return (int)new BaseDAO().SelectScalar(queryString);
         }
 
+        public static DataTable SelectOrderListing()
+        {
+            DataTable table = null;
+            string tableName = "OrderTable";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection(); ;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "[usp_OrderListing]";
+
+               
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            finally
+            {
+                DBManager.GetInstance().CloseDbConnection();
+            }
+            return table;
+        }
+
+
+
         public static DataTable SelectByIsDelivered(bool isDelivered)
         {
             DataTable table = null;
