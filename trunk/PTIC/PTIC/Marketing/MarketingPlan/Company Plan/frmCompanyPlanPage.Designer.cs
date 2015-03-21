@@ -68,6 +68,7 @@
             this.btnMobileServiceDetail.TabIndex = 47;
             this.btnMobileServiceDetail.Text = "Company Plan Detail";
             this.btnMobileServiceDetail.UseVisualStyleBackColor = true;
+            this.btnMobileServiceDetail.Click += new System.EventHandler(this.btnMobileServiceDetail_Click);
             // 
             // btnMobileServiceLog
             // 

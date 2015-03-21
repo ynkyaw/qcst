@@ -56,7 +56,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                 int complanyPlanId = (int)PTIC.VC.Util.DataTypeParser.Parse(dgvMobileServiceLog.Rows[e.RowIndex].Cells[colCompanyPlanID.Index].Value, typeof(int), -1);
                 if (cmpDtlId == -1)
                 {
-                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(complanyPlanId);
+                    frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(complanyPlanId, cmpId);
                     UIManager.OpenForm(frmCmpDtl);
                 }
                 else 

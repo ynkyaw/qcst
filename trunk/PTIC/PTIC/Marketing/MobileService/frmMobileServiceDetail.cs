@@ -559,7 +559,8 @@ namespace PTIC.VC.Marketing.MobileService
                             MSuvDetailID = (int)DataTypeParser.Parse(row.Cells["colMSuvDetailID"].Value, typeof(int), -1),
                             //BrandID = (int)DataTypeParser.Parse(row.Cells["colBrand"].Value, typeof(int), -1),
                             //ProductID = (int)DataTypeParser.Parse(row.Cells["colProduct"].Value, typeof(int), -1),
-                            Brand = (string)DataTypeParser.Parse(row.Cells[colBrand.Index].Value, typeof(string), null),
+                            
+                            //Brand = (string)DataTypeParser.Parse(row.Cells[colBrand.Index].Value, typeof(string), null),
                             Product = (string)DataTypeParser.Parse(row.Cells[colProduct.Index].Value, typeof(string), null),
                             UsedPlace = (string)DataTypeParser.Parse(row.Cells["colUsedPlace"].Value, typeof(string), string.Empty),
                             MachineNo = (string)DataTypeParser.Parse(row.Cells["colMachineNo"].Value, typeof(string), string.Empty),

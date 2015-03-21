@@ -129,5 +129,16 @@ namespace PTIC.Marketing.BL
         }
         #endregion
 
+        #region 
+        public int InsertCompanyPlanDetails(CompanyPlanDetail cmpDtl) 
+        {
+
+            return CompanyPlanDA.InsertCompanyPlanDetail(cmpDtl);
+        
+        }
+
+        #endregion
+
+
     }
 }

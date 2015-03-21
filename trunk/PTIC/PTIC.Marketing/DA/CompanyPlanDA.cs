@@ -139,78 +139,7 @@ namespace PTIC.Marketing.DA
         }
 
 
-        public static CompanyPlanDetail SelectCompanyPlanDetailsById(int CmpDtlId)
-        {
-            DataTable table = null;
-            CompanyPlanDetail cmpDtl = null;
-            string tableName = "CompanyPlanDetails";
-            try
-            {
-                table = new DataTable(tableName);
-                SqlCommand command = new SqlCommand();
-                command.Connection = DBManager.GetInstance().GetDbConnection();
-                command.CommandText = "SELECT * FROM CompanyPlanDetails WHERE ID =@id";
-                
-                command.Parameters.AddWithValue("@id", CmpDtlId);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(table);
-                command.Parameters.Clear();
-                
-
-                if (table.Rows.Count == 1) 
-                {
-                    cmpDtl = new CompanyPlanDetail();
-                    cmpDtl.CompanyPlanDetailId = CmpDtlId;
-                    cmpDtl.ApprovedBy = (string)table.Rows[0]["ApprovedBy"];
-                    cmpDtl.ArrivedTime = (DateTime)table.Rows[0]["ArrivedTime"];
-                    cmpDtl.ArrivedDate = (DateTime)table.Rows[0]["ArrivedDate"];
-                    cmpDtl.CarCountInCompany = (int)table.Rows[0]["CarCountInCompany"];
-                    cmpDtl.CheckedBy = (string)table.Rows[0]["CheckedBy"];
-                    cmpDtl.ConditionOfOtherBrands = (string)table.Rows[0]["CheckedBy"];
-                    cmpDtl.DepatureTime = (DateTime)table.Rows[0]["DepatureTime"];
-                    cmpDtl.HasOrder = (bool)table.Rows[0]["HasOrder"];
-                    cmpDtl.MainTopic = (string)table.Rows[0]["MainTopic"];
-                    cmpDtl.PreparedBy = (string)table.Rows[0]["PreparedBy"];
-                    cmpDtl.TargetedEmpId = (int)table.Rows[0]["EmpId"];
-                    cmpDtl.ToyoComment = (string)table.Rows[0]["ToyoComment"];
-
-                    command=new SqlCommand ();
-                    command.Connection = DBManager.GetInstance().GetDbConnection();
-                    command.CommandText = "SELECT [BrandId] FROM [CompanyPlanDtl_UseBrand] WHERE BrandId is not null and isDelete=0 and CompanyPlanDetailsID=@id";
-
-                    command.Parameters.AddWithValue("@id", CmpDtlId);
-                    List<int> ownBrandList = new List<int>();
-                    DataTable brandList = new DataTable();
-                    new SqlDataAdapter(command).Fill(brandList);
-                    foreach(DataRow dr in brandList.Rows)
-                    {
-                        ownBrandList.Add((int)dr["BrandId"]);
-                    }
-                    
-                    command=new SqlCommand ();
-                    command.Connection = DBManager.GetInstance().GetDbConnection();
-                    command.CommandText = "SELECT CompetitorBrandId FROM [CompanyPlanDtl_UseBrand] WHERE CompetitorBrandId is not null and isDelete=0 and CompanyPlanDetailsID=@id";
-
-                    command.Parameters.AddWithValue("@id", CmpDtlId);
-                    List<int> otherBrandList = new List<int>();
-                    DataTable other_brandList = new DataTable();
-                    new SqlDataAdapter(command).Fill(brandList);
-                    foreach(DataRow dr in other_brandList.Rows)
-                    {
-                        otherBrandList.Add((int)dr["CompetitorBrandId"]);
-                    }
-                    
-                }
-
-
-            }
-            catch (SqlException sqle)
-            {
-                return null;
-            }
-            return cmpDtl;
-        }
-
+      
 
         private static DataTable SelectCompanyPlanBy(PTIC.Common.Enum.FormStatus formStatus)
         {
@@ -517,5 +446,171 @@ namespace PTIC.Marketing.DA
             return table;
         }
         #endregion
+
+        #region
+
+        public static CompanyPlanDetail SelectCompanyPlanDetailsById(int CmpDtlId)
+        {
+            DataTable table = null;
+            CompanyPlanDetail cmpDtl = null;
+            string tableName = "CompanyPlanDetails";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+                command.CommandText = "SELECT * FROM CompanyPlanDetails WHERE ID =@id";
+
+                command.Parameters.AddWithValue("@id", CmpDtlId);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+                command.Parameters.Clear();
+
+
+                if (table.Rows.Count == 1)
+                {
+                    cmpDtl = new CompanyPlanDetail();
+                    cmpDtl.CompanyPlanDetailId = CmpDtlId;
+                    cmpDtl.ApprovedBy = (string)table.Rows[0]["ApprovedBy"];
+                    cmpDtl.ArrivedTime = (DateTime)table.Rows[0]["ArrivedTime"];
+                    cmpDtl.ArrivedDate = (DateTime)table.Rows[0]["ArrivedDate"];
+                    cmpDtl.CarCountInCompany = (int)table.Rows[0]["CarCountInCompany"];
+                    cmpDtl.CheckedBy = (string)table.Rows[0]["CheckedBy"];
+                    cmpDtl.ConditionOfOtherBrands = (string)table.Rows[0]["CheckedBy"];
+                    cmpDtl.DepatureTime = (DateTime)table.Rows[0]["DepatureTime"];
+                    cmpDtl.HasOrder = (bool)table.Rows[0]["HasOrder"];
+                    cmpDtl.MainTopic = (string)table.Rows[0]["MainTopic"];
+                    cmpDtl.PreparedBy = (string)table.Rows[0]["PreparedBy"];
+                    cmpDtl.TargetedEmpId = (int)table.Rows[0]["EmpId"];
+                    cmpDtl.ToyoComment = (string)table.Rows[0]["ToyoComment"];
+                    cmpDtl.HasService = (bool)table.Rows[0]["hasServiced"];
+                    if(cmpDtl.HasService)
+                        cmpDtl.ServicedDate = (DateTime)table.Rows[0]["ServicedDate"];
+
+                    command = new SqlCommand();
+                    command.Connection = DBManager.GetInstance().GetDbConnection();
+                    command.CommandText = "SELECT [BrandId] FROM [CompanyPlanDtl_UseBrand] WHERE BrandId is not null and isDelete=0 and CompanyPlanDetailsID=@id";
+
+                    command.Parameters.AddWithValue("@id", CmpDtlId);
+                    List<int> ownBrandList = new List<int>();
+                    DataTable brandList = new DataTable();
+                    new SqlDataAdapter(command).Fill(brandList);
+                    foreach (DataRow dr in brandList.Rows)
+                    {
+                        ownBrandList.Add((int)dr["BrandId"]);
+                    }
+
+                    command = new SqlCommand();
+                    command.Connection = DBManager.GetInstance().GetDbConnection();
+                    command.CommandText = "SELECT CompetitorBrandId FROM [CompanyPlanDtl_UseBrand] WHERE CompetitorBrandId is not null and isDelete=0 and CompanyPlanDetailsID=@id";
+
+                    command.Parameters.AddWithValue("@id", CmpDtlId);
+                    List<int> otherBrandList = new List<int>();
+                    DataTable other_brandList = new DataTable();
+                    new SqlDataAdapter(command).Fill(brandList);
+                    foreach (DataRow dr in other_brandList.Rows)
+                    {
+                        otherBrandList.Add((int)dr["CompetitorBrandId"]);
+                    }
+
+                }
+
+
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return cmpDtl;
+        }
+
+
+        public static int InsertCompanyPlanDetail(CompanyPlanDetail cmpDtl) 
+        {
+            string sqlCommand = "INSERT INTO [CompanyPlanDetails]([CompanyPlanId],[CarCountInCompany],[ToyoComment],[MainTopic]";
+            sqlCommand +=",[ArrivedTime],[DepatureTime],[HasOrder],[ConditionOfOtherBrands],[PreparedBy],[CheckedBy],[ApprovedBy]";
+            sqlCommand += ",[ArrivedDate],[EmpId],[Remark],[isDeleted],[hasServiced],[ServicedDate]) OUTPUT inserted.ID   VALUES(@CompanyPlanId,@CarCountInCompany,@ToyoComment";
+            sqlCommand+=",@MainTopic,@ArrivedTime,@DepatureTime,@HasOrder,@ConditionOfOtherBrands,@PreparedBy,@CheckedBy,@ApprovedBy";
+            sqlCommand+=",@ArrivedDate,@EmpId,@Remark,@isDeleted,@hasServiced,@ServicedDate)";
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                SqlConnection conn =DBManager.GetInstance().GetDbConnection();
+                
+                SqlTransaction trans = conn.BeginTransaction();
+                command.Connection = conn;
+                command.Transaction = trans;
+                command.CommandText = sqlCommand;
+
+                command.Parameters.AddWithValue("@CompanyPlanId", cmpDtl.CompanyPlanId);
+                command.Parameters.AddWithValue("@CarCountInCompany", cmpDtl.CarCountInCompany);
+                command.Parameters.AddWithValue("@ToyoComment", cmpDtl.ToyoComment);
+                command.Parameters.AddWithValue("@MainTopic", cmpDtl.MainTopic);
+                command.Parameters.AddWithValue("@ArrivedTime", cmpDtl.ArrivedTime);
+                command.Parameters.AddWithValue("@DepatureTime", cmpDtl.DepatureTime);
+                command.Parameters.AddWithValue("@HasOrder", cmpDtl.HasOrder);
+                command.Parameters.AddWithValue("@ConditionOfOtherBrands", cmpDtl.ConditionOfOtherBrands);
+                command.Parameters.AddWithValue("@PreparedBy", cmpDtl.PreparedBy);
+                command.Parameters.AddWithValue("@CheckedBy", cmpDtl.CheckedBy);
+                command.Parameters.AddWithValue("@ApprovedBy", cmpDtl.ApprovedBy);
+                command.Parameters.AddWithValue("@ArrivedDate", cmpDtl.ArrivedDate);
+                command.Parameters.AddWithValue("@EmpId", cmpDtl.TargetedEmpId);
+                command.Parameters.AddWithValue("@Remark", (cmpDtl.Remark==null?"":cmpDtl.Remark));
+                command.Parameters.AddWithValue("@isDeleted", false);
+                command.Parameters.AddWithValue("@hasServiced", cmpDtl.HasService);
+                if(cmpDtl.HasService)
+                    command.Parameters.AddWithValue("@ServicedDate", cmpDtl.ServicedDate);
+                else
+                    command.Parameters.AddWithValue("@ServicedDate", DBNull.Value);
+                object insertedId =  command.ExecuteScalar();
+
+                command.Parameters.Clear();
+                if (insertedId != null)
+                {
+                    cmpDtl.CompanyPlanDetailId = (int)insertedId;
+                    string usedBrandSqlCommand = "INSERT INTO [CompanyPlanDtl_UseBrand]([CompanyPlanDetailsID],[BrandId],[CompetitorBrandId],[isDelete])";
+                    usedBrandSqlCommand += "VALUES (@CompanyPlanDetailsID,@BrandId,@CompetitorBrandId,@isDelete)";
+                    foreach (int brandId in cmpDtl.OwnBrandList) 
+                    {
+
+                        command.CommandText = usedBrandSqlCommand;
+                        command.Parameters.AddWithValue("@CompanyPlanDetailsID", cmpDtl.CompanyPlanDetailId);
+                        command.Parameters.AddWithValue("@BrandId", brandId);
+                        command.Parameters.AddWithValue("@CompetitorBrandId", DBNull.Value);
+                        command.Parameters.AddWithValue("@isDelete", false);
+                        command.ExecuteNonQuery();
+                        command.Parameters.Clear();
+                    }
+
+                    foreach (int otherBrandId in cmpDtl.OtherBrandList)
+                    {
+                        command.CommandText = usedBrandSqlCommand;
+                        command.Parameters.AddWithValue("@CompanyPlanDetailsID", cmpDtl.CompanyPlanDetailId);
+                        command.Parameters.AddWithValue("@BrandId",  DBNull.Value);
+                        command.Parameters.AddWithValue("@CompetitorBrandId",otherBrandId);
+                        command.Parameters.AddWithValue("@isDelete", false);
+                        command.ExecuteNonQuery();
+                        command.Parameters.Clear();
+                    }
+
+                    trans.Commit();
+                    return 1;
+                }
+                else return 0;
+
+
+
+
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+
+           
+        }
+
+        #endregion
+
     }
 }

@@ -20,5 +20,10 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         {
             UIManager.MdiChildOpenForm(typeof(frmCompanyPlanLog));
         }
+
+        private void btnMobileServiceDetail_Click(object sender, EventArgs e)
+        {
+            UIManager.MdiChildOpenForm(typeof(frmCompanyPlanDetails));
+        }
     }
 }
