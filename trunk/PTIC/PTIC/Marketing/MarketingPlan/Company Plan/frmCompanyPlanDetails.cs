@@ -44,6 +44,8 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             LoadCombo();
             LoadCompanyDetails(cmpDetails);
             cmbCompany.SelectedValue = companyId;
+            btnSave.Enabled = false;
+            btnDeleteServiceRecord.Enabled = true;
             
         }
 
@@ -63,7 +65,8 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             cmpDtl.DepatureTime = dtpDepature.Value;
             cmpDtl.ArrivedDate = dtpVisitDate.Value;
 
-
+            cmpDtl.HasService = checkBox1.Checked;
+            cmpDtl.ServicedDate = dtpServiceDate.Value;
 
             cmpDtl.CarCountInCompany = int.Parse(txtCompanyCarCount.Text);
             cmpDtl.CompanyPlanId = companyPlanId;
@@ -94,23 +97,43 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Is there any order for this company?", "Has Order?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr.Equals(DialogResult.Yes))
+            {
+                int custId = (int)cmbEmp.SelectedValue;
+                PTIC.Sale.Order.frmOrder orderForm = new PTIC.Sale.Order.frmOrder();
+                // set call back handler
+                orderForm.OrderSavedHandler += new Sale.Order.frmOrder.OrderSaveHandler(orderForm_OrderSavedHandler);
+                UIManager.OpenForm(orderForm);
+            }
+            else 
+            {
+                Save();
+            }
+
+            
+            
+
+        }
+
+        private void Save() 
+        {
             cmpDetails = GetCompanyDetailsFromUI();
             if (cmpDetails.CompanyPlanDetailId == 0)
             {
 
                 new CompanyPlanBL().InsertCompanyPlanDetails(cmpDetails);
-
+                MessageBox.Show("Success!");
+                this.Close();
             }
-            else 
-            {
-            
-            }
-
         }
 
         private void btnDeleteServiceRecord_Click(object sender, EventArgs e)
         {
 
+            new CompanyPlanBL().DeleteCompanyPlanDetails(cmpDetails);
+            MessageBox.Show("Success!");
+            this.Close();
         }
 
         #region Private Method
@@ -185,7 +208,9 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             dtpArrived.Value = cmpDtl.ArrivedTime;
             dtpDepature.Value = cmpDtl.DepatureTime;
             dtpVisitDate.Value = cmpDtl.ArrivedDate;
-
+            checkBox1.Checked = cmpDtl.HasService;
+            if(cmpDtl.HasService)
+                dtpServiceDate.Value = cmpDtl.ServicedDate;
 
         
         }
@@ -227,15 +252,15 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PTIC.Sale.Order.frmOrder orderForm = new PTIC.Sale.Order.frmOrder();
-            // set call back handler
-            orderForm.OrderSavedHandler += new Sale.Order.frmOrder.OrderSaveHandler(orderForm_OrderSavedHandler);
-            UIManager.OpenForm(orderForm);
+
+            
         }
 
         void orderForm_OrderSavedHandler(object sender, Sale.Order.frmOrder.OrderSaveEventArgs e)
         {
             rdoOrder.Checked = true;
+            cmbCompany.Enabled = false;
+            Save();
         }
 
         private void dtpVisitDate_ValueChanged(object sender, EventArgs e)
@@ -266,6 +291,11 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         private void frmCompanyPlanDetails_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpServiceDate.Enabled = checkBox1.Checked;
         }
     }
 }

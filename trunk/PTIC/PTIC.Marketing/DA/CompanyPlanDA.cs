@@ -610,6 +610,42 @@ namespace PTIC.Marketing.DA
            
         }
 
+        public static int DeleteCompanyPlanDetail(CompanyPlanDetail cmpDtl)
+        {
+            string sqlCommand = "DELETE FROM CompanyPlanDtl_UseBrand WHERE CompanyPlanDetailsID=@CompanyPlanDetailsID";
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                SqlConnection conn = DBManager.GetInstance().GetDbConnection();
+
+                SqlTransaction trans = conn.BeginTransaction();
+                command.Connection = conn;
+                command.Transaction = trans;
+                command.CommandText = sqlCommand;
+                command.Parameters.AddWithValue("@CompanyPlanDetailsID", cmpDtl.CompanyPlanDetailId);
+
+
+                command.ExecuteNonQuery();
+
+                command.Parameters.Clear();
+
+                sqlCommand = "DELETE FROM CompanyPlanDetails WHERE ID=@CompanyPlanDetailsID";
+                command.CommandText = sqlCommand;
+                command.Parameters.AddWithValue("@CompanyPlanDetailsID", cmpDtl.CompanyPlanDetailId);
+                command.ExecuteNonQuery();
+
+                command.Parameters.Clear();
+                trans.Commit();
+                return 1;
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+
+
+        }
+
         #endregion
 
     }

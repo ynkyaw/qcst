@@ -23,7 +23,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
         private void btnMobileServiceDetail_Click(object sender, EventArgs e)
         {
-            UIManager.MdiChildOpenForm(typeof(frmCompanyPlanDetails));
+            UIManager.OpenForm(typeof(frmCompanyPlanDetails));
         }
     }
 }

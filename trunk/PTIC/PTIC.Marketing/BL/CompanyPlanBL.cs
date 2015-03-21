@@ -137,6 +137,14 @@ namespace PTIC.Marketing.BL
         
         }
 
+        public int DeleteCompanyPlanDetails(CompanyPlanDetail cmpDtl)
+        {
+
+            return CompanyPlanDA.DeleteCompanyPlanDetail(cmpDtl);
+
+        }
+
+
         #endregion
 
 

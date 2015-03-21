@@ -548,6 +548,7 @@
             // btnDeleteServiceRecord
             // 
             this.btnDeleteServiceRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteServiceRecord.Enabled = false;
             this.btnDeleteServiceRecord.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteServiceRecord.Location = new System.Drawing.Point(604, 579);
             this.btnDeleteServiceRecord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -593,6 +594,7 @@
             this.button1.TabIndex = 253;
             this.button1.Text = "---";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
@@ -604,9 +606,11 @@
             this.checkBox1.TabIndex = 255;
             this.checkBox1.Text = "Services";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // dtpServiceDate
             // 
+            this.dtpServiceDate.Enabled = false;
             this.dtpServiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpServiceDate.Location = new System.Drawing.Point(165, 448);
             this.dtpServiceDate.Name = "dtpServiceDate";
