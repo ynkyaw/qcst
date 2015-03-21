@@ -64,6 +64,15 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
                     frmCompanyPlanDetails frmCmpDtl = new frmCompanyPlanDetails(cmpDtlId, cmpId, complanyPlanId);
                     UIManager.OpenForm(frmCmpDtl);
                 }
+                LoadCompanyPlanDetails();
+            }
+        }
+
+        private void dgvMobileServiceLog_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(dgvMobileServiceLog.Rows[e.RowIndex].Cells[colCompanyPlanDetailID.Index].Value + string.Empty)) 
+            {
+                dgvMobileServiceLog.Rows[e.RowIndex].Cells[colServiceDetail.Index].Value = "ကြည့်မည်";
             }
         }
     }
