@@ -16,16 +16,29 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
     {
         CompanyPlanDetail cmpDetails = new CompanyPlanDetail() { CompanyPlanDetailId =0};
         int companyPlanId = 0;
-        public frmCompanyPlanDetails(int companyPlanId)
+
+        public frmCompanyPlanDetails()
         {
             InitializeComponent();
+            rdoNoOrder.Checked = true;
+            LoadCombo();
+            
+        }
+
+
+        public frmCompanyPlanDetails(int companyPlanId,int companyId)
+        {
+            InitializeComponent();
+            rdoNoOrder.Checked = true;
             this.companyPlanId = companyPlanId;
             LoadCombo();
+            cmbCompany.SelectedValue = companyId;
         }
 
         public frmCompanyPlanDetails(int CmpDtlId,int companyId,int companyPlanId)
         {
             InitializeComponent();
+            rdoNoOrder.Checked = true;
             cmpDetails = new CompanyPlanBL().SelectCompanyPlanDetailsById(CmpDtlId);
             this.companyPlanId = companyPlanId;
             LoadCombo();
@@ -85,7 +98,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             if (cmpDetails.CompanyPlanDetailId == 0)
             {
 
-
+                new CompanyPlanBL().InsertCompanyPlanDetails(cmpDetails);
 
             }
             else 
@@ -121,7 +134,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             cmbEmp.DisplayMember = "EmpName";
             cmbEmp.ValueMember = "EmployeeID";
 
-            cmbPrepareBy.DataSource = empDt;
+            cmbPrepareBy.DataSource = empDt.Copy();
             cmbPrepareBy.DisplayMember = "EmpName";
             cmbPrepareBy.ValueMember = "EmpName";
 
@@ -213,6 +226,44 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            PTIC.Sale.Order.frmOrder orderForm = new PTIC.Sale.Order.frmOrder();
+            // set call back handler
+            orderForm.OrderSavedHandler += new Sale.Order.frmOrder.OrderSaveHandler(orderForm_OrderSavedHandler);
+            UIManager.OpenForm(orderForm);
+        }
+
+        void orderForm_OrderSavedHandler(object sender, Sale.Order.frmOrder.OrderSaveEventArgs e)
+        {
+            rdoOrder.Checked = true;
+        }
+
+        private void dtpVisitDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpServiceDate.Value < dtpVisitDate.Value) 
+            {
+                dtpServiceDate.Value = dtpVisitDate.Value;
+            }
+            dtpServiceDate.MinDate = dtpVisitDate.Value;
+        }
+
+        private void dtpArrived_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpArrived.Value.TimeOfDay > dtpDepature.Value.TimeOfDay) 
+            {
+                dtpDepature.Value = dtpArrived.Value;
+            } 
+        }
+
+        private void dtpDepature_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpArrived.Value.TimeOfDay > dtpDepature.Value.TimeOfDay)
+            {
+                dtpArrived.Value = dtpDepature.Value;
+            } 
+        }
+
+        private void frmCompanyPlanDetails_Load(object sender, EventArgs e)
         {
 
         }

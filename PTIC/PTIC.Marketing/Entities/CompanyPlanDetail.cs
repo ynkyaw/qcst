@@ -127,7 +127,28 @@ namespace PTIC.Marketing.Entities
             set { _arrivedDate = value; }
         }
 
+        private string _remark;
 
+        public string Remark
+        {
+            get { return _remark; }
+            set { _remark = value; }
+        }
 
+        private bool hasService;
+
+        public bool HasService
+        {
+            get { return hasService; }
+            set { hasService = value; }
+        }
+
+        private DateTime _servicedDate;
+
+        public DateTime ServicedDate
+        {
+            get { return _servicedDate; }
+            set { _servicedDate = value; }
+        }
     }
 }
