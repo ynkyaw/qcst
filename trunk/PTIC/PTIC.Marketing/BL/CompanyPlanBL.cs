@@ -130,10 +130,10 @@ namespace PTIC.Marketing.BL
         #endregion
 
         #region 
-        public int InsertCompanyPlanDetails(CompanyPlanDetail cmpDtl) 
+        public int InsertCompanyPlanDetails(CompanyPlanDetail cmpDtl,int custId) 
         {
 
-            return CompanyPlanDA.InsertCompanyPlanDetail(cmpDtl);
+            return CompanyPlanDA.InsertCompanyPlanDetail(cmpDtl,custId);
         
         }
 

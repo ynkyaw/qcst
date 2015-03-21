@@ -515,6 +515,42 @@ namespace PTIC.Sale.DA
                 return 0;
             }
         }
+
+        public static bool IsAlreadyPlan(int orderId, out DateTime deliveryPlanDate,out string deliveryNo)
+        {
+            try
+            {
+                SqlConnection conn = DBManager.GetInstance().GetDbConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+                //cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SELECT DeliveryNo,DateAdded FROM Delivery WHERE [Status] =0 and OrderID=@p_orderId";
+                cmd.Parameters.AddWithValue("@p_orderId", orderId);
+                DataTable dt = new DataTable();
+                new SqlDataAdapter(cmd).Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+
+                    deliveryNo =  dt.Rows[0]["DeliveryNo"]+string.Empty;
+                    DateTime.TryParse(dt.Rows[0]["DateAdded"] + string.Empty, out deliveryPlanDate);
+                    return true;
+
+
+                }
+                else 
+                {
+                    deliveryNo = string.Empty;
+                    deliveryPlanDate = new DateTime();
+                    return false;
+                }
+                
+            }
+            catch (SqlException sqle)
+            {
+                throw sqle;
+            }
+        }
         #endregion
     }
 }

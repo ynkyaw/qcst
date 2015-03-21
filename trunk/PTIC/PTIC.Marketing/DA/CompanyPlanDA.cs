@@ -272,12 +272,12 @@ namespace PTIC.Marketing.DA
                 cmd.Connection = con;
                 cmd.Transaction = transaction;
                 cmd.CommandText = "INSERT INTO [CompanyPlan]([CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId],[Status],[IsConfirmed],[CreatedDate],[LastModifedDate],[IsDeleted])";
-                cmd.CommandText += " VALUES(@CompanyPlanNo,@TargetedDate,@TownshipId,@CustomerId,@Status,@IsConfirmed,@CreatedDate,@LastModifedDate,@IsDeleted)";
+                cmd.CommandText += " OUTPUT inserted.ID  VALUES(@CompanyPlanNo,@TargetedDate,@TownshipId,@CustomerId,@Status,@IsConfirmed,@CreatedDate,@LastModifedDate,@IsDeleted)";
 
                 foreach (CompanyPlan newCompanyPlan in CompanyPlan)
                 {
                     cmd.Parameters.AddWithValue("@TownshipId", newCompanyPlan.TownshipID);
-                    cmd.Parameters.AddWithValue("@CompanyPlanNo", newCompanyPlan.CompanyPanNo);
+                    cmd.Parameters.AddWithValue("@CompanyPlanNo", string.IsNullOrEmpty (newCompanyPlan.CompanyPanNo)?string.Empty:newCompanyPlan.CompanyPanNo);
                     cmd.Parameters.AddWithValue("@TargetedDate", newCompanyPlan.TargetedDate);
                     cmd.Parameters.AddWithValue("@CustomerId", newCompanyPlan.CustomerID);
                     cmd.Parameters.AddWithValue("@Status", newCompanyPlan.Status);
@@ -285,8 +285,10 @@ namespace PTIC.Marketing.DA
                     cmd.Parameters.AddWithValue("@CreatedDate", newCompanyPlan.IsConfirmed);
                     cmd.Parameters.AddWithValue("@LastModifedDate", newCompanyPlan.LastModifiedDate);
                     cmd.Parameters.AddWithValue("@IsDeleted", newCompanyPlan.IsDeleted);
-                    
-                    affectedrow += cmd.ExecuteNonQuery();
+                    int tmpId = 0;
+                    int.TryParse(cmd.ExecuteScalar()+string.Empty,out tmpId);
+                    if (tmpId != 0)
+                        affectedrow = tmpId;
                     cmd.Parameters.Clear();
                 }
                 transaction.Commit();
@@ -525,8 +527,57 @@ namespace PTIC.Marketing.DA
         }
 
 
-        public static int InsertCompanyPlanDetail(CompanyPlanDetail cmpDtl) 
+        public static int InsertCompanyPlanDetail(CompanyPlanDetail cmpDtl,int custId) 
         {
+
+            SqlCommand command = new SqlCommand();
+            SqlConnection conn = DBManager.GetInstance().GetDbConnection();
+
+            
+            
+            string townIdSql = "SELECT [Address].TownshipID FROM Customer JOIN [Address] ON Customer.AddrID =[Address].ID WHERE Customer.ID=@p_ID";
+
+            command.CommandText = townIdSql;
+            command.Parameters.AddWithValue("@p_ID", custId);
+            command.Connection = conn;
+
+            object obj = command.ExecuteScalar();
+            if (string.IsNullOrEmpty(obj + string.Empty))
+            {
+                obj = 0;
+            }
+            int townId = 0;
+            int.TryParse(obj + string.Empty, out townId);
+
+            if (cmpDtl.CompanyPlanId == 0) 
+            {
+                CompanyPlan cmpPlan = new CompanyPlan()
+                {
+                    CustomerID = custId,
+                    TownshipID = townId,
+                    IsConfirmed = true,
+                    IsDeleted = false,
+                    LastModifiedDate = DateTime.Now,
+                    CreatedDate = DateTime.Now,
+                    Status = 0,
+                    TargetedDate = cmpDtl.ArrivedDate
+                };
+                List<CompanyPlan> cmpList = new List<CompanyPlan>();
+                cmpList.Add(cmpPlan);
+                int? cmpId = CompanyPlanDA.InsertCompanyPlan(cmpList);
+                if (cmpId.HasValue)
+                {
+                    cmpDtl.CompanyPlanId = cmpId.Value;
+
+                }
+                else 
+                {
+                    return 0;
+                }
+            
+            }
+
+            SqlTransaction trans = conn.BeginTransaction();
             string sqlCommand = "INSERT INTO [CompanyPlanDetails]([CompanyPlanId],[CarCountInCompany],[ToyoComment],[MainTopic]";
             sqlCommand +=",[ArrivedTime],[DepatureTime],[HasOrder],[ConditionOfOtherBrands],[PreparedBy],[CheckedBy],[ApprovedBy]";
             sqlCommand += ",[ArrivedDate],[EmpId],[Remark],[isDeleted],[hasServiced],[ServicedDate]) OUTPUT inserted.ID   VALUES(@CompanyPlanId,@CarCountInCompany,@ToyoComment";
@@ -534,10 +585,7 @@ namespace PTIC.Marketing.DA
             sqlCommand+=",@ArrivedDate,@EmpId,@Remark,@isDeleted,@hasServiced,@ServicedDate)";
             try
             {
-                SqlCommand command = new SqlCommand();
-                SqlConnection conn =DBManager.GetInstance().GetDbConnection();
-                
-                SqlTransaction trans = conn.BeginTransaction();
+                command = new SqlCommand();
                 command.Connection = conn;
                 command.Transaction = trans;
                 command.CommandText = sqlCommand;
@@ -592,8 +640,29 @@ namespace PTIC.Marketing.DA
                         command.ExecuteNonQuery();
                         command.Parameters.Clear();
                     }
-
                     trans.Commit();
+                    if (cmpDtl.HasService) 
+                    {
+
+                        
+
+                        List<MobileServicePlan> msPlanList= new List<MobileServicePlan> ();
+                        msPlanList.Add(new MobileServicePlan() 
+                        {
+                            CustomerID = custId,
+                            CusTypeID = 3,
+                            DateAdded = DateTime.Now,
+                            IsConfirmed = false,
+                            IsDeleted = false,
+                            LastModified = DateTime.Now,
+                            Status = 1,
+                            SvcPlanDate= cmpDtl.ServicedDate,
+                            TownshipID = townId
+                        });
+                        MobileServicePlanDA.InsertMobileServicePlan(msPlanList);
+                    }
+
+                    
                     return 1;
                 }
                 else return 0;

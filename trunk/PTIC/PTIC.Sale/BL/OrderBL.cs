@@ -162,6 +162,11 @@ namespace PTIC.Sale.BL
             return OrderDA.SelectByOrderNo(orderNo);
         }
 
+        public DataTable GetDelieveryHistory(int orderNo)
+        {
+            return OrderDA.GetDelieveryHistory(orderNo);
+        }
+
         public DataTable GetByID(int orderID)
         {
             return OrderDA.SelectByID(orderID);

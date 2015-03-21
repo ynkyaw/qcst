@@ -122,7 +122,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             if (cmpDetails.CompanyPlanDetailId == 0)
             {
 
-                new CompanyPlanBL().InsertCompanyPlanDetails(cmpDetails);
+                new CompanyPlanBL().InsertCompanyPlanDetails(cmpDetails,(int)cmbCompany.SelectedValue);
                 MessageBox.Show("Success!");
                 this.Close();
             }
@@ -210,7 +210,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             dtpVisitDate.Value = cmpDtl.ArrivedDate;
             checkBox1.Checked = cmpDtl.HasService;
             if(cmpDtl.HasService)
-                dtpServiceDate.Value = cmpDtl.ServicedDate;
+                dtpServiceDate.Value = dtpServiceDate.Value;
 
         
         }
@@ -269,7 +269,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             {
                 dtpServiceDate.Value = dtpVisitDate.Value;
             }
-            dtpServiceDate.MinDate = dtpVisitDate.Value;
+            
         }
 
         private void dtpArrived_ValueChanged(object sender, EventArgs e)
