@@ -145,6 +145,13 @@ namespace PTIC.Sale.BL
         /// 
         /// </summary>        
         /// <returns></returns>
+        /// 
+        public DataTable GetOrderListing() 
+        {
+            return OrderDA.SelectOrderListing();
+        }
+
+
         public DataTable GetUndelivered()
         {
             return OrderDA.SelectByIsDelivered(false);

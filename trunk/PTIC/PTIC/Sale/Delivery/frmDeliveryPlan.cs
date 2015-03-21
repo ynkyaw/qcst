@@ -388,7 +388,8 @@ namespace PTIC.Sale.Delivery
             try
             {                
                 // Get undelivered orders
-                this._dtUnplannedOrders = new OrderBL().GetUndelivered();
+                this._dtUnplannedOrders = new OrderBL().GetOrderListing();
+                //this._dtUnplannedOrders = new OrderBL().GetUndelivered();
                 dgvUnplannedOrders.DataSource = this._dtUnplannedOrders;
                 // Clear order detail
                 dgvOrderDetails.DataSource = null;
