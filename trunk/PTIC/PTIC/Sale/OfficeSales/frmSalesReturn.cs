@@ -470,7 +470,7 @@ namespace PTIC.VC.Sale.OfficeSales
                 if (dt.Rows.Count > 0)
                 {
                     //Logic Leak Error
-                    //if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1)
+                    //if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), 0) == 0)
                     if ((int)DataTypeParser.Parse(dt.Rows[0]["Result"], typeof(int), -1) == -1)
                     {
                         Qtyleft = (int)DataTypeParser.Parse(dt.Rows[0]["SaleDetailQty"], typeof(int), 0);
