@@ -217,6 +217,7 @@ namespace PTIC.Sale.Delivery
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 // Save orders to be planned or order lost
+                
                 Save();
             }
         }
@@ -416,6 +417,9 @@ namespace PTIC.Sale.Delivery
                 {
                     dgvOrderDetails.DataSource = tblOrderDetails;
                 }
+                dgvDliveryHistory.AutoGenerateColumns = false;
+                DataTable tblDeliveryHistory = new OrderBL().GetDelieveryHistory(orderID);
+                dgvDliveryHistory.DataSource = tblDeliveryHistory;
             }
             catch (SqlException sqle)
             {
@@ -436,6 +440,8 @@ namespace PTIC.Sale.Delivery
                 {
                     dgvOrderDetails.DataSource = tblOrderDetails;
                 }
+
+                
             }
             catch (SqlException sqle)
             {
@@ -529,6 +535,16 @@ namespace PTIC.Sale.Delivery
                         // Reload unplanned orders
                         LoadNBindUnplannedOrders();
                     }
+                    return;
+                }
+
+
+                // Check is there any outstanding delivery plan
+                DateTime deliveryPlanDate = new DateTime ();
+                string deliveryPlanNo=string.Empty;
+                if(deliverySaver.IsAlreadyPlanIsAlreadyPlan(newDelivery.OrderID,out deliveryPlanDate,out deliveryPlanNo))
+                {
+                    MessageBox.Show(string.Format("This Plan is Already Plan with Delivery Plan No {0} on {1}!",deliveryPlanNo,deliveryPlanDate.ToShortDateString()));
                     return;
                 }
 

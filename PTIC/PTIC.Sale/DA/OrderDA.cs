@@ -381,6 +381,35 @@ namespace PTIC.Sale.DA
             return table;
         }
 
+        public static DataTable GetDelieveryHistory(int orderNo)
+        {
+            DataTable table = null;
+            string tableName = "OrderTable";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "[usp_DeliveryHistoryByOrderId]";
+
+                command.Parameters.AddWithValue("@p_orderId", orderNo);
+                command.Parameters["@p_orderId"].Direction = ParameterDirection.Input;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            finally
+            {
+                DBManager.GetInstance().CloseDbConnection();
+            }
+            return table;
+        }
+
         public static DataTable SelectByID(int orderID)
         {
             DataTable dt;

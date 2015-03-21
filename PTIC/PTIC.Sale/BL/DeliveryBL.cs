@@ -185,6 +185,15 @@ namespace PTIC.Sale.BL
         {
             return DeliveryDA.DeleteByDeliveryID(deliveryID, conn);
         }
+
+        public bool IsAlreadyPlanIsAlreadyPlan(int orderId, out DateTime deliveryPlanDate, out string deliveryNo)
+        {
+
+            //DateTime tmpDate = new DateTime();
+            bool isExist = DeliveryDA.IsAlreadyPlan(orderId, out deliveryPlanDate, out deliveryNo);
+            //deliveryPlanDate = tmpDate;
+            return isExist;
+        }
         #endregion
     }
 }

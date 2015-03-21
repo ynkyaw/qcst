@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbVehicle = new System.Windows.Forms.ComboBox();
             this.dgvUnplannedOrders = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnOrderLost = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDliveryHistory = new System.Windows.Forms.DataGridView();
             this.colOrderDate = new AGL.UI.Controls.CalendarColumn();
             this.colOrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,11 +95,6 @@
             this.colIsDelivered = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliverDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOrderQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRemainQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliverQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBalanceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +103,12 @@
             this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderID_OrderDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliverDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOrderQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemainQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliverQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBalanceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnplannedOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
             this.panel1.SuspendLayout();
@@ -118,7 +119,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDliveryHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbVehicle
@@ -139,8 +140,8 @@
             // dgvUnplannedOrders
             // 
             this.dgvUnplannedOrders.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUnplannedOrders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUnplannedOrders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvUnplannedOrders.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvUnplannedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnplannedOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -161,8 +162,8 @@
             this.dgvUnplannedOrders.ReadOnly = true;
             this.dgvUnplannedOrders.RowHeadersVisible = false;
             this.dgvUnplannedOrders.RowHeadersWidth = 50;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvUnplannedOrders.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvUnplannedOrders.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvUnplannedOrders.RowTemplate.Height = 28;
             this.dgvUnplannedOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUnplannedOrders.Size = new System.Drawing.Size(630, 313);
@@ -285,19 +286,19 @@
             // dgvOrderDetails
             // 
             this.dgvOrderDetails.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvOrderDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvOrderDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvOrderDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOrderDetails.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductName,
@@ -312,8 +313,8 @@
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.RowHeadersVisible = false;
             this.dgvOrderDetails.RowHeadersWidth = 50;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvOrderDetails.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvOrderDetails.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvOrderDetails.RowTemplate.Height = 28;
             this.dgvOrderDetails.Size = new System.Drawing.Size(654, 184);
             this.dgvOrderDetails.TabIndex = 170;
@@ -691,30 +692,33 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label9);
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvDliveryHistory);
             this.splitContainer1.Size = new System.Drawing.Size(1053, 313);
             this.splitContainer1.SplitterDistance = 630;
             this.splitContainer1.TabIndex = 188;
             // 
-            // dataGridView1
+            // dgvDliveryHistory
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDliveryHistory.AllowUserToAddRows = false;
+            this.dgvDliveryHistory.AllowUserToDeleteRows = false;
+            this.dgvDliveryHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDliveryHistory.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvDliveryHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDliveryHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDeliverDate,
+            this.colProduct,
             this.colOrderQty,
             this.colRemainQty,
             this.colDeliverQty,
             this.colBalanceQty});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(419, 266);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDliveryHistory.Location = new System.Drawing.Point(3, 33);
+            this.dgvDliveryHistory.Name = "dgvDliveryHistory";
+            this.dgvDliveryHistory.ReadOnly = true;
+            this.dgvDliveryHistory.RowHeadersVisible = false;
+            this.dgvDliveryHistory.Size = new System.Drawing.Size(413, 277);
+            this.dgvDliveryHistory.TabIndex = 0;
             // 
             // colOrderDate
             // 
@@ -788,40 +792,6 @@
             this.colOrderID.ReadOnly = true;
             this.colOrderID.Visible = false;
             // 
-            // colDeliverDate
-            // 
-            this.colDeliverDate.HeaderText = "Date";
-            this.colDeliverDate.Name = "colDeliverDate";
-            this.colDeliverDate.ReadOnly = true;
-            // 
-            // colOrderQty
-            // 
-            this.colOrderQty.HeaderText = "Order Qty";
-            this.colOrderQty.Name = "colOrderQty";
-            this.colOrderQty.ReadOnly = true;
-            this.colOrderQty.Width = 80;
-            // 
-            // colRemainQty
-            // 
-            this.colRemainQty.HeaderText = "ပို့ရန်ကျန်";
-            this.colRemainQty.Name = "colRemainQty";
-            this.colRemainQty.ReadOnly = true;
-            this.colRemainQty.Width = 90;
-            // 
-            // colDeliverQty
-            // 
-            this.colDeliverQty.HeaderText = "Deliver Qty";
-            this.colDeliverQty.Name = "colDeliverQty";
-            this.colDeliverQty.ReadOnly = true;
-            this.colDeliverQty.Width = 80;
-            // 
-            // colBalanceQty
-            // 
-            this.colBalanceQty.HeaderText = "Balance";
-            this.colBalanceQty.Name = "colBalanceQty";
-            this.colBalanceQty.ReadOnly = true;
-            this.colBalanceQty.Width = 80;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -841,8 +811,8 @@
             // colQty
             // 
             this.colQty.DataPropertyName = "Qty";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colQty.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colQty.DefaultCellStyle = dataGridViewCellStyle21;
             this.colQty.HeaderText = "Order မှာသည့် အ‌ရေအတွက်";
             this.colQty.MaxInputLength = 5;
             this.colQty.Name = "colQty";
@@ -852,17 +822,17 @@
             // colOrderRemain
             // 
             this.colOrderRemain.DataPropertyName = "RemainQty";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colOrderRemain.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colOrderRemain.DefaultCellStyle = dataGridViewCellStyle22;
             this.colOrderRemain.HeaderText = "ပို့ရန်ကျန် အ‌ရေအတွက်";
             this.colOrderRemain.Name = "colOrderRemain";
             // 
             // colDeliveryQty
             // 
             this.colDeliveryQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.NullValue = "0";
-            this.colDeliveryQty.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.NullValue = "0";
+            this.colDeliveryQty.DefaultCellStyle = dataGridViewCellStyle23;
             this.colDeliveryQty.HeaderText = "ပို့ရမည့်အ‌ရေအတွက်";
             this.colDeliveryQty.MaxInputLength = 5;
             this.colDeliveryQty.Name = "colDeliveryQty";
@@ -890,6 +860,52 @@
             this.colProductID.HeaderText = "Product ID";
             this.colProductID.Name = "colProductID";
             this.colProductID.Visible = false;
+            // 
+            // colDeliverDate
+            // 
+            this.colDeliverDate.DataPropertyName = "Delivery_Date";
+            this.colDeliverDate.HeaderText = "Date";
+            this.colDeliverDate.Name = "colDeliverDate";
+            this.colDeliverDate.ReadOnly = true;
+            // 
+            // colProduct
+            // 
+            this.colProduct.DataPropertyName = "ProductName";
+            this.colProduct.HeaderText = "Product";
+            this.colProduct.Name = "colProduct";
+            this.colProduct.ReadOnly = true;
+            // 
+            // colOrderQty
+            // 
+            this.colOrderQty.DataPropertyName = "orderQty";
+            this.colOrderQty.HeaderText = "Order Qty";
+            this.colOrderQty.Name = "colOrderQty";
+            this.colOrderQty.ReadOnly = true;
+            this.colOrderQty.Width = 80;
+            // 
+            // colRemainQty
+            // 
+            this.colRemainQty.DataPropertyName = "remainQty";
+            this.colRemainQty.HeaderText = "ပို့ရန်ကျန်";
+            this.colRemainQty.Name = "colRemainQty";
+            this.colRemainQty.ReadOnly = true;
+            this.colRemainQty.Width = 90;
+            // 
+            // colDeliverQty
+            // 
+            this.colDeliverQty.DataPropertyName = "DeliverQty";
+            this.colDeliverQty.HeaderText = "Deliver Qty";
+            this.colDeliverQty.Name = "colDeliverQty";
+            this.colDeliverQty.ReadOnly = true;
+            this.colDeliverQty.Width = 80;
+            // 
+            // colBalanceQty
+            // 
+            this.colBalanceQty.DataPropertyName = "balance";
+            this.colBalanceQty.HeaderText = "Balance";
+            this.colBalanceQty.Name = "colBalanceQty";
+            this.colBalanceQty.ReadOnly = true;
+            this.colBalanceQty.Width = 80;
             // 
             // frmDeliveryPlan
             // 
@@ -921,7 +937,7 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDliveryHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -986,12 +1002,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsDelivered;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderID;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliverDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRemainQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliverQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBalanceQty;
+        private System.Windows.Forms.DataGridView dgvDliveryHistory;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQty;
@@ -1000,6 +1011,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderID_OrderDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliverDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOrderQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRemainQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliverQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBalanceQty;
     }
 }
 
