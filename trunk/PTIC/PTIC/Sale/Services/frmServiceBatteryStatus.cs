@@ -141,7 +141,8 @@ namespace PTIC.VC.Sale.Services
         {
             try
             {
-                this.dgvStatus.DataSource = new ReportBL().GetServiceBatteryStatus();
+                 DataTable dt = new ReportBL().GetServiceBatteryStatus();
+                 this.dgvStatus.DataSource = dt;
             }
             catch (Exception e)
             {
@@ -209,6 +210,11 @@ namespace PTIC.VC.Sale.Services
             LoadNBindStatus();
         }
         #endregion
+
+        private void frmServiceBatteryStatus_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(dgvStatus.Rows.Count + string.Empty);
+        }
 
         
     }

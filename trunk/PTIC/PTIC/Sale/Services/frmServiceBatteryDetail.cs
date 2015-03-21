@@ -636,7 +636,9 @@ namespace PTIC.VC.Sale.Services
                     else
                     {
                         rdoTrip.Checked = true;
+
                         cmbRouteOrTrip.SelectedValue = TripID;
+
                         cmbTownORTownship.SelectedValue = TownID;
                     }
                 }

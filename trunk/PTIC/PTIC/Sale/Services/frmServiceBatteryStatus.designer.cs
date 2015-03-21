@@ -32,21 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvStatus = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblSetup = new System.Windows.Forms.Label();
-            this.lblHeaderPCat = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnToFactory = new System.Windows.Forms.Button();
-            this.pnlFilter = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlFilt = new System.Windows.Forms.Panel();
-            this.lblFilter = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.colBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurServiceTeamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurVehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +68,21 @@
             this.colServicedCustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTackerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsReturned = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblSetup = new System.Windows.Forms.Label();
+            this.lblHeaderPCat = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnToFactory = new System.Windows.Forms.Button();
+            this.pnlFilter = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFilt = new System.Windows.Forms.Panel();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -154,148 +154,6 @@
             this.dgvStatus.TabIndex = 0;
             this.dgvStatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStatus_CellContentClick);
             this.dgvStatus.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStatus_DataBindingComplete);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(898, 55);
-            this.panel3.TabIndex = 83;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel4.Controls.Add(this.lblSetup);
-            this.panel4.Controls.Add(this.lblHeaderPCat);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(896, 51);
-            this.panel4.TabIndex = 116;
-            // 
-            // lblSetup
-            // 
-            this.lblSetup.AutoSize = true;
-            this.lblSetup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSetup.Location = new System.Drawing.Point(14, 14);
-            this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(70, 20);
-            this.lblSetup.TabIndex = 0;
-            this.lblSetup.Text = "Services";
-            this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
-            // 
-            // lblHeaderPCat
-            // 
-            this.lblHeaderPCat.AutoSize = true;
-            this.lblHeaderPCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
-            this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblHeaderPCat.Location = new System.Drawing.Point(92, 14);
-            this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(199, 20);
-            this.lblHeaderPCat.TabIndex = 45;
-            this.lblHeaderPCat.Text = ">    Service Battery Status";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "အမှတ်တံဆိပ်";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "ထုတ်ကုန်အမည်";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "ရရှိသည့်‌နေ ့";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "User အမည်";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnToFactory);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 480);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(898, 47);
-            this.panel5.TabIndex = 88;
-            // 
-            // btnToFactory
-            // 
-            this.btnToFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnToFactory.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnToFactory.Location = new System.Drawing.Point(12, 7);
-            this.btnToFactory.Name = "btnToFactory";
-            this.btnToFactory.Size = new System.Drawing.Size(125, 34);
-            this.btnToFactory.TabIndex = 95;
-            this.btnToFactory.Text = "Factory သို့ပို့မည်";
-            this.btnToFactory.UseVisualStyleBackColor = true;
-            this.btnToFactory.Click += new System.EventHandler(this.btnToFactory_Click);
-            // 
-            // pnlFilter
-            // 
-            this.pnlFilter.Controls.Add(this.panel1);
-            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFilter.Location = new System.Drawing.Point(0, 78);
-            this.pnlFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(898, 46);
-            this.pnlFilter.TabIndex = 194;
-            this.pnlFilter.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(0, 86);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1007, 100);
-            this.panel1.TabIndex = 174;
-            // 
-            // pnlFilt
-            // 
-            this.pnlFilt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
-            this.pnlFilt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFilt.Controls.Add(this.lblFilter);
-            this.pnlFilt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFilt.Location = new System.Drawing.Point(0, 55);
-            this.pnlFilt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pnlFilt.Name = "pnlFilt";
-            this.pnlFilt.Size = new System.Drawing.Size(898, 23);
-            this.pnlFilt.TabIndex = 193;
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblFilter.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.lblFilter.Location = new System.Drawing.Point(3, 0);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(166, 20);
-            this.lblFilter.TabIndex = 1;
-            this.lblFilter.Text = "▲ Hide Advance Search";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvStatus);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(898, 356);
-            this.panel2.TabIndex = 195;
             // 
             // colBrand
             // 
@@ -593,6 +451,148 @@
             this.colIsReturned.ReadOnly = true;
             this.colIsReturned.Visible = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(898, 55);
+            this.panel3.TabIndex = 83;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel4.Controls.Add(this.lblSetup);
+            this.panel4.Controls.Add(this.lblHeaderPCat);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(896, 51);
+            this.panel4.TabIndex = 116;
+            // 
+            // lblSetup
+            // 
+            this.lblSetup.AutoSize = true;
+            this.lblSetup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSetup.Location = new System.Drawing.Point(14, 14);
+            this.lblSetup.Name = "lblSetup";
+            this.lblSetup.Size = new System.Drawing.Size(81, 19);
+            this.lblSetup.TabIndex = 0;
+            this.lblSetup.Text = "Services";
+            this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
+            // 
+            // lblHeaderPCat
+            // 
+            this.lblHeaderPCat.AutoSize = true;
+            this.lblHeaderPCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblHeaderPCat.Location = new System.Drawing.Point(92, 14);
+            this.lblHeaderPCat.Name = "lblHeaderPCat";
+            this.lblHeaderPCat.Size = new System.Drawing.Size(228, 19);
+            this.lblHeaderPCat.TabIndex = 45;
+            this.lblHeaderPCat.Text = ">    Service Battery Status";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "အမှတ်တံဆိပ်";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "ထုတ်ကုန်အမည်";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "ရရှိသည့်‌နေ ့";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "User အမည်";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnToFactory);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 480);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(898, 47);
+            this.panel5.TabIndex = 88;
+            // 
+            // btnToFactory
+            // 
+            this.btnToFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnToFactory.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.btnToFactory.Location = new System.Drawing.Point(12, 7);
+            this.btnToFactory.Name = "btnToFactory";
+            this.btnToFactory.Size = new System.Drawing.Size(125, 34);
+            this.btnToFactory.TabIndex = 95;
+            this.btnToFactory.Text = "Factory သို့ပို့မည်";
+            this.btnToFactory.UseVisualStyleBackColor = true;
+            this.btnToFactory.Click += new System.EventHandler(this.btnToFactory_Click);
+            // 
+            // pnlFilter
+            // 
+            this.pnlFilter.Controls.Add(this.panel1);
+            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFilter.Location = new System.Drawing.Point(0, 78);
+            this.pnlFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pnlFilter.Name = "pnlFilter";
+            this.pnlFilter.Size = new System.Drawing.Size(898, 46);
+            this.pnlFilter.TabIndex = 194;
+            this.pnlFilter.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 86);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1007, 100);
+            this.panel1.TabIndex = 174;
+            // 
+            // pnlFilt
+            // 
+            this.pnlFilt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
+            this.pnlFilt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFilt.Controls.Add(this.lblFilter);
+            this.pnlFilt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFilt.Location = new System.Drawing.Point(0, 55);
+            this.pnlFilt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pnlFilt.Name = "pnlFilt";
+            this.pnlFilt.Size = new System.Drawing.Size(898, 23);
+            this.pnlFilt.TabIndex = 193;
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFilter.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.lblFilter.Location = new System.Drawing.Point(3, 0);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(168, 19);
+            this.lblFilter.TabIndex = 1;
+            this.lblFilter.Text = "▲ Hide Advance Search";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvStatus);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 124);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(898, 356);
+            this.panel2.TabIndex = 195;
+            // 
             // frmServiceBatteryStatus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -609,6 +609,7 @@
             this.Name = "frmServiceBatteryStatus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Service Battery Status";
+            this.Load += new System.EventHandler(this.frmServiceBatteryStatus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
