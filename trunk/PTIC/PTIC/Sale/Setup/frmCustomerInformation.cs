@@ -663,11 +663,6 @@ namespace PTIC.Sale.Setup
                 }
             }
 
-
-
-
-
-
             // Saving Data for Insert and Update
             int? affectrow = 0;
             CustomerBL cusSaver = null;
