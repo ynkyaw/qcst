@@ -130,7 +130,7 @@ namespace PTIC.Sale.BL
         /// </summary>
         /// <param name="newCustomer">New customer entity</param>
         /// <param name="conn">Database connection</param>
-        /// <returns>Return affected row count</returns>
+        /// <returns>Return inserted customer ID</returns>
         public int? Add(
             Customer newCustomer, 
             Address newAddress,

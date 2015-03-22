@@ -281,7 +281,7 @@ namespace PTIC.Sale.DA
         /// </summary>
         /// <param name="newCustomer">New customer entity</param>
         /// <param name="conn">Database connection</param>
-        /// <returns>Return affected row count</returns>
+        /// <returns>Return inserted customer ID</returns>
         public static int Insert(Customer newCustomer,
             Address newaddress,
             ContactPerson contactperson,
@@ -557,7 +557,8 @@ namespace PTIC.Sale.DA
                 if (conn.State == ConnectionState.Open)
                 {
                     transaction.Rollback();
-                    return affectedrow;
+                    //return affectedrow;
+                    return insertedCusID;
                 }
             }
             finally
@@ -566,7 +567,8 @@ namespace PTIC.Sale.DA
                 cmd.Dispose();
                 DBManager.GetInstance().CloseDbConnection();
             }
-            return affectedrow;
+            //return affectedrow;
+            return insertedCusID;
         }
 
         /// <summary>
