@@ -17,6 +17,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PTIC_Sales_Marketing_Setup"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGL.Util", "AGL.Util\AGL.Util.csproj", "{13994880-966E-458D-9F5C-BC413E51D0D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTIC.Tool.DataAutomation", "PTIC.Tool.DataAutomation\PTIC.Tool.DataAutomation.csproj", "{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -107,6 +109,16 @@ Global
 		{13994880-966E-458D-9F5C-BC413E51D0D4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{13994880-966E-458D-9F5C-BC413E51D0D4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{13994880-966E-458D-9F5C-BC413E51D0D4}.Release|x86.ActiveCfg = Release|Any CPU
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Debug|x86.ActiveCfg = Debug|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Debug|x86.Build.0 = Debug|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Release|Any CPU.ActiveCfg = Release|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Release|x86.ActiveCfg = Release|x86
+		{8A84900E-B446-45E8-BFB8-2E30D22FEFBE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
