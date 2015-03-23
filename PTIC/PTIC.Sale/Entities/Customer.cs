@@ -63,5 +63,42 @@ namespace PTIC.Sale.Entities
         public DateTime LastModified { get; set; }
         public bool IsDeleted { get; set; }
         #endregion
+
+        override public string ToString()
+        {
+            string str = String.Empty;
+            str = String.Concat(str, "ID = ", ID, "\r\n");
+            str = String.Concat(str, "AddrID = ", AddrID, "\r\n");
+            str = String.Concat(str, "RouteID = ", RouteID, "\r\n");
+            str = String.Concat(str, "BankID = ", BankID, "\r\n");
+            str = String.Concat(str, "TripID = ", TripID, "\r\n");
+            str = String.Concat(str, "CusType = ", CusType, "\r\n");
+            str = String.Concat(str, "CusClassID = ", CusClassID, "\r\n");
+            str = String.Concat(str, "CusCode = ", CusCode, "\r\n");
+            str = String.Concat(str, "CusName = ", CusName, "\r\n");
+            str = String.Concat(str, "Phone1 = ", Phone1, "\r\n");
+            str = String.Concat(str, "Phone2 = ", Phone2, "\r\n");
+            str = String.Concat(str, "Fax = ", Fax, "\r\n");
+            str = String.Concat(str, "Email = ", Email, "\r\n");
+            str = String.Concat(str, "Website = ", Website, "\r\n");
+            str = String.Concat(str, "BankAccNo = ", BankAccNo, "\r\n");
+            str = String.Concat(str, "CreditAmount = ", CreditAmount, "\r\n");
+            str = String.Concat(str, "CreditLimit = ", CreditLimit, "\r\n");
+            str = String.Concat(str, "CusDate = ", CusDate, "\r\n");
+            str = String.Concat(str, "Photo1 = ", Photo1, "\r\n");
+            str = String.Concat(str, "Photo2 = ", Photo2, "\r\n");
+            str = String.Concat(str, "Photo3 = ", Photo3, "\r\n");
+            str = String.Concat(str, "Photo4 = ", Photo4, "\r\n");
+            str = String.Concat(str, "Photo5 = ", Photo5, "\r\n");
+            str = String.Concat(str, "IsPotential = ", IsPotential, "\r\n");
+            str = String.Concat(str, "IsMain = ", IsMain, "\r\n");
+            str = String.Concat(str, "IsDevice = ", IsDevice, "\r\n");
+            str = String.Concat(str, "Remark = ", Remark, "\r\n");
+            str = String.Concat(str, "DateAdded = ", DateAdded, "\r\n");
+            str = String.Concat(str, "LastModified = ", LastModified, "\r\n");
+            str = String.Concat(str, "IsDeleted = ", IsDeleted, "\r\n");
+            return str;
+        }
+
     }
 }

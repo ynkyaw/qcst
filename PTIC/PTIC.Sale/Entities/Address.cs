@@ -48,5 +48,22 @@ namespace PTIC.Sale.Entities
                 results.AddResult(new ValidationResult(ErrorMessages.Address_TownIDOrTownshipID_Require, 
                     this, "", "", null));
         }
+
+        override public string ToString()
+        {
+            string str = String.Empty;
+            str = String.Concat(str, "AddressID = ", AddressID, "\r\n");
+            str = String.Concat(str, "TownID = ", TownID, "\r\n");
+            str = String.Concat(str, "TownshipID = ", TownshipID, "\r\n");
+            str = String.Concat(str, "StateDivisionID = ", StateDivisionID, "\r\n");
+            str = String.Concat(str, "Hno = ", Hno, "\r\n");
+            str = String.Concat(str, "Street = ", Street, "\r\n");
+            str = String.Concat(str, "Quartar = ", Quartar, "\r\n");
+            str = String.Concat(str, "Country = ", Country, "\r\n");
+            str = String.Concat(str, "DateAdded = ", DateAdded, "\r\n");
+            str = String.Concat(str, "LastModified = ", LastModified, "\r\n");
+            str = String.Concat(str, "IsDeleted = ", IsDeleted, "\r\n");
+            return str;
+        }
     }
 }
