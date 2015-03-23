@@ -30,11 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,20 +38,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSetup = new System.Windows.Forms.Label();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvInvoice = new System.Windows.Forms.DataGridView();
-            this.colInvoiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalCommAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalTaxAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNetAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSaleDetail = new System.Windows.Forms.DataGridView();
             this.clnBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +70,16 @@
             this.lblFrom = new System.Windows.Forms.Label();
             this.dtpOrderEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpOrderStart = new System.Windows.Forms.DateTimePicker();
+            this.colInvoiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalCommAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalTaxAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNetAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleDetail)).BeginInit();
@@ -103,7 +104,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(13, 14);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(47, 20);
+            this.lblSetup.Size = new System.Drawing.Size(54, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "Sales";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -115,7 +116,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(69, 14);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(150, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(165, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">    Cash Sales List";
             // 
@@ -126,7 +127,7 @@
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
             this.label1.Location = new System.Drawing.Point(12, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.Size = new System.Drawing.Size(136, 19);
             this.label1.TabIndex = 172;
             this.label1.Text = "Cash Sales List";
             // 
@@ -156,7 +157,8 @@
             this.colTotalAmt,
             this.colTotalCommAmt,
             this.colTotalTaxAmt,
-            this.colNetAmt});
+            this.colNetAmt,
+            this.colRemark});
             this.dgvInvoice.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInvoice.Location = new System.Drawing.Point(12, 159);
             this.dgvInvoice.Name = "dgvInvoice";
@@ -176,90 +178,6 @@
             this.dgvInvoice.TabIndex = 173;
             this.dgvInvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvoice_CellClick);
             this.dgvInvoice.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInvoice_DataBindingComplete);
-            // 
-            // colInvoiceID
-            // 
-            this.colInvoiceID.DataPropertyName = "InvoiceID";
-            this.colInvoiceID.HeaderText = "InvoiceID";
-            this.colInvoiceID.Name = "colInvoiceID";
-            this.colInvoiceID.ReadOnly = true;
-            this.colInvoiceID.Visible = false;
-            // 
-            // colSalesDate
-            // 
-            this.colSalesDate.DataPropertyName = "SalesDate";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colSalesDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colSalesDate.HeaderText = "‌ရောင်းချခဲ့သည့်‌နေ့";
-            this.colSalesDate.Name = "colSalesDate";
-            this.colSalesDate.ReadOnly = true;
-            this.colSalesDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSalesDate.Width = 110;
-            // 
-            // colInvoiceNo
-            // 
-            this.colInvoiceNo.DataPropertyName = "InvoiceNo";
-            this.colInvoiceNo.HeaderText = "Invoice No";
-            this.colInvoiceNo.Name = "colInvoiceNo";
-            this.colInvoiceNo.ReadOnly = true;
-            // 
-            // colCusName
-            // 
-            this.colCusName.DataPropertyName = "CusName";
-            this.colCusName.HeaderText = "Customer အမည်";
-            this.colCusName.Name = "colCusName";
-            this.colCusName.ReadOnly = true;
-            // 
-            // colEmpName
-            // 
-            this.colEmpName.DataPropertyName = "EmpName";
-            this.colEmpName.HeaderText = "‌ငွေလက်ခံဝန်ထမ်းအမည်";
-            this.colEmpName.Name = "colEmpName";
-            this.colEmpName.ReadOnly = true;
-            this.colEmpName.Width = 150;
-            // 
-            // colTotalAmt
-            // 
-            this.colTotalAmt.DataPropertyName = "TotalAmt";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N0";
-            this.colTotalAmt.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colTotalAmt.HeaderText = "ကျသင့်‌ငွေ";
-            this.colTotalAmt.Name = "colTotalAmt";
-            this.colTotalAmt.ReadOnly = true;
-            // 
-            // colTotalCommAmt
-            // 
-            this.colTotalCommAmt.DataPropertyName = "TotalCommAmt";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            this.colTotalCommAmt.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colTotalCommAmt.HeaderText = "ခံစားခွင့်/‌လျှော့‌ဈေး";
-            this.colTotalCommAmt.Name = "colTotalCommAmt";
-            this.colTotalCommAmt.ReadOnly = true;
-            this.colTotalCommAmt.Width = 120;
-            // 
-            // colTotalTaxAmt
-            // 
-            this.colTotalTaxAmt.DataPropertyName = "TotalTaxAmt";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            this.colTotalTaxAmt.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colTotalTaxAmt.HeaderText = "အခြားကျသင့်‌ငွေ";
-            this.colTotalTaxAmt.Name = "colTotalTaxAmt";
-            this.colTotalTaxAmt.ReadOnly = true;
-            // 
-            // colNetAmt
-            // 
-            this.colNetAmt.DataPropertyName = "NetAmt";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            this.colNetAmt.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colNetAmt.HeaderText = "အသားတင်ကျသင့်‌ငွေ";
-            this.colNetAmt.Name = "colNetAmt";
-            this.colNetAmt.ReadOnly = true;
-            this.colNetAmt.Width = 125;
             // 
             // dgvSaleDetail
             // 
@@ -411,7 +329,7 @@
             this.label2.ForeColor = System.Drawing.Color.MediumBlue;
             this.label2.Location = new System.Drawing.Point(12, 430);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.TabIndex = 175;
             this.label2.Text = "ပစ္စည်းစာရင်း";
             // 
@@ -420,7 +338,7 @@
             this.chkCustomerName.AutoSize = true;
             this.chkCustomerName.Location = new System.Drawing.Point(216, 87);
             this.chkCustomerName.Name = "chkCustomerName";
-            this.chkCustomerName.Size = new System.Drawing.Size(128, 24);
+            this.chkCustomerName.Size = new System.Drawing.Size(129, 23);
             this.chkCustomerName.TabIndex = 207;
             this.chkCustomerName.Text = "Customer အမည်";
             this.chkCustomerName.UseVisualStyleBackColor = true;
@@ -436,7 +354,7 @@
             this.cmbCustomer.FormattingEnabled = true;
             this.cmbCustomer.Location = new System.Drawing.Point(346, 86);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(150, 27);
+            this.cmbCustomer.Size = new System.Drawing.Size(150, 25);
             this.cmbCustomer.TabIndex = 206;
             this.cmbCustomer.ValueMember = "CustomerID";
             // 
@@ -445,7 +363,7 @@
             this.chkEmployee.AutoSize = true;
             this.chkEmployee.Location = new System.Drawing.Point(216, 55);
             this.chkEmployee.Name = "chkEmployee";
-            this.chkEmployee.Size = new System.Drawing.Size(124, 24);
+            this.chkEmployee.Size = new System.Drawing.Size(114, 23);
             this.chkEmployee.TabIndex = 205;
             this.chkEmployee.Text = "အရောင်းဝန်ထမ်း";
             this.chkEmployee.UseVisualStyleBackColor = true;
@@ -461,7 +379,7 @@
             this.cmbEmployee.FormattingEnabled = true;
             this.cmbEmployee.Location = new System.Drawing.Point(346, 53);
             this.cmbEmployee.Name = "cmbEmployee";
-            this.cmbEmployee.Size = new System.Drawing.Size(150, 27);
+            this.cmbEmployee.Size = new System.Drawing.Size(150, 25);
             this.cmbEmployee.TabIndex = 204;
             this.cmbEmployee.ValueMember = "EmployeeID";
             // 
@@ -471,7 +389,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(15, 54);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 20);
+            this.label8.Size = new System.Drawing.Size(32, 19);
             this.label8.TabIndex = 203;
             this.label8.Text = "နေ့စွဲ";
             // 
@@ -492,7 +410,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label3.Location = new System.Drawing.Point(189, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 20);
+            this.label3.Size = new System.Drawing.Size(22, 19);
             this.label3.TabIndex = 201;
             this.label3.Text = "ထိ";
             // 
@@ -502,7 +420,7 @@
             this.lblFrom.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.lblFrom.Location = new System.Drawing.Point(192, 55);
             this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(18, 20);
+            this.lblFrom.Size = new System.Drawing.Size(17, 19);
             this.lblFrom.TabIndex = 200;
             this.lblFrom.Text = "မှ";
             // 
@@ -514,7 +432,7 @@
             this.dtpOrderEnd.Location = new System.Drawing.Point(55, 88);
             this.dtpOrderEnd.Name = "dtpOrderEnd";
             this.dtpOrderEnd.ShowCheckBox = true;
-            this.dtpOrderEnd.Size = new System.Drawing.Size(128, 28);
+            this.dtpOrderEnd.Size = new System.Drawing.Size(128, 25);
             this.dtpOrderEnd.TabIndex = 199;
             this.dtpOrderEnd.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
@@ -526,13 +444,104 @@
             this.dtpOrderStart.Location = new System.Drawing.Point(55, 54);
             this.dtpOrderStart.Name = "dtpOrderStart";
             this.dtpOrderStart.ShowCheckBox = true;
-            this.dtpOrderStart.Size = new System.Drawing.Size(128, 28);
+            this.dtpOrderStart.Size = new System.Drawing.Size(128, 25);
             this.dtpOrderStart.TabIndex = 198;
             this.dtpOrderStart.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
+            // colInvoiceID
+            // 
+            this.colInvoiceID.DataPropertyName = "InvoiceID";
+            this.colInvoiceID.HeaderText = "InvoiceID";
+            this.colInvoiceID.Name = "colInvoiceID";
+            this.colInvoiceID.ReadOnly = true;
+            this.colInvoiceID.Visible = false;
+            // 
+            // colSalesDate
+            // 
+            this.colSalesDate.DataPropertyName = "SalesDate";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colSalesDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colSalesDate.HeaderText = "‌ရောင်းချခဲ့သည့်‌နေ့";
+            this.colSalesDate.Name = "colSalesDate";
+            this.colSalesDate.ReadOnly = true;
+            this.colSalesDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSalesDate.Width = 110;
+            // 
+            // colInvoiceNo
+            // 
+            this.colInvoiceNo.DataPropertyName = "InvoiceNo";
+            this.colInvoiceNo.HeaderText = "Invoice No";
+            this.colInvoiceNo.Name = "colInvoiceNo";
+            this.colInvoiceNo.ReadOnly = true;
+            // 
+            // colCusName
+            // 
+            this.colCusName.DataPropertyName = "CusName";
+            this.colCusName.HeaderText = "Customer အမည်";
+            this.colCusName.Name = "colCusName";
+            this.colCusName.ReadOnly = true;
+            // 
+            // colEmpName
+            // 
+            this.colEmpName.DataPropertyName = "EmpName";
+            this.colEmpName.HeaderText = "‌ငွေလက်ခံဝန်ထမ်းအမည်";
+            this.colEmpName.Name = "colEmpName";
+            this.colEmpName.ReadOnly = true;
+            this.colEmpName.Width = 150;
+            // 
+            // colTotalAmt
+            // 
+            this.colTotalAmt.DataPropertyName = "TotalAmt";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            this.colTotalAmt.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colTotalAmt.HeaderText = "ကျသင့်‌ငွေ";
+            this.colTotalAmt.Name = "colTotalAmt";
+            this.colTotalAmt.ReadOnly = true;
+            // 
+            // colTotalCommAmt
+            // 
+            this.colTotalCommAmt.DataPropertyName = "TotalCommAmt";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            this.colTotalCommAmt.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colTotalCommAmt.HeaderText = "ခံစားခွင့်/‌လျှော့‌ဈေး";
+            this.colTotalCommAmt.Name = "colTotalCommAmt";
+            this.colTotalCommAmt.ReadOnly = true;
+            this.colTotalCommAmt.Width = 120;
+            // 
+            // colTotalTaxAmt
+            // 
+            this.colTotalTaxAmt.DataPropertyName = "TotalTaxAmt";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            this.colTotalTaxAmt.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colTotalTaxAmt.HeaderText = "အခြားကျသင့်‌ငွေ";
+            this.colTotalTaxAmt.Name = "colTotalTaxAmt";
+            this.colTotalTaxAmt.ReadOnly = true;
+            // 
+            // colNetAmt
+            // 
+            this.colNetAmt.DataPropertyName = "NetAmt";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N0";
+            this.colNetAmt.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colNetAmt.HeaderText = "အသားတင်ကျသင့်‌ငွေ";
+            this.colNetAmt.Name = "colNetAmt";
+            this.colNetAmt.ReadOnly = true;
+            this.colNetAmt.Width = 125;
+            // 
+            // colRemark
+            // 
+            this.colRemark.DataPropertyName = "Remark";
+            this.colRemark.HeaderText = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.ReadOnly = true;
+            // 
             // frmCashSalesInvoices
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 743);
             this.Controls.Add(this.chkCustomerName);
@@ -582,15 +591,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColWholeSale;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColCusType;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColNoPerPack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalCommAmt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalTaxAmt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNetAmt;
         private System.Windows.Forms.CheckBox chkCustomerName;
         private System.Windows.Forms.ComboBox cmbCustomer;
         private System.Windows.Forms.CheckBox chkEmployee;
@@ -601,6 +601,16 @@
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.DateTimePicker dtpOrderEnd;
         private System.Windows.Forms.DateTimePicker dtpOrderStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalCommAmt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalTaxAmt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNetAmt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
 
     }
 }
