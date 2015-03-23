@@ -14,6 +14,7 @@ using System.Configuration;
 using System.Reflection;
 using log4net;
 using log4net.Config;
+using System.Collections.Generic;
 
 namespace PTIC.Tool.DataAutomation
 {
@@ -54,6 +55,7 @@ namespace PTIC.Tool.DataAutomation
         /// <param name="dtAddressOfContactPerson"></param>
         /// <param name="dtOwner"></param>
         /// <param name="dtAddressOfOwner"></param>
+        /// <param name="targetConnString"></param>
         /// <param name="targetConnString">Target database (PTIC) connection string.</param>
         private void Copy(
                 DataTable dtCustomer,
@@ -62,10 +64,12 @@ namespace PTIC.Tool.DataAutomation
                 DataTable dtAddressOfContactPerson,
                 DataTable dtOwner,
                 DataTable dtAddressOfOwner,
+                DataTable dtCreditInvoice,
                 string targetConnString
             )
         {
             CustomerBL cusSaver = null;
+            InvoiceBL invoiceSaver = null;
             try
             {
                 // Validation
@@ -79,6 +83,7 @@ namespace PTIC.Tool.DataAutomation
                     _logger.Error("No source address of customer!");
                     throw new Exception("No source address of customer!");
                 }
+
                 if (dtContactPerson == null || dtContactPerson.Rows.Count < 1)
                     _logger.Warn("No contact person in source!");
                 if (dtAddressOfContactPerson == null || dtAddressOfContactPerson.Rows.Count < 1)
@@ -87,6 +92,8 @@ namespace PTIC.Tool.DataAutomation
                     _logger.Warn("No owner in source");
                 if (dtAddressOfOwner == null || dtAddressOfOwner.Rows.Count < 1)
                     _logger.Warn("No address of owner!");
+                if (dtCreditInvoice == null || dtCreditInvoice.Rows.Count < 1)
+                    _logger.Info("No invoice (credit).");
 
                 // Set target database connection
                 SetDBConnectionString(targetConnString);
@@ -242,9 +249,40 @@ namespace PTIC.Tool.DataAutomation
                                 insertedCustomerID.Value, customer, dtAddressOfCustomer, contactPerson, addressOfContactPerson, owner, addressOfOwner)
                         );
 
-                    // TODO: Invoice (credit)
+                    // *** Invoice (credit) ***
+                    invoiceSaver = new InvoiceBL();
+                    // Get credit invoice(s) by a current customer
+                    DataTable dtInvoiceByCustomer = DataUtil.GetDataTableBy(dtCreditInvoice, "CusID", customer.ID);
+                    if(dtInvoiceByCustomer != null && dtInvoiceByCustomer.Rows.Count > 0)
+                    {
+                        // Loop selected invoice by customer
+                        foreach (DataRow rowInvByCus in dtInvoiceByCustomer.Rows)
+                        {
+                            // A credit invoice
+                            Invoice newInvoice = new Invoice()
+                            {
+                                SalesDate = (DateTime)DataTypeParser.Parse(rowInvByCus["SalesDate"], typeof(DateTime), DateTime.Now),
+                                DeliveryID = (int?)DataTypeParser.Parse(rowInvByCus["DeliveryID"], typeof(int), null),
+                                CusID = (int)DataTypeParser.Parse(rowInvByCus["CusID"], typeof(int), -1),
+                                SalesPersonID = (int)DataTypeParser.Parse(rowInvByCus["SalesPersonID"], typeof(int), -1),
+                                TransportTypeID = (int)DataTypeParser.Parse(rowInvByCus["TransportTypeID"], typeof(int), -1),
+                                TransportGateID = (int?)DataTypeParser.Parse(rowInvByCus["TransportGateID"], typeof(int), null),
+                                SaleType = (int)DataTypeParser.Parse(rowInvByCus["SaleType"], typeof(int), (int)Common.Enum.SaleType.Credit),
+                                GateInvNo = (string)DataTypeParser.Parse(rowInvByCus["GateInvNo"], typeof(string), null),
+                                TransportCharges = (int)DataTypeParser.Parse(rowInvByCus["TransportCharges"], typeof(int), 0),
+                                VoucherType = (int)Common.Enum.VoucherType.Credit,
+                                TotalAmt = (decimal)DataTypeParser.Parse(rowInvByCus["TotalAmt"], typeof(decimal), 0),
+                                Remark = (string)DataTypeParser.Parse(rowInvByCus["Remark"], typeof(string), null),
+                                InvoiceNo = (string)DataTypeParser.Parse(rowInvByCus["InvoiceNo"], typeof(string), null)
+                            };
+                            // SalesDetail in a credit invoice
+                            List<SaleDetail> newSaleDetails = new List<SaleDetail>();
+                            // TODO: Insert Invoice and SalesDetail .....
 
+                        }// END of foreach (DataRow rowInvByCus in dtInvoiceByCustomer.Rows)
+                    }// END of if(dtInvoiceByCustomer != null && dtInvoiceByCustomer.Rows.Count > 0)
                 }// END of foreach(DataRow rowCus in dtCustomer.Rows)
+                _logger.Info("COPIED SUCCESSFULLY.");
             }
             catch (Exception e)
             {
@@ -338,14 +376,25 @@ namespace PTIC.Tool.DataAutomation
                 adapter.Fill(dtAddressOfOwner);
                 cmd.Parameters.Clear();
 
-                // Copy source datatable to taget database
+                // *** Invoice (credit) ***
+                InvoiceBL creditInvoiceSaver = new InvoiceBL();
+                DataTable dtCreditInvoice = new DataTable();
+                // Get invoice by customers
+                cmd.CommandText = "SELECT * FROM Invoice"
+                                                + " WHERE VoucherType = 0 AND IsDeleted = 0"
+                                                    + " AND CusID IN (SELECT ID FROM Customer WHERE IsDeleted = 0 AND ID >= @cusID)";
+                cmd.Parameters.AddWithValue("@cusID", customerID);
+                adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtCreditInvoice);
+                cmd.Parameters.Clear();
+
+                // Copy source datatable to target database
                 Copy(
                     dtCustomer, dtAddressOfCustomer, 
                     dtContactPerson, dtAddressOfContactPerson, 
                     dtOwner, dtAddressOfOwner, 
+                    dtCreditInvoice,
                     targetConnString);
-
-                // TODO: Invoice (credit)
             }
             catch (Exception e)
             {
