@@ -287,7 +287,7 @@ namespace PTIC.Sale.Delivery
                     filterString = filterString.Replace("@OrderNo", string.Empty);
 
                 if (dtp_KW_OrderDate.Checked)
-                    filterString = filterString.Replace("@OrderDate", string.Format("AND OrderDate = #{0}#", dtp_KW_OrderDate.Value.ToString("yyyy-MM-dd")));
+                    filterString = filterString.Replace("@OrderDate", string.Format("AND OrderDate = #{0}#", dtp_KW_OrderDate.Value.Date));
                 else
                     filterString = filterString.Replace("@OrderDate", string.Empty);
 
