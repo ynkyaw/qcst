@@ -74,6 +74,7 @@ namespace PTIC.Marketing.Entities
         public DateTime DateAdded { get; set; }
         public DateTime LastModified { get; set; }
         public bool IsDeleted { get; set; }
+        public string TripPlanPurpose { get; set; }
         #endregion
 
         [SelfValidation]

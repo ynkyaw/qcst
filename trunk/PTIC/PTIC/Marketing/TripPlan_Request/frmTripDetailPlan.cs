@@ -397,7 +397,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     txtCOO.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["COORemark"].ToString(), typeof(string), string.Empty);
                     txtMM.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["MarketingManagerRemark"].ToString(), typeof(string), string.Empty);
                     txtSM.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["SaleManagerRemark"].ToString(), typeof(string), string.Empty);
-
+                    txtPurpose.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["TripPlanPurpose"].ToString(), typeof(string), string.Empty);
                     remark = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Remark"].ToString(), typeof(string), string.Empty);
                 };
 
@@ -491,6 +491,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                    // TODO: previos trip name must be referenced from history
                    PrevTripName = (string)DataTypeParser.Parse(cboPrevTripID.SelectedValue, typeof(string), null),
                    // SaleType = (int)cboSaleType.SelectedIndex,
+                   TripPlanPurpose = txtPurpose.Text,
                    SaleType = (bool)DataTypeParser.Parse(chkCash.Checked, typeof(bool), 0),
                    SaleType1 = (bool)DataTypeParser.Parse(chkCredit.Checked, typeof(bool), 0),
                    SaleType2 = (bool)DataTypeParser.Parse(chkConsignment.Checked, typeof(bool), 0),
