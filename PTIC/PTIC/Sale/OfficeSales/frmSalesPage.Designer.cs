@@ -35,6 +35,7 @@
             this.btnRecievedVoucher = new System.Windows.Forms.Button();
             this.btnStuffSale = new System.Windows.Forms.Button();
             this.btnCashSale = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,16 +54,16 @@
             this.lblSalePage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSalePage.AutoSize = true;
-            this.lblSalePage.Font = new System.Drawing.Font("Myanmar3",10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalePage.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalePage.Location = new System.Drawing.Point(8, 10);
             this.lblSalePage.Name = "lblSalePage";
-            this.lblSalePage.Size = new System.Drawing.Size(41, 20);
+            this.lblSalePage.Size = new System.Drawing.Size(54, 19);
             this.lblSalePage.TabIndex = 0;
             this.lblSalePage.Text = "Sales";
             // 
             // btnCashSaleInvoices
             // 
-            this.btnCashSaleInvoices.Font = new System.Drawing.Font("Myanmar3",10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCashSaleInvoices.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCashSaleInvoices.Location = new System.Drawing.Point(32, 168);
             this.btnCashSaleInvoices.Name = "btnCashSaleInvoices";
             this.btnCashSaleInvoices.Size = new System.Drawing.Size(172, 54);
@@ -73,7 +74,7 @@
             // 
             // btnVoucherList
             // 
-            this.btnVoucherList.Font = new System.Drawing.Font("Myanmar3",10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoucherList.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoucherList.Location = new System.Drawing.Point(234, 168);
             this.btnVoucherList.Name = "btnVoucherList";
             this.btnVoucherList.Size = new System.Drawing.Size(172, 54);
@@ -84,7 +85,7 @@
             // 
             // btnRecievedVoucher
             // 
-            this.btnRecievedVoucher.Font = new System.Drawing.Font("Myanmar3",10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecievedVoucher.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecievedVoucher.Location = new System.Drawing.Point(234, 92);
             this.btnRecievedVoucher.Name = "btnRecievedVoucher";
             this.btnRecievedVoucher.Size = new System.Drawing.Size(172, 54);
@@ -96,7 +97,7 @@
             // btnStuffSale
             // 
             this.btnStuffSale.Enabled = false;
-            this.btnStuffSale.Font = new System.Drawing.Font("Myanmar3",10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStuffSale.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStuffSale.Location = new System.Drawing.Point(32, 246);
             this.btnStuffSale.Name = "btnStuffSale";
             this.btnStuffSale.Size = new System.Drawing.Size(172, 54);
@@ -107,7 +108,7 @@
             // 
             // btnCashSale
             // 
-            this.btnCashSale.Font = new System.Drawing.Font("Myanmar3",10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCashSale.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCashSale.Location = new System.Drawing.Point(30, 90);
             this.btnCashSale.Name = "btnCashSale";
             this.btnCashSale.Size = new System.Drawing.Size(172, 54);
@@ -116,11 +117,23 @@
             this.btnCashSale.UseVisualStyleBackColor = true;
             this.btnCashSale.Click += new System.EventHandler(this.btnCashSale_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(234, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 54);
+            this.button1.TabIndex = 61;
+            this.button1.Text = "Daily Sales";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmSalesPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 470);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCashSaleInvoices);
             this.Controls.Add(this.btnVoucherList);
             this.Controls.Add(this.btnRecievedVoucher);
@@ -144,5 +157,6 @@
         private System.Windows.Forms.Button btnRecievedVoucher;
         private System.Windows.Forms.Button btnStuffSale;
         private System.Windows.Forms.Button btnCashSale;
+        private System.Windows.Forms.Button button1;
     }
 }

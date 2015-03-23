@@ -449,6 +449,11 @@ namespace PTIC.Marketing.DA
                 cmd.Parameters.AddWithValue("@p_sm", mdTripPlanDetail.SM_remark);
                 cmd.Parameters["@p_sm"].Direction = ParameterDirection.Input;
 
+
+                cmd.Parameters.AddWithValue("@p_TripPlanPurpose", mdTripPlanDetail.TripPlanPurpose);
+                cmd.Parameters["@p_TripPlanPurpose"].Direction = ParameterDirection.Input;
+
+
                 affectedrow = cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
                 //if (EmployeesList == null)
