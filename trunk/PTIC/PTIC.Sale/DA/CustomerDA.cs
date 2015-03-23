@@ -219,9 +219,29 @@ namespace PTIC.Sale.DA
         /// <returns>DataTable containing photos</returns>
         public static DataTable SelectPhotos(int customerID)
         {
+            
             string queryString = string.Format("SELECT Photo1, Photo2, Photo3, Photo4, Photo5 FROM Customer WHERE ID = {0}", customerID);
             return new BaseDAO().SelectByQuery(queryString);
         }
+
+        public static int GetTownByCustomerId(int customerId) 
+        {
+            string townIdSql = "SELECT [Address].TownId FROM Customer JOIN [Address] ON Customer.AddrID =[Address].ID WHERE Customer.ID={0}";
+
+
+            string queryString = string.Format(townIdSql, customerId);
+            
+
+            object obj = new BaseDAO().SelectScalar(queryString); 
+            if (string.IsNullOrEmpty(obj + string.Empty))
+            {
+                obj = 0;
+            }
+            int townId = 0;
+            int.TryParse(obj + string.Empty, out townId);
+            return townId;
+        }
+
 
         public static DataTable SelectByRoutID(int routeID)
         {

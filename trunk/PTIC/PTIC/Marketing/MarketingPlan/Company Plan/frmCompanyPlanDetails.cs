@@ -100,8 +100,9 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             DialogResult dr = MessageBox.Show("Is there any order for this company?", "Has Order?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr.Equals(DialogResult.Yes))
             {
-                int custId = (int)cmbEmp.SelectedValue;
-                PTIC.Sale.Order.frmOrder orderForm = new PTIC.Sale.Order.frmOrder();
+                int custId = (int)cmbCompany.SelectedValue;
+                int townshipId = new PTIC.Sale.BL.CustomerBL().GetTownByCustomerId(custId);
+                PTIC.Sale.Order.frmOrder orderForm = new PTIC.Sale.Order.frmOrder(custId,townshipId);
                 // set call back handler
                 orderForm.OrderSavedHandler += new Sale.Order.frmOrder.OrderSaveHandler(orderForm_OrderSavedHandler);
                 UIManager.OpenForm(orderForm);
