@@ -39,14 +39,18 @@ namespace PTIC.VC.Sale.OfficeSales
 
         private void dgvInvoice_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             var dgv = sender as DataGridView;
-            int invoiceID = (int)DataTypeParser.Parse(dgv.CurrentRow.Cells["colInvoiceID"].Value, typeof(int), -1);
-            if (invoiceID < 0)
+            if (dgv.CurrentRow != null)
             {
-                ToastMessageBox.Show(Resource.FailedToLoadData + " [Sale Items]", Color.Red);
-                return;
+                int invoiceID = (int)DataTypeParser.Parse(dgv.CurrentRow.Cells["colInvoiceID"].Value, typeof(int), -1);
+                if (invoiceID < 0)
+                {
+                    ToastMessageBox.Show(Resource.FailedToLoadData + " [Sale Items]", Color.Red);
+                    return;
+                }
+                LoadNBindProducts(invoiceID);
             }
-            LoadNBindProducts(invoiceID);
         }
 
         private void dgvInvoice_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
