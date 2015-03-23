@@ -159,7 +159,16 @@ namespace PTIC.VC.Sale.CashCollection
             catch (Exception e)
             {
                 throw e;
-            }            
+            }
+
+
+            if (dgvReceipt.Rows.Count > 0) 
+            {
+                foreach (DataGridViewRow dr in dgvReceipt.Rows)
+                {
+                    dr.ReadOnly = true;
+                }
+            }
         }
 
         private void SaveData()

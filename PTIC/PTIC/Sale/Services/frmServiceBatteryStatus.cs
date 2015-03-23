@@ -213,7 +213,7 @@ namespace PTIC.VC.Sale.Services
 
         private void frmServiceBatteryStatus_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvStatus.Rows.Count + string.Empty);
+            
         }
 
         

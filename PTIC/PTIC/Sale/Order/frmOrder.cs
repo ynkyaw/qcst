@@ -858,6 +858,33 @@ namespace PTIC.Sale.Order
 
             dgvOrderDetail.CausesValidation = true;
         }
+
+
+        public frmOrder(int customerId,int townId)
+        {
+            InitializeComponent();
+            // Disable auto generating columns
+            dgvOrderDetail.AutoGenerateColumns = false;
+            // Instantiate Order not assign yet
+            if (_mdOrder == null)
+                _mdOrder = new Entities.Order();
+            // Load necessary data
+            LoadNBind();
+            // Load table scheme
+            LoadNBindByOrderID(null);
+            // Add a new row
+            AddInitialNewRow();
+
+            dgvOrderDetail.CausesValidation = true;
+            cmbTown.SelectedValue = townId;
+            cmbCustomer.SelectedValue = customerId;
+
+            cmbCustomer.Enabled = false;
+            cmbTown.Enabled = false;
+            btnAddNewCustomer.Enabled = false;
+
+
+        }
                 
         /// <summary>
         /// Constructor for an existing order when it is part of other form

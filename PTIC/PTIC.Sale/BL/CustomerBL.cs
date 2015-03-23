@@ -122,6 +122,12 @@ namespace PTIC.Sale.BL
         {
             return CustomerDA.SelectPhotos(customerID);
         }
+
+        public int GetTownByCustomerId(int customerId)
+        {
+            return CustomerDA.GetTownByCustomerId(customerId);
+        }
+
         #endregion
 
         #region INSERT
