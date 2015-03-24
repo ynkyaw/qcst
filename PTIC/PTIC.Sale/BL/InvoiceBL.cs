@@ -315,6 +315,13 @@ namespace PTIC.Sale.BL
                 return null;
             }            
         }
+
+
+        public static DataTable GetDailySalesReport() 
+        {
+            return InvoiceDA.SelectDailyReports();
+        
+        }
         #endregion
 
         public void ValidateVehicle(Invoice newInvoice, List<SaleDetail> newSaleDetailRecords, int vehicleID,
