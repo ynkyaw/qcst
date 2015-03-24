@@ -900,7 +900,7 @@ namespace PTIC.VC.Sale.OfficeSales
                 //GateInvNo = txtGateInvNo.Text,
                 //TransportCharges = (int)DataTypeParser.Parse(txtTransportCharges.Text, typeof(int), 0),
                 //VoucherType = 1, // cash voucher
-
+                SaleType = 2,
                 TotalAmt = Convert.ToDecimal(DataTypeParser.Parse(txtTotalAmt.Text, typeof(decimal), 0)),
                 CommDiscAmt = Convert.ToDecimal(DataTypeParser.Parse(txtCommDiscAmt.Text, typeof(decimal), 0)),
                 OtherAmt = Convert.ToDecimal(DataTypeParser.Parse(txtOtherAmt.Text, typeof(decimal), 0)),

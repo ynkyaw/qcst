@@ -708,6 +708,46 @@ namespace PTIC.Sale.DA
             return table;
         }
 
+        #region DailySalesReport
+        public static DataTable SelectDailyReports()
+        {
 
+
+            DataTable table = null;
+            string tableName = "DailySales";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+
+                string cmdStr = "SELECT SalesDate,e.EmpName,ADDR.TOWN,C.CusName,";
+                cmdStr += " ( CASE ";
+                cmdStr += " WHEN SaleType=0 THEN 'Credit'";
+                cmdStr += " WHEN SaleType=1 THEN 'Consignment'";
+                cmdStr += " WHEN SaleType=2 THEN 'Cash'";
+                cmdStr += " END) SalesType,i.InvoiceNo,ISNULL(V.VehiclePrefixNo+'/'+ V.VehicleNo,'-') VanNo,i.TotalAmt";
+                cmdStr += " FROM Invoice i JOIN Employee e";
+                cmdStr += " ON I.SalesPersonID = e.ID";
+                cmdStr += " JOIN Customer C ON i.CusID = c.ID";
+                cmdStr += " JOIN (SELECT A.ID,ISNULL(TSP.Township,T.Town) AS TOWN FROM [Address] A JOIN Town T ON A.TownID=T.ID LEFT JOIN Township TSP ON TSP.ID = A.TownshipID) ADDR";
+                cmdStr += " ON C.AddrID=ADDR.ID";
+                cmdStr += " LEFT JOIN (Delivery D JOIN Vehicle V ON D.VenID =V.ID) ON I.DeliveryID=D.ID";
+
+
+                command.CommandText = cmdStr;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return table;
+        }
+
+
+        #endregion
     }
 }

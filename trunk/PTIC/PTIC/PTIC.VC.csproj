@@ -763,6 +763,12 @@
     <Compile Include="Sale\Inventory\frmVanStockList.designer.cs">
       <DependentUpon>frmVanStockList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sale\OfficeSales\frmDailySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\OfficeSales\frmDailySales.Designer.cs">
+      <DependentUpon>frmDailySales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sale\OfficeSales\frmSalePlan4ProductionCompare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1718,6 +1724,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\Inventory\frmVanStockList.resx">
       <DependentUpon>frmVanStockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\OfficeSales\frmDailySales.resx">
+      <DependentUpon>frmDailySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\OfficeSales\frmSalePlan4ProductionCompare.resx">
       <DependentUpon>frmSalePlan4ProductionCompare.cs</DependentUpon>
