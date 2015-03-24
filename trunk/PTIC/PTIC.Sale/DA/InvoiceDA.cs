@@ -721,7 +721,7 @@ namespace PTIC.Sale.DA
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
 
-                string cmdStr = "SELECT SalesDate,e.EmpName,ADDR.TOWN,C.CusName,";
+                string cmdStr = "SELECT i.ID,SalesDate,e.EmpName,ADDR.TOWN,C.CusName,";
                 cmdStr += " ( CASE ";
                 cmdStr += " WHEN SaleType=0 THEN 'Credit'";
                 cmdStr += " WHEN SaleType=1 THEN 'Consignment'";
@@ -746,6 +746,39 @@ namespace PTIC.Sale.DA
             }
             return table;
         }
+
+          public static DataTable SelectDetails()
+        {
+
+
+            DataTable table = null;
+            string tableName = "SalesDetails";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+
+                string cmdStr = "SELECT P.ProductName,SD.SalePrice,SD.Qty,SD.Amount,SD.InvoiceID ";
+                cmdStr += " FROM SalesDetail SD JOIN Product P ON P.ID =SD.ProductID WHERE SD.QTY>0";
+               
+
+
+                command.CommandText = cmdStr;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return table;
+        }
+
+        
+
+
 
 
         #endregion
