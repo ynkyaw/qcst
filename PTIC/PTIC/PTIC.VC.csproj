@@ -781,6 +781,12 @@
     <Compile Include="Sale\OfficeSales\frmSalesReturn.Designer.cs">
       <DependentUpon>frmSalesReturn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sale\OfficeSales\frmSalesReturnList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\OfficeSales\frmSalesReturnList.Designer.cs">
+      <DependentUpon>frmSalesReturnList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sale\OfficeSales\frmVenReturn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1733,6 +1739,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\OfficeSales\frmSalesReturn.resx">
       <DependentUpon>frmSalesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\OfficeSales\frmSalesReturnList.resx">
+      <DependentUpon>frmSalesReturnList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\OfficeSales\frmVenReturn.resx">
       <DependentUpon>frmVenReturn.cs</DependentUpon>
