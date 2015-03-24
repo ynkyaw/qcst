@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDeleteMobileServiceDetail = new System.Windows.Forms.Button();
             this.btnDeleteServiceRecord = new System.Windows.Forms.Button();
@@ -49,8 +49,27 @@
             this.dtpAppointedDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvServiceRecord = new System.Windows.Forms.DataGridView();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsedPlace = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMachineNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChargingAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOutAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcid6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colServing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMobileServiceRecordID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMSuvDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.rdoNonCustomer = new System.Windows.Forms.RadioButton();
+            this.rdoCustomer = new System.Windows.Forms.RadioButton();
             this.cmbVehicle = new System.Windows.Forms.ComboBox();
             this.cmbEmployee = new System.Windows.Forms.ComboBox();
             this.cmbTownship = new System.Windows.Forms.ComboBox();
@@ -104,25 +123,6 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsedPlace = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMachineNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProductionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVolt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChargingAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOutAmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcid6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colServing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMobileServiceRecordID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMSuvDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -138,8 +138,8 @@
             this.panel1.Controls.Add(this.dtpAppointedDate);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.dgvServiceRecord);
-            this.panel1.Controls.Add(this.radioButton4);
-            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.rdoNonCustomer);
+            this.panel1.Controls.Add(this.rdoCustomer);
             this.panel1.Controls.Add(this.cmbVehicle);
             this.panel1.Controls.Add(this.cmbEmployee);
             this.panel1.Controls.Add(this.cmbTownship);
@@ -229,7 +229,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(17, 24);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(393, 20);
+            this.label12.Size = new System.Drawing.Size(393, 19);
             this.label12.TabIndex = 249;
             this.label12.Text = "1. မိုးရေဖြည့်၊ 2. အမဲဆီသုတ်၊ 3. သန့်ရှင်းရေးလုပ်၊ 4. Acid Level ညှိ";
             // 
@@ -252,7 +252,7 @@
             this.lblMobileServiceSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblMobileServiceSetup.Location = new System.Drawing.Point(8, 9);
             this.lblMobileServiceSetup.Name = "lblMobileServiceSetup";
-            this.lblMobileServiceSetup.Size = new System.Drawing.Size(119, 20);
+            this.lblMobileServiceSetup.Size = new System.Drawing.Size(131, 19);
             this.lblMobileServiceSetup.TabIndex = 0;
             this.lblMobileServiceSetup.Text = "Mobile Service";
             this.lblMobileServiceSetup.Click += new System.EventHandler(this.lblMobileServiceSetup_Click);
@@ -264,7 +264,7 @@
             this.lblHeader.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeader.Location = new System.Drawing.Point(119, 9);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(197, 20);
+            this.lblHeader.Size = new System.Drawing.Size(219, 19);
             this.lblHeader.TabIndex = 45;
             this.lblHeader.Text = ">    Mobile Service Detail";
             // 
@@ -279,7 +279,7 @@
             this.dtpAppointedDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpAppointedDate.Name = "dtpAppointedDate";
             this.dtpAppointedDate.ShowCheckBox = true;
-            this.dtpAppointedDate.Size = new System.Drawing.Size(150, 28);
+            this.dtpAppointedDate.Size = new System.Drawing.Size(150, 25);
             this.dtpAppointedDate.TabIndex = 229;
             // 
             // label7
@@ -289,7 +289,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(11, 630);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(155, 20);
+            this.label7.Size = new System.Drawing.Size(140, 19);
             this.label7.TabIndex = 228;
             this.label7.Text = "ထပ်မံဆက်သွယ်ရမည့်ရက်";
             // 
@@ -300,14 +300,14 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvServiceRecord.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvServiceRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvServiceRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvServiceRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvServiceRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -342,29 +342,188 @@
             this.dgvServiceRecord.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvServiceRecord_DataError);
             this.dgvServiceRecord.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvServiceRecord_EditingControlShowing);
             // 
-            // radioButton4
+            // No
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Enabled = false;
-            this.radioButton4.Location = new System.Drawing.Point(255, 317);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(66, 24);
-            this.radioButton4.TabIndex = 244;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "မဟုတ်";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.No.HeaderText = "စဉ်";
+            this.No.Name = "No";
+            this.No.Visible = false;
+            this.No.Width = 30;
             // 
-            // radioButton3
+            // colUsedPlace
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Enabled = false;
-            this.radioButton3.Location = new System.Drawing.Point(162, 317);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(57, 24);
-            this.radioButton3.TabIndex = 243;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "ဟုတ်";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.colUsedPlace.DataPropertyName = "UsedPlace";
+            this.colUsedPlace.HeaderText = "အသုံးပြု‌နေ‌သော ‌နေရာ";
+            this.colUsedPlace.Items.AddRange(new object[] {
+            "Car",
+            "Inverter",
+            "Forklift",
+            "Generator",
+            "Buggy",
+            "Other"});
+            this.colUsedPlace.Name = "colUsedPlace";
+            this.colUsedPlace.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colUsedPlace.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colMachineNo
+            // 
+            this.colMachineNo.DataPropertyName = "MachineNo";
+            this.colMachineNo.HeaderText = "စက်/ယာဉ်အမှတ်";
+            this.colMachineNo.Name = "colMachineNo";
+            this.colMachineNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colBrand
+            // 
+            this.colBrand.DataPropertyName = "Brand";
+            this.colBrand.HeaderText = "အသုံးပြု‌နေ‌သော အမှတ်တံဆိပ်";
+            this.colBrand.Name = "colBrand";
+            this.colBrand.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colBrand.Width = 110;
+            // 
+            // colProduct
+            // 
+            this.colProduct.DataPropertyName = "Product";
+            this.colProduct.HeaderText = "အသုံးပြု‌နေ‌သော ပစ္စည်းအမည်";
+            this.colProduct.Name = "colProduct";
+            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colProduct.Width = 110;
+            // 
+            // colProductionDate
+            // 
+            this.colProductionDate.DataPropertyName = "ProductionDate";
+            this.colProductionDate.HeaderText = "ထုတ်လုပ်သည့် ‌နေ့စွဲ";
+            this.colProductionDate.Name = "colProductionDate";
+            this.colProductionDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colProductionDate.Width = 90;
+            // 
+            // colVolt
+            // 
+            this.colVolt.DataPropertyName = "Volt";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colVolt.DefaultCellStyle = dataGridViewCellStyle12;
+            this.colVolt.HeaderText = "Volt";
+            this.colVolt.Name = "colVolt";
+            this.colVolt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVolt.Width = 50;
+            // 
+            // colChargingAmp
+            // 
+            this.colChargingAmp.DataPropertyName = "ChargingAmp";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colChargingAmp.DefaultCellStyle = dataGridViewCellStyle13;
+            this.colChargingAmp.HeaderText = "Charging In (Amps)";
+            this.colChargingAmp.Name = "colChargingAmp";
+            this.colChargingAmp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colChargingAmp.Width = 80;
+            // 
+            // colOutAmp
+            // 
+            this.colOutAmp.DataPropertyName = "OutAmp";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colOutAmp.DefaultCellStyle = dataGridViewCellStyle14;
+            this.colOutAmp.HeaderText = "Motor Out (Amps)";
+            this.colOutAmp.Name = "colOutAmp";
+            // 
+            // colAcid1
+            // 
+            this.colAcid1.DataPropertyName = "Acid1";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid1.DefaultCellStyle = dataGridViewCellStyle15;
+            this.colAcid1.HeaderText = "Acid Level 1";
+            this.colAcid1.Name = "colAcid1";
+            this.colAcid1.Width = 50;
+            // 
+            // colAcid2
+            // 
+            this.colAcid2.DataPropertyName = "Acid2";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid2.DefaultCellStyle = dataGridViewCellStyle16;
+            this.colAcid2.HeaderText = "Acid Level 2";
+            this.colAcid2.Name = "colAcid2";
+            this.colAcid2.Width = 50;
+            // 
+            // colAcid3
+            // 
+            this.colAcid3.DataPropertyName = "Acid3";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid3.DefaultCellStyle = dataGridViewCellStyle17;
+            this.colAcid3.HeaderText = "Acid Level 3";
+            this.colAcid3.Name = "colAcid3";
+            this.colAcid3.Width = 50;
+            // 
+            // colAcid4
+            // 
+            this.colAcid4.DataPropertyName = "Acid4";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid4.DefaultCellStyle = dataGridViewCellStyle18;
+            this.colAcid4.HeaderText = "Acid Level 4";
+            this.colAcid4.Name = "colAcid4";
+            this.colAcid4.Width = 50;
+            // 
+            // colAcid5
+            // 
+            this.colAcid5.DataPropertyName = "Acid5";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid5.DefaultCellStyle = dataGridViewCellStyle19;
+            this.colAcid5.HeaderText = "Acid Level 5";
+            this.colAcid5.Name = "colAcid5";
+            this.colAcid5.Width = 50;
+            // 
+            // colAcid6
+            // 
+            this.colAcid6.DataPropertyName = "Acid6";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAcid6.DefaultCellStyle = dataGridViewCellStyle20;
+            this.colAcid6.HeaderText = "Acid Level 6";
+            this.colAcid6.Name = "colAcid6";
+            this.colAcid6.Width = 50;
+            // 
+            // colServing
+            // 
+            this.colServing.DataPropertyName = "Serving";
+            this.colServing.HeaderText = "Service ‌ပေးခဲ့မှု";
+            this.colServing.Name = "colServing";
+            // 
+            // colMobileServiceRecordID
+            // 
+            this.colMobileServiceRecordID.DataPropertyName = "MobileServiceRecordID";
+            this.colMobileServiceRecordID.HeaderText = "MobileServiceRecordID";
+            this.colMobileServiceRecordID.Name = "colMobileServiceRecordID";
+            this.colMobileServiceRecordID.Visible = false;
+            // 
+            // colMSuvDetailID
+            // 
+            this.colMSuvDetailID.HeaderText = "MSuvDetailID";
+            this.colMSuvDetailID.Name = "colMSuvDetailID";
+            this.colMSuvDetailID.Visible = false;
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.Image = global::PTIC.Resource.delete;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Visible = false;
+            // 
+            // rdoNonCustomer
+            // 
+            this.rdoNonCustomer.AutoSize = true;
+            this.rdoNonCustomer.Location = new System.Drawing.Point(255, 317);
+            this.rdoNonCustomer.Name = "rdoNonCustomer";
+            this.rdoNonCustomer.Size = new System.Drawing.Size(61, 23);
+            this.rdoNonCustomer.TabIndex = 244;
+            this.rdoNonCustomer.TabStop = true;
+            this.rdoNonCustomer.Text = "မဟုတ်";
+            this.rdoNonCustomer.UseVisualStyleBackColor = true;
+            // 
+            // rdoCustomer
+            // 
+            this.rdoCustomer.AutoSize = true;
+            this.rdoCustomer.Location = new System.Drawing.Point(162, 317);
+            this.rdoCustomer.Name = "rdoCustomer";
+            this.rdoCustomer.Size = new System.Drawing.Size(53, 23);
+            this.rdoCustomer.TabIndex = 243;
+            this.rdoCustomer.TabStop = true;
+            this.rdoCustomer.Text = "ဟုတ်";
+            this.rdoCustomer.UseVisualStyleBackColor = true;
             // 
             // cmbVehicle
             // 
@@ -376,7 +535,7 @@
             this.cmbVehicle.Location = new System.Drawing.Point(532, 249);
             this.cmbVehicle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVehicle.Name = "cmbVehicle";
-            this.cmbVehicle.Size = new System.Drawing.Size(150, 27);
+            this.cmbVehicle.Size = new System.Drawing.Size(150, 25);
             this.cmbVehicle.TabIndex = 242;
             this.cmbVehicle.ValueMember = "VehicleID";
             // 
@@ -390,7 +549,7 @@
             this.cmbEmployee.Location = new System.Drawing.Point(532, 215);
             this.cmbEmployee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbEmployee.Name = "cmbEmployee";
-            this.cmbEmployee.Size = new System.Drawing.Size(150, 27);
+            this.cmbEmployee.Size = new System.Drawing.Size(150, 25);
             this.cmbEmployee.TabIndex = 241;
             this.cmbEmployee.ValueMember = "EmployeeID";
             // 
@@ -402,7 +561,7 @@
             this.cmbTownship.Location = new System.Drawing.Point(162, 108);
             this.cmbTownship.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbTownship.Name = "cmbTownship";
-            this.cmbTownship.Size = new System.Drawing.Size(150, 27);
+            this.cmbTownship.Size = new System.Drawing.Size(150, 25);
             this.cmbTownship.TabIndex = 240;
             this.cmbTownship.ValueMember = "TownshipID";
             // 
@@ -414,7 +573,7 @@
             this.txtServicePlanNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtServicePlanNo.Name = "txtServicePlanNo";
             this.txtServicePlanNo.ReadOnly = true;
-            this.txtServicePlanNo.Size = new System.Drawing.Size(150, 28);
+            this.txtServicePlanNo.Size = new System.Drawing.Size(150, 25);
             this.txtServicePlanNo.TabIndex = 239;
             // 
             // label27
@@ -425,7 +584,7 @@
             this.label27.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(6, 47);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(115, 20);
+            this.label27.Size = new System.Drawing.Size(129, 19);
             this.label27.TabIndex = 238;
             this.label27.Text = "Service Plan No.";
             // 
@@ -462,7 +621,7 @@
             this.dtpServicedDate.Location = new System.Drawing.Point(532, 42);
             this.dtpServicedDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpServicedDate.Name = "dtpServicedDate";
-            this.dtpServicedDate.Size = new System.Drawing.Size(150, 28);
+            this.dtpServicedDate.Size = new System.Drawing.Size(150, 25);
             this.dtpServicedDate.TabIndex = 227;
             // 
             // label25
@@ -474,7 +633,7 @@
             this.label25.ForeColor = System.Drawing.Color.OliveDrab;
             this.label25.Location = new System.Drawing.Point(11, 339);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(126, 20);
+            this.label25.Size = new System.Drawing.Size(114, 19);
             this.label25.TabIndex = 226;
             this.label25.Text = "စစ်‌ဆေးမှုမှတ်တမ်း";
             // 
@@ -486,7 +645,7 @@
             this.label19.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(376, 287);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(106, 20);
+            this.label19.Size = new System.Drawing.Size(102, 19);
             this.label19.TabIndex = 216;
             this.label19.Text = "Order မှာယူခြင်း";
             // 
@@ -497,7 +656,7 @@
             this.txtSugForUsage.Location = new System.Drawing.Point(161, 550);
             this.txtSugForUsage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSugForUsage.Name = "txtSugForUsage";
-            this.txtSugForUsage.Size = new System.Drawing.Size(615, 28);
+            this.txtSugForUsage.Size = new System.Drawing.Size(615, 25);
             this.txtSugForUsage.TabIndex = 215;
             // 
             // txtResonNotService
@@ -507,7 +666,7 @@
             this.txtResonNotService.Location = new System.Drawing.Point(161, 589);
             this.txtResonNotService.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtResonNotService.Name = "txtResonNotService";
-            this.txtResonNotService.Size = new System.Drawing.Size(615, 28);
+            this.txtResonNotService.Size = new System.Drawing.Size(615, 25);
             this.txtResonNotService.TabIndex = 214;
             // 
             // label16
@@ -517,7 +676,7 @@
             this.label16.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(11, 553);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(151, 20);
+            this.label16.Size = new System.Drawing.Size(136, 19);
             this.label16.TabIndex = 213;
             this.label16.Text = "သုံးစွဲမှုအ‌ပေါ်အကြံ‌ပေးခဲ့မှု";
             // 
@@ -528,7 +687,7 @@
             this.label17.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(11, 584);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(152, 40);
+            this.label17.Size = new System.Drawing.Size(146, 38);
             this.label17.TabIndex = 212;
             this.label17.Text = "Service မသွားဖြစ်ပါက \r\nမသွားဖြစ်သည့်အ‌ကြောင်း";
             // 
@@ -540,7 +699,7 @@
             this.label14.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(6, 319);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 20);
+            this.label14.Size = new System.Drawing.Size(77, 19);
             this.label14.TabIndex = 209;
             this.label14.Text = "Customer ";
             // 
@@ -552,7 +711,7 @@
             this.label15.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(376, 251);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 20);
+            this.label15.Size = new System.Drawing.Size(69, 19);
             this.label15.TabIndex = 208;
             this.label15.Text = "ယာဉ်အမှတ်";
             // 
@@ -564,7 +723,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(376, 217);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(154, 20);
+            this.label13.Size = new System.Drawing.Size(140, 19);
             this.label13.TabIndex = 204;
             this.label13.Text = "သွားခဲ့‌သောဝန်ထမ်းအမည်";
             // 
@@ -576,7 +735,7 @@
             this.txtContactPersonPhNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContactPersonPhNo.Name = "txtContactPersonPhNo";
             this.txtContactPersonPhNo.ReadOnly = true;
-            this.txtContactPersonPhNo.Size = new System.Drawing.Size(150, 28);
+            this.txtContactPersonPhNo.Size = new System.Drawing.Size(150, 25);
             this.txtContactPersonPhNo.TabIndex = 203;
             // 
             // label10
@@ -587,7 +746,7 @@
             this.label10.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(6, 109);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 20);
+            this.label10.Size = new System.Drawing.Size(111, 19);
             this.label10.TabIndex = 201;
             this.label10.Text = "Customer မြို့နယ်";
             // 
@@ -599,7 +758,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(6, 251);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 20);
+            this.label11.Size = new System.Drawing.Size(134, 19);
             this.label11.TabIndex = 200;
             this.label11.Text = "ဆက်သွယ်ရမည့်သူရာထူး";
             // 
@@ -611,7 +770,7 @@
             this.cmbCustomer.Location = new System.Drawing.Point(162, 180);
             this.cmbCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(150, 27);
+            this.cmbCustomer.Size = new System.Drawing.Size(150, 25);
             this.cmbCustomer.TabIndex = 199;
             this.cmbCustomer.ValueMember = "CustomerID";
             this.cmbCustomer.SelectedValueChanged += new System.EventHandler(this.cmbCustomer_SelectedValueChanged);
@@ -624,7 +783,7 @@
             this.label9.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(6, 148);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 20);
+            this.label9.Size = new System.Drawing.Size(136, 19);
             this.label9.TabIndex = 198;
             this.label9.Text = "Customer အမျိုးအစား";
             // 
@@ -636,7 +795,7 @@
             this.cmbCustomerType.Location = new System.Drawing.Point(162, 145);
             this.cmbCustomerType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCustomerType.Name = "cmbCustomerType";
-            this.cmbCustomerType.Size = new System.Drawing.Size(150, 27);
+            this.cmbCustomerType.Size = new System.Drawing.Size(150, 25);
             this.cmbCustomerType.TabIndex = 197;
             this.cmbCustomerType.ValueMember = "CusType";
             // 
@@ -648,7 +807,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(376, 81);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
+            this.label8.Size = new System.Drawing.Size(44, 19);
             this.label8.TabIndex = 196;
             this.label8.Text = "လိပ်စာ";
             // 
@@ -672,7 +831,7 @@
             this.txtPh2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPh2.Name = "txtPh2";
             this.txtPh2.ReadOnly = true;
-            this.txtPh2.Size = new System.Drawing.Size(150, 28);
+            this.txtPh2.Size = new System.Drawing.Size(150, 25);
             this.txtPh2.TabIndex = 194;
             // 
             // txtPh1
@@ -683,7 +842,7 @@
             this.txtPh1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPh1.Name = "txtPh1";
             this.txtPh1.ReadOnly = true;
-            this.txtPh1.Size = new System.Drawing.Size(150, 28);
+            this.txtPh1.Size = new System.Drawing.Size(150, 25);
             this.txtPh1.TabIndex = 193;
             // 
             // txtContactPerson
@@ -694,7 +853,7 @@
             this.txtContactPerson.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContactPerson.Name = "txtContactPerson";
             this.txtContactPerson.ReadOnly = true;
-            this.txtContactPerson.Size = new System.Drawing.Size(150, 28);
+            this.txtContactPerson.Size = new System.Drawing.Size(150, 25);
             this.txtContactPerson.TabIndex = 192;
             // 
             // txtPost
@@ -705,7 +864,7 @@
             this.txtPost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPost.Name = "txtPost";
             this.txtPost.ReadOnly = true;
-            this.txtPost.Size = new System.Drawing.Size(150, 28);
+            this.txtPost.Size = new System.Drawing.Size(150, 25);
             this.txtPost.TabIndex = 191;
             // 
             // label6
@@ -716,7 +875,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(5, 287);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 20);
+            this.label6.Size = new System.Drawing.Size(123, 19);
             this.label6.TabIndex = 190;
             this.label6.Text = "ဆက်သွယ်ရမည့်သူဖုန်း";
             // 
@@ -726,7 +885,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(376, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(83, 19);
             this.label3.TabIndex = 189;
             this.label3.Text = "ဖုန်းနံပါတ်(၂)";
             // 
@@ -736,7 +895,7 @@
             this.label24.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(376, 148);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(86, 20);
+            this.label24.Size = new System.Drawing.Size(84, 19);
             this.label24.TabIndex = 188;
             this.label24.Text = "ဖုန်းနံပါတ်(၁)";
             // 
@@ -748,7 +907,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.Size = new System.Drawing.Size(136, 19);
             this.label2.TabIndex = 187;
             this.label2.Text = "ဆက်သွယ်ရမည့်သူအမည်";
             // 
@@ -760,7 +919,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(376, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 20);
+            this.label5.Size = new System.Drawing.Size(32, 19);
             this.label5.TabIndex = 186;
             this.label5.Text = "‌နေ့စွဲ";
             // 
@@ -771,7 +930,7 @@
             this.txtServiceNo.Location = new System.Drawing.Point(162, 76);
             this.txtServiceNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtServiceNo.Name = "txtServiceNo";
-            this.txtServiceNo.Size = new System.Drawing.Size(150, 28);
+            this.txtServiceNo.Size = new System.Drawing.Size(150, 25);
             this.txtServiceNo.TabIndex = 185;
             // 
             // label4
@@ -782,7 +941,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(6, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.Size = new System.Drawing.Size(93, 19);
             this.label4.TabIndex = 184;
             this.label4.Text = "Service No.";
             // 
@@ -794,7 +953,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 183);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 20);
+            this.label1.Size = new System.Drawing.Size(110, 19);
             this.label1.TabIndex = 183;
             this.label1.Text = "Customer အမည်";
             // 
@@ -909,167 +1068,6 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "Service ‌ပေးခဲ့မှု";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
-            // No
-            // 
-            this.No.HeaderText = "စဉ်";
-            this.No.Name = "No";
-            this.No.Visible = false;
-            this.No.Width = 30;
-            // 
-            // colUsedPlace
-            // 
-            this.colUsedPlace.DataPropertyName = "UsedPlace";
-            this.colUsedPlace.HeaderText = "အသုံးပြု‌နေ‌သော ‌နေရာ";
-            this.colUsedPlace.Items.AddRange(new object[] {
-            "Car",
-            "Inverter",
-            "Forklift",
-            "Generator",
-            "Buggy",
-            "Other"});
-            this.colUsedPlace.Name = "colUsedPlace";
-            this.colUsedPlace.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colUsedPlace.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colMachineNo
-            // 
-            this.colMachineNo.DataPropertyName = "MachineNo";
-            this.colMachineNo.HeaderText = "စက်/ယာဉ်အမှတ်";
-            this.colMachineNo.Name = "colMachineNo";
-            this.colMachineNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colBrand
-            // 
-            this.colBrand.DataPropertyName = "Brand";
-            this.colBrand.HeaderText = "အသုံးပြု‌နေ‌သော အမှတ်တံဆိပ်";
-            this.colBrand.Name = "colBrand";
-            this.colBrand.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colBrand.Width = 110;
-            // 
-            // colProduct
-            // 
-            this.colProduct.DataPropertyName = "Product";
-            this.colProduct.HeaderText = "အသုံးပြု‌နေ‌သော ပစ္စည်းအမည်";
-            this.colProduct.Name = "colProduct";
-            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colProduct.Width = 110;
-            // 
-            // colProductionDate
-            // 
-            this.colProductionDate.DataPropertyName = "ProductionDate";
-            this.colProductionDate.HeaderText = "ထုတ်လုပ်သည့် ‌နေ့စွဲ";
-            this.colProductionDate.Name = "colProductionDate";
-            this.colProductionDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colProductionDate.Width = 90;
-            // 
-            // colVolt
-            // 
-            this.colVolt.DataPropertyName = "Volt";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colVolt.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colVolt.HeaderText = "Volt";
-            this.colVolt.Name = "colVolt";
-            this.colVolt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVolt.Width = 50;
-            // 
-            // colChargingAmp
-            // 
-            this.colChargingAmp.DataPropertyName = "ChargingAmp";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colChargingAmp.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colChargingAmp.HeaderText = "Charging In (Amps)";
-            this.colChargingAmp.Name = "colChargingAmp";
-            this.colChargingAmp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colChargingAmp.Width = 80;
-            // 
-            // colOutAmp
-            // 
-            this.colOutAmp.DataPropertyName = "OutAmp";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colOutAmp.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colOutAmp.HeaderText = "Motor Out (Amps)";
-            this.colOutAmp.Name = "colOutAmp";
-            // 
-            // colAcid1
-            // 
-            this.colAcid1.DataPropertyName = "Acid1";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colAcid1.HeaderText = "Acid Level 1";
-            this.colAcid1.Name = "colAcid1";
-            this.colAcid1.Width = 50;
-            // 
-            // colAcid2
-            // 
-            this.colAcid2.DataPropertyName = "Acid2";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colAcid2.HeaderText = "Acid Level 2";
-            this.colAcid2.Name = "colAcid2";
-            this.colAcid2.Width = 50;
-            // 
-            // colAcid3
-            // 
-            this.colAcid3.DataPropertyName = "Acid3";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid3.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colAcid3.HeaderText = "Acid Level 3";
-            this.colAcid3.Name = "colAcid3";
-            this.colAcid3.Width = 50;
-            // 
-            // colAcid4
-            // 
-            this.colAcid4.DataPropertyName = "Acid4";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid4.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colAcid4.HeaderText = "Acid Level 4";
-            this.colAcid4.Name = "colAcid4";
-            this.colAcid4.Width = 50;
-            // 
-            // colAcid5
-            // 
-            this.colAcid5.DataPropertyName = "Acid5";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid5.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colAcid5.HeaderText = "Acid Level 5";
-            this.colAcid5.Name = "colAcid5";
-            this.colAcid5.Width = 50;
-            // 
-            // colAcid6
-            // 
-            this.colAcid6.DataPropertyName = "Acid6";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAcid6.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colAcid6.HeaderText = "Acid Level 6";
-            this.colAcid6.Name = "colAcid6";
-            this.colAcid6.Width = 50;
-            // 
-            // colServing
-            // 
-            this.colServing.DataPropertyName = "Serving";
-            this.colServing.HeaderText = "Service ‌ပေးခဲ့မှု";
-            this.colServing.Name = "colServing";
-            // 
-            // colMobileServiceRecordID
-            // 
-            this.colMobileServiceRecordID.DataPropertyName = "MobileServiceRecordID";
-            this.colMobileServiceRecordID.HeaderText = "MobileServiceRecordID";
-            this.colMobileServiceRecordID.Name = "colMobileServiceRecordID";
-            this.colMobileServiceRecordID.Visible = false;
-            // 
-            // colMSuvDetailID
-            // 
-            this.colMSuvDetailID.HeaderText = "MSuvDetailID";
-            this.colMSuvDetailID.Name = "colMSuvDetailID";
-            this.colMSuvDetailID.Visible = false;
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "Delete";
-            this.colDelete.Image = global::PTIC.Resource.delete;
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Visible = false;
-            // 
             // frmMobileServiceDetail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1134,8 +1132,8 @@
         private System.Windows.Forms.TextBox txtServicePlanNo;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox cmbTownship;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rdoNonCustomer;
+        private System.Windows.Forms.RadioButton rdoCustomer;
         private System.Windows.Forms.ComboBox cmbVehicle;
         private System.Windows.Forms.ComboBox cmbEmployee;
         private System.Windows.Forms.DataGridView dgvServiceRecord;

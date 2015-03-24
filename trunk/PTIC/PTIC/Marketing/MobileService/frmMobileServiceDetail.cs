@@ -464,8 +464,8 @@ namespace PTIC.VC.Marketing.MobileService
                     ServiceNo = txtServiceNo.Text,
                     CusID = (int)DataTypeParser.Parse(cmbCustomer.SelectedValue, typeof(int), -1),
                     EmpID = (int)DataTypeParser.Parse(cmbEmployee.SelectedValue, typeof(int), -1),
-                    ServicedDate = dtpServicedDate.Value,
-                    //IsCustomer =
+                    ServicedDate = dtpServicedDate.Value,       
+                    IsCustomer = rdoCustomer.Checked,
                     SugForUsage = txtSugForUsage.Text,
                     ResonNotService = txtResonNotService.Text,
                     AppointedDate = dtpAppointedDate.Checked ? dtpAppointedDate.Value : DateTime.MinValue
@@ -745,6 +745,7 @@ namespace PTIC.VC.Marketing.MobileService
             // Load schema
             LoadNBindByMobileServiceDetailID(null);
             DataUtil.AddInitialNewRow(dgvServiceRecord);
+            
         }
 
         public frmMobileServiceDetail(
@@ -768,6 +769,7 @@ namespace PTIC.VC.Marketing.MobileService
             cmbCustomerType.SelectedValue = customerTypeID;
             cmbCustomer.SelectedValue = customerID;
             cmbTownship.Enabled = cmbCustomerType.Enabled = cmbCustomer.Enabled = false;
+            rdoCustomer.Enabled = rdoNonCustomer.Enabled = false;
         }
         #endregion
 
