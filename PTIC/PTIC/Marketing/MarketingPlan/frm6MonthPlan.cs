@@ -251,6 +251,19 @@ namespace PTIC.VC.Marketing.MarketingPlan
             A_P_PlanBL apPlanBL = null;
             A_P_PlanDetailBL apPlanDetailBL = null;
 
+            if(!string.IsNullOrEmpty(txtTotalSalePlanPercent.Text)){
+            decimal salesPercentage = decimal.Parse(txtTotalSalePlanPercent.Text);
+                if (salesPercentage >=100) 
+                {
+                    MessageBox.Show("A & P Plan Amount shouldn't be greather than or equal to sales Amount!\nPlease Check Total Amount and try again!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            
+            
+
+
             A_P_Plan apPlan = null;
             try
             {

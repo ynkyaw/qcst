@@ -68,6 +68,9 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 dgvColTownship.DisplayMember = "Township";
                 dgvColTownship.ValueMember = "TownshipID";
 
+                DataView dv = new DataView(_dtCusType);
+                _dtCusType = dv.ToTable(true, "CusTypeID", "CusTypeName");
+                dgvColCusType.DataSource = _dtCusType;
                 dgvColCusType.DisplayMember = "CusTypeName";
                 dgvColCusType.ValueMember = "CusTypeID";
             }

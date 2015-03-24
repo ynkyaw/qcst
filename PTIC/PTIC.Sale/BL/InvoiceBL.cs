@@ -322,6 +322,12 @@ namespace PTIC.Sale.BL
             return InvoiceDA.SelectDailyReports();
         
         }
+        public static DataTable SelectDetails() 
+        {
+            return InvoiceDA.SelectDetails();
+        
+        }
+        
         #endregion
 
         public void ValidateVehicle(Invoice newInvoice, List<SaleDetail> newSaleDetailRecords, int vehicleID,

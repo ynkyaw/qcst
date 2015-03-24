@@ -385,7 +385,10 @@ namespace PTIC.VC.Marketing.A_P
                         UnitCost = (decimal)DataTypeParser.Parse(row["UnitCost"], typeof(decimal), 0),
                         IsAccepted = (bool)DataTypeParser.Parse(row["IsAccepted"], typeof(bool), false),
                         LastRequireDate = (DateTime)DataTypeParser.Parse(row["LastRequireDate"], typeof(DateTime), DateTime.Now),
-                        Remark = (String)DataTypeParser.Parse(row["Remark"].ToString(), typeof(String), String.Empty)
+                        Remark = (String)DataTypeParser.Parse(row["Remark"].ToString(), typeof(String), String.Empty),
+                        DateAdded = DateTime.Now,
+                        LastModified=DateTime.Now
+
                     };
                     if (_AP_EnquiryDetail.SupplierID != -1 && _AP_EnquiryDetail.AP_MaterialID != -1 && _AP_EnquiryDetail.ApprovedQty != 0 && _AP_EnquiryDetail.UnitCost != 0)
                     {
@@ -693,6 +696,12 @@ namespace PTIC.VC.Marketing.A_P
                 if (MessageBox.Show("Are you sure want to delete Selected Row?", "အတည်ပြုချက်", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
                     int Index = dgvAPEnquiry.CurrentRow.Index;
+                    if (dgvAPEnquiry.Rows.Count == 1) 
+                    {
+                        DataUtil.AddNewRow(dgvAPEnquiry.DataSource as DataTable);
+                        dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = DateTime.Now;
+                        dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colAccepted.Index].ReadOnly = true;
+                    }
                     dgvAPEnquiry.Rows.RemoveAt(Index);
                 }
             }

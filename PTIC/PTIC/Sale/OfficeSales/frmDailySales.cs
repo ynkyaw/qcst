@@ -12,10 +12,12 @@ namespace PTIC.Sale.OfficeSales
     public partial class frmDailySales : Form
     {
         DataTable dailySalesDt = new DataTable();
+        DataTable detailsSales = new DataTable();
         public frmDailySales()
         {
             InitializeComponent();
             dailySalesDt = PTIC.Sale.BL.InvoiceBL.GetDailySalesReport();
+            detailsSales = PTIC.Sale.BL.InvoiceBL.SelectDetails();
             dgvDailySales.DataSource = dailySalesDt;
 
         }
@@ -43,6 +45,20 @@ namespace PTIC.Sale.OfficeSales
 
 
             dgvDailySales.DataSource = temp;
+        }
+
+        private void dgvDailySales_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDailySales.SelectedRows.Count == 1) 
+            {
+                int invoiceId =(int)PTIC.VC.Util.DataTypeParser.Parse(dgvDailySales.SelectedRows[0].Cells[colID.Index].Value,typeof(int),0);
+                DataRow[] dr = detailsSales.Select("InvoiceID=" + invoiceId);
+                if (dr.Length > 0) 
+                {
+                    dgvSalesDetails.DataSource = dr.CopyToDataTable();
+                }
+            
+            }
         }
     }
 }
