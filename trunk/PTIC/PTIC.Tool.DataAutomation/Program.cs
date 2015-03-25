@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PTIC.Tool.DataAutomation
@@ -21,7 +19,9 @@ namespace PTIC.Tool.DataAutomation
             dataManager.Copy(
                 "Data Source=WPT-PC;Initial Catalog=PTIC_Ver_1_0_7_MieMie;User ID=sa;Password=sa",
                 "Data Source=WPT-PC;Initial Catalog=PTIC_Ver_1_0_7;User ID=sa;Password=sa",
-                2626);
+                //2626
+                989
+                );
 
         }
     }
