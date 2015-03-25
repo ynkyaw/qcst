@@ -390,7 +390,12 @@ namespace PTIC.VC.Marketing.A_P
                         LastModified=DateTime.Now
 
                     };
-                    if (_AP_EnquiryDetail.SupplierID != -1 && _AP_EnquiryDetail.AP_MaterialID != -1 && _AP_EnquiryDetail.ApprovedQty != 0 && _AP_EnquiryDetail.UnitCost != 0)
+                    if (_AP_EnquiryDetail.LastRequireDate == DateTime.MinValue)
+                    {
+                        MessageBox.Show("နောက်ဆုံးရလိုသည့်နေ့စွဲဖြည့်ပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else if (_AP_EnquiryDetail.SupplierID != -1 && _AP_EnquiryDetail.AP_MaterialID != -1 && _AP_EnquiryDetail.ApprovedQty != 0 && _AP_EnquiryDetail.UnitCost != 0)
                     {
                         insertAP_EnquiryDetail.Add(_AP_EnquiryDetail);
                     }
@@ -432,6 +437,12 @@ namespace PTIC.VC.Marketing.A_P
                         LastRequireDate = (DateTime)DataTypeParser.Parse(row["LastRequireDate"], typeof(DateTime), DateTime.Now),
                         Remark = (String)DataTypeParser.Parse(row["Remark"].ToString(), typeof(String), String.Empty)
                     };
+                    if (_AP_EnquiryDetail.LastRequireDate == DateTime.MinValue)
+                    {
+                        MessageBox.Show("နောက်ဆုံးရလိုသည့်နေ့စွဲဖြည့်ပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else 
                     if (_AP_EnquiryDetail.SupplierID != -1 && _AP_EnquiryDetail.AP_MaterialID != -1 && _AP_EnquiryDetail.ApprovedQty != 0 && _AP_EnquiryDetail.UnitCost != 0)
                     {
                         updateAP_EnquiryDetail.Add(_AP_EnquiryDetail);
@@ -693,16 +704,26 @@ namespace PTIC.VC.Marketing.A_P
         {
             if (dgvAPEnquiry.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("Are you sure want to delete Selected Row?", "အတည်ပြုချက်", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                int AP_EnquiryDetailID = (int)DataTypeParser.Parse(dgvAPEnquiry.CurrentRow.Cells[colAP_EnquiryDetailID.Index].Value, typeof(int), -1);
+                if (AP_EnquiryDetailID == -1)
                 {
-                    int Index = dgvAPEnquiry.CurrentRow.Index;
-                    if (dgvAPEnquiry.Rows.Count == 1) 
+
+                    if (MessageBox.Show("Are you sure want to delete Selected Row?", "အတည်ပြုချက်", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                     {
-                        DataUtil.AddNewRow(dgvAPEnquiry.DataSource as DataTable);
-                        dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = DateTime.Now;
-                        dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colAccepted.Index].ReadOnly = true;
+
+                        int Index = dgvAPEnquiry.CurrentRow.Index;
+                        if (dgvAPEnquiry.Rows.Count == 1)
+                        {
+                            DataUtil.AddNewRow(dgvAPEnquiry.DataSource as DataTable);
+                            dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = DateTime.Now;
+                            dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colAccepted.Index].ReadOnly = true;
+                        }
+                        dgvAPEnquiry.Rows.RemoveAt(Index);
                     }
-                    dgvAPEnquiry.Rows.RemoveAt(Index);
+                }
+                else
+                {
+                    MessageBox.Show("စုံစမ်းပြီးသော POSM များကိုဖျက်ခွင့်မရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else

@@ -92,12 +92,9 @@ namespace PTIC.Marketing.DA
             try
             {
                 string query = "SELECT * FROM AP_Enquiry "
-                                           + "WHERE (CONVERT(VARCHAR(10),OpenDate,103) Between "
-                                               + "CONVERT(VARCHAR(10),CAST('{0}' As DateTime),103) AND "
-                                                   + "CONVERT(VARCHAR(10),CAST('{1}' As DateTime),103)) "
-                                                       + "AND  (CONVERT(VARCHAR(10),CloseDate,103) Between "
-                                                           + "CONVERT(VARCHAR(10),CAST('{0}' As DateTime),103) AND "
-                                                                + "CONVERT(VARCHAR(10),CAST('{1}' As DateTime),103))";
+                                + "WHERE CAST(OpenDate As Date) BETWEEN "
+                                + "CAST('{0}' As Date) AND CAST('{1}' As Date)";
+
                 dtAP_Enquiry = b.SelectByQuery(string.Format(query,StartDate,EndDate));
             }
             catch (Exception ex)

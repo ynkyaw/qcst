@@ -138,7 +138,7 @@ namespace PTIC.VC.Sale.OfficeSales
                             Nconvert = Convert.ToDecimal(DataTypeParser.Parse(row.Cells["clnN100Convert"].Value, typeof(decimal), 0)),
                             Remark = (string)DataTypeParser.Parse(row.Cells["clnRemark"].Value, typeof(string), string.Empty),
                         };
-                        if (spdetail.Nconvert != 0 && spdetail.retailPrice != 0 && spdetail.ProductID != -1 && spdetail.SaleQty != 0)
+                        if (spdetail.retailPrice != 0 && spdetail.ProductID != -1 && spdetail.SaleQty != 0)
                         {
                             spdetails.Add(spdetail);
                         }

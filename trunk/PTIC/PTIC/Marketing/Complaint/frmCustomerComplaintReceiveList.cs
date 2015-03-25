@@ -56,7 +56,7 @@ namespace PTIC.Marketing.Complaint
                 // Call CustomerComplaintRegister
                 int ComplaintReceiveID = (int)DataTypeParser.Parse(dgvComplaintReceive.CurrentRow.Cells[colComplaintReceivedID.Index].Value, typeof(int), -1);
                 frmCustomerComplaintRegistered _frmCustomerComplaintRegistered = new frmCustomerComplaintRegistered(ComplaintReceiveID);
-                UIManager.MdiChildOpenForm(_frmCustomerComplaintRegistered);
+                UIManager.OpenForm(_frmCustomerComplaintRegistered);
                 LoadNBind(dtpReceivedDate);
             }
         }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbTo = new System.Windows.Forms.ComboBox();
             this.cmbFrom = new System.Windows.Forms.ComboBox();
@@ -47,6 +47,12 @@
             this.dtpReceivedDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.txtActionAccepter = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -91,12 +97,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -131,7 +131,7 @@
             this.cmbTo.Location = new System.Drawing.Point(947, 7);
             this.cmbTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbTo.Name = "cmbTo";
-            this.cmbTo.Size = new System.Drawing.Size(150, 25);
+            this.cmbTo.Size = new System.Drawing.Size(150, 27);
             this.cmbTo.TabIndex = 289;
             this.cmbTo.Visible = false;
             // 
@@ -144,7 +144,7 @@
             this.cmbFrom.Location = new System.Drawing.Point(744, 7);
             this.cmbFrom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbFrom.Name = "cmbFrom";
-            this.cmbFrom.Size = new System.Drawing.Size(150, 25);
+            this.cmbFrom.Size = new System.Drawing.Size(150, 27);
             this.cmbFrom.TabIndex = 287;
             this.cmbFrom.Visible = false;
             // 
@@ -155,7 +155,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(170, 10);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(191, 19);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(172, 20);
             this.lblHeaderPCat.TabIndex = 46;
             this.lblHeaderPCat.Text = ">   Complaint Register";
             // 
@@ -168,7 +168,7 @@
             this.lblHeader.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.Location = new System.Drawing.Point(8, 10);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(167, 19);
+            this.lblHeader.Size = new System.Drawing.Size(156, 20);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Customer Complaint";
             this.lblHeader.Click += new System.EventHandler(this.lblHeader_Click);
@@ -198,7 +198,7 @@
             this.txtTo.Location = new System.Drawing.Point(947, 8);
             this.txtTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(166, 25);
+            this.txtTo.Size = new System.Drawing.Size(166, 28);
             this.txtTo.TabIndex = 292;
             // 
             // txtFrom
@@ -208,7 +208,7 @@
             this.txtFrom.Location = new System.Drawing.Point(744, 7);
             this.txtFrom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(166, 25);
+            this.txtFrom.Size = new System.Drawing.Size(166, 28);
             this.txtFrom.TabIndex = 291;
             // 
             // label18
@@ -217,7 +217,7 @@
             this.label18.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(917, 10);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(25, 19);
+            this.label18.Size = new System.Drawing.Size(27, 20);
             this.label18.TabIndex = 290;
             this.label18.Text = "To";
             // 
@@ -227,7 +227,7 @@
             this.label17.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(696, 11);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 19);
+            this.label17.Size = new System.Drawing.Size(43, 20);
             this.label17.TabIndex = 288;
             this.label17.Text = "From";
             // 
@@ -239,7 +239,7 @@
             this.txtMsgNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMsgNo.Name = "txtMsgNo";
             this.txtMsgNo.ReadOnly = true;
-            this.txtMsgNo.Size = new System.Drawing.Size(140, 25);
+            this.txtMsgNo.Size = new System.Drawing.Size(140, 28);
             this.txtMsgNo.TabIndex = 282;
             // 
             // label2
@@ -248,7 +248,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(238, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 19);
+            this.label2.Size = new System.Drawing.Size(62, 20);
             this.label2.TabIndex = 283;
             this.label2.Text = "စာအမှတ်";
             // 
@@ -260,7 +260,7 @@
             this.txtRefNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRefNo.Name = "txtRefNo";
             this.txtRefNo.ReadOnly = true;
-            this.txtRefNo.Size = new System.Drawing.Size(140, 25);
+            this.txtRefNo.Size = new System.Drawing.Size(140, 28);
             this.txtRefNo.TabIndex = 279;
             // 
             // label1
@@ -269,7 +269,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(463, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 19);
+            this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 281;
             this.label1.Text = "Ref No :";
             // 
@@ -282,7 +282,7 @@
             this.dtpReceivedDate.Location = new System.Drawing.Point(77, 7);
             this.dtpReceivedDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpReceivedDate.Name = "dtpReceivedDate";
-            this.dtpReceivedDate.Size = new System.Drawing.Size(140, 25);
+            this.dtpReceivedDate.Size = new System.Drawing.Size(140, 28);
             this.dtpReceivedDate.TabIndex = 278;
             // 
             // label5
@@ -291,7 +291,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 19);
+            this.label5.Size = new System.Drawing.Size(42, 20);
             this.label5.TabIndex = 280;
             this.label5.Text = "‌နေ့စွဲ :";
             // 
@@ -322,6 +322,68 @@
             this.panel5.TabIndex = 154;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(866, 42);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(38, 20);
+            this.label21.TabIndex = 300;
+            this.label21.Text = "Date";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(866, 98);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(38, 20);
+            this.label20.TabIndex = 299;
+            this.label20.Text = "Date";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(865, 122);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(102, 28);
+            this.dateTimePicker2.TabIndex = 298;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(865, 66);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(102, 28);
+            this.dateTimePicker1.TabIndex = 297;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(990, 122);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(166, 28);
+            this.textBox1.TabIndex = 296;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(1043, 98);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 20);
+            this.label19.TabIndex = 295;
+            this.label19.Text = "အမည်";
+            // 
             // txtActionAccepter
             // 
             this.txtActionAccepter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -329,7 +391,7 @@
             this.txtActionAccepter.Location = new System.Drawing.Point(990, 66);
             this.txtActionAccepter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtActionAccepter.Name = "txtActionAccepter";
-            this.txtActionAccepter.Size = new System.Drawing.Size(166, 25);
+            this.txtActionAccepter.Size = new System.Drawing.Size(166, 28);
             this.txtActionAccepter.TabIndex = 294;
             // 
             // panel8
@@ -350,7 +412,7 @@
             this.label15.ForeColor = System.Drawing.Color.MediumBlue;
             this.label15.Location = new System.Drawing.Point(10, 2);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(181, 19);
+            this.label15.Size = new System.Drawing.Size(167, 20);
             this.label15.TabIndex = 46;
             this.label15.Text = "Explanation && Action";
             // 
@@ -396,7 +458,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(1043, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 19);
+            this.label4.Size = new System.Drawing.Size(45, 20);
             this.label4.TabIndex = 259;
             this.label4.Text = "အမည်";
             // 
@@ -409,7 +471,7 @@
             this.cmbActionAccepter.Location = new System.Drawing.Point(1134, 65);
             this.cmbActionAccepter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbActionAccepter.Name = "cmbActionAccepter";
-            this.cmbActionAccepter.Size = new System.Drawing.Size(10, 25);
+            this.cmbActionAccepter.Size = new System.Drawing.Size(10, 27);
             this.cmbActionAccepter.TabIndex = 258;
             this.cmbActionAccepter.Visible = false;
             // 
@@ -421,7 +483,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(476, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 19);
+            this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 257;
             this.label6.Text = "Action";
             // 
@@ -433,7 +495,7 @@
             this.lblExplan1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExplan1.Location = new System.Drawing.Point(23, 42);
             this.lblExplan1.Name = "lblExplan1";
-            this.lblExplan1.Size = new System.Drawing.Size(97, 19);
+            this.lblExplan1.Size = new System.Drawing.Size(85, 20);
             this.lblExplan1.TabIndex = 253;
             this.lblExplan1.Text = "Explanation";
             // 
@@ -474,7 +536,7 @@
             this.txtCommentAccepter.Location = new System.Drawing.Point(950, 66);
             this.txtCommentAccepter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCommentAccepter.Name = "txtCommentAccepter";
-            this.txtCommentAccepter.Size = new System.Drawing.Size(166, 25);
+            this.txtCommentAccepter.Size = new System.Drawing.Size(166, 28);
             this.txtCommentAccepter.TabIndex = 295;
             // 
             // panel9
@@ -494,7 +556,7 @@
             this.label16.ForeColor = System.Drawing.Color.MediumBlue;
             this.label16.Location = new System.Drawing.Point(10, 2);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 19);
+            this.label16.Size = new System.Drawing.Size(77, 20);
             this.label16.TabIndex = 46;
             this.label16.Text = "Comment";
             // 
@@ -528,7 +590,7 @@
             this.label9.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(1003, 38);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 19);
+            this.label9.Size = new System.Drawing.Size(45, 20);
             this.label9.TabIndex = 264;
             this.label9.Text = "အမည်";
             // 
@@ -541,7 +603,7 @@
             this.cmbCommentAccepter.Location = new System.Drawing.Point(950, 154);
             this.cmbCommentAccepter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCommentAccepter.Name = "cmbCommentAccepter";
-            this.cmbCommentAccepter.Size = new System.Drawing.Size(150, 25);
+            this.cmbCommentAccepter.Size = new System.Drawing.Size(150, 27);
             this.cmbCommentAccepter.TabIndex = 263;
             this.cmbCommentAccepter.Visible = false;
             // 
@@ -553,7 +615,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(23, 38);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 19);
+            this.label11.Size = new System.Drawing.Size(70, 20);
             this.label11.TabIndex = 269;
             this.label11.Text = "Comment";
             // 
@@ -590,7 +652,7 @@
             this.dtpClosedDate.Location = new System.Drawing.Point(114, 9);
             this.dtpClosedDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpClosedDate.Name = "dtpClosedDate";
-            this.dtpClosedDate.Size = new System.Drawing.Size(140, 25);
+            this.dtpClosedDate.Size = new System.Drawing.Size(140, 28);
             this.dtpClosedDate.TabIndex = 279;
             // 
             // label8
@@ -601,7 +663,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(277, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 19);
+            this.label8.Size = new System.Drawing.Size(129, 20);
             this.label8.TabIndex = 258;
             this.label8.Text = "Closed Department";
             // 
@@ -613,7 +675,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(23, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 19);
+            this.label7.Size = new System.Drawing.Size(85, 20);
             this.label7.TabIndex = 257;
             this.label7.Text = "Closed Date";
             // 
@@ -626,7 +688,7 @@
             this.cmbCloseDept.Location = new System.Drawing.Point(417, 9);
             this.cmbCloseDept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCloseDept.Name = "cmbCloseDept";
-            this.cmbCloseDept.Size = new System.Drawing.Size(150, 25);
+            this.cmbCloseDept.Size = new System.Drawing.Size(150, 27);
             this.cmbCloseDept.TabIndex = 256;
             // 
             // panel7
@@ -692,7 +754,7 @@
             this.label14.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(993, 20);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 19);
+            this.label14.Size = new System.Drawing.Size(45, 20);
             this.label14.TabIndex = 292;
             this.label14.Text = "အမည်";
             // 
@@ -705,7 +767,7 @@
             this.cmbReceiver.Location = new System.Drawing.Point(935, 45);
             this.cmbReceiver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbReceiver.Name = "cmbReceiver";
-            this.cmbReceiver.Size = new System.Drawing.Size(166, 25);
+            this.cmbReceiver.Size = new System.Drawing.Size(166, 27);
             this.cmbReceiver.TabIndex = 291;
             // 
             // label13
@@ -714,7 +776,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(781, 20);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 19);
+            this.label13.Size = new System.Drawing.Size(59, 20);
             this.label13.TabIndex = 290;
             this.label13.Text = "မှတ်ချက်";
             // 
@@ -737,7 +799,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(424, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(170, 19);
+            this.label12.Size = new System.Drawing.Size(189, 20);
             this.label12.TabIndex = 288;
             this.label12.Text = "ဖြစ်ပေါ်လာသည့်အကြောင်းအရာ";
             // 
@@ -760,7 +822,7 @@
             this.label10.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(219, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 19);
+            this.label10.Size = new System.Drawing.Size(69, 20);
             this.label10.TabIndex = 286;
             this.label10.Text = "Customer";
             // 
@@ -772,7 +834,7 @@
             this.txtCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.ReadOnly = true;
-            this.txtCustomer.Size = new System.Drawing.Size(187, 25);
+            this.txtCustomer.Size = new System.Drawing.Size(187, 28);
             this.txtCustomer.TabIndex = 285;
             // 
             // label3
@@ -781,7 +843,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(72, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 19);
+            this.label3.Size = new System.Drawing.Size(24, 20);
             this.label3.TabIndex = 284;
             this.label3.Text = "မြို့";
             // 
@@ -793,7 +855,7 @@
             this.txtTown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTown.Name = "txtTown";
             this.txtTown.ReadOnly = true;
-            this.txtTown.Size = new System.Drawing.Size(135, 25);
+            this.txtTown.Size = new System.Drawing.Size(135, 28);
             this.txtTown.TabIndex = 283;
             // 
             // dataGridViewTextBoxColumn1
@@ -810,8 +872,8 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn3.HeaderText = "ဖြစ်ပေါ်သည့်အကြောင်း";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 400;
@@ -819,76 +881,14 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "Remark";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(990, 122);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 25);
-            this.textBox1.TabIndex = 296;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(1043, 98);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 19);
-            this.label19.TabIndex = 295;
-            this.label19.Text = "အမည်";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(865, 66);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(102, 25);
-            this.dateTimePicker1.TabIndex = 297;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(865, 122);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(102, 25);
-            this.dateTimePicker2.TabIndex = 298;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(866, 98);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 19);
-            this.label20.TabIndex = 299;
-            this.label20.Text = "Date";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(866, 42);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 19);
-            this.label21.TabIndex = 300;
-            this.label21.Text = "Date";
-            // 
             // frmCustomerComplaintRegistered
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1189, 733);
