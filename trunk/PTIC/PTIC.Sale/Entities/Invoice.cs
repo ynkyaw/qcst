@@ -90,6 +90,36 @@ namespace PTIC.Sale.Entities
                 results.AddResult(new ValidationResult(ErrorMessages.Invoice_CommDiscAmt_GreaterThan_Total, this, "", "", null));
         }
 
+        override public string ToString()
+        {
+            string str = String.Empty;
+            str = String.Concat(str, "ID = ", ID, "\r\n");
+            str = String.Concat(str, "DeliveryID = ", DeliveryID, "\r\n");
+            str = String.Concat(str, "CusID = ", CusID, "\r\n");
+            str = String.Concat(str, "SalesPersonID = ", SalesPersonID, "\r\n");
+            str = String.Concat(str, "SaleType = ", SaleType, "\r\n");
+            str = String.Concat(str, "TransportTypeID = ", TransportTypeID, "\r\n");
+            str = String.Concat(str, "TransportGateID = ", TransportGateID, "\r\n");
+            str = String.Concat(str, "InvoiceNo = ", InvoiceNo, "\r\n");
+            str = String.Concat(str, "SalesDate = ", SalesDate, "\r\n");
+            str = String.Concat(str, "GateInvNo = ", GateInvNo, "\r\n");
+            str = String.Concat(str, "TransportCharges = ", TransportCharges, "\r\n");
+            str = String.Concat(str, "TotalAmt = ", TotalAmt, "\r\n");
+            str = String.Concat(str, "CommDiscAmt = ", CommDiscAmt, "\r\n");
+            str = String.Concat(str, "OtherAmt = ", OtherAmt, "\r\n");
+            str = String.Concat(str, "NetAmt = ", NetAmt, "\r\n");
+            str = String.Concat(str, "PaidAmt = ", PaidAmt, "\r\n");
+            str = String.Concat(str, "BalanceAmt = ", BalanceAmt, "\r\n");
+            str = String.Concat(str, "IsMain = ", IsMain, "\r\n");
+            str = String.Concat(str, "IsDevice = ", IsDevice, "\r\n");
+            str = String.Concat(str, "VoucherType = ", VoucherType, "\r\n");
+            str = String.Concat(str, "Paid = ", Paid, "\r\n");
+            str = String.Concat(str, "Remark = ", Remark, "\r\n");
+            str = String.Concat(str, "DateAdded = ", DateAdded, "\r\n");
+            str = String.Concat(str, "LastModified = ", LastModified, "\r\n");
+            str = String.Concat(str, "IsDeleted = ", IsDeleted, "\r\n");
+            return str;
+        }
 
     }
 }
