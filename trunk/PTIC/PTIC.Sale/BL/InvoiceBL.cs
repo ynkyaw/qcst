@@ -156,7 +156,7 @@ namespace PTIC.Sale.BL
         /// <param name="newSaleDetailRecords"></param>
         /// <param name="VenID">0 means not via vehicle</param>
         /// <param name="WarehouseID">0 means not via warehouse </param>
-        /// <returns></returns>
+        /// <returns>Return inserted invoice id</returns>
         public int? Add(Invoice newInvoice, List<SaleDetail> newSaleDetailRecords, int VenID, int WarehouseID)
         {
             try
