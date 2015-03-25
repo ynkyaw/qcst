@@ -441,7 +441,8 @@ namespace PTIC.Sale.DA
                 if (conn.State == ConnectionState.Open)
                 {
                     transaction.Rollback();
-                    affectedrow = 0;
+                    //affectedrow = 0;
+                    insertedInvoiceID = null;
                 }
                 if (sqle.Number == 2627)
                     throw new Exception("Invoice No ရှိပြီးဖြစ်သည်။ \nပြန်လည်ဖြည့်သွင်းပေးပါရန်။");
@@ -453,7 +454,8 @@ namespace PTIC.Sale.DA
                 transaction.Dispose();
                 cmd.Dispose();
             }
-            return affectedrow;
+            //return affectedrow;
+            return insertedInvoiceID;
         }
 
         /// <summary>
