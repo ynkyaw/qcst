@@ -438,26 +438,36 @@ namespace PTIC.VC.Marketing.MarketingPlan
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvIntialMarketingPlan.SelectedRows.Count > 0)
+            InitialMarketingPlanBL _InitialMarketingPlanBL = new InitialMarketingPlanBL();
+            InitialMarketingPlan _InitialMarketingPlan = new InitialMarketingPlan();
+
+            if (dgvIntialMarketingPlan.SelectedRows.Count < 1)
             {
-                if ((int?)DataTypeParser.Parse(dgvIntialMarketingPlan.CurrentRow.Cells[colInitialMarketingPlanID.Index].Value, typeof(int), null) == null)
-                {
-                    if (MessageBox.Show("Are you sure want to delete Selected Row? It can only delete unsaved row.", "အတည်ပြုချက်", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        int Index = dgvIntialMarketingPlan.CurrentRow.Index;
-                        dgvIntialMarketingPlan.Rows.RemoveAt(Index);
-                        ClearButton();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("စီစဉ်ပြီးသော လမ်းကြောင်းများကို ပယ်ဖျက်၍မရပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                ToastMessageBox.Show(Resource.errSelectRowToDelete); return;
             }
             else
             {
-                MessageBox.Show(Resource.errSelectRowToDelete, "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (MessageBox.Show(Resource.qstSureToDeleteRow, Resource.deleteConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    _InitialMarketingPlan.ID = (int)DataTypeParser.Parse(dgvIntialMarketingPlan.SelectedRows[0].Cells[colInitialMarketingPlanID.Index].Value, typeof(int), -1);
+                if (_InitialMarketingPlan.ID == -1)
+                {
+                    dgvIntialMarketingPlan.Rows.RemoveAt(dgvIntialMarketingPlan.SelectedRows[0].Index);
+                    ClearButton();
+                    return;
+                }
+                int affectedrow = _InitialMarketingPlanBL.Delete(_InitialMarketingPlan);
+                if (affectedrow > 0)
+                {
+                    ToastMessageBox.Show(Resource.errSuccessfullyDeleted);
+                    ClearButton();
+                    LoadNBindData();
+                }
+                else
+                {
+                    MessageBox.Show(Resource.errCantDelete, "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
         }
 
         private void dgvIntialMarketingPlan_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)

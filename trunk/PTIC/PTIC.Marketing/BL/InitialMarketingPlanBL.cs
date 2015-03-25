@@ -138,5 +138,12 @@ namespace PTIC.Marketing.BL
 
         }
         #endregion
+
+        #region DELETE
+        public int Delete(InitialMarketingPlan _InitialMarketingPlan)
+        {
+            return InitialMarketingPlanDA.Delete(_InitialMarketingPlan);
+        }
+        #endregion
     }
 }
