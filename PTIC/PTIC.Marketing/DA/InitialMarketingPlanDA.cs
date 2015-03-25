@@ -171,5 +171,22 @@ namespace PTIC.Marketing.DA
             return affectedrow;
         }
         #endregion
+
+        #region DELETE
+        public static int Delete(InitialMarketingPlan _InitialMarketingPlan)
+        {
+            int InitialMarketingPlanID = 0;
+            try
+            {
+                b.Delete("InitialMarketingPlan", _InitialMarketingPlan.ID);
+                InitialMarketingPlanID = _InitialMarketingPlan.ID;
+            }
+            catch (Exception ex)
+            {
+                return InitialMarketingPlanID = 0;
+            }
+            return InitialMarketingPlanID;
+        }
+        #endregion
     }
 }
