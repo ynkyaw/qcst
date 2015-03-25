@@ -164,6 +164,19 @@ namespace PTIC.VC.Marketing.MobileService
             }
         }
 
+        private void LoadNBindMobileServiceLogByServiceDate(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                dgvMobileServiceLog.DataSource = new MobileServicePlanBL().GetMobileServiceLogsByServiceDate(startDate, endDate);
+            }
+            catch (Exception e)
+            {
+                throw e;
+                _logger.Error(e);
+            }
+        }
+
         private void LoadNBindMobileServiceLogByInitialMobileServicePlanID(int InitialMobileServicePlanID)
         {
             try
@@ -226,6 +239,11 @@ namespace PTIC.VC.Marketing.MobileService
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
         {
             dtpEndDate.Value = UIManager.ChangeAnotherdtpOndtpChange(dtpStartDate);
+        }
+
+        private void btnSearchService_Click(object sender, EventArgs e)
+        {
+            LoadNBindMobileServiceLogByServiceDate(dtpStartDate.Value, dtpEndDate.Value);
         }
                                        
     }

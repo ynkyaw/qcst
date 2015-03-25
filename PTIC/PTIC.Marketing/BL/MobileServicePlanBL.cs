@@ -36,6 +36,11 @@ namespace PTIC.Marketing.BL
             return MobileServicePlanDA.SelectMobileServiceLogsBy(startDate, endDate);
         }
 
+        public DataTable GetMobileServiceLogsByServiceDate(DateTime startDate, DateTime endDate)
+        {
+            return MobileServicePlanDA.SelectMobileServiceLogsByServiceDate(startDate, endDate);
+        }
+
         public DataTable GetMobileServiceLogsWithoutDetailsBy(DateTime startDate, DateTime endDate)
         {
             return MobileServicePlanDA.SelectMobileServiceLogsWithoutDetailsBy(startDate, endDate);

@@ -125,6 +125,33 @@ namespace PTIC.Marketing.DA
             return table;
         }
 
+        public static DataTable SelectMobileServiceLogsByServiceDate(DateTime startDate, DateTime endDate)
+        {
+            DataTable table = null;
+            string tableName = "MobileServiceLogTable";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "usp_MobileServiceLogSelectByServiceDate";
+
+                command.Parameters.AddWithValue("@p_startDate", startDate);
+                command.Parameters["@p_startDate"].Direction = ParameterDirection.Input;
+
+                command.Parameters.AddWithValue("@p_endDate", endDate);
+                command.Parameters["@p_endDate"].Direction = ParameterDirection.Input;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+            }
+            catch (SqlException sqle)
+            {
+                throw sqle;
+            }
+            return table;
+        }
 
         public static DataTable SelectMobileServiceLogsWithoutDetailsBy(DateTime startDate, DateTime endDate)
         {

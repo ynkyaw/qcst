@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.lblMarketing = new System.Windows.Forms.Label();
@@ -93,7 +94,7 @@
             // 
             this.dgvTeleMarketingPlan.AllowUserToAddRows = false;
             this.dgvTeleMarketingPlan.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 9F);
             this.dgvTeleMarketingPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTeleMarketingPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
@@ -121,8 +122,8 @@
             this.dgvTeleMarketingPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTeleMarketingPlan.MultiSelect = false;
             this.dgvTeleMarketingPlan.Name = "dgvTeleMarketingPlan";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Zawgyi-One", 9F);
-            this.dgvTeleMarketingPlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvTeleMarketingPlan.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTeleMarketingPlan.RowTemplate.Height = 30;
             this.dgvTeleMarketingPlan.Size = new System.Drawing.Size(908, 613);
             this.dgvTeleMarketingPlan.TabIndex = 145;
@@ -179,6 +180,8 @@
             // colTownship
             // 
             this.colTownship.DataPropertyName = "Township";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.colTownship.DefaultCellStyle = dataGridViewCellStyle4;
             this.colTownship.HeaderText = "မြို့နယ်";
             this.colTownship.Name = "colTownship";
             this.colTownship.ReadOnly = true;
