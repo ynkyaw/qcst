@@ -137,6 +137,9 @@ namespace PTIC.Marketing.DA
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "usp_MobileServiceLogSelectByServiceDate";
 
+
+
+
                 command.Parameters.AddWithValue("@p_startDate", startDate);
                 command.Parameters["@p_startDate"].Direction = ParameterDirection.Input;
 
@@ -152,6 +155,7 @@ namespace PTIC.Marketing.DA
             }
             return table;
         }
+
 
         public static DataTable SelectMobileServiceLogsWithoutDetailsBy(DateTime startDate, DateTime endDate)
         {
