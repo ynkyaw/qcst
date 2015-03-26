@@ -215,6 +215,7 @@ namespace PTIC.Sale.BL
             {
                 // Invoice
                 Validator<Invoice> invoiceValidator = _validatorFactory.CreateValidator<Invoice>();
+                newInvoice.SaleType = 2;
                 ValidationResults vInvResults = invoiceValidator.Validate(newInvoice);
                 base.ValidationResults = vInvResults;
                 if (!vInvResults.IsValid)
