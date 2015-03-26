@@ -445,7 +445,7 @@
             this.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCompanyPlan";
-            this.Text = "frmCompanyPlan";
+            this.Text = "Company Plan";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanyPlan)).EndInit();

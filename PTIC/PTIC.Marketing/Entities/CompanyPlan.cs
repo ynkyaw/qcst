@@ -59,9 +59,9 @@ namespace PTIC.Marketing.Entities
             get { return _isConfirmed; }
             set { _isConfirmed = value; }
         }
-        private DateTime _createdDate;
+        private Nullable<DateTime> _createdDate;
 
-        public DateTime CreatedDate
+        public Nullable<DateTime> CreatedDate
         {
             get { return _createdDate; }
             set { _createdDate = value; }

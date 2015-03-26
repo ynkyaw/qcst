@@ -14,6 +14,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 {
     public partial class frmCompanyPlanLog : Form
     {
+        DataTable approveCompanyPlan = new DataTable();
         public frmCompanyPlanLog()
         {
             InitializeComponent();
@@ -28,7 +29,50 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            DataTable temp = null;
+            DataRow[] dr;
 
+            temp = approveCompanyPlan.Copy();
+            if (chkTargetedDate.Checked) 
+            {
+                dr = temp.Select("TargetedDate >= #" + dtpStartDate.Value.Date.ToShortDateString() + "# AND TargetedDate <=#" + dtpEndDate.Value.Date.ToShortDateString() + "#");
+                if (dr.Length > 0)
+                {
+                    temp = dr.CopyToDataTable();
+                }
+                else 
+                {
+                    dgvMobileServiceLog.DataSource = null;
+                    return;
+                }
+            }
+            if (chkArrivedDate.Checked)
+            {
+                dr = temp.Select("ArrivedDate >=#" + dtpArrivedStart.Value.Date + "# AND ArrivedDate <=#" + dtpArrivedEnd.Value.Date + "#");
+                if (dr.Length > 0)
+                {
+                    temp = dr.CopyToDataTable();
+                }
+                else 
+                {
+                    dgvMobileServiceLog.DataSource = null;
+                    return;
+                }
+            }
+            if (chkCustomer.Checked)
+            {
+                dr = temp.Select("CusName Like '%" +textBox1.Text+"%'");
+                if (dr.Length > 0)
+                {
+                    temp = dr.CopyToDataTable();
+                }
+                else 
+                {
+                    dgvMobileServiceLog.DataSource = null;
+                    return;
+                }
+            }
+            dgvMobileServiceLog.DataSource = temp;
         }
 
         private void frmCompanyPlanLog_Load(object sender, EventArgs e)
@@ -41,7 +85,8 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
         #region
         private void LoadCompanyPlanDetails() 
         {
-            DataTable approveCompanyPlan = new CompanyPlanBL().SelectCompanyPlanLog();
+            //DataTable approveCompanyPlan = new CompanyPlanBL().SelectCompanyPlanLog();
+            approveCompanyPlan = new CompanyPlanBL().SelectCompanyPlanLog();
             dgvMobileServiceLog.AutoGenerateColumns = false;
             dgvMobileServiceLog.DataSource = approveCompanyPlan;
         }
@@ -74,6 +119,11 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             {
                 dgvMobileServiceLog.Rows[e.RowIndex].Cells[colServiceDetail.Index].Value = "ကြည့်မည်";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadCompanyPlanDetails();
         }
     }
 }

@@ -141,9 +141,9 @@
             this.lblHeader.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeader.Location = new System.Drawing.Point(151, 11);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(174, 19);
+            this.lblHeader.Size = new System.Drawing.Size(215, 19);
             this.lblHeader.TabIndex = 45;
-            this.lblHeader.Text = ">    Company Plan Log";
+            this.lblHeader.Text = ">    Company Plan  Details";
             // 
             // txtContactPerson
             // 
