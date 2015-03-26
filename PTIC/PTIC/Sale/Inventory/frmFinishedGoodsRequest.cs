@@ -1135,7 +1135,7 @@ namespace PTIC.VC.Sale.Inventory
 
         private void btnFGDelete_Click(object sender, EventArgs e)
         {
-            if (dgvFinishedGoods.CurrentRow.IsNewRow || dgvFinishedGoods.SelectedRows.Count < 1)
+            if (dgvFinishedGoods.CurrentRow.IsNewRow || dgvFinishedGoods.SelectedRows.Count != 1 )
             {
                 ToastMessageBox.Show(Resource.errSelectRowToDelete);
                 return;
@@ -1145,6 +1145,16 @@ namespace PTIC.VC.Sale.Inventory
                 return;
 
             DataGridViewRow selectedRow = dgvFinishedGoods.CurrentRow;
+            int finishedGoodId = -1;
+            int.TryParse(selectedRow.Cells[colFinishedGoodID.Index].Value + string.Empty, out finishedGoodId);
+            if (finishedGoodId != -1) 
+            {
+                MessageBox.Show("Selected Item is Already Saved!\n Can't be delete!");
+                return;
+            }
+
+
+
             int FinishedGoodID = (int)DataTypeParser.Parse(selectedRow.Cells["colFinishedGoodID"].Value, typeof(int), -1);
             if (FinishedGoodID == -1)
             {
