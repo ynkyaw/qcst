@@ -29,7 +29,7 @@ namespace PTIC.Sale.Entities
                     MessageTemplateResourceType = typeof(PTIC.Sale.ErrorMessages))]
         public int SalesPersonID {get;set;}
 
-        [RangeValidator(0, RangeBoundaryType.Inclusive, 1, RangeBoundaryType.Inclusive,
+        [RangeValidator(0, RangeBoundaryType.Inclusive, 2, RangeBoundaryType.Inclusive,
                     MessageTemplateResourceName = "Invoice_SaleType_Require",
                     MessageTemplateResourceType = typeof(PTIC.Sale.ErrorMessages))]
         public int SaleType { get; set; } // 0: Credit 1: Cosignment
