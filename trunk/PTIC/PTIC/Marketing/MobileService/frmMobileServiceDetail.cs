@@ -228,11 +228,23 @@ namespace PTIC.VC.Marketing.MobileService
                 return;
             }
 
+            if (selectedRow.Index == 0) 
+            {
+                DataTable dtAPRequest = dgvServiceRecord.DataSource as DataTable;
+                DataRow newRow = dtAPRequest.NewRow();
+                dtAPRequest.Rows.Add(newRow);
+                this.dgvServiceRecord.DataSource = dtAPRequest;
+                dgvServiceRecord.Rows.RemoveAt(0);
+                return;
+            }
+        
+
+
             DataRowState selectedRowState = (selectedRow.DataBoundItem as DataRowView).Row.RowState;
             if (selectedRowState == DataRowState.Added || selectedRowState == DataRowState.Detached)
             {
                 // Delete row just from GridView because it is a new row that has not been in Database
-                dgvServiceRecord.Rows.RemoveAt(selectedRow.Index);
+                dgvServiceRecord.Rows.Remove(selectedRow);
                 return;
             }
 

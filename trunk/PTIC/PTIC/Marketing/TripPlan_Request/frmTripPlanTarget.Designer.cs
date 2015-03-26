@@ -34,13 +34,13 @@
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvTripPlanTarget = new System.Windows.Forms.DataGridView();
             this.colTripPlanTargetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBrand = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colTargetAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,6 +93,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 46);
             this.panel1.TabIndex = 70;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(108, 6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(90, 34);
+            this.btnDelete.TabIndex = 127;
+            this.btnDelete.Text = "ဖျက်မည်";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -170,15 +180,6 @@
             this.colTargetAmt.MaxInputLength = 10;
             this.colTargetAmt.Name = "colTargetAmt";
             this.colTargetAmt.Width = 150;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(108, 6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(90, 34);
-            this.btnDelete.TabIndex = 127;
-            this.btnDelete.Text = "ဖျက်မည်";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // frmTripPlanTarget
             // 
