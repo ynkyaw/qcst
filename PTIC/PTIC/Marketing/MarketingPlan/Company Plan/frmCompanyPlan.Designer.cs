@@ -130,9 +130,9 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(102, 12);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(117, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(153, 20);
             this.lblHeaderPCat.TabIndex = 46;
-            this.lblHeaderPCat.Text = ">  Company Plan";
+            this.lblHeaderPCat.Text = ">  Company Marketing";
             // 
             // panel2
             // 

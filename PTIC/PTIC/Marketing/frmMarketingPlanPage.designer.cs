@@ -40,8 +40,8 @@
             this.btnConfirmTelemarketingPlan = new System.Windows.Forms.Button();
             this.btnConfirmMobileServicePlan = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -172,25 +172,25 @@
             this.panel2.Size = new System.Drawing.Size(1020, 532);
             this.panel2.TabIndex = 36;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(33, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 57);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Company Plan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(33, 339);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 57);
             this.button2.TabIndex = 38;
-            this.button2.Text = "Company Plan\r\nConfirmation";
+            this.button2.Text = "Company Marketing \r\nConfirmation";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(33, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 57);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Company Marketing";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMarketingPlanPage
             // 
