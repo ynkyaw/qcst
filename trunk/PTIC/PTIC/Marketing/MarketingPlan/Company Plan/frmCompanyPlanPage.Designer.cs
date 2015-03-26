@@ -54,9 +54,9 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetup.Location = new System.Drawing.Point(9, 13);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(131, 19);
+            this.lblSetup.Size = new System.Drawing.Size(158, 19);
             this.lblSetup.TabIndex = 0;
-            this.lblSetup.Text = "Mobile Service";
+            this.lblSetup.Text = "Company Marketing";
             // 
             // btnMobileServiceDetail
             // 
@@ -66,7 +66,7 @@
             this.btnMobileServiceDetail.Name = "btnMobileServiceDetail";
             this.btnMobileServiceDetail.Size = new System.Drawing.Size(198, 60);
             this.btnMobileServiceDetail.TabIndex = 47;
-            this.btnMobileServiceDetail.Text = "Company Plan Detail";
+            this.btnMobileServiceDetail.Text = "Company Marketing Detail";
             this.btnMobileServiceDetail.UseVisualStyleBackColor = true;
             this.btnMobileServiceDetail.Click += new System.EventHandler(this.btnMobileServiceDetail_Click);
             // 
@@ -78,7 +78,7 @@
             this.btnMobileServiceLog.Name = "btnMobileServiceLog";
             this.btnMobileServiceLog.Size = new System.Drawing.Size(198, 60);
             this.btnMobileServiceLog.TabIndex = 45;
-            this.btnMobileServiceLog.Text = "ComplanPlan Log";
+            this.btnMobileServiceLog.Text = "Company Marketing Log";
             this.btnMobileServiceLog.UseVisualStyleBackColor = true;
             this.btnMobileServiceLog.Click += new System.EventHandler(this.btnMobileServiceLog_Click);
             // 

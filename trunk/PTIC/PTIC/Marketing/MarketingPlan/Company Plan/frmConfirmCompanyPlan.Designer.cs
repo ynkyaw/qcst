@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
@@ -39,8 +40,13 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.dgvCompanyPlan = new System.Windows.Forms.DataGridView();
             this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colTargetedDate = new AGL.UI.Controls.CalendarColumn();
             this.dgvColTownship = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.calendarColumn1 = new AGL.UI.Controls.CalendarColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTargetedDate = new AGL.UI.Controls.CalendarColumn();
             this.colCompanyPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContactPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,9 +74,9 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(89, 13);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(241, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(243, 20);
             this.lblHeaderPCat.TabIndex = 46;
-            this.lblHeaderPCat.Text = ">   Mobile Service Plan Confirmation";
+            this.lblHeaderPCat.Text = ">   Company Marketing Confirmation";
             // 
             // lblMarketing
             // 
@@ -155,18 +161,6 @@
             this.colSelect.HeaderText = "Select";
             this.colSelect.Name = "colSelect";
             // 
-            // colTargetedDate
-            // 
-            this.colTargetedDate.DataPropertyName = "TargetedDate";
-            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colTargetedDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colTargetedDate.HeaderText = "သွားရမည့်နေ့";
-            this.colTargetedDate.Name = "colTargetedDate";
-            this.colTargetedDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTargetedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colTargetedDate.Width = 150;
-            // 
             // dgvColTownship
             // 
             this.dgvColTownship.DataPropertyName = "TownshipID";
@@ -178,6 +172,65 @@
             this.dgvColTownship.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvColTownship.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dgvColTownship.Width = 130;
+            // 
+            // calendarColumn1
+            // 
+            this.calendarColumn1.DataPropertyName = "TargetedDate";
+            dataGridViewCellStyle5.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle5.NullValue = null;
+            this.calendarColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.calendarColumn1.HeaderText = "သွားရမည့်နေ့";
+            this.calendarColumn1.Name = "calendarColumn1";
+            this.calendarColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.calendarColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.calendarColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "MobileServicePlanID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CusName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Customer အမည်";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ConPersonName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ဆက်သွယ်မည့်သူအမည်";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MobilePhone";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ဖုန်းနံပါတ်";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.Width = 130;
+            // 
+            // colTargetedDate
+            // 
+            this.colTargetedDate.DataPropertyName = "TargetedDate";
+            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colTargetedDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colTargetedDate.HeaderText = "သွားရမည့်နေ့";
+            this.colTargetedDate.Name = "colTargetedDate";
+            this.colTargetedDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTargetedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colTargetedDate.Width = 150;
             // 
             // colCompanyPlanID
             // 
@@ -249,5 +302,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContactPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
+        private AGL.UI.Controls.CalendarColumn calendarColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
