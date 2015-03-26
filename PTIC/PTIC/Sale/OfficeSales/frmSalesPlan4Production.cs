@@ -50,17 +50,23 @@ namespace PTIC.VC.Sale.OfficeSales
         #region Private Methods
         private bool HasNewRow(DataGridView dgv)
         {
-            int? SalesPlanDetailID = (int?)DataTypeParser.Parse(dgv.Rows[dgv.Rows.Count - 1].Cells[clnSPDetailID.Index].Value, typeof(int), null);
+            if (dgvSalesPlan4P.Rows.Count > 0)
+            {
+                int? SalesPlanDetailID = (int?)DataTypeParser.Parse(dgv.Rows[dgv.Rows.Count - 1].Cells[clnSPDetailID.Index].Value, typeof(int), null);
 
-            if (SalesPlanDetailID != null)
+                if (SalesPlanDetailID != null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else 
             {
                 return false;
             }
-            else
-            {
-                return true;
-            }
-
         }
 
         private void BindData()
@@ -226,7 +232,9 @@ namespace PTIC.VC.Sale.OfficeSales
 
                 if (affectedrows > 0)
                 {
-                    ToastMessageBox.Show(Resource.msgSuccessfullySaved);                    
+                    ToastMessageBox.Show(Resource.msgSuccessfullySaved);
+                    LoadData();
+                    BindData();
                 }
                 else
                 {
@@ -517,8 +525,7 @@ namespace PTIC.VC.Sale.OfficeSales
             else
             {
                 Save();
-                LoadData();
-                BindData();
+               
             }
         }
                
