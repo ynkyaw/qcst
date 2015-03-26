@@ -515,6 +515,12 @@ namespace PTIC.VC.Marketing.DailyMarketing
                         Remark = (string)DataTypeParser.Parse(row["Remark"].ToString(), typeof(string), string.Empty)
                     };
 
+                    if (tripPlanDetail.FromDate.Date > tripPlanDetail.ToDate.Date) 
+                    {
+                        MessageBox.Show("သွားမည့်ရက် သည် ပြန်ရောက်မည့်ရက် ထက်စောရပါမည်။");
+                        return;
+                    }
+
                     insertTripPlanDetails.Add(tripPlanDetail);                    
                 }
 
