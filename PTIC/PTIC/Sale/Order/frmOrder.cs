@@ -911,6 +911,7 @@ namespace PTIC.Sale.Order
             }
             // Disable town combo and customer combo
             this.cmbTown.Enabled = this.cmbCustomer.Enabled = false;
+            this.btnAddNewCustomer.Enabled = false;
         }
         
         /// <summary>

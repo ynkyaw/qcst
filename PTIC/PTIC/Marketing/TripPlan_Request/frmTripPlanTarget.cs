@@ -299,6 +299,19 @@ namespace PTIC.Marketing.TripPlan_Request
                 _txtAmt.KeyPress -= new KeyPressEventHandler(Control_KeyPress);
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvTripPlanTarget.SelectedRows.Count == 1)
+            {
+                if(!dgvTripPlanTarget.SelectedRows[0].IsNewRow)
+                    dgvTripPlanTarget.Rows.Remove(dgvTripPlanTarget.SelectedRows[0]);
+            }
+            else 
+            {
+                MessageBox.Show("Please select one row to delete");
+            }
+        }
                                
     }
 }
