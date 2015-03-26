@@ -595,6 +595,7 @@ namespace PTIC.VC.Marketing.MarketingPlan
 
         private void dgvIntialMarketingPlan_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            
             if (IsUpdate == false && (int)DataTypeParser.Parse(dgvIntialMarketingPlan.Rows[dgvIntialMarketingPlan.Rows.Count - 1].Cells[colInitialMarketingPlanID.Index].Value, typeof(int), -1) != -1)
             {
                 IsUpdate = true;
@@ -603,16 +604,16 @@ namespace PTIC.VC.Marketing.MarketingPlan
                 btnNew.Enabled = false;
                 btnDelete.Enabled = false;
             }
-            else if (RowIndex == (int)DataTypeParser.Parse(dgvIntialMarketingPlan.CurrentRow.Index, typeof(int), -1))
+            else if (e.RowIndex == (int)DataTypeParser.Parse(dgvIntialMarketingPlan.CurrentRow.Index, typeof(int), -1))
             {
                 dgvIntialMarketingPlan.CurrentRow.ReadOnly = false;
                 btnNew.Enabled = false;
                 btnDelete.Enabled = false;
             }
-            else if (RowIndex != -1)
+            else if (e.RowIndex != -1)
             {
-                dgvIntialMarketingPlan.Rows[RowIndex].ReadOnly = false;
-                dgvIntialMarketingPlan.CurrentCell = dgvIntialMarketingPlan.Rows[RowIndex].Cells[colIntialPlanDate.Index];
+                dgvIntialMarketingPlan.Rows[e.RowIndex].ReadOnly = false;
+                dgvIntialMarketingPlan.CurrentCell = dgvIntialMarketingPlan.Rows[e.RowIndex].Cells[colIntialPlanDate.Index];
             }
         }
     }
