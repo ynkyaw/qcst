@@ -278,11 +278,17 @@ namespace PTIC.Marketing.DA
                 {
                     cmd.Parameters.AddWithValue("@TownshipId", newCompanyPlan.TownshipID);
                     cmd.Parameters.AddWithValue("@CompanyPlanNo", string.IsNullOrEmpty (newCompanyPlan.CompanyPanNo)?string.Empty:newCompanyPlan.CompanyPanNo);
-                    cmd.Parameters.AddWithValue("@TargetedDate", newCompanyPlan.TargetedDate);
+                    if(newCompanyPlan.TargetedDate.HasValue)
+                        cmd.Parameters.AddWithValue("@TargetedDate", newCompanyPlan.TargetedDate.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@TargetedDate", DBNull.Value);
                     cmd.Parameters.AddWithValue("@CustomerId", newCompanyPlan.CustomerID);
                     cmd.Parameters.AddWithValue("@Status", newCompanyPlan.Status);
                     cmd.Parameters.AddWithValue("@IsConfirmed", newCompanyPlan.IsConfirmed);
-                    cmd.Parameters.AddWithValue("@CreatedDate", newCompanyPlan.IsConfirmed);
+                    if(newCompanyPlan.CreatedDate.HasValue)
+                        cmd.Parameters.AddWithValue("@CreatedDate", newCompanyPlan.IsConfirmed);
+                    else
+                        cmd.Parameters.AddWithValue("@CreatedDate", DBNull.Value);
                     cmd.Parameters.AddWithValue("@LastModifedDate", newCompanyPlan.LastModifiedDate);
                     cmd.Parameters.AddWithValue("@IsDeleted", newCompanyPlan.IsDeleted);
                     int tmpId = 0;
@@ -558,9 +564,9 @@ namespace PTIC.Marketing.DA
                     IsConfirmed = true,
                     IsDeleted = false,
                     LastModifiedDate = DateTime.Now,
-                    CreatedDate = DateTime.Now,
+                    CreatedDate = null,
                     Status = 0,
-                    TargetedDate = cmpDtl.ArrivedDate
+                    TargetedDate = null,
                 };
                 List<CompanyPlan> cmpList = new List<CompanyPlan>();
                 cmpList.Add(cmpPlan);

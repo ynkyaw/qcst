@@ -231,9 +231,9 @@
             this.btnCompanyPlan.Location = new System.Drawing.Point(11, 239);
             this.btnCompanyPlan.MinimumSize = new System.Drawing.Size(150, 45);
             this.btnCompanyPlan.Name = "btnCompanyPlan";
-            this.btnCompanyPlan.Size = new System.Drawing.Size(150, 45);
+            this.btnCompanyPlan.Size = new System.Drawing.Size(151, 45);
             this.btnCompanyPlan.TabIndex = 14;
-            this.btnCompanyPlan.Text = "Company Plan";
+            this.btnCompanyPlan.Text = "Company Marketing";
             this.btnCompanyPlan.UseVisualStyleBackColor = true;
             this.btnCompanyPlan.Click += new System.EventHandler(this.btnCompanyPlan_Click);
             // 
