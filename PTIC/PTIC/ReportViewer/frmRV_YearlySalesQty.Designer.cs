@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbTownTownship = new System.Windows.Forms.ComboBox();
+            this.cmbSalesType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbTripOrRoute = new System.Windows.Forms.ComboBox();
+            this.rdoRoute = new System.Windows.Forms.RadioButton();
+            this.rdoTrip = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.YearlySalesViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.cmbTripOrRoute = new System.Windows.Forms.ComboBox();
-            this.rdoTrip = new System.Windows.Forms.RadioButton();
-            this.rdoRoute = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbSalesType = new System.Windows.Forms.ComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cmbTownTownship = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,9 +64,53 @@
             this.panel1.Size = new System.Drawing.Size(1193, 83);
             this.panel1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(474, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.TabIndex = 196;
+            this.label2.Text = "မြို့ ၊ မြို့နယ်";
+            // 
+            // cmbTownTownship
+            // 
+            this.cmbTownTownship.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbTownTownship.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTownTownship.Font = new System.Drawing.Font("Myanmar3", 11F);
+            this.cmbTownTownship.FormattingEnabled = true;
+            this.cmbTownTownship.ItemHeight = 22;
+            this.cmbTownTownship.Location = new System.Drawing.Point(551, 24);
+            this.cmbTownTownship.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbTownTownship.Name = "cmbTownTownship";
+            this.cmbTownTownship.Size = new System.Drawing.Size(193, 30);
+            this.cmbTownTownship.TabIndex = 192;
+            // 
+            // cmbSalesType
+            // 
+            this.cmbSalesType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSalesType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSalesType.Font = new System.Drawing.Font("Myanmar3", 11F);
+            this.cmbSalesType.FormattingEnabled = true;
+            this.cmbSalesType.ItemHeight = 22;
+            this.cmbSalesType.Location = new System.Drawing.Point(983, 23);
+            this.cmbSalesType.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbSalesType.Name = "cmbSalesType";
+            this.cmbSalesType.Size = new System.Drawing.Size(191, 30);
+            this.cmbSalesType.TabIndex = 194;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(901, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.TabIndex = 193;
+            this.label1.Text = "Sales Type";
+            // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(1061, 24);
+            this.btnSearch.Location = new System.Drawing.Point(760, 24);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(111, 30);
@@ -94,6 +138,58 @@
             this.dtpDate.Size = new System.Drawing.Size(72, 28);
             this.dtpDate.TabIndex = 184;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cmbTripOrRoute);
+            this.panel3.Controls.Add(this.rdoRoute);
+            this.panel3.Controls.Add(this.rdoTrip);
+            this.panel3.Location = new System.Drawing.Point(133, 11);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(324, 65);
+            this.panel3.TabIndex = 195;
+            // 
+            // cmbTripOrRoute
+            // 
+            this.cmbTripOrRoute.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbTripOrRoute.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTripOrRoute.Font = new System.Drawing.Font("Myanmar3", 11F);
+            this.cmbTripOrRoute.FormattingEnabled = true;
+            this.cmbTripOrRoute.ItemHeight = 22;
+            this.cmbTripOrRoute.Location = new System.Drawing.Point(120, 14);
+            this.cmbTripOrRoute.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbTripOrRoute.Name = "cmbTripOrRoute";
+            this.cmbTripOrRoute.Size = new System.Drawing.Size(191, 30);
+            this.cmbTripOrRoute.TabIndex = 189;
+            this.cmbTripOrRoute.SelectedIndexChanged += new System.EventHandler(this.cmbTripOrRoute_SelectedIndexChanged);
+            // 
+            // rdoRoute
+            // 
+            this.rdoRoute.AutoSize = true;
+            this.rdoRoute.Checked = true;
+            this.rdoRoute.Font = new System.Drawing.Font("Myanmar3", 11F);
+            this.rdoRoute.Location = new System.Drawing.Point(14, 31);
+            this.rdoRoute.Margin = new System.Windows.Forms.Padding(0);
+            this.rdoRoute.Name = "rdoRoute";
+            this.rdoRoute.Size = new System.Drawing.Size(106, 26);
+            this.rdoRoute.TabIndex = 187;
+            this.rdoRoute.TabStop = true;
+            this.rdoRoute.Text = "လမ်း‌ကြောင်း";
+            this.rdoRoute.UseVisualStyleBackColor = true;
+            this.rdoRoute.CheckedChanged += new System.EventHandler(this.rdoRoute_CheckedChanged);
+            // 
+            // rdoTrip
+            // 
+            this.rdoTrip.AutoSize = true;
+            this.rdoTrip.Font = new System.Drawing.Font("Myanmar3", 11F);
+            this.rdoTrip.Location = new System.Drawing.Point(14, 5);
+            this.rdoTrip.Margin = new System.Windows.Forms.Padding(0);
+            this.rdoTrip.Name = "rdoTrip";
+            this.rdoTrip.Size = new System.Drawing.Size(69, 26);
+            this.rdoTrip.TabIndex = 188;
+            this.rdoTrip.Text = "ခရီးစဉ်";
+            this.rdoTrip.UseVisualStyleBackColor = true;
+            this.rdoTrip.CheckedChanged += new System.EventHandler(this.rdoTrip_CheckedChanged);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.YearlySalesViewer);
@@ -112,102 +208,6 @@
             this.YearlySalesViewer.Name = "YearlySalesViewer";
             this.YearlySalesViewer.Size = new System.Drawing.Size(1193, 635);
             this.YearlySalesViewer.TabIndex = 0;
-            // 
-            // cmbTripOrRoute
-            // 
-            this.cmbTripOrRoute.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbTripOrRoute.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbTripOrRoute.Font = new System.Drawing.Font("Myanmar3", 11F);
-            this.cmbTripOrRoute.FormattingEnabled = true;
-            this.cmbTripOrRoute.ItemHeight = 22;
-            this.cmbTripOrRoute.Location = new System.Drawing.Point(120, 14);
-            this.cmbTripOrRoute.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbTripOrRoute.Name = "cmbTripOrRoute";
-            this.cmbTripOrRoute.Size = new System.Drawing.Size(191, 30);
-            this.cmbTripOrRoute.TabIndex = 189;
-            this.cmbTripOrRoute.SelectedIndexChanged += new System.EventHandler(this.cmbTripOrRoute_SelectedIndexChanged);
-            // 
-            // rdoTrip
-            // 
-            this.rdoTrip.AutoSize = true;
-            this.rdoTrip.Font = new System.Drawing.Font("Myanmar3", 11F);
-            this.rdoTrip.Location = new System.Drawing.Point(14, 5);
-            this.rdoTrip.Margin = new System.Windows.Forms.Padding(0);
-            this.rdoTrip.Name = "rdoTrip";
-            this.rdoTrip.Size = new System.Drawing.Size(69, 26);
-            this.rdoTrip.TabIndex = 188;
-            this.rdoTrip.Text = "ခရီးစဉ်";
-            this.rdoTrip.UseVisualStyleBackColor = true;
-            this.rdoTrip.CheckedChanged += new System.EventHandler(this.rdoTrip_CheckedChanged);
-            // 
-            // rdoRoute
-            // 
-            this.rdoRoute.AutoSize = true;
-            this.rdoRoute.Checked = true;
-            this.rdoRoute.Font = new System.Drawing.Font("Myanmar3", 11F);
-            this.rdoRoute.Location = new System.Drawing.Point(14, 31);
-            this.rdoRoute.Margin = new System.Windows.Forms.Padding(0);
-            this.rdoRoute.Name = "rdoRoute";
-            this.rdoRoute.Size = new System.Drawing.Size(106, 26);
-            this.rdoRoute.TabIndex = 187;
-            this.rdoRoute.TabStop = true;
-            this.rdoRoute.Text = "လမ်း‌ကြောင်း";
-            this.rdoRoute.UseVisualStyleBackColor = true;
-            this.rdoRoute.CheckedChanged += new System.EventHandler(this.rdoRoute_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(769, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
-            this.label1.TabIndex = 193;
-            this.label1.Text = "Sales Type";
-            // 
-            // cmbSalesType
-            // 
-            this.cmbSalesType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbSalesType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSalesType.Font = new System.Drawing.Font("Myanmar3", 11F);
-            this.cmbSalesType.FormattingEnabled = true;
-            this.cmbSalesType.ItemHeight = 22;
-            this.cmbSalesType.Location = new System.Drawing.Point(851, 25);
-            this.cmbSalesType.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbSalesType.Name = "cmbSalesType";
-            this.cmbSalesType.Size = new System.Drawing.Size(191, 30);
-            this.cmbSalesType.TabIndex = 194;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.cmbTripOrRoute);
-            this.panel3.Controls.Add(this.rdoRoute);
-            this.panel3.Controls.Add(this.rdoTrip);
-            this.panel3.Location = new System.Drawing.Point(133, 11);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(324, 65);
-            this.panel3.TabIndex = 195;
-            // 
-            // cmbTownTownship
-            // 
-            this.cmbTownTownship.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbTownTownship.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbTownTownship.Font = new System.Drawing.Font("Myanmar3", 11F);
-            this.cmbTownTownship.FormattingEnabled = true;
-            this.cmbTownTownship.ItemHeight = 22;
-            this.cmbTownTownship.Location = new System.Drawing.Point(551, 24);
-            this.cmbTownTownship.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbTownTownship.Name = "cmbTownTownship";
-            this.cmbTownTownship.Size = new System.Drawing.Size(193, 30);
-            this.cmbTownTownship.TabIndex = 192;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(474, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
-            this.label2.TabIndex = 196;
-            this.label2.Text = "မြို့ ၊ မြို့နယ်";
             // 
             // frmRV_YearlySalesQty
             // 
@@ -228,9 +228,9 @@
             this.Load += new System.EventHandler(this.frmRV_YearlySalesQty_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

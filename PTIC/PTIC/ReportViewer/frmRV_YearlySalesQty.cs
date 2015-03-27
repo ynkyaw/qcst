@@ -46,7 +46,25 @@ namespace PTIC.ReportViewer
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Search(null, null, null, null, null, null, (DateTime)DataTypeParser.Parse(dtpDate.Value, typeof(DateTime), DateTime.Now));
+            int? TownID = null;
+            int? TownshipID=null;
+
+            int? RouteID = null;
+            int? TripID =null;
+
+            if(rdoRoute.Checked)
+            {
+                RouteID = (int?)DataTypeParser.Parse(cmbTripOrRoute.SelectedValue,typeof(int),null);
+                TownshipID =(int?)DataTypeParser.Parse(cmbTownTownship.SelectedValue,typeof(int),null);
+            }
+            else
+            {
+                TripID = (int?)DataTypeParser.Parse(cmbTripOrRoute.SelectedValue,typeof(int),null);
+                TownID =(int?)DataTypeParser.Parse(cmbTownTownship.SelectedValue,typeof(int),null);
+            }
+            //Search(null, null, null, null, null, null, (DateTime)DataTypeParser.Parse(dtpDate.Value, typeof(DateTime), DateTime.Now));
+            
+            Search(null, null, TownID, TownshipID, RouteID, TripID, (DateTime)DataTypeParser.Parse(dtpDate.Value, typeof(DateTime), DateTime.Now));
         }
 
         private void frmRV_YearlySalesQty_FormClosed(object sender, FormClosedEventArgs e)
