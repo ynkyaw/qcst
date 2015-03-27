@@ -239,7 +239,7 @@ namespace PTIC.Sale.OfficeSales
                         ProductID = (int)DataTypeParser.Parse(row.Cells[colProduct.Index].Value, typeof(int), -1),
                         PlaceID = warehouseId,
                         Place  = 0, // 0 = warehouse, 1 = vehicle
-                        SalePersonID  = GlobalCache.LoginUser.EmpID,
+                        SalePersonID = (int)DataTypeParser.Parse(cboSalesPerson.SelectedValue, typeof(int), 0),
                         // If Place is warehouse, 0 = Factory, 1 = Warehouse, 2 = Vehicle, 3 = CustomerOrSale, 4 = Opening.
                         // Else if vehicle, 0 = Warehouse, 1 = CustomerOrSale, 2 = Service.
                         StockBy  = 0,
@@ -330,6 +330,14 @@ namespace PTIC.Sale.OfficeSales
             dtEmpty.Columns.Add("Remark", typeof(string));
             dgvVenReturn.DataSource = dtEmpty;
             DataUtil.AddInitialNewRow(dgvVenReturn);
+
+
+            // NewlyAdded Code
+            cboSalesPerson.DataSource = new PTIC.Common.BL.EmployeeBL().GetEmployeeFromMarketingAndSale();
+            cboSalesPerson.DisplayMember = "EmpName";
+            cboSalesPerson.ValueMember = "EmployeeID";
+
+
         }
         #endregion
 

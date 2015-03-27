@@ -128,8 +128,13 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void dtFromDate_ValueChanged(object sender, EventArgs e)
         {
-            //    if(dtToDate.Value.ToShortDateString() != dtFromDate.Value.ToShortDateString())
-            //    dtToDate.Value = dtFromDate.Value.AddMonths(2);
+            if (dtToDate.Value.Date < dtFromDate.Value.Date) 
+            {
+                dtToDate.Value = dtFromDate.Value.Date;
+            }
+            dtToDate.MinDate = dtFromDate.Value.Date;
+
+
             txtTotalDays.Text = dtToDate.Value.Subtract(dtFromDate.Value).Days.ToString();
         }
 
@@ -137,6 +142,11 @@ namespace PTIC.VC.Marketing.DailyMarketing
         {
             //if (dtToDate.Value.ToShortDateString() != dtFromDate.Value.ToShortDateString())
             //dtFromDate.Value = dtToDate.Value.AddMonths(-2);
+
+            if (dtToDate.Value.Date < dtFromDate.Value.Date)
+            {
+                dtFromDate.Value = dtToDate.Value.Date;
+            }
             txtTotalDays.Text = dtToDate.Value.Subtract(dtFromDate.Value).Days.ToString();
         }
 
@@ -314,11 +324,23 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void dtpRequestFromDate_ValueChanged(object sender, EventArgs e)
         {
+            if (dtpRequestFromDate.Value.Date < dtpRequestToDate.Value.Date)
+            {
+                dtpRequestToDate.Value = dtFromDate.Value.Date;
+            }
+            dtpRequestToDate.MinDate = dtFromDate.Value.Date;
+
+
             txtTripRequestDay.Text = dtpRequestToDate.Value.Subtract(dtpRequestFromDate.Value).Days.ToString();
         }
 
         private void dtpRequestToDate_ValueChanged(object sender, EventArgs e)
         {
+            if (dtpRequestFromDate.Value.Date > dtpRequestToDate.Value.Date)
+            {
+                dtFromDate.Value = dtpRequestToDate.Value.Date;
+            }
+
             txtTripRequestDay.Text = dtpRequestToDate.Value.Subtract(dtpRequestFromDate.Value).Days.ToString();
         }
 
