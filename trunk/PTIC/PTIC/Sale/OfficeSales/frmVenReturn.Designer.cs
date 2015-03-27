@@ -48,6 +48,7 @@
             this.cmbShowroom = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.cboSalesPerson = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenReturn)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(175, 9);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(111, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(114, 19);
             this.lblHeaderPCat.TabIndex = 46;
             this.lblHeaderPCat.Text = ">  Van Return";
             // 
@@ -83,7 +84,7 @@
             this.lblSalePage.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalePage.Location = new System.Drawing.Point(8, 10);
             this.lblSalePage.Name = "lblSalePage";
-            this.lblSalePage.Size = new System.Drawing.Size(165, 20);
+            this.lblSalePage.Size = new System.Drawing.Size(155, 19);
             this.lblSalePage.TabIndex = 0;
             this.lblSalePage.Text = "ကုန်ပစ္စည်း အဝင်/အထွက်";
             this.lblSalePage.Click += new System.EventHandler(this.lblSalePage_Click);
@@ -95,7 +96,7 @@
             this.dtpReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpReturnDate.Location = new System.Drawing.Point(496, 56);
             this.dtpReturnDate.Name = "dtpReturnDate";
-            this.dtpReturnDate.Size = new System.Drawing.Size(150, 28);
+            this.dtpReturnDate.Size = new System.Drawing.Size(150, 25);
             this.dtpReturnDate.TabIndex = 152;
             // 
             // label3
@@ -104,7 +105,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(349, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 20);
+            this.label3.Size = new System.Drawing.Size(32, 19);
             this.label3.TabIndex = 151;
             this.label3.Text = "‌နေ့စွဲ";
             // 
@@ -115,7 +116,7 @@
             this.txtSalesPersonName.Location = new System.Drawing.Point(496, 94);
             this.txtSalesPersonName.Name = "txtSalesPersonName";
             this.txtSalesPersonName.ReadOnly = true;
-            this.txtSalesPersonName.Size = new System.Drawing.Size(149, 28);
+            this.txtSalesPersonName.Size = new System.Drawing.Size(149, 25);
             this.txtSalesPersonName.TabIndex = 155;
             this.txtSalesPersonName.TabStop = false;
             // 
@@ -125,7 +126,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(349, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 20);
+            this.label5.Size = new System.Drawing.Size(128, 19);
             this.label5.TabIndex = 154;
             this.label5.Text = "အ‌ရောင်းဝန်ထမ်းအမည်";
             // 
@@ -138,7 +139,7 @@
             this.cmbVehicle.FormattingEnabled = true;
             this.cmbVehicle.Location = new System.Drawing.Point(140, 58);
             this.cmbVehicle.Name = "cmbVehicle";
-            this.cmbVehicle.Size = new System.Drawing.Size(150, 27);
+            this.cmbVehicle.Size = new System.Drawing.Size(150, 25);
             this.cmbVehicle.TabIndex = 150;
             this.cmbVehicle.ValueMember = "VehicleID";
             // 
@@ -148,7 +149,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(10, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 20);
+            this.label1.Size = new System.Drawing.Size(109, 19);
             this.label1.TabIndex = 153;
             this.label1.Text = "အ‌ရောင်းကားနံပါတ်";
             // 
@@ -243,7 +244,7 @@
             this.cmbShowroom.FormattingEnabled = true;
             this.cmbShowroom.Location = new System.Drawing.Point(140, 94);
             this.cmbShowroom.Name = "cmbShowroom";
-            this.cmbShowroom.Size = new System.Drawing.Size(150, 27);
+            this.cmbShowroom.Size = new System.Drawing.Size(150, 25);
             this.cmbShowroom.TabIndex = 159;
             this.cmbShowroom.ValueMember = "ID";
             // 
@@ -253,7 +254,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 20);
+            this.label2.Size = new System.Drawing.Size(110, 19);
             this.label2.TabIndex = 160;
             this.label2.Text = "ShowRoom အမည်";
             // 
@@ -263,15 +264,24 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(295, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 20);
+            this.label4.Size = new System.Drawing.Size(17, 19);
             this.label4.TabIndex = 161;
             this.label4.Text = "မှ";
             // 
+            // cboSalesPerson
+            // 
+            this.cboSalesPerson.FormattingEnabled = true;
+            this.cboSalesPerson.Location = new System.Drawing.Point(496, 94);
+            this.cboSalesPerson.Name = "cboSalesPerson";
+            this.cboSalesPerson.Size = new System.Drawing.Size(149, 25);
+            this.cboSalesPerson.TabIndex = 162;
+            // 
             // frmVenReturn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 595);
+            this.Controls.Add(this.cboSalesPerson);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbShowroom);
             this.Controls.Add(this.label2);
@@ -317,5 +327,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn colProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
+        private System.Windows.Forms.ComboBox cboSalesPerson;
     }
 }
