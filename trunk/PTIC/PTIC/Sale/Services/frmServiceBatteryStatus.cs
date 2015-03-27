@@ -138,6 +138,19 @@ namespace PTIC.VC.Sale.Services
         #endregion
 
         #region Private Methods
+        private void SearchByDate(DateTime Date)
+        {
+            try
+            {
+                this.dgvStatus.DataSource = new ReportBL().GetServiceBatteryStatusByDate(Date);
+            }
+            catch (Exception sqle)
+            {
+                _logger.Error(sqle);
+                throw;
+            }
+        }
+
         private void LoadNBindStatus()
         {
             try
@@ -223,6 +236,26 @@ namespace PTIC.VC.Sale.Services
         private void frmServiceBatteryStatus_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void lblFilter_Click(object sender, EventArgs e)
+        {
+            if (pnlFilter.Visible)
+            {
+                pnlFilter.Visible = false;
+                lblFilter.Text = "▼ Show Advance Search"; //Show filter information";
+            }
+            else
+            {
+                pnlFilter.Visible = true;
+                lblFilter.Text = "▲ Hide Advance Search"; //Hide filter information";
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DateTime Date = (DateTime)DataTypeParser.Parse(dtpDate.Value, typeof(DateTime), DateTime.Now);
+            SearchByDate(Date);
         }
 
         

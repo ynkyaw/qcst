@@ -139,6 +139,16 @@ namespace PTIC.Common.DA
             return _dataAccess.SelectByQuery(queryString);
         }
         /// <summary>
+        /// Select service battery status
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public static DataTable SelectServiceBatteryStatusByDate(DateTime Date)
+        {
+            string queryString = "SELECT * FROM uv_ServiceBatteryStatus WHERE CAST(ReceivedDate AS DATE) = CAST('" + Date + "' AS DATE)";
+            return _dataAccess.SelectByQuery(queryString);
+        }
+
+        /// <summary>
         /// Select Sales service detail
         /// </summary>
         /// <returns></returns>
@@ -166,6 +176,18 @@ namespace PTIC.Common.DA
         public static DataTable SelectServiceBatteries()
         {
             string queryString = "SELECT * FROM uv_ServiceBatteries";
+            return _dataAccess.SelectByQuery(queryString);
+        }
+        #endregion
+
+        #region
+        /// <summary>
+        /// Select service batteries by date
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public static DataTable SelectServiceBatteriesByDate(DateTime Date)
+        {
+            string queryString = "SELECT * FROM uv_ServiceBatteries WHERE CAST(ReceivedDate AS DATE) ="+  "CAST('"+ Date +"' As DATE)";
             return _dataAccess.SelectByQuery(queryString);
         }
         #endregion

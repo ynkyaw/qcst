@@ -29,9 +29,59 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvStatus = new System.Windows.Forms.DataGridView();
+            this.colInShowroom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colInVehicle = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colInServiceTeam = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colInMainStore = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colSvcFact = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblSetup = new System.Windows.Forms.Label();
+            this.lblHeaderPCat = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnToFactory = new System.Windows.Forms.Button();
+            this.pnlFilter = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFilt = new System.Windows.Forms.Panel();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurServiceTeamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurVehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,11 +94,6 @@
             this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colReceivedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInShowroom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colInVehicle = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colInServiceTeam = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colInMainStore = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colSvcFact = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colSalesServiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSvcFactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,21 +113,6 @@
             this.colServicedCustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTackerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsReturned = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblSetup = new System.Windows.Forms.Label();
-            this.lblHeaderPCat = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnToFactory = new System.Windows.Forms.Button();
-            this.pnlFilter = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlFilt = new System.Windows.Forms.Panel();
-            this.lblFilter = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -154,6 +184,446 @@
             this.dgvStatus.TabIndex = 0;
             this.dgvStatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStatus_CellContentClick);
             this.dgvStatus.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStatus_DataBindingComplete);
+            // 
+            // colInShowroom
+            // 
+            this.colInShowroom.DataPropertyName = "InShowroom";
+            this.colInShowroom.HeaderText = "Showroom";
+            this.colInShowroom.Name = "colInShowroom";
+            this.colInShowroom.ReadOnly = true;
+            this.colInShowroom.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colInShowroom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colInShowroom.Width = 80;
+            // 
+            // colInVehicle
+            // 
+            this.colInVehicle.DataPropertyName = "InVehicle";
+            this.colInVehicle.HeaderText = "Van";
+            this.colInVehicle.Name = "colInVehicle";
+            this.colInVehicle.ReadOnly = true;
+            this.colInVehicle.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colInVehicle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colInVehicle.Width = 60;
+            // 
+            // colInServiceTeam
+            // 
+            this.colInServiceTeam.DataPropertyName = "InServiceTeam";
+            this.colInServiceTeam.HeaderText = "SSB Service";
+            this.colInServiceTeam.Name = "colInServiceTeam";
+            this.colInServiceTeam.ReadOnly = true;
+            this.colInServiceTeam.Width = 60;
+            // 
+            // colInMainStore
+            // 
+            this.colInMainStore.DataPropertyName = "InMainStore";
+            this.colInMainStore.HeaderText = "Factory Service";
+            this.colInMainStore.Name = "colInMainStore";
+            this.colInMainStore.ReadOnly = true;
+            this.colInMainStore.Width = 60;
+            // 
+            // colSvcFact
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "Detail";
+            this.colSvcFact.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSvcFact.HeaderText = "Detail";
+            this.colSvcFact.Name = "colSvcFact";
+            this.colSvcFact.ReadOnly = true;
+            this.colSvcFact.Text = "Click";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(898, 55);
+            this.panel3.TabIndex = 83;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel4.Controls.Add(this.lblSetup);
+            this.panel4.Controls.Add(this.lblHeaderPCat);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(896, 51);
+            this.panel4.TabIndex = 116;
+            // 
+            // lblSetup
+            // 
+            this.lblSetup.AutoSize = true;
+            this.lblSetup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSetup.Location = new System.Drawing.Point(14, 14);
+            this.lblSetup.Name = "lblSetup";
+            this.lblSetup.Size = new System.Drawing.Size(70, 20);
+            this.lblSetup.TabIndex = 0;
+            this.lblSetup.Text = "Services";
+            this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
+            // 
+            // lblHeaderPCat
+            // 
+            this.lblHeaderPCat.AutoSize = true;
+            this.lblHeaderPCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblHeaderPCat.Location = new System.Drawing.Point(92, 14);
+            this.lblHeaderPCat.Name = "lblHeaderPCat";
+            this.lblHeaderPCat.Size = new System.Drawing.Size(199, 20);
+            this.lblHeaderPCat.TabIndex = 45;
+            this.lblHeaderPCat.Text = ">    Service Battery Status";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnToFactory);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 480);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(898, 47);
+            this.panel5.TabIndex = 88;
+            // 
+            // btnToFactory
+            // 
+            this.btnToFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnToFactory.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.btnToFactory.Location = new System.Drawing.Point(12, 7);
+            this.btnToFactory.Name = "btnToFactory";
+            this.btnToFactory.Size = new System.Drawing.Size(125, 34);
+            this.btnToFactory.TabIndex = 95;
+            this.btnToFactory.Text = "Factory သို့ပို့မည်";
+            this.btnToFactory.UseVisualStyleBackColor = true;
+            this.btnToFactory.Click += new System.EventHandler(this.btnToFactory_Click);
+            // 
+            // pnlFilter
+            // 
+            this.pnlFilter.Controls.Add(this.dtpDate);
+            this.pnlFilter.Controls.Add(this.btnSearch);
+            this.pnlFilter.Controls.Add(this.panel1);
+            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFilter.Location = new System.Drawing.Point(0, 78);
+            this.pnlFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pnlFilter.Name = "pnlFilter";
+            this.pnlFilter.Size = new System.Drawing.Size(898, 46);
+            this.pnlFilter.TabIndex = 194;
+            this.pnlFilter.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 86);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1007, 100);
+            this.panel1.TabIndex = 174;
+            // 
+            // pnlFilt
+            // 
+            this.pnlFilt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
+            this.pnlFilt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFilt.Controls.Add(this.lblFilter);
+            this.pnlFilt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFilt.Location = new System.Drawing.Point(0, 55);
+            this.pnlFilt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pnlFilt.Name = "pnlFilt";
+            this.pnlFilt.Size = new System.Drawing.Size(898, 23);
+            this.pnlFilt.TabIndex = 193;
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFilter.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.lblFilter.Location = new System.Drawing.Point(3, 0);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(166, 20);
+            this.lblFilter.TabIndex = 1;
+            this.lblFilter.Text = "▲ Hide Advance Search";
+            this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvStatus);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 124);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(898, 356);
+            this.panel2.TabIndex = 195;
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(24, 9);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(133, 28);
+            this.dtpDate.TabIndex = 177;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(181, 8);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(111, 30);
+            this.btnSearch.TabIndex = 176;
+            this.btnSearch.Text = "ရှာမည်";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "BrandName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "အမှတ်တံဆိပ်";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CurServiceTeamID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ထုတ်ကုန်အမည်";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CurVehicleID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ရရှိသည့်‌နေ ့";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn3.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CurMainStoreID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "User အမည်";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "CurWarehouseID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "CurWarehouseID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "InBackShowroom";
+            this.dataGridViewTextBoxColumn6.HeaderText = "InBackShowroom";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "InBackVehicle";
+            this.dataGridViewTextBoxColumn7.HeaderText = "InBackVehicle";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "InBackServiceTeam";
+            this.dataGridViewTextBoxColumn8.HeaderText = "InBackServiceTeam";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "InBackCustomer";
+            this.dataGridViewTextBoxColumn9.HeaderText = "InBackMainStore";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn10.HeaderText = "ထုတ်ကုန်အမည်";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ReceivedDate";
+            dataGridViewCellStyle4.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn11.HeaderText = "ရရှိသည့်နေ့";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn12.HeaderText = "User အမည်";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "SalesServiceID";
+            this.dataGridViewTextBoxColumn13.HeaderText = "SalesServiceID";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "SvcFactID";
+            this.dataGridViewTextBoxColumn14.HeaderText = "SvcFactID";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "ProductID";
+            this.dataGridViewTextBoxColumn15.HeaderText = "ProductID";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "BrandID";
+            this.dataGridViewTextBoxColumn16.HeaderText = "BrandID";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Whereami";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Whereami";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "ReturnedDate";
+            this.dataGridViewTextBoxColumn18.HeaderText = "ReturnedDate";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "ProductionDate";
+            this.dataGridViewTextBoxColumn19.HeaderText = "ProductionDate";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "PurchaseDate";
+            this.dataGridViewTextBoxColumn20.HeaderText = "PurchaseDate";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "ContactPerson";
+            this.dataGridViewTextBoxColumn21.HeaderText = "ContactPersion";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Phone1";
+            this.dataGridViewTextBoxColumn22.HeaderText = "PhNo1";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Phone2";
+            this.dataGridViewTextBoxColumn23.HeaderText = "PhNo2";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "JobCardNo";
+            this.dataGridViewTextBoxColumn24.HeaderText = "JobCardNo";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "WarrantyNo";
+            this.dataGridViewTextBoxColumn25.HeaderText = "WarrantyNo";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "JobNo";
+            this.dataGridViewTextBoxColumn26.HeaderText = "JobNo";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "IsBackward";
+            this.dataGridViewTextBoxColumn27.HeaderText = "IsBackward";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "SalesServiceNo";
+            this.dataGridViewTextBoxColumn28.HeaderText = "SalesServiceNo";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "ServicedCustomerID";
+            this.dataGridViewTextBoxColumn29.HeaderText = "ServicedCustomerID";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "TakerID";
+            this.dataGridViewTextBoxColumn30.HeaderText = "TackerID";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.ReadOnly = true;
+            this.dataGridViewTextBoxColumn30.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "IsReturned";
+            this.dataGridViewTextBoxColumn31.HeaderText = "IsReturned";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.Visible = false;
             // 
             // colBrand
             // 
@@ -252,52 +722,6 @@
             this.colUserName.Name = "colUserName";
             this.colUserName.ReadOnly = true;
             this.colUserName.Width = 120;
-            // 
-            // colInShowroom
-            // 
-            this.colInShowroom.DataPropertyName = "InShowroom";
-            this.colInShowroom.HeaderText = "Showroom";
-            this.colInShowroom.Name = "colInShowroom";
-            this.colInShowroom.ReadOnly = true;
-            this.colInShowroom.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colInShowroom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colInShowroom.Width = 80;
-            // 
-            // colInVehicle
-            // 
-            this.colInVehicle.DataPropertyName = "InVehicle";
-            this.colInVehicle.HeaderText = "Van";
-            this.colInVehicle.Name = "colInVehicle";
-            this.colInVehicle.ReadOnly = true;
-            this.colInVehicle.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colInVehicle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colInVehicle.Width = 60;
-            // 
-            // colInServiceTeam
-            // 
-            this.colInServiceTeam.DataPropertyName = "InServiceTeam";
-            this.colInServiceTeam.HeaderText = "SSB Service";
-            this.colInServiceTeam.Name = "colInServiceTeam";
-            this.colInServiceTeam.ReadOnly = true;
-            this.colInServiceTeam.Width = 60;
-            // 
-            // colInMainStore
-            // 
-            this.colInMainStore.DataPropertyName = "InMainStore";
-            this.colInMainStore.HeaderText = "Factory Service";
-            this.colInMainStore.Name = "colInMainStore";
-            this.colInMainStore.ReadOnly = true;
-            this.colInMainStore.Width = 60;
-            // 
-            // colSvcFact
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "Detail";
-            this.colSvcFact.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colSvcFact.HeaderText = "Detail";
-            this.colSvcFact.Name = "colSvcFact";
-            this.colSvcFact.ReadOnly = true;
-            this.colSvcFact.Text = "Click";
             // 
             // colSalesServiceID
             // 
@@ -451,148 +875,6 @@
             this.colIsReturned.ReadOnly = true;
             this.colIsReturned.Visible = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(898, 55);
-            this.panel3.TabIndex = 83;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel4.Controls.Add(this.lblSetup);
-            this.panel4.Controls.Add(this.lblHeaderPCat);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(896, 51);
-            this.panel4.TabIndex = 116;
-            // 
-            // lblSetup
-            // 
-            this.lblSetup.AutoSize = true;
-            this.lblSetup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSetup.Location = new System.Drawing.Point(14, 14);
-            this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(81, 19);
-            this.lblSetup.TabIndex = 0;
-            this.lblSetup.Text = "Services";
-            this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
-            // 
-            // lblHeaderPCat
-            // 
-            this.lblHeaderPCat.AutoSize = true;
-            this.lblHeaderPCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
-            this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblHeaderPCat.Location = new System.Drawing.Point(92, 14);
-            this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(228, 19);
-            this.lblHeaderPCat.TabIndex = 45;
-            this.lblHeaderPCat.Text = ">    Service Battery Status";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "အမှတ်တံဆိပ်";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "ထုတ်ကုန်အမည်";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "ရရှိသည့်‌နေ ့";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "User အမည်";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnToFactory);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 480);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(898, 47);
-            this.panel5.TabIndex = 88;
-            // 
-            // btnToFactory
-            // 
-            this.btnToFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnToFactory.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.btnToFactory.Location = new System.Drawing.Point(12, 7);
-            this.btnToFactory.Name = "btnToFactory";
-            this.btnToFactory.Size = new System.Drawing.Size(125, 34);
-            this.btnToFactory.TabIndex = 95;
-            this.btnToFactory.Text = "Factory သို့ပို့မည်";
-            this.btnToFactory.UseVisualStyleBackColor = true;
-            this.btnToFactory.Click += new System.EventHandler(this.btnToFactory_Click);
-            // 
-            // pnlFilter
-            // 
-            this.pnlFilter.Controls.Add(this.panel1);
-            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFilter.Location = new System.Drawing.Point(0, 78);
-            this.pnlFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(898, 46);
-            this.pnlFilter.TabIndex = 194;
-            this.pnlFilter.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(0, 86);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1007, 100);
-            this.panel1.TabIndex = 174;
-            // 
-            // pnlFilt
-            // 
-            this.pnlFilt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
-            this.pnlFilt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFilt.Controls.Add(this.lblFilter);
-            this.pnlFilt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFilt.Location = new System.Drawing.Point(0, 55);
-            this.pnlFilt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pnlFilt.Name = "pnlFilt";
-            this.pnlFilt.Size = new System.Drawing.Size(898, 23);
-            this.pnlFilt.TabIndex = 193;
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblFilter.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.lblFilter.Location = new System.Drawing.Point(3, 0);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(168, 19);
-            this.lblFilter.TabIndex = 1;
-            this.lblFilter.Text = "▲ Hide Advance Search";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvStatus);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(898, 356);
-            this.panel2.TabIndex = 195;
-            // 
             // frmServiceBatteryStatus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -677,5 +959,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colServicedCustomerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTackerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsReturned;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
     }
 }

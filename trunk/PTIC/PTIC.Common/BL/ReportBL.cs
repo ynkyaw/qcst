@@ -75,6 +75,15 @@ namespace PTIC.Common.BL
         }
 
         /// <summary>
+        /// Get service battery status indicating whether it've got to Showroom, SSB, Factory..
+        /// </summary>
+        /// <returns>DataTable including battery status</returns>
+        public DataTable GetServiceBatteryStatusByDate(DateTime Date)
+        {
+            return ReportDA.SelectServiceBatteriesByDate(Date);
+        }
+
+        /// <summary>
         /// Get SalesServie Detail For Battery List
         /// </summary>
         /// <returns></returns>
@@ -98,6 +107,17 @@ namespace PTIC.Common.BL
         public DataTable GetServiceBatteries()
         {
             return ReportDA.SelectServiceBatteries();
+        }
+        #endregion
+
+        #region MyRegion
+	    /// <summary>
+        /// Get service batteriesByDate
+        /// </summary>
+        /// <returns>DataTable including service batteries</returns>
+        public DataTable GetServiceBatteriesByDate(DateTime Date)
+        {
+            return ReportDA.SelectServiceBatteriesByDate(Date);
         }
         #endregion
 

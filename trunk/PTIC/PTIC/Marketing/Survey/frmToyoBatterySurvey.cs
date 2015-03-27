@@ -414,6 +414,20 @@ namespace PTIC.Marketing.Survey
                 }
             }
 
+            if (!rdoCarGood.Checked && !rdoCarNormal.Checked && !rdoCarWorse.Checked && !rdoCheap.Checked && !rdoContactGood.Checked &&
+                !rdoContactNormal.Checked && !rdoContactWorse.Checked && !rdoDesignGood.Checked && !rdoDesignNormal.Checked && !rdoDesignWrose.Checked &&
+                 !rdoDieCutGood.Checked && !rdoDieCutNormal.Checked && !rdoDieCutWrose.Checked && !rdoDistributeGood.Checked && !rdoDistributeNormal.Checked &&
+                       !rdoDistributeWorse.Checked && !rdoEmpGood.Checked && !rdoEmpNormal.Checked && !rdoEmpWorse.Checked && !rdoExpensive.Checked && !rdoFlagLineGood.Checked &&
+                         !rdoFlagLineNormal.Checked && !rdoFlagLineWorse.Checked && !rdoInformLittle.Checked && !rdoInformNormal.Checked && !rdoInfromGood.Checked && !rdoInverterGood.Checked &&
+                               !rdoInverterNormal.Checked && !rdoInverterWorse.Checked && !rdoNormal.Checked && !rdoPBBoardGood.Checked && !rdoPBBoardNormal.Checked && !rdoPBBoardWrose.Checked &&
+                                   !rdoPresentGood.Checked && !rdoPresentNormal.Checked && !rdoPresentWorse.Checked && !rdoResaleGood.Checked && !rdoResaleNormal.Checked && !rdoResaleWorse.Checked && !rdoTranQtyGood.Checked &&
+                                       !rdoTranQtyNormal.Checked && !rdoTranQtyWrose.Checked && !rdoTranTimeGood.Checked && !rdoTranTimeNormal.Checked && !rdoTranTimeWorse.Checked && !rdoTVGood.Checked && !rdoTVNormal.Checked &&
+                                           !rdoTVWorse.Checked && !rdoWranGood.Checked && !rdoWranNormal.Checked && !rdoWranWorse.Checked )
+            {
+                MessageBox.Show("အနည်းဆုံး မေးခွန်းတစ်ခုဖြေရန်လိုအပ်ပါသည်။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (_answerForm.CustomerID != -1)
             {
                 affectedRows = new RetailerAnswerBL().Add(_answerForm, _retailerSuggestion, _retailerAnswerList);
