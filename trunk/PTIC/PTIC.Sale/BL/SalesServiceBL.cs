@@ -158,6 +158,13 @@ namespace PTIC.Sale.BL
         {
             return SalesServiceDA.UpdateServiceByID(saleService, conn);
         }
+
+
+        public DateTime GetValidLastTime(int SalesSerViceId) 
+        {
+            return SalesServiceDA.GetValidLastTime(SalesSerViceId);
+            
+        }
         #endregion
     }
 }

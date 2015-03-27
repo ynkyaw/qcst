@@ -21,6 +21,19 @@ namespace PTIC.Sale.DA
             dt = b.SelectByQuery("SELECT * FROM SalesService WHERE ID =" + SalesServiceID);
             return dt;
         }
+
+        public static DateTime GetValidLastTime(int SalesSerViceId) 
+        {
+            DateTime validDate = new DateTime (1,1,1);
+            object obj = b.SelectScalar("SELECT (SELECT Max(v) FROM (VALUES (ReceivedDate), (DateToSvc), (SeviceDate),(DateToFactory),(DateFromFactory),(DateFromSvc),(DateToCustomer),(ReturnedDate)) AS value(v)) as [MaxDate] FROM SalesService where ID=" + SalesSerViceId);
+            if (obj != null) 
+            {
+                DateTime.TryParse(obj.ToString(), out validDate);
+            }
+            return validDate;
+            
+        }
+
         #endregion
 
         #region INSERT MULTIPLE TRANSFER
@@ -973,6 +986,9 @@ namespace PTIC.Sale.DA
             }
             return affectedrow;
         }
+
+        
+       
         #endregion
     }
 }
