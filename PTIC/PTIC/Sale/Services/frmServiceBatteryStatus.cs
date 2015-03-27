@@ -63,6 +63,7 @@ namespace PTIC.VC.Sale.Services
                     //    break;
                 }
             }
+            btnToFactory.Enabled = (dgvStatus.Rows.Count > 0);
         }
 
         private void dgvStatus_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -153,7 +154,15 @@ namespace PTIC.VC.Sale.Services
 
         private void btnToFactory_Click(object sender, EventArgs e)
         {
-            
+            if (dgvStatus.Rows.Count < 1 || dgvStatus.SelectedRows.Count < 0) 
+            {
+
+                return;
+
+            }
+
+
+
             List<SalesService> saleserviceList = new List<SalesService>();
             List<ServiceBatteryStatus> serviceBatteryStatusList = new List<ServiceBatteryStatus>();
 

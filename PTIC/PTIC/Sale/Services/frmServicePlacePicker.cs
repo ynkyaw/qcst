@@ -73,7 +73,7 @@ namespace PTIC.VC.Sale.Services
 
         List<SalesService> salesService = new List<SalesService>();
         List<ServiceBatteryStatus> serviceBatteryStatus = new List<ServiceBatteryStatus>();
-
+        
         #region Private Methods
         private void LoadData()
         {            
@@ -97,6 +97,21 @@ namespace PTIC.VC.Sale.Services
         #region Events
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (this._salesService.ID != 0)
+            {
+                DateTime validDateTime = new SalesServiceBL().GetValidLastTime(_salesService.ID);
+                if (validDateTime.Date != new DateTime(1, 1, 1).Date)
+                {
+                    if (validDateTime.Date > dtTransferOrReturnDate.Value.Date)
+                    {
+                        MessageBox.Show(string.Format("Invalid Date! The Latest processed date is {0}", validDateTime), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return;
+                    }
+                }
+
+            }
+
             if (_placeToTransfer == (int)PTIC.Common.Enum.SalesServiceWhereami.Vehicle)
             {
                 this.TransportedVenID = (int?)DataTypeParser.Parse(cmbVanOrWarehouse.SelectedValue, typeof(int), null);
@@ -112,7 +127,8 @@ namespace PTIC.VC.Sale.Services
             
             int sup = 0;
             try
-            {                
+            {
+               
                 if (salesService.Count > 0 && serviceBatteryStatus.Count > 0)
                 {
                     DateTime ReturnDate = (DateTime)DataTypeParser.Parse(dtTransferOrReturnDate.Value, typeof(DateTime), DateTime.Now);
