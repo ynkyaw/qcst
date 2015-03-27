@@ -527,6 +527,8 @@ namespace PTIC.VC.Sale.Inventory
                     cmbEmployee.SelectedValue = (int)DataTypeParser.Parse(dtFGRequest.Rows[0]["TarnsportEmpID"], typeof(int), -1);
                     cmbRequester.SelectedValue = (int)DataTypeParser.Parse(dtFGRequest.Rows[0]["RequesterID"], typeof(int), -1);
                     cmbVen.SelectedValue = (int)DataTypeParser.Parse(dtFGRequest.Rows[0]["TransportVenID"], typeof(int), -1);
+                    textBox1.Text = (string)DataTypeParser.Parse(dtFGRequest.Rows[0]["ReqVouNo"], typeof(string), null);
+                    txtIssueNo.Text = (string)DataTypeParser.Parse(dtFGRequest.Rows[0]["IssueVouNo"], typeof(string), null);
                     DataTable dtRequestDetails = new FGRequestBL().SelectByFGRequestID(FGRequestID, conn);
                     dgvFGRequest.DataSource = dtRequestDetails;
 
@@ -1147,7 +1149,7 @@ namespace PTIC.VC.Sale.Inventory
             DataGridViewRow selectedRow = dgvFinishedGoods.CurrentRow;
             int finishedGoodId = -1;
             int.TryParse(selectedRow.Cells[colFinishedGoodID.Index].Value + string.Empty, out finishedGoodId);
-            if (finishedGoodId != -1) 
+            if (finishedGoodId > 0) 
             {
                 MessageBox.Show("Selected Item is Already Saved!\n Can't be delete!");
                 return;
