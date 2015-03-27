@@ -383,6 +383,13 @@ namespace PTIC.Sale.Setup
                 tripTbl.Rows.InsertAt(tripInsert, 0);
 
                 cusclassTbl = new CustomerClassBL().GetAll();
+                // generate the data to insert
+                DataRow cusClassInsert = cusclassTbl.NewRow();
+                cusClassInsert["CustomerClassID"] = -1;
+                cusClassInsert["CusClass"] = "-";
+                // Insert in the Index 0 place
+                cusclassTbl.Rows.InsertAt(cusClassInsert, 0);
+
                 custypeTbl = new CusTypeBL().GetData();                
             }
             catch (Exception e)
