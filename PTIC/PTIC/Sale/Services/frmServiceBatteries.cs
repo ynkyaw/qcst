@@ -69,6 +69,19 @@ namespace PTIC.Sale.Services
         #endregion
 
         #region Private Methods
+        private void SearchByDate(DateTime Date)
+        {
+            try
+            {
+                this.dgvServiceBatteries.DataSource = new ReportBL().GetServiceBatteriesByDate(Date);
+            }
+            catch (Exception sqle)
+            {
+                _logger.Error(sqle);
+                throw;
+            }
+        }
+
         private void LoadServiceBatteries()
         {
             try
@@ -199,6 +212,12 @@ namespace PTIC.Sale.Services
         private void dgvServiceBatteries_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DateTime Date = (DateTime)DataTypeParser.Parse(dateTimePicker1.Value, typeof(DateTime), DateTime.Now);
+            SearchByDate(Date);
         }
                 
         

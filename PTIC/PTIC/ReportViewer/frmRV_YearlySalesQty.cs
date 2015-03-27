@@ -85,14 +85,14 @@ namespace PTIC.ReportViewer
 
             // generate the data to insert
             DataRow tripUnselectInsert = dtTrip.NewRow();
-            tripUnselectInsert["TripID"] = -2;
+            tripUnselectInsert["TripID"] = -3;
             tripUnselectInsert["TripName"] = "---------- UnSelect ----------";
             // insert in the Index 0 place
             dtTrip.Rows.InsertAt(tripUnselectInsert, 0);
 
             // generate the data to insert
             DataRow tripAllInsert = dtTrip.NewRow();
-            tripAllInsert["TripID"] = -1;
+            tripAllInsert["TripID"] = -2;
             tripAllInsert["TripName"] = "------------ All ------------";
             // insert in the Index 1 place
             dtTrip.Rows.InsertAt(tripAllInsert, 1);
@@ -121,14 +121,14 @@ namespace PTIC.ReportViewer
 
             // generate the data to insert
             DataRow routeUnselectInsert = dtRoute.NewRow();
-            routeUnselectInsert["RouteID"] = -2;
+            routeUnselectInsert["RouteID"] = -3;
             routeUnselectInsert["RouteName"] = "---------- UnSelect ----------";
             // insert in the Index 0 place
             dtRoute.Rows.InsertAt(routeUnselectInsert, 0);
 
             // generate the data to insert
             DataRow routeAllInsert = dtRoute.NewRow();
-            routeAllInsert["RouteID"] = -1;
+            routeAllInsert["RouteID"] = -2;
             routeAllInsert["RouteName"] = "------------ All ------------";
             // insert in the Index 1 place
             dtRoute.Rows.InsertAt(routeAllInsert, 1);

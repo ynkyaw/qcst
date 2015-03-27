@@ -69,7 +69,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(474, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 196;
             this.label2.Text = "မြို့ ၊ မြို့နယ်";
             // 
@@ -98,6 +98,7 @@
             this.cmbSalesType.Name = "cmbSalesType";
             this.cmbSalesType.Size = new System.Drawing.Size(191, 30);
             this.cmbSalesType.TabIndex = 194;
+            this.cmbSalesType.Visible = false;
             // 
             // label1
             // 
@@ -107,6 +108,7 @@
             this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 193;
             this.label1.Text = "Sales Type";
+            this.label1.Visible = false;
             // 
             // btnSearch
             // 
