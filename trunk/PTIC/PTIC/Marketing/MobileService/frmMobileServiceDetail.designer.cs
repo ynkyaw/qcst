@@ -123,6 +123,7 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -131,6 +132,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnDeleteMobileServiceDetail);
             this.panel1.Controls.Add(this.btnDeleteServiceRecord);
             this.panel1.Controls.Add(this.groupBox1);
@@ -1068,6 +1070,15 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "Service ‌ပေးခဲ့မှု";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(318, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 25);
+            this.button1.TabIndex = 250;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmMobileServiceDetail
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1181,6 +1192,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMobileServiceRecordID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMSuvDetailID;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
+        private System.Windows.Forms.Button button1;
     }
 }
 
