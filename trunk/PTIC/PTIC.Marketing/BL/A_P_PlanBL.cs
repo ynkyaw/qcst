@@ -131,6 +131,12 @@ namespace PTIC.Marketing.BL
         {
             return A_P_PlanDA.DeleteByAPPlanID(apPlanID, conn);
         }
+
+        public int DeletePlanByAPPlanID(A_P_Plan apPlanID, SqlConnection conn)
+        {
+            return A_P_PlanDA.DeletePlanByAPPlanID(apPlanID, conn);
+        }
+
         #endregion
 
        

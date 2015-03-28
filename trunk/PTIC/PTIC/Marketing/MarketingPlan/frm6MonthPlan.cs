@@ -94,11 +94,17 @@ namespace PTIC.VC.Marketing.MarketingPlan
         {
             try
             {
+                
                 dgvAPPlanDetail.AutoGenerateColumns = false;
                 DateTime currentDate = (DateTime)DataTypeParser.Parse(dtpEndMonth.Value, typeof(DateTime), DateTime.Now);
                 //  Sales Plan Amount from SalesPlanDetail By Brand And Month
                 DataTable dtSaleplan = new SalesPlanBL().GetbyMonthAndBrand(currentDate, (int)DataTypeParser.Parse(cmbBrand.SelectedValue, typeof(int), -1));
-                if (dtSaleplan == null) return;
+                if (dtSaleplan == null)
+                {
+                    dgvAPPlanDetail.DataSource = null;
+                    LoadData();
+                    return;
+                }
                 applanTbl = new A_P_PlanBL().SelectByDate(currentDate, (int)DataTypeParser.Parse(cmbBrand.SelectedValue, typeof(int), -1));
                 if (applanTbl.Rows.Count > 0)
                 {
@@ -880,6 +886,26 @@ namespace PTIC.VC.Marketing.MarketingPlan
 
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            if(MessageBox.Show(string.Format("Are you sure want to delete the whole A_P Plan for {0}",dtpEndMonth.Value.ToString("MMM - yyyy")),"Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+            {
+                try
+                {
+
+                    
+                    new A_P_PlanBL().DeletePlanByAPPlanID(new A_P_Plan() { A_P_PlanID = _APPlanId }, DBManager.GetInstance().GetDbConnection());
+                    LoadNBind();
+                    MessageBox.Show("Success!");
+                }
+                catch 
+                {
+                
+                }
+            }
         }
 
     }
