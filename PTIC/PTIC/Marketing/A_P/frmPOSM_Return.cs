@@ -676,6 +676,42 @@ namespace PTIC.VC.Marketing.A_P
                             ReturnPurpose = (int)DataTypeParser.Parse(row.Cells[colReturnPurpose.Index].Value, typeof(int), -1),
                             Remark = (string)DataTypeParser.Parse(row.Cells[colRemark.Index].Value, typeof(string), null),
                         };
+                        
+                        if(rdoFromDept.Checked)
+                        {
+                            int DeptID = (int)DataTypeParser.Parse(cmbFromDeptOrVen.SelectedValue, typeof(int), -1);
+                            DataTable StockInDepartment = new AP_ReturnBL().GetAP_StockInDepartmentByAPID(newDetail.AP_MaterialID,DeptID);
+                            if (StockInDepartment.Rows.Count < 1)
+                            {
+                                MessageBox.Show("ဖြည့်သွင်းထားသော A & P လုံးဝမရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            int Qty = (int)DataTypeParser.Parse(StockInDepartment.Rows[0]["Qty"], typeof(int), 0);
+                            string AP_MaterialName = (string)DataTypeParser.Parse(StockInDepartment.Rows[0]["APMaterialName"], typeof(string), string.Empty);
+                            if (newDetail.ReturnQty > Qty)
+                            {
+                                MessageBox.Show(AP_MaterialName + " : " + Qty + " ခုသာကျန်သည်။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            int VenID = (int)DataTypeParser.Parse(cmbFromDeptOrVen.SelectedValue, typeof(int), -1);
+                            DataTable StockInVen = new AP_ReturnBL().GetAP_StockInVehicleByAPID(newDetail.AP_MaterialID, VenID);
+                            if (StockInVen.Rows.Count < 1)
+                            {
+                                MessageBox.Show("ဖြည့်သွင်းထားသော A & P လုံးဝမရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            int Qty = (int)DataTypeParser.Parse(StockInVen.Rows[0]["Qty"], typeof(int), 0);
+                            string AP_MaterialName = (string)DataTypeParser.Parse(StockInVen.Rows[0]["APMaterialName"], typeof(string), string.Empty);
+                            if (newDetail.ReturnQty > Qty)
+                            {
+                                MessageBox.Show(AP_MaterialName + " : " + Qty + " ခုသာကျန်သည်။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+
                         newAP_ReturnDetails.Add(newDetail);
                     }// END of foreach (DataGridViewRow row in dgvReturnDetail.Rows)
                     if (this._AP_Return == null)

@@ -8,11 +8,65 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Data;
 using System;
+using PTIC.Common;
 namespace PTIC.Marketing.DA
 {
     public class AP_ReturnDA
     {
         #region SELECT
+        public static DataTable SelectAP_StockInVehicleByAPID(int AP_MaterailID, int VenID)
+        {
+            DataSet dataSet=null;
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+            try
+            {
+                dataSet = new DataSet();
+                conn = DBManager.GetInstance().GetDbConnection();
+                cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT AP_MaterialID,VehicleID,Qty,APMaterialName FROM AP_StockInVehicle "
+                                                   +"INNER JOIN AP_Material ON AP_Material.ID = AP_StockInVehicle.AP_MaterialID "
+                                                    +"WHERE AP_MaterialID =  @p_AP_MaterialID AND VehicleID = @p_VenID";
+                cmd.Parameters.AddWithValue("@p_AP_MaterialID", AP_MaterailID);
+                cmd.Parameters.AddWithValue("@p_VenID", VenID);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dataSet, "StockInVen");
+            }
+            catch (Exception)
+            {                
+                throw;
+            }
+            return dataSet.Tables["StockInVen"];
+        }
+
+
+        public static DataTable SelectAPStockInDepartmentBYAPID(int AP_MaterailID,int DeptID)
+        {
+            DataSet dataSet=null;
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+            try
+            {
+                dataSet = new DataSet();
+                conn = DBManager.GetInstance().GetDbConnection();
+                cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT AP_MaterialID,DeptID,Qty,AP_Material.APMaterialName FROM AP_StockInDepartment "
+                                                    +"INNER JOIN AP_Material ON AP_Material.ID = AP_StockInDepartment.AP_MaterialID WHERE AP_MaterialID =@p_AP_MaterailID AND DeptID = @p_DeptID ";
+                cmd.Parameters.AddWithValue("@p_AP_MaterailID", AP_MaterailID);
+                cmd.Parameters.AddWithValue("@p_DeptID", DeptID);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dataSet, "StockInDept");
+            }
+            catch (Exception)
+            {                
+                throw;
+            }
+            return dataSet.Tables["StockInDept"];
+        }
         #endregion
 
         #region INSERT
