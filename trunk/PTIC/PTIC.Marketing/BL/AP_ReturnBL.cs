@@ -8,11 +8,21 @@ using PTIC.Marketing.Entities;
 using System.Data.SqlClient;
 using PTIC.Marketing.DA;
 using System.Collections.Generic;
+using System.Data;
 namespace PTIC.Marketing.BL
 {
     public class AP_ReturnBL
     {
         #region SELECT
+        public DataTable GetAP_StockInDepartmentByAPID(int AP_MaterialID,int DeptID)
+        {
+            return AP_ReturnDA.SelectAPStockInDepartmentBYAPID(AP_MaterialID,DeptID);
+        }
+
+        public DataTable GetAP_StockInVehicleByAPID(int AP_MaterialID, int VenID)
+        {
+            return AP_ReturnDA.SelectAP_StockInVehicleByAPID(AP_MaterialID, VenID);
+        }
         #endregion
 
         #region INSERT
