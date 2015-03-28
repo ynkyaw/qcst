@@ -95,7 +95,7 @@ namespace PTIC.Marketing.DA
                 //command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = " SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId]";
                 command.CommandText += " ,[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone";
-                command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
+                command.CommandText += " FROM [dbo].[CompanyPlan] Inner Join ContactPerson cp";
                 command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID)";
                 command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -121,7 +121,7 @@ namespace PTIC.Marketing.DA
                 //command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = " SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId]";
                 command.CommandText += " ,[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone";
-                command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
+                command.CommandText += " FROM [dbo].[CompanyPlan] Inner Join ContactPerson cp";
                 command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID)";
                 command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0";
                 command.CommandText += " and TargetedDate Between @p_startDate and @p_endDate";
@@ -152,7 +152,7 @@ namespace PTIC.Marketing.DA
                 command.Connection = DBManager.GetInstance().GetDbConnection();
                 command.CommandText = " SELECT [CompanyPlan].[ID],[CompanyPlanNo],[TargetedDate],[TownshipId],[CustomerId],[CusName]";
                 command.CommandText += " ,[Status],[CreatedDate],[LastModifedDate],cp.ConPersonName ,cp.MobilePhone,[IsConfirmed]";
-                command.CommandText += " FROM [PTIC_Ver_1_0_7_To_Deliver].[dbo].[CompanyPlan] Inner Join ContactPerson cp";
+                command.CommandText += " FROM [dbo].[CompanyPlan] Inner Join ContactPerson cp";
                 command.CommandText += " ON (CompanyPlan.CustomerId = cp.CusID) Inner Join Customer cust ON (CompanyPlan.CustomerId=cust.ID)";
                 command.CommandText += " where CompanyPlan.IsDeleted = 0 and cp.IsDeleted=0 and [IsConfirmed]=0 AND STATUS=@p_Status";
                 command.Parameters.AddWithValue("@p_Status", (int)formStatus);
