@@ -154,6 +154,9 @@ namespace PTIC.Sale.DA
                 cmd.Parameters.AddWithValue("@p_Remark", fgRequest.Remark);
                 cmd.Parameters["@p_Remark"].Direction = ParameterDirection.Input;
 
+                cmd.Parameters.AddWithValue("@p_FRemark", fgRequest.Remark);
+                cmd.Parameters["@p_FRemark"].Direction = ParameterDirection.Input;
+
                 affectedRows += cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
 
