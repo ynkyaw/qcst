@@ -48,7 +48,7 @@
             // 
             // btnTripPlan
             // 
-            this.btnTripPlan.Location = new System.Drawing.Point(221, 97);
+            this.btnTripPlan.Location = new System.Drawing.Point(33, 178);
             this.btnTripPlan.Name = "btnTripPlan";
             this.btnTripPlan.Size = new System.Drawing.Size(172, 57);
             this.btnTripPlan.TabIndex = 19;
@@ -58,7 +58,7 @@
             // 
             // btnMarketingPlan
             // 
-            this.btnMarketingPlan.Location = new System.Drawing.Point(409, 97);
+            this.btnMarketingPlan.Location = new System.Drawing.Point(221, 97);
             this.btnMarketingPlan.Name = "btnMarketingPlan";
             this.btnMarketingPlan.Size = new System.Drawing.Size(172, 57);
             this.btnMarketingPlan.TabIndex = 26;
@@ -89,7 +89,7 @@
             // 
             // btnTelemarketingPlan
             // 
-            this.btnTelemarketingPlan.Location = new System.Drawing.Point(597, 97);
+            this.btnTelemarketingPlan.Location = new System.Drawing.Point(414, 97);
             this.btnTelemarketingPlan.Name = "btnTelemarketingPlan";
             this.btnTelemarketingPlan.Size = new System.Drawing.Size(172, 57);
             this.btnTelemarketingPlan.TabIndex = 31;
@@ -99,7 +99,7 @@
             // 
             // btnMobSrvMonthlyPlan
             // 
-            this.btnMobSrvMonthlyPlan.Location = new System.Drawing.Point(785, 97);
+            this.btnMobSrvMonthlyPlan.Location = new System.Drawing.Point(602, 97);
             this.btnMobSrvMonthlyPlan.Name = "btnMobSrvMonthlyPlan";
             this.btnMobSrvMonthlyPlan.Size = new System.Drawing.Size(172, 57);
             this.btnMobSrvMonthlyPlan.TabIndex = 18;
@@ -143,7 +143,7 @@
             // 
             // btnConfirmTelemarketingPlan
             // 
-            this.btnConfirmTelemarketingPlan.Location = new System.Drawing.Point(597, 178);
+            this.btnConfirmTelemarketingPlan.Location = new System.Drawing.Point(414, 178);
             this.btnConfirmTelemarketingPlan.Name = "btnConfirmTelemarketingPlan";
             this.btnConfirmTelemarketingPlan.Size = new System.Drawing.Size(172, 57);
             this.btnConfirmTelemarketingPlan.TabIndex = 34;
@@ -153,7 +153,7 @@
             // 
             // btnConfirmMobileServicePlan
             // 
-            this.btnConfirmMobileServicePlan.Location = new System.Drawing.Point(785, 178);
+            this.btnConfirmMobileServicePlan.Location = new System.Drawing.Point(602, 178);
             this.btnConfirmMobileServicePlan.Name = "btnConfirmMobileServicePlan";
             this.btnConfirmMobileServicePlan.Size = new System.Drawing.Size(172, 57);
             this.btnConfirmMobileServicePlan.TabIndex = 35;
@@ -164,8 +164,14 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.btnConfirmMobileServicePlan);
             this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnConfirmTelemarketingPlan);
+            this.panel2.Controls.Add(this.btnMobSrvMonthlyPlan);
             this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnTripPlan);
+            this.panel2.Controls.Add(this.btnTelemarketingPlan);
+            this.panel2.Controls.Add(this.btnMarketingPlan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -174,7 +180,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(33, 339);
+            this.button2.Location = new System.Drawing.Point(791, 178);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 57);
             this.button2.TabIndex = 38;
@@ -184,7 +190,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(33, 261);
+            this.button1.Location = new System.Drawing.Point(791, 97);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 57);
             this.button1.TabIndex = 37;
@@ -199,15 +205,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1020, 532);
-            this.Controls.Add(this.btnConfirmMobileServicePlan);
-            this.Controls.Add(this.btnConfirmTelemarketingPlan);
             this.Controls.Add(this.btnTrip);
-            this.Controls.Add(this.btnTelemarketingPlan);
             this.Controls.Add(this.btn6MonthPlan);
             this.Controls.Add(this.btnMonthlyPlan);
-            this.Controls.Add(this.btnMobSrvMonthlyPlan);
-            this.Controls.Add(this.btnMarketingPlan);
-            this.Controls.Add(this.btnTripPlan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
