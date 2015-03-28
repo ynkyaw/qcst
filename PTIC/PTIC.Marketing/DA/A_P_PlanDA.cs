@@ -317,6 +317,22 @@ namespace PTIC.Marketing.DA
                 return 0;
             }
         }
+
+        public static int DeletePlanByAPPlanID(A_P_Plan apPlanID, SqlConnection conn)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "UPDATE A_P_Plan SET isDeleted=1 WHERE ID=@p_apPlanID";
+                cmd.Parameters.AddWithValue("@p_apPlanID", apPlanID.A_P_PlanID);
+                return cmd.ExecuteNonQuery();
+            }
+            catch (SqlException sqle)
+            {
+                return 0;
+            }
+        }
         #endregion
         //
 
@@ -338,6 +354,32 @@ namespace PTIC.Marketing.DA
             {
             }
             return dataSet.Tables["APPlanSummary"];
+        }
+
+
+        public static List<int> GetPlanIdList(DateTime dtpPlanDate,SqlConnection conn) 
+        {
+            List<int> planIdList = new List<int>();
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandText = "SELECT ID FROM A_P_PLAN WHERE A_P_PlanDate<= '"+dtpPlanDate.ToString("yyyy-mm-dd")+"'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    
+                }
+            }
+            catch 
+            {
+            
+            }
+            return planIdList;
+            
         }
     }
 }
