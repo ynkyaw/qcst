@@ -110,6 +110,7 @@
             this.btnDataTransfer.TabIndex = 4;
             this.btnDataTransfer.Text = global::PTIC.Resource.btnDataTransfer;
             this.btnDataTransfer.UseVisualStyleBackColor = true;
+            this.btnDataTransfer.Visible = false;
             this.btnDataTransfer.Click += new System.EventHandler(this.btnDataTransfer_Click);
             // 
             // btnService
@@ -187,12 +188,13 @@
             this.chkShowNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkShowNotification.AutoSize = true;
             this.chkShowNotification.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkShowNotification.Location = new System.Drawing.Point(20, 663);
+            this.chkShowNotification.Location = new System.Drawing.Point(20, 664);
             this.chkShowNotification.Name = "chkShowNotification";
-            this.chkShowNotification.Size = new System.Drawing.Size(142, 24);
+            this.chkShowNotification.Size = new System.Drawing.Size(160, 23);
             this.chkShowNotification.TabIndex = 11;
             this.chkShowNotification.Text = global::PTIC.Resource.chkShowNotification;
             this.chkShowNotification.UseVisualStyleBackColor = true;
+            this.chkShowNotification.Visible = false;
             // 
             // btnCashCollection
             // 

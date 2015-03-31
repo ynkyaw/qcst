@@ -300,7 +300,7 @@ namespace PTIC.Marketing.BL
                 }
                 //− ခရီးစဉ်တာဝန်ခံသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။ (validate via db)
                 DataTable dtDuplicatedManager = detailBL.GetBy(detail.FromDate, detail.ToDate, new Employee() { ID = detail.ManagerID });
-                if (dtDuplicatedManager != null && dtDuplicatedManager.Rows.Count > 0)
+                if (dtDuplicatedManager != null && dtDuplicatedManager.Rows.Count > 1)
                 {
                     base.ValidationResults.AddResult(
                     new ValidationResult(ErrorMessages.TripPlanDetail_ManagerID_Duplicate,

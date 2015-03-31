@@ -68,6 +68,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             dgvCompanyPlan.AutoGenerateColumns = false; // Autogenerate Columns False
             dgvCompanyPlan.DataSource = CompanyPlanTbl;
             SetReadOnlyRows(false);
+            btnNew.Enabled = btnEdit.Enabled = btnDelete.Enabled=true;
         }
 
         #region
@@ -307,18 +308,23 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (dgvCompanyPlan.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Please Select Only Row to edit!");
+                return;
+            }
             CompanyPlan cmpPlan=new CompanyPlan ();
-
+            cmpPlan.Id = (int)DataTypeParser.Parse(dgvCompanyPlan.SelectedRows[0].Cells[colCompanyPlanID.Index].Value, typeof(int), -1);
             try
             {
                 new CompanyPlanBL().Delete(cmpPlan, DBManager.GetInstance().GetDbConnection());
+                MessageBox.Show("Success!");
             }
             catch (Exception err) 
             {
             
             }
-
+            
             LoadCompanyPlan();
         }
 
