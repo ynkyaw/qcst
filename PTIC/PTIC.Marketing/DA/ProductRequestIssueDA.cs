@@ -51,7 +51,10 @@ namespace PTIC.Marketing.DA
                 cmd.Parameters.AddWithValue("@p_RequestDate", _ProductRequestIssue.RequestDate);
                 cmd.Parameters["@p_RequestDate"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_IssueDate", _ProductRequestIssue.IssueDate);
+                if(_ProductRequestIssue.IssueDate.Date==new DateTime(1,1,1).Date)
+                    cmd.Parameters.AddWithValue("@p_IssueDate", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@p_IssueDate", _ProductRequestIssue.IssueDate);
                 cmd.Parameters["@p_IssueDate"].Direction = ParameterDirection.Input;
 
                 cmd.Parameters.AddWithValue("@p_RequesterID", _ProductRequestIssue.RequesterID);

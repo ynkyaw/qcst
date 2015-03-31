@@ -1020,6 +1020,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
             if (!this.ProductRequestIssueID.HasValue)
             {
                 this.ProductRequestIssueID = e.ProductRequestIssueID;
+                Save();
             }
         }
 

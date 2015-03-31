@@ -100,7 +100,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(85, 11);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(376, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(355, 19);
             this.lblHeaderPCat.TabIndex = 48;
             this.lblHeaderPCat.Text = ">  ခရီးစဉ်အတွက် Battery တောင်းခံခြင်းနှင့်ထုတ်ပေးခြင်း";
             // 
@@ -113,7 +113,7 @@
             this.lblHeader.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.Location = new System.Drawing.Point(17, 11);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(67, 19);
+            this.lblHeader.Size = new System.Drawing.Size(72, 17);
             this.lblHeader.TabIndex = 47;
             this.lblHeader.Text = "Planning";
             // 
@@ -154,7 +154,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label5.Location = new System.Drawing.Point(19, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.Size = new System.Drawing.Size(67, 19);
             this.label5.TabIndex = 208;
             this.label5.Text = "ထုတ်ပေးသူ";
             // 
@@ -163,11 +163,11 @@
             this.cmbGiver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbGiver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbGiver.DisplayMember = "APSubCategoryName";
-            this.cmbGiver.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGiver.Font = new System.Drawing.Font("Myanmar3", 9F);
             this.cmbGiver.FormattingEnabled = true;
             this.cmbGiver.Location = new System.Drawing.Point(143, 72);
             this.cmbGiver.Name = "cmbGiver";
-            this.cmbGiver.Size = new System.Drawing.Size(150, 28);
+            this.cmbGiver.Size = new System.Drawing.Size(150, 24);
             this.cmbGiver.TabIndex = 207;
             // 
             // label3
@@ -178,7 +178,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label3.Location = new System.Drawing.Point(19, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.Size = new System.Drawing.Size(106, 19);
             this.label3.TabIndex = 206;
             this.label3.Text = "ထုတ်ပေးသည့် ဌာန";
             // 
@@ -187,11 +187,11 @@
             this.cmbGiverDept.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbGiverDept.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbGiverDept.DisplayMember = "APSubCategoryName";
-            this.cmbGiverDept.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGiverDept.Font = new System.Drawing.Font("Myanmar3", 9F);
             this.cmbGiverDept.FormattingEnabled = true;
             this.cmbGiverDept.Location = new System.Drawing.Point(143, 38);
             this.cmbGiverDept.Name = "cmbGiverDept";
-            this.cmbGiverDept.Size = new System.Drawing.Size(150, 28);
+            this.cmbGiverDept.Size = new System.Drawing.Size(150, 24);
             this.cmbGiverDept.TabIndex = 205;
             this.cmbGiverDept.SelectedIndexChanged += new System.EventHandler(this.cmbGiverDept_SelectedIndexChanged);
             // 
@@ -202,7 +202,7 @@
             this.txtTrip.Location = new System.Drawing.Point(84, 42);
             this.txtTrip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTrip.Name = "txtTrip";
-            this.txtTrip.Size = new System.Drawing.Size(150, 28);
+            this.txtTrip.Size = new System.Drawing.Size(150, 25);
             this.txtTrip.TabIndex = 199;
             this.txtTrip.Visible = false;
             // 
@@ -214,7 +214,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label1.Location = new System.Drawing.Point(16, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(45, 19);
             this.label1.TabIndex = 198;
             this.label1.Text = "ခရီးစဉ်";
             this.label1.Visible = false;
@@ -235,7 +235,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label2.Location = new System.Drawing.Point(16, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 20);
+            this.label2.Size = new System.Drawing.Size(32, 19);
             this.label2.TabIndex = 196;
             this.label2.Text = "နေ့စွဲ";
             // 
@@ -263,7 +263,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label4.Location = new System.Drawing.Point(14, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.Size = new System.Drawing.Size(68, 19);
             this.label4.TabIndex = 202;
             this.label4.Text = "တောင်းခံသူ";
             // 
@@ -273,7 +273,7 @@
             this.rdoVen.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.rdoVen.Location = new System.Drawing.Point(18, 57);
             this.rdoVen.Name = "rdoVen";
-            this.rdoVen.Size = new System.Drawing.Size(95, 24);
+            this.rdoVen.Size = new System.Drawing.Size(87, 23);
             this.rdoVen.TabIndex = 197;
             this.rdoVen.Text = "ယာဉ်အမှတ်";
             this.rdoVen.UseVisualStyleBackColor = true;
@@ -284,11 +284,11 @@
             this.cmbEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbEmployee.DisplayMember = "APSubCategoryName";
-            this.cmbEmployee.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEmployee.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmployee.FormattingEnabled = true;
             this.cmbEmployee.Location = new System.Drawing.Point(128, 93);
             this.cmbEmployee.Name = "cmbEmployee";
-            this.cmbEmployee.Size = new System.Drawing.Size(150, 28);
+            this.cmbEmployee.Size = new System.Drawing.Size(150, 24);
             this.cmbEmployee.TabIndex = 200;
             this.cmbEmployee.ValueMember = "ID";
             // 
@@ -298,7 +298,7 @@
             this.rdoDept.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.rdoDept.Location = new System.Drawing.Point(18, 27);
             this.rdoDept.Name = "rdoDept";
-            this.rdoDept.Size = new System.Drawing.Size(52, 24);
+            this.rdoDept.Size = new System.Drawing.Size(49, 23);
             this.rdoDept.TabIndex = 196;
             this.rdoDept.Text = "ဌာန";
             this.rdoDept.UseVisualStyleBackColor = true;
@@ -309,11 +309,11 @@
             this.cmbDeptVen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbDeptVen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDeptVen.DisplayMember = "APSubCategoryName";
-            this.cmbDeptVen.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDeptVen.Font = new System.Drawing.Font("Myanmar3", 9F);
             this.cmbDeptVen.FormattingEnabled = true;
             this.cmbDeptVen.Location = new System.Drawing.Point(128, 40);
             this.cmbDeptVen.Name = "cmbDeptVen";
-            this.cmbDeptVen.Size = new System.Drawing.Size(150, 28);
+            this.cmbDeptVen.Size = new System.Drawing.Size(150, 24);
             this.cmbDeptVen.TabIndex = 195;
             this.cmbDeptVen.ValueMember = "ID";
             this.cmbDeptVen.SelectedIndexChanged += new System.EventHandler(this.cmbDeptVen_SelectedIndexChanged);
@@ -564,7 +564,7 @@
             // 
             // frmProductRequestIssue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 500);
             this.Controls.Add(this.dgvProductReqIssue);

@@ -255,6 +255,12 @@ namespace PTIC.Marketing.TripPlan_Request
                     ProductRequestIssueID = insertedRequestID;
                     //if (POSM_RequestSavedHandler == null)
                     //    UIManager.MdiChildOpenForm(typeof(frmPosmTransferList));
+                    if (ProductRequestIssueSavedHandler != null)
+                    {
+                        // Send AP_RequestID to caller
+                        ProductRequestIssueEventArgs eArg = new ProductRequestIssueEventArgs(this.ProductRequestIssueID);
+                        ProductRequestIssueSavedHandler(this, eArg);
+                    }
                     this.Close();
                 }
                 else
@@ -424,12 +430,7 @@ namespace PTIC.Marketing.TripPlan_Request
 
         private void frmProductRequestIssue_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (ProductRequestIssueSavedHandler != null)
-            {
-                // Send AP_RequestID to caller
-                ProductRequestIssueEventArgs eArg = new ProductRequestIssueEventArgs(this.ProductRequestIssueID);
-                ProductRequestIssueSavedHandler(this, eArg);
-            }
+           
         }
 
         private void btnIssue_Click(object sender, EventArgs e)
