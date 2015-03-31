@@ -112,7 +112,7 @@ namespace PTIC.Marketing.Telemarketing
                             _marketingPlan.CustomerID = (int)DataTypeParser.Parse(cusrow["CustomerID"], typeof(int), -1);
                             _marketingPlan.PlanDate = (DateTime)DataTypeParser.Parse(initialTeleMarketingPlan.PlanDate, typeof(DateTime), DateTime.Now);
                             // _marketingPlan.EmpID = (int)DataTypeParser.Parse(GlobalCache.LoginEmployee.ID, typeof(int), -1);     
-                            _marketingPlan.Status = (int)PTIC.Common.Enum.FormStatus.Confirmed;
+                            _marketingPlan.Status = (int)PTIC.Common.Enum.FormStatus.Reported;
                             _marketingPlan.MarketingType = (int)PTIC.Common.Enum.MarketingType.Telemarketing;
                             insertMarketingPlan.Add(_marketingPlan);
                         }

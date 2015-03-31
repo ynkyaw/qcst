@@ -318,7 +318,7 @@ namespace PTIC.Marketing.DA
 
                 cmd.CommandText = "UPDATE COMPANYPLAN SET [TargetedDate]=@p_TargetedDate, [TownshipId]=@p_TownshipID,[CustomerId]=@p_CusID WHERE ID=@p_CompanyPlanID";
 
-                cmd.Parameters.AddWithValue("@p_TargetedDate", CompanyPlan.CustomerID);
+                cmd.Parameters.AddWithValue("@p_TargetedDate", CompanyPlan.TargetedDate);
                 cmd.Parameters["@p_TargetedDate"].Direction = ParameterDirection.Input;
 
                 cmd.Parameters.AddWithValue("@p_CompanyPlanID", CompanyPlan.Id);
