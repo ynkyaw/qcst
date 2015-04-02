@@ -14,6 +14,36 @@ namespace PTIC.Marketing.DA
     {
         static BaseDAO b = new BaseDAO();
 
+        public static ProductRequestIssue GetProductRequestIssueById(int ProductRequestIssueID) 
+        {
+            DataTable dt;
+            ProductRequestIssue obj = new ProductRequestIssue();
+            try
+            {
+                string query = "SELECT * FROM ProductRequestIssue WHERE ID ={0}";
+                dt = b.SelectByQuery(String.Format(query, ProductRequestIssueID));
+                if (dt.Rows.Count == 1) 
+                {
+                    obj.ID = (int)dt.Rows[0]["ID"];
+                    obj.RequestDate = (DateTime)dt.Rows[0]["RequestDate"];
+                    obj.IssueDate = (DateTime)dt.Rows[0]["IssueDate"];
+                    obj.RequesterID = (int)dt.Rows[0]["RequesterID"];
+                    obj.IssuerID = (int)(dt.Rows[0]["IssuerID"]==DBNull.Value?0:dt.Rows[0]["IssuerID"]);
+                    obj.RequestDeptID = (int)(dt.Rows[0]["RequestDeptID"] == DBNull.Value ? 0 : dt.Rows[0]["RequestDeptID"]);
+                    obj.IssueDeptID = (int)(dt.Rows[0]["IssueDeptID"] == DBNull.Value ? 0 : dt.Rows[0]["IssueDeptID"]);
+                    obj.RequestVenID = (int)(dt.Rows[0]["RequestVenID"] == DBNull.Value ? 0 : dt.Rows[0]["RequestVenID"]);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return obj;
+        }
+
+
+
         public static DataTable SelectByProductReqIssueID(int ProductRequestIssueID)
         {
             DataTable dt;

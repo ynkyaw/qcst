@@ -33,6 +33,11 @@ namespace PTIC.Marketing.BL
         {
             return TripPlanDA.SelectAll(is_sale,conn);
         }
+
+        public DataTable GetPreviousTrip(bool is_sale,int tripId,int currentTripDtl) 
+        {
+            return TripPlanDA.GetPreviousTrip(is_sale, tripId, currentTripDtl);
+        }
         
         public DataTable GetLost(SqlConnection conn)
         {

@@ -88,42 +88,42 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void cboPrevTripID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboPrevTripID.Text.ToString() == "") return;
-            int prevTripPlanDetailID = 0;
-            DataRowView drv = cboPrevTripID.SelectedValue as DataRowView;
-            if (drv == null)
-            {
-                prevTripPlanDetailID = Convert.ToInt32(cboPrevTripID.SelectedValue);
-            }
-            else
-            {
-                prevTripPlanDetailID = Convert.ToInt32(drv.Row.ItemArray[0]);
-            }
+            //if (cboPrevTripID.Text.ToString() == "") return;
+            //int prevTripPlanDetailID = 0;
+            //DataRowView drv = cboPrevTripID.SelectedValue as DataRowView;
+            //if (drv == null)
+            //{
+            //    prevTripPlanDetailID = Convert.ToInt32(cboPrevTripID.SelectedValue);
+            //}
+            //else
+            //{
+            //    prevTripPlanDetailID = Convert.ToInt32(drv.Row.ItemArray[0]);
+            //}
 
-            SqlConnection conn = null;
-            try
-            {
-                conn = DBManager.GetInstance().GetDbConnection();
-                DataTable dtTripPlanDetail = new TripPlanDetailBL().GetPrevTripPlanByTripPlanDetailID(prevTripPlanDetailID, conn);
-                if (dtTripPlanDetail == null) return;
-                if (dtTripPlanDetail.Rows.Count > 0)
-                {
-                    dtPrevTripID.Value = Convert.ToDateTime(dtTripPlanDetail.Rows[0]["FromDate"].ToString());
-                    txtPrevRent.Text = dtTripPlanDetail.Rows[0]["Rent"].ToString();
-                    txtPrevTransport.Text = dtTripPlanDetail.Rows[0]["Transport"].ToString();
-                    txtPrevRemittance.Text = dtTripPlanDetail.Rows[0]["Remittance"].ToString();
-                    txtPrevCommunication.Text = dtTripPlanDetail.Rows[0]["Communication"].ToString();
-                    txtPrevFood.Text = dtTripPlanDetail.Rows[0]["Food"].ToString();
-                    txtPrevOtherExp.Text = dtTripPlanDetail.Rows[0]["OtherExp"].ToString();
-                }
-            }
-            catch (SqlException sqle)
-            {
-            }
-            finally
-            {
-                DBManager.GetInstance().CloseDbConnection();
-            }
+            //SqlConnection conn = null;
+            //try
+            //{
+            //    conn = DBManager.GetInstance().GetDbConnection();
+            //    DataTable dtTripPlanDetail = new TripPlanDetailBL().GetPrevTripPlanByTripPlanDetailID(prevTripPlanDetailID, conn);
+            //    if (dtTripPlanDetail == null) return;
+            //    if (dtTripPlanDetail.Rows.Count > 0)
+            //    {
+            //        dtPrevTripID.Value = Convert.ToDateTime(dtTripPlanDetail.Rows[0]["FromDate"].ToString());
+            //        txtPrevRent.Text = dtTripPlanDetail.Rows[0]["Rent"].ToString();
+            //        txtPrevTransport.Text = dtTripPlanDetail.Rows[0]["Transport"].ToString();
+            //        txtPrevRemittance.Text = dtTripPlanDetail.Rows[0]["Remittance"].ToString();
+            //        txtPrevCommunication.Text = dtTripPlanDetail.Rows[0]["Communication"].ToString();
+            //        txtPrevFood.Text = dtTripPlanDetail.Rows[0]["Food"].ToString();
+            //        txtPrevOtherExp.Text = dtTripPlanDetail.Rows[0]["OtherExp"].ToString();
+            //    }
+            //}
+            //catch (SqlException sqle)
+            //{
+            //}
+            //finally
+            //{
+            //    DBManager.GetInstance().CloseDbConnection();
+            //}
         }
 
         private void dtFromDate_ValueChanged(object sender, EventArgs e)
@@ -370,26 +370,13 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 txtTripPlanRequest.Text = _mTripPlan.TripPlanName;
                 txtTripName.Text = _mTripPlan.TripPlanName;
 
-                // tripTbl2= new TripPlanBL().GetAll(conn)
-                tripTbl2 = new TripPlanDetailBL().GetPrevTripPlan(_mTripPlanDetail.ID, GlobalCache.is_sale, conn);
-
-
-
-
-
-
-
-
-                //tripTbl2.Rows.RemoveAt(
-                cboPrevTripID.DataSource = tripTbl2;
-                cboPrevTripID.ValueMember = "TPD_ID";
-                cboPrevTripID.DisplayMember = "TripPlanName";
+                
 
                 using (DataTable dtTripPlanDetail = new TripPlanDetailBL().GetByTripPlanDetailID(tripPlanDetailID, conn))
                 {
                     //dgvAPGiftList.DataSource = tblTripPanelDetails;
                     //Bind to each controls
-
+                    
                     txtTripNo.Text = dtTripPlanDetail.Rows[0]["TripPlanNo"].ToString();
                     cboTripID.SelectedValue = dtTripPlanDetail.Rows[0]["TripID"].ToString();
                     //   txtTripPlanName.Text = dtTripPlanDetail.Rows[0]["TripPlanName"].ToString();
@@ -863,9 +850,31 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 //(tabPage4 as Control).Enabled = false;
             }
 
+
+
+
+           
             this._mTripPlanDetail = tripPlanDetail;
             this._mTripPlan = tripPlan;
             LoadNBindTripDetailPlan();
+            _mTripPlanDetail.TripID =(int) cboTripID.SelectedValue;
+
+            if (this._mTripPlanDetail.TripID != 0) 
+            {
+                DataTable previousTripPlan = new TripPlanBL().GetPreviousTrip((Program.module==Program.Module.Sale),_mTripPlanDetail.TripID,_mTripPlanDetail.ID);
+                if (previousTripPlan.Rows.Count == 1)
+                {
+                    txtPrevRent.Text = previousTripPlan.Rows[0]["RentAmt"].ToString();
+                    txtPrevTransport.Text = previousTripPlan.Rows[0]["TransportAmt"].ToString();
+                    txtPrevRemittance.Text = previousTripPlan.Rows[0]["RemittanceAmt"].ToString();
+                    txtPrevCommunication.Text = previousTripPlan.Rows[0]["CommunicationAmt"].ToString();
+                    txtPrevFood.Text = previousTripPlan.Rows[0]["FoodAmt"].ToString();
+                    txtPrevOtherExp.Text = previousTripPlan.Rows[0]["OtherExpense"].ToString();
+                }
+
+            }
+
+            
             LoadTripRequestPage();
             if (this._mTripPlanDetail.ID > 0)
             {
