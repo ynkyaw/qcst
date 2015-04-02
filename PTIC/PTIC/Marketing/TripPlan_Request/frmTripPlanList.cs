@@ -209,6 +209,8 @@ namespace PTIC.VC.Marketing.MarketingPlan
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dgvTripPlanList.CurrentRow == null)
+                return;
             if (dgvTripPlanList.CurrentRow.IsNewRow || dgvTripPlanList.SelectedRows.Count < 1)
             {
                 MessageBox.Show(Resource.errSelectRowToDelete, this.Text,
