@@ -445,10 +445,16 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void butSave_Click(object sender, EventArgs e)
         {
-            Save();
-            EditFlag = false;
+            if (!EditFlag)
+            {
+                Save();
+            }
+            else
+            {
 
-            //LoadNBindTripPlanAndDetails(_tripPlan);
+                EditFlag = false;
+            }
+            
         }
 
         /// <summary>
@@ -457,9 +463,9 @@ namespace PTIC.VC.Marketing.DailyMarketing
         private void Save()
         {
             TripPlanBL tripPlanSaver = null;
-            TripPlan tripPlan = null;
-            //TripPlanBL tripPlanBL = null;
+            TripPlan tripPlan = null;            
             TripPlanDetailBL tripPlanDetailBL = null;
+
             try
             {
                 DataTable dt = dgvTripPlanDetail.DataSource as DataTable;
@@ -467,26 +473,31 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 if (dt == null) return;
 
                 tripPlanSaver = new TripPlanBL();
-                //tripPlanBL = new TripPlanBL();
                 tripPlanDetailBL = new TripPlanDetailBL();
 
-                tripPlan = new TripPlan()
+                //Check Is Existing Trip Plan Or Not
+                if (_tripPlan != null && _tripPlan.ID != 0)
                 {
-                    // Trip Plan ID
-                    TripPlanNo = txtTripPlanNo.Text,
-                    TranDate = DateTime.Now,
-                    TripPlanName = txtTripPlanName.Text,
-                    FromDate = (DateTime)dtFromDate.Value,
-                    ToDate = (DateTime)dtToDate.Value,
-                    IsSale = GlobalCache.is_sale
-                };
 
-                List<TripPlanDetail> insertTripPlanDetails = new List<TripPlanDetail>();
-                List<TripPlanDetail> updateTripPlanDetails = new List<TripPlanDetail>();
-                List<TripPlanDetail> deletTripPlanDetails = new List<TripPlanDetail>();
+                    tripPlan = _tripPlan;
+                }
+                else
+                {
+                    tripPlan = new TripPlan();
+                    tripPlan.ID = 0;
+                }
 
-                DataView dvInsert = new DataView(dt, string.Empty, string.Empty, DataViewRowState.Added);
-                foreach (DataRow row in dvInsert.ToTable().Rows)
+                //Getting Values from UI for TripPlan
+                tripPlan.TripPlanNo = txtTripPlanNo.Text;
+                tripPlan.TranDate = DateTime.Now;
+                tripPlan.TripPlanName = txtTripPlanName.Text;
+                tripPlan.FromDate = (DateTime)dtFromDate.Value;
+                tripPlan.ToDate = (DateTime)dtToDate.Value;
+                tripPlan.IsSale = GlobalCache.is_sale;
+
+                List<TripPlanDetail> tripPlanDetails = new List<TripPlanDetail>();
+
+                foreach (DataRow row in dt.Rows)
                 {
                     string FromDate = (string)DataTypeParser.Parse(row["FromDate"].ToString(), typeof(string), String.Empty);
                     string ToDate = (string)DataTypeParser.Parse(row["ToDate"].ToString(), typeof(string), String.Empty);
@@ -516,190 +527,57 @@ namespace PTIC.VC.Marketing.DailyMarketing
                         Remark = (string)DataTypeParser.Parse(row["Remark"].ToString(), typeof(string), string.Empty)
                     };
 
-                    if (tripPlanDetail.FromDate.Date > tripPlanDetail.ToDate.Date) 
+                    if (tripPlanDetail.FromDate.Date > tripPlanDetail.ToDate.Date)
                     {
                         MessageBox.Show("သွားမည့်ရက် သည် ပြန်ရောက်မည့်ရက် ထက်စောရပါမည်။");
                         return;
                     }
-
-                    insertTripPlanDetails.Add(tripPlanDetail);                    
-                }
-
-                // delete
-                DataView dvDelete = new DataView(dt, string.Empty, string.Empty, DataViewRowState.Deleted);
-                foreach (DataRow row in dvDelete.ToTable().Rows)
-                {
-                    TripPlanDetail tripPlanDetail = new TripPlanDetail()
-                    {
-                        ID = (int)DataTypeParser.Parse(row["TripPlanDetailID"].ToString(), typeof(int), -1),
-                        TripPlanID = (int)DataTypeParser.Parse(row["TripPlanID"].ToString(), typeof(int), -1),
-                        ManagerID = (int)DataTypeParser.Parse(row["ManagerID"].ToString(), typeof(int), -1),
-                        SalesPersonID = (int)DataTypeParser.Parse(row["ManagerID"].ToString(), typeof(int), -1),
-                        TransportTypeID = (int)DataTypeParser.Parse(row["TransportTypeID"].ToString(), typeof(int), -1),
-                        VenID = (int?)DataTypeParser.Parse(row["VenID"].ToString(), typeof(int), null),
-                        TripPlanNo = (string)DataTypeParser.Parse(row["TripPlanNo"].ToString(), typeof(string), string.Empty),
-                        //TripName = row["TripName"].ToString().ToString(),
-                        TripID = (int)DataTypeParser.Parse(row["TripID"].ToString(), typeof(int), -1),
-                        TranDate = DateTime.Now,
-                        FromDate = (DateTime)DataTypeParser.Parse(row["FromDate"].ToString(), typeof(DateTime), DateTime.Now),
-                        ToDate = (DateTime)DataTypeParser.Parse(row["ToDate"].ToString(), typeof(DateTime), DateTime.Now),
-                        //PrevTripName =  row.Cells["clnPrevTripName"].ToString(),
-                        PrevTripName = "",
-                        Accessories = "",
-                        Rent = 0,
-                        Food = 0,
-                        Transport = 0,
-                        Communication = 0,
-                        OtherExp = 0,
-                        Remittance = 0,
-                        Remark = (string)DataTypeParser.Parse(row["Remark"].ToString(), typeof(string), string.Empty)
-                    };
-                    deletTripPlanDetails.Add(tripPlanDetail);
-                }
-
-                // update
-                DataView dvUpdate = new DataView(dt, string.Empty, string.Empty, DataViewRowState.ModifiedCurrent);
-                foreach (DataRow row in dvUpdate.ToTable().Rows)
-                {
-                    string FromDate = (string)DataTypeParser.Parse(row["FromDate"].ToString(), typeof(string), String.Empty);
-                    string ToDate = (string)DataTypeParser.Parse(row["ToDate"].ToString(), typeof(string), String.Empty);
-                    TripPlanDetail tripPlanDetail = new TripPlanDetail()
-                    {
-                        ID = (int)DataTypeParser.Parse(row["TripPlanDetailID"].ToString(), typeof(int), -1),
-                        TripPlanID = (int)DataTypeParser.Parse(row["TripPlanID"].ToString(), typeof(int), -1),
-                        ManagerID = (int)DataTypeParser.Parse(row["ManagerID"].ToString(), typeof(int), -1),
-                        SalesPersonID = (int)DataTypeParser.Parse(row["ManagerID"].ToString(), typeof(int), -1),
-                        TransportTypeID = (int)DataTypeParser.Parse(row["TransportTypeID"].ToString(), typeof(int), -1),
-                        VenID = (int?)DataTypeParser.Parse(row["VenID"].ToString(), typeof(int), null),
-                        TripPlanNo = (string)DataTypeParser.Parse(row["TripPlanNo"].ToString(), typeof(string), string.Empty),
-                        //TripName = row["TripName"].ToString().ToString(),
-                        TripID = (int)DataTypeParser.Parse(row["TripID"].ToString(), typeof(int), -1),
-                        TranDate = DateTime.Now,
-                        FromDate = (DateTime)DataTypeParser.Parse(row["FromDate"].ToString(), typeof(DateTime), -1),
-                        ToDate = (DateTime)DataTypeParser.Parse(row["ToDate"].ToString(), typeof(DateTime), -1),
-                        //PrevTripName =  row.Cells["clnPrevTripName"].ToString(),
-                        PrevTripName = "",
-                        Accessories = "",
-                        Rent = 0,
-                        Food = 0,
-                        Transport = 0,
-                        Communication = 0,
-                        OtherExp = 0,
-                        Remittance = 0,
-                        Remark = (string)DataTypeParser.Parse(row["Remark"].ToString(), typeof(string), string.Empty)
-                    };
-                    if (tripPlanDetail.ManagerID != -1 && tripPlanDetail.TransportTypeID != -1 && tripPlanDetail.SalesPersonID != -1 && tripPlanDetail.TripID != -1 && FromDate != String.Empty && ToDate != String.Empty)
-                    {
-                        updateTripPlanDetails.Add(tripPlanDetail);
-                    }
+                    if (tripPlanDetail.ID == -1)
+                        tripPlanDetails.Add(tripPlanDetail);
                 }
 
                 int affectedRows = 0;
-                if (_tripPlan == null) // Add new 
-                {
-                    // Add into db
-                    int insertedId = 0;
-                    affectedRows = tripPlanSaver.Add(tripPlan, insertTripPlanDetails,out insertedId);
+                int insertedId = 0;
+                affectedRows = tripPlanSaver.Add(tripPlan, tripPlanDetails, out insertedId);
+                _tripPlan = tripPlan;
+                _tripPlan.ID = insertedId;
 
-                    _tripPlan = tripPlan;
-                    _tripPlan.ID = insertedId;
-                    // Check field validation failed or not
-                    if (!tripPlanSaver.ValidationResults.IsValid)
-                    {
-                        ValidationResult err = DataUtil.GetFirst(tripPlanSaver.ValidationResults) as ValidationResult;
-                        MessageBox.Show(
-                            err.Message,
-                            this.Text,
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                        return;
-                    }
-                    else // Successful validation
-                    {
-                        // Success in db also
-                        if (affectedRows > 0)
-                        {
-                            ToastMessageBox.Show(Resource.msgSuccessfullySaved);
-                            //this.Close();
-                        }
-                        else
-                            ToastMessageBox.Show(Resource.errFailedToSave, Color.Red);
-                    }
+                // Check field validation failed or not
+                if (!tripPlanSaver.ValidationResults.IsValid)
+                {
+                    ValidationResult err = DataUtil.GetFirst(tripPlanSaver.ValidationResults) as ValidationResult;
+                    MessageBox.Show(
+                        err.Message,
+                        this.Text,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
                 }
-                else // Update an existing
+                else // Successful validation
                 {
-                    // Update order by order ID
-                    tripPlan.ID = _tripPlan.ID;
-                    
-                    if (insertTripPlanDetails.Count > 0)
+                    // Success in db also
+                    if (affectedRows > 0)
                     {
-                        affectedRows = tripPlanSaver.Update(tripPlan, insertTripPlanDetails);
-                        // Check field validation failed or not
-                        if (!tripPlanSaver.ValidationResults.IsValid)
-                        {
-                            ValidationResult err = DataUtil.GetFirst(tripPlanSaver.ValidationResults) as ValidationResult;
-                            MessageBox.Show(
-                                err.Message,
-                                this.Text,
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                            return;
-                        }
+                        ToastMessageBox.Show(Resource.msgSuccessfullySaved);
                     }
+                    else
+                        ToastMessageBox.Show(Resource.errFailedToSave, Color.Red);
+                }
 
-                    if (deletTripPlanDetails.Count > 0)
-                    {
-                        affectedRows = tripPlanDetailBL.Delete(deletTripPlanDetails);
-                        // Check field validation failed or not
-                        if (!tripPlanDetailBL.ValidationResults.IsValid)
-                        {
-                            ValidationResult err = DataUtil.GetFirst(tripPlanDetailBL.ValidationResults) as ValidationResult;
-                            MessageBox.Show(
-                                err.Message,
-                                this.Text,
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-
-                    if (updateTripPlanDetails.Count > 0)
-                    {
-                        affectedRows = tripPlanDetailBL.Update(updateTripPlanDetails);
-                        // Check field validation failed or not
-                        
-                    }
-
-                    affectedRows = tripPlanSaver.UpdateByID(tripPlan);
-                    // Check field validation failed or not
-                    if (!tripPlanSaver.ValidationResults.IsValid)
-                    {
-                        ValidationResult err = DataUtil.GetFirst(tripPlanSaver.ValidationResults) as ValidationResult;
-                        MessageBox.Show(
-                            err.Message,
-                            this.Text,
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                        return;
-                    }
-                } // END OF existing
                 if (affectedRows > 0)
                 {
-                    TripPlanSaveEventArgs args = new TripPlanSaveEventArgs(true);
-                    TripPlanSavedHandler(this, args);
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
                     LoadNBindTripPlanAndDetails(_tripPlan);
                     btnNew.Enabled = true;
                     butDelete.Enabled = true;
-                    //this.Close();
                 }
                 else
                     MessageBox.Show(Resource.errFailedToSave, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, 
-                    this.Text, 
+                MessageBox.Show(e.Message,
+                    this.Text,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _logger.Error(e);
             }
@@ -867,6 +745,12 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(dgvTripPlanDetail.Rows[dgvTripPlanDetail.Rows.Count - 1].Cells[colTripPlanID.Index].Value + string.Empty)) 
+            {
+                MessageBox.Show("Please Save last records first!");
+                return;
+            }
+
             DataUtil.AddNewRow(dgvTripPlanDetail.DataSource as DataTable);
             dgvTripPlanDetail.CurrentCell = dgvTripPlanDetail.Rows[dgvTripPlanDetail.RowCount - 1].Cells["clnTripPlanNo"];
             dgvTripPlanDetail.CurrentRow.ReadOnly = false;
@@ -941,6 +825,12 @@ namespace PTIC.VC.Marketing.DailyMarketing
             if (EditFlag == false)
             {
                 var dgv = dgvTripPlanDetail as DataGridView;
+
+                if (dgv.CurrentRow == dgv.Rows[dgv.Rows.Count - 1] && string.IsNullOrEmpty(dgvTripPlanDetail.Rows[dgvTripPlanDetail.Rows.Count - 1].Cells[colTripPlanID.Index].Value + string.Empty)) 
+                {
+                    return;
+                }
+
                 dgv.CurrentRow.ReadOnly = false;
                 int selectedTransportTypeID = (int)DataTypeParser.Parse(dgv.CurrentRow.Cells["clntranportTypeID"].Value, typeof(int), -1);
 
@@ -961,11 +851,9 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 }
                 btnNew.Enabled = false;
                 butDelete.Enabled = false;
+                EditFlag = true;
             }
-            else
-            {
-
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -976,6 +864,18 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 invColList.Add("colTripPlanTargetOpen");
             frmTripPlanViewSetting frmSetting = new frmTripPlanViewSetting(dgvTripPlanDetail,invColList);
             frmSetting.ShowDialog();
+        }
+
+        private void tripPlanPrint_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dgvTripPlanDetail.Width, this.dgvTripPlanDetail.Height);
+            dgvTripPlanDetail.DrawToBitmap(bm, new Rectangle(0, 0, this.dgvTripPlanDetail.Width, this.dgvTripPlanDetail.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tripPlanPrint.Print();
         }
 
        
