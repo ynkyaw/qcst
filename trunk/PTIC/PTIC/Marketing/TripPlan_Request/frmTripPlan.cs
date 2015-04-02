@@ -182,6 +182,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 {
                     _tripPlan.ID = (int)DataTypeParser.Parse(selectedRow.Cells[colTripPlanID.Index].Value, typeof(int), -1);
                 }
+                _tripPlan.TripPlanName = txtTripPlanName.Text;
 
                 frmTripDetailPlan frm = new frmTripDetailPlan(_tripPlan, mTripPlanDetail, requestFlag);
                 // TODO: set call back handler for frmTripDetailPlan
@@ -666,16 +667,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     {
                         affectedRows = tripPlanDetailBL.Update(updateTripPlanDetails);
                         // Check field validation failed or not
-                        if (!tripPlanDetailBL.ValidationResults.IsValid)
-                        {
-                            ValidationResult err = DataUtil.GetFirst(tripPlanDetailBL.ValidationResults) as ValidationResult;
-                            MessageBox.Show(
-                                err.Message,
-                                this.Text,
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                            return;
-                        }
+                        
                     }
 
                     affectedRows = tripPlanSaver.UpdateByID(tripPlan);
@@ -697,6 +689,8 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     TripPlanSavedHandler(this, args);
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
                     LoadNBindTripPlanAndDetails(_tripPlan);
+                    btnNew.Enabled = true;
+                    butDelete.Enabled = true;
                     //this.Close();
                 }
                 else
@@ -965,6 +959,8 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 {
                     dgvTripPlanDetail.CurrentRow.Cells["clnVenID"].ReadOnly = false;
                 }
+                btnNew.Enabled = false;
+                butDelete.Enabled = false;
             }
             else
             {
