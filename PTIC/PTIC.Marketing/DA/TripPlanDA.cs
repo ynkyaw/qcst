@@ -112,6 +112,38 @@ namespace  PTIC.Marketing.DA
             return dt;
         }
 
+        public static DataTable GetPreviousTrip(bool isSale,int tripId,int currentTripDtl) 
+        {
+            DataTable dt = null;
+            string tableName = "TripPlanTable";
+            SqlConnection conn = null;
+            try
+            {
+                dt = new DataTable(tableName);
+                conn = DBManager.GetInstance().GetDbConnection();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                //command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "select top 1 tr.* from TripRecord tr Inner join TripPlanDetail td on tr.TripPlanDetailID=td.ID Inner Join TripPlan tp on tp.ID =td.TripPlanID where td.TripID=@p_TripId and td.ID<>@p_CurrentId and tp.IsSale=@p_isSale order by td.ID desc";
+
+                command.Parameters.AddWithValue("@p_TripId", tripId);
+                
+
+                command.Parameters.AddWithValue("@p_CurrentId", currentTripDtl);
+                
+
+                command.Parameters.AddWithValue("@p_isSale", isSale);
+                
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return dt;
+        }
+
 
         public static DataTable SelectByNo(string No, SqlConnection conn)
         {

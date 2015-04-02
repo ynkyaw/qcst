@@ -108,7 +108,7 @@ namespace PTIC.VC.Marketing.A_P
             if (dtPosmRequestDetail.Rows.Count > 0)
             {
                 int? VenID = (int?)DataTypeParser.Parse(dtPosmRequestDetail.Rows[0]["RequestVenID"], typeof(int), null);
-                int? DeptID = (int)DataTypeParser.Parse(dtPosmRequestDetail.Rows[0]["RequestDeptID"], typeof(int), null);
+                int? DeptID = (int?)DataTypeParser.Parse(dtPosmRequestDetail.Rows[0]["RequestDeptID"], typeof(int), null);
                 int EmployeeID = (int)DataTypeParser.Parse(dtPosmRequestDetail.Rows[0]["RequesterID"], typeof(int), -1);
                 DateTime RequestDate = (DateTime)DataTypeParser.Parse(dtPosmRequestDetail.Rows[0]["RequestDate"], typeof(int), DateTime.Now);
                 dtpRequestDate.Value = RequestDate;

@@ -64,7 +64,10 @@ namespace PTIC.Marketing.TripPlan_Request
             }
             else
             {
+                _ProductRequestIssue = new ProductRequestIssueBL().GetProductRequestIssueById(_ProductRequestIssue.ID);
                 btnRequest.Enabled = false;
+                btnDelete.Enabled = false;
+                btnNew.Enabled = false;
                 colIssueQty.ReadOnly = false;
                 colRequestQty.ReadOnly = true;
                 colBrand.ReadOnly = true;
@@ -73,7 +76,12 @@ namespace PTIC.Marketing.TripPlan_Request
                 colRemark.ReadOnly = true;
                 colWeight.ReadOnly = true;
             }
-
+            if (_ProductRequestIssue.IssueDeptID != 0 && _ProductRequestIssue.IssueDeptID!=null) 
+            {
+                cmbGiverDept.SelectedValue = _ProductRequestIssue.IssueDeptID;
+                cmbGiver.SelectedValue = _ProductRequestIssue.IssuerID;
+            
+            }
             dgvProductReqIssue.AutoGenerateColumns = false;
             this.dtProductRequestIssue = new ProductRequestIssueBL().GetAllByProductReqIssueID(this.ProductRequestIssueID);
             dgvProductReqIssue.DataSource = dtProductRequestIssue;
@@ -218,9 +226,9 @@ namespace PTIC.Marketing.TripPlan_Request
                 {
                     ProductRequestIssueDetail _ProductRequestIssueDetail = new ProductRequestIssueDetail()
                     {
-                        ID = (int)DataTypeParser.Parse(row["ProductRequestIssueID"].ToString(),typeof(int),-1),
+                        ID = (int)DataTypeParser.Parse(row["ProductRequestIssueDtlID"].ToString(),typeof(int),-1),
                         ProductRequestIssueID = (int)DataTypeParser.Parse(row["ProductRequestIssueID"].ToString(),typeof(int),-1),
-                        //ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                        ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
                         //Weight = (int)DataTypeParser.Parse(row["Weight"].ToString(), typeof(int), 0),
                         //RequestQty = (int)DataTypeParser.Parse(row["RequestQty"].ToString(), typeof(int), 0),
                         IssueQty = (int)DataTypeParser.Parse(row["IssueQty"].ToString(), typeof(int), 0),
@@ -241,6 +249,7 @@ namespace PTIC.Marketing.TripPlan_Request
                 if (ProductRequestIssueID != -1 && updateProductRequestIssueDetail.Count > 0)
                 {
                     _ProductRequestIssue.ID = ProductRequestIssueID;
+                    _ProductRequestIssue.IssueDate = dtpRequestDate.Value;
                     //insertedRequestID += new AP_RequestDetailBL().UpdateID(updateProductRequestIssueDetail, conn);
                     insertedRequestID += new ProductRequestIssueBL().Edit(_ProductRequestIssue, updateProductRequestIssueDetail);
                 }

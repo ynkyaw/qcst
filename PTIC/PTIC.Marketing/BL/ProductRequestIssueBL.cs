@@ -24,5 +24,10 @@ namespace PTIC.Marketing.BL
         {
             return ProductRequestIssueDA.Update(_ProductRequestIssue, _ProductRequestIssueDetail);
         }
+
+        public ProductRequestIssue GetProductRequestIssueById(int ProductRequestIssueID) 
+        {
+            return ProductRequestIssueDA.GetProductRequestIssueById(ProductRequestIssueID);
+        }
     }
 }
