@@ -106,16 +106,16 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 conn = DBManager.GetInstance().GetDbConnection();
                 DataTable dtTripPlanDetail = new TripPlanDetailBL().GetPrevTripPlanByTripPlanDetailID(prevTripPlanDetailID, conn);
                 if (dtTripPlanDetail == null) return;
-                //if (dtTripPlanDetail.Rows.Count > 0)
-                //{
-                //    dtPrevTripID.Value = Convert.ToDateTime(dtTripPlanDetail.Rows[0]["FromDate"].ToString());
-                //    txtPrevRent.Text = dtTripPlanDetail.Rows[0]["Rent"].ToString();
-                //    txtPrevTransport.Text = dtTripPlanDetail.Rows[0]["Transport"].ToString();
-                //    txtPrevRemittance.Text = dtTripPlanDetail.Rows[0]["Remittance"].ToString();
-                //    txtPrevCommunication.Text = dtTripPlanDetail.Rows[0]["Communication"].ToString();
-                //    txtPrevFood.Text = dtTripPlanDetail.Rows[0]["Food"].ToString();
-                //    txtPrevOtherExp.Text = dtTripPlanDetail.Rows[0]["OtherExp"].ToString();
-                //}
+                if (dtTripPlanDetail.Rows.Count > 0)
+                {
+                    dtPrevTripID.Value = Convert.ToDateTime(dtTripPlanDetail.Rows[0]["FromDate"].ToString());
+                    txtPrevRent.Text = dtTripPlanDetail.Rows[0]["Rent"].ToString();
+                    txtPrevTransport.Text = dtTripPlanDetail.Rows[0]["Transport"].ToString();
+                    txtPrevRemittance.Text = dtTripPlanDetail.Rows[0]["Remittance"].ToString();
+                    txtPrevCommunication.Text = dtTripPlanDetail.Rows[0]["Communication"].ToString();
+                    txtPrevFood.Text = dtTripPlanDetail.Rows[0]["Food"].ToString();
+                    txtPrevOtherExp.Text = dtTripPlanDetail.Rows[0]["OtherExp"].ToString();
+                }
             }
             catch (SqlException sqle)
             {
@@ -372,6 +372,14 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
                 // tripTbl2= new TripPlanBL().GetAll(conn)
                 tripTbl2 = new TripPlanDetailBL().GetPrevTripPlan(_mTripPlanDetail.ID, GlobalCache.is_sale, conn);
+
+
+
+
+
+
+
+
                 //tripTbl2.Rows.RemoveAt(
                 cboPrevTripID.DataSource = tripTbl2;
                 cboPrevTripID.ValueMember = "TPD_ID";

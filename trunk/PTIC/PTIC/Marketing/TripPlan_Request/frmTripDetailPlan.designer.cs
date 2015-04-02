@@ -1067,7 +1067,6 @@
             this.cboPrevTripID.Name = "cboPrevTripID";
             this.cboPrevTripID.Size = new System.Drawing.Size(145, 25);
             this.cboPrevTripID.TabIndex = 198;
-            this.cboPrevTripID.Visible = false;
             this.cboPrevTripID.SelectedIndexChanged += new System.EventHandler(this.cboPrevTripID_SelectedIndexChanged);
             // 
             // txtTotalDays

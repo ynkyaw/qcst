@@ -120,7 +120,7 @@
             this.lblOrder.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrder.Location = new System.Drawing.Point(10, 9);
             this.lblOrder.Name = "lblOrder";
-            this.lblOrder.Size = new System.Drawing.Size(44, 17);
+            this.lblOrder.Size = new System.Drawing.Size(48, 16);
             this.lblOrder.TabIndex = 4;
             this.lblOrder.Text = "Order";
             this.lblOrder.Click += new System.EventHandler(this.lblOrder_Click);
@@ -134,7 +134,7 @@
             this.lblBrand.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblBrand.Location = new System.Drawing.Point(61, 9);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(109, 17);
+            this.lblBrand.Size = new System.Drawing.Size(111, 16);
             this.lblBrand.TabIndex = 3;
             this.lblBrand.Text = ">    Order စာရင်း";
             // 
@@ -308,7 +308,7 @@
             this.dtpOrderStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpOrderStart.Location = new System.Drawing.Point(18, 50);
             this.dtpOrderStart.Name = "dtpOrderStart";
-            this.dtpOrderStart.Size = new System.Drawing.Size(128, 26);
+            this.dtpOrderStart.Size = new System.Drawing.Size(128, 23);
             this.dtpOrderStart.TabIndex = 81;
             // 
             // dtpOrderEnd
@@ -318,7 +318,7 @@
             this.dtpOrderEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpOrderEnd.Location = new System.Drawing.Point(19, 82);
             this.dtpOrderEnd.Name = "dtpOrderEnd";
-            this.dtpOrderEnd.Size = new System.Drawing.Size(128, 26);
+            this.dtpOrderEnd.Size = new System.Drawing.Size(128, 23);
             this.dtpOrderEnd.TabIndex = 82;
             // 
             // lblFrom
@@ -327,7 +327,7 @@
             this.lblFrom.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFrom.Location = new System.Drawing.Point(152, 55);
             this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(16, 17);
+            this.lblFrom.Size = new System.Drawing.Size(16, 16);
             this.lblFrom.TabIndex = 83;
             this.lblFrom.Text = "မှ";
             // 
@@ -337,7 +337,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(153, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 17);
+            this.label1.Size = new System.Drawing.Size(20, 16);
             this.label1.TabIndex = 84;
             this.label1.Text = "ထိ";
             // 
@@ -375,7 +375,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(693, 419);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 166;
             this.label2.Text = "Order No. ";
             // 
@@ -543,6 +543,7 @@
             this.btnEdit.TabIndex = 170;
             this.btnEdit.Text = "ပြင်မည်";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
@@ -555,6 +556,7 @@
             this.btnDelete.TabIndex = 169;
             this.btnDelete.Text = "ဖျက်မည်";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panel2
@@ -667,7 +669,7 @@
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
             this.label3.Location = new System.Drawing.Point(12, 394);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 17);
+            this.label3.Size = new System.Drawing.Size(126, 16);
             this.label3.TabIndex = 172;
             this.label3.Text = "မှာယူသည့်ပစ္စည်းစာရင်း";
             // 
@@ -677,7 +679,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label7.Location = new System.Drawing.Point(189, 54);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 20);
+            this.label7.Size = new System.Drawing.Size(110, 19);
             this.label7.TabIndex = 174;
             this.label7.Text = "Customer အမည်";
             // 
@@ -690,7 +692,7 @@
             this.cmbDept.FormattingEnabled = true;
             this.cmbDept.Location = new System.Drawing.Point(349, 84);
             this.cmbDept.Name = "cmbDept";
-            this.cmbDept.Size = new System.Drawing.Size(150, 27);
+            this.cmbDept.Size = new System.Drawing.Size(150, 25);
             this.cmbDept.TabIndex = 175;
             this.cmbDept.ValueMember = "ID";
             // 
@@ -700,7 +702,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label4.Location = new System.Drawing.Point(189, 88);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 20);
+            this.label4.Size = new System.Drawing.Size(153, 19);
             this.label4.TabIndex = 176;
             this.label4.Text = "လက်ခံသည့် Department";
             // 
@@ -713,7 +715,7 @@
             this.cmbCustomer.FormattingEnabled = true;
             this.cmbCustomer.Location = new System.Drawing.Point(349, 53);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(150, 27);
+            this.cmbCustomer.Size = new System.Drawing.Size(150, 25);
             this.cmbCustomer.TabIndex = 177;
             this.cmbCustomer.ValueMember = "CustomerID";
             // 
