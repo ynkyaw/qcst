@@ -416,6 +416,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     txtSM.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["SaleManagerRemark"].ToString(), typeof(string), string.Empty);
                     txtPurpose.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["TripPlanPurpose"].ToString(), typeof(string), string.Empty);
                     remark = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Remark"].ToString(), typeof(string), string.Empty);
+                    //txtTripName.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Remark"].ToString(), typeof(string), string.Empty);
                 };
 
                 //if (numPersonCount.Text == "0") numPersonCount.Text=((int)DataTypeParser.Parse(numPersonCount.Text,typeof(int),0) + 1).ToString();

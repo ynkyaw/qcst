@@ -321,7 +321,7 @@ namespace PTIC.Marketing.BL
                                             && ((detail.FromDate >= dts.FromDate && detail.FromDate <= dts.ToDate)
                                             || (detail.ToDate >= dts.FromDate && detail.ToDate <= dts.ToDate))
                                         select dts;
-                    if (duplicatedVan.ToArray().Length > 1) // do not allow entry that exceed one entry at most
+                    if (duplicatedVan.ToArray().Length > 2) // do not allow entry that exceed one entry at most
                     {
                         base.ValidationResults.AddResult(
                         new ValidationResult(ErrorMessages.TripPlanDetail_duplicatedVan_Duplicate,
@@ -333,8 +333,8 @@ namespace PTIC.Marketing.BL
                 //- အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။ (validate via db)
                 if (detail.VenID.HasValue)
                 {
-                    DataTable dtDuplicatedVan = detailBL.GetBy(detail.FromDate, detail.ToDate, detail.VenID.Value);
-                    if (dtDuplicatedVan != null && dtDuplicatedVan.Rows.Count > 0)
+                    DataTable dtDuplicatedVan = detailBL.GetBy(detail.FromDate, detail.ToDate, detail.VenID.Value,detail.ID);
+                    if (dtDuplicatedVan != null && dtDuplicatedVan.Rows.Count > 1)
                     {
                         base.ValidationResults.AddResult(
                         new ValidationResult(ErrorMessages.TripPlanDetail_duplicatedVan_Duplicate,

@@ -108,7 +108,7 @@ namespace PTIC.Marketing.DA
             return dt;
         }
 
-        public static DataTable SelectBy(DateTime startDate, DateTime endDate, int vehicleID)
+        public static DataTable SelectBy(DateTime startDate, DateTime endDate, int vehicleID,int dtlId)
         {
             DataTable table = null;
             string tableName = "MarketingDetailTable";
@@ -118,13 +118,14 @@ namespace PTIC.Marketing.DA
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
 
-                command.CommandText = "SELECT ID FROM TripPlanDetail WHERE IsDeleted = 0 AND VenID = @p_VenID"
+                command.CommandText = "SELECT ID FROM TripPlanDetail WHERE IsDeleted = 0 AND VenID = @p_VenID AND ID<>@p_Id"
                                                         + " AND ((@p_FromDate BETWEEN FromDate AND ToDate)"
                                                         + " OR (@p_ToDate BETWEEN FromDate AND ToDate))";
 
                 command.Parameters.AddWithValue("@p_VenID", vehicleID);
                 command.Parameters.AddWithValue("@p_FromDate", startDate);
                 command.Parameters.AddWithValue("@p_ToDate", endDate);
+                command.Parameters.AddWithValue("@p_Id",dtlId);
                 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
