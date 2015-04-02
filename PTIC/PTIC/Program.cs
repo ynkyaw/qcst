@@ -50,9 +50,10 @@ namespace PTIC.VC
                         MessageBoxButtons.OK, 
                         MessageBoxIcon.Exclamation);
                     return;
-                }                
+                }
+                
                 Application.Run(new frmMainGUI());
-                //Application.Run(new PTIC.Sale.CashCollection.frmReceiptVoucherList_MultipleInvoices());
+                
             }           
         }
     }

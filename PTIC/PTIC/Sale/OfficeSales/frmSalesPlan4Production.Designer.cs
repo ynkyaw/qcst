@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSalePage = new System.Windows.Forms.Label();
@@ -50,6 +50,18 @@
             this.butSave = new System.Windows.Forms.Button();
             this.txtTotalSalesAmount = new System.Windows.Forms.TextBox();
             this.dgvSalesPlan4P = new System.Windows.Forms.DataGridView();
+            this.clnProductName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.clnSalesQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNeed2ProduceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnProducedQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRequireN100Convert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnN100Convert = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnSPDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnSalesPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnRetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnCalculatedValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -76,18 +88,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtN100ConvertProduce = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.clnProductName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.clnSalesQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNeed2ProduceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnProducedQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRequireN100Convert = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnN100Convert = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnSPDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnSalesPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnRetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnCalculatedValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesPlan4P)).BeginInit();
             this.SuspendLayout();
@@ -243,6 +243,123 @@
             this.dgvSalesPlan4P.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSalesPlan4P_RowHeaderMouseDoubleClick);
             this.dgvSalesPlan4P.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvSalesPlan4P_RowsRemoved);
             // 
+            // clnProductName
+            // 
+            this.clnProductName.DataPropertyName = "ProductID";
+            this.clnProductName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.clnProductName.HeaderText = "ထုတ်ကုန်";
+            this.clnProductName.Name = "clnProductName";
+            this.clnProductName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clnProductName.Width = 150;
+            // 
+            // clnSalesQty
+            // 
+            this.clnSalesQty.DataPropertyName = "SaleQty";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.NullValue = "0";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnSalesQty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clnSalesQty.HeaderText = "‌ရောင်းချမည့် Qty";
+            this.clnSalesQty.MaxInputLength = 5;
+            this.clnSalesQty.Name = "clnSalesQty";
+            this.clnSalesQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnSalesQty.Width = 120;
+            // 
+            // clnAmount
+            // 
+            this.clnAmount.DataPropertyName = "Amount";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnAmount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.clnAmount.HeaderText = "‌ငွေ ပမာဏ";
+            this.clnAmount.Name = "clnAmount";
+            this.clnAmount.ReadOnly = true;
+            this.clnAmount.Width = 160;
+            // 
+            // clnNeed2ProduceQty
+            // 
+            this.clnNeed2ProduceQty.DataPropertyName = "ProduceQty";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.NullValue = "0";
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnNeed2ProduceQty.DefaultCellStyle = dataGridViewCellStyle4;
+            this.clnNeed2ProduceQty.HeaderText = "ထုတ်လုပ်ရန် လိုအပ်သည့် Qty";
+            this.clnNeed2ProduceQty.MaxInputLength = 5;
+            this.clnNeed2ProduceQty.Name = "clnNeed2ProduceQty";
+            // 
+            // clnProducedQty
+            // 
+            this.clnProducedQty.DataPropertyName = "RequireQty";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.NullValue = "0";
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnProducedQty.DefaultCellStyle = dataGridViewCellStyle5;
+            this.clnProducedQty.HeaderText = "ထုတ်လုပ်မည့် Qty";
+            this.clnProducedQty.MaxInputLength = 5;
+            this.clnProducedQty.Name = "clnProducedQty";
+            this.clnProducedQty.Width = 90;
+            // 
+            // colRequireN100Convert
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRequireN100Convert.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colRequireN100Convert.HeaderText = "လိုအပ်သည့် N100 Convert";
+            this.colRequireN100Convert.Name = "colRequireN100Convert";
+            this.colRequireN100Convert.ReadOnly = true;
+            this.colRequireN100Convert.Width = 140;
+            // 
+            // clnN100Convert
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.clnN100Convert.DefaultCellStyle = dataGridViewCellStyle7;
+            this.clnN100Convert.HeaderText = "ထုတ်လုပ်မည့် N100 Convert";
+            this.clnN100Convert.Name = "clnN100Convert";
+            this.clnN100Convert.ReadOnly = true;
+            this.clnN100Convert.Width = 130;
+            // 
+            // clnRemark
+            // 
+            this.clnRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clnRemark.DataPropertyName = "Remark";
+            this.clnRemark.HeaderText = "မှတ်ချက်";
+            this.clnRemark.Name = "clnRemark";
+            // 
+            // clnSPDetailID
+            // 
+            this.clnSPDetailID.DataPropertyName = "SalesPlanDetailID";
+            this.clnSPDetailID.FillWeight = 1F;
+            this.clnSPDetailID.HeaderText = "SP Detail ID";
+            this.clnSPDetailID.Name = "clnSPDetailID";
+            this.clnSPDetailID.Visible = false;
+            // 
+            // clnSalesPlanID
+            // 
+            this.clnSalesPlanID.DataPropertyName = "SalesPlanID";
+            this.clnSalesPlanID.FillWeight = 1F;
+            this.clnSalesPlanID.HeaderText = "Sale Plan ID";
+            this.clnSalesPlanID.Name = "clnSalesPlanID";
+            this.clnSalesPlanID.Visible = false;
+            // 
+            // clnRetailPrice
+            // 
+            this.clnRetailPrice.DataPropertyName = "RetailPrice";
+            this.clnRetailPrice.FillWeight = 1F;
+            this.clnRetailPrice.HeaderText = "Retail Price";
+            this.clnRetailPrice.Name = "clnRetailPrice";
+            this.clnRetailPrice.Visible = false;
+            // 
+            // clnCalculatedValue
+            // 
+            this.clnCalculatedValue.DataPropertyName = "CalculatedValue";
+            this.clnCalculatedValue.HeaderText = "Calculated Value";
+            this.clnCalculatedValue.Name = "clnCalculatedValue";
+            this.clnCalculatedValue.Visible = false;
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -265,7 +382,7 @@
             this.btnPrint.TabIndex = 153;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // button1
             // 
@@ -524,123 +641,6 @@
             this.label9.Size = new System.Drawing.Size(25, 19);
             this.label9.TabIndex = 166;
             this.label9.Text = "Ks";
-            // 
-            // clnProductName
-            // 
-            this.clnProductName.DataPropertyName = "ProductID";
-            this.clnProductName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.clnProductName.HeaderText = "ထုတ်ကုန်";
-            this.clnProductName.Name = "clnProductName";
-            this.clnProductName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clnProductName.Width = 150;
-            // 
-            // clnSalesQty
-            // 
-            this.clnSalesQty.DataPropertyName = "SaleQty";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.NullValue = "0";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnSalesQty.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clnSalesQty.HeaderText = "‌ရောင်းချမည့် Qty";
-            this.clnSalesQty.MaxInputLength = 5;
-            this.clnSalesQty.Name = "clnSalesQty";
-            this.clnSalesQty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnSalesQty.Width = 120;
-            // 
-            // clnAmount
-            // 
-            this.clnAmount.DataPropertyName = "Amount";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnAmount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.clnAmount.HeaderText = "‌ငွေ ပမာဏ";
-            this.clnAmount.Name = "clnAmount";
-            this.clnAmount.ReadOnly = true;
-            this.clnAmount.Width = 160;
-            // 
-            // clnNeed2ProduceQty
-            // 
-            this.clnNeed2ProduceQty.DataPropertyName = "ProduceQty";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.NullValue = "0";
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnNeed2ProduceQty.DefaultCellStyle = dataGridViewCellStyle4;
-            this.clnNeed2ProduceQty.HeaderText = "ထုတ်လုပ်ရန် လိုအပ်သည့် Qty";
-            this.clnNeed2ProduceQty.MaxInputLength = 5;
-            this.clnNeed2ProduceQty.Name = "clnNeed2ProduceQty";
-            // 
-            // clnProducedQty
-            // 
-            this.clnProducedQty.DataPropertyName = "RequireQty";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.NullValue = "0";
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnProducedQty.DefaultCellStyle = dataGridViewCellStyle5;
-            this.clnProducedQty.HeaderText = "ထုတ်လုပ်မည့် Qty";
-            this.clnProducedQty.MaxInputLength = 5;
-            this.clnProducedQty.Name = "clnProducedQty";
-            this.clnProducedQty.Width = 90;
-            // 
-            // colRequireN100Convert
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRequireN100Convert.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colRequireN100Convert.HeaderText = "လိုအပ်သည့် N100 Convert";
-            this.colRequireN100Convert.Name = "colRequireN100Convert";
-            this.colRequireN100Convert.ReadOnly = true;
-            this.colRequireN100Convert.Width = 140;
-            // 
-            // clnN100Convert
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.clnN100Convert.DefaultCellStyle = dataGridViewCellStyle7;
-            this.clnN100Convert.HeaderText = "ထုတ်လုပ်မည့် N100 Convert";
-            this.clnN100Convert.Name = "clnN100Convert";
-            this.clnN100Convert.ReadOnly = true;
-            this.clnN100Convert.Width = 130;
-            // 
-            // clnRemark
-            // 
-            this.clnRemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clnRemark.DataPropertyName = "Remark";
-            this.clnRemark.HeaderText = "မှတ်ချက်";
-            this.clnRemark.Name = "clnRemark";
-            // 
-            // clnSPDetailID
-            // 
-            this.clnSPDetailID.DataPropertyName = "SalesPlanDetailID";
-            this.clnSPDetailID.FillWeight = 1F;
-            this.clnSPDetailID.HeaderText = "SP Detail ID";
-            this.clnSPDetailID.Name = "clnSPDetailID";
-            this.clnSPDetailID.Visible = false;
-            // 
-            // clnSalesPlanID
-            // 
-            this.clnSalesPlanID.DataPropertyName = "SalesPlanID";
-            this.clnSalesPlanID.FillWeight = 1F;
-            this.clnSalesPlanID.HeaderText = "Sale Plan ID";
-            this.clnSalesPlanID.Name = "clnSalesPlanID";
-            this.clnSalesPlanID.Visible = false;
-            // 
-            // clnRetailPrice
-            // 
-            this.clnRetailPrice.DataPropertyName = "RetailPrice";
-            this.clnRetailPrice.FillWeight = 1F;
-            this.clnRetailPrice.HeaderText = "Retail Price";
-            this.clnRetailPrice.Name = "clnRetailPrice";
-            this.clnRetailPrice.Visible = false;
-            // 
-            // clnCalculatedValue
-            // 
-            this.clnCalculatedValue.DataPropertyName = "CalculatedValue";
-            this.clnCalculatedValue.HeaderText = "Calculated Value";
-            this.clnCalculatedValue.Name = "clnCalculatedValue";
-            this.clnCalculatedValue.Visible = false;
             // 
             // frmSalesPlan4Production
             // 

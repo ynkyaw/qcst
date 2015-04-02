@@ -759,5 +759,41 @@ namespace PTIC.VC.Sale.OfficeSales
                 _txtQty.KeyPress -= new KeyPressEventHandler(Control_KeyPress);
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            List<SalesPlanDetail> spdetails = new List<SalesPlanDetail>();
+            Report.DataSet.PrintDataSet ds = new Report.DataSet.PrintDataSet();
+            
+            foreach (DataGridViewRow row in dgvSalesPlan4P.Rows)
+            {
+                if (row.IsNewRow)
+                    break;
+                SalesPlanDetail spdetail = new SalesPlanDetail()
+                {
+                    ID = 0,
+                    ProductID = (int)DataTypeParser.Parse(row.Cells["clnProductName"].Value, typeof(int), -1),
+                    SalesPlanID = 0,
+                    SaleQty = (int)DataTypeParser.Parse(row.Cells["clnSalesQty"].Value, typeof(int), 0),
+                    retailPrice = (decimal)DataTypeParser.Parse(row.Cells["clnRetailPrice"].Value, typeof(decimal), 0),
+                    RequireQty = (int)DataTypeParser.Parse(row.Cells["clnNeed2ProduceQty"].Value, typeof(int), 0),
+                    ProduceQty = (int)DataTypeParser.Parse(row.Cells["clnProducedQty"].Value, typeof(int), 0),
+                    Nconvert = Convert.ToDecimal(DataTypeParser.Parse(row.Cells["clnN100Convert"].Value, typeof(decimal), 0)),
+                    Remark = (string)DataTypeParser.Parse(row.Cells["clnRemark"].Value, typeof(string), string.Empty),
+                };
+                if (spdetail.retailPrice != 0 && spdetail.ProductID != -1 && spdetail.SaleQty != 0)
+                {
+                    spdetails.Add(spdetail);
+                }
+                DataGridViewComboBoxCell cell = row.Cells["clnProductName"] as DataGridViewComboBoxCell;
+                DataTable product = cell.DataSource as DataTable;
+                DataRow []dr = product.Select("ProductID="+spdetail.ProductID);
+                ds.uv_SalesPlanDetails.Rows.Add(spdetail.ID, spdetail.SaleQty, spdetail.ProduceQty, spdetail.RequireQty, dr[0]["CalculatedValue"], spdetail.Nconvert, spdetail.retailPrice * spdetail.SaleQty, spdetail.Remark, dr[0]["ProductName"],dtpPlanMonth.Value);
+
+
+            }
+            Report.frmPrintPreview frmPreview = new Report.frmPrintPreview(ds,dtpPlanMonth.Value);
+            frmPreview.ShowDialog();
+        }
     }
 }

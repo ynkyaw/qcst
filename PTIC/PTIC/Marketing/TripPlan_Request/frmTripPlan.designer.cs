@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.butDelete = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.butSave = new System.Windows.Forms.Button();
@@ -71,6 +71,7 @@
             this.colTripPlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNew = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tripPlanPrint = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTripPlanDetail)).BeginInit();
             this.SuspendLayout();
@@ -95,9 +96,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 33);
             this.button4.TabIndex = 4;
-            this.button4.Text = "ခေတ္တသိမ်းမည်";
+            this.button4.Text = "Print";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // butSave
             // 
@@ -321,14 +322,14 @@
             this.dgvTripPlanDetail.AllowUserToAddRows = false;
             this.dgvTripPlanDetail.AllowUserToDeleteRows = false;
             this.dgvTripPlanDetail.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTripPlanDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTripPlanDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTripPlanDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTripPlanDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clnTripPlanNo,
@@ -433,9 +434,9 @@
             // 
             // colTripPlanTargetOpen
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "Trip Target";
-            this.colTripPlanTargetOpen.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "Trip Target";
+            this.colTripPlanTargetOpen.DefaultCellStyle = dataGridViewCellStyle8;
             this.colTripPlanTargetOpen.HeaderText = "Trip Target";
             this.colTripPlanTargetOpen.Name = "colTripPlanTargetOpen";
             this.colTripPlanTargetOpen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -450,9 +451,9 @@
             // 
             // dgvColBtn
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "Trip Detail";
-            this.dgvColBtn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "Trip Detail";
+            this.dgvColBtn.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvColBtn.HeaderText = "အသေးစိတ်အစီအစဉ်";
             this.dgvColBtn.Name = "dgvColBtn";
             this.dgvColBtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -513,6 +514,10 @@
             this.button1.Text = "Edit View Setting";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tripPlanPrint
+            // 
+            this.tripPlanPrint.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.tripPlanPrint_PrintPage);
             // 
             // frmTripPlan
             // 
@@ -592,5 +597,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTripPlanDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTripName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTripPlanName;
+        private System.Drawing.Printing.PrintDocument tripPlanPrint;
     }
 }
