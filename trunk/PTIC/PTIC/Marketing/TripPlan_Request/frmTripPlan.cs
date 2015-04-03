@@ -36,6 +36,8 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         public event TripPlanSaveHandler TripPlanSavedHandler;
 
+        int updatedRow = -1;
+
         /// <summary>
         /// 
         /// </summary>
@@ -451,8 +453,83 @@ namespace PTIC.VC.Marketing.DailyMarketing
             }
             else
             {
+                if (dgvTripPlanDetail.CurrentRow.Index==updatedRow)
+                {
+                    DataGridViewRow row = dgvTripPlanDetail.CurrentRow;
+                    string FromDate = (string)DataTypeParser.Parse(row.Cells[clnFromDate.Index].Value, typeof(string), String.Empty);
+                    string ToDate = (string)DataTypeParser.Parse(row.Cells[clnToDate.Index].Value, typeof(string), String.Empty);
+                    TripPlanDetail tripPlanDetail = new TripPlanDetail()
+                    {
+                        ID = (int)DataTypeParser.Parse(row.Cells[clnTripPlanDetailID.Index].Value, typeof(int), -1),
+                        TripPlanID = (int)DataTypeParser.Parse(row.Cells[colTripPlanID.Index].Value, typeof(int), -1),
+                        ManagerID = (int)DataTypeParser.Parse(row.Cells[clnManagerID.Index].Value, typeof(int), -1),
+                        SalesPersonID = (int)DataTypeParser.Parse(row.Cells[clnManagerID.Index].Value, typeof(int), -1),
+                        TransportTypeID = (int)DataTypeParser.Parse(row.Cells[clntranportTypeID.Index].Value, typeof(int), -1),
+                        VenID = (int?)DataTypeParser.Parse(row.Cells[clnVenID.Index].Value, typeof(int), null),
+                        TripPlanNo = (string)DataTypeParser.Parse(row.Cells[clnTripPlanNo.Index].Value, typeof(string), string.Empty),
+                        //TripName = row["TripName"].ToString().ToString(),
+                        TripID = (int)DataTypeParser.Parse(row.Cells[clnTripID.Index].Value, typeof(int), -1),
+                        TranDate = DateTime.Now,
+                        FromDate = (DateTime)DataTypeParser.Parse(row.Cells[clnFromDate.Index].Value, typeof(DateTime), string.Empty),
+                        ToDate = (DateTime)DataTypeParser.Parse(row.Cells[clnToDate.Index].Value, typeof(DateTime), string.Empty),
+                        //PrevTripName =  row.Cells["clnPrevTripName"].ToString(),
+                        PrevTripName = "",
+                        Accessories = "",
+                        Rent = 0,
+                        Food = 0,
+                        Transport = 0,
+                        Communication = 0,
+                        OtherExp = 0,
+                        Remittance = 0,
+                        Remark = (string)DataTypeParser.Parse(row.Cells[clnRemark.Index].Value, typeof(string), string.Empty)
+                    };
 
-                EditFlag = false;
+                    if (tripPlanDetail.FromDate.Date > tripPlanDetail.ToDate.Date)
+                    {
+                        MessageBox.Show("သွားမည့်ရက် သည် ပြန်ရောက်မည့်ရက် ထက်စောရပါမည်။");
+                        return;
+                    }
+
+                    TripPlan tripPlan=new TripPlan ();
+                    tripPlan.ID=_tripPlan.ID;
+                     //Getting Values from UI for TripPlan
+                    tripPlan.TripPlanNo = txtTripPlanNo.Text;
+                    tripPlan.TranDate = DateTime.Now;
+                    tripPlan.TripPlanName = txtTripPlanName.Text;
+                    tripPlan.FromDate = (DateTime)dtFromDate.Value;
+                    tripPlan.ToDate = (DateTime)dtToDate.Value;
+                    tripPlan.IsSale = GlobalCache.is_sale;
+                    TripPlanBL tripPlanSaver =new TripPlanBL();
+                    int affectedRows = tripPlanSaver.Update(tripPlan, tripPlanDetail);
+
+                    if (!tripPlanSaver.ValidationResults.IsValid)
+                    {
+                        ValidationResult err = DataUtil.GetFirst(tripPlanSaver.ValidationResults) as ValidationResult;
+                        MessageBox.Show(
+                            err.Message,
+                            this.Text,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+
+                        dgvTripPlanDetail.CurrentRow.ReadOnly = false;
+                        return;
+                    }
+                    if (affectedRows > 0) 
+                    {
+                        _tripPlan = tripPlan;
+                        LoadNBindTripPlanAndDetails(_tripPlan);
+                        btnNew.Enabled = true;
+                        butDelete.Enabled = true;
+                        ToastMessageBox.Show(Resource.msgSuccessfullySaved);                        
+                    }
+                    updatedRow = -1;
+                    EditFlag = false;
+                }
+                else 
+                {
+                    MessageBox.Show("Please select updated row!\n Try Again!");
+                }
+                
             }
             
         }
@@ -539,8 +616,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 int affectedRows = 0;
                 int insertedId = 0;
                 affectedRows = tripPlanSaver.Add(tripPlan, tripPlanDetails, out insertedId);
-                _tripPlan = tripPlan;
-                _tripPlan.ID = insertedId;
+                
 
                 // Check field validation failed or not
                 if (!tripPlanSaver.ValidationResults.IsValid)
@@ -553,19 +629,11 @@ namespace PTIC.VC.Marketing.DailyMarketing
                         MessageBoxIcon.Error);
                     return;
                 }
-                else // Successful validation
-                {
-                    // Success in db also
-                    if (affectedRows > 0)
-                    {
-                        ToastMessageBox.Show(Resource.msgSuccessfullySaved);
-                    }
-                    else
-                        ToastMessageBox.Show(Resource.errFailedToSave, Color.Red);
-                }
-
+               
                 if (affectedRows > 0)
                 {
+                    _tripPlan = tripPlan;
+                    _tripPlan.ID = insertedId;
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
                     LoadNBindTripPlanAndDetails(_tripPlan);
                     btnNew.Enabled = true;
@@ -826,6 +894,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
             {
                 var dgv = dgvTripPlanDetail as DataGridView;
 
+
                 if (dgv.CurrentRow == dgv.Rows[dgv.Rows.Count - 1] && string.IsNullOrEmpty(dgvTripPlanDetail.Rows[dgvTripPlanDetail.Rows.Count - 1].Cells[colTripPlanID.Index].Value + string.Empty)) 
                 {
                     return;
@@ -849,9 +918,11 @@ namespace PTIC.VC.Marketing.DailyMarketing
                 {
                     dgvTripPlanDetail.CurrentRow.Cells["clnVenID"].ReadOnly = false;
                 }
+                updatedRow = dgv.CurrentRow.Index;
                 btnNew.Enabled = false;
                 butDelete.Enabled = false;
                 EditFlag = true;
+
             }
             
         }

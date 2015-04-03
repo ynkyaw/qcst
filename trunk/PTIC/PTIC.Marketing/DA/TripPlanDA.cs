@@ -323,45 +323,7 @@ namespace  PTIC.Marketing.DA
         /// <param name="newOrderDetail"></param>
         /// <param name="conn"></param>
         /// <returns></returns>
-        public static int Insert(TripPlan newTripPlan, SqlConnection conn)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conn;
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "usp_TripPlanInsert";
-
-                //cmd.Parameters.AddWithValue("@p_OrderID", newTripPlan.);
-                //cmd.Parameters["@p_OrderID"].Direction = ParameterDirection.Input;
-
-                //cmd.Parameters.AddWithValue("@p_ProductID", newTripPlan.ProductID);
-                //cmd.Parameters["@p_ProductID"].Direction = ParameterDirection.Input;
-
-                //cmd.Parameters.AddWithValue("@p_WSPrice", newTripPlan.WSPrice);
-                //cmd.Parameters["@p_WSPrice"].Direction = ParameterDirection.Input;
-
-                //cmd.Parameters.AddWithValue("@p_RSPrice", newTripPlan.RSPrice);
-                //cmd.Parameters["@p_RSPrice"].Direction = ParameterDirection.Input;
-
-                //cmd.Parameters.AddWithValue("@p_Qty", newTripPlan.Qty);
-                //cmd.Parameters["@p_Qty"].Direction = ParameterDirection.Input;
-
-                //cmd.Parameters.AddWithValue("@p_Amount", newTripPlan.Amount);
-                //cmd.Parameters["@p_Amount"].Direction = ParameterDirection.Input;
-
-                //cmd.Parameters.AddWithValue("@p_Remark", newTripPlan.Remark);
-                //cmd.Parameters["@p_Remark"].Direction = ParameterDirection.Input;
-
-                return cmd.ExecuteNonQuery();
-            }
-            catch (SqlException sqle)
-            {
-                return 0;
-            }
-        }
-        #endregion
+         #endregion
 
         #region UPDATE
         /// <summary>
@@ -369,46 +331,9 @@ namespace  PTIC.Marketing.DA
         /// </summary>
         /// <param name="mdOrderDetail"></param>
         /// <returns></returns>
-        public static int UpdateByTripPlanID(TripPlan mdTripPlan)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = DBManager.GetInstance().GetDbConnection();
+       
 
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "usp_TripPlanUpdateByTripPlanID";
- 
-                cmd.Parameters.AddWithValue("@p_TripPlanId", mdTripPlan.ID);
-                cmd.Parameters["@p_TripPlanId"].Direction = ParameterDirection.Input;
-
-                cmd.Parameters.AddWithValue("@p_TripPlanNo", mdTripPlan.TripPlanNo);
-                cmd.Parameters["@p_TripPlanNo"].Direction = ParameterDirection.Input;
-
-                cmd.Parameters.AddWithValue("@p_TranDate", mdTripPlan.TranDate);
-                cmd.Parameters["@p_TranDate"].Direction = ParameterDirection.Input;
-
-                cmd.Parameters.AddWithValue("@p_TripPlanName", mdTripPlan.TripPlanName);
-                cmd.Parameters["@p_TripPlanName"].Direction = ParameterDirection.Input;
-
-                cmd.Parameters.AddWithValue("@p_FromDate", mdTripPlan.FromDate);
-                cmd.Parameters["@p_FromDate"].Direction = ParameterDirection.Input;
-
-                cmd.Parameters.AddWithValue("@p_ToDate", mdTripPlan.ToDate);
-                cmd.Parameters["@p_ToDate"].Direction = ParameterDirection.Input;
-
-                cmd.Parameters.AddWithValue("@p_IsSale", mdTripPlan.IsSale);
-                cmd.Parameters["@p_IsSale"].Direction = ParameterDirection.Input;
-
-                return cmd.ExecuteNonQuery();
-            }
-            catch (SqlException sqle)
-            {
-                return 0;
-            }
-        }
-
-        public static int Update(TripPlan tripPlan, List<TripPlanDetail> mdTripPlanDetails)
+        public static int Update(TripPlan tripPlan, TripPlanDetail mdTripPlanDetails)
         {
             SqlConnection conn = null;
             SqlTransaction transaction = null;
@@ -452,79 +377,126 @@ namespace  PTIC.Marketing.DA
                 cmd.Parameters.Clear();
                 // update an existing trip plan details
                 cmd.CommandText = "usp_TripPlanDetailInsert";
-                foreach (TripPlanDetail tripPlanDetail in mdTripPlanDetails)
-                {
-                    cmd.Parameters.AddWithValue("@p_TripPlanID", tripPlan.ID);
-                    cmd.Parameters["@p_TripPlanID"].Direction = ParameterDirection.Input;
+                TripPlanDetail tripPlanDetail = mdTripPlanDetails;
 
-                    cmd.Parameters.AddWithValue("@p_ManagerID", tripPlanDetail.ManagerID);
-                    cmd.Parameters["@p_ManagerID"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_TripPlanID", tripPlan.ID);
+                cmd.Parameters["@p_TripPlanID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_SalesPersonID", tripPlanDetail.SalesPersonID);
-                    cmd.Parameters["@p_SalesPersonID"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_ManagerID", tripPlanDetail.ManagerID);
+                cmd.Parameters["@p_ManagerID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_TransportTypeID", tripPlanDetail.TransportTypeID);
-                    cmd.Parameters["@p_TransportTypeID"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_SalesPersonID", tripPlanDetail.SalesPersonID);
+                cmd.Parameters["@p_SalesPersonID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_VenID", tripPlanDetail.VenID);
-                    cmd.Parameters["@p_VenID"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_TransportTypeID", tripPlanDetail.TransportTypeID);
+                cmd.Parameters["@p_TransportTypeID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_TripPlanNo", tripPlanDetail.TripPlanNo);
-                    cmd.Parameters["@p_TripPlanNo"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_VenID", tripPlanDetail.VenID);
+                cmd.Parameters["@p_VenID"].Direction = ParameterDirection.Input;
 
-                    //cmd.Parameters.AddWithValue("@p_TripName", tripPlanDetail.TripName);
-                    //cmd.Parameters["@p_TripName"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_TripPlanNo", tripPlanDetail.TripPlanNo);
+                cmd.Parameters["@p_TripPlanNo"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_TripID", tripPlanDetail.TripID);
-                    cmd.Parameters["@p_TripID"].Direction = ParameterDirection.Input;
+                //cmd.Parameters.AddWithValue("@p_TripName", tripPlanDetail.TripName);
+                //cmd.Parameters["@p_TripName"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_TranDate", tripPlanDetail.TranDate);
-                    cmd.Parameters["@p_TranDate"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_TripID", tripPlanDetail.TripID);
+                cmd.Parameters["@p_TripID"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_FromDate", tripPlanDetail.FromDate);
-                    cmd.Parameters["@p_FromDate"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_TranDate", tripPlanDetail.TranDate);
+                cmd.Parameters["@p_TranDate"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_ToDate", tripPlanDetail.ToDate);
-                    cmd.Parameters["@p_ToDate"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_FromDate", tripPlanDetail.FromDate);
+                cmd.Parameters["@p_FromDate"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_PrevTripName", tripPlanDetail.PrevTripName);
-                    cmd.Parameters["@p_PrevTripName"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_ToDate", tripPlanDetail.ToDate);
+                cmd.Parameters["@p_ToDate"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_Accessories", tripPlanDetail.Accessories);
-                    cmd.Parameters["@p_Accessories"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_PrevTripName", tripPlanDetail.PrevTripName);
+                cmd.Parameters["@p_PrevTripName"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_Rent", tripPlanDetail.Rent);
-                    cmd.Parameters["@p_Rent"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_Accessories", tripPlanDetail.Accessories);
+                cmd.Parameters["@p_Accessories"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_Food", tripPlanDetail.Food);
-                    cmd.Parameters["@p_Food"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_Rent", tripPlanDetail.Rent);
+                cmd.Parameters["@p_Rent"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_Transport", tripPlanDetail.Transport);
-                    cmd.Parameters["@p_Transport"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_Food", tripPlanDetail.Food);
+                cmd.Parameters["@p_Food"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_Communication", tripPlanDetail.Communication);
-                    cmd.Parameters["@p_Communication"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_Transport", tripPlanDetail.Transport);
+                cmd.Parameters["@p_Transport"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_OtherExp", tripPlanDetail.OtherExp);
-                    cmd.Parameters["@p_OtherExp"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_Communication", tripPlanDetail.Communication);
+                cmd.Parameters["@p_Communication"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_Remittance", tripPlanDetail.Remittance);
-                    cmd.Parameters["@p_Remittance"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_OtherExp", tripPlanDetail.OtherExp);
+                cmd.Parameters["@p_OtherExp"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_SaleType", tripPlanDetail.SaleType);
-                    cmd.Parameters["@p_SaleType"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_Remittance", tripPlanDetail.Remittance);
+                cmd.Parameters["@p_Remittance"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_PersonCount", tripPlanDetail.PersonCount);
-                    cmd.Parameters["@p_PersonCount"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_SaleType", tripPlanDetail.SaleType);
+                cmd.Parameters["@p_SaleType"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@p_Remark", tripPlanDetail.Remark);
-                    cmd.Parameters["@p_Remark"].Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("@p_PersonCount", tripPlanDetail.PersonCount);
+                cmd.Parameters["@p_PersonCount"].Direction = ParameterDirection.Input;
 
-                    affectedRows += cmd.ExecuteNonQuery();
-                    // clear parameters of each usp_OrderDetailUpdateByOrderDetailID
-                    cmd.Parameters.Clear();
-                }
+                cmd.Parameters.AddWithValue("@p_Remark", tripPlanDetail.Remark);
+                cmd.Parameters["@p_Remark"].Direction = ParameterDirection.Input;
+
+                affectedRows += cmd.ExecuteNonQuery();
+                // clear parameters of each usp_OrderDetailUpdateByOrderDetailID
+                cmd.Parameters.Clear();
+
                 // commit transaction
+                transaction.Commit();
+            }
+            catch (SqlException sqle)
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    transaction.Rollback();
+                    affectedRows = 0;
+                }
+            }
+            finally
+            {
+                transaction.Dispose();
+                cmd.Dispose();
+            }
+            return affectedRows;
+        }
+
+
+        public static int UpdateTripDetails(TripPlanDetail mdTripPlanDetails) 
+        {
+            SqlConnection conn = null;
+            SqlTransaction transaction = null;
+            SqlCommand cmd = null;
+            int affectedRows = 0;
+            try
+            {
+                conn = DBManager.GetInstance().GetDbConnection();
+                transaction = conn.BeginTransaction();
+                cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.Transaction = transaction;
+                cmd.CommandText =  " UPDATE TRIPPLANDETAIL SET TRIPID=@p_TripId,MANAGERID=@p_ManagerId,";
+                cmd.CommandText += " SalesPersonID=@p_ManagerId,TransportTypeID=@p_TransportType,";
+                cmd.CommandText += " TripPlanNo=@p_TripPlanNo,FromDate=@p_FromDate,ToDate=@p_ToDate,";
+                cmd.CommandText += " VenID=@p_VenId WHERE ID=@p_ID ";
+
+                cmd.Parameters.AddWithValue("@p_ID", mdTripPlanDetails.ID);
+                cmd.Parameters.AddWithValue("@p_VenId", mdTripPlanDetails.VenID);
+                cmd.Parameters.AddWithValue("@p_ToDate", mdTripPlanDetails.ToDate);
+                cmd.Parameters.AddWithValue("@p_FromDate", mdTripPlanDetails.FromDate);
+                cmd.Parameters.AddWithValue("@p_TripPlanNo", mdTripPlanDetails.TripPlanNo);
+                cmd.Parameters.AddWithValue("@p_TransportType", mdTripPlanDetails.TransportTypeID);
+                cmd.Parameters.AddWithValue("@p_ManagerId", mdTripPlanDetails.ManagerID);
+                cmd.Parameters.AddWithValue("@p_TripId", mdTripPlanDetails.TripID);
+                affectedRows = cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
                 transaction.Commit();
             }
             catch (SqlException sqle)
