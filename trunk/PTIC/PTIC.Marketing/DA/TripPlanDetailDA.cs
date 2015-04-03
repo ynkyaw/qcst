@@ -270,6 +270,28 @@ namespace PTIC.Marketing.DA
             return dt;
         }
 
+        public static DataTable GetAllTripPlanDetails()
+        {
+
+            DataTable dt = null;
+            string tableName = "TripPlanDetailTable";
+            try
+            {
+                dt = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+                command.CommandText = "SELECT * FROM TripPlanDetail";
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            return dt;
+        
+        }
+
         public static DataTable SelectByNo(string No, SqlConnection conn)
         {
             DataTable dt = null;

@@ -122,77 +122,41 @@ namespace PTIC.Marketing.BL
                 insertedId = 0;
                 return 0;
             }
-            //− ခရီးစဉ်အမှတ် မထပ်ရ in each new rows
-            var duplicatedTripPlanNo = newTripPlanDetails.GroupBy(x => new { x.TripPlanNo }).Where(x => x.Skip(1).Any()).ToArray();
-            if (duplicatedTripPlanNo.Any())
-            {
-                base.ValidationResults.AddResult(
-                    new ValidationResult(ErrorMessages.TripPlanDetail_TripPlanNo_Duplicate,
-                        null, "TripPlanDetail_TripPlanNo_Duplicate", null, null));
-                insertedId = 0;
-                return 0;
-            }
-              
-            // TripPlanDetail validation
-            Validator<TripPlanDetail> detailValidator = base.ValidationManager.CreateValidator<TripPlanDetail>();
-            // Get vehicle IDs that are null
-            var nullVan = from vanFromDts in newTripPlanDetails
-                          where vanFromDts.VenID == null
-                          select vanFromDts;
+
+            
+            DataTable dt = TripPlanDetailDA.GetAllTripPlanDetails();
             foreach (TripPlanDetail detail in newTripPlanDetails)
             {
-                ValidationResults vResults = detailValidator.Validate(detail);
-                base.ValidationResults = vResults;
-                if (!vResults.IsValid)
+                //− ခရီးစဉ်အမှတ် မထပ်ရ in each new rows
+                DataRow[] dr = dt.Select(string.Format("TripPlanNo = {0}",detail.TripPlanNo));
+                if (dr.Length > 0) 
                 {
+                    base.ValidationResults.AddResult(
+                    new ValidationResult(ErrorMessages.TripPlanDetail_TripPlanNo_Duplicate,
+                        null, "TripPlanDetail_TripPlanNo_Duplicate", null, null));
                     insertedId = 0;
                     return 0;
                 }
                 //− ခရီးစဉ်တာဝန်ခံသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။
-                var duplicatedManager = from dts in newTripPlanDetails
-                                        where dts.ManagerID == detail.ManagerID
-                                            && ((detail.FromDate >= dts.FromDate && detail.FromDate <= dts.ToDate)
-                                            || (detail.ToDate >= dts.FromDate && detail.ToDate <= dts.ToDate))
-                                        select dts;
-                if (duplicatedManager.ToArray().Length > 1) // do not allow entry that exceed one entry at most
+                dr = dt.Select(string.Format("FromDate <= #{0}# and ToDate>=#{1}# and ManagerId={2}",detail.ToDate.Date,detail.FromDate.Date,detail.ManagerID));
+                if (dr.Length > 0)
                 {
+                    string errMsg = string.Format("ခရီးစဉ်တာဝန်ခံသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။ \n ခရီးစဉ်တာဝန်ခံသည် {0} မှ {1} ထိ ခရီးစဉ်အမှတ် '{2}'  ဖြည့်သွင်းပြီးရှိနေပါသည်။", ((DateTime)dr[0]["FromDate"]).ToString("MMM-dd,yyyy"), ((DateTime)dr[0]["ToDate"]).ToString("MMM-dd,yyyy"), dr[0]["TripPlanNo"].ToString());
                     base.ValidationResults.AddResult(
-                    new ValidationResult(ErrorMessages.TripPlanDetail_ManagerID_Duplicate,
-                        null, "TripPlanDetail_ManagerID_Duplicate", null, null));
+                      new ValidationResult(errMsg,
+                          null, "TripPlanDetail_ManagerID_Duplicate", null, null));
                     insertedId = 0;
                     return 0;
-                }                
+                }
+                dr = dt.Select(string.Format("FromDate <= #{0}# and ToDate>=#{1}# and VenID={2}", detail.ToDate.Date, detail.FromDate.Date, detail.VenID));
                 //- အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။                
-                if (nullVan.ToArray().Length != newTripPlanDetails.Count) // Skip if all vehicle ids are null
+                if (dr.Length > 0)
                 {
-                    var duplicatedVan = from dts in newTripPlanDetails
-                                        where dts.VenID == detail.VenID
-                                            && ((detail.FromDate >= dts.FromDate && detail.FromDate <= dts.ToDate)
-                                            || (detail.ToDate >= dts.FromDate && detail.ToDate <= dts.ToDate))
-                                        select dts;
-                    if (duplicatedVan.ToArray().Length > 1) // do not allow entry that exceed one entry at most
-                    {
-                        base.ValidationResults.AddResult(
-                        new ValidationResult(ErrorMessages.TripPlanDetail_duplicatedVan_Duplicate,
-                            null, "TripPlanDetail_duplicatedVan_Duplicate", null, null));
-                        insertedId = 0;
-                        return 0;
-                    }
-                }                
-            }
-
-            //− ခရီးစဉ်အမှတ် မထပ်ရ in each new rows with db rows (this validation is set last in sequence bcoz it interacts with database)
-            TripPlanDetailBL detailBL = new TripPlanDetailBL();
-            foreach (TripPlanDetail tpDetail in newTripPlanDetails)
-            {
-                DataTable dtDuplicatedTripPlanNo = detailBL.GetBy(tpDetail.TripPlanNo, tpDetail.TripPlanID);
-                if (dtDuplicatedTripPlanNo != null && dtDuplicatedTripPlanNo.Rows.Count > 0)
-                {
+                    string errMsg = string.Format("အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။ \n အရောင်းကားသည် {0} မှ {1} ထိ ခရီးစဉ်အမှတ် '{2}' ဖြည့်သွင်းပြီးရှိနေပါသည်။", ((DateTime)dr[0]["FromDate"]).ToString("MMM-dd,yyyy"), ((DateTime)dr[0]["ToDate"]).ToString("MMM-dd,yyyy"), dr[0]["TripPlanNo"].ToString());
                     base.ValidationResults.AddResult(
-                        new ValidationResult(ErrorMessages.TripPlanDetail_TripPlanNo_Duplicate,
-                            null, "TripPlanDetail_TripPlanNo_Duplicate", null, null));
+                           new ValidationResult(errMsg,
+                               null, "TripPlanDetail_duplicatedVan_Duplicate", null, null));
                     insertedId = 0;
-
                     return 0;
                 }
             }
@@ -200,7 +164,13 @@ namespace PTIC.Marketing.BL
             try
             {
                 // Save into db
-                return TripPlanDA.Insert(newTripPlan, newTripPlanDetails, out insertedId);
+                if(newTripPlan.ID==0)
+                    return TripPlanDA.Insert(newTripPlan, newTripPlanDetails, out insertedId);
+                else 
+                {
+                    insertedId = newTripPlan.ID;
+                    return TripPlanDA.Update(newTripPlan, newTripPlanDetails);
+                }
             }
             catch (Exception e)
             {
