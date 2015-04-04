@@ -55,7 +55,7 @@ namespace PTIC.Common.DA
             DataTable dt;
             try
             {
-                dt = b.SelectByQuery("SELECT * FROM uv_EmployeeSelectAll WHERE DeptID =7 OR DeptID =8");
+                dt = b.SelectByQuery("SELECT * FROM uv_EmployeeSelectAll WHERE DeptID =7 OR DeptID =8 order by EmpName desc");
             }
             catch (Exception ex)
             {                

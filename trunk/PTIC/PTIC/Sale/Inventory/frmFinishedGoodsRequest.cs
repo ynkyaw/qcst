@@ -460,7 +460,10 @@ namespace PTIC.VC.Sale.Inventory
             if (dgvFGRequest.Rows[dgvFGRequest.CurrentRow.Index].ErrorText != String.Empty)
                 MessageBox.Show(Resource.errFailedToSave);
             else
+            {
+                if(DialogResult.Yes==(MessageBox.Show("Do you want proceed request?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)))
                 Save();
+            }
         }
 
         private void dgvFGRequest_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -1043,7 +1046,10 @@ namespace PTIC.VC.Sale.Inventory
             if (dgvFGRequest.Rows[dgvFGRequest.CurrentRow.Index].ErrorText != String.Empty)
                 MessageBox.Show(Resource.errFailedToSave);
             else
+            {
+                if (DialogResult.Yes == (MessageBox.Show("Do you want proceed request?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)))
                 Save();
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -1078,18 +1084,21 @@ namespace PTIC.VC.Sale.Inventory
 
         private void dgvFGRequest_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            _txtQty = e.Control as TextBox;
-            if (dgvFGRequest.CurrentCell.ColumnIndex == 1 || dgvFGRequest.CurrentCell.ColumnIndex == 2)
-            {
-                _txtQty.KeyPress += new KeyPressEventHandler(Control_KeyPress);
-            }
-
             if (e.Control is DataGridViewComboBoxEditingControl)
             {
                 ((ComboBox)e.Control).DropDownStyle = ComboBoxStyle.DropDown;
                 ((ComboBox)e.Control).AutoCompleteSource = AutoCompleteSource.ListItems;
                 ((ComboBox)e.Control).AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             }
+            
+            if (dgvFGRequest.CurrentCell.ColumnIndex == 1 || dgvFGRequest.CurrentCell.ColumnIndex == 2)
+            {
+                _txtQty = e.Control as TextBox;
+                if (_txtQty != null)
+                    _txtQty.KeyPress += new KeyPressEventHandler(Control_KeyPress);
+            }
+
+            
         }
 
         private void Control_KeyPress(object sender, KeyPressEventArgs e)
@@ -1099,19 +1108,23 @@ namespace PTIC.VC.Sale.Inventory
 
         private void dgvFinishedGoods_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            _txtQty = e.Control as TextBox;
-
-            if (dgvFinishedGoods.CurrentCell.ColumnIndex == 1 && _txtQty != null)
-            {
-                _txtQty.KeyPress += new KeyPressEventHandler(Control_KeyPress);
-            }
-
             if (e.Control is DataGridViewComboBoxEditingControl)
             {
                 ((ComboBox)e.Control).DropDownStyle = ComboBoxStyle.DropDown;
                 ((ComboBox)e.Control).AutoCompleteSource = AutoCompleteSource.ListItems;
                 ((ComboBox)e.Control).AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             }
+            
+            
+
+            if (dgvFinishedGoods.CurrentCell.ColumnIndex == 1)
+            {
+                _txtQty = e.Control as TextBox;
+                if(_txtQty != null)
+                    _txtQty.KeyPress += new KeyPressEventHandler(Control_KeyPress);
+            }
+
+            
         }
 
         private void dgvFinishedGoods_CellLeave(object sender, DataGridViewCellEventArgs e)
@@ -1169,5 +1182,15 @@ namespace PTIC.VC.Sale.Inventory
             }
         }
 
+        private void dgvFinishedGoods_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            dgvFinishedGoods.CommitEdit(DataGridViewDataErrorContexts.Commit);
+        }
+
+        private void dgvFGRequest_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            dgvFGRequest.CommitEdit(DataGridViewDataErrorContexts.Commit);
+        }
+        
     }
 }
