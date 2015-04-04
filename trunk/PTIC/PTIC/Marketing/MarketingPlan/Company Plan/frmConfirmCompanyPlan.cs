@@ -49,7 +49,7 @@ namespace PTIC.Marketing.MarketingPlan.Company_Plan
             List<CompanyPlan> cmpList = new List<CompanyPlan>();
             foreach (DataGridViewRow dgvr in dgvCompanyPlan.Rows)
             {
-                if ((dgvr.Cells[colSelect.Index] as DataGridViewCheckBoxCell).Selected)
+                if (dgvr.Cells[colSelect.Index].Value != null && (bool)dgvr.Cells[colSelect.Index].Value)
                 {
                     cmpList.Add(new CompanyPlan() 
                     { 
