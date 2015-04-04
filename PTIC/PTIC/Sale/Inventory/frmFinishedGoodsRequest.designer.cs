@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFGDelete = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvStockInFactory = new System.Windows.Forms.DataGridView();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,7 +99,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFGDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockInFactory)).BeginInit();
@@ -135,11 +135,22 @@
             this.panel1.Size = new System.Drawing.Size(1220, 733);
             this.panel1.TabIndex = 42;
             // 
+            // btnFGDelete
+            // 
+            this.btnFGDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFGDelete.Location = new System.Drawing.Point(239, 286);
+            this.btnFGDelete.Name = "btnFGDelete";
+            this.btnFGDelete.Size = new System.Drawing.Size(95, 34);
+            this.btnFGDelete.TabIndex = 78;
+            this.btnFGDelete.Text = "ဖျက်မည်";
+            this.btnFGDelete.UseVisualStyleBackColor = true;
+            this.btnFGDelete.Click += new System.EventHandler(this.btnFGDelete_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.groupBox3.Controls.Add(this.dgvStockInFactory);
-            this.groupBox3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox3.Location = new System.Drawing.Point(625, 48);
             this.groupBox3.Name = "groupBox3";
@@ -152,14 +163,14 @@
             // 
             this.dgvStockInFactory.AllowUserToAddRows = false;
             this.dgvStockInFactory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStockInFactory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStockInFactory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStockInFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStockInFactory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewComboBoxColumn1,
@@ -185,8 +196,8 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Qty";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn8.HeaderText = "အ‌ရေအတွက်";
             this.dataGridViewTextBoxColumn8.MaxInputLength = 5;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -195,7 +206,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(17, 286);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 34);
@@ -207,7 +218,7 @@
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(317, 707);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(95, 34);
@@ -218,7 +229,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(17, 707);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 34);
@@ -230,7 +241,7 @@
             // btnIssue
             // 
             this.btnIssue.Enabled = false;
-            this.btnIssue.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssue.Location = new System.Drawing.Point(216, 707);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(95, 34);
@@ -242,18 +253,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(25, 632);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.Size = new System.Drawing.Size(94, 17);
             this.label2.TabIndex = 47;
             this.label2.Text = "တောင်းခံသူ မှတ်ချက်";
             // 
             // btnProduced
             // 
             this.btnProduced.Enabled = false;
-            this.btnProduced.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduced.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduced.Location = new System.Drawing.Point(128, 286);
             this.btnProduced.Name = "btnProduced";
             this.btnProduced.Size = new System.Drawing.Size(95, 34);
@@ -278,10 +289,10 @@
             // 
             this.lblSetup.AutoSize = true;
             this.lblSetup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSetup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(10, 10);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(165, 20);
+            this.lblSetup.Size = new System.Drawing.Size(114, 17);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "ကုန်ပစ္စည်း အဝင်/အထွက်";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -289,28 +300,28 @@
             // lblHeaderPCat
             // 
             this.lblHeaderPCat.AutoSize = true;
-            this.lblHeaderPCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderPCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(160, 10);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(224, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(156, 17);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">    စက်ရုံသို့ ပစ္စည်း‌တောင်းခံခြင်း";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label9.Location = new System.Drawing.Point(115, 599);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 20);
+            this.label9.Size = new System.Drawing.Size(97, 17);
             this.label9.TabIndex = 61;
             this.label9.Text = "စုစု‌ပေါင်းအ‌ရေအတွက်";
             // 
             // btnPrint
             // 
             this.btnPrint.Enabled = false;
-            this.btnPrint.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnPrint.Location = new System.Drawing.Point(810, 713);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(95, 34);
@@ -322,7 +333,7 @@
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
-            this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(699, 713);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 34);
@@ -334,7 +345,7 @@
             // btnRequest
             // 
             this.btnRequest.Enabled = false;
-            this.btnRequest.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRequest.Location = new System.Drawing.Point(115, 707);
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Size = new System.Drawing.Size(95, 34);
@@ -364,7 +375,7 @@
             this.groupBox1.Controls.Add(this.dtpRequiredDate);
             this.groupBox1.Controls.Add(this.dtpIssueDate);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox1.Location = new System.Drawing.Point(11, 324);
             this.groupBox1.Name = "groupBox1";
@@ -377,11 +388,11 @@
             // 
             this.txtIssueNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIssueNo.Enabled = false;
-            this.txtIssueNo.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.txtIssueNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtIssueNo.Location = new System.Drawing.Point(875, 28);
             this.txtIssueNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIssueNo.Name = "txtIssueNo";
-            this.txtIssueNo.Size = new System.Drawing.Size(150, 28);
+            this.txtIssueNo.Size = new System.Drawing.Size(150, 23);
             this.txtIssueNo.TabIndex = 212;
             // 
             // label11
@@ -389,11 +400,11 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label11.Location = new System.Drawing.Point(807, 32);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 20);
+            this.label11.Size = new System.Drawing.Size(45, 17);
             this.label11.TabIndex = 211;
             this.label11.Text = "စာအမှတ်";
             // 
@@ -402,11 +413,11 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label10.Location = new System.Drawing.Point(513, 70);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 20);
+            this.label10.Size = new System.Drawing.Size(87, 17);
             this.label10.TabIndex = 210;
             this.label10.Text = "သယ်ယူမည့်ဝန်ထမ်း";
             // 
@@ -414,11 +425,11 @@
             // 
             this.cmbEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbEmployee.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.cmbEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbEmployee.FormattingEnabled = true;
             this.cmbEmployee.Location = new System.Drawing.Point(640, 64);
             this.cmbEmployee.Name = "cmbEmployee";
-            this.cmbEmployee.Size = new System.Drawing.Size(150, 27);
+            this.cmbEmployee.Size = new System.Drawing.Size(150, 24);
             this.cmbEmployee.TabIndex = 209;
             // 
             // label8
@@ -426,11 +437,11 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label8.Location = new System.Drawing.Point(513, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 20);
+            this.label8.Size = new System.Drawing.Size(74, 17);
             this.label8.TabIndex = 208;
             this.label8.Text = "သယ်ယူမည့်ကား";
             // 
@@ -438,22 +449,22 @@
             // 
             this.cmbVen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbVen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbVen.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.cmbVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbVen.FormattingEnabled = true;
             this.cmbVen.Location = new System.Drawing.Point(640, 30);
             this.cmbVen.Name = "cmbVen";
-            this.cmbVen.Size = new System.Drawing.Size(150, 27);
+            this.cmbVen.Size = new System.Drawing.Size(150, 24);
             this.cmbVen.TabIndex = 207;
             // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox1.Location = new System.Drawing.Point(92, 32);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 28);
+            this.textBox1.Size = new System.Drawing.Size(150, 23);
             this.textBox1.TabIndex = 206;
             // 
             // label7
@@ -461,11 +472,11 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(10, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 20);
+            this.label7.Size = new System.Drawing.Size(45, 17);
             this.label7.TabIndex = 205;
             this.label7.Text = "စာအမှတ်";
             // 
@@ -474,11 +485,11 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(11, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 20);
+            this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 204;
             this.label6.Text = "တောင်းခံသူ";
             // 
@@ -486,27 +497,27 @@
             // 
             this.cmbRequester.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbRequester.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbRequester.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.cmbRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbRequester.FormattingEnabled = true;
             this.cmbRequester.Location = new System.Drawing.Point(92, 66);
             this.cmbRequester.Name = "cmbRequester";
-            this.cmbRequester.Size = new System.Drawing.Size(150, 27);
+            this.cmbRequester.Size = new System.Drawing.Size(150, 24);
             this.cmbRequester.TabIndex = 203;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(14, 344);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 49;
             this.label1.Text = "စက်ရုံ မှတ်ချက်";
             // 
             // txtFactoryRemark
             // 
-            this.txtFactoryRemark.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.txtFactoryRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtFactoryRemark.Location = new System.Drawing.Point(149, 341);
             this.txtFactoryRemark.Multiline = true;
             this.txtFactoryRemark.Name = "txtFactoryRemark";
@@ -517,14 +528,14 @@
             // 
             this.dgvFGRequest.AllowUserToAddRows = false;
             this.dgvFGRequest.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFGRequest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFGRequest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFGRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFGRequest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clnFGR_ProductName,
@@ -544,6 +555,7 @@
             this.dgvFGRequest.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFGRequest_CellLeave);
             this.dgvFGRequest.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvFGRequest_CellValidating);
             this.dgvFGRequest.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFGRequest_CellValueChanged);
+            this.dgvFGRequest.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvFGRequest_CurrentCellDirtyStateChanged);
             this.dgvFGRequest.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvFGRequest_DataBindingComplete);
             this.dgvFGRequest.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvFGRequest_DataError);
             this.dgvFGRequest.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvFGRequest_EditingControlShowing);
@@ -560,10 +572,10 @@
             // clnFGR_Qty
             // 
             this.clnFGR_Qty.DataPropertyName = "Qty";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.NullValue = "0";
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnFGR_Qty.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.NullValue = "0";
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnFGR_Qty.DefaultCellStyle = dataGridViewCellStyle4;
             this.clnFGR_Qty.HeaderText = "RequestQty";
             this.clnFGR_Qty.MaxInputLength = 5;
             this.clnFGR_Qty.Name = "clnFGR_Qty";
@@ -571,10 +583,10 @@
             // colIssueQty
             // 
             this.colIssueQty.DataPropertyName = "IssueQty";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.NullValue = "0";
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colIssueQty.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.NullValue = "0";
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colIssueQty.DefaultCellStyle = dataGridViewCellStyle5;
             this.colIssueQty.HeaderText = "IssueQty";
             this.colIssueQty.MaxInputLength = 5;
             this.colIssueQty.Name = "colIssueQty";
@@ -597,7 +609,7 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtRemark.Location = new System.Drawing.Point(149, 303);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
@@ -606,52 +618,52 @@
             // 
             // txtTotalQty
             // 
-            this.txtTotalQty.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.txtTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtTotalQty.Location = new System.Drawing.Point(242, 269);
             this.txtTotalQty.Name = "txtTotalQty";
             this.txtTotalQty.ReadOnly = true;
-            this.txtTotalQty.Size = new System.Drawing.Size(120, 28);
+            this.txtTotalQty.Size = new System.Drawing.Size(120, 23);
             this.txtTotalQty.TabIndex = 62;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(257, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 50;
             this.label3.Text = "တောင်းခံသည့်နေ့";
             // 
             // dtpRequiredDate
             // 
-            this.dtpRequiredDate.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dtpRequiredDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpRequiredDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpRequiredDate.Location = new System.Drawing.Point(368, 32);
             this.dtpRequiredDate.Name = "dtpRequiredDate";
-            this.dtpRequiredDate.Size = new System.Drawing.Size(120, 28);
+            this.dtpRequiredDate.Size = new System.Drawing.Size(120, 23);
             this.dtpRequiredDate.TabIndex = 56;
             this.dtpRequiredDate.ValueChanged += new System.EventHandler(this.dtpRequiredDate_ValueChanged);
             // 
             // dtpIssueDate
             // 
             this.dtpIssueDate.Enabled = false;
-            this.dtpIssueDate.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dtpIssueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpIssueDate.Location = new System.Drawing.Point(368, 66);
             this.dtpIssueDate.Name = "dtpIssueDate";
-            this.dtpIssueDate.Size = new System.Drawing.Size(120, 28);
+            this.dtpIssueDate.Size = new System.Drawing.Size(120, 23);
             this.dtpIssueDate.TabIndex = 58;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(259, 70);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.Size = new System.Drawing.Size(76, 17);
             this.label5.TabIndex = 53;
             this.label5.Text = "‌ထုတ်ပေးသည့်နေ့";
             // 
@@ -661,7 +673,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dtpFGDate);
             this.groupBox2.Controls.Add(this.dgvFinishedGoods);
-            this.groupBox2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox2.Location = new System.Drawing.Point(11, 48);
             this.groupBox2.Name = "groupBox2";
@@ -673,21 +685,21 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(9, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 20);
+            this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 67;
             this.label4.Text = "ထုတ်လုပ်သည့် ‌နေ့စွဲ";
             // 
             // dtpFGDate
             // 
-            this.dtpFGDate.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dtpFGDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpFGDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFGDate.Location = new System.Drawing.Point(132, 25);
             this.dtpFGDate.Name = "dtpFGDate";
-            this.dtpFGDate.Size = new System.Drawing.Size(120, 28);
+            this.dtpFGDate.Size = new System.Drawing.Size(120, 23);
             this.dtpFGDate.TabIndex = 68;
             this.dtpFGDate.ValueChanged += new System.EventHandler(this.dtpFGDate_ValueChanged);
             // 
@@ -695,14 +707,14 @@
             // 
             this.dgvFinishedGoods.AllowUserToAddRows = false;
             this.dgvFinishedGoods.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFinishedGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFinishedGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFinishedGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFinishedGoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFGProduct,
@@ -721,6 +733,7 @@
             this.dgvFinishedGoods.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFinishedGoods_CellEndEdit);
             this.dgvFinishedGoods.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFinishedGoods_CellLeave);
             this.dgvFinishedGoods.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvFinishedGoods_CellValidating);
+            this.dgvFinishedGoods.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvFinishedGoods_CurrentCellDirtyStateChanged);
             this.dgvFinishedGoods.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvFinishedGoods_DataBindingComplete);
             this.dgvFinishedGoods.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvFinishedGoods_DataError);
             this.dgvFinishedGoods.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvFinishedGoods_EditingControlShowing);
@@ -737,8 +750,8 @@
             // clnFGQty
             // 
             this.clnFGQty.DataPropertyName = "Qty";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.clnFGQty.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clnFGQty.DefaultCellStyle = dataGridViewCellStyle7;
             this.clnFGQty.HeaderText = "အ‌ရေအတွက်";
             this.clnFGQty.MaxInputLength = 5;
             this.clnFGQty.Name = "clnFGQty";
@@ -770,8 +783,8 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductionCode";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn1.HeaderText = "Production Code";
             this.dataGridViewTextBoxColumn1.MaxInputLength = 5;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -782,8 +795,8 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Qty";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn2.HeaderText = "အ‌ရေအတွက်";
             this.dataGridViewTextBoxColumn2.MaxInputLength = 5;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -801,10 +814,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Remark";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.NullValue = "0";
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.NullValue = "0";
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn4.HeaderText = "မှတ်ချက်";
             this.dataGridViewTextBoxColumn4.MaxInputLength = 5;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -813,10 +826,10 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "IssueQty";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle22.NullValue = "0";
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.NullValue = "0";
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn5.HeaderText = "IssueQty";
             this.dataGridViewTextBoxColumn5.MaxInputLength = 5;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -837,25 +850,14 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 150;
             // 
-            // btnFGDelete
-            // 
-            this.btnFGDelete.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFGDelete.Location = new System.Drawing.Point(239, 286);
-            this.btnFGDelete.Name = "btnFGDelete";
-            this.btnFGDelete.Size = new System.Drawing.Size(95, 34);
-            this.btnFGDelete.TabIndex = 78;
-            this.btnFGDelete.Text = "ဖျက်မည်";
-            this.btnFGDelete.UseVisualStyleBackColor = true;
-            this.btnFGDelete.Click += new System.EventHandler(this.btnFGDelete_Click);
-            // 
             // frmFinishedGoodsRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1220, 733);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmFinishedGoodsRequest";

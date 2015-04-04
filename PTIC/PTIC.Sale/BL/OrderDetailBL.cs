@@ -106,44 +106,44 @@ namespace PTIC.Sale.BL
             try
             {
                 // Null OrderDetail or no record
-                if (mdOrderDetails == null || mdOrderDetails.Count < 1)
-                {
-                    base.ValidationResults = new ValidationResults();
-                    base.ValidationResults.AddResult(
-                        new ValidationResult("Order မှာယူမှုစာရင်း ဖြည့်သွင်းပေးပါ။",
-                            null, "OrderDetailCount", null, null));
-                    return 0;
-                }
-                // OrderDetail validation
-                Validator<OrderDetail> detailValidator = base.ValidationManager.CreateValidator<OrderDetail>();
-                foreach (OrderDetail detail in mdOrderDetails)
-                {
-                    ValidationResults vResults = detailValidator.Validate(detail);
-                    base.ValidationResults = vResults;
-                    if (!vResults.IsValid)
-                        return 0;
-                }
-                // Do not allow duplicate product
-                var duplicatedTripPlanNo = mdOrderDetails.GroupBy(x => new { x.ProductID }).Where(x => x.Skip(1).Any()).ToArray();
-                if (duplicatedTripPlanNo.Any())
-                {
-                    base.ValidationResults.AddResult(
-                        new ValidationResult(ErrorMessages.OrderDetail_ProductID_Duplicate,
-                            null, "OrderDetail_ProductID_Duplicate", null, null));
-                    return 0;
-                }
-                // Do not allow duplicate product via db (this validation is set last in sequence bcoz it interacts with database)
-                foreach (OrderDetail detail in mdOrderDetails)
-                {
-                    DataTable dtDuplicatedProduct = this.GetBy(detail.OrderID, detail.ProductID);
-                    if (dtDuplicatedProduct != null && dtDuplicatedProduct.Rows.Count > 0)
-                    {
-                        base.ValidationResults.AddResult(
-                            new ValidationResult(ErrorMessages.OrderDetail_ProductID_Duplicate,
-                            null, "OrderDetail_ProductID_Duplicate", null, null));
-                        return 0;
-                    }
-                }
+                //if (mdOrderDetails == null || mdOrderDetails.Count < 1)
+                //{
+                //    base.ValidationResults = new ValidationResults();
+                //    base.ValidationResults.AddResult(
+                //        new ValidationResult("Order မှာယူမှုစာရင်း ဖြည့်သွင်းပေးပါ။",
+                //            null, "OrderDetailCount", null, null));
+                //    return 0;
+                //}
+                //// OrderDetail validation
+                //Validator<OrderDetail> detailValidator = base.ValidationManager.CreateValidator<OrderDetail>();
+                //foreach (OrderDetail detail in mdOrderDetails)
+                //{
+                //    ValidationResults vResults = detailValidator.Validate(detail);
+                //    base.ValidationResults = vResults;
+                //    if (!vResults.IsValid)
+                //        return 0;
+                //}
+                //// Do not allow duplicate product
+                //var duplicatedTripPlanNo = mdOrderDetails.GroupBy(x => new { x.ProductID }).Where(x => x.Skip(1).Any()).ToArray();
+                //if (duplicatedTripPlanNo.Any())
+                //{
+                //    base.ValidationResults.AddResult(
+                //        new ValidationResult(ErrorMessages.OrderDetail_ProductID_Duplicate,
+                //            null, "OrderDetail_ProductID_Duplicate", null, null));
+                //    return 0;
+                //}
+                //// Do not allow duplicate product via db (this validation is set last in sequence bcoz it interacts with database)
+                //foreach (OrderDetail detail in mdOrderDetails)
+                //{
+                //    DataTable dtDuplicatedProduct = this.GetBy(detail.OrderID, detail.ProductID);
+                //    if (dtDuplicatedProduct != null && dtDuplicatedProduct.Rows.Count > 0)
+                //    {
+                //        base.ValidationResults.AddResult(
+                //            new ValidationResult(ErrorMessages.OrderDetail_ProductID_Duplicate,
+                //            null, "OrderDetail_ProductID_Duplicate", null, null));
+                //        return 0;
+                //    }
+                //}
 
                 // Save into db
                 return OrderDetailDA.UpdateByOrderDetailID(mdOrderDetails);
