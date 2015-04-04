@@ -315,7 +315,7 @@ namespace PTIC.VC.Sale.Delivery
                     }
                 }
 
-               // affectedrow = new DeliveryNoteBL().Add(deliverynote, newDeliveryNoteDetailRecords, warehouseID, this.deliveryList,PreVenID,PreEmpID);
+              affectedrow = new DeliveryNoteBL().Add(deliverynote, newDeliveryNoteDetailRecords, warehouseID);
 
                 if (affectedrow > 0)
                 {

@@ -715,13 +715,7 @@ namespace PTIC.Sale.Order
                         };
                         // Add it into list                        
                         orderDetails.Add(mdOrderDetail);
-                        // Update                        
-                        /*
-                        if (mdOrderDetail.ProductID != -1 && mdOrderDetail.Qty != 0)
-                        {
-                            affectedRows += orderDetailSaver.UpdateByOrderDetailID(mdOrderDetail);
-                        }
-                         */ 
+                    
                     }
                     // Update
                     if (orderDetails.Count > 0)
