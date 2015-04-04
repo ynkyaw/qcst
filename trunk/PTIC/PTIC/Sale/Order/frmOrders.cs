@@ -54,6 +54,11 @@ namespace PTIC.Sale.Order
                 ToastMessageBox.Show(Resource.errSelectModifyRecord);
                 return;
             }
+            if ((int)dgvOrders.CurrentRow.Cells[colIsDelivered.Index].Value == 1)
+            {
+                MessageBox.Show("Order is already deliver! \n Can't be Delete Delivered Order","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             if (MessageBox.Show(Resource.qstSureToDeleteRow, Resource.deleteConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 == System.Windows.Forms.DialogResult.No)
                 return;
@@ -146,7 +151,13 @@ namespace PTIC.Sale.Order
             // TODO: Do not allow to modify planned / delivered order
             if (dgvOrders.CurrentRow.IsNewRow || dgvOrders.SelectedRows.Count < 1 || dgvOrderDetails.DataSource == null)
             {
+                
                 ToastMessageBox.Show(Resource.errSelectModifyRecord);
+                return;
+            }
+            if ((int)dgvOrders.CurrentRow.Cells[colIsDelivered.Index].Value == 1) 
+            {
+                MessageBox.Show("Order is already deliver! \n Can't be Edit Delivered Order", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Get an order

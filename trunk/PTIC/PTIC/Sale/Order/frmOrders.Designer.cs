@@ -132,7 +132,7 @@
             this.lblBrand.AutoSize = true;
             this.lblBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.lblBrand.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblBrand.Location = new System.Drawing.Point(61, 9);
+            this.lblBrand.Location = new System.Drawing.Point(58, 9);
             this.lblBrand.Name = "lblBrand";
             this.lblBrand.Size = new System.Drawing.Size(95, 15);
             this.lblBrand.TabIndex = 3;

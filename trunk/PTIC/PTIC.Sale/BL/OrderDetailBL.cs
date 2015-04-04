@@ -105,24 +105,7 @@ namespace PTIC.Sale.BL
         {
             try
             {
-                // Null OrderDetail or no record
-                //if (mdOrderDetails == null || mdOrderDetails.Count < 1)
-                //{
-                //    base.ValidationResults = new ValidationResults();
-                //    base.ValidationResults.AddResult(
-                //        new ValidationResult("Order မှာယူမှုစာရင်း ဖြည့်သွင်းပေးပါ။",
-                //            null, "OrderDetailCount", null, null));
-                //    return 0;
-                //}
-                //// OrderDetail validation
-                //Validator<OrderDetail> detailValidator = base.ValidationManager.CreateValidator<OrderDetail>();
-                //foreach (OrderDetail detail in mdOrderDetails)
-                //{
-                //    ValidationResults vResults = detailValidator.Validate(detail);
-                //    base.ValidationResults = vResults;
-                //    if (!vResults.IsValid)
-                //        return 0;
-                //}
+               
                 //// Do not allow duplicate product
                 //var duplicatedTripPlanNo = mdOrderDetails.GroupBy(x => new { x.ProductID }).Where(x => x.Skip(1).Any()).ToArray();
                 //if (duplicatedTripPlanNo.Any())
