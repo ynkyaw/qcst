@@ -132,15 +132,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1220, 733);
+            this.panel1.Size = new System.Drawing.Size(1068, 779);
             this.panel1.TabIndex = 42;
             // 
             // btnFGDelete
             // 
             this.btnFGDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFGDelete.Location = new System.Drawing.Point(239, 286);
+            this.btnFGDelete.Location = new System.Drawing.Point(209, 304);
             this.btnFGDelete.Name = "btnFGDelete";
-            this.btnFGDelete.Size = new System.Drawing.Size(95, 34);
+            this.btnFGDelete.Size = new System.Drawing.Size(83, 36);
             this.btnFGDelete.TabIndex = 78;
             this.btnFGDelete.Text = "ဖျက်မည်";
             this.btnFGDelete.UseVisualStyleBackColor = true;
@@ -152,9 +152,9 @@
             this.groupBox3.Controls.Add(this.dgvStockInFactory);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox3.Location = new System.Drawing.Point(625, 48);
+            this.groupBox3.Location = new System.Drawing.Point(547, 51);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(456, 234);
+            this.groupBox3.Size = new System.Drawing.Size(399, 249);
             this.groupBox3.TabIndex = 77;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "စက်ရုံလက်ကျန်ပစ္စည်းစာရင်း";
@@ -176,12 +176,12 @@
             this.dataGridViewComboBoxColumn1,
             this.dataGridViewTextBoxColumn8});
             this.dgvStockInFactory.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvStockInFactory.Location = new System.Drawing.Point(6, 59);
+            this.dgvStockInFactory.Location = new System.Drawing.Point(5, 63);
             this.dgvStockInFactory.Name = "dgvStockInFactory";
             this.dgvStockInFactory.RowHeadersWidth = 50;
             this.dgvStockInFactory.RowTemplate.Height = 28;
             this.dgvStockInFactory.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStockInFactory.Size = new System.Drawing.Size(430, 171);
+            this.dgvStockInFactory.Size = new System.Drawing.Size(376, 182);
             this.dgvStockInFactory.TabIndex = 76;
             // 
             // dataGridViewComboBoxColumn1
@@ -207,9 +207,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(17, 286);
+            this.button1.Location = new System.Drawing.Point(15, 304);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 34);
+            this.button1.Size = new System.Drawing.Size(83, 36);
             this.button1.TabIndex = 75;
             this.button1.Text = "ထည့်မည်";
             this.button1.UseVisualStyleBackColor = true;
@@ -219,9 +219,9 @@
             // 
             this.btnDelete.Enabled = false;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(317, 707);
+            this.btnDelete.Location = new System.Drawing.Point(277, 751);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 34);
+            this.btnDelete.Size = new System.Drawing.Size(83, 36);
             this.btnDelete.TabIndex = 74;
             this.btnDelete.Text = "ဖျက်မည်";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -230,9 +230,9 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(17, 707);
+            this.btnAdd.Location = new System.Drawing.Point(15, 751);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(95, 34);
+            this.btnAdd.Size = new System.Drawing.Size(83, 36);
             this.btnAdd.TabIndex = 73;
             this.btnAdd.Text = "ထည့်မည်";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -242,9 +242,9 @@
             // 
             this.btnIssue.Enabled = false;
             this.btnIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIssue.Location = new System.Drawing.Point(216, 707);
+            this.btnIssue.Location = new System.Drawing.Point(189, 751);
             this.btnIssue.Name = "btnIssue";
-            this.btnIssue.Size = new System.Drawing.Size(95, 34);
+            this.btnIssue.Size = new System.Drawing.Size(83, 36);
             this.btnIssue.TabIndex = 72;
             this.btnIssue.Text = "ထုတ်ပေးမည်";
             this.btnIssue.UseVisualStyleBackColor = true;
@@ -255,7 +255,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(25, 632);
+            this.label2.Location = new System.Drawing.Point(22, 672);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 17);
             this.label2.TabIndex = 47;
@@ -265,9 +265,9 @@
             // 
             this.btnProduced.Enabled = false;
             this.btnProduced.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduced.Location = new System.Drawing.Point(128, 286);
+            this.btnProduced.Location = new System.Drawing.Point(112, 304);
             this.btnProduced.Name = "btnProduced";
-            this.btnProduced.Size = new System.Drawing.Size(95, 34);
+            this.btnProduced.Size = new System.Drawing.Size(83, 36);
             this.btnProduced.TabIndex = 69;
             this.btnProduced.Text = "သိမ်းမည်";
             this.btnProduced.UseVisualStyleBackColor = true;
@@ -282,7 +282,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1201, 41);
+            this.panel2.Size = new System.Drawing.Size(1049, 44);
             this.panel2.TabIndex = 65;
             // 
             // lblSetup
@@ -290,7 +290,7 @@
             this.lblSetup.AutoSize = true;
             this.lblSetup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSetup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSetup.Location = new System.Drawing.Point(10, 10);
+            this.lblSetup.Location = new System.Drawing.Point(9, 11);
             this.lblSetup.Name = "lblSetup";
             this.lblSetup.Size = new System.Drawing.Size(114, 17);
             this.lblSetup.TabIndex = 0;
@@ -302,7 +302,7 @@
             this.lblHeaderPCat.AutoSize = true;
             this.lblHeaderPCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblHeaderPCat.Location = new System.Drawing.Point(160, 10);
+            this.lblHeaderPCat.Location = new System.Drawing.Point(140, 11);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
             this.lblHeaderPCat.Size = new System.Drawing.Size(156, 17);
             this.lblHeaderPCat.TabIndex = 45;
@@ -312,7 +312,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(115, 599);
+            this.label9.Location = new System.Drawing.Point(101, 636);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(97, 17);
             this.label9.TabIndex = 61;
@@ -322,9 +322,9 @@
             // 
             this.btnPrint.Enabled = false;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrint.Location = new System.Drawing.Point(810, 713);
+            this.btnPrint.Location = new System.Drawing.Point(709, 758);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(95, 34);
+            this.btnPrint.Size = new System.Drawing.Size(83, 36);
             this.btnPrint.TabIndex = 60;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -334,9 +334,9 @@
             // 
             this.btnCancel.Enabled = false;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(699, 713);
+            this.btnCancel.Location = new System.Drawing.Point(612, 758);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(95, 34);
+            this.btnCancel.Size = new System.Drawing.Size(83, 36);
             this.btnCancel.TabIndex = 49;
             this.btnCancel.Text = "ပယ်ဖျက်မည်";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -346,9 +346,9 @@
             // 
             this.btnRequest.Enabled = false;
             this.btnRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRequest.Location = new System.Drawing.Point(115, 707);
+            this.btnRequest.Location = new System.Drawing.Point(101, 751);
             this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(95, 34);
+            this.btnRequest.Size = new System.Drawing.Size(83, 36);
             this.btnRequest.TabIndex = 44;
             this.btnRequest.Text = "‌တောင်းခံမည်";
             this.btnRequest.UseVisualStyleBackColor = true;
@@ -377,9 +377,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox1.Location = new System.Drawing.Point(11, 324);
+            this.groupBox1.Location = new System.Drawing.Point(10, 344);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1070, 380);
+            this.groupBox1.Size = new System.Drawing.Size(936, 404);
             this.groupBox1.TabIndex = 70;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ကုန်ပစ္စည်း‌တောင်းခံခြင်း";
@@ -389,10 +389,10 @@
             this.txtIssueNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIssueNo.Enabled = false;
             this.txtIssueNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtIssueNo.Location = new System.Drawing.Point(875, 28);
+            this.txtIssueNo.Location = new System.Drawing.Point(766, 30);
             this.txtIssueNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIssueNo.Name = "txtIssueNo";
-            this.txtIssueNo.Size = new System.Drawing.Size(150, 23);
+            this.txtIssueNo.Size = new System.Drawing.Size(132, 23);
             this.txtIssueNo.TabIndex = 212;
             // 
             // label11
@@ -402,7 +402,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(807, 32);
+            this.label11.Location = new System.Drawing.Point(706, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 17);
             this.label11.TabIndex = 211;
@@ -415,7 +415,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(513, 70);
+            this.label10.Location = new System.Drawing.Point(449, 74);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 17);
             this.label10.TabIndex = 210;
@@ -427,9 +427,9 @@
             this.cmbEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbEmployee.FormattingEnabled = true;
-            this.cmbEmployee.Location = new System.Drawing.Point(640, 64);
+            this.cmbEmployee.Location = new System.Drawing.Point(560, 68);
             this.cmbEmployee.Name = "cmbEmployee";
-            this.cmbEmployee.Size = new System.Drawing.Size(150, 24);
+            this.cmbEmployee.Size = new System.Drawing.Size(132, 24);
             this.cmbEmployee.TabIndex = 209;
             // 
             // label8
@@ -439,7 +439,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(513, 32);
+            this.label8.Location = new System.Drawing.Point(449, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 17);
             this.label8.TabIndex = 208;
@@ -451,9 +451,9 @@
             this.cmbVen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbVen.FormattingEnabled = true;
-            this.cmbVen.Location = new System.Drawing.Point(640, 30);
+            this.cmbVen.Location = new System.Drawing.Point(560, 32);
             this.cmbVen.Name = "cmbVen";
-            this.cmbVen.Size = new System.Drawing.Size(150, 24);
+            this.cmbVen.Size = new System.Drawing.Size(132, 24);
             this.cmbVen.TabIndex = 207;
             // 
             // textBox1
@@ -461,10 +461,10 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(92, 32);
+            this.textBox1.Location = new System.Drawing.Point(80, 34);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 23);
+            this.textBox1.Size = new System.Drawing.Size(132, 23);
             this.textBox1.TabIndex = 206;
             // 
             // label7
@@ -474,7 +474,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(10, 34);
+            this.label7.Location = new System.Drawing.Point(9, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 17);
             this.label7.TabIndex = 205;
@@ -487,7 +487,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(11, 70);
+            this.label6.Location = new System.Drawing.Point(10, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 204;
@@ -499,9 +499,9 @@
             this.cmbRequester.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbRequester.FormattingEnabled = true;
-            this.cmbRequester.Location = new System.Drawing.Point(92, 66);
+            this.cmbRequester.Location = new System.Drawing.Point(80, 70);
             this.cmbRequester.Name = "cmbRequester";
-            this.cmbRequester.Size = new System.Drawing.Size(150, 24);
+            this.cmbRequester.Size = new System.Drawing.Size(132, 24);
             this.cmbRequester.TabIndex = 203;
             // 
             // label1
@@ -509,7 +509,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(14, 344);
+            this.label1.Location = new System.Drawing.Point(12, 366);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 49;
@@ -518,10 +518,10 @@
             // txtFactoryRemark
             // 
             this.txtFactoryRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFactoryRemark.Location = new System.Drawing.Point(149, 341);
+            this.txtFactoryRemark.Location = new System.Drawing.Point(130, 362);
             this.txtFactoryRemark.Multiline = true;
             this.txtFactoryRemark.Name = "txtFactoryRemark";
-            this.txtFactoryRemark.Size = new System.Drawing.Size(745, 32);
+            this.txtFactoryRemark.Size = new System.Drawing.Size(652, 34);
             this.txtFactoryRemark.TabIndex = 50;
             // 
             // dgvFGRequest
@@ -544,12 +544,12 @@
             this.colRequestRemark,
             this.colFactoryRemark});
             this.dgvFGRequest.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvFGRequest.Location = new System.Drawing.Point(13, 97);
+            this.dgvFGRequest.Location = new System.Drawing.Point(11, 103);
             this.dgvFGRequest.Name = "dgvFGRequest";
             this.dgvFGRequest.RowHeadersWidth = 50;
             this.dgvFGRequest.RowTemplate.Height = 28;
             this.dgvFGRequest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvFGRequest.Size = new System.Drawing.Size(1037, 167);
+            this.dgvFGRequest.Size = new System.Drawing.Size(907, 177);
             this.dgvFGRequest.TabIndex = 43;
             this.dgvFGRequest.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFGRequest_CellEndEdit);
             this.dgvFGRequest.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFGRequest_CellLeave);
@@ -610,19 +610,19 @@
             // txtRemark
             // 
             this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtRemark.Location = new System.Drawing.Point(149, 303);
+            this.txtRemark.Location = new System.Drawing.Point(130, 322);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(745, 32);
+            this.txtRemark.Size = new System.Drawing.Size(652, 34);
             this.txtRemark.TabIndex = 48;
             // 
             // txtTotalQty
             // 
             this.txtTotalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtTotalQty.Location = new System.Drawing.Point(242, 269);
+            this.txtTotalQty.Location = new System.Drawing.Point(212, 286);
             this.txtTotalQty.Name = "txtTotalQty";
             this.txtTotalQty.ReadOnly = true;
-            this.txtTotalQty.Size = new System.Drawing.Size(120, 23);
+            this.txtTotalQty.Size = new System.Drawing.Size(106, 23);
             this.txtTotalQty.TabIndex = 62;
             // 
             // label3
@@ -630,7 +630,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(257, 36);
+            this.label3.Location = new System.Drawing.Point(225, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 50;
@@ -640,9 +640,9 @@
             // 
             this.dtpRequiredDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpRequiredDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpRequiredDate.Location = new System.Drawing.Point(368, 32);
+            this.dtpRequiredDate.Location = new System.Drawing.Point(322, 34);
             this.dtpRequiredDate.Name = "dtpRequiredDate";
-            this.dtpRequiredDate.Size = new System.Drawing.Size(120, 23);
+            this.dtpRequiredDate.Size = new System.Drawing.Size(106, 23);
             this.dtpRequiredDate.TabIndex = 56;
             this.dtpRequiredDate.ValueChanged += new System.EventHandler(this.dtpRequiredDate_ValueChanged);
             // 
@@ -651,9 +651,9 @@
             this.dtpIssueDate.Enabled = false;
             this.dtpIssueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpIssueDate.Location = new System.Drawing.Point(368, 66);
+            this.dtpIssueDate.Location = new System.Drawing.Point(322, 70);
             this.dtpIssueDate.Name = "dtpIssueDate";
-            this.dtpIssueDate.Size = new System.Drawing.Size(120, 23);
+            this.dtpIssueDate.Size = new System.Drawing.Size(106, 23);
             this.dtpIssueDate.TabIndex = 58;
             // 
             // label5
@@ -661,7 +661,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(259, 70);
+            this.label5.Location = new System.Drawing.Point(227, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 17);
             this.label5.TabIndex = 53;
@@ -675,9 +675,9 @@
             this.groupBox2.Controls.Add(this.dgvFinishedGoods);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox2.Location = new System.Drawing.Point(11, 48);
+            this.groupBox2.Location = new System.Drawing.Point(10, 51);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(608, 234);
+            this.groupBox2.Size = new System.Drawing.Size(532, 249);
             this.groupBox2.TabIndex = 71;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ထုတ်လုပ်ပြီး‌သောပစ္စည်းစာရင်း";
@@ -687,7 +687,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(9, 28);
+            this.label4.Location = new System.Drawing.Point(8, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 67;
@@ -697,9 +697,9 @@
             // 
             this.dtpFGDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpFGDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFGDate.Location = new System.Drawing.Point(132, 25);
+            this.dtpFGDate.Location = new System.Drawing.Point(116, 27);
             this.dtpFGDate.Name = "dtpFGDate";
-            this.dtpFGDate.Size = new System.Drawing.Size(120, 23);
+            this.dtpFGDate.Size = new System.Drawing.Size(106, 23);
             this.dtpFGDate.TabIndex = 68;
             this.dtpFGDate.ValueChanged += new System.EventHandler(this.dtpFGDate_ValueChanged);
             // 
@@ -723,12 +723,12 @@
             this.colProductionCode,
             this.colFinishedGoodID});
             this.dgvFinishedGoods.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvFinishedGoods.Location = new System.Drawing.Point(8, 59);
+            this.dgvFinishedGoods.Location = new System.Drawing.Point(7, 63);
             this.dgvFinishedGoods.Name = "dgvFinishedGoods";
             this.dgvFinishedGoods.RowHeadersWidth = 50;
             this.dgvFinishedGoods.RowTemplate.Height = 28;
             this.dgvFinishedGoods.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFinishedGoods.Size = new System.Drawing.Size(567, 171);
+            this.dgvFinishedGoods.Size = new System.Drawing.Size(496, 182);
             this.dgvFinishedGoods.TabIndex = 63;
             this.dgvFinishedGoods.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFinishedGoods_CellEndEdit);
             this.dgvFinishedGoods.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFinishedGoods_CellLeave);
@@ -852,12 +852,12 @@
             // 
             // frmFinishedGoodsRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1220, 733);
+            this.ClientSize = new System.Drawing.Size(1068, 779);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmFinishedGoodsRequest";
