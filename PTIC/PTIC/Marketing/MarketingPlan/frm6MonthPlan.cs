@@ -86,6 +86,7 @@ namespace PTIC.VC.Marketing.MarketingPlan
             else
             {
                 Save();
+                btnAddNew.Enabled = butDelete.Enabled = button1.Enabled = true;
             }
         }
                
@@ -906,6 +907,13 @@ namespace PTIC.VC.Marketing.MarketingPlan
                 
                 }
             }
+        }
+
+        private void dgvAPPlanDetail_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvAPPlanDetail.CurrentRow.ReadOnly = false;
+            btnAddNew.Enabled = butDelete.Enabled = button1.Enabled = false;
+
         }
 
     }
