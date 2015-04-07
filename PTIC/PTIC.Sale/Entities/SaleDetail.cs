@@ -24,7 +24,7 @@ namespace PTIC.Sale.Entities
         [RangeValidator(1, RangeBoundaryType.Inclusive, 0, RangeBoundaryType.Ignore,
                     MessageTemplateResourceName = "SaleDetail_Qty_Require",
                     MessageTemplateResourceType = typeof(PTIC.Sale.ErrorMessages))]
-	    public int Qty {get; set;}
+	    public decimal Qty {get; set;}
 
 	    public int Package {get; set;}
 

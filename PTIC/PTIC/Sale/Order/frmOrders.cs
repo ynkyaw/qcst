@@ -134,6 +134,8 @@ namespace PTIC.Sale.Order
                     dgv.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
                 }
             }
+
+            btnDelete.Enabled = btnEdit.Enabled = (dgvOrders.Rows.Count > 0);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -148,6 +150,7 @@ namespace PTIC.Sale.Order
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            
             // TODO: Do not allow to modify planned / delivered order
             if (dgvOrders.CurrentRow.IsNewRow || dgvOrders.SelectedRows.Count < 1 || dgvOrderDetails.DataSource == null)
             {
@@ -482,6 +485,7 @@ namespace PTIC.Sale.Order
             // Load order list
             LoadOrders();
             //LoadNBindOrders();
+            btnEdit.Enabled = btnDelete.Enabled = (dgvOrders.Rows.Count > 0);
         }
         #endregion
                                                         
