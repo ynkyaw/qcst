@@ -1191,6 +1191,11 @@ namespace PTIC.VC.Sale.Inventory
         {
             dgvFGRequest.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
+
+        private void cmbRequester_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         
     }
 }
