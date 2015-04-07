@@ -272,8 +272,8 @@ namespace PTIC.Sale.Delivery
                 return;
             }
             else if (!string.IsNullOrEmpty(kwCustomer) && !string.IsNullOrEmpty(kwOrderNo) && dtp_KW_OrderDate.Checked) // All key exist
-                filterString = string.Format(@"CusName LIKE '%{0}%' AND OrderNo LIKE '%{1}%' AND OrderDate = #{2}# ",
-                    kwCustomer, kwOrderNo, dtp_KW_OrderDate.Value);
+                filterString = string.Format(@"CusName LIKE '%{0}%' AND OrderNo LIKE '%{1}%' AND OrderDate>=#{2}# and OrderDate<=#{3}# ",
+                    kwCustomer, kwOrderNo, dtp_KW_OrderDate.Value,dateTimePicker1.Value.Date);
             else // some keys exist
             {
                 if (!string.IsNullOrEmpty(kwCustomer))
@@ -287,7 +287,7 @@ namespace PTIC.Sale.Delivery
                     filterString = filterString.Replace("@OrderNo", string.Empty);
 
                 if (dtp_KW_OrderDate.Checked)
-                    filterString = filterString.Replace("@OrderDate", string.Format("AND OrderDate = #{0}#", dtp_KW_OrderDate.Value.Date));
+                    filterString = filterString.Replace("@OrderDate", string.Format("AND OrderDate>=#{0}# and OrderDate<=#{1}#", dtp_KW_OrderDate.Value.Date,dateTimePicker1.Value.Date));
                 else
                     filterString = filterString.Replace("@OrderDate", string.Empty);
 
@@ -639,6 +639,7 @@ namespace PTIC.Sale.Delivery
             LoadNBind();
             // Load and bind underlivered orders and others
             LoadNBindUnplannedOrders();
+            //txtKW_Customer.AutoCompleteCustomSource  = 
         }
 
         public frmDeliveryPlan(string orderNo)
