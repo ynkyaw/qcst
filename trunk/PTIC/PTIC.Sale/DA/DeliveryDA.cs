@@ -150,6 +150,43 @@ namespace PTIC.Sale.DA
             }
         }
 
+        public static DataTable SelectDeliveryPlanByVenIdDate(int venId,DateTime dtp)
+        {
+            DataTable table = null;
+            string tableName = "DeliveryTable";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+
+                //command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "SELECT b.id,dd.ProductID,sum(DeliverQty) ";
+                command.CommandText += " FROM DeliveryDetail dd JOIN Delivery d on dd.DeliveryID=d.ID JOIN Product p ON ";
+                command.CommandText += " p.ID=dd.ProductID JOIN  ProdSubCategory psc on ";
+                command.CommandText += " p.SubCategoryID = psc.ID JOIN ";
+                command.CommandText += " ProdCategory pc on psc.CategoryID = pc.ID JOIN  Brand b";
+                command.CommandText += " ON b.ID=pc.BrandID ";
+                command.CommandText += " where VenID=@p_VenId ";
+                command.CommandText += " and DeliveryDate  between @p_fromDate and @p_toDate";
+                command.CommandText += " group by b.ID,dd.ProductID";
+
+                //command.Parameters.AddWithValue("@p_VenId",);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+                return table;
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            finally
+            {
+                DBManager.GetInstance().CloseDbConnection();
+            }
+        }
+
         /// <summary>
         /// Retrieve records between start and end row
         /// </summary>

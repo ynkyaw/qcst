@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbVehicle = new System.Windows.Forms.ComboBox();
             this.dgvUnplannedOrders = new System.Windows.Forms.DataGridView();
             this.colOrderDate = new AGL.UI.Controls.CalendarColumn();
@@ -88,6 +88,8 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFilter = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnViewAll = new System.Windows.Forms.Button();
             this.txtKW_Customer = new System.Windows.Forms.TextBox();
             this.dtp_KW_OrderDate = new System.Windows.Forms.DateTimePicker();
@@ -109,8 +111,6 @@
             this.colBalanceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRemainQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnOrderLost = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnplannedOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
             this.panel1.SuspendLayout();
@@ -142,8 +142,8 @@
             // dgvUnplannedOrders
             // 
             this.dgvUnplannedOrders.AllowUserToAddRows = false;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUnplannedOrders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUnplannedOrders.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvUnplannedOrders.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvUnplannedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnplannedOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -164,8 +164,8 @@
             this.dgvUnplannedOrders.ReadOnly = true;
             this.dgvUnplannedOrders.RowHeadersVisible = false;
             this.dgvUnplannedOrders.RowHeadersWidth = 50;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvUnplannedOrders.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvUnplannedOrders.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvUnplannedOrders.RowTemplate.Height = 28;
             this.dgvUnplannedOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUnplannedOrders.Size = new System.Drawing.Size(630, 313);
@@ -360,19 +360,19 @@
             // dgvOrderDetails
             // 
             this.dgvOrderDetails.AllowUserToAddRows = false;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvOrderDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvOrderDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvOrderDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOrderDetails.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductName,
@@ -387,8 +387,8 @@
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.RowHeadersVisible = false;
             this.dgvOrderDetails.RowHeadersWidth = 50;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.dgvOrderDetails.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.dgvOrderDetails.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvOrderDetails.RowTemplate.Height = 28;
             this.dgvOrderDetails.Size = new System.Drawing.Size(654, 184);
             this.dgvOrderDetails.TabIndex = 170;
@@ -407,8 +407,8 @@
             // colQty
             // 
             this.colQty.DataPropertyName = "Qty";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colQty.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colQty.DefaultCellStyle = dataGridViewCellStyle13;
             this.colQty.HeaderText = "Order မှာသည့် အ‌ရေအတွက်";
             this.colQty.MaxInputLength = 5;
             this.colQty.Name = "colQty";
@@ -418,17 +418,17 @@
             // colOrderRemain
             // 
             this.colOrderRemain.DataPropertyName = "RemainQty";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colOrderRemain.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colOrderRemain.DefaultCellStyle = dataGridViewCellStyle14;
             this.colOrderRemain.HeaderText = "ပို့ရန်ကျန် အ‌ရေအတွက်";
             this.colOrderRemain.Name = "colOrderRemain";
             // 
             // colDeliveryQty
             // 
             this.colDeliveryQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle23.NullValue = "0";
-            this.colDeliveryQty.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.NullValue = "0";
+            this.colDeliveryQty.DefaultCellStyle = dataGridViewCellStyle15;
             this.colDeliveryQty.HeaderText = "ပို့ရမည့်အ‌ရေအတွက်";
             this.colDeliveryQty.MaxInputLength = 5;
             this.colDeliveryQty.Name = "colDeliveryQty";
@@ -680,6 +680,25 @@
             this.pnlFilter.TabIndex = 188;
             this.pnlFilter.Visible = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(710, 14);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowCheckBox = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(114, 25);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(686, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(25, 19);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "to";
+            // 
             // btnViewAll
             // 
             this.btnViewAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -913,25 +932,6 @@
             this.btnOrderLost.Text = "Order Lost";
             this.btnOrderLost.UseVisualStyleBackColor = true;
             this.btnOrderLost.Click += new System.EventHandler(this.btnOrderLost_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(686, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 19);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "to";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(710, 14);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(114, 25);
-            this.dateTimePicker1.TabIndex = 23;
             // 
             // frmDeliveryPlan
             // 

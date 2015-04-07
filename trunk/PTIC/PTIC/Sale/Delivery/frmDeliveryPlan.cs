@@ -639,7 +639,13 @@ namespace PTIC.Sale.Delivery
             LoadNBind();
             // Load and bind underlivered orders and others
             LoadNBindUnplannedOrders();
-            //txtKW_Customer.AutoCompleteCustomSource  = 
+            DataTable dtCustomer = new CustomerBL().GetAll();
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            foreach (DataRow dr in dtCustomer.Rows) 
+            {
+                coll.Add(dr["CusName"] + string.Empty);
+            }
+            txtKW_Customer.AutoCompleteCustomSource = coll;
         }
 
         public frmDeliveryPlan(string orderNo)
