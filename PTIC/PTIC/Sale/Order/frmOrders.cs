@@ -488,6 +488,11 @@ namespace PTIC.Sale.Order
             btnEdit.Enabled = btnDelete.Enabled = (dgvOrders.Rows.Count > 0);
         }
         #endregion
+
+        private void lblBrand_Click(object sender, EventArgs e)
+        {
+
+        }
                                                         
     }
 }
