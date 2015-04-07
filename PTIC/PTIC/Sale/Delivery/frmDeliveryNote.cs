@@ -827,5 +827,10 @@ namespace PTIC.VC.Sale.Delivery
                 // pnlGrid.Visible = false;
             }
         }
+
+        private void btnLoadOrder_Click(object sender, EventArgs e)
+        {
+            //DataTable deliveryListFromDeliveryPlan = DeliveryDA.SelectBy();
+        }
     }
 }

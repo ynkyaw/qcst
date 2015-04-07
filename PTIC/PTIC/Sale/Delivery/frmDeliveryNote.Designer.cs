@@ -29,26 +29,29 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.lblDelivery = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.dtpDeliveryNoteDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.cmbVenNo = new System.Windows.Forms.ComboBox();
             this.dgvDeliveryNote = new System.Windows.Forms.DataGridView();
             this.clnBrandName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.clnProductName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.clnOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colShowQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliveryNoteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRequest = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.cmbSalePerson = new System.Windows.Forms.ComboBox();
@@ -63,26 +66,24 @@
             this.lblFilter = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pnlGrid = new System.Windows.Forms.Panel();
-            this.dtpDeliveryDisplay = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbEmpDisplay = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbEmp = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbRealVen = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colShowQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliveryNoteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbVenNo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbEmpDisplay = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpDeliveryDisplay = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbRealVen = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbEmp = new System.Windows.Forms.ComboBox();
+            this.pnlGrid = new System.Windows.Forms.Panel();
+            this.btnLoadOrder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveryNote)).BeginInit();
             this.pnlFilter.SuspendLayout();
@@ -114,7 +115,7 @@
             this.label7.ForeColor = System.Drawing.Color.MediumBlue;
             this.label7.Location = new System.Drawing.Point(77, 14);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 20);
+            this.label7.Size = new System.Drawing.Size(18, 19);
             this.label7.TabIndex = 7;
             this.label7.Text = ">";
             // 
@@ -127,7 +128,7 @@
             this.lblDelivery.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDelivery.Location = new System.Drawing.Point(12, 14);
             this.lblDelivery.Name = "lblDelivery";
-            this.lblDelivery.Size = new System.Drawing.Size(71, 20);
+            this.lblDelivery.Size = new System.Drawing.Size(81, 19);
             this.lblDelivery.TabIndex = 4;
             this.lblDelivery.Text = "Delivery";
             this.lblDelivery.Click += new System.EventHandler(this.lblDelivery_Click);
@@ -141,7 +142,7 @@
             this.lblBrand.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblBrand.Location = new System.Drawing.Point(97, 14);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(110, 20);
+            this.lblBrand.Size = new System.Drawing.Size(122, 19);
             this.lblBrand.TabIndex = 3;
             this.lblBrand.Text = "Delivery Note";
             // 
@@ -153,7 +154,7 @@
             this.dtpDeliveryNoteDate.Location = new System.Drawing.Point(51, 7);
             this.dtpDeliveryNoteDate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpDeliveryNoteDate.Name = "dtpDeliveryNoteDate";
-            this.dtpDeliveryNoteDate.Size = new System.Drawing.Size(119, 28);
+            this.dtpDeliveryNoteDate.Size = new System.Drawing.Size(119, 25);
             this.dtpDeliveryNoteDate.TabIndex = 128;
             this.dtpDeliveryNoteDate.ValueChanged += new System.EventHandler(this.dtpDeliveryNoteDate_ValueChanged);
             // 
@@ -163,19 +164,9 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 20);
+            this.label3.Size = new System.Drawing.Size(32, 19);
             this.label3.TabIndex = 127;
             this.label3.Text = "‌နေ့စွဲ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(173, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 20);
-            this.label6.TabIndex = 131;
-            this.label6.Text = "ထုတ်ယူမည့်ကား";
             // 
             // label12
             // 
@@ -183,24 +174,9 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(187, 14);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 20);
+            this.label12.Size = new System.Drawing.Size(82, 19);
             this.label12.TabIndex = 143;
             this.label12.Text = "ထုတ်ယူမည့်သူ";
-            // 
-            // cmbVenNo
-            // 
-            this.cmbVenNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbVenNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbVenNo.DisplayMember = "VenNo";
-            this.cmbVenNo.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbVenNo.FormattingEnabled = true;
-            this.cmbVenNo.Location = new System.Drawing.Point(283, 41);
-            this.cmbVenNo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cmbVenNo.Name = "cmbVenNo";
-            this.cmbVenNo.Size = new System.Drawing.Size(174, 27);
-            this.cmbVenNo.TabIndex = 145;
-            this.cmbVenNo.ValueMember = "VenID";
-            this.cmbVenNo.SelectedIndexChanged += new System.EventHandler(this.cmbVenNo_SelectedIndexChanged);
             // 
             // dgvDeliveryNote
             // 
@@ -263,6 +239,56 @@
             this.clnProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.clnProductName.Width = 150;
             // 
+            // clnOrder
+            // 
+            this.clnOrder.DataPropertyName = "DeliveryQty";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.NullValue = "0";
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnOrder.DefaultCellStyle = dataGridViewCellStyle11;
+            this.clnOrder.HeaderText = "Order ပို့ရန်";
+            this.clnOrder.MaxInputLength = 5;
+            this.clnOrder.Name = "clnOrder";
+            this.clnOrder.ReadOnly = true;
+            this.clnOrder.Width = 80;
+            // 
+            // colShowQty
+            // 
+            this.colShowQty.DataPropertyName = "ShowroomQty";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.colShowQty.DefaultCellStyle = dataGridViewCellStyle12;
+            this.colShowQty.HeaderText = "ShowRooms သို့ပို့ရန်";
+            this.colShowQty.Name = "colShowQty";
+            this.colShowQty.ReadOnly = true;
+            this.colShowQty.Visible = false;
+            // 
+            // clnExtra
+            // 
+            this.clnExtra.DataPropertyName = "ExtraQty";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.NullValue = "0";
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnExtra.DefaultCellStyle = dataGridViewCellStyle13;
+            this.clnExtra.HeaderText = "အပိုယူသွားရန်";
+            this.clnExtra.MaxInputLength = 5;
+            this.clnExtra.Name = "clnExtra";
+            // 
+            // clnAmount
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.NullValue = "0";
+            this.clnAmount.DefaultCellStyle = dataGridViewCellStyle14;
+            this.clnAmount.HeaderText = "စုစု‌ပေါင်း";
+            this.clnAmount.Name = "clnAmount";
+            this.clnAmount.ReadOnly = true;
+            // 
+            // colDeliveryNoteID
+            // 
+            this.colDeliveryNoteID.DataPropertyName = "DeliveryNoteDetailID";
+            this.colDeliveryNoteID.HeaderText = "DeliveryNoteDetailID";
+            this.colDeliveryNoteID.Name = "colDeliveryNoteID";
+            this.colDeliveryNoteID.Visible = false;
+            // 
             // btnRequest
             // 
             this.btnRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -296,7 +322,7 @@
             this.cmbSalePerson.Location = new System.Drawing.Point(283, 10);
             this.cmbSalePerson.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbSalePerson.Name = "cmbSalePerson";
-            this.cmbSalePerson.Size = new System.Drawing.Size(174, 27);
+            this.cmbSalePerson.Size = new System.Drawing.Size(174, 25);
             this.cmbSalePerson.TabIndex = 150;
             this.cmbSalePerson.ValueMember = "EmployeeID";
             this.cmbSalePerson.SelectedIndexChanged += new System.EventHandler(this.cmbSalePerson_SelectedIndexChanged);
@@ -308,7 +334,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label13.Location = new System.Drawing.Point(450, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 20);
+            this.label13.Size = new System.Drawing.Size(55, 19);
             this.label13.TabIndex = 168;
             this.label13.Text = "စုစု‌ပေါင်း";
             // 
@@ -319,13 +345,13 @@
             this.txtTotalAmt.Location = new System.Drawing.Point(515, 6);
             this.txtTotalAmt.Name = "txtTotalAmt";
             this.txtTotalAmt.ReadOnly = true;
-            this.txtTotalAmt.Size = new System.Drawing.Size(91, 28);
+            this.txtTotalAmt.Size = new System.Drawing.Size(91, 25);
             this.txtTotalAmt.TabIndex = 167;
             this.txtTotalAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(472, 5);
+            this.btnSearch.Location = new System.Drawing.Point(466, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(95, 34);
             this.btnSearch.TabIndex = 169;
@@ -358,6 +384,7 @@
             // pnlFilter
             // 
             this.pnlFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFilter.Controls.Add(this.btnLoadOrder);
             this.pnlFilter.Controls.Add(this.panel3);
             this.pnlFilter.Controls.Add(this.dtpDeliveryNoteDate);
             this.pnlFilter.Controls.Add(this.label3);
@@ -426,120 +453,6 @@
             this.panel4.Size = new System.Drawing.Size(768, 363);
             this.panel4.TabIndex = 180;
             // 
-            // pnlGrid
-            // 
-            this.pnlGrid.Controls.Add(this.cmbEmp);
-            this.pnlGrid.Controls.Add(this.label4);
-            this.pnlGrid.Controls.Add(this.cmbRealVen);
-            this.pnlGrid.Controls.Add(this.label5);
-            this.pnlGrid.Controls.Add(this.dtpDeliveryDisplay);
-            this.pnlGrid.Controls.Add(this.label1);
-            this.pnlGrid.Controls.Add(this.cmbEmpDisplay);
-            this.pnlGrid.Controls.Add(this.label2);
-            this.pnlGrid.Controls.Add(this.cmbVenNo);
-            this.pnlGrid.Controls.Add(this.label6);
-            this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlGrid.Location = new System.Drawing.Point(0, 118);
-            this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(768, 77);
-            this.pnlGrid.TabIndex = 181;
-            // 
-            // dtpDeliveryDisplay
-            // 
-            this.dtpDeliveryDisplay.CustomFormat = "dd-MMM-yyyy";
-            this.dtpDeliveryDisplay.Enabled = false;
-            this.dtpDeliveryDisplay.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDeliveryDisplay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDeliveryDisplay.Location = new System.Drawing.Point(52, 9);
-            this.dtpDeliveryDisplay.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.dtpDeliveryDisplay.Name = "dtpDeliveryDisplay";
-            this.dtpDeliveryDisplay.Size = new System.Drawing.Size(117, 28);
-            this.dtpDeliveryDisplay.TabIndex = 152;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
-            this.label1.TabIndex = 151;
-            this.label1.Text = "‌နေ့စွဲ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cmbEmpDisplay
-            // 
-            this.cmbEmpDisplay.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbEmpDisplay.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbEmpDisplay.DisplayMember = "EmpName";
-            this.cmbEmpDisplay.Enabled = false;
-            this.cmbEmpDisplay.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEmpDisplay.FormattingEnabled = true;
-            this.cmbEmpDisplay.Location = new System.Drawing.Point(283, 9);
-            this.cmbEmpDisplay.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cmbEmpDisplay.Name = "cmbEmpDisplay";
-            this.cmbEmpDisplay.Size = new System.Drawing.Size(174, 27);
-            this.cmbEmpDisplay.TabIndex = 154;
-            this.cmbEmpDisplay.ValueMember = "EmployeeID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(186, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
-            this.label2.TabIndex = 153;
-            this.label2.Text = "ထုတ်ယူမည့်သူ";
-            // 
-            // cmbEmp
-            // 
-            this.cmbEmp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbEmp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbEmp.DisplayMember = "EmpName";
-            this.cmbEmp.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEmp.FormattingEnabled = true;
-            this.cmbEmp.Location = new System.Drawing.Point(576, 9);
-            this.cmbEmp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cmbEmp.Name = "cmbEmp";
-            this.cmbEmp.Size = new System.Drawing.Size(174, 27);
-            this.cmbEmp.TabIndex = 158;
-            this.cmbEmp.ValueMember = "EmployeeID";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(501, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 20);
-            this.label4.TabIndex = 157;
-            this.label4.Text = "ထုတ်ယူသူ";
-            // 
-            // cmbRealVen
-            // 
-            this.cmbRealVen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbRealVen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbRealVen.DisplayMember = "VenNo";
-            this.cmbRealVen.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRealVen.FormattingEnabled = true;
-            this.cmbRealVen.Location = new System.Drawing.Point(576, 41);
-            this.cmbRealVen.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cmbRealVen.Name = "cmbRealVen";
-            this.cmbRealVen.Size = new System.Drawing.Size(174, 27);
-            this.cmbRealVen.TabIndex = 156;
-            this.cmbRealVen.ValueMember = "VehicleID";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(462, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 20);
-            this.label5.TabIndex = 155;
-            this.label5.Text = "ထုတ်ယူသည့်ကား";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "DeliverQty";
@@ -592,56 +505,6 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
             // 
-            // clnOrder
-            // 
-            this.clnOrder.DataPropertyName = "DeliveryQty";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.NullValue = "0";
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnOrder.DefaultCellStyle = dataGridViewCellStyle11;
-            this.clnOrder.HeaderText = "Order ပို့ရန်";
-            this.clnOrder.MaxInputLength = 5;
-            this.clnOrder.Name = "clnOrder";
-            this.clnOrder.ReadOnly = true;
-            this.clnOrder.Width = 80;
-            // 
-            // colShowQty
-            // 
-            this.colShowQty.DataPropertyName = "ShowroomQty";
-            dataGridViewCellStyle12.NullValue = "0";
-            this.colShowQty.DefaultCellStyle = dataGridViewCellStyle12;
-            this.colShowQty.HeaderText = "ShowRooms သို့ပို့ရန်";
-            this.colShowQty.Name = "colShowQty";
-            this.colShowQty.ReadOnly = true;
-            this.colShowQty.Visible = false;
-            // 
-            // clnExtra
-            // 
-            this.clnExtra.DataPropertyName = "ExtraQty";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.NullValue = "0";
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnExtra.DefaultCellStyle = dataGridViewCellStyle13;
-            this.clnExtra.HeaderText = "အပိုယူသွားရန်";
-            this.clnExtra.MaxInputLength = 5;
-            this.clnExtra.Name = "clnExtra";
-            // 
-            // clnAmount
-            // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.NullValue = "0";
-            this.clnAmount.DefaultCellStyle = dataGridViewCellStyle14;
-            this.clnAmount.HeaderText = "စုစု‌ပေါင်း";
-            this.clnAmount.Name = "clnAmount";
-            this.clnAmount.ReadOnly = true;
-            // 
-            // colDeliveryNoteID
-            // 
-            this.colDeliveryNoteID.DataPropertyName = "DeliveryNoteDetailID";
-            this.colDeliveryNoteID.HeaderText = "DeliveryNoteDetailID";
-            this.colDeliveryNoteID.Name = "colDeliveryNoteID";
-            this.colDeliveryNoteID.Visible = false;
-            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Amount";
@@ -649,9 +512,159 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 150;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(173, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 19);
+            this.label6.TabIndex = 131;
+            this.label6.Text = "ထုတ်ယူမည့်ကား";
+            // 
+            // cmbVenNo
+            // 
+            this.cmbVenNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbVenNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbVenNo.DisplayMember = "VenNo";
+            this.cmbVenNo.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVenNo.FormattingEnabled = true;
+            this.cmbVenNo.Location = new System.Drawing.Point(283, 41);
+            this.cmbVenNo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cmbVenNo.Name = "cmbVenNo";
+            this.cmbVenNo.Size = new System.Drawing.Size(174, 25);
+            this.cmbVenNo.TabIndex = 145;
+            this.cmbVenNo.ValueMember = "VenID";
+            this.cmbVenNo.SelectedIndexChanged += new System.EventHandler(this.cmbVenNo_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(186, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 19);
+            this.label2.TabIndex = 153;
+            this.label2.Text = "ထုတ်ယူမည့်သူ";
+            // 
+            // cmbEmpDisplay
+            // 
+            this.cmbEmpDisplay.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbEmpDisplay.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEmpDisplay.DisplayMember = "EmpName";
+            this.cmbEmpDisplay.Enabled = false;
+            this.cmbEmpDisplay.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEmpDisplay.FormattingEnabled = true;
+            this.cmbEmpDisplay.Location = new System.Drawing.Point(283, 9);
+            this.cmbEmpDisplay.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cmbEmpDisplay.Name = "cmbEmpDisplay";
+            this.cmbEmpDisplay.Size = new System.Drawing.Size(174, 25);
+            this.cmbEmpDisplay.TabIndex = 154;
+            this.cmbEmpDisplay.ValueMember = "EmployeeID";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 19);
+            this.label1.TabIndex = 151;
+            this.label1.Text = "‌နေ့စွဲ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // dtpDeliveryDisplay
+            // 
+            this.dtpDeliveryDisplay.CustomFormat = "dd-MMM-yyyy";
+            this.dtpDeliveryDisplay.Enabled = false;
+            this.dtpDeliveryDisplay.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDeliveryDisplay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDeliveryDisplay.Location = new System.Drawing.Point(52, 9);
+            this.dtpDeliveryDisplay.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dtpDeliveryDisplay.Name = "dtpDeliveryDisplay";
+            this.dtpDeliveryDisplay.Size = new System.Drawing.Size(117, 25);
+            this.dtpDeliveryDisplay.TabIndex = 152;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(462, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 19);
+            this.label5.TabIndex = 155;
+            this.label5.Text = "ထုတ်ယူသည့်ကား";
+            // 
+            // cmbRealVen
+            // 
+            this.cmbRealVen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbRealVen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbRealVen.DisplayMember = "VenNo";
+            this.cmbRealVen.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRealVen.FormattingEnabled = true;
+            this.cmbRealVen.Location = new System.Drawing.Point(576, 41);
+            this.cmbRealVen.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cmbRealVen.Name = "cmbRealVen";
+            this.cmbRealVen.Size = new System.Drawing.Size(174, 25);
+            this.cmbRealVen.TabIndex = 156;
+            this.cmbRealVen.ValueMember = "VehicleID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(501, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 19);
+            this.label4.TabIndex = 157;
+            this.label4.Text = "ထုတ်ယူသူ";
+            // 
+            // cmbEmp
+            // 
+            this.cmbEmp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbEmp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEmp.DisplayMember = "EmpName";
+            this.cmbEmp.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEmp.FormattingEnabled = true;
+            this.cmbEmp.Location = new System.Drawing.Point(576, 9);
+            this.cmbEmp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cmbEmp.Name = "cmbEmp";
+            this.cmbEmp.Size = new System.Drawing.Size(174, 25);
+            this.cmbEmp.TabIndex = 158;
+            this.cmbEmp.ValueMember = "EmployeeID";
+            // 
+            // pnlGrid
+            // 
+            this.pnlGrid.Controls.Add(this.cmbEmp);
+            this.pnlGrid.Controls.Add(this.label4);
+            this.pnlGrid.Controls.Add(this.cmbRealVen);
+            this.pnlGrid.Controls.Add(this.label5);
+            this.pnlGrid.Controls.Add(this.dtpDeliveryDisplay);
+            this.pnlGrid.Controls.Add(this.label1);
+            this.pnlGrid.Controls.Add(this.cmbEmpDisplay);
+            this.pnlGrid.Controls.Add(this.label2);
+            this.pnlGrid.Controls.Add(this.cmbVenNo);
+            this.pnlGrid.Controls.Add(this.label6);
+            this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlGrid.Location = new System.Drawing.Point(0, 118);
+            this.pnlGrid.Name = "pnlGrid";
+            this.pnlGrid.Size = new System.Drawing.Size(768, 77);
+            this.pnlGrid.TabIndex = 181;
+            this.pnlGrid.Visible = false;
+            // 
+            // btnLoadOrder
+            // 
+            this.btnLoadOrder.Location = new System.Drawing.Point(567, 5);
+            this.btnLoadOrder.Name = "btnLoadOrder";
+            this.btnLoadOrder.Size = new System.Drawing.Size(95, 34);
+            this.btnLoadOrder.TabIndex = 175;
+            this.btnLoadOrder.Text = "Load Order";
+            this.btnLoadOrder.UseVisualStyleBackColor = true;
+            this.btnLoadOrder.Click += new System.EventHandler(this.btnLoadOrder_Click);
+            // 
             // frmDeliveryNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 641);
             this.Controls.Add(this.panel4);
@@ -688,9 +701,7 @@
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.DateTimePicker dtpDeliveryNoteDate;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmbVenNo;
         private System.Windows.Forms.DataGridView dgvDeliveryNote;
         private System.Windows.Forms.Button btnRequest;
         private System.Windows.Forms.Button btnDelete;
@@ -719,14 +730,17 @@
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel pnlGrid;
-        private System.Windows.Forms.DateTimePicker dtpDeliveryDisplay;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbEmpDisplay;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbVenNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbEmp;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbRealVen;
+        private System.Windows.Forms.ComboBox cmbEmpDisplay;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpDeliveryDisplay;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbRealVen;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbEmp;
+        private System.Windows.Forms.Panel pnlGrid;
+        private System.Windows.Forms.Button btnLoadOrder;
     }
 }
