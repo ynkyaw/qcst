@@ -306,7 +306,7 @@ namespace PTIC.VC.Sale.OfficeSales
                 int noPerPack = (int)DataTypeParser.Parse(productInfo["NoPerPack"], typeof(int), -1); // pass default value -1 to void DivideByZeroException
                 curRow.Cells["colNoPerPack"].Value = noPerPack;
                 // Set Package                
-                decimal qty = (int)DataTypeParser.Parse(curRow.Cells["colQty"].Value, typeof(decimal), 0);
+                decimal qty = (decimal)DataTypeParser.Parse(curRow.Cells["colQty"].Value, typeof(decimal), 0);
                 if (noPerPack == 0)
                     curRow.Cells["colPackage"].Value = 0;
                 else
@@ -330,7 +330,7 @@ namespace PTIC.VC.Sale.OfficeSales
             else if (curColumName.Equals("colSalePrice") || curColumName.Equals("colQty"))
             {
                 decimal salePrice = Convert.ToDecimal(DataTypeParser.Parse(curRow.Cells["colSalePrice"].Value, typeof(decimal), 0));
-                int qty = (int)DataTypeParser.Parse(curRow.Cells["colQty"].Value, typeof(int), 0);
+                decimal qty = (decimal)DataTypeParser.Parse(curRow.Cells["colQty"].Value, typeof(decimal), 0);
 
                 // Set amount = sale price * qty
                 curRow.Cells["colAmount"].Value = salePrice * qty;
@@ -473,7 +473,7 @@ namespace PTIC.VC.Sale.OfficeSales
                 foreach (DataGridViewRow row in dgvCashSales.Rows)
                 {
                     int ProductID = (int)DataTypeParser.Parse(dgvCashSales.Rows[row.Index].Cells[colProduct.Index].Value, typeof(int), -1);
-                    int Qty = (int)DataTypeParser.Parse(dgvCashSales.Rows[row.Index].Cells[colQty.Index].Value, typeof(int), -1);
+                    decimal Qty = (decimal)DataTypeParser.Parse(dgvCashSales.Rows[row.Index].Cells[colQty.Index].Value, typeof(decimal), -1);
                     //  Checing Stock In hand or Not in Vehicle
                     int VenID = (int)DataTypeParser.Parse(cmbSource.SelectedValue, typeof(int), -1);
                     DataTable dtStockInVehicle = new DeliveryBL().GetStockInVehicle(VenID, ProductID);
@@ -495,7 +495,7 @@ namespace PTIC.VC.Sale.OfficeSales
                 foreach (DataGridViewRow row in dgvCashSales.Rows)
                 {
                     int ProductID = (int)DataTypeParser.Parse(dgvCashSales.Rows[row.Index].Cells[colProduct.Index].Value, typeof(int), -1);
-                    int Qty = (int)DataTypeParser.Parse(dgvCashSales.Rows[row.Index].Cells[colQty.Index].Value, typeof(int), -1);
+                    decimal Qty = (decimal)DataTypeParser.Parse(dgvCashSales.Rows[row.Index].Cells[colQty.Index].Value, typeof(decimal), -1);
 
                     int WarehouseID = (int)DataTypeParser.Parse(cmbSource.SelectedValue, typeof(int), -1);
                     DataTable dtStockInSubStore = new DeliveryBL().GetStockInSubStore(ProductID, WarehouseID);

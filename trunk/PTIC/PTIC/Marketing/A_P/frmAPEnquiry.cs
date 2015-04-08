@@ -627,7 +627,7 @@ namespace PTIC.VC.Marketing.A_P
 
                 DataTable dtBalanceByDeptID = DataUtil.GetDataTableBy(dt, "DeptID", DeptID);
                 string APMaterialName = (string)DataTypeParser.Parse(dtBalanceByDeptID.Rows[0]["APMaterialName"], typeof(string), String.Empty);
-                int Qty = (int)DataTypeParser.Parse(dtBalanceByDeptID.Rows[0]["Qty"], typeof(int), 0);
+                decimal Qty = (decimal)DataTypeParser.Parse(dtBalanceByDeptID.Rows[0]["Qty"], typeof(decimal), 0);
                 string BalanceMessage = String.Format("စုစုပေါင်းလက်ကျန်အရေအတွက်\n   {0} = {1} \n\n လက်ကျန်အရေအတွက်\n   {2} = {3}", APMaterialName, TotalQty, APMaterialName, Qty);
                 MessageBox.Show(BalanceMessage, "လက်ကျန်", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -665,11 +665,11 @@ namespace PTIC.VC.Marketing.A_P
 
                 DataTable dtBalanceByDeptID = DataUtil.GetDataTableBy(dt, "DeptID", DeptID);
                 string APMaterialName = string.Empty;
-                int Qty = 0;
+                decimal Qty = 0;
                 if (dtBalanceByDeptID != null)
                 {
                     APMaterialName = (string)DataTypeParser.Parse(dtBalanceByDeptID.Rows[0]["APMaterialName"], typeof(string), String.Empty);
-                    Qty = (int)DataTypeParser.Parse(dtBalanceByDeptID.Rows[0]["Qty"], typeof(int), 0);
+                    Qty = (decimal)DataTypeParser.Parse(dtBalanceByDeptID.Rows[0]["Qty"], typeof(decimal), 0);
                 }
                 switch (GlobalCache.LoginEmployee.DeptID)
                 {
