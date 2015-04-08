@@ -648,7 +648,7 @@ namespace PTIC.VC.Sale.OfficeSales
                         foreach (DataGridViewRow row in dgvInvoice.Rows)
                         {
                             int ProductID = (int)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnProductName.Index].Value, typeof(int), -1);
-                            decimal Qty = (int)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnQty.Index].Value, typeof(decimal), -1);
+                            decimal Qty = (decimal)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnQty.Index].Value, typeof(decimal), -1);
 
                             int WarehouseID = (int)DataTypeParser.Parse(cmbWarehouseORVen.SelectedValue, typeof(int), -1);
                             DataTable dtStockInSubStore = new DeliveryBL().GetStockInSubStore(ProductID, WarehouseID);
