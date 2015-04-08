@@ -306,7 +306,7 @@ namespace PTIC.VC.Sale.OfficeSales
                 int noPerPack = (int)DataTypeParser.Parse(productInfo["NoPerPack"], typeof(int), -1); // pass default value -1 to void DivideByZeroException
                 curRow.Cells["colNoPerPack"].Value = noPerPack;
                 // Set Package                
-                int qty = (int)DataTypeParser.Parse(curRow.Cells["colQty"].Value, typeof(int), 0);
+                decimal qty = (int)DataTypeParser.Parse(curRow.Cells["colQty"].Value, typeof(decimal), 0);
                 if (noPerPack == 0)
                     curRow.Cells["colPackage"].Value = 0;
                 else

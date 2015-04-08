@@ -626,7 +626,7 @@ namespace PTIC.VC.Sale.OfficeSales
                         foreach (DataGridViewRow row in dgvInvoice.Rows)
                         {
                             int ProductID = (int)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnProductName.Index].Value, typeof(int), -1);
-                            int Qty = (int)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnQty.Index].Value, typeof(int), -1);
+                            decimal Qty = (decimal)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnQty.Index].Value, typeof(decimal), -1);
                             //  Checing Stock In hand or Not in Vehicle
                             int VenID = (int)DataTypeParser.Parse(cmbWarehouseORVen.SelectedValue, typeof(int), -1);
                             DataTable dtStockInVehicle = new DeliveryBL().GetStockInVehicle(VenID, ProductID);
@@ -648,7 +648,7 @@ namespace PTIC.VC.Sale.OfficeSales
                         foreach (DataGridViewRow row in dgvInvoice.Rows)
                         {
                             int ProductID = (int)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnProductName.Index].Value, typeof(int), -1);
-                            int Qty = (int)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnQty.Index].Value, typeof(int), -1);
+                            decimal Qty = (int)DataTypeParser.Parse(dgvInvoice.Rows[row.Index].Cells[clnQty.Index].Value, typeof(decimal), -1);
 
                             int WarehouseID = (int)DataTypeParser.Parse(cmbWarehouseORVen.SelectedValue, typeof(int), -1);
                             DataTable dtStockInSubStore = new DeliveryBL().GetStockInSubStore(ProductID, WarehouseID);
@@ -711,7 +711,7 @@ namespace PTIC.VC.Sale.OfficeSales
             {
                 decimal totalAmt = 0;
 
-                int qty = (int)DataTypeParser.Parse(curRow.Cells["clnQty"].Value, typeof(int), 0);
+                decimal qty = (decimal)DataTypeParser.Parse(curRow.Cells["clnQty"].Value, typeof(decimal), 0);
                 // Set amount = whole sale * qty
                 curRow.Cells["clnAmount"].Value = (decimal)DataTypeParser.Parse(curRow.Cells["clnPrice"].Value, typeof(decimal), 0) * qty;
                                 

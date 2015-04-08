@@ -21,7 +21,7 @@ namespace PTIC.Sale.Entities
                     MessageTemplateResourceType = typeof(PTIC.Sale.ErrorMessages))]
 	    public decimal SalePrice {get; set;}
 
-        [RangeValidator(1, RangeBoundaryType.Inclusive, 0, RangeBoundaryType.Ignore,
+        [RangeValidator(typeof(decimal),"1", RangeBoundaryType.Inclusive, "0", RangeBoundaryType.Ignore,
                     MessageTemplateResourceName = "SaleDetail_Qty_Require",
                     MessageTemplateResourceType = typeof(PTIC.Sale.ErrorMessages))]
 	    public decimal Qty {get; set;}
