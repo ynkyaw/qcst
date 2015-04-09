@@ -113,7 +113,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(75, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 17);
+            this.label1.Size = new System.Drawing.Size(204, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = " >  Sales Plan for Production";
             // 
@@ -126,7 +126,7 @@
             this.lblSalePage.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalePage.Location = new System.Drawing.Point(8, 13);
             this.lblSalePage.Name = "lblSalePage";
-            this.lblSalePage.Size = new System.Drawing.Size(72, 17);
+            this.lblSalePage.Size = new System.Drawing.Size(67, 19);
             this.lblSalePage.TabIndex = 0;
             this.lblSalePage.Text = "Planning";
             this.lblSalePage.Click += new System.EventHandler(this.lblSalePage_Click);
@@ -139,7 +139,7 @@
             this.dtpPlanMonth.Location = new System.Drawing.Point(79, 58);
             this.dtpPlanMonth.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpPlanMonth.Name = "dtpPlanMonth";
-            this.dtpPlanMonth.Size = new System.Drawing.Size(122, 25);
+            this.dtpPlanMonth.Size = new System.Drawing.Size(122, 28);
             this.dtpPlanMonth.TabIndex = 135;
             this.dtpPlanMonth.ValueChanged += new System.EventHandler(this.dtpPlanMonth_ValueChanged);
             // 
@@ -149,7 +149,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(18, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.Size = new System.Drawing.Size(55, 19);
             this.label3.TabIndex = 134;
             this.label3.Text = "လအမည်";
             // 
@@ -188,7 +188,7 @@
             this.txtTotalSalesAmount.Location = new System.Drawing.Point(318, 610);
             this.txtTotalSalesAmount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTotalSalesAmount.Name = "txtTotalSalesAmount";
-            this.txtTotalSalesAmount.Size = new System.Drawing.Size(114, 25);
+            this.txtTotalSalesAmount.Size = new System.Drawing.Size(114, 28);
             this.txtTotalSalesAmount.TabIndex = 149;
             this.txtTotalSalesAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -367,7 +367,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(214, 614);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 17);
+            this.label4.Size = new System.Drawing.Size(105, 19);
             this.label4.TabIndex = 152;
             this.label4.Text = "Sales Plan Amt :";
             // 
@@ -382,7 +382,6 @@
             this.btnPrint.TabIndex = 153;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Visible = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // button1
@@ -519,7 +518,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 614);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 17);
+            this.label2.Size = new System.Drawing.Size(107, 19);
             this.label2.TabIndex = 157;
             this.label2.Text = "ရောင်းချမည့် Qty :";
             // 
@@ -532,7 +531,7 @@
             this.txtSold.Location = new System.Drawing.Point(118, 610);
             this.txtSold.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSold.Name = "txtSold";
-            this.txtSold.Size = new System.Drawing.Size(79, 25);
+            this.txtSold.Size = new System.Drawing.Size(79, 28);
             this.txtSold.TabIndex = 156;
             this.txtSold.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -543,7 +542,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(516, 648);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 17);
+            this.label5.Size = new System.Drawing.Size(111, 19);
             this.label5.TabIndex = 159;
             this.label5.Text = "ထုတ်လုပ်မည့် Qty :";
             // 
@@ -556,7 +555,7 @@
             this.txtProduce.Location = new System.Drawing.Point(626, 646);
             this.txtProduce.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtProduce.Name = "txtProduce";
-            this.txtProduce.Size = new System.Drawing.Size(79, 25);
+            this.txtProduce.Size = new System.Drawing.Size(79, 28);
             this.txtProduce.TabIndex = 158;
             this.txtProduce.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -567,7 +566,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(465, 614);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 17);
+            this.label6.Size = new System.Drawing.Size(165, 19);
             this.label6.TabIndex = 161;
             this.label6.Text = "ထုတ်လုပ်ရန်လိုအပ်သည့် Qty :";
             // 
@@ -580,7 +579,7 @@
             this.txtNeedToProduce.Location = new System.Drawing.Point(626, 610);
             this.txtNeedToProduce.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtNeedToProduce.Name = "txtNeedToProduce";
-            this.txtNeedToProduce.Size = new System.Drawing.Size(79, 25);
+            this.txtNeedToProduce.Size = new System.Drawing.Size(79, 28);
             this.txtNeedToProduce.TabIndex = 160;
             this.txtNeedToProduce.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -591,7 +590,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(727, 614);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 17);
+            this.label7.Size = new System.Drawing.Size(165, 19);
             this.label7.TabIndex = 163;
             this.label7.Text = "လိုအပ်သည့် N100 Convert  :";
             // 
@@ -604,7 +603,7 @@
             this.txtN100ConvertNeed.Location = new System.Drawing.Point(888, 612);
             this.txtN100ConvertNeed.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtN100ConvertNeed.Name = "txtN100ConvertNeed";
-            this.txtN100ConvertNeed.Size = new System.Drawing.Size(79, 25);
+            this.txtN100ConvertNeed.Size = new System.Drawing.Size(79, 28);
             this.txtN100ConvertNeed.TabIndex = 162;
             this.txtN100ConvertNeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -615,7 +614,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(721, 646);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(163, 17);
+            this.label8.Size = new System.Drawing.Size(171, 19);
             this.label8.TabIndex = 165;
             this.label8.Text = "ထုတ်လုပ်မည့် N100 Convert :";
             // 
@@ -628,7 +627,7 @@
             this.txtN100ConvertProduce.Location = new System.Drawing.Point(888, 646);
             this.txtN100ConvertProduce.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtN100ConvertProduce.Name = "txtN100ConvertProduce";
-            this.txtN100ConvertProduce.Size = new System.Drawing.Size(79, 25);
+            this.txtN100ConvertProduce.Size = new System.Drawing.Size(79, 28);
             this.txtN100ConvertProduce.TabIndex = 164;
             this.txtN100ConvertProduce.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -639,15 +638,15 @@
             this.label9.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(437, 614);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(22, 17);
+            this.label9.Size = new System.Drawing.Size(25, 19);
             this.label9.TabIndex = 166;
             this.label9.Text = "Ks";
             // 
             // frmSalesPlan4Production
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 779);
+            this.ClientSize = new System.Drawing.Size(1036, 753);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtN100ConvertProduce);
