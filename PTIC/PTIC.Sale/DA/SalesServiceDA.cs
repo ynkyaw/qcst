@@ -886,7 +886,14 @@ namespace PTIC.Sale.DA
                 cmd.Parameters.AddWithValue("@p_TownID", servicedCustomer.TownID);
                 cmd.Parameters["@p_TownID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_TownshipID", servicedCustomer.TownshipID);
+                if (servicedCustomer.TownshipID != -1)
+                {
+                    cmd.Parameters.AddWithValue("@p_TownshipID", servicedCustomer.TownshipID);
+                }
+                else 
+                {
+                    cmd.Parameters.AddWithValue("@p_TownshipID", DBNull.Value);
+                }
                 cmd.Parameters["@p_TownshipID"].Direction = ParameterDirection.Input;
 
                 affectedrow += cmd.ExecuteNonQuery();

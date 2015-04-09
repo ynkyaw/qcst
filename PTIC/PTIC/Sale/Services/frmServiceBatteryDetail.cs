@@ -128,6 +128,8 @@ namespace PTIC.VC.Sale.Services
         DataTable dtTownInTrip = null;
         DataTable dtTownshipInRoute = null;
 
+        ServicedCustomer svcCust = null;
+
         /// <summary>
         /// 
         /// </summary>
@@ -648,6 +650,13 @@ namespace PTIC.VC.Sale.Services
                     rdoTrip.Visible = false;
                     cmbRouteOrTrip.Visible = false;
                     cmbTownORTownship.Visible = false;
+
+                    ///////////////////////////////////////////
+                    svcCust = new ServicedCustomer();
+                    svcCust.TownID = SvcTownID;
+                    svcCust.TownshipID = SvcTownshipID;
+                    ///////////////////////////////////////////////
+
                     label7.Visible = false;
                     txtUserName.Text = (string)DataTypeParser.Parse(dtServicedCustomer.Rows[0]["UserName"], typeof(string), string.Empty);
                     txtContactPerson.Text = (string)DataTypeParser.Parse(dtServicedCustomer.Rows[0]["ContactPerson"], typeof(string), string.Empty);
@@ -1110,15 +1119,23 @@ namespace PTIC.VC.Sale.Services
                 ServicedCustomer servicedCustomer = new ServicedCustomer();
                 servicedCustomer.ID = this._salesService.ServicedCustomerID;
                 servicedCustomer.ShopName = (string)DataTypeParser.Parse(txtShop.Text, typeof(string), string.Empty);
-                if (rdoRoute.Checked)
+
+                if (svcCust == null)
                 {
-                    servicedCustomer.TownshipID = (int)DataTypeParser.Parse(cmbTownORTownship.SelectedValue, typeof(int), -1);
+                    if (rdoRoute.Checked)
+                    {
+                        servicedCustomer.TownshipID = (int)DataTypeParser.Parse(cmbTownORTownship.SelectedValue, typeof(int), -1);
+                    }
+                    else
+                    {
+                        servicedCustomer.TownID = (int)DataTypeParser.Parse(cmbTownORTownship.SelectedValue, typeof(int), -1);
+                    }
                 }
-                else
+                else 
                 {
-                    servicedCustomer.TownID = (int)DataTypeParser.Parse(cmbTownORTownship.SelectedValue, typeof(int), -1);
+                    servicedCustomer.TownID = svcCust.TownID;
+                    servicedCustomer.TownshipID = svcCust.TownshipID;
                 }
-            
                 // Save into db
                 isSuccessful = serviceFactSaver.SalesServiceUpdateByID(salesService, servicedCustomer);
                 // Check field validation failed or not
