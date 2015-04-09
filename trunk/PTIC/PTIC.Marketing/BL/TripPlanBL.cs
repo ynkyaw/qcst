@@ -123,7 +123,7 @@ namespace PTIC.Marketing.BL
             foreach (TripPlanDetail detail in newTripPlanDetails)
             {
                 //− ခရီးစဉ်အမှတ် မထပ်ရ in each new rows
-                DataRow[] dr = dt.Select(string.Format("TripPlanNo = {0}",detail.TripPlanNo));
+                DataRow[] dr = dt.Select(string.Format("TripPlanNo ='{0}'",detail.TripPlanNo));
                 if (dr.Length > 0) 
                 {
                     base.ValidationResults.AddResult(
@@ -143,16 +143,19 @@ namespace PTIC.Marketing.BL
                     insertedId = 0;
                     return 0;
                 }
-                dr = dt.Select(string.Format("FromDate <= #{0}# and ToDate>=#{1}# and VenID={2}", detail.ToDate.Date, detail.FromDate.Date, detail.VenID));
-                //- အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။                
-                if (dr.Length > 0)
+                if (detail.VenID != null)
                 {
-                    string errMsg = string.Format("အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။ \n အရောင်းကားသည် {0} မှ {1} ထိ ခရီးစဉ်အမှတ် '{2}' ဖြည့်သွင်းပြီးရှိနေပါသည်။", ((DateTime)dr[0]["FromDate"]).ToString("MMM-dd,yyyy"), ((DateTime)dr[0]["ToDate"]).ToString("MMM-dd,yyyy"), dr[0]["TripPlanNo"].ToString());
-                    base.ValidationResults.AddResult(
-                           new ValidationResult(errMsg,
-                               null, "TripPlanDetail_duplicatedVan_Duplicate", null, null));
-                    insertedId = 0;
-                    return 0;
+                    dr = dt.Select(string.Format("FromDate <= #{0}# and ToDate>=#{1}# and VenID={2}", detail.ToDate.Date, detail.FromDate.Date, detail.VenID));
+                    //- အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။                
+                    if (dr.Length > 0)
+                    {
+                        string errMsg = string.Format("အရောင်းကားသည် တူညီသည့် သွားမည့်ရက် နှင့် ပြန်ရောက်မည့်ရက် အတွင်း တစ်ကြိမ်ထက်ပိုသွား၍မရပါ။ \n အရောင်းကားသည် {0} မှ {1} ထိ ခရီးစဉ်အမှတ် '{2}' ဖြည့်သွင်းပြီးရှိနေပါသည်။", ((DateTime)dr[0]["FromDate"]).ToString("MMM-dd,yyyy"), ((DateTime)dr[0]["ToDate"]).ToString("MMM-dd,yyyy"), dr[0]["TripPlanNo"].ToString());
+                        base.ValidationResults.AddResult(
+                               new ValidationResult(errMsg,
+                                   null, "TripPlanDetail_duplicatedVan_Duplicate", null, null));
+                        insertedId = 0;
+                        return 0;
+                    }
                 }
             }
 
