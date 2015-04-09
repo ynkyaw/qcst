@@ -763,7 +763,7 @@ namespace PTIC.VC.Sale.OfficeSales
         private void btnPrint_Click(object sender, EventArgs e)
         {
             List<SalesPlanDetail> spdetails = new List<SalesPlanDetail>();
-            Report.DataSet.PrintDataSet ds = new Report.DataSet.PrintDataSet();
+            Report.DataSet.PrintDataSet.uv_SalesPlanDetailsDataTable ds = new Report.DataSet.PrintDataSet.uv_SalesPlanDetailsDataTable();
             
             foreach (DataGridViewRow row in dgvSalesPlan4P.Rows)
             {
@@ -788,7 +788,7 @@ namespace PTIC.VC.Sale.OfficeSales
                 DataGridViewComboBoxCell cell = row.Cells["clnProductName"] as DataGridViewComboBoxCell;
                 DataTable product = cell.DataSource as DataTable;
                 DataRow []dr = product.Select("ProductID="+spdetail.ProductID);
-                ds.uv_SalesPlanDetails.Rows.Add(spdetail.ID, spdetail.SaleQty, spdetail.ProduceQty, spdetail.RequireQty, dr[0]["CalculatedValue"], spdetail.Nconvert, spdetail.retailPrice * spdetail.SaleQty, spdetail.Remark, dr[0]["ProductName"],dtpPlanMonth.Value);
+                ds.Rows.Add(spdetail.ID, spdetail.SaleQty, spdetail.ProduceQty, spdetail.RequireQty, dr[0]["CalculatedValue"], spdetail.Nconvert, spdetail.retailPrice * spdetail.SaleQty, spdetail.Remark, dr[0]["ProductName"],dtpPlanMonth.Value);
 
 
             }

@@ -2462,7 +2462,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label7.Location = new System.Drawing.Point(21, 306);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 44;
             this.label7.Text = "မြို့ / မြို့နယ်";
             // 

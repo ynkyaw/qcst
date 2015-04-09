@@ -1716,6 +1716,7 @@
     <EmbeddedResource Include="Report\MonthlyDeliverySummary.rdlc" />
     <EmbeddedResource Include="Report\MonthlySalesByCustomer.rdlc" />
     <EmbeddedResource Include="Report\MonthlySalesByRegion.rdlc" />
+    <EmbeddedResource Include="Report\Report1.rdlc" />
     <EmbeddedResource Include="Report\SalesPlan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SalesPlan.cs</LastGenOutput>

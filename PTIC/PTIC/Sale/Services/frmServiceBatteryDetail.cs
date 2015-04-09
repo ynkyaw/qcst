@@ -503,7 +503,7 @@ namespace PTIC.VC.Sale.Services
 
         private void txtTestRecPlus1_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            KeyPressfunction.CheckChar(sender, e);
+            
         }
 
         private void txtFun3Volt_TextChanged(object sender, EventArgs e)
