@@ -60,6 +60,7 @@
             this.colCusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCustomerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContactPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarketingDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colMarketingDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +104,7 @@
             this.colCusType,
             this.colCustomerType,
             this.colCusName,
+            this.colContactPerson,
             this.colEmpName,
             this.colMarketingDetail,
             this.colMarketingDetailID,
@@ -363,6 +365,7 @@
             this.colTown.HeaderText = "မြို့";
             this.colTown.Name = "colTown";
             this.colTown.ReadOnly = true;
+            this.colTown.Visible = false;
             // 
             // colTownship
             // 
@@ -395,6 +398,12 @@
             this.colCusName.Name = "colCusName";
             this.colCusName.ReadOnly = true;
             this.colCusName.Width = 120;
+            // 
+            // colContactPerson
+            // 
+            this.colContactPerson.HeaderText = "Contact Person";
+            this.colContactPerson.Name = "colContactPerson";
+            this.colContactPerson.ReadOnly = true;
             // 
             // colEmpName
             // 
@@ -535,6 +544,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCusType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContactPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmpName;
         private System.Windows.Forms.DataGridViewButtonColumn colMarketingDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarketingDetailID;

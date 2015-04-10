@@ -1044,9 +1044,10 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void cboManagerID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboManagerID.SelectedIndex != -1) 
+            int _managerId = 0;
+            if (cboManagerID.SelectedIndex != -1 && int.TryParse(cboManagerID.SelectedValue+string.Empty,out _managerId)) 
             {
-                int _managerId=(int)cboManagerID.SelectedValue;
+                
                 if (EmployeesList != null)
                 {
                     try
