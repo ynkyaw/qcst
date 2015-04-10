@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calendarColumn1 = new AGL.UI.Controls.CalendarColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,14 +48,15 @@
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.lblMarketing = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNew = new System.Windows.Forms.Button();
             this.btnAll = new System.Windows.Forms.Button();
             this.dgvMarketingPlan = new System.Windows.Forms.DataGridView();
             this.dgvColPlanDate = new AGL.UI.Controls.CalendarColumn();
             this.dgvColTownship = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgvColCusType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgvColCusName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colContactPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColEmployee = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.btnNew = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarketingPlan)).BeginInit();
@@ -230,6 +231,17 @@
             this.panel1.Size = new System.Drawing.Size(933, 600);
             this.panel1.TabIndex = 0;
             // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNew.Location = new System.Drawing.Point(12, 561);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(95, 34);
+            this.btnNew.TabIndex = 132;
+            this.btnNew.Text = "ထည့္မည္";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // btnAll
             // 
             this.btnAll.Location = new System.Drawing.Point(524, 47);
@@ -243,34 +255,35 @@
             // dgvMarketingPlan
             // 
             this.dgvMarketingPlan.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvMarketingPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMarketingPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMarketingPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMarketingPlan.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMarketingPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Zawgyi-One", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarketingPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMarketingPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarketingPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvColPlanDate,
             this.dgvColTownship,
             this.dgvColCusType,
             this.dgvColCusName,
+            this.colContactPerson,
             this.dgvColEmployee});
             this.dgvMarketingPlan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvMarketingPlan.Location = new System.Drawing.Point(12, 83);
             this.dgvMarketingPlan.MultiSelect = false;
             this.dgvMarketingPlan.Name = "dgvMarketingPlan";
             this.dgvMarketingPlan.RowHeadersWidth = 50;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Zawgyi-One", 9F);
-            this.dgvMarketingPlan.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Zawgyi-One", 9F);
+            this.dgvMarketingPlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMarketingPlan.RowTemplate.Height = 30;
             this.dgvMarketingPlan.Size = new System.Drawing.Size(909, 472);
             this.dgvMarketingPlan.TabIndex = 130;
@@ -287,9 +300,9 @@
             // dgvColPlanDate
             // 
             this.dgvColPlanDate.DataPropertyName = "PlanDate";
-            dataGridViewCellStyle15.Format = "dd-MMM-yyyy";
-            dataGridViewCellStyle15.NullValue = null;
-            this.dgvColPlanDate.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dgvColPlanDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvColPlanDate.HeaderText = "သြားရမည့္ရက္";
             this.dgvColPlanDate.Name = "dgvColPlanDate";
             this.dgvColPlanDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -324,6 +337,12 @@
             this.dgvColCusName.Name = "dgvColCusName";
             this.dgvColCusName.Width = 150;
             // 
+            // colContactPerson
+            // 
+            this.colContactPerson.DataPropertyName = "ConPersonName";
+            this.colContactPerson.HeaderText = "Contact Person";
+            this.colContactPerson.Name = "colContactPerson";
+            // 
             // dgvColEmployee
             // 
             this.dgvColEmployee.DataPropertyName = "EmpID";
@@ -333,17 +352,6 @@
             this.dgvColEmployee.Name = "dgvColEmployee";
             this.dgvColEmployee.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvColEmployee.Width = 150;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNew.Location = new System.Drawing.Point(12, 561);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(95, 34);
-            this.btnNew.TabIndex = 132;
-            this.btnNew.Text = "ထည့္မည္";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmDailyMarketingPlan
             // 
@@ -388,11 +396,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvMarketingPlan;
         private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.Button btnNew;
         private AGL.UI.Controls.CalendarColumn dgvColPlanDate;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgvColTownship;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgvColCusType;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgvColCusName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContactPerson;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgvColEmployee;
-        private System.Windows.Forms.Button btnNew;
     }
 }
