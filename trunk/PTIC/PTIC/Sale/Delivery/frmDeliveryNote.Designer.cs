@@ -61,6 +61,7 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pnlFilter = new System.Windows.Forms.Panel();
+            this.btnLoadOrder = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlFilt = new System.Windows.Forms.Panel();
             this.lblFilter = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbEmp = new System.Windows.Forms.ComboBox();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.btnLoadOrder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveryNote)).BeginInit();
             this.pnlFilter.SuspendLayout();
@@ -103,7 +103,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 46);
+            this.panel1.Size = new System.Drawing.Size(938, 46);
             this.panel1.TabIndex = 7;
             // 
             // label7
@@ -115,7 +115,7 @@
             this.label7.ForeColor = System.Drawing.Color.MediumBlue;
             this.label7.Location = new System.Drawing.Point(77, 14);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 19);
+            this.label7.Size = new System.Drawing.Size(19, 20);
             this.label7.TabIndex = 7;
             this.label7.Text = ">";
             // 
@@ -128,7 +128,7 @@
             this.lblDelivery.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDelivery.Location = new System.Drawing.Point(12, 14);
             this.lblDelivery.Name = "lblDelivery";
-            this.lblDelivery.Size = new System.Drawing.Size(81, 19);
+            this.lblDelivery.Size = new System.Drawing.Size(71, 20);
             this.lblDelivery.TabIndex = 4;
             this.lblDelivery.Text = "Delivery";
             this.lblDelivery.Click += new System.EventHandler(this.lblDelivery_Click);
@@ -142,7 +142,7 @@
             this.lblBrand.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblBrand.Location = new System.Drawing.Point(97, 14);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(122, 19);
+            this.lblBrand.Size = new System.Drawing.Size(110, 20);
             this.lblBrand.TabIndex = 3;
             this.lblBrand.Text = "Delivery Note";
             // 
@@ -154,7 +154,7 @@
             this.dtpDeliveryNoteDate.Location = new System.Drawing.Point(51, 7);
             this.dtpDeliveryNoteDate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpDeliveryNoteDate.Name = "dtpDeliveryNoteDate";
-            this.dtpDeliveryNoteDate.Size = new System.Drawing.Size(119, 25);
+            this.dtpDeliveryNoteDate.Size = new System.Drawing.Size(119, 28);
             this.dtpDeliveryNoteDate.TabIndex = 128;
             this.dtpDeliveryNoteDate.ValueChanged += new System.EventHandler(this.dtpDeliveryNoteDate_ValueChanged);
             // 
@@ -164,7 +164,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 19);
+            this.label3.Size = new System.Drawing.Size(34, 20);
             this.label3.TabIndex = 127;
             this.label3.Text = "‌နေ့စွဲ";
             // 
@@ -174,7 +174,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(187, 14);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 19);
+            this.label12.Size = new System.Drawing.Size(90, 20);
             this.label12.TabIndex = 143;
             this.label12.Text = "ထုတ်ယူမည့်သူ";
             // 
@@ -205,7 +205,7 @@
             this.dgvDeliveryNote.Name = "dgvDeliveryNote";
             this.dgvDeliveryNote.RowHeadersWidth = 50;
             this.dgvDeliveryNote.RowTemplate.Height = 28;
-            this.dgvDeliveryNote.Size = new System.Drawing.Size(768, 363);
+            this.dgvDeliveryNote.Size = new System.Drawing.Size(938, 363);
             this.dgvDeliveryNote.TabIndex = 146;
             this.dgvDeliveryNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeliveryNote_CellContentClick);
             this.dgvDeliveryNote.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeliveryNote_CellEndEdit);
@@ -322,7 +322,7 @@
             this.cmbSalePerson.Location = new System.Drawing.Point(283, 10);
             this.cmbSalePerson.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbSalePerson.Name = "cmbSalePerson";
-            this.cmbSalePerson.Size = new System.Drawing.Size(174, 25);
+            this.cmbSalePerson.Size = new System.Drawing.Size(174, 27);
             this.cmbSalePerson.TabIndex = 150;
             this.cmbSalePerson.ValueMember = "EmployeeID";
             this.cmbSalePerson.SelectedIndexChanged += new System.EventHandler(this.cmbSalePerson_SelectedIndexChanged);
@@ -334,7 +334,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label13.Location = new System.Drawing.Point(450, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 19);
+            this.label13.Size = new System.Drawing.Size(60, 20);
             this.label13.TabIndex = 168;
             this.label13.Text = "စုစု‌ပေါင်း";
             // 
@@ -345,7 +345,7 @@
             this.txtTotalAmt.Location = new System.Drawing.Point(515, 6);
             this.txtTotalAmt.Name = "txtTotalAmt";
             this.txtTotalAmt.ReadOnly = true;
-            this.txtTotalAmt.Size = new System.Drawing.Size(91, 25);
+            this.txtTotalAmt.Size = new System.Drawing.Size(91, 28);
             this.txtTotalAmt.TabIndex = 167;
             this.txtTotalAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -384,7 +384,6 @@
             // pnlFilter
             // 
             this.pnlFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFilter.Controls.Add(this.btnLoadOrder);
             this.pnlFilter.Controls.Add(this.panel3);
             this.pnlFilter.Controls.Add(this.dtpDeliveryNoteDate);
             this.pnlFilter.Controls.Add(this.label3);
@@ -395,9 +394,19 @@
             this.pnlFilter.Location = new System.Drawing.Point(0, 69);
             this.pnlFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(768, 49);
+            this.pnlFilter.Size = new System.Drawing.Size(938, 49);
             this.pnlFilter.TabIndex = 178;
             this.pnlFilter.Visible = false;
+            // 
+            // btnLoadOrder
+            // 
+            this.btnLoadOrder.Location = new System.Drawing.Point(756, 6);
+            this.btnLoadOrder.Name = "btnLoadOrder";
+            this.btnLoadOrder.Size = new System.Drawing.Size(95, 34);
+            this.btnLoadOrder.TabIndex = 175;
+            this.btnLoadOrder.Text = "Load Order";
+            this.btnLoadOrder.UseVisualStyleBackColor = true;
+            this.btnLoadOrder.Click += new System.EventHandler(this.btnLoadOrder_Click);
             // 
             // panel3
             // 
@@ -415,7 +424,7 @@
             this.pnlFilt.Location = new System.Drawing.Point(0, 46);
             this.pnlFilt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnlFilt.Name = "pnlFilt";
-            this.pnlFilt.Size = new System.Drawing.Size(768, 23);
+            this.pnlFilt.Size = new System.Drawing.Size(938, 23);
             this.pnlFilt.TabIndex = 177;
             // 
             // lblFilter
@@ -441,7 +450,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 558);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(768, 83);
+            this.panel2.Size = new System.Drawing.Size(938, 83);
             this.panel2.TabIndex = 179;
             // 
             // panel4
@@ -450,7 +459,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 195);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(768, 363);
+            this.panel4.Size = new System.Drawing.Size(938, 363);
             this.panel4.TabIndex = 180;
             // 
             // dataGridViewTextBoxColumn1
@@ -518,9 +527,9 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(173, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 19);
+            this.label6.Size = new System.Drawing.Size(127, 20);
             this.label6.TabIndex = 131;
-            this.label6.Text = "ထုတ်ယူမည့်ကား";
+            this.label6.Text = "ထုတ်ယူမည့်ကား CC";
             // 
             // cmbVenNo
             // 
@@ -532,7 +541,7 @@
             this.cmbVenNo.Location = new System.Drawing.Point(283, 41);
             this.cmbVenNo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbVenNo.Name = "cmbVenNo";
-            this.cmbVenNo.Size = new System.Drawing.Size(174, 25);
+            this.cmbVenNo.Size = new System.Drawing.Size(174, 27);
             this.cmbVenNo.TabIndex = 145;
             this.cmbVenNo.ValueMember = "VenID";
             this.cmbVenNo.SelectedIndexChanged += new System.EventHandler(this.cmbVenNo_SelectedIndexChanged);
@@ -543,9 +552,9 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(186, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 153;
-            this.label2.Text = "ထုတ်ယူမည့်သူ";
+            this.label2.Text = "C ထုတ်ယူမည့်သူ";
             // 
             // cmbEmpDisplay
             // 
@@ -558,7 +567,7 @@
             this.cmbEmpDisplay.Location = new System.Drawing.Point(283, 9);
             this.cmbEmpDisplay.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbEmpDisplay.Name = "cmbEmpDisplay";
-            this.cmbEmpDisplay.Size = new System.Drawing.Size(174, 25);
+            this.cmbEmpDisplay.Size = new System.Drawing.Size(174, 27);
             this.cmbEmpDisplay.TabIndex = 154;
             this.cmbEmpDisplay.ValueMember = "EmployeeID";
             // 
@@ -568,7 +577,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 19);
+            this.label1.Size = new System.Drawing.Size(34, 20);
             this.label1.TabIndex = 151;
             this.label1.Text = "‌နေ့စွဲ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -582,7 +591,7 @@
             this.dtpDeliveryDisplay.Location = new System.Drawing.Point(52, 9);
             this.dtpDeliveryDisplay.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpDeliveryDisplay.Name = "dtpDeliveryDisplay";
-            this.dtpDeliveryDisplay.Size = new System.Drawing.Size(117, 25);
+            this.dtpDeliveryDisplay.Size = new System.Drawing.Size(117, 28);
             this.dtpDeliveryDisplay.TabIndex = 152;
             // 
             // label5
@@ -591,9 +600,9 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(462, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 19);
+            this.label5.Size = new System.Drawing.Size(122, 20);
             this.label5.TabIndex = 155;
-            this.label5.Text = "ထုတ်ယူသည့်ကား";
+            this.label5.Text = "R ထုတ်ယူသည့်ကား";
             // 
             // cmbRealVen
             // 
@@ -605,7 +614,7 @@
             this.cmbRealVen.Location = new System.Drawing.Point(576, 41);
             this.cmbRealVen.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbRealVen.Name = "cmbRealVen";
-            this.cmbRealVen.Size = new System.Drawing.Size(174, 25);
+            this.cmbRealVen.Size = new System.Drawing.Size(174, 27);
             this.cmbRealVen.TabIndex = 156;
             this.cmbRealVen.ValueMember = "VehicleID";
             // 
@@ -615,9 +624,9 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(501, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 19);
+            this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 157;
-            this.label4.Text = "ထုတ်ယူသူ";
+            this.label4.Text = "R ထုတ်ယူသူ";
             // 
             // cmbEmp
             // 
@@ -629,12 +638,13 @@
             this.cmbEmp.Location = new System.Drawing.Point(576, 9);
             this.cmbEmp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbEmp.Name = "cmbEmp";
-            this.cmbEmp.Size = new System.Drawing.Size(174, 25);
+            this.cmbEmp.Size = new System.Drawing.Size(174, 27);
             this.cmbEmp.TabIndex = 158;
             this.cmbEmp.ValueMember = "EmployeeID";
             // 
             // pnlGrid
             // 
+            this.pnlGrid.Controls.Add(this.btnLoadOrder);
             this.pnlGrid.Controls.Add(this.cmbEmp);
             this.pnlGrid.Controls.Add(this.label4);
             this.pnlGrid.Controls.Add(this.cmbRealVen);
@@ -648,25 +658,15 @@
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlGrid.Location = new System.Drawing.Point(0, 118);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(768, 77);
+            this.pnlGrid.Size = new System.Drawing.Size(938, 77);
             this.pnlGrid.TabIndex = 181;
             this.pnlGrid.Visible = false;
             // 
-            // btnLoadOrder
-            // 
-            this.btnLoadOrder.Location = new System.Drawing.Point(567, 5);
-            this.btnLoadOrder.Name = "btnLoadOrder";
-            this.btnLoadOrder.Size = new System.Drawing.Size(95, 34);
-            this.btnLoadOrder.TabIndex = 175;
-            this.btnLoadOrder.Text = "Load Order";
-            this.btnLoadOrder.UseVisualStyleBackColor = true;
-            this.btnLoadOrder.Click += new System.EventHandler(this.btnLoadOrder_Click);
-            // 
             // frmDeliveryNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 641);
+            this.ClientSize = new System.Drawing.Size(938, 641);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlGrid);

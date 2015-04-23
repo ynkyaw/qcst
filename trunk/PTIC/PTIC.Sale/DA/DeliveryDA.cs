@@ -150,6 +150,36 @@ namespace PTIC.Sale.DA
             }
         }
 
+        public static DataTable SelectDeliveryProductList() 
+        {
+        DataTable table = null;
+            string tableName = "DeliveryTable";
+            try
+            {
+                table = new DataTable(tableName);
+                SqlCommand command = new SqlCommand();
+                command.Connection = DBManager.GetInstance().GetDbConnection();
+
+                command.CommandText = "SELECT d.VenID,Convert(date,d.DeliveryDate) DeliveryDate,DD.ProductID,p.ProductName,b.BrandName,b.ID as BrandId,SUM(DD.DeliverQty) AS DeliverTotalQty ";
+                command.CommandText += " FROM Delivery D INNER JOIN DeliveryDetail DD ON D.ID=DD.DeliveryID Inner Join Product P ";
+                command.CommandText += " ON P.ID=dd.ProductID  Inner Join ProdSubCategory sb on p.SubCategoryID = sb.ID";
+                command.CommandText += " Inner JOin ProdCategory pc on sb.CategoryID=pc.ID Inner Join Brand b on b.ID=pc.BrandID";
+                command.CommandText += " GROUP BY d.VenID,Convert(date,d.DeliveryDate),dd.ProductID,p.ProductName,b.BrandName,b.ID";
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+                return table;
+            }
+            catch (SqlException sqle)
+            {
+                return null;
+            }
+            finally
+            {
+                DBManager.GetInstance().CloseDbConnection();
+            }
+        
+        }
+
         public static DataTable SelectDeliveryPlanByVenIdDate(int venId,DateTime dtp)
         {
             DataTable table = null;

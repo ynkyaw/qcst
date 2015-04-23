@@ -58,30 +58,15 @@ namespace PTIC.Marketing.TripPlan_Request
             cmbEmployee.SelectedValue = _ProductRequestIssue.RequesterID;
             if (this.ProductRequestIssueID == -1)
             {
-                btnIssue.Enabled = false;
-                colIssueQty.ReadOnly = true;
                 colRequestQty.ReadOnly = false;
             }
             else
             {
                 _ProductRequestIssue = new ProductRequestIssueBL().GetProductRequestIssueById(_ProductRequestIssue.ID);
-                btnRequest.Enabled = false;
-                btnDelete.Enabled = false;
-                btnNew.Enabled = false;
-                colIssueQty.ReadOnly = false;
-                colRequestQty.ReadOnly = true;
-                colBrand.ReadOnly = true;
-                colProduct.ReadOnly = true;
-                colPurpose.ReadOnly = true;
-                colRemark.ReadOnly = true;
-                colWeight.ReadOnly = true;
+
+                
             }
-            if (_ProductRequestIssue.IssueDeptID != 0 && _ProductRequestIssue.IssueDeptID!=null) 
-            {
-                cmbGiverDept.SelectedValue = _ProductRequestIssue.IssueDeptID;
-                cmbGiver.SelectedValue = _ProductRequestIssue.IssuerID;
-            
-            }
+        
             dgvProductReqIssue.AutoGenerateColumns = false;
             this.dtProductRequestIssue = new ProductRequestIssueBL().GetAllByProductReqIssueID(this.ProductRequestIssueID);
             dgvProductReqIssue.DataSource = dtProductRequestIssue;
@@ -98,9 +83,7 @@ namespace PTIC.Marketing.TripPlan_Request
             {
                 //  Bind Employees Into DataTable
                 dtEmployees = new EmployeeBL().GetAll();
-                cmbGiverDept.DataSource = new DepartmentBL().GetAll();
-                cmbGiverDept.ValueMember = "ID";
-                cmbGiverDept.DisplayMember = "DeptName";
+                
             }
             catch (SqlException Sqle)
             {
@@ -174,8 +157,7 @@ namespace PTIC.Marketing.TripPlan_Request
                     _ProductRequestIssue.RequestVenID = (int?)DataTypeParser.Parse(cmbDeptVen.SelectedValue, typeof(int), -1);
                 }
                 _ProductRequestIssue.RequesterID = (int)DataTypeParser.Parse(cmbEmployee.SelectedValue, typeof(int), -1);
-                _ProductRequestIssue.IssueDeptID = (int)DataTypeParser.Parse(cmbGiverDept.SelectedValue, typeof(int), -1);
-                _ProductRequestIssue.IssuerID = (int)DataTypeParser.Parse(cmbGiver.SelectedValue, typeof(int), -1);
+                
                 _ProductRequestIssue.IssueDate = (DateTime)DataTypeParser.Parse(DateTime.MinValue, typeof(DateTime), DateTime.MinValue);
 
 
@@ -203,57 +185,10 @@ namespace PTIC.Marketing.TripPlan_Request
                     }
                 }
 
-                // delete
-                DataView dvDelete = new DataView(dt, string.Empty, string.Empty, DataViewRowState.Deleted);
-                foreach (DataRow row in dvDelete.ToTable().Rows)
-                {
-                    AP_RequestDetail _AP_RequestDetail = new AP_RequestDetail()
-                    {
-                        ID = (int)DataTypeParser.Parse(row["AP_RequestDetailID"], typeof(int), -1),
-                        AP_RequestID = (int)DataTypeParser.Parse(row["AP_RequestID"], typeof(int), -1),
-                        AP_MaterialID = (int)DataTypeParser.Parse(row["AP_MaterialID"].ToString(), typeof(int), -1),
-                        RequestQty = (int)DataTypeParser.Parse(row["RequestQty"].ToString(), typeof(int), 0),
-                        RequestPurpose = (int)DataTypeParser.Parse(row["RequestPurpose"].ToString(), typeof(int), 0),
-                        Remark = (String)DataTypeParser.Parse(row["Remark"].ToString(), typeof(String), String.Empty)
-                    };
-                  //  deleteProductRequestIssueDetail.Add(_AP_RequestDetail);
-                }
-
-                // update
-                DataView dvUpdate = new DataView(dt, string.Empty, string.Empty, DataViewRowState.ModifiedCurrent);
-
-                foreach (DataRow row in dvUpdate.ToTable().Rows)
-                {
-                    ProductRequestIssueDetail _ProductRequestIssueDetail = new ProductRequestIssueDetail()
-                    {
-                        ID = (int)DataTypeParser.Parse(row["ProductRequestIssueDtlID"].ToString(),typeof(int),-1),
-                        ProductRequestIssueID = (int)DataTypeParser.Parse(row["ProductRequestIssueID"].ToString(),typeof(int),-1),
-                        ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
-                        //Weight = (int)DataTypeParser.Parse(row["Weight"].ToString(), typeof(int), 0),
-                        //RequestQty = (int)DataTypeParser.Parse(row["RequestQty"].ToString(), typeof(int), 0),
-                        IssueQty = (int)DataTypeParser.Parse(row["IssueQty"].ToString(), typeof(int), 0),
-                        //Purpose = (int)DataTypeParser.Parse(row["Purpose"], typeof(int), -1),
-                        //Remark = (String)DataTypeParser.Parse(row["Remark"].ToString(), typeof(String), String.Empty)
-                    };
-                    //if (_ProductRequestIssueDetail.ProductID != -1 && _ProductRequestIssueDetail.Purpose != -1 && _ProductRequestIssueDetail.RequestQty != 0 && _ProductRequestIssueDetail.IssueQty != 0)
-                    //{
-                    updateProductRequestIssueDetail.Add(_ProductRequestIssueDetail);
-                   // }
-
-                    ProductRequestIssueID = _ProductRequestIssueDetail.ProductRequestIssueID;
-                    //AP_RequestID = _AP_RequestDetail.AP_RequestID;
-                }
                 
                 #endregion
                 int insertedRequestID = 0;
-                if (ProductRequestIssueID != -1 && updateProductRequestIssueDetail.Count > 0)
-                {
-                    _ProductRequestIssue.ID = ProductRequestIssueID;
-                    _ProductRequestIssue.IssueDate = dtpRequestDate.Value;
-                    //insertedRequestID += new AP_RequestDetailBL().UpdateID(updateProductRequestIssueDetail, conn);
-                    insertedRequestID += new ProductRequestIssueBL().Edit(_ProductRequestIssue, updateProductRequestIssueDetail);
-                }
-                else if (ProductRequestIssueID == -1 && insertProductRequestIssueDetail.Count > 0)
+                if (ProductRequestIssueID == -1 && insertProductRequestIssueDetail.Count > 0)
                 {
                     insertedRequestID += new ProductRequestIssueBL().Add(_ProductRequestIssue, insertProductRequestIssueDetail);
                 }
@@ -262,8 +197,6 @@ namespace PTIC.Marketing.TripPlan_Request
                 {
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
                     ProductRequestIssueID = insertedRequestID;
-                    //if (POSM_RequestSavedHandler == null)
-                    //    UIManager.MdiChildOpenForm(typeof(frmPosmTransferList));
                     if (ProductRequestIssueSavedHandler != null)
                     {
                         // Send AP_RequestID to caller
@@ -302,12 +235,6 @@ namespace PTIC.Marketing.TripPlan_Request
 
         private void cmbGiverDept_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int DeptID = (int)DataTypeParser.Parse(cmbGiverDept.SelectedValue, typeof(int), -1);
-
-            DataTable dtEmployeesByDept = DataUtil.GetDataTableBy(dtEmployees, "DeptID", DeptID);
-            cmbGiver.DataSource = dtEmployeesByDept;
-            cmbGiver.ValueMember = "EmployeeID";
-            cmbGiver.DisplayMember = "EmpName";
         }
         #endregion
 
@@ -407,9 +334,7 @@ namespace PTIC.Marketing.TripPlan_Request
                         cmbEmployee.ValueMember = "EmployeeID";
                         cmbEmployee.DisplayMember = "EmpName";
 
-                        cmbGiver.DataSource = dtEmployeesByDept;
-                        cmbGiver.ValueMember = "EmployeeID";
-                        cmbGiver.DisplayMember = "EmpName";
+                        
                     }
                     catch (SqlException Sqle)
                     {
@@ -442,12 +367,17 @@ namespace PTIC.Marketing.TripPlan_Request
            
         }
 
-        private void btnIssue_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Resource.msgSureSave, "သတိပေးချက်", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.Yes)
-                return;
-            Save();
+
         }
+
+        private void frmProductRequestIssue_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
 
     }
 

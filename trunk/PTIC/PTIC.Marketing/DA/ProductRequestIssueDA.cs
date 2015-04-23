@@ -26,7 +26,7 @@ namespace PTIC.Marketing.DA
                 {
                     obj.ID = (int)dt.Rows[0]["ID"];
                     obj.RequestDate = (DateTime)dt.Rows[0]["RequestDate"];
-                    obj.IssueDate = (DateTime)dt.Rows[0]["IssueDate"];
+                   // obj.IssueDate = (DateTime)dt.Rows[0]["IssueDate"];
                     obj.RequesterID = (int)dt.Rows[0]["RequesterID"];
                     obj.IssuerID = (int)(dt.Rows[0]["IssuerID"]==DBNull.Value?0:dt.Rows[0]["IssuerID"]);
                     obj.RequestDeptID = (int)(dt.Rows[0]["RequestDeptID"] == DBNull.Value ? 0 : dt.Rows[0]["RequestDeptID"]);

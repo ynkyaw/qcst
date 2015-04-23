@@ -183,10 +183,11 @@ namespace PTIC.VC.Marketing.DailyMarketing
             else
             {
                 numPersonCount.Text = args.Employees.Count.ToString();
+                
             }
             foreach (Employee insertemployee in args.Employees)
             {
-                if (insertemployee.EmployeeInTripPlanDetailID == 0)
+                
                     EmployeesList.Add(insertemployee);
             }
 
@@ -199,7 +200,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void numPersonCount_TextChanged(object sender, EventArgs e)
         {
-
+            udStaffNumber.Text = numPersonCount.Text;
         }
 
         private void label33_Click(object sender, EventArgs e)
@@ -308,18 +309,36 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
         private void btnRequestEmployees_Click(object sender, EventArgs e)
         {
-            int ManagerID = (int)DataTypeParser.Parse(cmbTripRequestManager.SelectedValue, typeof(int), 0);
-            checkReqestEmp = true;
-            //if (_mTripPlanDetail.ID == -1) return;
-            frmEmployeePicker employeePicker = new frmEmployeePicker(TripRequestID, ManagerID, true);
-            employeePicker.EmployeeSelectedHandler += new frmEmployeePicker.EmployeeSelectionHandler(employeeSelection_CallBack);
-            // Set call back handler
-            UIManager.OpenForm(employeePicker);
+            //int ManagerID = (int)DataTypeParser.Parse(cmbTripRequestManager.SelectedValue, typeof(int), 0);
+            //checkReqestEmp = true;
+            ////if (_mTripPlanDetail.ID == -1) return;
+            //frmEmployeePicker employeePicker = new frmEmployeePicker(TripRequestID, ManagerID, true);
+            //employeePicker.EmployeeSelectedHandler += new frmEmployeePicker.EmployeeSelectionHandler(employeeSelection_CallBack);
+            //// Set call back handler
+            //UIManager.OpenForm(employeePicker);
+            int ManagerID = (int)DataTypeParser.Parse(cboManagerID.SelectedValue, typeof(int), 0);
+            if (EmployeesList == null)
+            {
+                frmEmployeePicker employeePicker = new frmEmployeePicker(_mTripPlanDetail.ID, ManagerID);
+                employeePicker.EmployeeSelectedHandler += new frmEmployeePicker.EmployeeSelectionHandler(employeeSelection_CallBack);
+                // Set call back handler
+                UIManager.OpenForm(employeePicker);
+            }
+            else
+            {
+                frmEmployeePicker employeePicker = new frmEmployeePicker(_mTripPlanDetail.ID, ManagerID, EmployeesList);
+                employeePicker.EmployeeSelectedHandler += new frmEmployeePicker.EmployeeSelectionHandler(employeeSelection_CallBack);
+                // Set call back handler
+                UIManager.OpenForm(employeePicker);
+
+            }
         }
 
         private void btnTripRequest_Click(object sender, EventArgs e)
         {
+           
             SaveTripPlanRequest();
+            Save();
         }
 
         private void dtpRequestFromDate_ValueChanged(object sender, EventArgs e)
@@ -405,6 +424,9 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     txtOtherExp.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["OtherExp"].ToString(), typeof(string), string.Empty);
                     txtFood.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Food"].ToString(), typeof(string), string.Empty);
                     numPersonCount.Text = ((int)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["PersonCount"].ToString(), typeof(int), 0)).ToString();
+
+                    udStaffNumber.Text = ((int)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["PersonCount"].ToString(), typeof(int), 0)).ToString();
+
                     //   cboSaleType.SelectedIndex = (int)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["SaleType"].ToString(), typeof(int), 0);
                     chkCash.Checked = (bool)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["SaleType"], typeof(bool), 0);
                     chkCredit.Checked = (bool)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["SaleType1"], typeof(bool), 0);
@@ -414,7 +436,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     txtCOO.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["COORemark"].ToString(), typeof(string), string.Empty);
                     txtMM.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["MarketingManagerRemark"].ToString(), typeof(string), string.Empty);
                     txtSM.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["SaleManagerRemark"].ToString(), typeof(string), string.Empty);
-                    txtPurpose.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["TripPlanPurpose"].ToString(), typeof(string), string.Empty);
+                    //txtPurpose.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["TripPlanPurpose"].ToString(), typeof(string), string.Empty);
                     remark = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Remark"].ToString(), typeof(string), string.Empty);
                     //txtTripName.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Remark"].ToString(), typeof(string), string.Empty);
                 };
@@ -976,23 +998,23 @@ namespace PTIC.VC.Marketing.DailyMarketing
                     chkCashMachine.Checked = (bool)DataTypeParser.Parse(dtTripRequestDetail.Rows[0]["IsSaleDevice"], typeof(bool), false);
                     chkVoucher.Checked = (bool)DataTypeParser.Parse(dtTripRequestDetail.Rows[0]["IsVocher"], typeof(bool), false);
                     chkVehicle.Checked = (bool)DataTypeParser.Parse(dtTripRequestDetail.Rows[0]["IsVen"], typeof(bool), false);
-                    udStaffNumber.Text = (string)DataTypeParser.Parse(dtTripRequestDetail.Rows[0]["PersonCount"].ToString(), typeof(string), string.Empty);
+                    //udStaffNumber.Text = (string)DataTypeParser.Parse(dtTripRequestDetail.Rows[0]["PersonCount"].ToString(), typeof(string), string.Empty);
 
                     if (udStaffNumber.Text != string.Empty)
                     {
-                        //  Bind Selected Employees
+                        ////  Bind Selected Employees
 
-                        DataTable dtSelectedEmployees = new EmployeeDA().SelectAllByTripRequestID(TripRequestID);
-                        string EmployeeName = string.Empty;
-                        foreach (DataRow employee in dtSelectedEmployees.Rows)
-                        {
-                            // EmployeeName
-                            EmployeeName += string.IsNullOrEmpty(employee["EmpName"].ToString()) ? string.Empty : employee["EmpName"].ToString() + ", \r\n";
-                        }
-                        EmployeeName = EmployeeName.Replace(",", ",");
-                        int j = EmployeeName.LastIndexOf(',');
-                        EmployeeName = EmployeeName.Remove(j);
-                        txtEmployee.Text = EmployeeName;
+                        //DataTable dtSelectedEmployees = new EmployeeDA().SelectAllByTripRequestID(TripRequestID);
+                        //string EmployeeName = string.Empty;
+                        //foreach (DataRow employee in dtSelectedEmployees.Rows)
+                        //{
+                        //    // EmployeeName
+                        //    EmployeeName += string.IsNullOrEmpty(employee["EmpName"].ToString()) ? string.Empty : employee["EmpName"].ToString() + ", \r\n";
+                        //}
+                        //EmployeeName = EmployeeName.Replace(",", ",");
+                        //int j = EmployeeName.LastIndexOf(',');
+                        //EmployeeName = EmployeeName.Remove(j);
+                        //txtEmployee.Text = EmployeeName;
 
                     }
 
@@ -1056,6 +1078,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
                         if (manager != null)
                             EmployeesList.Remove(manager);
                         numPersonCount.Text = EmployeesList.Count.ToString();
+                        
                     }
                     catch (Exception err) 
                     {

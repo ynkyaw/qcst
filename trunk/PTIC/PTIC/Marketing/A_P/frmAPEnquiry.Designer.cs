@@ -68,7 +68,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnlFilt = new System.Windows.Forms.Panel();
             this.lblFilter = new System.Windows.Forms.Label();
-            this.dtpEnquiryDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpAP_PlanDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
             this.chkEndDate = new System.Windows.Forms.CheckBox();
@@ -461,6 +461,7 @@
             this.pnlFilt.Name = "pnlFilt";
             this.pnlFilt.Size = new System.Drawing.Size(1164, 23);
             this.pnlFilt.TabIndex = 175;
+            this.pnlFilt.Visible = false;
             // 
             // lblFilter
             // 
@@ -470,21 +471,21 @@
             this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.lblFilter.Location = new System.Drawing.Point(3, 0);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(162, 20);
+            this.lblFilter.Size = new System.Drawing.Size(166, 20);
             this.lblFilter.TabIndex = 1;
             this.lblFilter.Text = "▲ Hide Advance Search";
             this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
             // 
-            // dtpEnquiryDate
+            // dtpAP_PlanDate
             // 
-            this.dtpEnquiryDate.CustomFormat = "dd-MMM-yyyy";
-            this.dtpEnquiryDate.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEnquiryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnquiryDate.Location = new System.Drawing.Point(154, 7);
-            this.dtpEnquiryDate.Name = "dtpEnquiryDate";
-            this.dtpEnquiryDate.Size = new System.Drawing.Size(130, 28);
-            this.dtpEnquiryDate.TabIndex = 181;
-            this.dtpEnquiryDate.ValueChanged += new System.EventHandler(this.dtpEnquiryDate_ValueChanged);
+            this.dtpAP_PlanDate.CustomFormat = "MMM-yyyy";
+            this.dtpAP_PlanDate.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAP_PlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAP_PlanDate.Location = new System.Drawing.Point(154, 7);
+            this.dtpAP_PlanDate.Name = "dtpAP_PlanDate";
+            this.dtpAP_PlanDate.Size = new System.Drawing.Size(99, 28);
+            this.dtpAP_PlanDate.TabIndex = 181;
+            this.dtpAP_PlanDate.ValueChanged += new System.EventHandler(this.dtpEnquiryDate_ValueChanged);
             // 
             // label3
             // 
@@ -492,9 +493,9 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 20);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 186;
-            this.label3.Text = "စတင်စုံစမ်းသည့်နေ့စွဲ";
+            this.label3.Text = "Plan Month";
             // 
             // pnlGrid
             // 
@@ -502,7 +503,7 @@
             this.pnlGrid.Controls.Add(this.dtpEndDate);
             this.pnlGrid.Controls.Add(this.panel4);
             this.pnlGrid.Controls.Add(this.label3);
-            this.pnlGrid.Controls.Add(this.dtpEnquiryDate);
+            this.pnlGrid.Controls.Add(this.dtpAP_PlanDate);
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlGrid.Location = new System.Drawing.Point(0, 156);
             this.pnlGrid.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -905,7 +906,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpEnquiryDate;
+        private System.Windows.Forms.DateTimePicker dtpAP_PlanDate;
         private System.Windows.Forms.Panel pnlGrid;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
