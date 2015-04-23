@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvReturnDetail = new System.Windows.Forms.DataGridView();
             this.colA_P_SubCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colA_P_Material = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -60,7 +60,6 @@
             this.cmbToDeptOrVen = new System.Windows.Forms.ComboBox();
             this.cmbToEmployee = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoFromVen = new System.Windows.Forms.RadioButton();
             this.rdoFromDept = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbFromDeptOrVen = new System.Windows.Forms.ComboBox();
@@ -81,6 +80,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSetup = new System.Windows.Forms.Label();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
+            this.rdoFromVen = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnDetail)).BeginInit();
             this.pnlFooter.SuspendLayout();
             this.pnlEntry.SuspendLayout();
@@ -96,14 +96,14 @@
             this.dgvReturnDetail.AllowUserToAddRows = false;
             this.dgvReturnDetail.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvReturnDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvReturnDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReturnDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colA_P_SubCategory,
@@ -121,28 +121,28 @@
             this.colToVenID,
             this.colToEmpID,
             this.colAP_ReturnID});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReturnDetail.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReturnDetail.DefaultCellStyle = dataGridViewCellStyle31;
             this.dgvReturnDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReturnDetail.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvReturnDetail.EnableHeadersVisualStyles = false;
             this.dgvReturnDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
             this.dgvReturnDetail.Location = new System.Drawing.Point(0, 267);
             this.dgvReturnDetail.Name = "dgvReturnDetail";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(131)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.dgvReturnDetail.RowHeadersWidth = 50;
             this.dgvReturnDetail.RowTemplate.Height = 28;
             this.dgvReturnDetail.Size = new System.Drawing.Size(1020, 132);
@@ -175,10 +175,10 @@
             // colReturnQty
             // 
             this.colReturnQty.DataPropertyName = "ReturnQty";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.NullValue = "0";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colReturnQty.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle30.NullValue = "0";
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colReturnQty.DefaultCellStyle = dataGridViewCellStyle30;
             this.colReturnQty.HeaderText = "Qty";
             this.colReturnQty.MaxInputLength = 4;
             this.colReturnQty.Name = "colReturnQty";
@@ -194,7 +194,7 @@
             this.colRemark.Name = "colRemark";
             this.colRemark.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colRemark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colRemark.Width = 44;
+            this.colRemark.Width = 58;
             // 
             // colReturnPurpose
             // 
@@ -349,8 +349,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rdoToVen);
             this.groupBox2.Controls.Add(this.rdoToDept);
+            this.groupBox2.Controls.Add(this.rdoToVen);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cmbToDeptOrVen);
             this.groupBox2.Controls.Add(this.cmbToEmployee);
@@ -369,10 +369,11 @@
             this.rdoToVen.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.rdoToVen.Location = new System.Drawing.Point(22, 57);
             this.rdoToVen.Name = "rdoToVen";
-            this.rdoToVen.Size = new System.Drawing.Size(104, 24);
+            this.rdoToVen.Size = new System.Drawing.Size(95, 23);
             this.rdoToVen.TabIndex = 200;
             this.rdoToVen.Text = "အရောင်းကား";
             this.rdoToVen.UseVisualStyleBackColor = true;
+            this.rdoToVen.Visible = false;
             this.rdoToVen.CheckedChanged += new System.EventHandler(this.rdoToVen_CheckedChanged);
             // 
             // rdoToDept
@@ -380,9 +381,9 @@
             this.rdoToDept.AutoSize = true;
             this.rdoToDept.Checked = true;
             this.rdoToDept.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.rdoToDept.Location = new System.Drawing.Point(22, 27);
+            this.rdoToDept.Location = new System.Drawing.Point(22, 42);
             this.rdoToDept.Name = "rdoToDept";
-            this.rdoToDept.Size = new System.Drawing.Size(52, 24);
+            this.rdoToDept.Size = new System.Drawing.Size(49, 23);
             this.rdoToDept.TabIndex = 199;
             this.rdoToDept.TabStop = true;
             this.rdoToDept.Text = "ဌာန";
@@ -396,7 +397,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label5.Location = new System.Drawing.Point(18, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 20);
+            this.label5.Size = new System.Drawing.Size(50, 19);
             this.label5.TabIndex = 204;
             this.label5.Text = "ဝန်ထမ်း";
             // 
@@ -409,7 +410,7 @@
             this.cmbToDeptOrVen.FormattingEnabled = true;
             this.cmbToDeptOrVen.Location = new System.Drawing.Point(132, 42);
             this.cmbToDeptOrVen.Name = "cmbToDeptOrVen";
-            this.cmbToDeptOrVen.Size = new System.Drawing.Size(150, 27);
+            this.cmbToDeptOrVen.Size = new System.Drawing.Size(150, 25);
             this.cmbToDeptOrVen.TabIndex = 198;
             this.cmbToDeptOrVen.ValueMember = "ID";
             this.cmbToDeptOrVen.SelectedIndexChanged += new System.EventHandler(this.cmbToDeptOrVen_SelectedIndexChanged);
@@ -425,7 +426,7 @@
             this.cmbToEmployee.FormattingEnabled = true;
             this.cmbToEmployee.Location = new System.Drawing.Point(131, 89);
             this.cmbToEmployee.Name = "cmbToEmployee";
-            this.cmbToEmployee.Size = new System.Drawing.Size(150, 27);
+            this.cmbToEmployee.Size = new System.Drawing.Size(150, 25);
             this.cmbToEmployee.TabIndex = 203;
             this.cmbToEmployee.ValueMember = "EmployeeID";
             this.cmbToEmployee.SelectedValueChanged += new System.EventHandler(this.cmbEmployee_SelectedValueChanged);
@@ -446,18 +447,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "​ပြန်လည်အပ်နှံသည့်";
             // 
-            // rdoFromVen
-            // 
-            this.rdoFromVen.AutoSize = true;
-            this.rdoFromVen.Font = new System.Drawing.Font("Myanmar3", 10F);
-            this.rdoFromVen.Location = new System.Drawing.Point(18, 57);
-            this.rdoFromVen.Name = "rdoFromVen";
-            this.rdoFromVen.Size = new System.Drawing.Size(104, 24);
-            this.rdoFromVen.TabIndex = 197;
-            this.rdoFromVen.Text = "အရောင်းကား";
-            this.rdoFromVen.UseVisualStyleBackColor = true;
-            this.rdoFromVen.CheckedChanged += new System.EventHandler(this.rdoFromVen_CheckedChanged);
-            // 
             // rdoFromDept
             // 
             this.rdoFromDept.AutoSize = true;
@@ -465,7 +454,7 @@
             this.rdoFromDept.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.rdoFromDept.Location = new System.Drawing.Point(18, 27);
             this.rdoFromDept.Name = "rdoFromDept";
-            this.rdoFromDept.Size = new System.Drawing.Size(52, 24);
+            this.rdoFromDept.Size = new System.Drawing.Size(49, 23);
             this.rdoFromDept.TabIndex = 196;
             this.rdoFromDept.TabStop = true;
             this.rdoFromDept.Text = "ဌာန";
@@ -479,7 +468,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label6.Location = new System.Drawing.Point(14, 93);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 20);
+            this.label6.Size = new System.Drawing.Size(50, 19);
             this.label6.TabIndex = 206;
             this.label6.Text = "ဝန်ထမ်း";
             // 
@@ -492,7 +481,7 @@
             this.cmbFromDeptOrVen.FormattingEnabled = true;
             this.cmbFromDeptOrVen.Location = new System.Drawing.Point(128, 40);
             this.cmbFromDeptOrVen.Name = "cmbFromDeptOrVen";
-            this.cmbFromDeptOrVen.Size = new System.Drawing.Size(150, 27);
+            this.cmbFromDeptOrVen.Size = new System.Drawing.Size(150, 25);
             this.cmbFromDeptOrVen.TabIndex = 195;
             this.cmbFromDeptOrVen.ValueMember = "ID";
             this.cmbFromDeptOrVen.SelectedIndexChanged += new System.EventHandler(this.cmbFromDeptOrVen_SelectedIndexChanged);
@@ -508,7 +497,7 @@
             this.cmbFromEmployee.FormattingEnabled = true;
             this.cmbFromEmployee.Location = new System.Drawing.Point(127, 89);
             this.cmbFromEmployee.Name = "cmbFromEmployee";
-            this.cmbFromEmployee.Size = new System.Drawing.Size(150, 27);
+            this.cmbFromEmployee.Size = new System.Drawing.Size(150, 25);
             this.cmbFromEmployee.TabIndex = 205;
             this.cmbFromEmployee.ValueMember = "EmployeeID";
             this.cmbFromEmployee.SelectedValueChanged += new System.EventHandler(this.cmbEmployee_SelectedValueChanged);
@@ -520,7 +509,7 @@
             this.txtReturnNo.Location = new System.Drawing.Point(98, 52);
             this.txtReturnNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtReturnNo.Name = "txtReturnNo";
-            this.txtReturnNo.Size = new System.Drawing.Size(150, 28);
+            this.txtReturnNo.Size = new System.Drawing.Size(150, 25);
             this.txtReturnNo.TabIndex = 199;
             // 
             // label1
@@ -531,7 +520,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label1.Location = new System.Drawing.Point(16, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(56, 19);
             this.label1.TabIndex = 198;
             this.label1.Text = "စာအမှတ်";
             // 
@@ -542,7 +531,7 @@
             this.dtpReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpReturnDate.Location = new System.Drawing.Point(98, 18);
             this.dtpReturnDate.Name = "dtpReturnDate";
-            this.dtpReturnDate.Size = new System.Drawing.Size(150, 28);
+            this.dtpReturnDate.Size = new System.Drawing.Size(150, 25);
             this.dtpReturnDate.TabIndex = 197;
             // 
             // label2
@@ -551,7 +540,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label2.Location = new System.Drawing.Point(16, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 20);
+            this.label2.Size = new System.Drawing.Size(32, 19);
             this.label2.TabIndex = 196;
             this.label2.Text = "နေ့စွဲ";
             // 
@@ -578,7 +567,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label3.Location = new System.Drawing.Point(234, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 20);
+            this.label3.Size = new System.Drawing.Size(129, 19);
             this.label3.TabIndex = 199;
             this.label3.Text = "​ပြန်လည်အပ်နှံသည့်ဌာန";
             // 
@@ -596,7 +585,7 @@
             this.dtpKW_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpKW_Date.Location = new System.Drawing.Point(56, 13);
             this.dtpKW_Date.Name = "dtpKW_Date";
-            this.dtpKW_Date.Size = new System.Drawing.Size(150, 28);
+            this.dtpKW_Date.Size = new System.Drawing.Size(150, 25);
             this.dtpKW_Date.TabIndex = 180;
             // 
             // label7
@@ -605,7 +594,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label7.Location = new System.Drawing.Point(16, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 20);
+            this.label7.Size = new System.Drawing.Size(32, 19);
             this.label7.TabIndex = 179;
             this.label7.Text = "နေ့စွဲ";
             // 
@@ -618,7 +607,7 @@
             this.cmbKW_FromDepartment.FormattingEnabled = true;
             this.cmbKW_FromDepartment.Location = new System.Drawing.Point(382, 9);
             this.cmbKW_FromDepartment.Name = "cmbKW_FromDepartment";
-            this.cmbKW_FromDepartment.Size = new System.Drawing.Size(150, 27);
+            this.cmbKW_FromDepartment.Size = new System.Drawing.Size(150, 25);
             this.cmbKW_FromDepartment.TabIndex = 13;
             this.cmbKW_FromDepartment.ValueMember = "ID";
             // 
@@ -676,7 +665,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(10, 12);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(54, 20);
+            this.lblSetup.Size = new System.Drawing.Size(46, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "A && P";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -688,13 +677,25 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(70, 12);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(129, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(123, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">  POSM Return";
             // 
+            // rdoFromVen
+            // 
+            this.rdoFromVen.AutoSize = true;
+            this.rdoFromVen.Font = new System.Drawing.Font("Myanmar3", 10F);
+            this.rdoFromVen.Location = new System.Drawing.Point(18, 57);
+            this.rdoFromVen.Name = "rdoFromVen";
+            this.rdoFromVen.Size = new System.Drawing.Size(95, 23);
+            this.rdoFromVen.TabIndex = 197;
+            this.rdoFromVen.Text = "အရောင်းကား";
+            this.rdoFromVen.UseVisualStyleBackColor = true;
+            this.rdoFromVen.CheckedChanged += new System.EventHandler(this.rdoFromVen_CheckedChanged);
+            // 
             // frmPOSM_Return
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 449);
             this.Controls.Add(this.dgvReturnDetail);
@@ -707,6 +708,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPOSM_Return";
             this.Text = "POSM Return";
+            this.Load += new System.EventHandler(this.frmPOSM_Return_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnDetail)).EndInit();
             this.pnlFooter.ResumeLayout(false);
             this.pnlEntry.ResumeLayout(false);
@@ -753,7 +755,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbFromEmployee;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdoFromVen;
         private System.Windows.Forms.RadioButton rdoFromDept;
         private System.Windows.Forms.ComboBox cmbFromDeptOrVen;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -776,5 +777,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colToVenID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colToEmpID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAP_ReturnID;
+        private System.Windows.Forms.RadioButton rdoFromVen;
     }
 }

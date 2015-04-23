@@ -135,7 +135,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label2.Location = new System.Drawing.Point(250, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.Size = new System.Drawing.Size(102, 19);
             this.label2.TabIndex = 186;
             this.label2.Text = "ထုတ်ပေးသည့်ဌာန";
             // 
@@ -145,7 +145,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label1.Location = new System.Drawing.Point(250, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 20);
+            this.label1.Size = new System.Drawing.Size(103, 19);
             this.label1.TabIndex = 185;
             this.label1.Text = "တောင်းခံသည့်ဌာန";
             // 
@@ -178,7 +178,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 10F);
             this.label7.Location = new System.Drawing.Point(40, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 20);
+            this.label7.Size = new System.Drawing.Size(32, 19);
             this.label7.TabIndex = 179;
             this.label7.Text = "နေ့စွဲ";
             // 
@@ -222,7 +222,7 @@
             this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.lblFilter.Location = new System.Drawing.Point(3, 0);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(166, 20);
+            this.lblFilter.Size = new System.Drawing.Size(168, 19);
             this.lblFilter.TabIndex = 1;
             this.lblFilter.Text = "▲ Hide Advance Search";
             this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
@@ -246,7 +246,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(10, 12);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(54, 20);
+            this.lblSetup.Size = new System.Drawing.Size(46, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "A && P";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -258,7 +258,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(149)))), ((int)(((byte)(206)))));
             this.lblHeaderPCat.Location = new System.Drawing.Point(69, 12);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(175, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(182, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">  POSM Transfer List";
             // 
@@ -687,7 +687,7 @@
             // 
             // frmPosmTransferList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 453);
             this.Controls.Add(this.dgvPosmTransferList);
@@ -699,6 +699,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPosmTransferList";
             this.Text = "POSM Transfer List";
+            this.Load += new System.EventHandler(this.frmPosmTransferList_Load);
             this.pnlFilter.ResumeLayout(false);
             this.pnlFilter.PerformLayout();
             this.pnlFilt.ResumeLayout(false);

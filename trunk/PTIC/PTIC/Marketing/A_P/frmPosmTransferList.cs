@@ -73,7 +73,7 @@ namespace PTIC.VC.Marketing.A_P
             }
             else
             {
-             //   pnlFilter.Visible = true;
+                pnlFilter.Visible = true;
                 lblFilter.Text = "▲ Hide Advance Search"; //Hide filter information";
             }
         }
@@ -158,6 +158,12 @@ namespace PTIC.VC.Marketing.A_P
                     LoadNBind();
                 }
             
+        }
+
+        private void frmPosmTransferList_Load(object sender, EventArgs e)
+        {
+            comboBox2.SelectedValue = 8;
+            comboBox2.Enabled = false;
         }
 
     }

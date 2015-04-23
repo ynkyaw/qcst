@@ -878,6 +878,17 @@ namespace PTIC.VC.Marketing.A_P
 
         #endregion
 
+        private void frmPOSM_Return_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void frmPOSM_Return_Load_1(object sender, EventArgs e)
+        {
+            cmbToDeptOrVen.SelectedValue = 8;//Marketing
+            cmbToDeptOrVen.Enabled = false;
+        }
+
         //private void dgvReturnDetail_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         //{
         //    int newInteger = 0;

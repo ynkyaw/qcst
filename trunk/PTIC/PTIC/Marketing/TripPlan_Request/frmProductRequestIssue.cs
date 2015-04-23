@@ -58,12 +58,15 @@ namespace PTIC.Marketing.TripPlan_Request
             cmbEmployee.SelectedValue = _ProductRequestIssue.RequesterID;
             if (this.ProductRequestIssueID == -1)
             {
-                colRequestQty.ReadOnly = false;
+                //colRequestQty.ReadOnly = false;
+                btnDelete.Enabled = btnNew.Enabled = btnRequest.Enabled = true;
+                button1.Enabled = false;
             }
             else
             {
                 _ProductRequestIssue = new ProductRequestIssueBL().GetProductRequestIssueById(_ProductRequestIssue.ID);
-
+                btnDelete.Enabled = btnNew.Enabled = btnRequest.Enabled = false;
+                button1.Enabled = true;
                 
             }
         
@@ -71,6 +74,14 @@ namespace PTIC.Marketing.TripPlan_Request
             this.dtProductRequestIssue = new ProductRequestIssueBL().GetAllByProductReqIssueID(this.ProductRequestIssueID);
             dgvProductReqIssue.DataSource = dtProductRequestIssue;
             DataUtil.AddInitialNewRow(dgvProductReqIssue);
+            if (_ProductRequestIssue.RequestVenID == -1) 
+            {
+                rdoDept.Checked = true;
+                if (Program.module == Program.Module.Sale)
+                    cmbDeptVen.SelectedValue = 7;
+                else
+                    cmbDeptVen.SelectedValue = 8;
+            }
         }
         
 

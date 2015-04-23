@@ -47,6 +47,7 @@ namespace PTIC.VC.Marketing.A_P
             LoadNBind();
             //  DataGridView Intialize Row
             DataUtil.AddInitialNewRow(dgvPosmRequest);
+            
         }
 
         public frmPosmRequest(int AP_RequestID)
@@ -633,6 +634,8 @@ namespace PTIC.VC.Marketing.A_P
         {
             if (this.POSM_RequestSavedHandler != null) // there is a caller
                 this.btnIssue.Visible = true;
+            cmbGiverDept.SelectedValue = 8;//Marketing
+            cmbGiverDept.Enabled = false;
         }
 
         private void btnIssue_Click(object sender, EventArgs e)
