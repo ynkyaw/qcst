@@ -749,16 +749,16 @@
     <Compile Include="Sale\CashCollection\frmReceiptVoucherList_MultipleInvoices.Designer.cs">
       <DependentUpon>frmReceiptVoucherList_MultipleInvoices.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveryNoteList.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveryNoteList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveryNoteList.Designer.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveryNoteList.Designer.cs">
       <DependentUpon>frmDeliveryNoteList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\Delivery\frmNewDeliveryNote.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmNewDeliveryNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\Delivery\frmNewDeliveryNote.Designer.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmNewDeliveryNote.Designer.cs">
       <DependentUpon>frmNewDeliveryNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Sale\frmSalesReportPage.cs">
@@ -1084,28 +1084,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveryNote.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveryNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveryNote.Designer.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveryNote.Designer.cs">
       <DependentUpon>frmDeliveryNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDelivery.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDelivery.Designer.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDelivery.Designer.cs">
       <DependentUpon>frmDelivery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveredList.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveredList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveredList.Designer.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveredList.Designer.cs">
       <DependentUpon>frmDeliveredList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveryPlan.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveryPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sale\Delivery\frmDeliveryPlan.Designer.cs">
+    <Compile Include="Sale\Inventory\Delivery\frmDeliveryPlan.Designer.cs">
       <DependentUpon>frmDeliveryPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="Sale\Inventory\frmFinishedGoodsReceive.cs">
@@ -1746,10 +1746,10 @@
     <EmbeddedResource Include="Sale\CashCollection\frmReceiptVoucherList_MultipleInvoices.resx">
       <DependentUpon>frmReceiptVoucherList_MultipleInvoices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\Delivery\frmDeliveryNoteList.resx">
+    <EmbeddedResource Include="Sale\Inventory\Delivery\frmDeliveryNoteList.resx">
       <DependentUpon>frmDeliveryNoteList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\Delivery\frmNewDeliveryNote.resx">
+    <EmbeddedResource Include="Sale\Inventory\Delivery\frmNewDeliveryNote.resx">
       <DependentUpon>frmNewDeliveryNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\frmSalesReportPage.resx">
@@ -1917,16 +1917,16 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\Delivery\frmDeliveryNote.resx">
+    <EmbeddedResource Include="Sale\Inventory\Delivery\frmDeliveryNote.resx">
       <DependentUpon>frmDeliveryNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\Delivery\frmDelivery.resx">
+    <EmbeddedResource Include="Sale\Inventory\Delivery\frmDelivery.resx">
       <DependentUpon>frmDelivery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\Delivery\frmDeliveredList.resx">
+    <EmbeddedResource Include="Sale\Inventory\Delivery\frmDeliveredList.resx">
       <DependentUpon>frmDeliveredList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sale\Delivery\frmDeliveryPlan.resx">
+    <EmbeddedResource Include="Sale\Inventory\Delivery\frmDeliveryPlan.resx">
       <DependentUpon>frmDeliveryPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\Inventory\frmFinishedGoodsReceive.resx">

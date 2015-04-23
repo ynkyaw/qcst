@@ -415,7 +415,7 @@ namespace PTIC.VC.Marketing.DailyMarketing
 
                     txtTotalDays.Text = dtToDate.Value.Subtract(dtFromDate.Value).Days.ToString();
                     txtTripRequestDay.Text = dtpRequestToDate.Value.Subtract(dtpRequestFromDate.Value).Days.ToString(); // TripRequest Total Days
-
+                    txtPurpose.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["TripPlanPurpose"].ToString(), typeof(string), string.Empty);
                     //   cboSaleType.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["SaleType"].ToString(), typeof(string), string.Empty);
                     txtRemittance.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Remittance"].ToString(), typeof(string), string.Empty);
                     txtRent.Text = (string)DataTypeParser.Parse(dtTripPlanDetail.Rows[0]["Rent"].ToString(), typeof(string), string.Empty);
@@ -544,21 +544,9 @@ namespace PTIC.VC.Marketing.DailyMarketing
                    Remark = this.remark
                };
 
-                //if (saveProduct.SubCategoryID == -1 || string.IsNullOrEmpty(saveProduct.ProductName))
-                //{
-                //    // show error msg
-                //    MessageBox.Show(string.Format(Resource.errRequiredFields + "\n - {0}\n - {1}", Resource.SubCategory, Resource.ProductName),
-                //        Resource.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
+               
                 int affectedRows = 0;
-                //if (_mdTripReqest == null) // add a new product
-                //{
-                //    affectedRows = tripRequestSaver.Add(saveTripRequest, conn);
-                //}
-                //else // update an existing product
-                //{
-                // set product id for update condition
+               
                 saveTripPlanDetail.ID = _mTripPlanDetail.ID;
                 affectedRows = tripPlanDetailSaver.UpdateByID(saveTripPlanDetail, EmployeesList, conn);
 
