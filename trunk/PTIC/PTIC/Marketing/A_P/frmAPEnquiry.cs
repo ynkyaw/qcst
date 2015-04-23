@@ -362,12 +362,26 @@ namespace PTIC.VC.Marketing.A_P
                     strBuilder.Append("* " + txtCOORemark.Text + Environment.NewLine);
                 }
 
+                DateTime minDate = DateTime.Now.Date;
+                if (dt != null&&dt.Rows.Count>0) 
+                {
+                    foreach (DataRow row in dt.Rows) 
+                    {
+                        DateTime temp = (DateTime)DataTypeParser.Parse(row["EnquiryDate"], typeof(DateTime), DateTime.Now.Date);
+                        if (temp < minDate) 
+                        {
+                            minDate = temp;
+                        }
+                    
+                    }
+                }
+
                 AP_Enquiry _AP_Enquiry = new AP_Enquiry()
                 {
-                    OpenDate = (DateTime)DataTypeParser.Parse(dtpAP_PlanDate.Value, typeof(DateTime), DateTime.Now),
+                    OpenDate = minDate,
                     CloseDate = (DateTime?)DataTypeParser.Parse(EndDate, typeof(DateTime), null),
                     COORemrak = (String)DataTypeParser.Parse(strBuilder.ToString(), typeof(String), String.Empty),
-                    AP_PlanMoth = dtpAP_PlanDate.Value
+                    AP_PlanMoth = new DateTime(dtpAP_PlanDate.Value.Year,dtpAP_PlanDate.Value.Month,1,0,0,0)
                 };
 
                 List<AP_EnquiryDetail> insertAP_EnquiryDetail = new List<AP_EnquiryDetail>();
@@ -446,6 +460,33 @@ namespace PTIC.VC.Marketing.A_P
                     else 
                     if (_AP_EnquiryDetail.SupplierID != -1 && _AP_EnquiryDetail.AP_MaterialID != -1 && _AP_EnquiryDetail.ApprovedQty != 0 && _AP_EnquiryDetail.UnitCost != 0)
                     {
+                        if (_AP_EnquiryDetail.IsAccepted)
+                        {
+                            DataTable ap_balance = new AP_EnquiryBL().Get_AviliablePlanAmountByAP_MaterialID(_AP_EnquiryDetail.AP_MaterialID, _AP_Enquiry.AP_PlanMoth);
+                            if (ap_balance != null&&ap_balance.Rows.Count>0)
+                            {
+                                decimal balance = (decimal)DataTypeParser.Parse(ap_balance.Rows[0]["Balance"].ToString(), typeof(decimal), 0);
+                                if (balance < (_AP_EnquiryDetail.UnitCost * _AP_EnquiryDetail.ApprovedQty)) 
+                                {
+                                    string template = "A_P_Material ({4}) can't be approved.\nTotal Plan Amount for {0} is {1}.\nAlready Approved Amount is {2}.\nBalance Amount is {3}";
+                                    string msg = string.Format(template, _AP_Enquiry.AP_PlanMoth.ToString("MMM-yyyy"), ap_balance.Rows[0]["PlanAmt"], ap_balance.Rows[0]["AcceptAmount"], balance, row["ApMaterialName"]);
+
+                                    MessageBox.Show(msg);
+                                    return;
+                                    
+                                }
+
+                            }
+                            else 
+                            {
+                                MessageBox.Show(string.Format("There is no Balance for {0} in {1}",_AP_EnquiryDetail.AP_MaterialID, _AP_Enquiry.AP_PlanMoth));
+                                return;
+                            }
+                        
+                        }
+
+
+
                         updateAP_EnquiryDetail.Add(_AP_EnquiryDetail);
                     }
                     _AP_Enquiry.ID = _AP_EnquiryDetail.ID;
