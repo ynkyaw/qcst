@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvAPEnquiry = new System.Windows.Forms.DataGridView();
-            this.colEnquiryDate = new AGL.UI.Controls.CalendarColumn();
-            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCOORemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAPEnquiryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFilter = new System.Windows.Forms.Panel();
             this.chkDate = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +58,11 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlanMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEnquiryDate = new AGL.UI.Controls.CalendarColumn();
+            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCOORemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAPEnquiryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAPEnquiry)).BeginInit();
             this.pnlFilter.SuspendLayout();
             this.pnlFilt.SuspendLayout();
@@ -83,6 +85,7 @@
             this.dgvAPEnquiry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAPEnquiry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAPEnquiry.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colPlanMonth,
             this.colEnquiryDate,
             this.colEndDate,
             this.colCOORemark,
@@ -93,56 +96,20 @@
             this.dgvAPEnquiry.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(60)))));
             this.dgvAPEnquiry.Location = new System.Drawing.Point(0, 156);
             this.dgvAPEnquiry.Name = "dgvAPEnquiry";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(175)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Myanmar3", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAPEnquiry.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(175)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar3", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAPEnquiry.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAPEnquiry.RowHeadersWidth = 50;
             this.dgvAPEnquiry.RowTemplate.Height = 28;
             this.dgvAPEnquiry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAPEnquiry.Size = new System.Drawing.Size(1180, 266);
             this.dgvAPEnquiry.TabIndex = 188;
             this.dgvAPEnquiry.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvAPEnquiry_DataBindingComplete);
-            // 
-            // colEnquiryDate
-            // 
-            this.colEnquiryDate.DataPropertyName = "OpenDate";
-            this.colEnquiryDate.HeaderText = "စုံစမ်းခြင်း စတင်သည့်နေ့စွဲ";
-            this.colEnquiryDate.Name = "colEnquiryDate";
-            this.colEnquiryDate.ReadOnly = true;
-            this.colEnquiryDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEnquiryDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colEnquiryDate.Width = 150;
-            // 
-            // colEndDate
-            // 
-            this.colEndDate.DataPropertyName = "CloseDate";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colEndDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colEndDate.HeaderText = "စုံစမ်းခြင်း ပြီးဆုံးသည့်နေ့စွဲ";
-            this.colEndDate.Name = "colEndDate";
-            this.colEndDate.ReadOnly = true;
-            this.colEndDate.Width = 150;
-            // 
-            // colCOORemark
-            // 
-            this.colCOORemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCOORemark.DataPropertyName = "COORemark";
-            this.colCOORemark.HeaderText = "COO Remark";
-            this.colCOORemark.Name = "colCOORemark";
-            this.colCOORemark.ReadOnly = true;
-            // 
-            // colAPEnquiryID
-            // 
-            this.colAPEnquiryID.DataPropertyName = "ID";
-            this.colAPEnquiryID.HeaderText = "APEnquiryID";
-            this.colAPEnquiryID.Name = "colAPEnquiryID";
-            this.colAPEnquiryID.Visible = false;
             // 
             // pnlFilter
             // 
@@ -170,7 +137,7 @@
             this.chkDate.AutoSize = true;
             this.chkDate.Location = new System.Drawing.Point(25, 13);
             this.chkDate.Name = "chkDate";
-            this.chkDate.Size = new System.Drawing.Size(53, 24);
+            this.chkDate.Size = new System.Drawing.Size(51, 23);
             this.chkDate.TabIndex = 187;
             this.chkDate.Text = "နေ့စွဲ";
             this.chkDate.UseVisualStyleBackColor = true;
@@ -181,7 +148,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(230, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 20);
+            this.label2.Size = new System.Drawing.Size(22, 19);
             this.label2.TabIndex = 186;
             this.label2.Text = "ထိ";
             // 
@@ -191,7 +158,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(232, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 20);
+            this.label1.Size = new System.Drawing.Size(17, 19);
             this.label1.TabIndex = 185;
             this.label1.Text = "မှ";
             // 
@@ -202,7 +169,7 @@
             this.dtpEnquiryEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEnquiryEnd.Location = new System.Drawing.Point(94, 48);
             this.dtpEnquiryEnd.Name = "dtpEnquiryEnd";
-            this.dtpEnquiryEnd.Size = new System.Drawing.Size(130, 28);
+            this.dtpEnquiryEnd.Size = new System.Drawing.Size(130, 25);
             this.dtpEnquiryEnd.TabIndex = 184;
             // 
             // chkAPSubCat
@@ -210,7 +177,7 @@
             this.chkAPSubCat.AutoSize = true;
             this.chkAPSubCat.Location = new System.Drawing.Point(571, 53);
             this.chkAPSubCat.Name = "chkAPSubCat";
-            this.chkAPSubCat.Size = new System.Drawing.Size(147, 24);
+            this.chkAPSubCat.Size = new System.Drawing.Size(131, 23);
             this.chkAPSubCat.TabIndex = 183;
             this.chkAPSubCat.Text = "A && P အမျိုးအစားခွဲ";
             this.chkAPSubCat.UseVisualStyleBackColor = true;
@@ -221,7 +188,7 @@
             this.chkPosm.AutoSize = true;
             this.chkPosm.Location = new System.Drawing.Point(274, 53);
             this.chkPosm.Name = "chkPosm";
-            this.chkPosm.Size = new System.Drawing.Size(111, 24);
+            this.chkPosm.Size = new System.Drawing.Size(97, 23);
             this.chkPosm.TabIndex = 182;
             this.chkPosm.Text = "POSM အမည်\r\n";
             this.chkPosm.UseVisualStyleBackColor = true;
@@ -241,7 +208,7 @@
             this.dtpEnquiryStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEnquiryStart.Location = new System.Drawing.Point(94, 10);
             this.dtpEnquiryStart.Name = "dtpEnquiryStart";
-            this.dtpEnquiryStart.Size = new System.Drawing.Size(130, 28);
+            this.dtpEnquiryStart.Size = new System.Drawing.Size(130, 25);
             this.dtpEnquiryStart.TabIndex = 180;
             // 
             // cmbAPSubCat
@@ -253,7 +220,7 @@
             this.cmbAPSubCat.FormattingEnabled = true;
             this.cmbAPSubCat.Location = new System.Drawing.Point(725, 52);
             this.cmbAPSubCat.Name = "cmbAPSubCat";
-            this.cmbAPSubCat.Size = new System.Drawing.Size(150, 27);
+            this.cmbAPSubCat.Size = new System.Drawing.Size(150, 25);
             this.cmbAPSubCat.TabIndex = 13;
             this.cmbAPSubCat.ValueMember = "ID";
             this.cmbAPSubCat.Visible = false;
@@ -267,7 +234,7 @@
             this.cmbPOSM.FormattingEnabled = true;
             this.cmbPOSM.Location = new System.Drawing.Point(393, 52);
             this.cmbPOSM.Name = "cmbPOSM";
-            this.cmbPOSM.Size = new System.Drawing.Size(150, 27);
+            this.cmbPOSM.Size = new System.Drawing.Size(150, 25);
             this.cmbPOSM.TabIndex = 8;
             this.cmbPOSM.ValueMember = "ID";
             this.cmbPOSM.Visible = false;
@@ -314,7 +281,7 @@
             this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.lblFilter.Location = new System.Drawing.Point(3, 0);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(166, 20);
+            this.lblFilter.Size = new System.Drawing.Size(168, 19);
             this.lblFilter.TabIndex = 1;
             this.lblFilter.Text = "▲ Hide Advance Search";
             this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
@@ -374,7 +341,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(9, 13);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(54, 20);
+            this.lblSetup.Size = new System.Drawing.Size(46, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "A && P";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -386,7 +353,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(149)))), ((int)(((byte)(206)))));
             this.lblHeaderPCat.Location = new System.Drawing.Point(61, 13);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(142, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(122, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = "> POSM စုံစမ်းခြင်း";
             // 
@@ -423,9 +390,55 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Visible = false;
             // 
+            // colPlanMonth
+            // 
+            this.colPlanMonth.DataPropertyName = "AP_PLanMonth";
+            dataGridViewCellStyle2.Format = "MMM-yyyy";
+            this.colPlanMonth.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colPlanMonth.HeaderText = "Plan Month";
+            this.colPlanMonth.Name = "colPlanMonth";
+            this.colPlanMonth.ReadOnly = true;
+            this.colPlanMonth.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colEnquiryDate
+            // 
+            this.colEnquiryDate.DataPropertyName = "OpenDate";
+            this.colEnquiryDate.HeaderText = "စုံစမ်းခြင်း စတင်သည့်နေ့စွဲ";
+            this.colEnquiryDate.Name = "colEnquiryDate";
+            this.colEnquiryDate.ReadOnly = true;
+            this.colEnquiryDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEnquiryDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colEnquiryDate.Width = 150;
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.DataPropertyName = "CloseDate";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colEndDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colEndDate.HeaderText = "စုံစမ်းခြင်း ပြီးဆုံးသည့်နေ့စွဲ";
+            this.colEndDate.Name = "colEndDate";
+            this.colEndDate.ReadOnly = true;
+            this.colEndDate.Width = 150;
+            // 
+            // colCOORemark
+            // 
+            this.colCOORemark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCOORemark.DataPropertyName = "COORemark";
+            this.colCOORemark.HeaderText = "COO Remark";
+            this.colCOORemark.Name = "colCOORemark";
+            this.colCOORemark.ReadOnly = true;
+            // 
+            // colAPEnquiryID
+            // 
+            this.colAPEnquiryID.DataPropertyName = "ID";
+            this.colAPEnquiryID.HeaderText = "APEnquiryID";
+            this.colAPEnquiryID.Name = "colAPEnquiryID";
+            this.colAPEnquiryID.Visible = false;
+            // 
             // frmAPEnquiryList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1180, 473);
@@ -478,6 +491,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPlanMonth;
         private AGL.UI.Controls.CalendarColumn colEnquiryDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCOORemark;

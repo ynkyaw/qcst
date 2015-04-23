@@ -117,5 +117,11 @@ namespace PTIC.Marketing.BL
             return AP_EnquiryDA.UpdateByID(_newAPEnquiryDetail, conn);
         }
         #endregion
+
+
+        public DataTable Get_AviliablePlanAmountByAP_MaterialID(int ap_materialId, DateTime planDate) 
+        {
+            return AP_EnquiryDA.Get_AviliablePlanAmountByAP_MaterialID(ap_materialId, planDate);
+        }
     }
 }

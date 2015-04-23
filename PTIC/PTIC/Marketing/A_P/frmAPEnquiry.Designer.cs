@@ -53,21 +53,6 @@
             this.txtCOORemark = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pnlFilter = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.chkAPSubCat = new System.Windows.Forms.CheckBox();
-            this.chkPosm = new System.Windows.Forms.CheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dtpStockInDate = new System.Windows.Forms.DateTimePicker();
-            this.cmbAPSubCat = new System.Windows.Forms.ComboBox();
-            this.cmbPOSM = new System.Windows.Forms.ComboBox();
-            this.btnViewAll = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.pnlFilt = new System.Windows.Forms.Panel();
-            this.lblFilter = new System.Windows.Forms.Label();
             this.dtpAP_PlanDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
@@ -101,14 +86,29 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.pnlFilt = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnViewAll = new System.Windows.Forms.Button();
+            this.cmbPOSM = new System.Windows.Forms.ComboBox();
+            this.cmbAPSubCat = new System.Windows.Forms.ComboBox();
+            this.dtpStockInDate = new System.Windows.Forms.DateTimePicker();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chkPosm = new System.Windows.Forms.CheckBox();
+            this.chkAPSubCat = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pnlFilter = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.pnlFilter.SuspendLayout();
-            this.pnlFilt.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAPEnquiry)).BeginInit();
+            this.pnlFilt.SuspendLayout();
+            this.pnlFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -130,7 +130,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(9, 13);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(54, 20);
+            this.lblSetup.Size = new System.Drawing.Size(46, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "A && P";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -142,7 +142,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(149)))), ((int)(((byte)(206)))));
             this.lblHeaderPCat.Location = new System.Drawing.Point(66, 13);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(147, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(127, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">  POSM စုံစမ်းခြင်း";
             // 
@@ -237,7 +237,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(16, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 20);
+            this.label5.Size = new System.Drawing.Size(95, 19);
             this.label5.TabIndex = 177;
             this.label5.Text = "ယခုမှတ်ချက် :";
             // 
@@ -248,7 +248,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(16, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 20);
+            this.label4.Size = new System.Drawing.Size(104, 19);
             this.label4.TabIndex = 176;
             this.label4.Text = "ယခင်မှတ်ချက် :";
             // 
@@ -303,179 +303,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // pnlFilter
-            // 
-            this.pnlFilter.Controls.Add(this.checkBox1);
-            this.pnlFilter.Controls.Add(this.label2);
-            this.pnlFilter.Controls.Add(this.label1);
-            this.pnlFilter.Controls.Add(this.dateTimePicker1);
-            this.pnlFilter.Controls.Add(this.chkAPSubCat);
-            this.pnlFilter.Controls.Add(this.chkPosm);
-            this.pnlFilter.Controls.Add(this.panel3);
-            this.pnlFilter.Controls.Add(this.dtpStockInDate);
-            this.pnlFilter.Controls.Add(this.cmbAPSubCat);
-            this.pnlFilter.Controls.Add(this.cmbPOSM);
-            this.pnlFilter.Controls.Add(this.btnViewAll);
-            this.pnlFilter.Controls.Add(this.btnSearch);
-            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFilter.Location = new System.Drawing.Point(0, 69);
-            this.pnlFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(1164, 87);
-            this.pnlFilter.TabIndex = 176;
-            this.pnlFilter.Visible = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(25, 13);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(53, 24);
-            this.checkBox1.TabIndex = 187;
-            this.checkBox1.Text = "နေ့စွဲ";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 20);
-            this.label2.TabIndex = 186;
-            this.label2.Text = "ထိ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(232, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 20);
-            this.label1.TabIndex = 185;
-            this.label1.Text = "မှ";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(130, 28);
-            this.dateTimePicker1.TabIndex = 184;
-            // 
-            // chkAPSubCat
-            // 
-            this.chkAPSubCat.AutoSize = true;
-            this.chkAPSubCat.Location = new System.Drawing.Point(270, 13);
-            this.chkAPSubCat.Name = "chkAPSubCat";
-            this.chkAPSubCat.Size = new System.Drawing.Size(147, 24);
-            this.chkAPSubCat.TabIndex = 183;
-            this.chkAPSubCat.Text = "A && P အမျိုးအစားခွဲ";
-            this.chkAPSubCat.UseVisualStyleBackColor = true;
-            // 
-            // chkPosm
-            // 
-            this.chkPosm.AutoSize = true;
-            this.chkPosm.Location = new System.Drawing.Point(270, 49);
-            this.chkPosm.Name = "chkPosm";
-            this.chkPosm.Size = new System.Drawing.Size(111, 24);
-            this.chkPosm.TabIndex = 182;
-            this.chkPosm.Text = "POSM အမည်\r\n";
-            this.chkPosm.UseVisualStyleBackColor = true;
-            this.chkPosm.CheckedChanged += new System.EventHandler(this.chkPosm_CheckedChanged);
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(0, 86);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1007, 100);
-            this.panel3.TabIndex = 174;
-            // 
-            // dtpStockInDate
-            // 
-            this.dtpStockInDate.CustomFormat = "dd-MMM-yyyy";
-            this.dtpStockInDate.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStockInDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStockInDate.Location = new System.Drawing.Point(94, 10);
-            this.dtpStockInDate.Name = "dtpStockInDate";
-            this.dtpStockInDate.Size = new System.Drawing.Size(130, 28);
-            this.dtpStockInDate.TabIndex = 180;
-            // 
-            // cmbAPSubCat
-            // 
-            this.cmbAPSubCat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbAPSubCat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbAPSubCat.DisplayMember = "APSubCategoryName";
-            this.cmbAPSubCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAPSubCat.FormattingEnabled = true;
-            this.cmbAPSubCat.Location = new System.Drawing.Point(424, 12);
-            this.cmbAPSubCat.Name = "cmbAPSubCat";
-            this.cmbAPSubCat.Size = new System.Drawing.Size(150, 27);
-            this.cmbAPSubCat.TabIndex = 13;
-            this.cmbAPSubCat.ValueMember = "ID";
-            // 
-            // cmbPOSM
-            // 
-            this.cmbPOSM.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbPOSM.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbPOSM.DisplayMember = "APMaterialName";
-            this.cmbPOSM.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPOSM.FormattingEnabled = true;
-            this.cmbPOSM.Location = new System.Drawing.Point(424, 48);
-            this.cmbPOSM.Name = "cmbPOSM";
-            this.cmbPOSM.Size = new System.Drawing.Size(150, 27);
-            this.cmbPOSM.TabIndex = 8;
-            this.cmbPOSM.ValueMember = "ID";
-            // 
-            // btnViewAll
-            // 
-            this.btnViewAll.Location = new System.Drawing.Point(710, 11);
-            this.btnViewAll.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnViewAll.Name = "btnViewAll";
-            this.btnViewAll.Size = new System.Drawing.Size(113, 30);
-            this.btnViewAll.TabIndex = 3;
-            this.btnViewAll.Text = "အကုန်ကြည့်မည်";
-            this.btnViewAll.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(591, 11);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(111, 30);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "ရှာမည်";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // pnlFilt
-            // 
-            this.pnlFilt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(149)))), ((int)(((byte)(206)))));
-            this.pnlFilt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFilt.Controls.Add(this.lblFilter);
-            this.pnlFilt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFilt.Location = new System.Drawing.Point(0, 46);
-            this.pnlFilt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pnlFilt.Name = "pnlFilt";
-            this.pnlFilt.Size = new System.Drawing.Size(1164, 23);
-            this.pnlFilt.TabIndex = 175;
-            this.pnlFilt.Visible = false;
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblFilter.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.lblFilter.Location = new System.Drawing.Point(3, 0);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(166, 20);
-            this.lblFilter.TabIndex = 1;
-            this.lblFilter.Text = "▲ Hide Advance Search";
-            this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
-            // 
             // dtpAP_PlanDate
             // 
             this.dtpAP_PlanDate.CustomFormat = "MMM-yyyy";
@@ -483,7 +310,7 @@
             this.dtpAP_PlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpAP_PlanDate.Location = new System.Drawing.Point(154, 7);
             this.dtpAP_PlanDate.Name = "dtpAP_PlanDate";
-            this.dtpAP_PlanDate.Size = new System.Drawing.Size(99, 28);
+            this.dtpAP_PlanDate.Size = new System.Drawing.Size(99, 25);
             this.dtpAP_PlanDate.TabIndex = 181;
             this.dtpAP_PlanDate.ValueChanged += new System.EventHandler(this.dtpEnquiryDate_ValueChanged);
             // 
@@ -493,7 +320,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 20);
+            this.label3.Size = new System.Drawing.Size(85, 19);
             this.label3.TabIndex = 186;
             this.label3.Text = "Plan Month";
             // 
@@ -516,7 +343,7 @@
             this.chkEndDate.AutoSize = true;
             this.chkEndDate.Location = new System.Drawing.Point(354, 9);
             this.chkEndDate.Name = "chkEndDate";
-            this.chkEndDate.Size = new System.Drawing.Size(149, 24);
+            this.chkEndDate.Size = new System.Drawing.Size(136, 23);
             this.chkEndDate.TabIndex = 188;
             this.chkEndDate.Text = "စုံစမ်းပြီးဆုံးသည့်နေ့စွဲ";
             this.chkEndDate.UseVisualStyleBackColor = true;
@@ -529,7 +356,7 @@
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEndDate.Location = new System.Drawing.Point(509, 7);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(130, 28);
+            this.dtpEndDate.Size = new System.Drawing.Size(130, 25);
             this.dtpEndDate.TabIndex = 187;
             this.dtpEndDate.Visible = false;
             // 
@@ -839,9 +666,182 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFilter.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.lblFilter.Location = new System.Drawing.Point(3, 0);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(147, 19);
+            this.lblFilter.TabIndex = 1;
+            this.lblFilter.Text = "▲ Hide Advance Search";
+            this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
+            // 
+            // pnlFilt
+            // 
+            this.pnlFilt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(149)))), ((int)(((byte)(206)))));
+            this.pnlFilt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFilt.Controls.Add(this.lblFilter);
+            this.pnlFilt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFilt.Location = new System.Drawing.Point(0, 46);
+            this.pnlFilt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pnlFilt.Name = "pnlFilt";
+            this.pnlFilt.Size = new System.Drawing.Size(1164, 23);
+            this.pnlFilt.TabIndex = 175;
+            this.pnlFilt.Visible = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(591, 11);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(111, 30);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "ရှာမည်";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnViewAll
+            // 
+            this.btnViewAll.Location = new System.Drawing.Point(710, 11);
+            this.btnViewAll.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnViewAll.Name = "btnViewAll";
+            this.btnViewAll.Size = new System.Drawing.Size(113, 30);
+            this.btnViewAll.TabIndex = 3;
+            this.btnViewAll.Text = "အကုန်ကြည့်မည်";
+            this.btnViewAll.UseVisualStyleBackColor = true;
+            // 
+            // cmbPOSM
+            // 
+            this.cmbPOSM.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbPOSM.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbPOSM.DisplayMember = "APMaterialName";
+            this.cmbPOSM.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPOSM.FormattingEnabled = true;
+            this.cmbPOSM.Location = new System.Drawing.Point(424, 48);
+            this.cmbPOSM.Name = "cmbPOSM";
+            this.cmbPOSM.Size = new System.Drawing.Size(150, 25);
+            this.cmbPOSM.TabIndex = 8;
+            this.cmbPOSM.ValueMember = "ID";
+            // 
+            // cmbAPSubCat
+            // 
+            this.cmbAPSubCat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbAPSubCat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbAPSubCat.DisplayMember = "APSubCategoryName";
+            this.cmbAPSubCat.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAPSubCat.FormattingEnabled = true;
+            this.cmbAPSubCat.Location = new System.Drawing.Point(424, 12);
+            this.cmbAPSubCat.Name = "cmbAPSubCat";
+            this.cmbAPSubCat.Size = new System.Drawing.Size(150, 25);
+            this.cmbAPSubCat.TabIndex = 13;
+            this.cmbAPSubCat.ValueMember = "ID";
+            // 
+            // dtpStockInDate
+            // 
+            this.dtpStockInDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpStockInDate.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStockInDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStockInDate.Location = new System.Drawing.Point(94, 10);
+            this.dtpStockInDate.Name = "dtpStockInDate";
+            this.dtpStockInDate.Size = new System.Drawing.Size(130, 25);
+            this.dtpStockInDate.TabIndex = 180;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(0, 86);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1007, 100);
+            this.panel3.TabIndex = 174;
+            // 
+            // chkPosm
+            // 
+            this.chkPosm.AutoSize = true;
+            this.chkPosm.Location = new System.Drawing.Point(270, 49);
+            this.chkPosm.Name = "chkPosm";
+            this.chkPosm.Size = new System.Drawing.Size(97, 23);
+            this.chkPosm.TabIndex = 182;
+            this.chkPosm.Text = "POSM အမည်\r\n";
+            this.chkPosm.UseVisualStyleBackColor = true;
+            this.chkPosm.CheckedChanged += new System.EventHandler(this.chkPosm_CheckedChanged);
+            // 
+            // chkAPSubCat
+            // 
+            this.chkAPSubCat.AutoSize = true;
+            this.chkAPSubCat.Location = new System.Drawing.Point(270, 13);
+            this.chkAPSubCat.Name = "chkAPSubCat";
+            this.chkAPSubCat.Size = new System.Drawing.Size(131, 23);
+            this.chkAPSubCat.TabIndex = 183;
+            this.chkAPSubCat.Text = "A && P အမျိုးအစားခွဲ";
+            this.chkAPSubCat.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(94, 48);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(130, 25);
+            this.dateTimePicker1.TabIndex = 184;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(232, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 19);
+            this.label1.TabIndex = 185;
+            this.label1.Text = "မှ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 19);
+            this.label2.TabIndex = 186;
+            this.label2.Text = "ထိ";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(25, 13);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(51, 23);
+            this.checkBox1.TabIndex = 187;
+            this.checkBox1.Text = "နေ့စွဲ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // pnlFilter
+            // 
+            this.pnlFilter.Controls.Add(this.checkBox1);
+            this.pnlFilter.Controls.Add(this.label2);
+            this.pnlFilter.Controls.Add(this.label1);
+            this.pnlFilter.Controls.Add(this.dateTimePicker1);
+            this.pnlFilter.Controls.Add(this.chkAPSubCat);
+            this.pnlFilter.Controls.Add(this.chkPosm);
+            this.pnlFilter.Controls.Add(this.panel3);
+            this.pnlFilter.Controls.Add(this.dtpStockInDate);
+            this.pnlFilter.Controls.Add(this.cmbAPSubCat);
+            this.pnlFilter.Controls.Add(this.cmbPOSM);
+            this.pnlFilter.Controls.Add(this.btnViewAll);
+            this.pnlFilter.Controls.Add(this.btnSearch);
+            this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFilter.Location = new System.Drawing.Point(0, 69);
+            this.pnlFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pnlFilter.Name = "pnlFilter";
+            this.pnlFilter.Size = new System.Drawing.Size(1164, 87);
+            this.pnlFilter.TabIndex = 176;
+            this.pnlFilter.Visible = false;
+            // 
             // frmAPEnquiry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1164, 597);
@@ -861,14 +861,14 @@
             this.pnlFooter.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnlFilter.ResumeLayout(false);
-            this.pnlFilter.PerformLayout();
-            this.pnlFilt.ResumeLayout(false);
-            this.pnlFilt.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             this.pnlGrid.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAPEnquiry)).EndInit();
+            this.pnlFilt.ResumeLayout(false);
+            this.pnlFilt.PerformLayout();
+            this.pnlFilter.ResumeLayout(false);
+            this.pnlFilter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -882,17 +882,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Panel pnlFilter;
-        private System.Windows.Forms.CheckBox chkAPSubCat;
-        private System.Windows.Forms.CheckBox chkPosm;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DateTimePicker dtpStockInDate;
-        private System.Windows.Forms.ComboBox cmbAPSubCat;
-        private System.Windows.Forms.ComboBox cmbPOSM;
-        private System.Windows.Forms.Button btnViewAll;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Panel pnlFilt;
-        private System.Windows.Forms.Label lblFilter;
         private AGL.UI.Controls.CalendarColumn calendarColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -901,10 +890,6 @@
         private System.Windows.Forms.TextBox txtCOORemark;
         private System.Windows.Forms.Button btnNewSupplier;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpAP_PlanDate;
         private System.Windows.Forms.Panel pnlGrid;
@@ -938,6 +923,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCOORemark;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAPEnquiryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAP_EnquiryDetailID;
+        private System.Windows.Forms.Label lblFilter;
+        private System.Windows.Forms.Panel pnlFilt;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnViewAll;
+        private System.Windows.Forms.ComboBox cmbPOSM;
+        private System.Windows.Forms.ComboBox cmbAPSubCat;
+        private System.Windows.Forms.DateTimePicker dtpStockInDate;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox chkPosm;
+        private System.Windows.Forms.CheckBox chkAPSubCat;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel pnlFilter;
     }
 }
 

@@ -21,7 +21,8 @@ namespace PTIC.Marketing.DA
             DataTable dtAP_Enquiry;
             try
             {
-                dtAP_Enquiry = b.SelectAll("AP_Enquiry");
+                string query = "SELECT [ID],[OpenDate],[CloseDate],[COORemark],[DateAdded],[LastModified],[IsDeleted],SUBSTRING('Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec ', (MONTH(ap_planMonth) * 4) - 3, 3)+' , '+DateName(Year,AP_PlanMonth) AP_PlanMonth FROM [AP_Enquiry]";
+                dtAP_Enquiry = b.SelectByQuery(query);
             }
             catch (Exception ex)
             {
@@ -91,7 +92,8 @@ namespace PTIC.Marketing.DA
             DataTable dtAP_Enquiry = null;
             try
             {
-                string query = "SELECT * FROM AP_Enquiry "
+
+                string query = "SELECT [ID],[OpenDate],[CloseDate],[COORemark],[DateAdded],[LastModified],[IsDeleted],SUBSTRING('Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec ', (MONTH(ap_planMonth) * 4) - 3, 3)+' , '+DateName(Year,AP_PlanMonth) AP_PlanMonth FROM [AP_Enquiry]"
                                 + "WHERE CAST(OpenDate As Date) BETWEEN "
                                 + "CAST('{0}' As Date) AND CAST('{1}' As Date)";
 
@@ -584,6 +586,39 @@ namespace PTIC.Marketing.DA
             }
             return affectedRows;
         }
+        #endregion
+
+        #region select
+        public static DataTable Get_AviliablePlanAmountByAP_MaterialID(int ap_materialId,DateTime planDate) 
+        {
+
+            DataTable dt = new DataTable();
+            SqlConnection conn = null;
+            try
+            {
+                conn = DBManager.GetInstance().GetDbConnection();
+                string query = "SELECT * FROM vw_A_P_Plan_Enquiry_Balance WHERE [A_P_MaterialID]=@p_AP_MaterialId AND [A_P_PlanDate]=@p_PlanDate";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@p_AP_MaterialId", ap_materialId);
+                cmd.Parameters.AddWithValue("@p_PlanDate", planDate);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if(conn.State==ConnectionState.Open)
+                    conn.Close();
+           
+            }
+            return dt;
+        }
+
         #endregion
     }
 }
