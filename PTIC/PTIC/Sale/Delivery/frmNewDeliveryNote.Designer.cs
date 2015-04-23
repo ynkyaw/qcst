@@ -52,6 +52,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtTotalAmt = new System.Windows.Forms.TextBox();
             this.dgvDeliveryNote = new System.Windows.Forms.DataGridView();
+            this.btnLoadOrder = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.clnBrandName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.clnProductName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.clnOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +77,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 46);
+            this.panel1.Size = new System.Drawing.Size(1010, 46);
             this.panel1.TabIndex = 8;
             // 
             // label7
@@ -119,6 +121,8 @@
             // 
             // pnlGrid
             // 
+            this.pnlGrid.Controls.Add(this.button1);
+            this.pnlGrid.Controls.Add(this.btnLoadOrder);
             this.pnlGrid.Controls.Add(this.cmbEmp);
             this.pnlGrid.Controls.Add(this.label4);
             this.pnlGrid.Controls.Add(this.cmbRealVen);
@@ -128,7 +132,7 @@
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlGrid.Location = new System.Drawing.Point(0, 46);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(767, 49);
+            this.pnlGrid.Size = new System.Drawing.Size(1010, 58);
             this.pnlGrid.TabIndex = 182;
             // 
             // cmbEmp
@@ -138,7 +142,7 @@
             this.cmbEmp.DisplayMember = "EmpName";
             this.cmbEmp.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmp.FormattingEnabled = true;
-            this.cmbEmp.Location = new System.Drawing.Point(272, 8);
+            this.cmbEmp.Location = new System.Drawing.Point(397, 13);
             this.cmbEmp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbEmp.Name = "cmbEmp";
             this.cmbEmp.Size = new System.Drawing.Size(174, 27);
@@ -149,7 +153,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(199, 11);
+            this.label4.Location = new System.Drawing.Point(324, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 157;
@@ -162,7 +166,7 @@
             this.cmbRealVen.DisplayMember = "VenNo";
             this.cmbRealVen.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRealVen.FormattingEnabled = true;
-            this.cmbRealVen.Location = new System.Drawing.Point(581, 8);
+            this.cmbRealVen.Location = new System.Drawing.Point(705, 13);
             this.cmbRealVen.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cmbRealVen.Name = "cmbRealVen";
             this.cmbRealVen.Size = new System.Drawing.Size(174, 27);
@@ -173,7 +177,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(467, 11);
+            this.label5.Location = new System.Drawing.Point(591, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 20);
             this.label5.TabIndex = 155;
@@ -184,7 +188,7 @@
             this.dtpDeliveryDisplay.CustomFormat = "dd-MMM-yyyy";
             this.dtpDeliveryDisplay.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDeliveryDisplay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDeliveryDisplay.Location = new System.Drawing.Point(52, 9);
+            this.dtpDeliveryDisplay.Location = new System.Drawing.Point(183, 14);
             this.dtpDeliveryDisplay.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpDeliveryDisplay.Name = "dtpDeliveryDisplay";
             this.dtpDeliveryDisplay.Size = new System.Drawing.Size(117, 28);
@@ -194,7 +198,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Location = new System.Drawing.Point(143, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 20);
             this.label1.TabIndex = 151;
@@ -211,7 +215,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 486);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(767, 83);
+            this.panel2.Size = new System.Drawing.Size(1010, 83);
             this.panel2.TabIndex = 183;
             // 
             // btnPrint
@@ -303,11 +307,11 @@
             this.colShowQty});
             this.dgvDeliveryNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDeliveryNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvDeliveryNote.Location = new System.Drawing.Point(0, 95);
+            this.dgvDeliveryNote.Location = new System.Drawing.Point(0, 104);
             this.dgvDeliveryNote.Name = "dgvDeliveryNote";
             this.dgvDeliveryNote.RowHeadersWidth = 50;
             this.dgvDeliveryNote.RowTemplate.Height = 28;
-            this.dgvDeliveryNote.Size = new System.Drawing.Size(767, 391);
+            this.dgvDeliveryNote.Size = new System.Drawing.Size(1010, 382);
             this.dgvDeliveryNote.TabIndex = 184;
             this.dgvDeliveryNote.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvDeliveryNote_CellBeginEdit);
             this.dgvDeliveryNote.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeliveryNote_CellEndEdit);
@@ -316,6 +320,25 @@
             this.dgvDeliveryNote.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeliveryNote_CellValueChanged);
             this.dgvDeliveryNote.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvDeliveryNote_DataError);
             this.dgvDeliveryNote.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvDeliveryNote_EditingControlShowing);
+            // 
+            // btnLoadOrder
+            // 
+            this.btnLoadOrder.Location = new System.Drawing.Point(885, 13);
+            this.btnLoadOrder.Name = "btnLoadOrder";
+            this.btnLoadOrder.Size = new System.Drawing.Size(95, 34);
+            this.btnLoadOrder.TabIndex = 185;
+            this.btnLoadOrder.Text = "Load Order";
+            this.btnLoadOrder.UseVisualStyleBackColor = true;
+            this.btnLoadOrder.Click += new System.EventHandler(this.btnLoadOrder_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 34);
+            this.button1.TabIndex = 186;
+            this.button1.Text = "For Trip Plan";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // clnBrandName
             // 
@@ -364,6 +387,7 @@
             // 
             // clnAmount
             // 
+            this.clnAmount.DataPropertyName = "TotalQty";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle4.NullValue = "0";
             this.clnAmount.DefaultCellStyle = dataGridViewCellStyle4;
@@ -392,7 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 569);
+            this.ClientSize = new System.Drawing.Size(1010, 569);
             this.Controls.Add(this.dgvDeliveryNote);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlGrid);
@@ -433,6 +457,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtTotalAmt;
         private System.Windows.Forms.DataGridView dgvDeliveryNote;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoadOrder;
         private System.Windows.Forms.DataGridViewComboBoxColumn clnBrandName;
         private System.Windows.Forms.DataGridViewComboBoxColumn clnProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnOrder;

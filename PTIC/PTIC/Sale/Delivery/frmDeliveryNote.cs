@@ -54,6 +54,8 @@ namespace PTIC.VC.Sale.Delivery
 
         bool VenFilter = false;
 
+        DataTable deliveryListFromDeliveryPlan;
+
         public frmDeliveryNote()
         {
             InitializeComponent();
@@ -61,6 +63,7 @@ namespace PTIC.VC.Sale.Delivery
             this._indexProductColumn = dgvDeliveryNote.Columns.IndexOf(dgvDeliveryNote.Columns["clnProductName"]);
             // Disable auto generating columns
             dgvDeliveryNote.AutoGenerateColumns = false;
+            deliveryListFromDeliveryPlan =  DeliveryDA.SelectDeliveryProductList();
 
             // Create DataTable
             DataTable dtscheme = new DataTable();
@@ -830,7 +833,11 @@ namespace PTIC.VC.Sale.Delivery
 
         private void btnLoadOrder_Click(object sender, EventArgs e)
         {
-            //DataTable deliveryListFromDeliveryPlan = DeliveryDA.SelectBy();
+            if (cmbEmp.SelectedIndex != -1 && cmbEmpDisplay.SelectedIndex != -1 && cmbRealVen.SelectedIndex != -1 && cmbSalePerson.SelectedIndex != -1 && cmbVenNo.SelectedIndex != -1) 
+            {
+                MessageBox.Show("Hello");
+            }
+            //if(cbo            
         }
     }
 }

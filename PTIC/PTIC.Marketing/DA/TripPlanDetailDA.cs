@@ -483,6 +483,14 @@ namespace PTIC.Marketing.DA
                 //{
                 //    flag = true;
                 //}
+
+                cmd.CommandText = "usp_EmployeesInTripPlanDetailDelete";
+                cmd.Parameters.AddWithValue("@p_TripPlanDetailID", mdTripPlanDetail.ID);
+                cmd.Parameters["@p_TripPlanDetailID"].Direction = ParameterDirection.Input;
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+
+
                 if (EmployeesList !=null)
                 {
                     if (EmployeesList.Count > 0)

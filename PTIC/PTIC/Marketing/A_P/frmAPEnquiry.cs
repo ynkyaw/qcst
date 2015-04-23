@@ -43,7 +43,7 @@ namespace PTIC.VC.Marketing.A_P
         {
             InitializeComponent();
             txtCOOFRemark.Text = COORemark;
-            dtpEnquiryDate.Enabled = false;
+            dtpAP_PlanDate.Enabled = false;
             pnlFilter.Visible = false;
             if (CloseDate.Value != DateTime.MinValue)
             {
@@ -62,7 +62,7 @@ namespace PTIC.VC.Marketing.A_P
 
             lblFilter.Text = "▼ Show Advance Search"; //Show filter information";
             this.EnquiryDate = EnquiryDate;
-            dtpEnquiryDate.Value = (DateTime)DataTypeParser.Parse(EnquiryDate, typeof(DateTime), DateTime.Now);
+            dtpAP_PlanDate.Value = (DateTime)DataTypeParser.Parse(EnquiryDate, typeof(DateTime), DateTime.Now);
             this.APEnquiryIDByList = APEnquiryID;
             //LoadNBind();
             //DataUtil.AddInitialNewRow(dgvAPEnquiry);
@@ -161,7 +161,7 @@ namespace PTIC.VC.Marketing.A_P
             try
             {
                 //  GetEnquiryDate
-                DateTime Date = (DateTime)DataTypeParser.Parse(dtpEnquiryDate.Value, typeof(DateTime), DateTime.Now);
+                DateTime Date = (DateTime)DataTypeParser.Parse(dtpAP_PlanDate.Value, typeof(DateTime), DateTime.Now);
                 //  Current Month
                 int Month = Date.Month;
                 int Year = Date.Year;
@@ -364,9 +364,10 @@ namespace PTIC.VC.Marketing.A_P
 
                 AP_Enquiry _AP_Enquiry = new AP_Enquiry()
                 {
-                    OpenDate = (DateTime)DataTypeParser.Parse(dtpEnquiryDate.Value, typeof(DateTime), DateTime.Now),
+                    OpenDate = (DateTime)DataTypeParser.Parse(dtpAP_PlanDate.Value, typeof(DateTime), DateTime.Now),
                     CloseDate = (DateTime?)DataTypeParser.Parse(EndDate, typeof(DateTime), null),
-                    COORemrak = (String)DataTypeParser.Parse(strBuilder.ToString(), typeof(String), String.Empty)
+                    COORemrak = (String)DataTypeParser.Parse(strBuilder.ToString(), typeof(String), String.Empty),
+                    AP_PlanMoth = dtpAP_PlanDate.Value
                 };
 
                 List<AP_EnquiryDetail> insertAP_EnquiryDetail = new List<AP_EnquiryDetail>();
@@ -736,7 +737,7 @@ namespace PTIC.VC.Marketing.A_P
         {
             if (e.ColumnIndex == this.colRequiredDate.Index)
             {
-                if ((DateTime)DataTypeParser.Parse(dgvAPEnquiry.Rows[e.RowIndex].Cells[colRequiredDate.Index].Value, typeof(DateTime), DateTime.Now) < dtpEnquiryDate.Value)
+                if ((DateTime)DataTypeParser.Parse(dgvAPEnquiry.Rows[e.RowIndex].Cells[colRequiredDate.Index].Value, typeof(DateTime), DateTime.Now) < dtpAP_PlanDate.Value)
                 {
                     dgvAPEnquiry.Rows[e.RowIndex].ErrorText = "ရလိုသည့်နေ့မှားယွင်းနေပါသည်။!";
                     MessageBox.Show("ရလိုသည့်နေ့မှားယွင်းနေပါသည်။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -791,7 +792,7 @@ namespace PTIC.VC.Marketing.A_P
             LoadNBind();            
             DataUtil.AddNewRow(dgvAPEnquiry.DataSource as DataTable);
           
-            dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = dtpEnquiryDate.Value;
+            //dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = dtpEnquiryDate.Value;
             dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colAccepted.Index].ReadOnly = true;
             if (dgvAPEnquiry.CurrentCell == null)
             {

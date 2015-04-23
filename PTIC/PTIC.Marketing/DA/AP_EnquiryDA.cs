@@ -184,7 +184,7 @@ namespace PTIC.Marketing.DA
                                                 + "INNER JOIN A_P_Plan ON A_P_Plan.ID = A_P_PlanDetail.A_P_PlanID "
                                                 + "INNER JOIN AP_Material ON AP_Material.ID =A_P_MaterialID "
                                                 + "INNER JOIN AP_SubCategory ON AP_SubCategory.ID = AP_Material.APSubCategoryID "
-                                                 + "WHERE MONTH(A_P_PlanDate) BETWEEN @StartMonth AND @EndMonth AND YEAR(A_P_PlanDate) = @Year");
+                                                 + "WHERE MONTH(A_P_PlanDate) = @StartMonth AND YEAR(A_P_PlanDate) = @Year");
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@StartMonth", StartMonth);
                 cmd.Parameters.AddWithValue("@EndMonth", EndMonth);
@@ -212,7 +212,7 @@ namespace PTIC.Marketing.DA
                                                 +"INNER JOIN A_P_Plan ON A_P_Plan.ID = A_P_PlanDetail.A_P_PlanID "
                                                 +"INNER JOIN AP_Material ON AP_Material.ID =A_P_MaterialID "
                                                 +"INNER JOIN AP_SubCategory ON AP_SubCategory.ID = AP_Material.APSubCategoryID "
-                                                 + "WHERE MONTH(A_P_PlanDate) BETWEEN @StartMonth AND @EndMonth AND YEAR(A_P_PlanDate) = @Year");
+                                                 + "WHERE MONTH(A_P_PlanDate) = @StartMonth AND YEAR(A_P_PlanDate) = @Year");
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@StartMonth", StartMonth);
                 cmd.Parameters.AddWithValue("@EndMonth", EndMonth);
@@ -309,6 +309,8 @@ namespace PTIC.Marketing.DA
                 cmd.Parameters.AddWithValue("@p_COORemark", _AP_Enquiry.COORemrak);
                 cmd.Parameters["@p_COORemark"].Direction = ParameterDirection.Input;
 
+                cmd.Parameters.AddWithValue("@p_AP_PlanMonth", _AP_Enquiry.AP_PlanMoth);
+                cmd.Parameters["@p_AP_PlanMonth"].Direction = ParameterDirection.Input;
                 object insertedIDObj = cmd.ExecuteScalar();
 
                 if (insertedIDObj.GetType() == typeof(DBNull))

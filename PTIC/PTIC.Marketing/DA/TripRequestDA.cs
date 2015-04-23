@@ -34,7 +34,7 @@ namespace PTIC.Marketing.DA
             DataTable dt;
             try
             {
-                dt = b.SelectAll("TripRequest");
+                dt = b.SelectByCondition("TripRequest", new List<string>() { "IsDelete" }, new List<object>() { false},"IsDeleted=@IsDelete");
             }
             catch (Exception ex)
             {

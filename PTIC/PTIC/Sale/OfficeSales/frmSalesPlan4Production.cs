@@ -266,12 +266,12 @@ namespace PTIC.VC.Sale.OfficeSales
                 return;
 
             // Checking A_P Plan Is Exit OR Not
-            DataTable dtAPMaterialPlan = new A_P_PlanBL().GetAllAPPlanByDate(SalesPlanDate);
-            if (dtAPMaterialPlan.Rows.Count > 0)
-            {
-                MessageBox.Show("A_P_Plan တွင်စီစဥ်ထားပြီးဖြစ်ပါသည်။ ဖျက်ခွင့်မရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //DataTable dtAPMaterialPlan = new A_P_PlanBL().GetAllAPPlanByDate(SalesPlanDate);
+            //if (dtAPMaterialPlan.Rows.Count > 0)
+            //{
+            //    MessageBox.Show("A_P_Plan တွင်စီစဥ်ထားပြီးဖြစ်ပါသည်။ ဖျက်ခွင့်မရှိပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
 
             DataGridViewRow selectedRow = dgvSalesPlan4P.CurrentRow;

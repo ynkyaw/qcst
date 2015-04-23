@@ -40,6 +40,8 @@ namespace PTIC.Sale.Delivery
         /// </summary>
         private ComboBox _cmbProduct = null;
 
+        DataTable deliveryListFromDeliveryPlan;
+
         public frmNewDeliveryNote()
         {
             InitializeComponent();
@@ -65,6 +67,8 @@ namespace PTIC.Sale.Delivery
 
                 clnProductName.DisplayMember = "ProductName";
                 clnProductName.ValueMember = "ProductID";
+
+                deliveryListFromDeliveryPlan = DeliveryDA.SelectDeliveryProductList();
 
                 // Load employees
                 cmbEmp.DataSource = DataUtil.GetDataTableBy(new EmployeeBL().GetAll(), "DeptID",
@@ -405,6 +409,36 @@ namespace PTIC.Sale.Delivery
                 totalAmt += (int)DataTypeParser.Parse(dgvDeliveryNote.Rows[row.Index].Cells[clnAmount.Index].Value, typeof(int), 0);
             }
             txtTotalAmt.Text = totalAmt.ToString("N0");
+        }
+
+        private void btnLoadOrder_Click(object sender, EventArgs e)
+        {
+            if (btnLoadOrder.Text == "Load Order")
+            {
+                string query = string.Format("VenId={0} AND DeliveryDate=#{1}#", cmbRealVen.SelectedValue, dtpDeliveryDisplay.Value.Date);
+                DataRow[] dr = deliveryListFromDeliveryPlan.Select(query);
+                if (dr.Length > 0)
+                {
+                    DataTable gridData = dgvDeliveryNote.DataSource as DataTable;
+                    gridData.Rows.Clear();
+                    foreach (DataRow row in dr)
+                    {
+                        gridData.Rows.Add(0, 0, row["ProductID"], row["ProductName"], row["BrandName"], row["DeliverTotalQty"], 0, 0, row["DeliverTotalQty"], row["BrandId"]);
+                    }
+                    dgvDeliveryNote.AutoGenerateColumns = false;
+                    dgvDeliveryNote.DataSource = gridData;
+                    dgvDeliveryNote.Enabled = false;
+                    btnLoadOrder.Text = "Reset";
+                }
+            }
+            else 
+            {
+                dgvDeliveryNote.AutoGenerateColumns = false;
+                dgvDeliveryNote.DataSource = new DeliveryNoteBL().GetDeliveryNoteDetail(0);
+                dgvDeliveryNote.Enabled = true;
+                DataUtil.AddInitialNewRow(dgvDeliveryNote);
+                btnLoadOrder.Text = "Load Order";
+            }
         }
 
 
