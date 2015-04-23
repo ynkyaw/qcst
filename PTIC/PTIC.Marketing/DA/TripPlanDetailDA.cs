@@ -408,9 +408,6 @@ namespace PTIC.Marketing.DA
                 cmd.Parameters.AddWithValue("@p_TripPlanNo", mdTripPlanDetail.TripPlanNo);
                 cmd.Parameters["@p_TripPlanNo"].Direction = ParameterDirection.Input;
 
-                //cmd.Parameters.AddWithValue("@p_TripName", tripPlanDetail.TripName);
-                //cmd.Parameters["@p_TripName"].Direction = ParameterDirection.Input;
-
                 cmd.Parameters.AddWithValue("@p_TripID", mdTripPlanDetail.TripID);
                 cmd.Parameters["@p_TripID"].Direction = ParameterDirection.Input;
 
