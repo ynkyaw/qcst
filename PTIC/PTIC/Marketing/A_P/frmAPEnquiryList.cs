@@ -67,10 +67,11 @@ namespace PTIC.VC.Marketing.A_P
             }
             int APEnquiryID = (int)DataTypeParser.Parse(dgvAPEnquiry.CurrentRow.Cells[colAPEnquiryID.Index].Value,typeof(int),-1);
             DateTime EnquiryDate = (DateTime)DataTypeParser.Parse(dgvAPEnquiry.CurrentRow.Cells[colEnquiryDate.Index].Value,typeof(DateTime),DateTime.MinValue);            
+            DateTime PlanDate = (DateTime)DataTypeParser.Parse(dgvAPEnquiry.CurrentRow.Cells[colPlanMonth.Index].Value.ToString(),typeof(DateTime),DateTime.MinValue);
             DateTime CloseDate = (DateTime)DataTypeParser.Parse(dgvAPEnquiry.CurrentRow.Cells[colEndDate.Index].Value.ToString(),typeof(DateTime),DateTime.MinValue);
             
             String COORemark = (String)DataTypeParser.Parse(dgvAPEnquiry.CurrentRow.Cells[colCOORemark.Index].Value, typeof(String), null);
-            frmAPEnquiry APEnquiry = new frmAPEnquiry(EnquiryDate,CloseDate,COORemark,APEnquiryID);
+            frmAPEnquiry APEnquiry = new frmAPEnquiry(EnquiryDate,CloseDate,COORemark,APEnquiryID,PlanDate);
             UIManager.OpenForm(APEnquiry);
             LoadNBind();
         }

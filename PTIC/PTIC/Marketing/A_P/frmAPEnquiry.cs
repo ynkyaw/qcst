@@ -39,7 +39,7 @@ namespace PTIC.VC.Marketing.A_P
             dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = DateTime.Now;
         }
 
-        public frmAPEnquiry(DateTime? EnquiryDate, DateTime? CloseDate, String COORemark, int APEnquiryID)
+        public frmAPEnquiry(DateTime? EnquiryDate, DateTime? CloseDate, String COORemark, int APEnquiryID,DateTime? PlanDate)
         {
             InitializeComponent();
             txtCOOFRemark.Text = COORemark;
@@ -62,12 +62,12 @@ namespace PTIC.VC.Marketing.A_P
 
             lblFilter.Text = "▼ Show Advance Search"; //Show filter information";
             this.EnquiryDate = EnquiryDate;
-            dtpAP_PlanDate.Value = (DateTime)DataTypeParser.Parse(EnquiryDate, typeof(DateTime), DateTime.Now);
+            dtpAP_PlanDate.Value = (DateTime)DataTypeParser.Parse(PlanDate, typeof(DateTime), DateTime.Now);
             this.APEnquiryIDByList = APEnquiryID;
-            //LoadNBind();
+           // LoadNBind();
             //DataUtil.AddInitialNewRow(dgvAPEnquiry);
-            // dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = DateTime.Now;
-            //   dgvAPEnquiry.CurrentRow.Cells[colEnquiryDate.Index].Value = DateTime.Now;
+            //dgvAPEnquiry.Rows[dgvAPEnquiry.Rows.Count - 1].Cells[colEnquiryDate.Index].Value = DateTime.Now;
+            //dgvAPEnquiry.CurrentRow.Cells[colEnquiryDate.Index].Value = DateTime.Now;
         }
 
         #region Events
