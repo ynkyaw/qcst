@@ -753,7 +753,7 @@
             // 
             this.colPrevMonthBalAmt_1.DataPropertyName = "PrevMonthBalAmt_1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "No";
+            dataGridViewCellStyle4.NullValue = null;
             this.colPrevMonthBalAmt_1.DefaultCellStyle = dataGridViewCellStyle4;
             this.colPrevMonthBalAmt_1.HeaderText = "ယခင်လ Bal Amt";
             this.colPrevMonthBalAmt_1.Name = "colPrevMonthBalAmt_1";
@@ -775,7 +775,7 @@
             // 
             this.colUsedAmt_1.DataPropertyName = "UsedAmt_1";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
             this.colUsedAmt_1.DefaultCellStyle = dataGridViewCellStyle6;
             this.colUsedAmt_1.HeaderText = "Used Amt";
             this.colUsedAmt_1.Name = "colUsedAmt_1";

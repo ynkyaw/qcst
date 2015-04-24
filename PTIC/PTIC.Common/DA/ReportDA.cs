@@ -509,8 +509,85 @@ namespace PTIC.Common.DA
         /// <returns>AP plan summary DataTable</returns>
         public static DataTable SelectAP_PlanSummaryBy(DateTime startDate, DateTime endDate)
         {
-            string queryString = string.Format("EXEC usp_AP_PlanSummarySelectBy '{0}', '{1}' ", 
-                startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"));
+            //string queryString = string.Format("EXEC usp_AP_PlanSummarySelectBy '{0}', '{1}' ", 
+            //    startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"));
+
+            string []month = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+            string template = "SELECT AP_Planning.A_P_Material as A_P_MaterialID,";
+            template +="'' {7},ISNULL([{0}],0) as PrevMonthBalAmt_1,";
+            template +="ISNULL([{1}],0) as PlanAmt_1,";
+            template +="ISNULL([{0}],0)+ISNULL([{1}],0) as AvailableAmt_1,";
+            template += "ISNULL(Used_{1},0) as UsedAmt_1,";
+            template +="(ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0)) as ThisMonthBalAmt_1,";
+            template +="'' {8},(ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0)) as PrevMonthBalAmt_2,";
+            template +="ISNULL([{2}],0) as PlanAmt_2";
+            template +=",(ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0) as AvailableAmt_2";
+            template +=",ISNULL(Used_{2},0) as UsedAmt_2";
+            template +=",((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0)) as ThisMonthBalAmt_2";
+            template +=",'' {9},((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0)) as PrevMonthBalAmt_3,";
+            template +="ISNULL([{3}],0) as PlanAmt_3";
+            template +=",((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0) as AvailableAmt_3";
+            template +=",ISNULL(Used_{3},0) as UsedAmt_3";
+            template +=",(((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0)) as ThisMonthBalAmt_3";
+            template +=",'' {10},(((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0)) as PrevMonthBalAmt_3,";
+            template +="ISNULL([{4}],0) as PlanAmt_4";
+            template +=",(((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0) as AvailableAmt_4";
+            template +=",ISNULL(Used_{4},0) as UsedAmt_4";
+            template +=",((((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0)-ISNULL(Used_{4},0)) as ThisMonthBalAmt_4";
+            template +=",'' {11},((((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0)-ISNULL(Used_{4},0)) as PrevMonthBalAmt_5,";
+            template +="ISNULL([{5}],0) as PlanAmt_5";
+            template +=",((((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0)-ISNULL(Used_{4},0))+ISNULL([{5}],0) as AvailableAmt_5";
+            template +=",ISNULL(Used_{5},0) as UsedAmt_5";
+            template +=",(((((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0)-ISNULL(Used_{4},0))+ISNULL([{5}],0)-ISNULL(Used_{5},0)) as ThisMonthBalAmt_5";
+            template +=",'' {12},(((((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0)-ISNULL(Used_{4},0))+ISNULL([{5}],0)-ISNULL(Used_{5},0)) as PrevMonthBalAmt_6,";
+            template +="ISNULL([{6}],0) as PlanAmt_6";
+            template +=",(((((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0)-ISNULL(Used_{4},0))+ISNULL([{5}],0)-ISNULL(Used_{5},0))+ISNULL([{6}],0) as AvailableAmt_6";
+            template +=",ISNULL(Used_{6},0) as UsedAmt_6";
+            template +=",((((((ISNULL([{0}],0)+ISNULL([{1}],0)-ISNULL(Used_{1},0))+ISNULL([{2}],0)-ISNULL(Used_{2},0))+ISNULL([{3}],0)-ISNULL(Used_{3},0))+ISNULL([{4}],0)-ISNULL(Used_{4},0))+ISNULL([{5}],0)-ISNULL(Used_{5},0))+ISNULL([{6}],0)-ISNULL(Used_{6},0)) as ThisMonthBalAmt_6";
+            template +=" FROM (SELECT ISNULL(PrevPlan.A_P_MaterialID,CurrentPlan.A_P_MaterialID) as A_P_Material,[{0}],[{1}],[{2}],[{3}],[{4}],[{5}],[{6}] FROM (";
+            template +=" SELECT A_P_MaterialID,SUM(ThisMonthBalAmt_) [{0}] FROM (SELECT AdvPlan.A_P_PlanDate,AdvPlan.A_P_MaterialID,AdvPlan.UsageAmt,IsNull(AdvUsage.PurchaseAmt,0) as PurchasedAmt,AdvPlan.UsageAmt-IsNull(AdvUsage.PurchaseAmt,0) as ThisMonthBalAmt_ FROM (SELECT AP.A_P_PlanDate,APD.A_P_MaterialID,APD.UsageAmt";
+            template +=" FROM A_P_Plan AP INNER JOIN A_P_PlanDetail APD ";
+            template +=" ON AP.ID=APD.A_P_PlanID ) as AdvPlan LEFT JOIN";
+            template +=" (SELECT APED.AP_MaterialID,SUM(APPD.PurchasedQty*APED.UnitCost) AS PurchaseAmt,APE.AP_PlanMonth";
+            template +=" FROM AP_EnquiryDetail APED INNER JOIN AP_Enquiry APE ON APE.ID=APED.AP_EnquiryID";
+            template +=" INNER JOIN AP_PurchasedDetail APPD ON APED.ID=APPD.AP_EnquiryDetailID";
+            template +=" Group By aped.AP_MaterialID,APE.AP_PlanMonth) as AdvUsage";
+            template +=" ON AdvPlan.A_P_PlanDate=AdvUsage.AP_PlanMonth";
+            template +=" and AdvPlan.A_P_MaterialID=AdvUsage.AP_MaterialID) PrevMonthBalAmt_ThisMonthBalAmt_";
+            template +=" where A_P_PlanDate<'{1}'";
+            template +=" Group by A_P_MaterialID) PrevPlan";
+            template +=" FULL OUTER JOIN (SELECT A_P_MaterialID,SUM(ISNULL([{1}],0)) as [{1}],SUM(ISNULL([{2}],0)) as [{2}],SUM(ISNULL([{3}],0)) as [{3}],SUM(ISNULL([{4}],0)) as [{4}],SUM(ISNULL([{5}],0)) as [{5}],SUM(ISNULL([{6}],0)) as [{6}]";
+            template +=" FROM ( SELECT AP.A_P_PlanDate,APD.A_P_MaterialID,APD.UsageAmt as PlanAmount FROM A_P_Plan AP INNER JOIN A_P_PlanDetail APD ";
+            template +=" ON AP.ID=APD.A_P_PlanID WHERE AP.A_P_PlanDate>='{1}') as AdvPlan ";
+            template +=" PIVOT(SUM(PlanAmount) for A_P_PlanDate in([{1}],[{2}],[{3}],[{4}],[{5}],[{6}]))as Openning";
+            template +=" Group By A_P_MaterialID) CurrentPlan";
+            template +=" ON PrevPlan.A_P_MaterialID=CurrentPlan.A_P_MaterialID) AP_Planning";
+            template +=" LEFT JOIN  (SELECT AP_MaterialID, SUM(ISNULL([{1}],0)) as [Used_{1}], SUM(ISNULL([{2}],0)) as [Used_{2}], SUM(ISNULL([{3}],0)) as [Used_{3}],";
+            template +=" SUM(ISNULL([{4}],0)) as [Used_{4}],SUM(ISNULL([{5}],0)) as [Used_{5}],SUM(ISNULL([{6}],0)) as [Used_{6}]";
+            template +=" FROM (SELECT APED.AP_MaterialID,SUM(APPD.PurchasedQty*APED.UnitCost) AS PurchaseAmt,APE.AP_PlanMonth";
+            template +=" FROM AP_EnquiryDetail APED INNER JOIN AP_Enquiry APE ON APE.ID=APED.AP_EnquiryID";
+            template +=" INNER JOIN AP_PurchasedDetail APPD ON APED.ID=APPD.AP_EnquiryDetailID";
+            template += " Group By aped.AP_MaterialID,APE.AP_PlanMonth) as AdvUsage";
+            template +=" PIVOT(SUM(PurchaseAmt) for AP_PlanMonth in([{1}],[{2}],[{3}],[{4}],[{5}],[{6}]))as Openning";
+            template +=" Group By AP_MaterialID) AP_Using";
+            template +=" ON AP_Planning.A_P_Material=AP_Using.AP_MaterialID";
+
+            string param0 = startDate.AddMonths(-1).ToString("yyyyMMdd");
+            string param1 = startDate.AddMonths(0).ToString("yyyyMMdd");
+            string param2 = startDate.AddMonths(1).ToString("yyyyMMdd");
+            string param3 = startDate.AddMonths(2).ToString("yyyyMMdd");
+            string param4 = startDate.AddMonths(3).ToString("yyyyMMdd");
+            string param5 = startDate.AddMonths(4).ToString("yyyyMMdd");
+            string param6 = startDate.AddMonths(5).ToString("yyyyMMdd");
+            string param7 = month[startDate.Month - 1];
+            string param8 = month[startDate.Month];
+            string param9 = month[startDate.Month + 1];
+            string param10 = month[startDate.Month + 2];
+            string param11 = month[startDate.Month + 3];
+            string param12 = month[startDate.Month + 4];
+
+            string queryString = string.Format(template,param0,param1,param2,param3,param4,param5,param6,param7,param8,param9,param10,param11,param12);
+
             return _dataAccess.SelectByQuery(queryString);
         }
         #endregion                       
