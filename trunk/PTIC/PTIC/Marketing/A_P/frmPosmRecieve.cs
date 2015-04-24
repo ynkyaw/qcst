@@ -26,6 +26,7 @@ namespace PTIC.VC.Marketing.A_P
             pnlFilter.Visible = false;
             lblFilter.Text = "▼ Show Advance Search"; //Show filter information";
             LoadNBind();
+            cmbGiverDept.SelectedValue = (int)DataTypeParser.Parse(8, typeof(int), -1);
         }
 
         public frmPosmRecieve(int? AP_RequestID,int IssueDeptID,int IssueEmployeeID)
@@ -50,6 +51,7 @@ namespace PTIC.VC.Marketing.A_P
                 textBox1.Text = (string)DataTypeParser.Parse(dtAP_RIByRequestID.Rows[0]["RequestNo"], typeof(string), String.Empty);
             }
             dgvPosmRecieve.DataSource = dtAP_RIByRequestID;
+
         }
 
         #endregion
