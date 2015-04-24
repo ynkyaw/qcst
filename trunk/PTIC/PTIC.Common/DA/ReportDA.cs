@@ -579,12 +579,12 @@ namespace PTIC.Common.DA
             string param4 = startDate.AddMonths(3).ToString("yyyyMMdd");
             string param5 = startDate.AddMonths(4).ToString("yyyyMMdd");
             string param6 = startDate.AddMonths(5).ToString("yyyyMMdd");
-            string param7 = month[startDate.Month - 1];
-            string param8 = month[startDate.Month];
-            string param9 = month[startDate.Month + 1];
-            string param10 = month[startDate.Month + 2];
-            string param11 = month[startDate.Month + 3];
-            string param12 = month[startDate.Month + 4];
+            string param7 = month[startDate.Month - 1];            
+            string param8 = month[(startDate.Month)%12];
+            string param9 = month[(startDate.Month + 1)%12];
+            string param10 = month[(startDate.Month + 2)%12];
+            string param11 = month[(startDate.Month + 3)%12];
+            string param12 = month[(startDate.Month + 4)%12];
 
             string queryString = string.Format(template,param0,param1,param2,param3,param4,param5,param6,param7,param8,param9,param10,param11,param12);
 
