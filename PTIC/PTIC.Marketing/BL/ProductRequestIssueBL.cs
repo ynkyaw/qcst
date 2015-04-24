@@ -20,6 +20,11 @@ namespace PTIC.Marketing.BL
             return ProductRequestIssueDA.Insert(_ProductRequestIssue, _ProductRequestIssueDetail);
         }
 
+        public int Delete(ProductRequestIssue _ProductRequestIssue, List<ProductRequestIssueDetail> _ProductRequestIssueDetail)
+        {
+            return ProductRequestIssueDA.Delete(_ProductRequestIssue, _ProductRequestIssueDetail);
+        }
+
         public int Edit(ProductRequestIssue _ProductRequestIssue, List<ProductRequestIssueDetail> _ProductRequestIssueDetail)
         {
             return ProductRequestIssueDA.Update(_ProductRequestIssue, _ProductRequestIssueDetail);

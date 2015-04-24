@@ -69,53 +69,58 @@ namespace PTIC.Marketing.DA
             int insertedProductRequestIssueID = 0;
             try
             {
-                transaction = conn.BeginTransaction();
                 cmd = new SqlCommand();
+                transaction = conn.BeginTransaction();
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Transaction = transaction;
+                if (_ProductRequestIssue.ID == 0)
+                {
+                    
+                    
 
-                // insert a new ProductRequestIssue
-                cmd.CommandText = "usp_ProductRequestIssueInsert";
+                    // insert a new ProductRequestIssue
+                    cmd.CommandText = "usp_ProductRequestIssueInsert";
 
-                cmd.Parameters.AddWithValue("@p_RequestDate", _ProductRequestIssue.RequestDate);
-                cmd.Parameters["@p_RequestDate"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@p_RequestDate", _ProductRequestIssue.RequestDate);
+                    cmd.Parameters["@p_RequestDate"].Direction = ParameterDirection.Input;
 
-                if(_ProductRequestIssue.IssueDate.Date==new DateTime(1,1,1).Date)
-                    cmd.Parameters.AddWithValue("@p_IssueDate", DBNull.Value);
-                else
-                    cmd.Parameters.AddWithValue("@p_IssueDate", _ProductRequestIssue.IssueDate);
-                cmd.Parameters["@p_IssueDate"].Direction = ParameterDirection.Input;
+                    if (_ProductRequestIssue.IssueDate.Date == new DateTime(1, 1, 1).Date)
+                        cmd.Parameters.AddWithValue("@p_IssueDate", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@p_IssueDate", _ProductRequestIssue.IssueDate);
+                    cmd.Parameters["@p_IssueDate"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_RequesterID", _ProductRequestIssue.RequesterID);
-                cmd.Parameters["@p_RequesterID"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@p_RequesterID", _ProductRequestIssue.RequesterID);
+                    cmd.Parameters["@p_RequesterID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_IssuerID", _ProductRequestIssue.IssuerID);
-                cmd.Parameters["@p_IssuerID"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@p_IssuerID", _ProductRequestIssue.IssuerID);
+                    cmd.Parameters["@p_IssuerID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_RequestDeptID", _ProductRequestIssue.RequestDeptID);
-                cmd.Parameters["@p_RequestDeptID"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@p_RequestDeptID", _ProductRequestIssue.RequestDeptID);
+                    cmd.Parameters["@p_RequestDeptID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_RequestVenID", _ProductRequestIssue.RequestVenID);
-                cmd.Parameters["@p_RequestVenID"].Direction = ParameterDirection.Input;              
+                    cmd.Parameters.AddWithValue("@p_RequestVenID", _ProductRequestIssue.RequestVenID);
+                    cmd.Parameters["@p_RequestVenID"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@p_IssueDeptID", _ProductRequestIssue.IssueDeptID);
-                cmd.Parameters["@p_IssueDeptID"].Direction = ParameterDirection.Input;              
+                    cmd.Parameters.AddWithValue("@p_IssueDeptID", _ProductRequestIssue.IssueDeptID);
+                    cmd.Parameters["@p_IssueDeptID"].Direction = ParameterDirection.Input;
 
-                object insertedIDObj = cmd.ExecuteScalar();
+                    object insertedIDObj = cmd.ExecuteScalar();
 
-                if (insertedIDObj.GetType() == typeof(DBNull))
-                    return 0;
+                    if (insertedIDObj.GetType() == typeof(DBNull))
+                        return 0;
 
-                insertedProductRequestIssueID = (int)insertedIDObj;
-                // clear parameters of ProductRequestIssue
-                cmd.Parameters.Clear();
-
+                    insertedProductRequestIssueID = (int)insertedIDObj;
+                    // clear parameters of ProductRequestIssue
+                    _ProductRequestIssue.ID = insertedProductRequestIssueID;
+                    cmd.Parameters.Clear();
+                }
                 // insert new ProductRequestIssueDetail
                 cmd.CommandText = "usp_ProductRequestIssueDetailInsert";
                 foreach (ProductRequestIssueDetail newProductRequestIssueDetail in _ProductRequestIssueDetail)
                 {
-                    cmd.Parameters.AddWithValue("@p_ProductRequestIssueID", insertedProductRequestIssueID);
+                    cmd.Parameters.AddWithValue("@p_ProductRequestIssueID", _ProductRequestIssue.ID);
                     cmd.Parameters["@p_ProductRequestIssueID"].Direction = ParameterDirection.Input;
 
                     cmd.Parameters.AddWithValue("@p_ProductID", newProductRequestIssueDetail.ProductID);
@@ -156,7 +161,7 @@ namespace PTIC.Marketing.DA
                 transaction.Dispose();
                 cmd.Dispose();
             }
-            return insertedProductRequestIssueID;
+            return _ProductRequestIssue.ID;
         }
 
 
@@ -228,5 +233,50 @@ namespace PTIC.Marketing.DA
             return affectedRows;
         }
 
+
+        public static int Delete(ProductRequestIssue _ProductRequestIssue, List<ProductRequestIssueDetail> _ProductRequestIssueDetail)
+        {
+            SqlConnection conn = DBManager.GetInstance().GetDbConnection();
+            SqlTransaction transaction = null;
+            SqlCommand cmd = null;
+
+            int affectedRows = 0;
+            int insertedProductRequestIssueID = 0;
+            try
+            {
+                cmd = new SqlCommand();
+                transaction = conn.BeginTransaction();
+                cmd.Connection = conn;
+                //cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Transaction = transaction;
+
+                cmd.CommandText = "DELETE FROM ProductRequestIssueDetail WHERE ID=@ID";
+                foreach (ProductRequestIssueDetail newProductRequestIssueDetail in _ProductRequestIssueDetail)
+                {
+                    cmd.Parameters.AddWithValue("@ID", newProductRequestIssueDetail.ID);
+                    //cmd.Parameters["@p_ProductRequestIssueID"].Direction = ParameterDirection.Input;
+                    
+                    affectedRows += cmd.ExecuteNonQuery();
+                    // clear parameters of each AP_RequestDetail
+                    cmd.Parameters.Clear();
+                }
+                // commit transaction
+                transaction.Commit();
+            }
+            catch (SqlException sqle)
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    transaction.Rollback();
+                    affectedRows = 0;
+                }
+            }
+            finally
+            {
+                transaction.Dispose();
+                cmd.Dispose();
+            }
+            return affectedRows;
+        }
     }
 }

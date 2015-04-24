@@ -43,6 +43,8 @@ namespace PTIC.Marketing.TripPlan_Request
         // ComboBox
         ComboBox cmb = null;
 
+        private ProductRequestIssue _ProductRequestIssue = null;
+
         public frmProductRequestIssue()
         {
             InitializeComponent();
@@ -65,8 +67,9 @@ namespace PTIC.Marketing.TripPlan_Request
             else
             {
                 _ProductRequestIssue = new ProductRequestIssueBL().GetProductRequestIssueById(_ProductRequestIssue.ID);
-                btnDelete.Enabled = btnNew.Enabled = btnRequest.Enabled = false;
-                button1.Enabled = true;
+                this._ProductRequestIssue = _ProductRequestIssue;
+                btnDelete.Enabled = btnNew.Enabled = btnRequest.Enabled = true;
+                //button1.Enabled = true;
                 
             }
         
@@ -154,7 +157,7 @@ namespace PTIC.Marketing.TripPlan_Request
                 DataTable dt = dgvProductReqIssue.DataSource as DataTable;
 
                 #region Entites ProductRequestIssue
-
+                
                 ProductRequestIssue _ProductRequestIssue = new ProductRequestIssue();
                 _ProductRequestIssue.RequestDate = (DateTime)DataTypeParser.Parse(dtpRequestDate.Value, typeof(DateTime), DateTime.Now);
                 if (rdoDept.Checked)
@@ -171,7 +174,8 @@ namespace PTIC.Marketing.TripPlan_Request
                 
                 _ProductRequestIssue.IssueDate = (DateTime)DataTypeParser.Parse(DateTime.MinValue, typeof(DateTime), DateTime.MinValue);
 
-
+                if (this._ProductRequestIssue != null)
+                    _ProductRequestIssue.ID = this._ProductRequestIssue.ID;
                 List<ProductRequestIssueDetail> insertProductRequestIssueDetail = new List<ProductRequestIssueDetail>();
                 List<ProductRequestIssueDetail> updateProductRequestIssueDetail = new List<ProductRequestIssueDetail>();
                 List<ProductRequestIssueDetail> deleteProductRequestIssueDetail = new List<ProductRequestIssueDetail>();
@@ -196,15 +200,45 @@ namespace PTIC.Marketing.TripPlan_Request
                     }
                 }
 
+                DataView dvDelete = new DataView(dt, string.Empty, string.Empty, DataViewRowState.Deleted);
+
+                foreach (DataRow row in dvDelete.ToTable().Rows)
+                {
+                    ProductRequestIssueDetail _ProductRequestIssueDetail = new ProductRequestIssueDetail()
+                    {
+                        ID = (int)DataTypeParser.Parse(row[colDtlId.Index].ToString(), typeof(int), -1),
+                        ProductRequestIssueID = (int)DataTypeParser.Parse(row["ProductRequestIssueID"].ToString(), typeof(int), -1),
+                        ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
+                        Weight = (int)DataTypeParser.Parse(row["Weight"].ToString(), typeof(int), 0),
+                        RequestQty = (int)DataTypeParser.Parse(row["RequestQty"].ToString(), typeof(int), 0),
+                        IssueQty = (int)DataTypeParser.Parse(row["IssueQty"].ToString(), typeof(int), 0),
+                        Purpose = (int)DataTypeParser.Parse(row["Purpose"], typeof(int), -1),
+                        Remark = (String)DataTypeParser.Parse(row["Remark"].ToString(), typeof(String), String.Empty)
+                    };
+                    if (_ProductRequestIssueDetail.ProductID != -1 && _ProductRequestIssueDetail.Purpose != -1 && _ProductRequestIssueDetail.RequestQty != 0)
+                    {
+                        deleteProductRequestIssueDetail.Add(_ProductRequestIssueDetail);
+                    }
+                }
+
                 
                 #endregion
                 int insertedRequestID = 0;
-                if (ProductRequestIssueID == -1 && insertProductRequestIssueDetail.Count > 0)
+                if (insertProductRequestIssueDetail.Count > 0)
                 {
                     insertedRequestID += new ProductRequestIssueBL().Add(_ProductRequestIssue, insertProductRequestIssueDetail);
                 }
+                if (deleteProductRequestIssueDetail.Count > 0) 
+                {
+                    int affectedRow = 0;
+                    affectedRow = new ProductRequestIssueBL().Delete(_ProductRequestIssue, deleteProductRequestIssueDetail);
+                    if (affectedRow < 1)
+                    {
+                        _ProductRequestIssue.ID = 0;
+                    }
+                }
 
-                if (insertedRequestID > 0)
+                if (insertedRequestID > 0||_ProductRequestIssue.ID>0)
                 {
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
                     ProductRequestIssueID = insertedRequestID;
@@ -386,6 +420,30 @@ namespace PTIC.Marketing.TripPlan_Request
         private void frmProductRequestIssue_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvProductReqIssue.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Please Select (One) row To Delete!");
+                return;
+            }
+            else 
+            {
+                int index = dgvProductReqIssue.SelectedRows[0].Index;
+                if (dgvProductReqIssue.Rows.Count == 1)
+                {
+                    MessageBox.Show("This is the last rows can't be delete!");
+                    return;
+                }
+                else
+                {
+                    dgvProductReqIssue.Rows.RemoveAt(index);
+                }
+                
+
+            }
         }
 
         
