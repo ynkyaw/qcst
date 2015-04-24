@@ -92,11 +92,11 @@
             this.colPosmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAPSubCatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtRequester = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtAccepter = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtRequester = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pnlFilter.SuspendLayout();
             this.pnlFilt.SuspendLayout();
             this.pnlFooter.SuspendLayout();
@@ -730,14 +730,25 @@
             this.panel1.Size = new System.Drawing.Size(929, 210);
             this.panel1.TabIndex = 193;
             // 
-            // panel4
+            // txtAccepter
             // 
-            this.panel4.Controls.Add(this.dgvAPEnquiryApprovedList);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 156);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(929, 335);
-            this.panel4.TabIndex = 194;
+            this.txtAccepter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAccepter.Location = new System.Drawing.Point(732, 156);
+            this.txtAccepter.Name = "txtAccepter";
+            this.txtAccepter.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtAccepter.Size = new System.Drawing.Size(180, 28);
+            this.txtAccepter.TabIndex = 187;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(662, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.TabIndex = 186;
+            this.label6.Text = "ခွင့်ပြုသူ :";
             // 
             // txtRequester
             // 
@@ -759,25 +770,14 @@
             this.label5.TabIndex = 184;
             this.label5.Text = "တောင်းခံသူ :";
             // 
-            // txtAccepter
+            // panel4
             // 
-            this.txtAccepter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAccepter.Location = new System.Drawing.Point(732, 156);
-            this.txtAccepter.Name = "txtAccepter";
-            this.txtAccepter.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtAccepter.Size = new System.Drawing.Size(180, 28);
-            this.txtAccepter.TabIndex = 187;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(662, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
-            this.label6.TabIndex = 186;
-            this.label6.Text = "ခွင့်ပြုသူ :";
+            this.panel4.Controls.Add(this.dgvAPEnquiryApprovedList);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 156);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(929, 335);
+            this.panel4.TabIndex = 194;
             // 
             // frmEnquiryAcceptedList
             // 
