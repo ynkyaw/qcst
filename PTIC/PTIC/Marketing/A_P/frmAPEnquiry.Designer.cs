@@ -130,7 +130,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(9, 13);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(46, 19);
+            this.lblSetup.Size = new System.Drawing.Size(54, 20);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "A && P";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -142,7 +142,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(149)))), ((int)(((byte)(206)))));
             this.lblHeaderPCat.Location = new System.Drawing.Point(66, 13);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(127, 19);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(147, 20);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">  POSM စုံစမ်းခြင်း";
             // 
@@ -237,7 +237,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(16, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 19);
+            this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 177;
             this.label5.Text = "ယခုမှတ်ချက် :";
             // 
@@ -248,7 +248,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(16, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 19);
+            this.label4.Size = new System.Drawing.Size(110, 20);
             this.label4.TabIndex = 176;
             this.label4.Text = "ယခင်မှတ်ချက် :";
             // 
@@ -310,7 +310,7 @@
             this.dtpAP_PlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpAP_PlanDate.Location = new System.Drawing.Point(154, 7);
             this.dtpAP_PlanDate.Name = "dtpAP_PlanDate";
-            this.dtpAP_PlanDate.Size = new System.Drawing.Size(99, 25);
+            this.dtpAP_PlanDate.Size = new System.Drawing.Size(99, 28);
             this.dtpAP_PlanDate.TabIndex = 181;
             this.dtpAP_PlanDate.ValueChanged += new System.EventHandler(this.dtpEnquiryDate_ValueChanged);
             // 
@@ -320,7 +320,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 19);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 186;
             this.label3.Text = "Plan Month";
             // 
@@ -343,7 +343,7 @@
             this.chkEndDate.AutoSize = true;
             this.chkEndDate.Location = new System.Drawing.Point(354, 9);
             this.chkEndDate.Name = "chkEndDate";
-            this.chkEndDate.Size = new System.Drawing.Size(136, 23);
+            this.chkEndDate.Size = new System.Drawing.Size(149, 24);
             this.chkEndDate.TabIndex = 188;
             this.chkEndDate.Text = "စုံစမ်းပြီးဆုံးသည့်နေ့စွဲ";
             this.chkEndDate.UseVisualStyleBackColor = true;
@@ -356,7 +356,7 @@
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEndDate.Location = new System.Drawing.Point(509, 7);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(130, 25);
+            this.dtpEndDate.Size = new System.Drawing.Size(130, 28);
             this.dtpEndDate.TabIndex = 187;
             this.dtpEndDate.Visible = false;
             // 
@@ -674,7 +674,7 @@
             this.lblFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.lblFilter.Location = new System.Drawing.Point(3, 0);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(147, 19);
+            this.lblFilter.Size = new System.Drawing.Size(166, 20);
             this.lblFilter.TabIndex = 1;
             this.lblFilter.Text = "▲ Hide Advance Search";
             this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
@@ -722,7 +722,7 @@
             this.cmbPOSM.FormattingEnabled = true;
             this.cmbPOSM.Location = new System.Drawing.Point(424, 48);
             this.cmbPOSM.Name = "cmbPOSM";
-            this.cmbPOSM.Size = new System.Drawing.Size(150, 25);
+            this.cmbPOSM.Size = new System.Drawing.Size(150, 27);
             this.cmbPOSM.TabIndex = 8;
             this.cmbPOSM.ValueMember = "ID";
             // 
@@ -735,7 +735,7 @@
             this.cmbAPSubCat.FormattingEnabled = true;
             this.cmbAPSubCat.Location = new System.Drawing.Point(424, 12);
             this.cmbAPSubCat.Name = "cmbAPSubCat";
-            this.cmbAPSubCat.Size = new System.Drawing.Size(150, 25);
+            this.cmbAPSubCat.Size = new System.Drawing.Size(150, 27);
             this.cmbAPSubCat.TabIndex = 13;
             this.cmbAPSubCat.ValueMember = "ID";
             // 
@@ -746,7 +746,7 @@
             this.dtpStockInDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStockInDate.Location = new System.Drawing.Point(94, 10);
             this.dtpStockInDate.Name = "dtpStockInDate";
-            this.dtpStockInDate.Size = new System.Drawing.Size(130, 25);
+            this.dtpStockInDate.Size = new System.Drawing.Size(130, 28);
             this.dtpStockInDate.TabIndex = 180;
             // 
             // panel3
@@ -761,7 +761,7 @@
             this.chkPosm.AutoSize = true;
             this.chkPosm.Location = new System.Drawing.Point(270, 49);
             this.chkPosm.Name = "chkPosm";
-            this.chkPosm.Size = new System.Drawing.Size(97, 23);
+            this.chkPosm.Size = new System.Drawing.Size(111, 24);
             this.chkPosm.TabIndex = 182;
             this.chkPosm.Text = "POSM အမည်\r\n";
             this.chkPosm.UseVisualStyleBackColor = true;
@@ -772,7 +772,7 @@
             this.chkAPSubCat.AutoSize = true;
             this.chkAPSubCat.Location = new System.Drawing.Point(270, 13);
             this.chkAPSubCat.Name = "chkAPSubCat";
-            this.chkAPSubCat.Size = new System.Drawing.Size(131, 23);
+            this.chkAPSubCat.Size = new System.Drawing.Size(147, 24);
             this.chkAPSubCat.TabIndex = 183;
             this.chkAPSubCat.Text = "A && P အမျိုးအစားခွဲ";
             this.chkAPSubCat.UseVisualStyleBackColor = true;
@@ -784,7 +784,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(94, 48);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(130, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(130, 28);
             this.dateTimePicker1.TabIndex = 184;
             // 
             // label1
@@ -793,7 +793,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(232, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 19);
+            this.label1.Size = new System.Drawing.Size(18, 20);
             this.label1.TabIndex = 185;
             this.label1.Text = "မှ";
             // 
@@ -803,7 +803,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(230, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 19);
+            this.label2.Size = new System.Drawing.Size(23, 20);
             this.label2.TabIndex = 186;
             this.label2.Text = "ထိ";
             // 
@@ -812,7 +812,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(25, 13);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(51, 23);
+            this.checkBox1.Size = new System.Drawing.Size(53, 24);
             this.checkBox1.TabIndex = 187;
             this.checkBox1.Text = "နေ့စွဲ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -841,7 +841,7 @@
             // 
             // frmAPEnquiry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1164, 597);
