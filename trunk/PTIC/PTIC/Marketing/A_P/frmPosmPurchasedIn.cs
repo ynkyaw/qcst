@@ -79,9 +79,20 @@ namespace PTIC.VC.Marketing.A_P
                 }
                 else
                 {
+                    dtAP_PurchasedInDetail.Clear();
                     dgvPosmPurchasedIn.DataSource = dtAP_PurchasedInDetail;
                     DataUtil.AddInitialNewRow(dgvPosmPurchasedIn);
                     dgvPosmPurchasedIn.CurrentRow.ReadOnly = true;
+                    //dgvPosmPurchasedIn.CurrentRow.Cells[colPurchasedDate.Index].ReadOnly = false;
+                    dgvPosmPurchasedIn.CurrentRow.Cells[colPosm.Index].Value = this._apEnquiryDetail.AP_MaterialID;
+                    dgvPosmPurchasedIn.CurrentRow.Cells[colAPSubCategory.Index].Value = this.APSubCategoryID;
+                    dgvPosmPurchasedIn.CurrentRow.Cells[colUnitCost.Index].Value = _apEnquiryDetail.UnitCost;
+                    dgvPosmPurchasedIn.CurrentRow.Cells[colAP_EnquiryDetailID.Index].Value = _apEnquiryDetail.ID;
+                    dgvPosmPurchasedIn.CurrentRow.Cells[colQuantity.Index].Value = this.BalanceQty;
+                    dgvPosmPurchasedIn.CurrentRow.Cells[colPurchasedDate.Index].Value = DateTime.Now;
+                    dgvPosmPurchasedIn.Rows[dgvPosmPurchasedIn.Rows.Count - 1].ReadOnly = true;
+                    dgvPosmPurchasedIn.CurrentRow.Cells[colPresentQty.Index].ReadOnly = false;
+                    //dgvPosmPurchasedIn.CurrentRow.ReadOnly = true;
                 }
             }
             catch (SqlException ex)
