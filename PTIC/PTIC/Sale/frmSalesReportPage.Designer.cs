@@ -38,6 +38,7 @@
             this.btnSalesByRegion = new System.Windows.Forms.Button();
             this.btnMonthlyDeliverySummary = new System.Windows.Forms.Button();
             this.btnYearlySalesSummary = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             this.lblSetup.Location = new System.Drawing.Point(11, 13);
             this.lblSetup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(57, 20);
+            this.lblSetup.Size = new System.Drawing.Size(63, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "Report";
             // 
@@ -145,11 +146,22 @@
             this.btnYearlySalesSummary.UseVisualStyleBackColor = true;
             this.btnYearlySalesSummary.Click += new System.EventHandler(this.btnYearlySalesSummary_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(43, 255);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 57);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Monthly Company Sales ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmSalesReportPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 503);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnYearlySalesSummary);
             this.Controls.Add(this.btnMonthlyDeliverySummary);
             this.Controls.Add(this.btnSalesByRegion);
@@ -181,5 +193,6 @@
         private System.Windows.Forms.Button btnSalesByRegion;
         private System.Windows.Forms.Button btnMonthlyDeliverySummary;
         private System.Windows.Forms.Button btnYearlySalesSummary;
+        private System.Windows.Forms.Button button1;
     }
 }

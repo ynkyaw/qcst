@@ -32,7 +32,7 @@ namespace PTIC.Marketing.DA
                     obj.RequestDeptID = (int)(dt.Rows[0]["RequestDeptID"] == DBNull.Value ? 0 : dt.Rows[0]["RequestDeptID"]);
                     obj.IssueDeptID = (int)(dt.Rows[0]["IssueDeptID"] == DBNull.Value ? 0 : dt.Rows[0]["IssueDeptID"]);
                     obj.RequestVenID = (int)(dt.Rows[0]["RequestVenID"] == DBNull.Value ? 0 : dt.Rows[0]["RequestVenID"]);
-
+                    obj.IsIssued = (bool)(dt.Rows[0]["IsIssued"]);
                 }
             }
             catch (Exception ex)
@@ -41,7 +41,6 @@ namespace PTIC.Marketing.DA
             }
             return obj;
         }
-
 
 
         public static DataTable SelectByProductReqIssueID(int ProductRequestIssueID)
@@ -53,10 +52,69 @@ namespace PTIC.Marketing.DA
                 dt = b.SelectByQuery(String.Format(query, ProductRequestIssueID));
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
+
+        public static DataTable GetTripForIssue()
+        {
+            DataTable dt;
+            try
+            {
+                string query = "SELECT TPD.ID,TPD.TripPlanNo FROM TripPlanDetail TPD inner join TripRequest TR ON   TPD.ID=TR.TripPlanDetailID INNER JOIN ProductRequestIssue PRI ON TR.ProductRequestIssueID=PRI.ID WHERE PRI.IsIssued=0 and tr.IsDeleted=0";
+                dt = b.SelectByQuery(query);
+            }
+            catch (Exception ex)
             {                
                 throw ex;
             }
             return dt;
+        }
+
+        public static DataTable GetTripDetailsForProductIssue()
+        {
+            DataTable dt;
+            try
+            {
+                string query = "SELECT TPD.ID,E.EmpName,T.TripName,TPD.FromDate,TPD.ToDate FROM TripPlanDetail TPD INNER JOIN Employee E ON TPD.ManagerID=E.ID INNER JOIN Trip T ON TPD.TripID=T.ID";
+                dt = b.SelectByQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
+
+        public static DataTable GetTripForIssueDetails()
+        {
+            DataTable dt;
+            try
+            {
+                string query = "SELECT PRID.ProductID,P.ProductName,B.BrandName,PRID.RequestQty,pc.BrandID,TPD.ID,tr.ProductRequestIssueID  ";
+                query += " FROM TripPlanDetail TPD inner join TripRequest TR ON   TPD.ID=TR.TripPlanDetailID ";
+                query += "INNER JOIN ProductRequestIssue PRI ON TR.ProductRequestIssueID=PRI.ID INNER JOIN ";
+                query += "ProductRequestIssueDetail PRID ON PRID.ProductRequestIssueID= PRI.ID INNER JOIN ";
+                query += "Product P ON PRID.ProductID=P.ID INNER JOIN ProdSubCategory PSC ";
+                query += "ON P.SubCategoryID =PSC.ID INNER JOIN ProdCategory PC ON PSC.CategoryID=PC.ID "; 
+                query += " INNER JOIN Brand B ON B.ID=PC.BrandID WHERE PRI.IsIssued=0";
+                dt = b.SelectByQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dt;
+        }
+
+
+        public static int SetIsuueforProductRequest(int id) 
+        {
+            return b.ExecuteNonQuery("UPDATE ProductRequestIssue SET ISISSUED=1 WHERE ID="+id);
         }
 
         public static int Insert(ProductRequestIssue _ProductRequestIssue, List<ProductRequestIssueDetail> _ProductRequestIssueDetail)

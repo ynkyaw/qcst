@@ -19,6 +19,7 @@ namespace PTIC.VC.Marketing.Entities
         public DateTime DateAdded { get; set; }
         public DateTime LastModified { get; set; }
         public bool IsDeleted { get; set; }
+        public bool IsIssued { get; set; }
         #endregion
     }
 }

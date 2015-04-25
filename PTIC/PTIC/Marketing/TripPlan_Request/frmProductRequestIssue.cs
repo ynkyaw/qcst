@@ -58,18 +58,10 @@ namespace PTIC.Marketing.TripPlan_Request
             this.ProductRequestIssueID = _ProductRequestIssue.ID;
             cmbDeptVen.SelectedValue = _ProductRequestIssue.RequestVenID;
             cmbEmployee.SelectedValue = _ProductRequestIssue.RequesterID;
-            if (this.ProductRequestIssueID == -1)
-            {
-                //colRequestQty.ReadOnly = false;
-                btnDelete.Enabled = btnNew.Enabled = btnRequest.Enabled = true;
-                button1.Enabled = false;
-            }
-            else
+            if (this.ProductRequestIssueID != -1)
             {
                 _ProductRequestIssue = new ProductRequestIssueBL().GetProductRequestIssueById(_ProductRequestIssue.ID);
                 this._ProductRequestIssue = _ProductRequestIssue;
-                btnDelete.Enabled = btnNew.Enabled = btnRequest.Enabled = true;
-                //button1.Enabled = true;
                 
             }
         
@@ -77,13 +69,21 @@ namespace PTIC.Marketing.TripPlan_Request
             this.dtProductRequestIssue = new ProductRequestIssueBL().GetAllByProductReqIssueID(this.ProductRequestIssueID);
             dgvProductReqIssue.DataSource = dtProductRequestIssue;
             DataUtil.AddInitialNewRow(dgvProductReqIssue);
-            if (_ProductRequestIssue.RequestVenID == -1) 
+            if (_ProductRequestIssue.RequestVenID <1) 
             {
                 rdoDept.Checked = true;
                 if (Program.module == Program.Module.Sale)
                     cmbDeptVen.SelectedValue = 7;
                 else
                     cmbDeptVen.SelectedValue = 8;
+                cmbEmployee.SelectedValue = _ProductRequestIssue.RequesterID;
+
+            }
+            if (this._ProductRequestIssue.IsIssued) 
+            {
+                dgvProductReqIssue.Enabled = groupBox1.Enabled = txtTrip.Enabled = btnNew.Enabled = btnRequest.Enabled = btnDelete.Enabled = false;
+                dtpRequestDate.Enabled = false;
+                lblIssued.Visible = true;
             }
         }
         
@@ -263,7 +263,15 @@ namespace PTIC.Marketing.TripPlan_Request
         #region Events
         private void rdoDept_CheckedChanged(object sender, EventArgs e)
         {
-            
+
+            if (rdoDept.Checked)
+            {
+                // Department, Ven & Employee
+                cmbDeptVen.DataSource = new DepartmentBL().GetAll();
+                cmbDeptVen.ValueMember = "ID";
+                cmbDeptVen.DisplayMember = "DeptName";
+                cmbDeptVen.SelectedValue = (int)PTIC.Common.Enum.PredefinedDepartment.Marketing;
+            }
         }
 
         private void cmbDeptVen_SelectedIndexChanged(object sender, EventArgs e)
@@ -444,6 +452,11 @@ namespace PTIC.Marketing.TripPlan_Request
                 
 
             }
+        }
+
+        private void btnClosed_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         
