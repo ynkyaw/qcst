@@ -206,7 +206,7 @@ namespace PTIC.Marketing.TripPlan_Request
                 {
                     ProductRequestIssueDetail _ProductRequestIssueDetail = new ProductRequestIssueDetail()
                     {
-                        ID = (int)DataTypeParser.Parse(row[colDtlId.Index].ToString(), typeof(int), -1),
+                        ID = (int)DataTypeParser.Parse(row["ProductReqDtlId"].ToString(), typeof(int), -1),
                         ProductRequestIssueID = (int)DataTypeParser.Parse(row["ProductRequestIssueID"].ToString(), typeof(int), -1),
                         ProductID = (int)DataTypeParser.Parse(row["ProductID"], typeof(int), -1),
                         Weight = (int)DataTypeParser.Parse(row["Weight"].ToString(), typeof(int), 0),
