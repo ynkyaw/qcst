@@ -15,6 +15,21 @@ namespace PTIC.Marketing.BL
             return ProductRequestIssueDA.SelectByProductReqIssueID(ProductRequestIssueID);
         }
 
+        public DataTable GetTripForIssue()
+        {
+            return ProductRequestIssueDA.GetTripForIssue();
+        }
+
+        public int SetIsuueforProductRequest(int id) 
+        {
+            return ProductRequestIssueDA.SetIsuueforProductRequest(id);
+        }
+
+        public DataTable GetTripForIssueDetails()
+        {
+            return ProductRequestIssueDA.GetTripForIssueDetails();
+        }
+
         public int Add(ProductRequestIssue _ProductRequestIssue, List<ProductRequestIssueDetail> _ProductRequestIssueDetail)
         {
             return ProductRequestIssueDA.Insert(_ProductRequestIssue, _ProductRequestIssueDetail);
@@ -33,6 +48,11 @@ namespace PTIC.Marketing.BL
         public ProductRequestIssue GetProductRequestIssueById(int ProductRequestIssueID) 
         {
             return ProductRequestIssueDA.GetProductRequestIssueById(ProductRequestIssueID);
+        }
+
+        public DataTable GetTripDetailsForProductIssue() 
+        {
+            return ProductRequestIssueDA.GetTripDetailsForProductIssue();
         }
     }
 }

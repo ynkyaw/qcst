@@ -15,6 +15,7 @@ using System.Data.SqlClient;
 using PTIC.Sale.Entities;
 using PTIC.Common;
 using PTIC.Sale.DA;
+using PTIC.Marketing.BL;
 
 namespace PTIC.Sale.Delivery
 {
@@ -41,6 +42,14 @@ namespace PTIC.Sale.Delivery
         private ComboBox _cmbProduct = null;
 
         DataTable deliveryListFromDeliveryPlan;
+
+        DataTable tripPlanDtl;
+
+        DataTable productReqIssueDtl;
+
+        bool isForTrip = false;
+
+        int ProductRequestIssueID = 0;
 
         public frmNewDeliveryNote()
         {
@@ -81,6 +90,16 @@ namespace PTIC.Sale.Delivery
 
                 dgvDeliveryNote.AutoGenerateColumns = false;
                 dgvDeliveryNote.DataSource = new DeliveryNoteBL().GetDeliveryNoteDetail(0);
+
+
+                ///
+                DataTable trip =  new ProductRequestIssueBL().GetTripForIssue();
+                comboDeliver.DataSource = trip;
+                comboDeliver.DisplayMember = "TripPlanNo";
+                comboDeliver.ValueMember = "ID";
+
+                tripPlanDtl = new ProductRequestIssueBL().GetTripDetailsForProductIssue();
+                productReqIssueDtl = new ProductRequestIssueBL().GetTripForIssueDetails();
 
             }
             catch (Exception e)
@@ -136,6 +155,10 @@ namespace PTIC.Sale.Delivery
 
                 if (affectedrow > 0)
                 {
+                    if (isForTrip) 
+                    {
+                        new ProductRequestIssueBL().SetIsuueforProductRequest(ProductRequestIssueID);
+                    }
                     ToastMessageBox.Show(Resource.msgSuccessfullySaved);
                     this.Close();
                 }
@@ -429,6 +452,7 @@ namespace PTIC.Sale.Delivery
                     dgvDeliveryNote.DataSource = gridData;
                     dgvDeliveryNote.Enabled = false;
                     btnLoadOrder.Text = "Reset";
+                   
                 }
             }
             else 
@@ -438,6 +462,66 @@ namespace PTIC.Sale.Delivery
                 dgvDeliveryNote.Enabled = true;
                 DataUtil.AddInitialNewRow(dgvDeliveryNote);
                 btnLoadOrder.Text = "Load Order";
+             
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "Reset")
+            {
+                if (comboDeliver.SelectedValue != null)
+                {
+                    int tripDetailId = (int)comboDeliver.SelectedValue;
+                    if (productReqIssueDtl != null)
+                    {
+                        DataRow[] dr = productReqIssueDtl.Select("ID=" + tripDetailId);
+                        if (dr.Length > 0)
+                        {
+                            DataTable gridData = dgvDeliveryNote.DataSource as DataTable;
+                            gridData.Rows.Clear();
+                            foreach (DataRow row in dr)
+                            {
+                                gridData.Rows.Add(0, 0, row["ProductID"], row["ProductName"], row["BrandName"], row["RequestQty"], 0, 0, row["RequestQty"], row["BrandId"]);
+                                ProductRequestIssueID = (int)row["ProductRequestIssueID"];
+                            }
+                            dgvDeliveryNote.AutoGenerateColumns = false;
+                            dgvDeliveryNote.DataSource = gridData;
+                            dgvDeliveryNote.Enabled = false;
+                            button1.Text = "Reset";
+                            isForTrip = true;
+                        }
+                    }
+                }
+            }
+            else 
+            {
+                dgvDeliveryNote.AutoGenerateColumns = false;
+                dgvDeliveryNote.DataSource = new DeliveryNoteBL().GetDeliveryNoteDetail(0);
+                dgvDeliveryNote.Enabled = true;
+                DataUtil.AddInitialNewRow(dgvDeliveryNote);
+                button1.Text = "Load";
+                isForTrip = false;
+            }
+        }
+
+        private void comboDeliver_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboDeliver.SelectedValue != null) 
+            {
+                int tripDetailId = (int)comboDeliver.SelectedValue;
+                if(tripPlanDtl!=null&&tripPlanDtl.Rows.Count>0)
+                {
+                    DataRow []dr = tripPlanDtl.Select("ID="+tripDetailId);
+                    if (dr.Length == 1) 
+                    {
+                        txtEmpName.Text = dr[0]["EmpName"] + string.Empty;
+                        txtTrip.Text = dr[0]["TripName"] + string.Empty;
+                        dtpFrom.Value = (DateTime)DataTypeParser.Parse(dr[0]["FromDate"].ToString(), typeof(DateTime), -1);
+                        dtpToDate.Value = (DateTime)DataTypeParser.Parse(dr[0]["ToDate"].ToString(), typeof(DateTime), -1);
+                    }
+                }
+            
             }
         }
 

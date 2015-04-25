@@ -839,6 +839,12 @@
     <Compile Include="Sale\Report\frmDeliveryNoteDetailViewer.Designer.cs">
       <DependentUpon>frmDeliveryNoteDetailViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sale\Report\frmMonthlySalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Report\frmMonthlySalesReport.Designer.cs">
+      <DependentUpon>frmMonthlySalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sale\Services\frmServiceBatteries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1791,6 +1797,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\Report\frmDeliveryNoteDetailViewer.resx">
       <DependentUpon>frmDeliveryNoteDetailViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Report\frmMonthlySalesReport.resx">
+      <DependentUpon>frmMonthlySalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\Services\frmServiceBatteries.resx">
       <DependentUpon>frmServiceBatteries.cs</DependentUpon>

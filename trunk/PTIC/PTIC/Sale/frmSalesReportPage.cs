@@ -56,5 +56,10 @@ namespace PTIC.Sale
         {
             UIManager.OpenForm(new frmRV_YearlySalesQty());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UIManager.OpenForm(new PTIC.Sale.Report.frmMonthlySalesReport());
+        }
     }
 }
