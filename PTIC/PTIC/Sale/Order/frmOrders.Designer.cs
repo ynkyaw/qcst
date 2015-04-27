@@ -134,7 +134,7 @@
             this.lblBrand.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblBrand.Location = new System.Drawing.Point(59, 11);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(88, 16);
+            this.lblBrand.Size = new System.Drawing.Size(85, 15);
             this.lblBrand.TabIndex = 3;
             this.lblBrand.Text = ">    Order စာရင်း";
             this.lblBrand.Click += new System.EventHandler(this.lblBrand_Click);
@@ -328,7 +328,7 @@
             this.lblFrom.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFrom.Location = new System.Drawing.Point(152, 55);
             this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(15, 17);
+            this.lblFrom.Size = new System.Drawing.Size(15, 16);
             this.lblFrom.TabIndex = 83;
             this.lblFrom.Text = "မှ";
             // 
@@ -338,7 +338,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(153, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 17);
+            this.label1.Size = new System.Drawing.Size(19, 16);
             this.label1.TabIndex = 84;
             this.label1.Text = "ထိ";
             // 
@@ -668,7 +668,7 @@
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
             this.label3.Location = new System.Drawing.Point(12, 394);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 16);
+            this.label3.Size = new System.Drawing.Size(101, 15);
             this.label3.TabIndex = 172;
             this.label3.Text = "မှာယူသည့်ပစ္စည်းစာရင်း";
             // 
@@ -678,7 +678,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(189, 54);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 17);
+            this.label7.Size = new System.Drawing.Size(95, 16);
             this.label7.TabIndex = 174;
             this.label7.Text = "Customer အမည်";
             // 
@@ -701,7 +701,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(189, 88);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 17);
+            this.label4.Size = new System.Drawing.Size(132, 16);
             this.label4.TabIndex = 176;
             this.label4.Text = "လက်ခံသည့် Department";
             // 
@@ -710,11 +710,11 @@
             this.cmbCustomer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCustomer.DisplayMember = "CusName";
-            this.cmbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbCustomer.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCustomer.FormattingEnabled = true;
             this.cmbCustomer.Location = new System.Drawing.Point(349, 53);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(150, 24);
+            this.cmbCustomer.Size = new System.Drawing.Size(150, 25);
             this.cmbCustomer.TabIndex = 177;
             this.cmbCustomer.ValueMember = "CustomerID";
             // 
