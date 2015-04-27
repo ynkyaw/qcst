@@ -273,10 +273,13 @@ namespace PTIC.VC.Marketing.A_P
             worksheet.Name = "Exported from gridview";
             // storing header part in Excel
 
+            worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvAPPlanSummary.Columns.Count + 1]].Merge();
+            worksheet.Cells[1, 1] = "Monthly Company Sales For April' 2014";
+
             for (int i = 1; i < dgvAPPlanSummary.Columns.Count + 1; i++)
             {
 
-                worksheet.Cells[1, i] = dgvAPPlanSummary.Columns[i - 1].HeaderText;
+                worksheet.Cells[3, i] = dgvAPPlanSummary.Columns[i - 1].HeaderText;
 
             }
             // storing Each row and column value to excel sheet
@@ -286,7 +289,7 @@ namespace PTIC.VC.Marketing.A_P
                 for (int j = 0; j < dgvAPPlanSummary.Columns.Count; j++)
                 {
                     string str = (string)DataTypeParser.Parse(dgvAPPlanSummary.Rows[i].Cells[j].Value, typeof(string), String.Empty);
-                    worksheet.Cells[i + 2, j + 1] = str;
+                    worksheet.Cells[i + 4, j + 1] = str;
                 }
 
             }
