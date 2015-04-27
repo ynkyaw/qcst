@@ -211,10 +211,19 @@ namespace PTIC.Sale.Report
             worksheet.Name = "Exported from gridview";
             // storing header part in Excel
 
-            worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count + 1]].Merge();
-            worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count + 1]].EntireColumn;
-            worksheet.Cells[1, 1] = "Monthly Company Sales For April' 2014";
+            worksheet.Application.StandardFont = "Myanmar3";
+            worksheet.Application.StandardFontSize = 10;
+            worksheet.Rows.WrapText = true;
 
+
+            Excel.Range header = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count + 1]];
+            
+            Excel.Range allColumns = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count + 1]];
+            allColumns.EntireColumn.ColumnWidth = 5;
+            header.Merge();
+            worksheet.Cells[1, 1] = "Monthly Company Sales For April' 2014";
+            header.Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            
 
             Excel.Range chartRange=worksheet.Range[worksheet.Cells[1,2],worksheet.Cells[10,2]];
             chartRange.EntireColumn.ColumnWidth = 28.89;
@@ -236,11 +245,9 @@ namespace PTIC.Sale.Report
                 }
             }
 
-            worksheet.Columns[2].
+            //worksheet.Columns[2].
 
-            worksheet.Application.StandardFont = "Myanmar3";
-            worksheet.Application.StandardFontSize = 12;
-            worksheet.Rows.WrapText = true;
+          
             // save the application
             workbook.SaveAs(savefilename, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application
