@@ -101,6 +101,7 @@ namespace PTIC.Sale.Report
             selectQuery += @")) As C_P
                             group by CusName,SalesType) as t
                             PIVOT(SUM(SALESAMT) FOR SALESTYPE IN([Cash],[Credit]) )As Test";
+            dgvCompanySales.DataSource = null;
             dgvCompanySales.DataSource=new PTIC.Common.DA.BaseDAO().SelectByQuery(selectQuery);
             //Set Width
             foreach (DataGridViewColumn col in dgvCompanySales.Columns) 
