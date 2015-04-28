@@ -216,18 +216,30 @@ namespace PTIC.Sale.Report
             worksheet.Rows.WrapText = true;
 
 
-            Excel.Range header = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count + 1]];
+            Excel.Range header = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count]];
             
-            Excel.Range allColumns = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count + 1]];
+            Excel.Range allColumns = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dgvCompanySales.Columns.Count]];
             allColumns.EntireColumn.ColumnWidth = 5;
             header.Merge();
             worksheet.Cells[1, 1] = "Monthly Company Sales For April' 2014";
-            header.Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            worksheet.Cells[1, 1].EntireRow.Font.Name = "Times New Roman";
+            worksheet.Cells[1, 1].EntireRow.Font.Bold = true;
+            worksheet.Cells[1, 1].EntireRow.Font.Size = 14;
+            worksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             
 
             Excel.Range chartRange=worksheet.Range[worksheet.Cells[1,2],worksheet.Cells[10,2]];
             chartRange.EntireColumn.ColumnWidth = 28.89;
+            worksheet.Cells[1, dgvCompanySales.Columns.Count - 1].EntireColumn.ColumnWidth = 15;
+            worksheet.Cells[1, dgvCompanySales.Columns.Count].EntireColumn.ColumnWidth = 15;
 
+            Excel.Range colorColHeader = worksheet.Range[worksheet.Cells[3, 1], worksheet.Cells[3, dgvCompanySales.Columns.Count]];
+            colorColHeader.Interior.Color = Excel.XlRgbColor.rgbSlateBlue;
+            colorColHeader.EntireRow.Font.Name = "Times New Roman";
+            colorColHeader.EntireRow.Font.Bold = true;
+            colorColHeader.EntireRow.Font.Size = 10;
+            colorColHeader.EntireRow.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            colorColHeader.EntireRow.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             for (int i = 1; i < dgvCompanySales.Columns.Count + 1; i++)
             {
 
@@ -237,16 +249,19 @@ namespace PTIC.Sale.Report
             // storing Each row and column value to excel sheet
             for (int i = 0; i < dgvCompanySales.Rows.Count - 1; i++)
             {
-
+                if (i % 2 != 0)
+                {
+                    Excel.Range colorCol = worksheet.Range[worksheet.Cells[i+4, 1], worksheet.Cells[i+4, dgvCompanySales.Columns.Count]];
+                    colorCol.Interior.Color = Excel.XlRgbColor.rgbSkyBlue;
+                }
                 for (int j = 0; j < dgvCompanySales.Columns.Count; j++)
                 {
-                    string str = (string)DataTypeParser.Parse(dgvCompanySales.Rows[i].Cells[j].Value, typeof(string), String.Empty);
-                    worksheet.Cells[i + 4, j + 1] = str;
+                    //string str = (string)DataTypeParser.Parse(dgvCompanySales.Rows[i].Cells[j].Value, typeof(string), "0");
+                    worksheet.Cells[i + 4, j + 1] = dgvCompanySales.Rows[i].Cells[j].Value;
                 }
             }
 
-            //worksheet.Columns[2].
-
+            
           
             // save the application
             workbook.SaveAs(savefilename, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
