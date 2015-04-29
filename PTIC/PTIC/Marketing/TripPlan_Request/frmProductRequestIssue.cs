@@ -79,11 +79,14 @@ namespace PTIC.Marketing.TripPlan_Request
                 cmbEmployee.SelectedValue = _ProductRequestIssue.RequesterID;
 
             }
-            if (this._ProductRequestIssue.IsIssued) 
+            if (this._ProductRequestIssue != null)
             {
-                dgvProductReqIssue.Enabled = groupBox1.Enabled = txtTrip.Enabled = btnNew.Enabled = btnRequest.Enabled = btnDelete.Enabled = false;
-                dtpRequestDate.Enabled = false;
-                lblIssued.Visible = true;
+                if (this._ProductRequestIssue.IsIssued)
+                {
+                    dgvProductReqIssue.Enabled = groupBox1.Enabled = txtTrip.Enabled = btnNew.Enabled = btnRequest.Enabled = btnDelete.Enabled = false;
+                    dtpRequestDate.Enabled = false;
+                    lblIssued.Visible = true;
+                }
             }
         }
         
