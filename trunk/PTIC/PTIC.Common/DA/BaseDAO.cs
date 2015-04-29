@@ -564,7 +564,7 @@ namespace PTIC.Common.DA
             catch (Exception ex)
             { throw ex; }
             CloseConnection();
-            return _ResTable;
+            return _ResTable; 
         }
         #endregion
 
