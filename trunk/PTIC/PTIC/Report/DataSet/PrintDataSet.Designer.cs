@@ -24,7 +24,7 @@ namespace PTIC.Report.DataSet {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class PrintDataSet : global::System.Data.DataSet {
         
-        private uv_SalesPlanDetailsDataTable tableuv_SalesPlanDetails;
+        private tblSalesPlanDataTable tabletblSalesPlan;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace PTIC.Report.DataSet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["uv_SalesPlanDetails"] != null)) {
-                    base.Tables.Add(new uv_SalesPlanDetailsDataTable(ds.Tables["uv_SalesPlanDetails"]));
+                if ((ds.Tables["tblSalesPlan"] != null)) {
+                    base.Tables.Add(new tblSalesPlanDataTable(ds.Tables["tblSalesPlan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace PTIC.Report.DataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public uv_SalesPlanDetailsDataTable uv_SalesPlanDetails {
+        public tblSalesPlanDataTable tblSalesPlan {
             get {
-                return this.tableuv_SalesPlanDetails;
+                return this.tabletblSalesPlan;
             }
         }
         
@@ -152,8 +152,8 @@ namespace PTIC.Report.DataSet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["uv_SalesPlanDetails"] != null)) {
-                    base.Tables.Add(new uv_SalesPlanDetailsDataTable(ds.Tables["uv_SalesPlanDetails"]));
+                if ((ds.Tables["tblSalesPlan"] != null)) {
+                    base.Tables.Add(new tblSalesPlanDataTable(ds.Tables["tblSalesPlan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace PTIC.Report.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableuv_SalesPlanDetails = ((uv_SalesPlanDetailsDataTable)(base.Tables["uv_SalesPlanDetails"]));
+            this.tabletblSalesPlan = ((tblSalesPlanDataTable)(base.Tables["tblSalesPlan"]));
             if ((initTable == true)) {
-                if ((this.tableuv_SalesPlanDetails != null)) {
-                    this.tableuv_SalesPlanDetails.InitVars();
+                if ((this.tabletblSalesPlan != null)) {
+                    this.tabletblSalesPlan.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace PTIC.Report.DataSet {
             this.Namespace = "http://tempuri.org/PrintDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableuv_SalesPlanDetails = new uv_SalesPlanDetailsDataTable();
-            base.Tables.Add(this.tableuv_SalesPlanDetails);
+            this.tabletblSalesPlan = new tblSalesPlanDataTable();
+            base.Tables.Add(this.tabletblSalesPlan);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeuv_SalesPlanDetails() {
+        private bool ShouldSerializetblSalesPlan() {
             return false;
         }
         
@@ -270,39 +270,31 @@ namespace PTIC.Report.DataSet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void uv_SalesPlanDetailsRowChangeEventHandler(object sender, uv_SalesPlanDetailsRowChangeEvent e);
+        public delegate void tblSalesPlanRowChangeEventHandler(object sender, tblSalesPlanRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class uv_SalesPlanDetailsDataTable : global::System.Data.TypedTableBase<uv_SalesPlanDetailsRow> {
-            
-            private global::System.Data.DataColumn columnSalesPlanDetailID;
-            
-            private global::System.Data.DataColumn columnSaleQty;
-            
-            private global::System.Data.DataColumn columnProduceQty;
-            
-            private global::System.Data.DataColumn columnRequireQty;
-            
-            private global::System.Data.DataColumn columnCalculatedValue;
-            
-            private global::System.Data.DataColumn columnN100Convert;
-            
-            private global::System.Data.DataColumn columnAmount;
-            
-            private global::System.Data.DataColumn columnRemark;
+        public partial class tblSalesPlanDataTable : global::System.Data.TypedTableBase<tblSalesPlanRow> {
             
             private global::System.Data.DataColumn columnProductName;
             
-            private global::System.Data.DataColumn columnPlanDate;
+            private global::System.Data.DataColumn columnSalesQty;
+            
+            private global::System.Data.DataColumn columnProductionQty;
+            
+            private global::System.Data.DataColumn columnRequiredN100Convert;
+            
+            private global::System.Data.DataColumn columnProductionN100Convert;
+            
+            private global::System.Data.DataColumn columnRemark;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uv_SalesPlanDetailsDataTable() {
-                this.TableName = "uv_SalesPlanDetails";
+            public tblSalesPlanDataTable() {
+                this.TableName = "tblSalesPlan";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -310,7 +302,7 @@ namespace PTIC.Report.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal uv_SalesPlanDetailsDataTable(global::System.Data.DataTable table) {
+            internal tblSalesPlanDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -327,73 +319,9 @@ namespace PTIC.Report.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected uv_SalesPlanDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tblSalesPlanDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalesPlanDetailIDColumn {
-                get {
-                    return this.columnSalesPlanDetailID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SaleQtyColumn {
-                get {
-                    return this.columnSaleQty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProduceQtyColumn {
-                get {
-                    return this.columnProduceQty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RequireQtyColumn {
-                get {
-                    return this.columnRequireQty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CalculatedValueColumn {
-                get {
-                    return this.columnCalculatedValue;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn N100ConvertColumn {
-                get {
-                    return this.columnN100Convert;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AmountColumn {
-                get {
-                    return this.columnAmount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RemarkColumn {
-                get {
-                    return this.columnRemark;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -406,9 +334,41 @@ namespace PTIC.Report.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PlanDateColumn {
+            public global::System.Data.DataColumn SalesQtyColumn {
                 get {
-                    return this.columnPlanDate;
+                    return this.columnSalesQty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductionQtyColumn {
+                get {
+                    return this.columnProductionQty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RequiredN100ConvertColumn {
+                get {
+                    return this.columnRequiredN100Convert;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductionN100ConvertColumn {
+                get {
+                    return this.columnProductionN100Convert;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RemarkColumn {
+                get {
+                    return this.columnRemark;
                 }
             }
             
@@ -423,54 +383,50 @@ namespace PTIC.Report.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uv_SalesPlanDetailsRow this[int index] {
+            public tblSalesPlanRow this[int index] {
                 get {
-                    return ((uv_SalesPlanDetailsRow)(this.Rows[index]));
+                    return ((tblSalesPlanRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event uv_SalesPlanDetailsRowChangeEventHandler uv_SalesPlanDetailsRowChanging;
+            public event tblSalesPlanRowChangeEventHandler tblSalesPlanRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event uv_SalesPlanDetailsRowChangeEventHandler uv_SalesPlanDetailsRowChanged;
+            public event tblSalesPlanRowChangeEventHandler tblSalesPlanRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event uv_SalesPlanDetailsRowChangeEventHandler uv_SalesPlanDetailsRowDeleting;
+            public event tblSalesPlanRowChangeEventHandler tblSalesPlanRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event uv_SalesPlanDetailsRowChangeEventHandler uv_SalesPlanDetailsRowDeleted;
+            public event tblSalesPlanRowChangeEventHandler tblSalesPlanRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Adduv_SalesPlanDetailsRow(uv_SalesPlanDetailsRow row) {
+            public void AddtblSalesPlanRow(tblSalesPlanRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uv_SalesPlanDetailsRow Adduv_SalesPlanDetailsRow(int SalesPlanDetailID, int SaleQty, int ProduceQty, int RequireQty, double CalculatedValue, double N100Convert, decimal Amount, string Remark, string ProductName, System.DateTime PlanDate) {
-                uv_SalesPlanDetailsRow rowuv_SalesPlanDetailsRow = ((uv_SalesPlanDetailsRow)(this.NewRow()));
+            public tblSalesPlanRow AddtblSalesPlanRow(string ProductName, int SalesQty, int ProductionQty, decimal RequiredN100Convert, decimal ProductionN100Convert, string Remark) {
+                tblSalesPlanRow rowtblSalesPlanRow = ((tblSalesPlanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        SalesPlanDetailID,
-                        SaleQty,
-                        ProduceQty,
-                        RequireQty,
-                        CalculatedValue,
-                        N100Convert,
-                        Amount,
-                        Remark,
                         ProductName,
-                        PlanDate};
-                rowuv_SalesPlanDetailsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowuv_SalesPlanDetailsRow);
-                return rowuv_SalesPlanDetailsRow;
+                        SalesQty,
+                        ProductionQty,
+                        RequiredN100Convert,
+                        ProductionN100Convert,
+                        Remark};
+                rowtblSalesPlanRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblSalesPlanRow);
+                return rowtblSalesPlanRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                uv_SalesPlanDetailsDataTable cln = ((uv_SalesPlanDetailsDataTable)(base.Clone()));
+                tblSalesPlanDataTable cln = ((tblSalesPlanDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -478,78 +434,61 @@ namespace PTIC.Report.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new uv_SalesPlanDetailsDataTable();
+                return new tblSalesPlanDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnSalesPlanDetailID = base.Columns["SalesPlanDetailID"];
-                this.columnSaleQty = base.Columns["SaleQty"];
-                this.columnProduceQty = base.Columns["ProduceQty"];
-                this.columnRequireQty = base.Columns["RequireQty"];
-                this.columnCalculatedValue = base.Columns["CalculatedValue"];
-                this.columnN100Convert = base.Columns["N100Convert"];
-                this.columnAmount = base.Columns["Amount"];
-                this.columnRemark = base.Columns["Remark"];
                 this.columnProductName = base.Columns["ProductName"];
-                this.columnPlanDate = base.Columns["PlanDate"];
+                this.columnSalesQty = base.Columns["SalesQty"];
+                this.columnProductionQty = base.Columns["ProductionQty"];
+                this.columnRequiredN100Convert = base.Columns["RequiredN100Convert"];
+                this.columnProductionN100Convert = base.Columns["ProductionN100Convert"];
+                this.columnRemark = base.Columns["Remark"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnSalesPlanDetailID = new global::System.Data.DataColumn("SalesPlanDetailID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalesPlanDetailID);
-                this.columnSaleQty = new global::System.Data.DataColumn("SaleQty", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSaleQty);
-                this.columnProduceQty = new global::System.Data.DataColumn("ProduceQty", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProduceQty);
-                this.columnRequireQty = new global::System.Data.DataColumn("RequireQty", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRequireQty);
-                this.columnCalculatedValue = new global::System.Data.DataColumn("CalculatedValue", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCalculatedValue);
-                this.columnN100Convert = new global::System.Data.DataColumn("N100Convert", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnN100Convert);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAmount);
-                this.columnRemark = new global::System.Data.DataColumn("Remark", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRemark);
                 this.columnProductName = new global::System.Data.DataColumn("ProductName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductName);
-                this.columnPlanDate = new global::System.Data.DataColumn("PlanDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPlanDate);
-                this.columnSalesPlanDetailID.AllowDBNull = false;
-                this.columnAmount.AllowDBNull = false;
-                this.columnRemark.MaxLength = 2147483647;
-                this.columnProductName.AllowDBNull = false;
-                this.columnProductName.MaxLength = 50;
+                this.columnSalesQty = new global::System.Data.DataColumn("SalesQty", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSalesQty);
+                this.columnProductionQty = new global::System.Data.DataColumn("ProductionQty", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductionQty);
+                this.columnRequiredN100Convert = new global::System.Data.DataColumn("RequiredN100Convert", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRequiredN100Convert);
+                this.columnProductionN100Convert = new global::System.Data.DataColumn("ProductionN100Convert", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductionN100Convert);
+                this.columnRemark = new global::System.Data.DataColumn("Remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRemark);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uv_SalesPlanDetailsRow Newuv_SalesPlanDetailsRow() {
-                return ((uv_SalesPlanDetailsRow)(this.NewRow()));
+            public tblSalesPlanRow NewtblSalesPlanRow() {
+                return ((tblSalesPlanRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new uv_SalesPlanDetailsRow(builder);
+                return new tblSalesPlanRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(uv_SalesPlanDetailsRow);
+                return typeof(tblSalesPlanRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.uv_SalesPlanDetailsRowChanged != null)) {
-                    this.uv_SalesPlanDetailsRowChanged(this, new uv_SalesPlanDetailsRowChangeEvent(((uv_SalesPlanDetailsRow)(e.Row)), e.Action));
+                if ((this.tblSalesPlanRowChanged != null)) {
+                    this.tblSalesPlanRowChanged(this, new tblSalesPlanRowChangeEvent(((tblSalesPlanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -557,8 +496,8 @@ namespace PTIC.Report.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.uv_SalesPlanDetailsRowChanging != null)) {
-                    this.uv_SalesPlanDetailsRowChanging(this, new uv_SalesPlanDetailsRowChangeEvent(((uv_SalesPlanDetailsRow)(e.Row)), e.Action));
+                if ((this.tblSalesPlanRowChanging != null)) {
+                    this.tblSalesPlanRowChanging(this, new tblSalesPlanRowChangeEvent(((tblSalesPlanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -566,8 +505,8 @@ namespace PTIC.Report.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.uv_SalesPlanDetailsRowDeleted != null)) {
-                    this.uv_SalesPlanDetailsRowDeleted(this, new uv_SalesPlanDetailsRowChangeEvent(((uv_SalesPlanDetailsRow)(e.Row)), e.Action));
+                if ((this.tblSalesPlanRowDeleted != null)) {
+                    this.tblSalesPlanRowDeleted(this, new tblSalesPlanRowChangeEvent(((tblSalesPlanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -575,14 +514,14 @@ namespace PTIC.Report.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.uv_SalesPlanDetailsRowDeleting != null)) {
-                    this.uv_SalesPlanDetailsRowDeleting(this, new uv_SalesPlanDetailsRowChangeEvent(((uv_SalesPlanDetailsRow)(e.Row)), e.Action));
+                if ((this.tblSalesPlanRowDeleting != null)) {
+                    this.tblSalesPlanRowDeleting(this, new tblSalesPlanRowChangeEvent(((tblSalesPlanRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removeuv_SalesPlanDetailsRow(uv_SalesPlanDetailsRow row) {
+            public void RemovetblSalesPlanRow(tblSalesPlanRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -609,7 +548,7 @@ namespace PTIC.Report.DataSet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "uv_SalesPlanDetailsDataTable";
+                attribute2.FixedValue = "tblSalesPlanDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -653,116 +592,94 @@ namespace PTIC.Report.DataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class uv_SalesPlanDetailsRow : global::System.Data.DataRow {
+        public partial class tblSalesPlanRow : global::System.Data.DataRow {
             
-            private uv_SalesPlanDetailsDataTable tableuv_SalesPlanDetails;
+            private tblSalesPlanDataTable tabletblSalesPlan;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal uv_SalesPlanDetailsRow(global::System.Data.DataRowBuilder rb) : 
+            internal tblSalesPlanRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableuv_SalesPlanDetails = ((uv_SalesPlanDetailsDataTable)(this.Table));
+                this.tabletblSalesPlan = ((tblSalesPlanDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SalesPlanDetailID {
-                get {
-                    return ((int)(this[this.tableuv_SalesPlanDetails.SalesPlanDetailIDColumn]));
-                }
-                set {
-                    this[this.tableuv_SalesPlanDetails.SalesPlanDetailIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SaleQty {
+            public string ProductName {
                 get {
                     try {
-                        return ((int)(this[this.tableuv_SalesPlanDetails.SaleQtyColumn]));
+                        return ((string)(this[this.tabletblSalesPlan.ProductNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SaleQty\' in table \'uv_SalesPlanDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductName\' in table \'tblSalesPlan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableuv_SalesPlanDetails.SaleQtyColumn] = value;
+                    this[this.tabletblSalesPlan.ProductNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ProduceQty {
+            public int SalesQty {
                 get {
                     try {
-                        return ((int)(this[this.tableuv_SalesPlanDetails.ProduceQtyColumn]));
+                        return ((int)(this[this.tabletblSalesPlan.SalesQtyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProduceQty\' in table \'uv_SalesPlanDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SalesQty\' in table \'tblSalesPlan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableuv_SalesPlanDetails.ProduceQtyColumn] = value;
+                    this[this.tabletblSalesPlan.SalesQtyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int RequireQty {
+            public int ProductionQty {
                 get {
                     try {
-                        return ((int)(this[this.tableuv_SalesPlanDetails.RequireQtyColumn]));
+                        return ((int)(this[this.tabletblSalesPlan.ProductionQtyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RequireQty\' in table \'uv_SalesPlanDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductionQty\' in table \'tblSalesPlan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableuv_SalesPlanDetails.RequireQtyColumn] = value;
+                    this[this.tabletblSalesPlan.ProductionQtyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double CalculatedValue {
+            public decimal RequiredN100Convert {
                 get {
                     try {
-                        return ((double)(this[this.tableuv_SalesPlanDetails.CalculatedValueColumn]));
+                        return ((decimal)(this[this.tabletblSalesPlan.RequiredN100ConvertColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CalculatedValue\' in table \'uv_SalesPlanDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RequiredN100Convert\' in table \'tblSalesPlan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableuv_SalesPlanDetails.CalculatedValueColumn] = value;
+                    this[this.tabletblSalesPlan.RequiredN100ConvertColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double N100Convert {
+            public decimal ProductionN100Convert {
                 get {
                     try {
-                        return ((double)(this[this.tableuv_SalesPlanDetails.N100ConvertColumn]));
+                        return ((decimal)(this[this.tabletblSalesPlan.ProductionN100ConvertColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'N100Convert\' in table \'uv_SalesPlanDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductionN100Convert\' in table \'tblSalesPlan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableuv_SalesPlanDetails.N100ConvertColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Amount {
-                get {
-                    return ((decimal)(this[this.tableuv_SalesPlanDetails.AmountColumn]));
-                }
-                set {
-                    this[this.tableuv_SalesPlanDetails.AmountColumn] = value;
+                    this[this.tabletblSalesPlan.ProductionN100ConvertColumn] = value;
                 }
             }
             
@@ -771,126 +688,87 @@ namespace PTIC.Report.DataSet {
             public string Remark {
                 get {
                     try {
-                        return ((string)(this[this.tableuv_SalesPlanDetails.RemarkColumn]));
+                        return ((string)(this[this.tabletblSalesPlan.RemarkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Remark\' in table \'uv_SalesPlanDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Remark\' in table \'tblSalesPlan\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableuv_SalesPlanDetails.RemarkColumn] = value;
+                    this[this.tabletblSalesPlan.RemarkColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ProductName {
-                get {
-                    return ((string)(this[this.tableuv_SalesPlanDetails.ProductNameColumn]));
-                }
-                set {
-                    this[this.tableuv_SalesPlanDetails.ProductNameColumn] = value;
-                }
+            public bool IsProductNameNull() {
+                return this.IsNull(this.tabletblSalesPlan.ProductNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime PlanDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableuv_SalesPlanDetails.PlanDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlanDate\' in table \'uv_SalesPlanDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableuv_SalesPlanDetails.PlanDateColumn] = value;
-                }
+            public void SetProductNameNull() {
+                this[this.tabletblSalesPlan.ProductNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSaleQtyNull() {
-                return this.IsNull(this.tableuv_SalesPlanDetails.SaleQtyColumn);
+            public bool IsSalesQtyNull() {
+                return this.IsNull(this.tabletblSalesPlan.SalesQtyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSaleQtyNull() {
-                this[this.tableuv_SalesPlanDetails.SaleQtyColumn] = global::System.Convert.DBNull;
+            public void SetSalesQtyNull() {
+                this[this.tabletblSalesPlan.SalesQtyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProduceQtyNull() {
-                return this.IsNull(this.tableuv_SalesPlanDetails.ProduceQtyColumn);
+            public bool IsProductionQtyNull() {
+                return this.IsNull(this.tabletblSalesPlan.ProductionQtyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProduceQtyNull() {
-                this[this.tableuv_SalesPlanDetails.ProduceQtyColumn] = global::System.Convert.DBNull;
+            public void SetProductionQtyNull() {
+                this[this.tabletblSalesPlan.ProductionQtyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRequireQtyNull() {
-                return this.IsNull(this.tableuv_SalesPlanDetails.RequireQtyColumn);
+            public bool IsRequiredN100ConvertNull() {
+                return this.IsNull(this.tabletblSalesPlan.RequiredN100ConvertColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRequireQtyNull() {
-                this[this.tableuv_SalesPlanDetails.RequireQtyColumn] = global::System.Convert.DBNull;
+            public void SetRequiredN100ConvertNull() {
+                this[this.tabletblSalesPlan.RequiredN100ConvertColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCalculatedValueNull() {
-                return this.IsNull(this.tableuv_SalesPlanDetails.CalculatedValueColumn);
+            public bool IsProductionN100ConvertNull() {
+                return this.IsNull(this.tabletblSalesPlan.ProductionN100ConvertColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCalculatedValueNull() {
-                this[this.tableuv_SalesPlanDetails.CalculatedValueColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsN100ConvertNull() {
-                return this.IsNull(this.tableuv_SalesPlanDetails.N100ConvertColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetN100ConvertNull() {
-                this[this.tableuv_SalesPlanDetails.N100ConvertColumn] = global::System.Convert.DBNull;
+            public void SetProductionN100ConvertNull() {
+                this[this.tabletblSalesPlan.ProductionN100ConvertColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRemarkNull() {
-                return this.IsNull(this.tableuv_SalesPlanDetails.RemarkColumn);
+                return this.IsNull(this.tabletblSalesPlan.RemarkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRemarkNull() {
-                this[this.tableuv_SalesPlanDetails.RemarkColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPlanDateNull() {
-                return this.IsNull(this.tableuv_SalesPlanDetails.PlanDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPlanDateNull() {
-                this[this.tableuv_SalesPlanDetails.PlanDateColumn] = global::System.Convert.DBNull;
+                this[this.tabletblSalesPlan.RemarkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -898,22 +776,22 @@ namespace PTIC.Report.DataSet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class uv_SalesPlanDetailsRowChangeEvent : global::System.EventArgs {
+        public class tblSalesPlanRowChangeEvent : global::System.EventArgs {
             
-            private uv_SalesPlanDetailsRow eventRow;
+            private tblSalesPlanRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uv_SalesPlanDetailsRowChangeEvent(uv_SalesPlanDetailsRow row, global::System.Data.DataRowAction action) {
+            public tblSalesPlanRowChangeEvent(tblSalesPlanRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uv_SalesPlanDetailsRow Row {
+            public tblSalesPlanRow Row {
                 get {
                     return this.eventRow;
                 }

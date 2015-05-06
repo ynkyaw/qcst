@@ -62,7 +62,8 @@ namespace PTIC.VC.Marketing.A_P
 
             lblFilter.Text = "▼ Show Advance Search"; //Show filter information";
             this.EnquiryDate = EnquiryDate;
-            dtpAP_PlanDate.Value = (DateTime)DataTypeParser.Parse(PlanDate, typeof(DateTime), DateTime.Now);
+            if(PlanDate!=new DateTime(1,1,1,0,0,0))
+                dtpAP_PlanDate.Value = (DateTime)DataTypeParser.Parse(PlanDate, typeof(DateTime), DateTime.Now);
             this.APEnquiryIDByList = APEnquiryID;
            // LoadNBind();
             //DataUtil.AddInitialNewRow(dgvAPEnquiry);
