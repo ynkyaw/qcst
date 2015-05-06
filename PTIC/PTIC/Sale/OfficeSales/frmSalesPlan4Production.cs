@@ -763,7 +763,7 @@ namespace PTIC.VC.Sale.OfficeSales
         private void btnPrint_Click(object sender, EventArgs e)
         {
             List<SalesPlanDetail> spdetails = new List<SalesPlanDetail>();
-            Report.DataSet.PrintDataSet.uv_SalesPlanDetailsDataTable ds = new Report.DataSet.PrintDataSet.uv_SalesPlanDetailsDataTable();
+            Report.DataSet.PrintDataSet.tblSalesPlanDataTable dt = new Report.DataSet.PrintDataSet.tblSalesPlanDataTable();
             
             foreach (DataGridViewRow row in dgvSalesPlan4P.Rows)
             {
@@ -788,11 +788,13 @@ namespace PTIC.VC.Sale.OfficeSales
                 DataGridViewComboBoxCell cell = row.Cells["clnProductName"] as DataGridViewComboBoxCell;
                 DataTable product = cell.DataSource as DataTable;
                 DataRow []dr = product.Select("ProductID="+spdetail.ProductID);
-                ds.Rows.Add(spdetail.ID, spdetail.SaleQty, spdetail.ProduceQty, spdetail.RequireQty, dr[0]["CalculatedValue"], spdetail.Nconvert, spdetail.retailPrice * spdetail.SaleQty, spdetail.Remark, dr[0]["ProductName"],dtpPlanMonth.Value);
+                dt.Rows.Add(dr[0]["ProductName"], spdetail.SaleQty, spdetail.ProduceQty, spdetail.Nconvert, spdetail.Nconvert, spdetail.Remark);
+                //ds.Rows.Add(spdetail.ID, spdetail.SaleQty, spdetail.ProduceQty, spdetail.RequireQty, dr[0]["CalculatedValue"], spdetail.Nconvert, spdetail.retailPrice * spdetail.SaleQty, spdetail.Remark, dr[0]["ProductName"],dtpPlanMonth.Value);
 
 
             }
-            Report.frmPrintPreview frmPreview = new Report.frmPrintPreview(ds,dtpPlanMonth.Value);
+            
+            Report.frmPrintPreview frmPreview = new Report.frmPrintPreview(dt,dtpPlanMonth.Value);
             frmPreview.ShowDialog();
         }
     }

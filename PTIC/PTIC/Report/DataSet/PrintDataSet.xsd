@@ -14,31 +14,15 @@
   <xs:element name="PrintDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PrintDataSet" msprop:Generator_UserDSName="PrintDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="uv_SalesPlanDetails" msprop:Generator_TableClassName="uv_SalesPlanDetailsDataTable" msprop:Generator_TableVarName="tableuv_SalesPlanDetails" msprop:Generator_RowChangedName="uv_SalesPlanDetailsRowChanged" msprop:Generator_TablePropName="uv_SalesPlanDetails" msprop:Generator_RowDeletingName="uv_SalesPlanDetailsRowDeleting" msprop:Generator_RowChangingName="uv_SalesPlanDetailsRowChanging" msprop:Generator_RowEvHandlerName="uv_SalesPlanDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="uv_SalesPlanDetailsRowDeleted" msprop:Generator_RowClassName="uv_SalesPlanDetailsRow" msprop:Generator_UserTableName="uv_SalesPlanDetails" msprop:Generator_RowEvArgName="uv_SalesPlanDetailsRowChangeEvent">
+        <xs:element name="tblSalesPlan" msprop:Generator_TableClassName="tblSalesPlanDataTable" msprop:Generator_TableVarName="tabletblSalesPlan" msprop:Generator_TablePropName="tblSalesPlan" msprop:Generator_RowDeletingName="tblSalesPlanRowDeleting" msprop:Generator_RowChangingName="tblSalesPlanRowChanging" msprop:Generator_RowEvHandlerName="tblSalesPlanRowChangeEventHandler" msprop:Generator_RowDeletedName="tblSalesPlanRowDeleted" msprop:Generator_UserTableName="tblSalesPlan" msprop:Generator_RowChangedName="tblSalesPlanRowChanged" msprop:Generator_RowEvArgName="tblSalesPlanRowChangeEvent" msprop:Generator_RowClassName="tblSalesPlanRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SalesPlanDetailID" msprop:Generator_ColumnVarNameInTable="columnSalesPlanDetailID" msprop:Generator_ColumnPropNameInRow="SalesPlanDetailID" msprop:Generator_ColumnPropNameInTable="SalesPlanDetailIDColumn" msprop:Generator_UserColumnName="SalesPlanDetailID" type="xs:int" />
-              <xs:element name="SaleQty" msprop:Generator_ColumnVarNameInTable="columnSaleQty" msprop:Generator_ColumnPropNameInRow="SaleQty" msprop:Generator_ColumnPropNameInTable="SaleQtyColumn" msprop:Generator_UserColumnName="SaleQty" type="xs:int" minOccurs="0" />
-              <xs:element name="ProduceQty" msprop:Generator_ColumnVarNameInTable="columnProduceQty" msprop:Generator_ColumnPropNameInRow="ProduceQty" msprop:Generator_ColumnPropNameInTable="ProduceQtyColumn" msprop:Generator_UserColumnName="ProduceQty" type="xs:int" minOccurs="0" />
-              <xs:element name="RequireQty" msprop:Generator_ColumnVarNameInTable="columnRequireQty" msprop:Generator_ColumnPropNameInRow="RequireQty" msprop:Generator_ColumnPropNameInTable="RequireQtyColumn" msprop:Generator_UserColumnName="RequireQty" type="xs:int" minOccurs="0" />
-              <xs:element name="CalculatedValue" msprop:Generator_ColumnVarNameInTable="columnCalculatedValue" msprop:Generator_ColumnPropNameInRow="CalculatedValue" msprop:Generator_ColumnPropNameInTable="CalculatedValueColumn" msprop:Generator_UserColumnName="CalculatedValue" type="xs:double" minOccurs="0" />
-              <xs:element name="N100Convert" msprop:Generator_ColumnVarNameInTable="columnN100Convert" msprop:Generator_ColumnPropNameInRow="N100Convert" msprop:Generator_ColumnPropNameInTable="N100ConvertColumn" msprop:Generator_UserColumnName="N100Convert" type="xs:double" minOccurs="0" />
-              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
-              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="PlanDate" msprop:Generator_ColumnVarNameInTable="columnPlanDate" msprop:Generator_ColumnPropNameInRow="PlanDate" msprop:Generator_ColumnPropNameInTable="PlanDateColumn" msprop:Generator_UserColumnName="PlanDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesQty" msprop:Generator_ColumnVarNameInTable="columnSalesQty" msprop:Generator_ColumnPropNameInRow="SalesQty" msprop:Generator_ColumnPropNameInTable="SalesQtyColumn" msprop:Generator_UserColumnName="SalesQty" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductionQty" msprop:Generator_ColumnVarNameInTable="columnProductionQty" msprop:Generator_ColumnPropNameInRow="ProductionQty" msprop:Generator_ColumnPropNameInTable="ProductionQtyColumn" msprop:Generator_UserColumnName="ProductionQty" type="xs:int" minOccurs="0" />
+              <xs:element name="RequiredN100Convert" msprop:Generator_ColumnVarNameInTable="columnRequiredN100Convert" msprop:Generator_ColumnPropNameInRow="RequiredN100Convert" msprop:Generator_ColumnPropNameInTable="RequiredN100ConvertColumn" msprop:Generator_UserColumnName="RequiredN100Convert" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProductionN100Convert" msprop:Generator_ColumnVarNameInTable="columnProductionN100Convert" msprop:Generator_ColumnPropNameInRow="ProductionN100Convert" msprop:Generator_ColumnPropNameInTable="ProductionN100ConvertColumn" msprop:Generator_UserColumnName="ProductionN100Convert" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
