@@ -63,5 +63,10 @@ namespace PTIC.Marketing
         {
             UIManager.OpenForm(new frmRV_QOB_Marketing_5Viewer());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UIManager.OpenForm(new Report.frmClosingWaitingOutlet());
+        }
     }
 }
