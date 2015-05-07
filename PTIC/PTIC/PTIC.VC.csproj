@@ -489,6 +489,12 @@
     <Compile Include="Marketing\MarketingPlan\frmConfirmTelemarketingPlan.Designer.cs">
       <DependentUpon>frmConfirmTelemarketingPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marketing\Report\frmClosingWaitingOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Report\frmClosingWaitingOutlet.Designer.cs">
+      <DependentUpon>frmClosingWaitingOutlet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marketing\Survey\frmAcidAnswerList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1605,6 +1611,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Marketing\MarketingPlan\frmConfirmTelemarketingPlan.resx">
       <DependentUpon>frmConfirmTelemarketingPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Report\frmClosingWaitingOutlet.resx">
+      <DependentUpon>frmClosingWaitingOutlet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marketing\Survey\frmAcidAnswerList.resx">
       <DependentUpon>frmAcidAnswerList.cs</DependentUpon>

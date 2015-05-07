@@ -39,6 +39,7 @@
             this.btnYearlyCustomerTransition = new System.Windows.Forms.Button();
             this.btnMarketingNewOutletQOB = new System.Windows.Forms.Button();
             this.btnQOB5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetup.Location = new System.Drawing.Point(8, 9);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(57, 20);
+            this.lblSetup.Size = new System.Drawing.Size(63, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "Report";
             // 
@@ -154,11 +155,22 @@
             this.btnQOB5.UseVisualStyleBackColor = true;
             this.btnQOB5.Click += new System.EventHandler(this.btnQOB5_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(43, 252);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(172, 57);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "Waiting / Permanent Customers Status";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmMarketingReportPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 386);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnQOB5);
             this.Controls.Add(this.btnMarketingNewOutletQOB);
             this.Controls.Add(this.btnYearlyCustomerTransition);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.Button btnYearlyCustomerTransition;
         private System.Windows.Forms.Button btnMarketingNewOutletQOB;
         private System.Windows.Forms.Button btnQOB5;
+        private System.Windows.Forms.Button button2;
     }
 }
