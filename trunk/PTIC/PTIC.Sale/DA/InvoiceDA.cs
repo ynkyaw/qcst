@@ -363,6 +363,10 @@ namespace PTIC.Sale.DA
                 cmd.Parameters["@p_InvoiceNo"].Direction = ParameterDirection.Input;
                
                 object insertedIDObj = cmd.ExecuteScalar();
+
+                
+
+
                 if (insertedIDObj.GetType() == typeof(DBNull))
                     return null;
 
@@ -435,6 +439,27 @@ namespace PTIC.Sale.DA
 
                 // commit transaction
                 transaction.Commit();
+                object obj = new PTIC.Common.DA.BaseDAO().SelectScalar("SELECT ISALREADYPARMENT FROM CUSTOMER WHERE ID=" + newInvoice.CusID);
+                if (obj != null)
+                {
+                    if (!(bool)obj)
+                    {
+                        string template = @"SELECT SUM(MSC)
+                                           FROM (SELECT COUNT(*) AS MSC FROM Invoice 	
+                                           WHERE convert(date,SalesDate) BETWEEN '{0}' AND '{1}'	AND CusID={2} 
+                                           GROUP BY MONTH(SALESDATE))MS";
+                        string sql = string.Format(template, newInvoice.SalesDate.AddMonths(-6).ToString("yyyyMMdd"), newInvoice.SalesDate.ToString("yyyyMMdd"), newInvoice.CusID);
+                        object salesCnt = new PTIC.Common.DA.BaseDAO().SelectScalar(sql);
+                        if (salesCnt != null && (int)salesCnt > 2)
+                        {
+                            string templateUpdateSql = "UPDATE Customer SET IsAlreadyParment=1,FirstParmanentDate='{0}' WHERE ID={1}";
+                            string updateSql = string.Format(templateUpdateSql, newInvoice.SalesDate.ToString("yyyyMMdd"), newInvoice.CusID);
+                            new PTIC.Common.DA.BaseDAO().ExecuteNonQuery(updateSql);
+                        }
+                    }
+                }
+
+                
             }
             catch (SqlException sqle)
             {
@@ -530,6 +555,7 @@ namespace PTIC.Sale.DA
 
                 insertedInvoiceID = (int)insertedIDObj;
                 // Clear parameters of usp_CashSaleInvoiceInsert
+                
                 cmd.Parameters.Clear();
 
                 // Insert new CashSales                
@@ -659,6 +685,26 @@ namespace PTIC.Sale.DA
                 }
                 // Commit transaction
                 transaction.Commit();
+
+                object obj = new PTIC.Common.DA.BaseDAO().SelectScalar("SELECT ISALREADYPARMENT FROM CUSTOMER WHERE ID=" + newInvoice.CusID);
+                if (obj != null)
+                {
+                    if (!(bool)obj)
+                    {
+                        string template = @"SELECT SUM(MSC)
+                                           FROM (SELECT COUNT(*) AS MSC FROM Invoice 	
+                                           WHERE convert(date,SalesDate) BETWEEN '{0}' AND '{1}'	AND CusID={2} 
+                                           GROUP BY MONTH(SALESDATE))MS";
+                        string sql = string.Format(template, newInvoice.SalesDate.AddMonths(-6).ToString("yyyyMMdd"), newInvoice.SalesDate.ToString("yyyyMMdd"), newInvoice.CusID);
+                        object salesCnt = new PTIC.Common.DA.BaseDAO().SelectScalar(sql);
+                        if (salesCnt != null && (int)salesCnt > 2)
+                        {
+                            string templateUpdateSql = "UPDATE Customer SET IsAlreadyParment=1,FirstParmanentDate='{0}' WHERE ID={1}";
+                            string updateSql = string.Format(templateUpdateSql, newInvoice.SalesDate.ToString("yyyyMMdd"), newInvoice.CusID);
+                            new PTIC.Common.DA.BaseDAO().ExecuteNonQuery(updateSql);
+                        }
+                    }
+                }
             }
             catch (SqlException sqle)
             {
