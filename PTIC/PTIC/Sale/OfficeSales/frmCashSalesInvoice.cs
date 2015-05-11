@@ -19,7 +19,9 @@ using PTIC.Sale.BL;
 using System.Drawing;
 using PTIC.Common.BL;
 using PTIC.VC.Validation;
+using PTIC.VC.Sale.Setup;
 using Microsoft.Practices.EnterpriseLibrary.Validation;
+using PTIC.Sale.Setup;
 
 namespace PTIC.VC.Sale.OfficeSales
 {
@@ -540,15 +542,15 @@ namespace PTIC.VC.Sale.OfficeSales
 
         private void btnAddNewCustomer_Click(object sender, EventArgs e)
         {
-            // Make use cash sale customer is potential or not
-            frmNewCustomer formTmpCustomer = new frmNewCustomer(false);
+            // TODO: make use cash sale customer is potential or not
+            frmCustomerInformation formTmpCustomer = new frmCustomerInformation();
             // Set call back function
-            formTmpCustomer.TempCustomerSavedHandler += new frmNewCustomer.TempCustomerSaveHandler(formTmpCustomer_CallBack);
+            formTmpCustomer.TempCustomerSavedHandler += new frmCustomerInformation.TempCustomerSaveHandler(formTmpCustomer_CallBack);
             // Open an entry form for a temp customer
             UIManager.OpenForm(formTmpCustomer);
         }
 
-        void formTmpCustomer_CallBack(object sender, frmNewCustomer.TempCustomerSaveEventArgs e)
+        void formTmpCustomer_CallBack(object sender, frmCustomerInformation.TempCustomerSaveEventArgs e)
         {
             //DataTable table = ((cmbCustomerName.DataSource as BindingSource).DataSource as DataSet).Tables["TownTable"];
             //DataTable table = this._dtCustomer;

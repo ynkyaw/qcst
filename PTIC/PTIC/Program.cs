@@ -41,19 +41,20 @@ namespace PTIC.VC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-  
+            //Application.Run(new PTIC.Marketing.Report.frmYearlyCustomerComplainSummaryReport());
+
             using (Mutex mutex = new Mutex(false, "PTIC"))
             {
                 if (!mutex.WaitOne(0, false))
                 {
-                    MessageBox.Show("Application already running!", "PTIC System", 
-                        MessageBoxButtons.OK, 
+                    MessageBox.Show("Application already running!", "PTIC System",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                     return;
                 }
-                
+
                 Application.Run(new frmMainGUI());
-                
+
             }           
         }
     }
