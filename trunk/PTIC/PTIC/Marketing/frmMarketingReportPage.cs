@@ -68,5 +68,10 @@ namespace PTIC.Marketing
         {
             UIManager.OpenForm(new Report.frmClosingWaitingOutlet());
         }
+
+        private void btnComplainMonthly_Click(object sender, EventArgs e)
+        {
+            UIManager.OpenForm(new Report.frmMonthlyCustomerComplainSummary());
+        }
     }
 }
