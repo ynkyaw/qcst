@@ -19,7 +19,34 @@ namespace PTIC.Sale.Setup
 {
     public partial class frmCustomerInformation : Form
     {
-
+        #region Inner Class
+        public class TempCustomerSaveEventArgs : EventArgs
+        {
+            Customer _customer = null;
+            ContactPerson _contactPersonOfCustomer = null;
+            Address _address = null;
+            public TempCustomerSaveEventArgs(Customer savedCustomer, ContactPerson contactPerson, Address address)
+            {
+                this._customer = savedCustomer;
+                this._contactPersonOfCustomer = contactPerson;
+                this._address = address;
+            }
+            public Customer SavedTempCustomer
+            {
+                get { return this._customer; }
+            }
+            public ContactPerson SavedContactPerson
+            {
+                get { return this._contactPersonOfCustomer; }
+            }
+            public Address SavedAddress
+            {
+                get { return this._address; }
+            }
+        }
+        #endregion
+        public delegate void TempCustomerSaveHandler(object sender, TempCustomerSaveEventArgs e);
+        public event TempCustomerSaveHandler TempCustomerSavedHandler;
         /// <summary>
         /// Logger for frmCustomerInformation
         /// </summary>
@@ -808,6 +835,8 @@ namespace PTIC.Sale.Setup
                     if (affectrow.HasValue && affectrow.Value > 0)
                     {
                         ToastMessageBox.Show(Resource.msgSuccessfullySaved);
+                        TempCustomerSaveEventArgs tempCustomerArg = new TempCustomerSaveEventArgs(customer, contactperson, address);
+                        TempCustomerSavedHandler(this, tempCustomerArg);
                         this.Close();
                     }
                     else

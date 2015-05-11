@@ -1062,14 +1062,16 @@ namespace PTIC.VC.Sale.OfficeSales
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             // TODO: make use cash sale customer is potential or not
-            frmNewCustomer formTmpCustomer = new frmNewCustomer(false);
+            frmCustomerInformation formTmpCustomer = new frmCustomerInformation();
             // Set call back function
-            formTmpCustomer.TempCustomerSavedHandler += new frmNewCustomer.TempCustomerSaveHandler(formTmpCustomer_CallBack);
+            formTmpCustomer.TempCustomerSavedHandler += new frmCustomerInformation.TempCustomerSaveHandler(formTmpCustomer_CallBack);
             // Open an entry form for a temp customer
             UIManager.OpenForm(formTmpCustomer);
         }
 
-        private void formTmpCustomer_CallBack(object sender, frmNewCustomer.TempCustomerSaveEventArgs e)
+       
+
+        private void formTmpCustomer_CallBack(object sender, frmCustomerInformation.TempCustomerSaveEventArgs e)
         {   
             // Reload data
             LoadNBind();
