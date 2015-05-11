@@ -495,11 +495,11 @@
     <Compile Include="Marketing\Report\frmClosingWaitingOutlet.Designer.cs">
       <DependentUpon>frmClosingWaitingOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marketing\Report\frmYearlyCustomerComplainSummaryReport.cs">
+    <Compile Include="Marketing\Report\frmMonthlyCustomerComplainSummary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Marketing\Report\frmYearlyCustomerComplainSummaryReport.Designer.cs">
-      <DependentUpon>frmYearlyCustomerComplainSummaryReport.cs</DependentUpon>
+    <Compile Include="Marketing\Report\frmMonthlyCustomerComplainSummary.Designer.cs">
+      <DependentUpon>frmMonthlyCustomerComplainSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="Marketing\Survey\frmAcidAnswerList.cs">
       <SubType>Form</SubType>
@@ -1621,9 +1621,10 @@
     <EmbeddedResource Include="Marketing\Report\frmClosingWaitingOutlet.resx">
       <DependentUpon>frmClosingWaitingOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Marketing\Report\frmYearlyCustomerComplainSummaryReport.resx">
-      <DependentUpon>frmYearlyCustomerComplainSummaryReport.cs</DependentUpon>
+    <EmbeddedResource Include="Marketing\Report\frmMonthlyCustomerComplainSummary.resx">
+      <DependentUpon>frmMonthlyCustomerComplainSummary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Report\MonthlyCustomerComplain.rdlc" />
     <EmbeddedResource Include="Marketing\Survey\frmAcidAnswerList.resx">
       <DependentUpon>frmAcidAnswerList.cs</DependentUpon>
     </EmbeddedResource>
