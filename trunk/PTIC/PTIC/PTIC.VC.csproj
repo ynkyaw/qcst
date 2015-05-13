@@ -845,6 +845,12 @@
       <DependentUpon>DeliveryNoteReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Sale\Report\frmDailySalesByBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sale\Report\frmDailySalesByBrand.Designer.cs">
+      <DependentUpon>frmDailySalesByBrand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sale\Report\frmDeliveryNoteDetailViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1813,6 +1819,9 @@
     <EmbeddedResource Include="Sale\Report\DeliveryNoteReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeliveryNoteReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale\Report\frmDailySalesByBrand.resx">
+      <DependentUpon>frmDailySalesByBrand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sale\Report\frmDeliveryNoteDetailViewer.resx">
       <DependentUpon>frmDeliveryNoteDetailViewer.cs</DependentUpon>

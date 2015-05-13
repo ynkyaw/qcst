@@ -232,7 +232,7 @@ namespace PTIC.Sale.BL
                 return InvoiceDA.InsertCashInvoice(newInvoice, newSaleDetailRecords,
                 false, warehouseID,
                 true, // Enable stock control
-                newCommDiscount, newTax);
+                newCommDiscount, newTax,warehouseID);
             }
             catch (Exception e)
             {
@@ -305,7 +305,7 @@ namespace PTIC.Sale.BL
                 return InvoiceDA.InsertCashInvoice(newInvoice, newSaleDetailRecords,
                     true, vehicleID,
                     true, // Enable stock control
-                    newCommDiscount, newTax);
+                    newCommDiscount, newTax,0);
             }
             catch(Exception e)
             {

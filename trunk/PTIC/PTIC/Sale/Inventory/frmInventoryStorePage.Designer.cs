@@ -94,7 +94,7 @@
             this.lblSalePage.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalePage.Location = new System.Drawing.Point(8, 9);
             this.lblSalePage.Name = "lblSalePage";
-            this.lblSalePage.Size = new System.Drawing.Size(165, 20);
+            this.lblSalePage.Size = new System.Drawing.Size(155, 19);
             this.lblSalePage.TabIndex = 0;
             this.lblSalePage.Text = "ကုန်ပစ္စည်း အဝင်/အထွက်";
             // 
@@ -119,7 +119,6 @@
             this.btnShowRoomMovement.TabIndex = 41;
             this.btnShowRoomMovement.Text = "ShowRooms Movement";
             this.btnShowRoomMovement.UseVisualStyleBackColor = true;
-            this.btnShowRoomMovement.Visible = false;
             this.btnShowRoomMovement.Click += new System.EventHandler(this.btnShowRoomMovement_Click);
             // 
             // btnSalesReturn
