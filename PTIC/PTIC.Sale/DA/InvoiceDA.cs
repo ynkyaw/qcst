@@ -361,6 +361,9 @@ namespace PTIC.Sale.DA
 
                 cmd.Parameters.AddWithValue("@p_InvoiceNo", newInvoice.InvoiceNo);
                 cmd.Parameters["@p_InvoiceNo"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_warehouse", WarehouseID);
+                cmd.Parameters["@p_warehouse"].Direction = ParameterDirection.Input;
                
                 object insertedIDObj = cmd.ExecuteScalar();
 
@@ -497,7 +500,7 @@ namespace PTIC.Sale.DA
         public static int? InsertCashInvoice(
             Invoice newInvoice, List<SaleDetail> newSaleDetailRecords,
             bool isSaleFromVehicle, int placeID, bool needStockControl,
-            CommDiscount newCommDiscount, Tax newTax)
+            CommDiscount newCommDiscount, Tax newTax,int warehouse)
         {
             // TODO: Add concurrency control - isolation level @InsertCashInvoice
             SqlConnection conn = null;
@@ -548,6 +551,9 @@ namespace PTIC.Sale.DA
 
                 cmd.Parameters.AddWithValue("@p_Remark", newInvoice.Remark);
                 cmd.Parameters["@p_Remark"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_warehouse", warehouse);
+                cmd.Parameters["@p_warehouse"].Direction = ParameterDirection.Input;
                 
                 object insertedIDObj = cmd.ExecuteScalar();
                 if (insertedIDObj.GetType() == typeof(DBNull))

@@ -61,5 +61,10 @@ namespace PTIC.Sale
         {
             UIManager.MdiChildOpenForm(new PTIC.Sale.Report.frmMonthlySalesReport());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UIManager.MdiChildOpenForm(new PTIC.Sale.Report.frmDailySalesByBrand());
+        }
     }
 }
