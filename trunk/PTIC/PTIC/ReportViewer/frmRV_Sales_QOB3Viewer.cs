@@ -60,7 +60,12 @@ namespace PTIC.ReportViewer
         #region Private Methods
         private void PreloadData()
         {
-            cmbBrand.DataSource = new BrandBL().GetAll();
+            DataTable dt = new BrandBL().GetAll();
+            dt.Rows.InsertAt(dt.NewRow(), 0);
+            dt.Rows[0][0] = 0;
+            dt.Rows[0][1] = "All";
+            cmbBrand.DataSource = dt;
+
         }
 
         private void OnDateChangeOccured()
@@ -70,14 +75,24 @@ namespace PTIC.ReportViewer
 
         private void Search(DateTime startDate, DateTime endDate, int brandID, string brandName)
         {
-            DataTable dt = new ReportBL().GetSalesQOB5(startDate, endDate, brandID);
-            reportViewer.LocalReport.ReportEmbeddedResource = "PTIC.Report.Sales_QOB5.rdlc";
+            string brand = "";
+            
+            if (brandID > 0) 
+            {
+                brand = " WHERE B.ID=" + brandID + "  ";
+            }
+            DataTable dt = new ReportBL().GetSalesQOB3(brand, startDate, endDate);
+            reportViewer.LocalReport.ReportEmbeddedResource = "PTIC.Report.Sales_QOB3.rdlc";
             reportViewer.LocalReport.DataSources.Clear();
 
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet_SalesQOB5", dt));
 
+            if (brandID == 0)
+                brandName = string.Empty;
+
             ReportParameter paramEndDate = new ReportParameter("Brand", brandName);
-            reportViewer.LocalReport.SetParameters(new ReportParameter[] { paramEndDate });
+            ReportParameter paramStd = new ReportParameter("Std", numericUpDown1.Value + "%");
+            reportViewer.LocalReport.SetParameters(new ReportParameter[] { paramEndDate ,paramStd});
 
             reportViewer.RefreshReport();
         }
@@ -93,6 +108,11 @@ namespace PTIC.ReportViewer
             PreloadData();
         }
         #endregion
+
+        private void pnlFilter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
                                 
     }
 }
