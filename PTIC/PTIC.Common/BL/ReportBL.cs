@@ -242,9 +242,9 @@ namespace PTIC.Common.BL
             return ReportDA.SelectSalesQOB2(brandConditional,startDate, endDate);
         }
 
-        public DataTable GetSalesQOB5(DateTime startDate, DateTime endDate, int brandID)
+        public DataTable GetSalesQOB3(string brandConditional,DateTime startDate, DateTime endDate)
         {
-            return ReportDA.SelectSalesQOB5(startDate, endDate, brandID);
+            return ReportDA.SelectSalesQOB3(brandConditional,startDate, endDate);
         }
 
         public DataTable GetSalesQOB6(DateTime startDate, DateTime endDate, int brandID)

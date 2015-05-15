@@ -1754,7 +1754,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Sales_QOB1.rdlc" />
     <EmbeddedResource Include="Report\Sales_QOB2.rdlc" />
-    <EmbeddedResource Include="Report\Sales_QOB5.rdlc" />
+    <EmbeddedResource Include="Report\Sales_QOB3.rdlc" />
     <EmbeddedResource Include="Report\Sales_QOB6.rdlc" />
     <EmbeddedResource Include="Report\WaitingOrPermanentCustomer.rdlc" />
     <EmbeddedResource Include="Report\YearlyCustomerTransition.rdlc" />

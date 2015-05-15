@@ -73,7 +73,7 @@
             this.btnSalesQOB5.Name = "btnSalesQOB5";
             this.btnSalesQOB5.Size = new System.Drawing.Size(172, 57);
             this.btnSalesQOB5.TabIndex = 35;
-            this.btnSalesQOB5.Text = "Sales QOB 5";
+            this.btnSalesQOB5.Text = "Sales QOB 3";
             this.btnSalesQOB5.UseVisualStyleBackColor = true;
             this.btnSalesQOB5.Click += new System.EventHandler(this.btnSalesQOB5_Click);
             // 
@@ -83,7 +83,7 @@
             this.btnSalesQOB6.Name = "btnSalesQOB6";
             this.btnSalesQOB6.Size = new System.Drawing.Size(172, 57);
             this.btnSalesQOB6.TabIndex = 36;
-            this.btnSalesQOB6.Text = "Sales QOB 6";
+            this.btnSalesQOB6.Text = "Sales QOB 4";
             this.btnSalesQOB6.UseVisualStyleBackColor = true;
             this.btnSalesQOB6.Click += new System.EventHandler(this.btnSalesQOB6_Click);
             // 
@@ -93,7 +93,7 @@
             this.btnSalesQOB1.Name = "btnSalesQOB1";
             this.btnSalesQOB1.Size = new System.Drawing.Size(172, 57);
             this.btnSalesQOB1.TabIndex = 37;
-            this.btnSalesQOB1.Text = "Sales QOB 1";
+            this.btnSalesQOB1.Text = "Sales QOB 1 And QOB 5";
             this.btnSalesQOB1.UseVisualStyleBackColor = true;
             this.btnSalesQOB1.Click += new System.EventHandler(this.btnSalesQOB1_Click);
             // 
@@ -103,7 +103,7 @@
             this.btnSalesQOB2.Name = "btnSalesQOB2";
             this.btnSalesQOB2.Size = new System.Drawing.Size(172, 57);
             this.btnSalesQOB2.TabIndex = 38;
-            this.btnSalesQOB2.Text = "Sales QOB 2";
+            this.btnSalesQOB2.Text = "Sales QOB 2 And QOB 4";
             this.btnSalesQOB2.UseVisualStyleBackColor = true;
             this.btnSalesQOB2.Click += new System.EventHandler(this.btnSalesQOB2_Click);
             // 

@@ -497,7 +497,7 @@ namespace PTIC.Common.DA
             return table;
         }
 
-        public static DataTable SelectSalesQOB5(DateTime startDate, DateTime endDate, int brandID)
+        public static DataTable SelectSalesQOB3(string brandCondtional,DateTime startDate, DateTime endDate)
         {
             DataTable table = null;
             string tableName = "SalesQOB5Table";
@@ -505,18 +505,57 @@ namespace PTIC.Common.DA
             {
                 table = new DataTable(tableName);
                 SqlCommand command = new SqlCommand();
+
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "usp_RP_Sales_QOB5";
+                string sqlTemplate = @"SELECT *, CONVERT(DECIMAL(18,2),(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+[DEC])/12) AS [AVG]
+                                        FROM
+                                        (
+                                        SELECT SALESYEAR AS [YEAR],
+                                        CONVERT(DECIMAL(18,2),ISNULL([1],0)) AS [JAN],
+                                        CONVERT(DECIMAL(18,2),ISNULL([2],0)) AS [FEB],
+                                        CONVERT(DECIMAL(18,2),ISNULL([3],0)) AS [MAR],
+                                        CONVERT(DECIMAL(18,2),ISNULL([4],0)) AS [APR],
+                                        CONVERT(DECIMAL(18,2),ISNULL([5],0)) AS [MAY],
+                                        CONVERT(DECIMAL(18,2),ISNULL([6],0)) AS [JUN],
+                                        CONVERT(DECIMAL(18,2),ISNULL([7],0)) AS [JUL],
+                                        CONVERT(DECIMAL(18,2),ISNULL([8],0)) AS [AUG],
+                                        CONVERT(DECIMAL(18,2),ISNULL([9],0)) AS [SEP],
+                                        CONVERT(DECIMAL(18,2),ISNULL([10],0)) AS [OCT],
+                                        CONVERT(DECIMAL(18,2),ISNULL([11],0)) AS [NOV],
+                                        CONVERT(DECIMAL(18,2),ISNULL([12],0)) AS [DEC]
+                                        FROM (
+                                        SELECT CASE WHEN (ISNULL(PREVTQ.SALESQTY,0)*0.3)=0 THEN 0 
+                                        ELSE ((ISNULL(CURRENTQ.SALESQTY,0)-ISNULL(PREVTQ.SALESQTY,0))*100)/(ISNULL(PREVTQ.SALESQTY,0)*0.3) END AS PROGRESSPERCENT,
+                                        CURRENTQ.SALESYEAR,CURRENTQ.SALESMONTH
+                                        FROM (SELECT SUM(ID.Qty ) AS SALESQTY,YEAR(I.SalesDate) SALESYEAR,MONTH(I.SalesDate) SALESMONTH
+                                        FROM Invoice I
+                                        INNER JOIN SalesDetail ID
+                                        ON I.ID=ID.InvoiceID
+                                        GROUP BY YEAR(I.SalesDate),MONTH(I.SalesDate))CURRENTQ 
+                                        LEFT JOIN (SELECT SUM(ID.Qty ) AS SALESQTY,YEAR(I.SalesDate) SALESYEAR,MONTH(I.SalesDate) SALESMONTH
+                                        FROM Invoice I
+                                        INNER JOIN SalesDetail ID
+                                        ON I.ID=ID.InvoiceID
+                                        INNER JOIN Product P
+                                        ON P.ID = ID.ProductID
+                                        INNER JOIN ProdSubCategory PSC
+                                        ON PSC.ID=P.SubCategoryID
+                                        INNER JOIN ProdCategory PC
+                                        ON PSC.CategoryID = PC.ID
+                                        INNER JOIN Brand B
+                                        ON B.ID=PC.BrandID
+                                         {0}
+                                        GROUP BY YEAR(I.SalesDate),MONTH(I.SalesDate))PREVTQ 
+                                        ON CURRENTQ.SALESYEAR-1=PREVTQ.SALESYEAR
+                                        AND CURRENTQ.SALESMONTH=PREVTQ.SALESMONTH
+                                        )Q3
+                                        PIVOT (AVG(PROGRESSPERCENT) FOR SALESMONTH IN ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12]))AS QOB3
+                                        )SalesQOB3
+                                        WHERE [YEAR] Between {1} AND {2}";
+                string sql = string.Format(sqlTemplate, brandCondtional, startDate.Year, endDate.Year);
+                command.CommandText = sql;
+            
 
-                command.Parameters.AddWithValue("@p_StartDate", startDate);
-                command.Parameters["@p_StartDate"].Direction = ParameterDirection.Input;
-
-                command.Parameters.AddWithValue("@p_EndDate", endDate);
-                command.Parameters["@p_EndDate"].Direction = ParameterDirection.Input;
-
-                command.Parameters.AddWithValue("@p_BrandID", brandID);
-                command.Parameters["@p_BrandID"].Direction = ParameterDirection.Input;                
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);

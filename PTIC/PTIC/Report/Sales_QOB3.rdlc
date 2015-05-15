@@ -856,7 +856,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Mar.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -888,7 +890,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Apr.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -920,7 +924,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!May.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -952,7 +958,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Jun.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -984,7 +992,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Jul.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1016,7 +1026,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Aug.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1048,7 +1060,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Sep.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1080,7 +1094,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Oct.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1112,7 +1128,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Nov.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1144,7 +1162,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Dec.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1209,7 +1229,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Parameters!Std.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1410,7 +1430,19 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>အရောင်း Target အားလစဉ် ( %) နှင့် အထက်ပြည့်မှီအောင် ဆောင်ရွက်ရန်၊</Value>
+                <Value>လစဉ်အရောင်း(အလုံးရေ)အားယခင်နှစ် Actual အရောင်း  ၏ ( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!Std.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>)နှင့် အထက်တိုးတက်အောင်ဆောင်ရွက်ရန်</Value>
                 <Style>
                   <FontFamily>Myanmar3</FontFamily>
                 </Style>
@@ -1442,7 +1474,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>QOB (5) </Value>
+                <Value>QOB (3) </Value>
                 <Style>
                   <FontFamily>Myanmar3</FontFamily>
                 </Style>
@@ -1482,6 +1514,14 @@
   <ReportParameters>
     <ReportParameter Name="Brand">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Std">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
