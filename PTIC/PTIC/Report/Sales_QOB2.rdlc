@@ -1208,7 +1208,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Parameters!Std.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1409,7 +1409,19 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>QOB (2) Sales Order များအား လစဉ် ( %) နှင့် အထက်ပြည့်မီအောင် ဖြည့်ဆည်းပေးရန်၊</Value>
+                <Value>QOB (2) Sales Order များအား လစဉ် ( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!Std.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> ) နှင့် အထက်ပြည့်မီအောင် ဖြည့်ဆည်းပေးရန်၊</Value>
                 <Style>
                   <FontFamily>Myanmar3</FontFamily>
                 </Style>
@@ -1440,6 +1452,12 @@
     <Height>7.41667in</Height>
     <Style />
   </Body>
+  <ReportParameters>
+    <ReportParameter Name="Std">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <Width>9.79167in</Width>
   <Page>
     <PageHeader>

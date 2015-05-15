@@ -19,6 +19,14 @@ namespace PTIC.ReportViewer
         private void frmRV_Sales_QOB1Viewer_Load(object sender, EventArgs e)
         {
             this.reportViewer.RefreshReport();
+             DataTable dt = PTIC.Sale.DA.BrandDA.SelectAll();
+            dt.Rows.InsertAt(dt.NewRow(),0);
+            dt.Rows[0][0]=0;
+            dt.Rows[0][1]="All";
+            comboBox1.DataSource = dt;
+            comboBox1.ValueMember = "BrandId";
+            comboBox1.DisplayMember = "BrandName";
+
         }
 
         private void lblFilter_Click(object sender, EventArgs e)
@@ -65,7 +73,17 @@ namespace PTIC.ReportViewer
         }
 
         private void Search(DateTime startDate, DateTime endDate)
-        {            
+        {
+            string brand = "";
+            string brandName = "";
+            if (comboBox1.SelectedValue != null) 
+            {
+                if ((int)comboBox1.SelectedValue > 0) 
+                {
+                    brand = "WHERE B.ID=" + comboBox1.SelectedValue +"  ";
+                    brandName = (comboBox1.SelectedItem as DataRowView)["BrandName"]+string.Empty;
+                }
+            }
             // Move to first month of start date
             startDate = new DateTime(startDate.Year, 1, 1);
 
@@ -85,7 +103,13 @@ namespace PTIC.ReportViewer
             }
 
             ReportBL reporter = new ReportBL();
-            DataTable dt = reporter.GetSalesQOB1(startDate, endDate);
+            DataTable dt = reporter.GetSalesQOB1(brand,startDate, endDate);
+            if (dt.Rows.Count < 1) 
+            {
+                reportViewer.Clear();
+                MessageBox.Show("No Data To Show!");
+                return;
+            }
             if (!reporter.ValidationResults.IsValid)
             {
                 reportViewer.Clear();
@@ -98,6 +122,9 @@ namespace PTIC.ReportViewer
                 return;
             }
 
+            
+            
+
             reportViewer.LocalReport.ReportEmbeddedResource = "PTIC.Report.Sales_QOB1.rdlc";
             reportViewer.LocalReport.DataSources.Clear();
 
@@ -105,7 +132,10 @@ namespace PTIC.ReportViewer
 
             ReportParameter paramStartDate = new ReportParameter("StartDate", startDate.ToString());
             ReportParameter paramEndDate = new ReportParameter("EndDate", endDate.ToString());
-            reportViewer.LocalReport.SetParameters(new ReportParameter[] { paramStartDate, paramEndDate });
+            ReportParameter paramStd = new ReportParameter("Std", numericUpDown1.Value + "%");
+            ReportParameter paramBrand = new ReportParameter("Brand", brandName);
+
+            reportViewer.LocalReport.SetParameters(new ReportParameter[] { paramStartDate, paramEndDate,paramStd,paramBrand });
             
             reportViewer.RefreshReport();
         }

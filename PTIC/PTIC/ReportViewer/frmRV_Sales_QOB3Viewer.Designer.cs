@@ -1,6 +1,6 @@
 ﻿namespace PTIC.ReportViewer
 {
-    partial class frmRV_Sales_QOB5Viewer
+    partial class frmRV_Sales_QOB3Viewer
     {
         /// <summary>
         /// Required designer variable.

@@ -221,11 +221,11 @@ namespace PTIC.Common.BL
             
         }
 
-        public DataTable GetSalesQOB1(DateTime startDate, DateTime endDate)
+        public DataTable GetSalesQOB1(string brandCondtional,DateTime startDate, DateTime endDate)
         {            
             try
             {
-                return ReportDA.SelectSalesQOB1(startDate, endDate);
+                return ReportDA.SelectSalesQOB1(brandCondtional, startDate, endDate);
             }
             catch(Exception e)
             {
@@ -237,9 +237,9 @@ namespace PTIC.Common.BL
             
         }
 
-        public DataTable GetSalesQOB2(DateTime startDate, DateTime endDate)
+        public DataTable GetSalesQOB2(string brandConditional,DateTime startDate, DateTime endDate)
         {
-            return ReportDA.SelectSalesQOB2(startDate, endDate);
+            return ReportDA.SelectSalesQOB2(brandConditional,startDate, endDate);
         }
 
         public DataTable GetSalesQOB5(DateTime startDate, DateTime endDate, int brandID)

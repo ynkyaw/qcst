@@ -19,7 +19,7 @@ namespace PTIC.Sale
 
         private void btnSalesQOB5_Click(object sender, EventArgs e)
         {
-            UIManager.OpenForm(new frmRV_Sales_QOB5Viewer());
+            UIManager.OpenForm(new frmRV_Sales_QOB3Viewer());
         }
 
         private void btnSalesQOB6_Click(object sender, EventArgs e)

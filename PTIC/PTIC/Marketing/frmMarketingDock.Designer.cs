@@ -152,7 +152,7 @@
             this.btnSurvey.Name = "btnSurvey";
             this.btnSurvey.Size = new System.Drawing.Size(150, 45);
             this.btnSurvey.TabIndex = 8;
-            this.btnSurvey.Text = "Survey ‌ကောက်ခံခြင်း";
+            this.btnSurvey.Text = "COCS";
             this.btnSurvey.UseVisualStyleBackColor = true;
             this.btnSurvey.Click += new System.EventHandler(this.btnSurvey_Click);
             // 
