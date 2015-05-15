@@ -13,7 +13,7 @@ using Microsoft.Reporting.WinForms;
 
 namespace PTIC.ReportViewer
 {
-    public partial class frmRV_Sales_QOB5Viewer : Form
+    public partial class frmRV_Sales_QOB3Viewer : Form
     {
         #region Events
         private void frmRV_Sales_QOB5Viewer_Load(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace PTIC.ReportViewer
         #endregion
 
         #region Constructor
-        public frmRV_Sales_QOB5Viewer()
+        public frmRV_Sales_QOB3Viewer()
         {
             InitializeComponent();
             //

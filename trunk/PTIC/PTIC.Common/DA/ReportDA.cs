@@ -319,7 +319,7 @@ namespace PTIC.Common.DA
             return table;
         }
 
-        public static DataTable SelectSalesQOB1(DateTime startDate, DateTime endDate)
+        public static DataTable SelectSalesQOB1(string brandCondtional,DateTime startDate, DateTime endDate)
         {
             DataTable table = null;
             string tableName = "SalesQOB1Table";
@@ -328,14 +328,89 @@ namespace PTIC.Common.DA
                 table = new DataTable(tableName);
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "usp_RP_Sales_QOB1";
+                //command.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@p_StartDate", startDate);
-                command.Parameters["@p_StartDate"].Direction = ParameterDirection.Input;
+                #region queryTemplate
+                string sqlQOB1 = @"SELECT *, CONVERT(DECIMAL(3,2),(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+[DEC])/12) AS [AVG]
+                                    FROM 
+                                    (
+                                    SELECT ISNULL(PLANSALES.PlanYear,ACTUALSALES.SalesYear) AS [YEAR], 
+                                    CASE WHEN ISNULL(PLANSALES.[1],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[1],0)*100.0/ISNULL(PLANSALES.[1],0)) END AS [JAN],
+                                    CASE WHEN ISNULL(PLANSALES.[2],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[2],0)*100.0/ISNULL(PLANSALES.[2],0)) END AS [FEB],
+                                    CASE WHEN ISNULL(PLANSALES.[3],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[3],0)*100.0/ISNULL(PLANSALES.[3],0)) END AS [MAR],
+                                    CASE WHEN ISNULL(PLANSALES.[4],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[4],0)*100.0/ISNULL(PLANSALES.[4],0)) END AS [APR],
+                                    CASE WHEN ISNULL(PLANSALES.[5],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[5],0)*100.0/ISNULL(PLANSALES.[5],0)) END AS [MAY],
+                                    CASE WHEN ISNULL(PLANSALES.[6],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[6],0)*100.0/ISNULL(PLANSALES.[6],0)) END AS [JUN],
+                                    CASE WHEN ISNULL(PLANSALES.[7],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[7],0)*100.0/ISNULL(PLANSALES.[7],0)) END AS [JUL],
+                                    CASE WHEN ISNULL(PLANSALES.[8],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[8],0)*100.0/ISNULL(PLANSALES.[8],0)) END AS [AUG],
+                                    CASE WHEN ISNULL(PLANSALES.[9],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[9],0)*100.0/ISNULL(PLANSALES.[9],0)) END AS [SEP],
+                                    CASE WHEN ISNULL(PLANSALES.[10],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[10],0)*100.0/ISNULL(PLANSALES.[10],0)) END AS [OCT],
+                                    CASE WHEN ISNULL(PLANSALES.[11],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[11],0)*100.0/ISNULL(PLANSALES.[11],0)) END AS [NOV],
+                                    CASE WHEN ISNULL(PLANSALES.[12],0)=0 THEN 0
+                                    ELSE CONVERT(DECIMAL(3,2),ISNULL(ACTUALSALES.[12],0)*100.0/ISNULL(PLANSALES.[12],0)) END AS [DEC]
+                                    FROM 
+                                    (
+                                    SELECT PlanYear,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12]
+                                    FROM(
+                                    SELECT SUM(SaleQty) TotalSalesQty,MONTH(SP.PlanDate) PlanMonth,YEAR(SP.PlanDate) PlanYear
+                                    FROM SalesPlan SP INNER JOIN SalesPlanDetail SPD
+                                    ON SP.ID=SPD.SalesPlanID
+                                    INNER JOIN Product P 
+                                    ON SPD.ProductID=P.ID
+                                    INNER JOIN ProdSubCategory PSC
+                                    ON P.SubCategoryID=PSC.ID
+                                    INNER JOIN ProdCategory PC
+                                    ON PC.ID=PSC.CategoryID
+                                    INNER JOIN Brand B
+                                    ON B.ID=PC.BrandID
+                                     {0}
+                                    GROUP BY YEAR(SP.PlanDate),MONTH(SP.PlanDate)
+                                    ) AS SALESPLANFORPRODUCTION
+                                    PIVOT (SUM(TotalSalesQty) FOR PLANMONTH IN ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) AS SALES_PLAN
+                                    )AS PLANSALES FULL OUTER JOIN
+                                    (
+                                    SELECT SalesYear,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12]
+                                    FROM ( 
+                                    SELECT SUM(SD.Qty) TotalSalesQty,MONTH(I.SalesDate) SalesMonth,YEAR(I.SalesDate) SalesYear
+                                    FROM Invoice I INNER JOIN SalesDetail SD
+                                    ON I.ID=SD.InvoiceID
+                                    INNER JOIN Product P 
+                                    ON SD.ProductID=P.ID
+                                    INNER JOIN ProdSubCategory PSC
+                                    ON P.SubCategoryID=PSC.ID
+                                    INNER JOIN ProdCategory PC
+                                    ON PC.ID=PSC.CategoryID
+                                    INNER JOIN Brand B
+                                    ON B.ID=PC.BrandID
+                                     {0}
+                                    GROUP BY YEAR(I.SalesDate),MONTH(I.SalesDate)
+                                    ) AS SALESOFTHISMONTH
+                                    PIVOT (SUM(TotalSalesQty) FOR SalesMonth IN ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) AS SALES_ACTUAL
+                                    ) ACTUALSALES
+                                    ON PLANSALES.PlanYear=ACTUALSALES.SalesYear
+                                    WHERE ACTUALSALES.SalesYear BETWEEN {1} AND {2}
+                                    )SALES_QOB1
+                                    ";
 
-                command.Parameters.AddWithValue("@p_EndDate", endDate);
-                command.Parameters["@p_EndDate"].Direction = ParameterDirection.Input;
+                #endregion
+                //command.Parameters.AddWithValue("@p_StartDate", startDate);
+                //command.Parameters["@p_StartDate"].Direction = ParameterDirection.Input;
+
+                //command.Parameters.AddWithValue("@p_EndDate", endDate);
+                //command.Parameters["@p_EndDate"].Direction = ParameterDirection.Input;
+                string sqlCommand = string.Format(sqlQOB1,brandCondtional,startDate.Year, endDate.Year);
+                command.CommandText = sqlCommand;
                 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
@@ -349,7 +424,7 @@ namespace PTIC.Common.DA
             return table;
         }
 
-        public static DataTable SelectSalesQOB2(DateTime startDate, DateTime endDate)
+        public static DataTable SelectSalesQOB2(string brandCondtional,DateTime startDate, DateTime endDate)
         {
             DataTable table = null;
             string tableName = "SalesQOB2Table";
@@ -358,14 +433,59 @@ namespace PTIC.Common.DA
                 table = new DataTable(tableName);
                 SqlCommand command = new SqlCommand();
                 command.Connection = DBManager.GetInstance().GetDbConnection();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "usp_RP_Sales_QOB2";
+                //command.CommandType = CommandType.StoredProcedure;
+                #region 
+                string templateSql = @"SELECT *, CONVERT(DECIMAL(3,2),(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+[DEC])/12) AS [AVG]
+                                        FROM
+                                        (
+                                        SELECT ORDERYEAR AS [YEAR],
+                                        CONVERT(DECIMAL(3,2),ISNULL([1],0)) AS [JAN],
+                                        CONVERT(DECIMAL(3,2),ISNULL([2],0)) AS [FEB],
+                                        CONVERT(DECIMAL(3,2),ISNULL([3],0)) AS [MAR],
+                                        CONVERT(DECIMAL(3,2),ISNULL([4],0)) AS [APR],
+                                        CONVERT(DECIMAL(3,2),ISNULL([5],0)) AS [MAY],
+                                        CONVERT(DECIMAL(3,2),ISNULL([6],0)) AS [JUN],
+                                        CONVERT(DECIMAL(3,2),ISNULL([7],0)) AS [JUL],
+                                        CONVERT(DECIMAL(3,2),ISNULL([8],0)) AS [AUG],
+                                        CONVERT(DECIMAL(3,2),ISNULL([9],0)) AS [SEP],
+                                        CONVERT(DECIMAL(3,2),ISNULL([10],0)) AS [OCT],
+                                        CONVERT(DECIMAL(3,2),ISNULL([11],0)) AS [NOV],
+                                        CONVERT(DECIMAL(3,2),ISNULL([12],0)) AS [DEC]
+                                        FROM(
+                                        SELECT ORDERYEAR,ORDERMONTH,CONVERT(DECIMAL(3,2),ISNULL(DELIVERAMT.TOTALDELIVER*100.0/ORDERAMT.TOTALORDER,0)) AS PERCENTAGE
+                                        FROM (SELECT SUM(QTY) TOTALORDER ,MONTH(OrderDate) ORDERMONTH,year(OrderDate) ORDERYEAR FROM [Order] O
+                                        INNER JOIN OrderDetail OD
+                                        ON O.ID=OD.OrderID
+                                        GROUP BY year(OrderDate),MONTH(OrderDate)) AS ORDERAMT LEFT JOIN
+                                        (SELECT SUM(DD.DeliverQty) TOTALDELIVER,MONTH(D.DeliveryDate) DELIVERMONTH,YEAR(OrderDate)DELIVERYYEAR  FROM [Order] O
+                                        INNER JOIN OrderDetail OD
+                                        ON O.ID=OD.OrderID
+                                        INNER JOIN Delivery D
+                                        ON O.ID=D.OrderID
+                                        AND MONTH(DeliveryDate)= MONTH(OrderDate)
+                                        AND YEAR(DeliveryDate)=YEAR(OrderDate)
+                                        INNER JOIN DeliveryDetail DD
+                                        ON D.ID=DD.DeliveryID
+                                        INNER JOIN Product P
+                                        ON OD.ProductID=P.ID
+                                        INNER JOIN ProdSubCategory PSC
+                                        ON P.SubCategoryID=PSC.ID
+                                        INNER JOIN ProdCategory PC
+                                        ON PC.ID=PSC.CategoryID
+                                        INNER JOIN Brand B
+                                        ON B.ID=PC.BrandID
+                                         {0}
+                                        GROUP BY YEAR(OrderDate),MONTH(DeliveryDate)) AS DELIVERAMT
+                                        ON ORDERMONTH=DELIVERMONTH
+                                        AND ORDERYEAR=DELIVERYYEAR
+                                        ) QOB2
+                                        PIVOT (AVG(PERCENTAGE) FOR ORDERMONTH IN ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) AS QOBTOYO
+                                        ) AS SALES_QOB2
+                                        WHERE [YEAR] BETWEEN {1} AND {2}";
+                #endregion
 
-                command.Parameters.AddWithValue("@p_StartDate", startDate);
-                command.Parameters["@p_StartDate"].Direction = ParameterDirection.Input;
-
-                command.Parameters.AddWithValue("@p_EndDate", endDate);
-                command.Parameters["@p_EndDate"].Direction = ParameterDirection.Input;
+                string sql = string.Format(templateSql, brandCondtional, startDate.Year, endDate.Year);
+                command.CommandText = sql;
                 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);

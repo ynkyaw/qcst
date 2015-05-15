@@ -232,7 +232,7 @@
               <Width>0.55in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.55in</Width>
+              <Width>0.7375in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1255,7 +1255,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>³</Value>
+                              <Style>
+                                <FontFamily>Symbol</FontFamily>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Parameters!Std.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1315,7 +1321,7 @@
         <Top>1.22216in</Top>
         <Left>0.58248in</Left>
         <Height>0.5in</Height>
-        <Width>8.325in</Width>
+        <Width>8.5125in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -1456,7 +1462,31 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>QOB (1) အရောင်း Target အားလစဉ် ( %) နှင့် အထက်ပြည့်မှီအောင် ဆောင်ရွက်ရန်၊</Value>
+                <Value>QOB (1)  </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!Brand.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>  အရောင်း Target အားလစဉ် ( </Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!Std.Value</Value>
+                <Style>
+                  <FontFamily>Myanmar3</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> ) နှင့် အထက်ပြည့်မှီအောင် ဆောင်ရွက်ရန်၊</Value>
                 <Style>
                   <FontFamily>Myanmar3</FontFamily>
                 </Style>
@@ -1528,6 +1558,16 @@
     </ReportParameter>
     <ReportParameter Name="EndDate">
       <DataType>DateTime</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Std">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Brand">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
