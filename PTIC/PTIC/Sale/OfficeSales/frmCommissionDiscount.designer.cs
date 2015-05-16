@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtDiscountItemAmt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtCashCommPercentage = new System.Windows.Forms.TextBox();
             this.txtSaleCommPercentage = new System.Windows.Forms.TextBox();
             this.txtNeedAmt = new System.Windows.Forms.TextBox();
@@ -66,9 +69,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtInvoiceNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtDiscountItemAmt = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -121,6 +121,38 @@
             this.panel1.Size = new System.Drawing.Size(481, 536);
             this.panel1.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(409, 187);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 19);
+            this.label9.TabIndex = 171;
+            this.label9.Text = "ကျပ်";
+            // 
+            // txtDiscountItemAmt
+            // 
+            this.txtDiscountItemAmt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDiscountItemAmt.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscountItemAmt.Location = new System.Drawing.Point(217, 185);
+            this.txtDiscountItemAmt.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
+            this.txtDiscountItemAmt.Name = "txtDiscountItemAmt";
+            this.txtDiscountItemAmt.ReadOnly = true;
+            this.txtDiscountItemAmt.Size = new System.Drawing.Size(182, 25);
+            this.txtDiscountItemAmt.TabIndex = 170;
+            this.txtDiscountItemAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(16, 187);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(185, 19);
+            this.label12.TabIndex = 169;
+            this.label12.Text = "အ‌ရောင်းကျသင့်‌ငွေ(Discount)";
+            // 
             // txtCashCommPercentage
             // 
             this.txtCashCommPercentage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -128,7 +160,7 @@
             this.txtCashCommPercentage.Location = new System.Drawing.Point(217, 290);
             this.txtCashCommPercentage.Name = "txtCashCommPercentage";
             this.txtCashCommPercentage.Size = new System.Drawing.Size(56, 25);
-            this.txtCashCommPercentage.TabIndex = 4;
+            this.txtCashCommPercentage.TabIndex = 2;
             this.txtCashCommPercentage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCashCommPercentage.TextChanged += new System.EventHandler(this.txtCashCommPercentage_TextChanged);
             this.txtCashCommPercentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCashCommPercentage_KeyPress);
@@ -140,7 +172,7 @@
             this.txtSaleCommPercentage.Location = new System.Drawing.Point(217, 255);
             this.txtSaleCommPercentage.Name = "txtSaleCommPercentage";
             this.txtSaleCommPercentage.Size = new System.Drawing.Size(56, 25);
-            this.txtSaleCommPercentage.TabIndex = 2;
+            this.txtSaleCommPercentage.TabIndex = 1;
             this.txtSaleCommPercentage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSaleCommPercentage.TextChanged += new System.EventHandler(this.txtSaleCommPercentage_TextChanged);
             this.txtSaleCommPercentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSaleCommPercentage_KeyPress);
@@ -177,7 +209,7 @@
             this.txtSaleCommission.Name = "txtSaleCommission";
             this.txtSaleCommission.ReadOnly = true;
             this.txtSaleCommission.Size = new System.Drawing.Size(90, 25);
-            this.txtSaleCommission.TabIndex = 1;
+            this.txtSaleCommission.TabIndex = 20;
             this.txtSaleCommission.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSaleCommission.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             this.txtSaleCommission.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_KeyPress);
@@ -190,7 +222,7 @@
             this.txtCashCommission.Name = "txtCashCommission";
             this.txtCashCommission.ReadOnly = true;
             this.txtCashCommission.Size = new System.Drawing.Size(90, 25);
-            this.txtCashCommission.TabIndex = 3;
+            this.txtCashCommission.TabIndex = 21;
             this.txtCashCommission.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCashCommission.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             this.txtCashCommission.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_KeyPress);
@@ -524,38 +556,6 @@
             this.label1.TabIndex = 124;
             this.label1.Text = "Invoice No.";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(409, 187);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 19);
-            this.label9.TabIndex = 171;
-            this.label9.Text = "ကျပ်";
-            // 
-            // txtDiscountItemAmt
-            // 
-            this.txtDiscountItemAmt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDiscountItemAmt.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscountItemAmt.Location = new System.Drawing.Point(217, 185);
-            this.txtDiscountItemAmt.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
-            this.txtDiscountItemAmt.Name = "txtDiscountItemAmt";
-            this.txtDiscountItemAmt.ReadOnly = true;
-            this.txtDiscountItemAmt.Size = new System.Drawing.Size(182, 25);
-            this.txtDiscountItemAmt.TabIndex = 170;
-            this.txtDiscountItemAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(16, 187);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(185, 19);
-            this.label12.TabIndex = 169;
-            this.label12.Text = "အ‌ရောင်းကျသင့်‌ငွေ(Discount)";
-            // 
             // frmCommissionDiscount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -572,6 +572,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Commission and Discount";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCommissionDiscount_FormClosed);
+            this.Load += new System.EventHandler(this.frmCommissionDiscount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

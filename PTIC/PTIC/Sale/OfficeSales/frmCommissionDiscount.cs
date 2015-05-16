@@ -191,7 +191,7 @@ namespace PTIC.VC.Sale.OfficeSales
             //txtTotalDiscount.Text = Convert.ToString(DataTypeParser.Parse(discount.TotalCommAmt, typeof(string), string.Empty));
             txtTotalDiscount.Text = discount.TotalCommAmt.ToString(TextFormat.WholeNumber);
 
-            txtSaleCommPercentage.Text = (string)DataTypeParser.Parse(saleCommPercentage, typeof(string), string.Empty);
+            //txtSaleCommPercentage.Text = (string)DataTypeParser.Parse(saleCommPercentage, typeof(string), string.Empty);
             txtCashCommPercentage.Text = (string)DataTypeParser.Parse(cashCommPercentage, typeof(string), string.Empty);
 
 
@@ -213,6 +213,11 @@ namespace PTIC.VC.Sale.OfficeSales
             }
         }
         #endregion
+
+        private void frmCommissionDiscount_Load(object sender, EventArgs e)
+        {
+
+        }
                              
     }
 }

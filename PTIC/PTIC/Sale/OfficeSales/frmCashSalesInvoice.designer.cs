@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTotalDiscountItem = new System.Windows.Forms.TextBox();
             this.txtRemark = new System.Windows.Forms.TextBox();
@@ -67,16 +67,6 @@
             this.txtOtherAmt = new System.Windows.Forms.TextBox();
             this.txtSalePerson = new System.Windows.Forms.TextBox();
             this.dgvCashSales = new System.Windows.Forms.DataGridView();
-            this.colProduct = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPackage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMinPackQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiscountAmtPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNoPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHasDis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtContactPerson = new System.Windows.Forms.TextBox();
             this.cmbCustomerName = new System.Windows.Forms.ComboBox();
             this.cmbTown = new System.Windows.Forms.ComboBox();
@@ -100,6 +90,16 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPackage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMinPackQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiscountAmtPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNoPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHasDis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashSales)).BeginInit();
@@ -473,8 +473,8 @@
             this.dgvCashSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCashSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProduct,
-            this.colSalePrice,
             this.colQty,
+            this.colSalePrice,
             this.colPackage,
             this.colAmount,
             this.colMinPackQty,
@@ -496,103 +496,6 @@
             this.dgvCashSales.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvCashSales_DataError);
             this.dgvCashSales.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvCashSales_EditingControlShowing);
             this.dgvCashSales.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvCashSales_RowsRemoved);
-            // 
-            // colProduct
-            // 
-            this.colProduct.DataPropertyName = "ProductID";
-            this.colProduct.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.colProduct.HeaderText = "ထုတ်ကုန်အမည်";
-            this.colProduct.Name = "colProduct";
-            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colProduct.Width = 150;
-            // 
-            // colSalePrice
-            // 
-            this.colSalePrice.DataPropertyName = "SalePrice";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            this.colSalePrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colSalePrice.HeaderText = "‌ရောင်း‌ဈေး";
-            this.colSalePrice.Name = "colSalePrice";
-            this.colSalePrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colQty
-            // 
-            this.colQty.DataPropertyName = "Qty";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colQty.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colQty.HeaderText = "အ‌ရေအတွက်";
-            this.colQty.MaxInputLength = 5;
-            this.colQty.Name = "colQty";
-            this.colQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colPackage
-            // 
-            this.colPackage.DataPropertyName = "Package";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colPackage.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colPackage.HeaderText = "Package";
-            this.colPackage.MaxInputLength = 5;
-            this.colPackage.Name = "colPackage";
-            this.colPackage.ReadOnly = true;
-            this.colPackage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colAmount
-            // 
-            this.colAmount.DataPropertyName = "Amount";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colAmount.HeaderText = "ကျသင့်‌ငွေ";
-            this.colAmount.MaxInputLength = 13;
-            this.colAmount.Name = "colAmount";
-            this.colAmount.ReadOnly = true;
-            this.colAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colMinPackQty
-            // 
-            this.colMinPackQty.DataPropertyName = "MinPackQty";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colMinPackQty.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colMinPackQty.HeaderText = "MinPackQty";
-            this.colMinPackQty.MaxInputLength = 5;
-            this.colMinPackQty.Name = "colMinPackQty";
-            this.colMinPackQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMinPackQty.Visible = false;
-            // 
-            // colDiscountAmtPerPack
-            // 
-            this.colDiscountAmtPerPack.DataPropertyName = "DiscountAmtPerPack";
-            this.colDiscountAmtPerPack.HeaderText = "DiscountAmtPerPack";
-            this.colDiscountAmtPerPack.Name = "colDiscountAmtPerPack";
-            this.colDiscountAmtPerPack.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colDiscountAmtPerPack.Visible = false;
-            // 
-            // clnNo
-            // 
-            this.clnNo.HeaderText = "စဉ်";
-            this.clnNo.Name = "clnNo";
-            this.clnNo.ReadOnly = true;
-            this.clnNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clnNo.Visible = false;
-            this.clnNo.Width = 50;
-            // 
-            // colNoPerPack
-            // 
-            this.colNoPerPack.DataPropertyName = "NoPerPack";
-            this.colNoPerPack.HeaderText = "NoPerPack";
-            this.colNoPerPack.Name = "colNoPerPack";
-            this.colNoPerPack.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNoPerPack.Visible = false;
-            // 
-            // colHasDis
-            // 
-            this.colHasDis.HeaderText = "HasDis";
-            this.colHasDis.Name = "colHasDis";
-            this.colHasDis.Visible = false;
             // 
             // txtContactPerson
             // 
@@ -838,6 +741,103 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Visible = false;
             // 
+            // colProduct
+            // 
+            this.colProduct.DataPropertyName = "ProductID";
+            this.colProduct.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.colProduct.HeaderText = "ထုတ်ကုန်အမည်";
+            this.colProduct.Name = "colProduct";
+            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colProduct.Width = 150;
+            // 
+            // colQty
+            // 
+            this.colQty.DataPropertyName = "Qty";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colQty.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colQty.HeaderText = "အ‌ရေအတွက်";
+            this.colQty.MaxInputLength = 5;
+            this.colQty.Name = "colQty";
+            this.colQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colSalePrice
+            // 
+            this.colSalePrice.DataPropertyName = "SalePrice";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            this.colSalePrice.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSalePrice.HeaderText = "‌ရောင်း‌ဈေး";
+            this.colSalePrice.Name = "colSalePrice";
+            this.colSalePrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPackage
+            // 
+            this.colPackage.DataPropertyName = "Package";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPackage.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colPackage.HeaderText = "Package";
+            this.colPackage.MaxInputLength = 5;
+            this.colPackage.Name = "colPackage";
+            this.colPackage.ReadOnly = true;
+            this.colPackage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colAmount
+            // 
+            this.colAmount.DataPropertyName = "Amount";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colAmount.HeaderText = "ကျသင့်‌ငွေ";
+            this.colAmount.MaxInputLength = 13;
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            this.colAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colMinPackQty
+            // 
+            this.colMinPackQty.DataPropertyName = "MinPackQty";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colMinPackQty.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colMinPackQty.HeaderText = "MinPackQty";
+            this.colMinPackQty.MaxInputLength = 5;
+            this.colMinPackQty.Name = "colMinPackQty";
+            this.colMinPackQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMinPackQty.Visible = false;
+            // 
+            // colDiscountAmtPerPack
+            // 
+            this.colDiscountAmtPerPack.DataPropertyName = "DiscountAmtPerPack";
+            this.colDiscountAmtPerPack.HeaderText = "DiscountAmtPerPack";
+            this.colDiscountAmtPerPack.Name = "colDiscountAmtPerPack";
+            this.colDiscountAmtPerPack.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colDiscountAmtPerPack.Visible = false;
+            // 
+            // clnNo
+            // 
+            this.clnNo.HeaderText = "စဉ်";
+            this.clnNo.Name = "clnNo";
+            this.clnNo.ReadOnly = true;
+            this.clnNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.clnNo.Visible = false;
+            this.clnNo.Width = 50;
+            // 
+            // colNoPerPack
+            // 
+            this.colNoPerPack.DataPropertyName = "NoPerPack";
+            this.colNoPerPack.HeaderText = "NoPerPack";
+            this.colNoPerPack.Name = "colNoPerPack";
+            this.colNoPerPack.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colNoPerPack.Visible = false;
+            // 
+            // colHasDis
+            // 
+            this.colHasDis.HeaderText = "HasDis";
+            this.colHasDis.Name = "colHasDis";
+            this.colHasDis.Visible = false;
+            // 
             // frmCashSalesInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -918,8 +918,8 @@
         private System.Windows.Forms.TextBox txtTotalDiscountItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewComboBoxColumn colProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPackage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMinPackQty;

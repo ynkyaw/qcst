@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInvoice));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -71,19 +71,6 @@
             this.cmbCustomerName = new System.Windows.Forms.ComboBox();
             this.cmbTown = new System.Windows.Forms.ComboBox();
             this.dgvInvoice = new System.Windows.Forms.DataGridView();
-            this.clnBrandName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.clnProductName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.clnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnPackage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvColRetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvColWholeSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvColCusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvColNoPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvColDeliveryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -107,6 +94,19 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnBrandName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.clnProductName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.clnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnPackage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvColRetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColWholeSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColCusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColNoPerPack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColDeliveryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -177,7 +177,7 @@
             this.label14.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(19, 299);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(119, 20);
+            this.label14.Size = new System.Drawing.Size(107, 19);
             this.label14.TabIndex = 231;
             this.label14.Text = "ရောင်းဈေးမှတ်ချက်";
             // 
@@ -201,7 +201,7 @@
             this.cmbReceiver.FormattingEnabled = true;
             this.cmbReceiver.Location = new System.Drawing.Point(178, 261);
             this.cmbReceiver.Name = "cmbReceiver";
-            this.cmbReceiver.Size = new System.Drawing.Size(150, 27);
+            this.cmbReceiver.Size = new System.Drawing.Size(150, 25);
             this.cmbReceiver.TabIndex = 229;
             this.cmbReceiver.ValueMember = "EmployeeID";
             this.cmbReceiver.SelectedIndexChanged += new System.EventHandler(this.cmbReceiver_SelectedIndexChanged);
@@ -233,7 +233,7 @@
             this.rdoShowRoom.AutoSize = true;
             this.rdoShowRoom.Location = new System.Drawing.Point(7, 67);
             this.rdoShowRoom.Name = "rdoShowRoom";
-            this.rdoShowRoom.Size = new System.Drawing.Size(141, 24);
+            this.rdoShowRoom.Size = new System.Drawing.Size(128, 23);
             this.rdoShowRoom.TabIndex = 1;
             this.rdoShowRoom.Text = "ShowRoom အမည်";
             this.rdoShowRoom.UseVisualStyleBackColor = true;
@@ -248,7 +248,7 @@
             this.cmbWarehouseORVen.FormattingEnabled = true;
             this.cmbWarehouseORVen.Location = new System.Drawing.Point(159, 45);
             this.cmbWarehouseORVen.Name = "cmbWarehouseORVen";
-            this.cmbWarehouseORVen.Size = new System.Drawing.Size(150, 27);
+            this.cmbWarehouseORVen.Size = new System.Drawing.Size(150, 25);
             this.cmbWarehouseORVen.TabIndex = 170;
             this.cmbWarehouseORVen.ValueMember = "ID";
             // 
@@ -257,7 +257,7 @@
             this.rdoVenNo.AutoSize = true;
             this.rdoVenNo.Location = new System.Drawing.Point(7, 26);
             this.rdoVenNo.Name = "rdoVenNo";
-            this.rdoVenNo.Size = new System.Drawing.Size(140, 24);
+            this.rdoVenNo.Size = new System.Drawing.Size(127, 23);
             this.rdoVenNo.TabIndex = 0;
             this.rdoVenNo.Text = "အ‌ရောင်းကားနံပါတ်";
             this.rdoVenNo.UseVisualStyleBackColor = true;
@@ -282,7 +282,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(8, 9);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(47, 20);
+            this.lblSetup.Size = new System.Drawing.Size(54, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "Sales";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -294,7 +294,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(61, 9);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(202, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(219, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">    Sales Invoice Voucher";
             // 
@@ -304,7 +304,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(590, 570);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 20);
+            this.label13.Size = new System.Drawing.Size(110, 19);
             this.label13.TabIndex = 166;
             this.label13.Text = "စုစု‌ပေါင်း ကျသင့်‌ငွေ";
             // 
@@ -314,7 +314,7 @@
             this.txtTotalAmt.Location = new System.Drawing.Point(716, 567);
             this.txtTotalAmt.Name = "txtTotalAmt";
             this.txtTotalAmt.ReadOnly = true;
-            this.txtTotalAmt.Size = new System.Drawing.Size(152, 31);
+            this.txtTotalAmt.Size = new System.Drawing.Size(152, 27);
             this.txtTotalAmt.TabIndex = 165;
             this.txtTotalAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -324,7 +324,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(504, 192);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 20);
+            this.label11.Size = new System.Drawing.Size(110, 19);
             this.label11.TabIndex = 164;
             this.label11.Text = "ပို့‌ဆောင်ခကျသင့်‌ငွေ";
             // 
@@ -333,7 +333,7 @@
             this.txtTransportCharges.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransportCharges.Location = new System.Drawing.Point(667, 187);
             this.txtTransportCharges.Name = "txtTransportCharges";
-            this.txtTransportCharges.Size = new System.Drawing.Size(150, 28);
+            this.txtTransportCharges.Size = new System.Drawing.Size(150, 25);
             this.txtTransportCharges.TabIndex = 9;
             // 
             // label2
@@ -342,7 +342,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(504, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 20);
+            this.label2.Size = new System.Drawing.Size(129, 19);
             this.label2.TabIndex = 162;
             this.label2.Text = "ပို့‌ဆောင်သည့်ဂိတ်‌ပြေစာ";
             // 
@@ -355,7 +355,7 @@
             this.cmbCustType.FormattingEnabled = true;
             this.cmbCustType.Location = new System.Drawing.Point(178, 153);
             this.cmbCustType.Name = "cmbCustType";
-            this.cmbCustType.Size = new System.Drawing.Size(150, 27);
+            this.cmbCustType.Size = new System.Drawing.Size(150, 25);
             this.cmbCustType.TabIndex = 3;
             this.cmbCustType.ValueMember = "CusType";
             this.cmbCustType.SelectedIndexChanged += new System.EventHandler(this.cmbCustType_SelectedIndexChanged);
@@ -385,7 +385,7 @@
             // 
             this.btnPrint.Location = new System.Drawing.Point(345, 568);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(106, 34);
+            this.btnPrint.Size = new System.Drawing.Size(131, 34);
             this.btnPrint.TabIndex = 13;
             this.btnPrint.Text = "Print ထုတ်မည်";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -412,7 +412,7 @@
             "Consignment"});
             this.cmbSaleType.Location = new System.Drawing.Point(667, 44);
             this.cmbSaleType.Name = "cmbSaleType";
-            this.cmbSaleType.Size = new System.Drawing.Size(150, 27);
+            this.cmbSaleType.Size = new System.Drawing.Size(150, 25);
             this.cmbSaleType.TabIndex = 5;
             // 
             // cmbTransportType
@@ -424,7 +424,7 @@
             this.cmbTransportType.FormattingEnabled = true;
             this.cmbTransportType.Location = new System.Drawing.Point(667, 80);
             this.cmbTransportType.Name = "cmbTransportType";
-            this.cmbTransportType.Size = new System.Drawing.Size(150, 27);
+            this.cmbTransportType.Size = new System.Drawing.Size(150, 25);
             this.cmbTransportType.TabIndex = 6;
             this.cmbTransportType.ValueMember = "TransportTypeID";
             // 
@@ -434,7 +434,7 @@
             this.txtSalePerson.Location = new System.Drawing.Point(345, 260);
             this.txtSalePerson.Name = "txtSalePerson";
             this.txtSalePerson.ReadOnly = true;
-            this.txtSalePerson.Size = new System.Drawing.Size(150, 28);
+            this.txtSalePerson.Size = new System.Drawing.Size(150, 25);
             this.txtSalePerson.TabIndex = 142;
             this.txtSalePerson.TabStop = false;
             this.txtSalePerson.Visible = false;
@@ -445,7 +445,7 @@
             this.txtContactPerson.Location = new System.Drawing.Point(178, 225);
             this.txtContactPerson.Name = "txtContactPerson";
             this.txtContactPerson.ReadOnly = true;
-            this.txtContactPerson.Size = new System.Drawing.Size(150, 28);
+            this.txtContactPerson.Size = new System.Drawing.Size(150, 25);
             this.txtContactPerson.TabIndex = 141;
             this.txtContactPerson.TabStop = false;
             // 
@@ -458,7 +458,7 @@
             this.cmbGateName.FormattingEnabled = true;
             this.cmbGateName.Location = new System.Drawing.Point(667, 116);
             this.cmbGateName.Name = "cmbGateName";
-            this.cmbGateName.Size = new System.Drawing.Size(150, 27);
+            this.cmbGateName.Size = new System.Drawing.Size(150, 25);
             this.cmbGateName.TabIndex = 7;
             this.cmbGateName.ValueMember = "TransportGateID";
             // 
@@ -471,7 +471,7 @@
             this.cmbCustomerName.FormattingEnabled = true;
             this.cmbCustomerName.Location = new System.Drawing.Point(178, 189);
             this.cmbCustomerName.Name = "cmbCustomerName";
-            this.cmbCustomerName.Size = new System.Drawing.Size(150, 27);
+            this.cmbCustomerName.Size = new System.Drawing.Size(150, 25);
             this.cmbCustomerName.TabIndex = 4;
             this.cmbCustomerName.ValueMember = "CustomerID";
             this.cmbCustomerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
@@ -485,7 +485,7 @@
             this.cmbTown.FormattingEnabled = true;
             this.cmbTown.Location = new System.Drawing.Point(178, 117);
             this.cmbTown.Name = "cmbTown";
-            this.cmbTown.Size = new System.Drawing.Size(150, 27);
+            this.cmbTown.Size = new System.Drawing.Size(150, 25);
             this.cmbTown.TabIndex = 2;
             this.cmbTown.ValueMember = "TownID";
             // 
@@ -494,19 +494,19 @@
             this.dgvInvoice.AllowUserToAddRows = false;
             this.dgvInvoice.AllowUserToDeleteRows = false;
             this.dgvInvoice.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clnBrandName,
             this.clnProductName,
-            this.clnPrice,
             this.clnQty,
+            this.clnPrice,
             this.clnPackage,
             this.colPack,
             this.clnAmount,
@@ -535,6 +535,222 @@
             this.dgvInvoice.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvInvoice_RowPostPaint);
             this.dgvInvoice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvInvoice_KeyPress);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(19, 264);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(128, 19);
+            this.label12.TabIndex = 135;
+            this.label12.Text = "အ‌ရောင်းဝန်ထမ်းအမည်";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(504, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 19);
+            this.label10.TabIndex = 133;
+            this.label10.Text = "အ‌ရောင်းစနစ်";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(504, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 19);
+            this.label9.TabIndex = 132;
+            this.label9.Text = "ပို့‌ဆောင်မှုစနစ်";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(19, 156);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(136, 19);
+            this.label8.TabIndex = 131;
+            this.label8.Text = "Customer အမျိုးအစား";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(504, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 19);
+            this.label7.TabIndex = 130;
+            this.label7.Text = "ပို့‌ဆောင်သည့်ဂိတ်အမည်";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(19, 120);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(22, 19);
+            this.label6.TabIndex = 129;
+            this.label6.Text = "မြို့";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(19, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(136, 19);
+            this.label5.TabIndex = 128;
+            this.label5.Text = "ဆက်သွယ်ရမည့်သူအမည်";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 19);
+            this.label4.TabIndex = 127;
+            this.label4.Text = "Customer အမည်";
+            // 
+            // dtpSaleDate
+            // 
+            this.dtpSaleDate.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpSaleDate.Location = new System.Drawing.Point(178, 47);
+            this.dtpSaleDate.Name = "dtpSaleDate";
+            this.dtpSaleDate.Size = new System.Drawing.Size(150, 25);
+            this.dtpSaleDate.TabIndex = 0;
+            // 
+            // txtGateInvNo
+            // 
+            this.txtGateInvNo.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGateInvNo.Location = new System.Drawing.Point(667, 152);
+            this.txtGateInvNo.Name = "txtGateInvNo";
+            this.txtGateInvNo.Size = new System.Drawing.Size(150, 25);
+            this.txtGateInvNo.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 19);
+            this.label3.TabIndex = 124;
+            this.label3.Text = "‌နေ့စွဲ";
+            // 
+            // txtInvoiceNo
+            // 
+            this.txtInvoiceNo.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceNo.Location = new System.Drawing.Point(178, 82);
+            this.txtInvoiceNo.Name = "txtInvoiceNo";
+            this.txtInvoiceNo.Size = new System.Drawing.Size(150, 25);
+            this.txtInvoiceNo.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 19);
+            this.label1.TabIndex = 120;
+            this.label1.Text = "ပစ္စည်းလက်ခံ No.";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SalePrice";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Format = "N0";
+            dataGridViewCellStyle18.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridViewTextBoxColumn1.HeaderText = "စဉ်";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "SalePrice";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle19;
+            this.dataGridViewTextBoxColumn2.HeaderText = "‌ရောင်း‌ဈေး";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SalePrice";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridViewTextBoxColumn3.HeaderText = "အ‌ရေအတွက်";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Qty";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Package";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Amount";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Format = "N0";
+            dataGridViewCellStyle22.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle22;
+            this.dataGridViewTextBoxColumn5.HeaderText = "ကျသင့်‌ငွေ";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Amount";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ကျသင့်‌ငွေ";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "WSPrice";
+            this.dataGridViewTextBoxColumn7.HeaderText = "WholeSale";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CusTypeID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "CusType";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NoPerPack";
+            this.dataGridViewTextBoxColumn9.HeaderText = "NoPerPack";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "DeliveryID";
+            this.dataGridViewTextBoxColumn10.HeaderText = "DeliveryID";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
             // clnBrandName
             // 
             this.clnBrandName.DataPropertyName = "BrandID";
@@ -555,36 +771,36 @@
             this.clnProductName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.clnProductName.Width = 150;
             // 
-            // clnPrice
-            // 
-            this.clnPrice.DataPropertyName = "SalePrice";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "0";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnPrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clnPrice.HeaderText = "‌ရောင်း‌ဈေး";
-            this.clnPrice.MaxInputLength = 8;
-            this.clnPrice.Name = "clnPrice";
-            this.clnPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // clnQty
             // 
             this.clnQty.DataPropertyName = "DeliverQty";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.NullValue = "0";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clnQty.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.NullValue = "0";
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnQty.DefaultCellStyle = dataGridViewCellStyle13;
             this.clnQty.HeaderText = "အ‌ရေအတွက်";
             this.clnQty.MaxInputLength = 5;
             this.clnQty.Name = "clnQty";
             this.clnQty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // clnPrice
+            // 
+            this.clnPrice.DataPropertyName = "SalePrice";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "N0";
+            dataGridViewCellStyle14.NullValue = "0";
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clnPrice.DefaultCellStyle = dataGridViewCellStyle14;
+            this.clnPrice.HeaderText = "‌ရောင်း‌ဈေး";
+            this.clnPrice.MaxInputLength = 8;
+            this.clnPrice.Name = "clnPrice";
+            this.clnPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // clnPackage
             // 
             this.clnPackage.DataPropertyName = "Package";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.clnPackage.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clnPackage.DefaultCellStyle = dataGridViewCellStyle15;
             this.clnPackage.HeaderText = "Package";
             this.clnPackage.MaxInputLength = 5;
             this.clnPackage.Name = "clnPackage";
@@ -593,8 +809,8 @@
             // 
             // colPack
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colPack.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPack.DefaultCellStyle = dataGridViewCellStyle16;
             this.colPack.HeaderText = "အမယ်";
             this.colPack.MaxInputLength = 5;
             this.colPack.Name = "colPack";
@@ -603,10 +819,10 @@
             // 
             // clnAmount
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.clnAmount.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "N0";
+            dataGridViewCellStyle17.NullValue = null;
+            this.clnAmount.DefaultCellStyle = dataGridViewCellStyle17;
             this.clnAmount.HeaderText = "ကျသင့်‌ငွေ";
             this.clnAmount.MaxInputLength = 13;
             this.clnAmount.Name = "clnAmount";
@@ -657,225 +873,9 @@
             this.dgvColDeliveryID.Name = "dgvColDeliveryID";
             this.dgvColDeliveryID.Visible = false;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 264);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(141, 20);
-            this.label12.TabIndex = 135;
-            this.label12.Text = "အ‌ရောင်းဝန်ထမ်းအမည်";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(504, 48);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 20);
-            this.label10.TabIndex = 133;
-            this.label10.Text = "အ‌ရောင်းစနစ်";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(504, 84);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 20);
-            this.label9.TabIndex = 132;
-            this.label9.Text = "ပို့‌ဆောင်မှုစနစ်";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 156);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(139, 20);
-            this.label8.TabIndex = 131;
-            this.label8.Text = "Customer အမျိုးအစား";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(504, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 20);
-            this.label7.TabIndex = 130;
-            this.label7.Text = "ပို့‌ဆောင်သည့်ဂိတ်အမည်";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 120);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 20);
-            this.label6.TabIndex = 129;
-            this.label6.Text = "မြို့";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 228);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 20);
-            this.label5.TabIndex = 128;
-            this.label5.Text = "ဆက်သွယ်ရမည့်သူအမည်";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 192);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
-            this.label4.TabIndex = 127;
-            this.label4.Text = "Customer အမည်";
-            // 
-            // dtpSaleDate
-            // 
-            this.dtpSaleDate.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpSaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpSaleDate.Location = new System.Drawing.Point(178, 47);
-            this.dtpSaleDate.Name = "dtpSaleDate";
-            this.dtpSaleDate.Size = new System.Drawing.Size(150, 28);
-            this.dtpSaleDate.TabIndex = 0;
-            // 
-            // txtGateInvNo
-            // 
-            this.txtGateInvNo.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGateInvNo.Location = new System.Drawing.Point(667, 152);
-            this.txtGateInvNo.Name = "txtGateInvNo";
-            this.txtGateInvNo.Size = new System.Drawing.Size(150, 28);
-            this.txtGateInvNo.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 20);
-            this.label3.TabIndex = 124;
-            this.label3.Text = "‌နေ့စွဲ";
-            // 
-            // txtInvoiceNo
-            // 
-            this.txtInvoiceNo.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoiceNo.Location = new System.Drawing.Point(178, 82);
-            this.txtInvoiceNo.Name = "txtInvoiceNo";
-            this.txtInvoiceNo.Size = new System.Drawing.Size(150, 28);
-            this.txtInvoiceNo.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 20);
-            this.label1.TabIndex = 120;
-            this.label1.Text = "ပစ္စည်းလက်ခံ No.";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SalePrice";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn1.HeaderText = "စဉ်";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "SalePrice";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn2.HeaderText = "‌ရောင်း‌ဈေး";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SalePrice";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn3.HeaderText = "အ‌ရေအတွက်";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Qty";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Package";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Amount";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn5.HeaderText = "ကျသင့်‌ငွေ";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Amount";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ကျသင့်‌ငွေ";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "WSPrice";
-            this.dataGridViewTextBoxColumn7.HeaderText = "WholeSale";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CusTypeID";
-            this.dataGridViewTextBoxColumn8.HeaderText = "CusType";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "NoPerPack";
-            this.dataGridViewTextBoxColumn9.HeaderText = "NoPerPack";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "DeliveryID";
-            this.dataGridViewTextBoxColumn10.HeaderText = "DeliveryID";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
             // frmInvoice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(938, 608);
@@ -957,8 +957,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewComboBoxColumn clnBrandName;
         private System.Windows.Forms.DataGridViewComboBoxColumn clnProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnPackage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPack;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnAmount;
