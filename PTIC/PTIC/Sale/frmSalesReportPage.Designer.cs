@@ -103,7 +103,7 @@
             this.btnSalesQOB2.Name = "btnSalesQOB2";
             this.btnSalesQOB2.Size = new System.Drawing.Size(172, 57);
             this.btnSalesQOB2.TabIndex = 38;
-            this.btnSalesQOB2.Text = "Sales QOB 2 And QOB 4";
+            this.btnSalesQOB2.Text = "Sales QOB 2 And QOB 6";
             this.btnSalesQOB2.UseVisualStyleBackColor = true;
             this.btnSalesQOB2.Click += new System.EventHandler(this.btnSalesQOB2_Click);
             // 
