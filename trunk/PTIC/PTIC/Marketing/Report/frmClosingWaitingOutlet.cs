@@ -88,7 +88,7 @@ namespace PTIC.Marketing.Report
                                     Convert(bit,ISNULL([{2}],0)) [{2}],
                                     Convert(bit,ISNULL([{3}],0)) [{3}],
                                     Convert(bit,ISNULL([{4}],0)) [{4}],
-                                    Convert(bit,ISNULL([{5}],0)) [{5}],CUSTOMER_STATUS.Prev_Status,CUSTOMER_STATUS.Curr_Status
+                                    Convert(bit,ISNULL([{5}],0)) [{5}],CUSTOMER_STATUS.Prev_Status as [ယခင်လ],CUSTOMER_STATUS.Curr_Status [ယခုလ]
                                     FROM(
                                          SELECT dbo.[GetCustomerStatus]('{9}','{11}','{10}',ID) Prev_Status,CusName,ID,AddrID,TripID,dbo.[GetCustomerStatus]('{8}','{7}','{6}',ID) Curr_Status
                                            From Customer)  AS CUSTOMER_STATUS LEFT JOIN ( SELECT CusID,[{0}],[{1}],[{2}],[{3}],[{4}],[{5}]
@@ -115,6 +115,31 @@ namespace PTIC.Marketing.Report
             DataTable result = new PTIC.Common.DA.BaseDAO().SelectByQuery(sql);
             for (int i = 0; i < 6; i++)
                 result.Columns[2 + i].ColumnName = new DateTime(DateTime.Now.Year, int.Parse(result.Columns[2 + i].ColumnName), 1).ToString("MMM");
+            if (comboBox2.SelectedIndex > 0)
+            {
+                DataRow [] dr = result.Select("ယခင်လ='" + comboBox2.SelectedItem + "'");
+                if (dr.Length > 0)
+                {
+                    result = dr.CopyToDataTable();
+                }
+                else 
+                {
+                    result = null;
+                }
+            }
+
+            if (comboBox3.SelectedIndex > 0)
+            {
+                DataRow[] dr = result.Select("ယခုလ='" + comboBox3.SelectedItem + "'");
+                if (dr.Length > 0)
+                {
+                    result = dr.CopyToDataTable();
+                }
+                else
+                {
+                    result = null;
+                }
+            }
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = result;
         }

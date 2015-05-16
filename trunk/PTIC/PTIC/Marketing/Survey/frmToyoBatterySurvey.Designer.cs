@@ -62,7 +62,6 @@
             this.rdoDistributeNormal = new System.Windows.Forms.RadioButton();
             this.rdoDistributeWorse = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.rdoInverterGood = new System.Windows.Forms.RadioButton();
             this.rdoInverterNormal = new System.Windows.Forms.RadioButton();
             this.rdoInverterWorse = new System.Windows.Forms.RadioButton();
@@ -70,7 +69,6 @@
             this.rdoDesignGood = new System.Windows.Forms.RadioButton();
             this.rdoDesignNormal = new System.Windows.Forms.RadioButton();
             this.rdoDesignWrose = new System.Windows.Forms.RadioButton();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.rdoCarGood = new System.Windows.Forms.RadioButton();
             this.rdoCarNormal = new System.Windows.Forms.RadioButton();
             this.rdoCarWorse = new System.Windows.Forms.RadioButton();
@@ -139,6 +137,13 @@
             this.rdoDieCutNormal = new System.Windows.Forms.RadioButton();
             this.rdoDieCutWrose = new System.Windows.Forms.RadioButton();
             this.label26 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,9 +154,7 @@
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.second.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -163,6 +166,9 @@
             this.panel16.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -184,7 +190,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(8, 10);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(129, 20);
+            this.lblSetup.Size = new System.Drawing.Size(140, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "Survey Questoin";
             this.lblSetup.Click += new System.EventHandler(this.lblSetup_Click);
@@ -196,7 +202,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(137, 10);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(190, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(201, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">    Toyo Battery Survey";
             // 
@@ -205,7 +211,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 327);
+            this.panel3.Location = new System.Drawing.Point(0, 655);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(937, 56);
             this.panel3.TabIndex = 13;
@@ -226,7 +232,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(937, 286);
+            this.panel2.Size = new System.Drawing.Size(937, 614);
             this.panel2.TabIndex = 14;
             // 
             // ToyoTab
@@ -237,13 +243,17 @@
             this.ToyoTab.Location = new System.Drawing.Point(0, 0);
             this.ToyoTab.Name = "ToyoTab";
             this.ToyoTab.SelectedIndex = 0;
-            this.ToyoTab.Size = new System.Drawing.Size(937, 286);
+            this.ToyoTab.Size = new System.Drawing.Size(937, 614);
             this.ToyoTab.TabIndex = 0;
             // 
             // first
             // 
             this.first.AutoScroll = true;
             this.first.BackColor = System.Drawing.SystemColors.Control;
+            this.first.Controls.Add(this.panel5);
+            this.first.Controls.Add(this.label5);
+            this.first.Controls.Add(this.groupBox3);
+            this.first.Controls.Add(this.groupBox2);
             this.first.Controls.Add(this.label11);
             this.first.Controls.Add(this.panel13);
             this.first.Controls.Add(this.label10);
@@ -255,19 +265,17 @@
             this.first.Controls.Add(this.label7);
             this.first.Controls.Add(this.panel9);
             this.first.Controls.Add(this.label6);
-            this.first.Controls.Add(this.panel7);
             this.first.Controls.Add(this.panel6);
-            this.first.Controls.Add(this.panel5);
             this.first.Controls.Add(this.panel4);
             this.first.Controls.Add(this.label18);
             this.first.Controls.Add(this.label4);
             this.first.Controls.Add(this.label3);
             this.first.Controls.Add(this.label2);
             this.first.Controls.Add(this.label1);
-            this.first.Location = new System.Drawing.Point(4, 28);
+            this.first.Location = new System.Drawing.Point(4, 26);
             this.first.Name = "first";
             this.first.Padding = new System.Windows.Forms.Padding(3);
-            this.first.Size = new System.Drawing.Size(929, 254);
+            this.first.Size = new System.Drawing.Size(929, 584);
             this.first.TabIndex = 0;
             this.first.Text = "ပထမပိုင်း";
             // 
@@ -277,7 +285,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(28, 853);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 19);
+            this.label11.Size = new System.Drawing.Size(96, 17);
             this.label11.TabIndex = 9;
             this.label11.Text = ">> ဒုတိယပိုင်းသို့";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -298,7 +306,7 @@
             this.rdoEmpGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoEmpGood.Location = new System.Drawing.Point(78, 3);
             this.rdoEmpGood.Name = "rdoEmpGood";
-            this.rdoEmpGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoEmpGood.Size = new System.Drawing.Size(65, 23);
             this.rdoEmpGood.TabIndex = 0;
             this.rdoEmpGood.TabStop = true;
             this.rdoEmpGood.Text = "ကောင်း";
@@ -310,7 +318,7 @@
             this.rdoEmpNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoEmpNormal.Location = new System.Drawing.Point(295, 3);
             this.rdoEmpNormal.Name = "rdoEmpNormal";
-            this.rdoEmpNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoEmpNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoEmpNormal.TabIndex = 1;
             this.rdoEmpNormal.TabStop = true;
             this.rdoEmpNormal.Text = "သင့်";
@@ -322,7 +330,7 @@
             this.rdoEmpWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoEmpWorse.Location = new System.Drawing.Point(501, 3);
             this.rdoEmpWorse.Name = "rdoEmpWorse";
-            this.rdoEmpWorse.Size = new System.Drawing.Size(41, 24);
+            this.rdoEmpWorse.Size = new System.Drawing.Size(40, 23);
             this.rdoEmpWorse.TabIndex = 2;
             this.rdoEmpWorse.TabStop = true;
             this.rdoEmpWorse.Text = "ညံ့";
@@ -333,7 +341,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(28, 757);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(219, 20);
+            this.label10.Size = new System.Drawing.Size(206, 19);
             this.label10.TabIndex = 107;
             this.label10.Text = "(8) ကုမ္ပဏီဝန်ထမ်းများ၏ဆက်ဆံရေး";
             // 
@@ -353,7 +361,7 @@
             this.rdoPresentGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoPresentGood.Location = new System.Drawing.Point(78, 3);
             this.rdoPresentGood.Name = "rdoPresentGood";
-            this.rdoPresentGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoPresentGood.Size = new System.Drawing.Size(65, 23);
             this.rdoPresentGood.TabIndex = 0;
             this.rdoPresentGood.TabStop = true;
             this.rdoPresentGood.Text = "ကောင်း";
@@ -365,7 +373,7 @@
             this.rdoPresentNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoPresentNormal.Location = new System.Drawing.Point(295, 3);
             this.rdoPresentNormal.Name = "rdoPresentNormal";
-            this.rdoPresentNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoPresentNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoPresentNormal.TabIndex = 1;
             this.rdoPresentNormal.TabStop = true;
             this.rdoPresentNormal.Text = "သင့်";
@@ -377,7 +385,7 @@
             this.rdoPresentWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoPresentWorse.Location = new System.Drawing.Point(501, 3);
             this.rdoPresentWorse.Name = "rdoPresentWorse";
-            this.rdoPresentWorse.Size = new System.Drawing.Size(41, 24);
+            this.rdoPresentWorse.Size = new System.Drawing.Size(40, 23);
             this.rdoPresentWorse.TabIndex = 2;
             this.rdoPresentWorse.TabStop = true;
             this.rdoPresentWorse.Text = "ညံ့";
@@ -388,7 +396,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(28, 675);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(287, 20);
+            this.label9.Size = new System.Drawing.Size(267, 19);
             this.label9.TabIndex = 105;
             this.label9.Text = "(7) အရောင်းမြှင့်တင်ရေး နှင့် လက်ဆောင်ပေးနိုင်မှု";
             // 
@@ -408,7 +416,7 @@
             this.rdoResaleGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoResaleGood.Location = new System.Drawing.Point(78, 3);
             this.rdoResaleGood.Name = "rdoResaleGood";
-            this.rdoResaleGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoResaleGood.Size = new System.Drawing.Size(65, 23);
             this.rdoResaleGood.TabIndex = 0;
             this.rdoResaleGood.TabStop = true;
             this.rdoResaleGood.Text = "ကောင်း";
@@ -420,7 +428,7 @@
             this.rdoResaleNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoResaleNormal.Location = new System.Drawing.Point(295, 3);
             this.rdoResaleNormal.Name = "rdoResaleNormal";
-            this.rdoResaleNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoResaleNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoResaleNormal.TabIndex = 1;
             this.rdoResaleNormal.TabStop = true;
             this.rdoResaleNormal.Text = "သင့်";
@@ -432,7 +440,7 @@
             this.rdoResaleWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoResaleWorse.Location = new System.Drawing.Point(501, 3);
             this.rdoResaleWorse.Name = "rdoResaleWorse";
-            this.rdoResaleWorse.Size = new System.Drawing.Size(41, 24);
+            this.rdoResaleWorse.Size = new System.Drawing.Size(40, 23);
             this.rdoResaleWorse.TabIndex = 2;
             this.rdoResaleWorse.TabStop = true;
             this.rdoResaleWorse.Text = "ညံ့";
@@ -443,7 +451,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(28, 590);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(463, 20);
+            this.label8.Size = new System.Drawing.Size(424, 19);
             this.label8.TabIndex = 103;
             this.label8.Text = "(6) အာမခံပေးမှုကြေင့် တဆင့်ပြန်လည်ရောင်းချသူများအတွက် အဆင်ပြေချောမွေ့မှု";
             // 
@@ -463,7 +471,7 @@
             this.rdoWranGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoWranGood.Location = new System.Drawing.Point(93, 3);
             this.rdoWranGood.Name = "rdoWranGood";
-            this.rdoWranGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoWranGood.Size = new System.Drawing.Size(65, 23);
             this.rdoWranGood.TabIndex = 0;
             this.rdoWranGood.TabStop = true;
             this.rdoWranGood.Text = "ကောင်း";
@@ -475,7 +483,7 @@
             this.rdoWranNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoWranNormal.Location = new System.Drawing.Point(295, 3);
             this.rdoWranNormal.Name = "rdoWranNormal";
-            this.rdoWranNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoWranNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoWranNormal.TabIndex = 1;
             this.rdoWranNormal.TabStop = true;
             this.rdoWranNormal.Text = "သင့်";
@@ -487,7 +495,7 @@
             this.rdoWranWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoWranWorse.Location = new System.Drawing.Point(501, 3);
             this.rdoWranWorse.Name = "rdoWranWorse";
-            this.rdoWranWorse.Size = new System.Drawing.Size(41, 24);
+            this.rdoWranWorse.Size = new System.Drawing.Size(40, 23);
             this.rdoWranWorse.TabIndex = 2;
             this.rdoWranWorse.TabStop = true;
             this.rdoWranWorse.Text = "ညံ့";
@@ -498,7 +506,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(28, 503);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(341, 20);
+            this.label7.Size = new System.Drawing.Size(316, 19);
             this.label7.TabIndex = 101;
             this.label7.Text = "(5) အာမခံပေးမှုကြောင့်သုံးစွဲသူဖောက်သည်များ၏ ကျေနပ်မှု";
             // 
@@ -507,18 +515,18 @@
             this.panel9.Controls.Add(this.rdoDistributeGood);
             this.panel9.Controls.Add(this.rdoDistributeNormal);
             this.panel9.Controls.Add(this.rdoDistributeWorse);
-            this.panel9.Location = new System.Drawing.Point(73, 452);
+            this.panel9.Location = new System.Drawing.Point(66, 366);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(635, 37);
+            this.panel9.Size = new System.Drawing.Size(534, 29);
             this.panel9.TabIndex = 4;
             // 
             // rdoDistributeGood
             // 
             this.rdoDistributeGood.AutoSize = true;
             this.rdoDistributeGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDistributeGood.Location = new System.Drawing.Point(93, 3);
+            this.rdoDistributeGood.Location = new System.Drawing.Point(65, 3);
             this.rdoDistributeGood.Name = "rdoDistributeGood";
-            this.rdoDistributeGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoDistributeGood.Size = new System.Drawing.Size(65, 23);
             this.rdoDistributeGood.TabIndex = 0;
             this.rdoDistributeGood.TabStop = true;
             this.rdoDistributeGood.Text = "ကောင်း";
@@ -528,9 +536,9 @@
             // 
             this.rdoDistributeNormal.AutoSize = true;
             this.rdoDistributeNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDistributeNormal.Location = new System.Drawing.Point(295, 3);
+            this.rdoDistributeNormal.Location = new System.Drawing.Point(269, 3);
             this.rdoDistributeNormal.Name = "rdoDistributeNormal";
-            this.rdoDistributeNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoDistributeNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoDistributeNormal.TabIndex = 1;
             this.rdoDistributeNormal.TabStop = true;
             this.rdoDistributeNormal.Text = "သင့်";
@@ -540,9 +548,9 @@
             // 
             this.rdoDistributeWorse.AutoSize = true;
             this.rdoDistributeWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDistributeWorse.Location = new System.Drawing.Point(501, 3);
+            this.rdoDistributeWorse.Location = new System.Drawing.Point(470, 3);
             this.rdoDistributeWorse.Name = "rdoDistributeWorse";
-            this.rdoDistributeWorse.Size = new System.Drawing.Size(41, 24);
+            this.rdoDistributeWorse.Size = new System.Drawing.Size(40, 23);
             this.rdoDistributeWorse.TabIndex = 2;
             this.rdoDistributeWorse.TabStop = true;
             this.rdoDistributeWorse.Text = "ညံ့";
@@ -551,57 +559,46 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 418);
+            this.label6.Location = new System.Drawing.Point(28, 344);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(633, 20);
+            this.label6.Size = new System.Drawing.Size(279, 19);
             this.label6.TabIndex = 99;
-            this.label6.Text = "(4) ကျွန်တော်များ၏ ကုမ္ပဏီမှတိုက်ရိုက်ကုန်ပစ္စည်းဖြန့်ဖြူးမှုနှင့် ပေးပို့နိုင်မှ" +
-                "ုအပေါ်တွင် လူကြီးမင်းတို့၏ ထင်မြင်မှု";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.rdoInverterGood);
-            this.panel7.Controls.Add(this.rdoInverterNormal);
-            this.panel7.Controls.Add(this.rdoInverterWorse);
-            this.panel7.Location = new System.Drawing.Point(62, 200);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(635, 37);
-            this.panel7.TabIndex = 1;
+            this.label6.Text = "(4) ကုန်ပစၐ္စည်းတိုက်ရိုက်ဖြန့်ဖြူးမှုပေါ်တွင်ထင်မြင်မှု";
             // 
             // rdoInverterGood
             // 
             this.rdoInverterGood.AutoSize = true;
             this.rdoInverterGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoInverterGood.Location = new System.Drawing.Point(3, 4);
+            this.rdoInverterGood.Location = new System.Drawing.Point(15, 19);
             this.rdoInverterGood.Name = "rdoInverterGood";
-            this.rdoInverterGood.Size = new System.Drawing.Size(171, 24);
+            this.rdoInverterGood.Size = new System.Drawing.Size(119, 23);
             this.rdoInverterGood.TabIndex = 0;
             this.rdoInverterGood.TabStop = true;
-            this.rdoInverterGood.Text = "Inverter(၂)နှစ်နှင့်အထက်";
+            this.rdoInverterGood.Text = "(၂)နှစ်နှင့်အထက်";
             this.rdoInverterGood.UseVisualStyleBackColor = true;
             // 
             // rdoInverterNormal
             // 
             this.rdoInverterNormal.AutoSize = true;
             this.rdoInverterNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoInverterNormal.Location = new System.Drawing.Point(184, 3);
+            this.rdoInverterNormal.Location = new System.Drawing.Point(201, 19);
             this.rdoInverterNormal.Name = "rdoInverterNormal";
-            this.rdoInverterNormal.Size = new System.Drawing.Size(172, 24);
+            this.rdoInverterNormal.Size = new System.Drawing.Size(120, 23);
             this.rdoInverterNormal.TabIndex = 1;
             this.rdoInverterNormal.TabStop = true;
-            this.rdoInverterNormal.Text = "Inverter(၁)နှစ်နှင့်အထက်";
+            this.rdoInverterNormal.Text = "(၁)နှစ်နှင့်အထက်";
             this.rdoInverterNormal.UseVisualStyleBackColor = true;
             // 
             // rdoInverterWorse
             // 
             this.rdoInverterWorse.AutoSize = true;
             this.rdoInverterWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoInverterWorse.Location = new System.Drawing.Point(384, 4);
+            this.rdoInverterWorse.Location = new System.Drawing.Point(396, 19);
             this.rdoInverterWorse.Name = "rdoInverterWorse";
-            this.rdoInverterWorse.Size = new System.Drawing.Size(169, 24);
+            this.rdoInverterWorse.Size = new System.Drawing.Size(118, 23);
             this.rdoInverterWorse.TabIndex = 2;
             this.rdoInverterWorse.TabStop = true;
-            this.rdoInverterWorse.Text = "Inverter(၆)လနှင့်အထက်";
+            this.rdoInverterWorse.Text = "(၆)လနှင့်အထက်";
             this.rdoInverterWorse.UseVisualStyleBackColor = true;
             // 
             // panel6
@@ -609,18 +606,18 @@
             this.panel6.Controls.Add(this.rdoDesignGood);
             this.panel6.Controls.Add(this.rdoDesignNormal);
             this.panel6.Controls.Add(this.rdoDesignWrose);
-            this.panel6.Location = new System.Drawing.Point(73, 368);
+            this.panel6.Location = new System.Drawing.Point(66, 313);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(635, 37);
+            this.panel6.Size = new System.Drawing.Size(534, 28);
             this.panel6.TabIndex = 3;
             // 
             // rdoDesignGood
             // 
             this.rdoDesignGood.AutoSize = true;
             this.rdoDesignGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDesignGood.Location = new System.Drawing.Point(93, 3);
+            this.rdoDesignGood.Location = new System.Drawing.Point(65, 3);
             this.rdoDesignGood.Name = "rdoDesignGood";
-            this.rdoDesignGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoDesignGood.Size = new System.Drawing.Size(65, 23);
             this.rdoDesignGood.TabIndex = 0;
             this.rdoDesignGood.TabStop = true;
             this.rdoDesignGood.Text = "ကောင်း";
@@ -630,9 +627,9 @@
             // 
             this.rdoDesignNormal.AutoSize = true;
             this.rdoDesignNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDesignNormal.Location = new System.Drawing.Point(295, 3);
+            this.rdoDesignNormal.Location = new System.Drawing.Point(269, 3);
             this.rdoDesignNormal.Name = "rdoDesignNormal";
-            this.rdoDesignNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoDesignNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoDesignNormal.TabIndex = 1;
             this.rdoDesignNormal.TabStop = true;
             this.rdoDesignNormal.Text = "သင့်";
@@ -642,58 +639,48 @@
             // 
             this.rdoDesignWrose.AutoSize = true;
             this.rdoDesignWrose.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDesignWrose.Location = new System.Drawing.Point(501, 3);
+            this.rdoDesignWrose.Location = new System.Drawing.Point(470, 3);
             this.rdoDesignWrose.Name = "rdoDesignWrose";
-            this.rdoDesignWrose.Size = new System.Drawing.Size(41, 24);
+            this.rdoDesignWrose.Size = new System.Drawing.Size(40, 23);
             this.rdoDesignWrose.TabIndex = 2;
             this.rdoDesignWrose.TabStop = true;
             this.rdoDesignWrose.Text = "ညံ့";
             this.rdoDesignWrose.UseVisualStyleBackColor = true;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.rdoCarGood);
-            this.panel5.Controls.Add(this.rdoCarNormal);
-            this.panel5.Controls.Add(this.rdoCarWorse);
-            this.panel5.Location = new System.Drawing.Point(62, 148);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(635, 37);
-            this.panel5.TabIndex = 0;
-            // 
             // rdoCarGood
             // 
             this.rdoCarGood.AutoSize = true;
             this.rdoCarGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoCarGood.Location = new System.Drawing.Point(25, 4);
+            this.rdoCarGood.Location = new System.Drawing.Point(15, 16);
             this.rdoCarGood.Name = "rdoCarGood";
-            this.rdoCarGood.Size = new System.Drawing.Size(149, 24);
+            this.rdoCarGood.Size = new System.Drawing.Size(119, 23);
             this.rdoCarGood.TabIndex = 0;
             this.rdoCarGood.TabStop = true;
-            this.rdoCarGood.Text = "ကား(၂)နှစ်နှင့်အထက်";
+            this.rdoCarGood.Text = "(၂)နှစ်နှင့်အထက်";
             this.rdoCarGood.UseVisualStyleBackColor = true;
             // 
             // rdoCarNormal
             // 
             this.rdoCarNormal.AutoSize = true;
             this.rdoCarNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoCarNormal.Location = new System.Drawing.Point(206, 3);
+            this.rdoCarNormal.Location = new System.Drawing.Point(201, 15);
             this.rdoCarNormal.Name = "rdoCarNormal";
-            this.rdoCarNormal.Size = new System.Drawing.Size(150, 24);
+            this.rdoCarNormal.Size = new System.Drawing.Size(120, 23);
             this.rdoCarNormal.TabIndex = 1;
             this.rdoCarNormal.TabStop = true;
-            this.rdoCarNormal.Text = "ကား(၁)နှစ်နှင့်အထက်";
+            this.rdoCarNormal.Text = "(၁)နှစ်နှင့်အထက်";
             this.rdoCarNormal.UseVisualStyleBackColor = true;
             // 
             // rdoCarWorse
             // 
             this.rdoCarWorse.AutoSize = true;
             this.rdoCarWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoCarWorse.Location = new System.Drawing.Point(406, 4);
+            this.rdoCarWorse.Location = new System.Drawing.Point(396, 15);
             this.rdoCarWorse.Name = "rdoCarWorse";
-            this.rdoCarWorse.Size = new System.Drawing.Size(147, 24);
+            this.rdoCarWorse.Size = new System.Drawing.Size(118, 23);
             this.rdoCarWorse.TabIndex = 2;
             this.rdoCarWorse.TabStop = true;
-            this.rdoCarWorse.Text = "ကား(၆)လနှင့်အထက်";
+            this.rdoCarWorse.Text = "(၆)လနှင့်အထက်";
             this.rdoCarWorse.UseVisualStyleBackColor = true;
             // 
             // panel4
@@ -701,18 +688,18 @@
             this.panel4.Controls.Add(this.rdoCheap);
             this.panel4.Controls.Add(this.rdoNormal);
             this.panel4.Controls.Add(this.rdoExpensive);
-            this.panel4.Location = new System.Drawing.Point(82, 285);
+            this.panel4.Location = new System.Drawing.Point(62, 253);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(635, 37);
+            this.panel4.Size = new System.Drawing.Size(538, 30);
             this.panel4.TabIndex = 2;
             // 
             // rdoCheap
             // 
             this.rdoCheap.AutoSize = true;
             this.rdoCheap.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoCheap.Location = new System.Drawing.Point(77, 3);
+            this.rdoCheap.Location = new System.Drawing.Point(62, 3);
             this.rdoCheap.Name = "rdoCheap";
-            this.rdoCheap.Size = new System.Drawing.Size(77, 24);
+            this.rdoCheap.Size = new System.Drawing.Size(72, 23);
             this.rdoCheap.TabIndex = 0;
             this.rdoCheap.TabStop = true;
             this.rdoCheap.Text = "သက်သာ";
@@ -722,9 +709,9 @@
             // 
             this.rdoNormal.AutoSize = true;
             this.rdoNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoNormal.Location = new System.Drawing.Point(286, 3);
+            this.rdoNormal.Location = new System.Drawing.Point(273, 3);
             this.rdoNormal.Name = "rdoNormal";
-            this.rdoNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoNormal.TabIndex = 1;
             this.rdoNormal.TabStop = true;
             this.rdoNormal.Text = "သင့်";
@@ -734,9 +721,9 @@
             // 
             this.rdoExpensive.AutoSize = true;
             this.rdoExpensive.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoExpensive.Location = new System.Drawing.Point(460, 3);
+            this.rdoExpensive.Location = new System.Drawing.Point(447, 3);
             this.rdoExpensive.Name = "rdoExpensive";
-            this.rdoExpensive.Size = new System.Drawing.Size(73, 24);
+            this.rdoExpensive.Size = new System.Drawing.Size(67, 23);
             this.rdoExpensive.TabIndex = 2;
             this.rdoExpensive.TabStop = true;
             this.rdoExpensive.Text = "ဈေးကြီး";
@@ -748,34 +735,34 @@
             this.label18.Font = new System.Drawing.Font("Myanmar3", 12F);
             this.label18.Location = new System.Drawing.Point(226, 56);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(461, 23);
+            this.label18.Size = new System.Drawing.Size(422, 22);
             this.label18.TabIndex = 92;
             this.label18.Text = "တဆင့်ပြန်လည်ရောင်းချသူများ၏ ကျေနပ်မှုဆန္ဒသဘောထားမေးခွန်းလွှာ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 334);
+            this.label4.Location = new System.Drawing.Point(28, 287);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(326, 20);
+            this.label4.Size = new System.Drawing.Size(301, 19);
             this.label4.TabIndex = 91;
             this.label4.Text = "(3) ကုန်ပစ္စည်းလှပမှု ဒီဇိုင်းအသွင်အပြင်ပေါ်တွင်ကျေနပ်မှု";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 253);
+            this.label3.Location = new System.Drawing.Point(28, 231);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 20);
+            this.label3.Size = new System.Drawing.Size(188, 19);
             this.label3.TabIndex = 90;
             this.label3.Text = "(2) Toyo Battery ၏ဈေးနှုန်း";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 115);
+            this.label2.Location = new System.Drawing.Point(28, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(298, 20);
+            this.label2.Size = new System.Drawing.Size(293, 19);
             this.label2.TabIndex = 89;
             this.label2.Text = "(1) Toyo Battery ၏ သက်တမ်းရှည်ကြာသုံးစွဲနိုင်မှု";
             // 
@@ -785,7 +772,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(216, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(480, 27);
+            this.label1.Size = new System.Drawing.Size(414, 25);
             this.label1.TabIndex = 88;
             this.label1.Text = "PROVEN TECHNOLOGY INDUSTRY CO.,LTD.";
             // 
@@ -812,10 +799,10 @@
             this.second.Controls.Add(this.panel14);
             this.second.Controls.Add(this.panel15);
             this.second.Controls.Add(this.label26);
-            this.second.Location = new System.Drawing.Point(4, 28);
+            this.second.Location = new System.Drawing.Point(4, 26);
             this.second.Name = "second";
             this.second.Padding = new System.Windows.Forms.Padding(3);
-            this.second.Size = new System.Drawing.Size(929, 254);
+            this.second.Size = new System.Drawing.Size(929, 256);
             this.second.TabIndex = 1;
             this.second.Text = "ဒုတိယပိုင်း";
             // 
@@ -841,7 +828,7 @@
             this.dtpSurveyStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSurveyStartDate.Location = new System.Drawing.Point(304, 29);
             this.dtpSurveyStartDate.Name = "dtpSurveyStartDate";
-            this.dtpSurveyStartDate.Size = new System.Drawing.Size(127, 28);
+            this.dtpSurveyStartDate.Size = new System.Drawing.Size(127, 25);
             this.dtpSurveyStartDate.TabIndex = 1;
             // 
             // label27
@@ -849,7 +836,7 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(264, 32);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(34, 20);
+            this.label27.Size = new System.Drawing.Size(32, 19);
             this.label27.TabIndex = 62;
             this.label27.Text = "နေ့စွဲ";
             // 
@@ -860,7 +847,7 @@
             this.cmbCustomer.FormattingEnabled = true;
             this.cmbCustomer.Location = new System.Drawing.Point(81, 29);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(160, 27);
+            this.cmbCustomer.Size = new System.Drawing.Size(160, 25);
             this.cmbCustomer.TabIndex = 0;
             this.cmbCustomer.SelectedIndexChanged += new System.EventHandler(this.cmbCustomer_SelectedIndexChanged);
             // 
@@ -869,7 +856,7 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(16, 29);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(45, 20);
+            this.label28.Size = new System.Drawing.Size(42, 19);
             this.label28.TabIndex = 60;
             this.label28.Text = "အမည်";
             // 
@@ -878,7 +865,7 @@
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(16, 65);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(48, 20);
+            this.label29.Size = new System.Drawing.Size(44, 19);
             this.label29.TabIndex = 59;
             this.label29.Text = "လိပ်စာ";
             // 
@@ -906,7 +893,7 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(20, 691);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(197, 20);
+            this.label25.Size = new System.Drawing.Size(174, 19);
             this.label25.TabIndex = 111;
             this.label25.Text = "လူကြီးမင်း၏ အခြားအကြံပြုချက်";
             // 
@@ -924,7 +911,7 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(350, 839);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(359, 20);
+            this.label24.Size = new System.Drawing.Size(320, 19);
             this.label24.TabIndex = 107;
             this.label24.Text = "ယခုကဲ့သို့ဖြေကြားပေးမှုအတွက် အထူးပင်ကျေးဇူးတင်ရှိပါသည်။";
             // 
@@ -933,7 +920,7 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(461, 870);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(128, 20);
+            this.label23.Size = new System.Drawing.Size(123, 19);
             this.label23.TabIndex = 108;
             this.label23.Text = "မန်နေဂျာ (ဈေးကွက်)";
             // 
@@ -942,7 +929,7 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(20, 546);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(438, 20);
+            this.label22.Size = new System.Drawing.Size(411, 19);
             this.label22.TabIndex = 109;
             this.label22.Text = "လူကြီးမင်းမှ Toyo Battery အားထပ်မံဆောင်ရွက်ပေးစေလိုသည့်အကြံပြုချက်";
             // 
@@ -962,7 +949,7 @@
             this.rdoInfromGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoInfromGood.Location = new System.Drawing.Point(105, 3);
             this.rdoInfromGood.Name = "rdoInfromGood";
-            this.rdoInfromGood.Size = new System.Drawing.Size(71, 24);
+            this.rdoInfromGood.Size = new System.Drawing.Size(66, 23);
             this.rdoInfromGood.TabIndex = 0;
             this.rdoInfromGood.TabStop = true;
             this.rdoInfromGood.Text = "မြန်ဆန်";
@@ -974,7 +961,7 @@
             this.rdoInformNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoInformNormal.Location = new System.Drawing.Point(308, 3);
             this.rdoInformNormal.Name = "rdoInformNormal";
-            this.rdoInformNormal.Size = new System.Drawing.Size(74, 24);
+            this.rdoInformNormal.Size = new System.Drawing.Size(69, 23);
             this.rdoInformNormal.TabIndex = 1;
             this.rdoInformNormal.TabStop = true;
             this.rdoInformNormal.Text = "သင့်တင့်";
@@ -986,7 +973,7 @@
             this.rdoInformLittle.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoInformLittle.Location = new System.Drawing.Point(496, 3);
             this.rdoInformLittle.Name = "rdoInformLittle";
-            this.rdoInformLittle.Size = new System.Drawing.Size(72, 24);
+            this.rdoInformLittle.Size = new System.Drawing.Size(67, 23);
             this.rdoInformLittle.TabIndex = 2;
             this.rdoInformLittle.TabStop = true;
             this.rdoInformLittle.Text = "နည်းပါး";
@@ -997,7 +984,7 @@
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(20, 463);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(304, 20);
+            this.label21.Size = new System.Drawing.Size(292, 19);
             this.label21.TabIndex = 105;
             this.label21.Text = "(12) ကုမ္ပဏီမှ Customer များသို့သတင်းပေးထိတွေ့မှု";
             // 
@@ -1017,7 +1004,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(3, 6);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(71, 20);
+            this.label16.Size = new System.Drawing.Size(72, 19);
             this.label16.TabIndex = 92;
             this.label16.Text = "(က) အချိန်";
             // 
@@ -1027,7 +1014,7 @@
             this.rdoTranTimeGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTranTimeGood.Location = new System.Drawing.Point(107, 2);
             this.rdoTranTimeGood.Name = "rdoTranTimeGood";
-            this.rdoTranTimeGood.Size = new System.Drawing.Size(71, 24);
+            this.rdoTranTimeGood.Size = new System.Drawing.Size(66, 23);
             this.rdoTranTimeGood.TabIndex = 0;
             this.rdoTranTimeGood.TabStop = true;
             this.rdoTranTimeGood.Text = "မြန်ဆန်";
@@ -1039,7 +1026,7 @@
             this.rdoTranTimeNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTranTimeNormal.Location = new System.Drawing.Point(237, 6);
             this.rdoTranTimeNormal.Name = "rdoTranTimeNormal";
-            this.rdoTranTimeNormal.Size = new System.Drawing.Size(147, 24);
+            this.rdoTranTimeNormal.Size = new System.Drawing.Size(134, 23);
             this.rdoTranTimeNormal.TabIndex = 1;
             this.rdoTranTimeNormal.TabStop = true;
             this.rdoTranTimeNormal.Text = "သတ်မှတ်ချိန်ရောက်ရှိ";
@@ -1051,7 +1038,7 @@
             this.rdoTranTimeWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTranTimeWorse.Location = new System.Drawing.Point(484, 6);
             this.rdoTranTimeWorse.Name = "rdoTranTimeWorse";
-            this.rdoTranTimeWorse.Size = new System.Drawing.Size(86, 24);
+            this.rdoTranTimeWorse.Size = new System.Drawing.Size(80, 23);
             this.rdoTranTimeWorse.TabIndex = 2;
             this.rdoTranTimeWorse.TabStop = true;
             this.rdoTranTimeWorse.Text = "နှောက်နှေး";
@@ -1074,7 +1061,7 @@
             this.rdoTranQtyGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTranQtyGood.Location = new System.Drawing.Point(109, 2);
             this.rdoTranQtyGood.Name = "rdoTranQtyGood";
-            this.rdoTranQtyGood.Size = new System.Drawing.Size(69, 24);
+            this.rdoTranQtyGood.Size = new System.Drawing.Size(64, 23);
             this.rdoTranQtyGood.TabIndex = 0;
             this.rdoTranQtyGood.TabStop = true;
             this.rdoTranQtyGood.Text = "မှန်ကန်";
@@ -1085,7 +1072,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(3, 6);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(111, 20);
+            this.label19.Size = new System.Drawing.Size(108, 19);
             this.label19.TabIndex = 92;
             this.label19.Text = "(ခ) အရည်အတွက်";
             // 
@@ -1095,7 +1082,7 @@
             this.rdoTranQtyNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTranQtyNormal.Location = new System.Drawing.Point(307, 2);
             this.rdoTranQtyNormal.Name = "rdoTranQtyNormal";
-            this.rdoTranQtyNormal.Size = new System.Drawing.Size(77, 24);
+            this.rdoTranQtyNormal.Size = new System.Drawing.Size(70, 23);
             this.rdoTranQtyNormal.TabIndex = 1;
             this.rdoTranQtyNormal.TabStop = true;
             this.rdoTranQtyNormal.Text = "မှားယွင်း";
@@ -1107,7 +1094,7 @@
             this.rdoTranQtyWrose.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTranQtyWrose.Location = new System.Drawing.Point(497, 2);
             this.rdoTranQtyWrose.Name = "rdoTranQtyWrose";
-            this.rdoTranQtyWrose.Size = new System.Drawing.Size(73, 24);
+            this.rdoTranQtyWrose.Size = new System.Drawing.Size(68, 23);
             this.rdoTranQtyWrose.TabIndex = 2;
             this.rdoTranQtyWrose.TabStop = true;
             this.rdoTranQtyWrose.Text = "လုံးဝမပို့";
@@ -1118,7 +1105,7 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(18, 335);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(252, 20);
+            this.label20.Size = new System.Drawing.Size(242, 19);
             this.label20.TabIndex = 102;
             this.label20.Text = "(11) Order မှာယူပြီးကုမ္ပဏီမှပစ္စည်းပေးပို့မှု";
             // 
@@ -1138,7 +1125,7 @@
             this.rdoContactGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoContactGood.Location = new System.Drawing.Point(107, 2);
             this.rdoContactGood.Name = "rdoContactGood";
-            this.rdoContactGood.Size = new System.Drawing.Size(56, 24);
+            this.rdoContactGood.Size = new System.Drawing.Size(53, 23);
             this.rdoContactGood.TabIndex = 0;
             this.rdoContactGood.TabStop = true;
             this.rdoContactGood.Text = "လွယ်";
@@ -1150,7 +1137,7 @@
             this.rdoContactNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoContactNormal.Location = new System.Drawing.Point(334, 3);
             this.rdoContactNormal.Name = "rdoContactNormal";
-            this.rdoContactNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoContactNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoContactNormal.TabIndex = 1;
             this.rdoContactNormal.TabStop = true;
             this.rdoContactNormal.Text = "သင့်";
@@ -1162,7 +1149,7 @@
             this.rdoContactWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoContactWorse.Location = new System.Drawing.Point(510, 3);
             this.rdoContactWorse.Name = "rdoContactWorse";
-            this.rdoContactWorse.Size = new System.Drawing.Size(60, 24);
+            this.rdoContactWorse.Size = new System.Drawing.Size(56, 23);
             this.rdoContactWorse.TabIndex = 2;
             this.rdoContactWorse.TabStop = true;
             this.rdoContactWorse.Text = "ခက်ခဲ";
@@ -1173,7 +1160,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(18, 251);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(250, 20);
+            this.label17.Size = new System.Drawing.Size(234, 19);
             this.label17.TabIndex = 100;
             this.label17.Text = "(10) ကုမ္ပဏီသို့အလွယ်တကူဆက်သွယ်နိုင်မှု";
             // 
@@ -1193,7 +1180,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(3, 6);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(98, 20);
+            this.label15.Size = new System.Drawing.Size(110, 19);
             this.label15.TabIndex = 92;
             this.label15.Text = "(ဃ) Flag Line";
             // 
@@ -1203,7 +1190,7 @@
             this.rdoFlagLineGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoFlagLineGood.Location = new System.Drawing.Point(107, 2);
             this.rdoFlagLineGood.Name = "rdoFlagLineGood";
-            this.rdoFlagLineGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoFlagLineGood.Size = new System.Drawing.Size(65, 23);
             this.rdoFlagLineGood.TabIndex = 0;
             this.rdoFlagLineGood.TabStop = true;
             this.rdoFlagLineGood.Text = "ကောင်း";
@@ -1215,7 +1202,7 @@
             this.rdoFlagLineNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoFlagLineNormal.Location = new System.Drawing.Point(334, 3);
             this.rdoFlagLineNormal.Name = "rdoFlagLineNormal";
-            this.rdoFlagLineNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoFlagLineNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoFlagLineNormal.TabIndex = 1;
             this.rdoFlagLineNormal.TabStop = true;
             this.rdoFlagLineNormal.Text = "သင့်";
@@ -1227,7 +1214,7 @@
             this.rdoFlagLineWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoFlagLineWorse.Location = new System.Drawing.Point(510, 3);
             this.rdoFlagLineWorse.Name = "rdoFlagLineWorse";
-            this.rdoFlagLineWorse.Size = new System.Drawing.Size(41, 24);
+            this.rdoFlagLineWorse.Size = new System.Drawing.Size(40, 23);
             this.rdoFlagLineWorse.TabIndex = 2;
             this.rdoFlagLineWorse.TabStop = true;
             this.rdoFlagLineWorse.Text = "ညံ့";
@@ -1249,7 +1236,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(3, 6);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 20);
+            this.label14.Size = new System.Drawing.Size(58, 19);
             this.label14.TabIndex = 92;
             this.label14.Text = "(က) TV";
             // 
@@ -1259,7 +1246,7 @@
             this.rdoTVGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTVGood.Location = new System.Drawing.Point(107, 2);
             this.rdoTVGood.Name = "rdoTVGood";
-            this.rdoTVGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoTVGood.Size = new System.Drawing.Size(65, 23);
             this.rdoTVGood.TabIndex = 0;
             this.rdoTVGood.TabStop = true;
             this.rdoTVGood.Text = "ကောင်း";
@@ -1271,7 +1258,7 @@
             this.rdoTVNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTVNormal.Location = new System.Drawing.Point(334, 3);
             this.rdoTVNormal.Name = "rdoTVNormal";
-            this.rdoTVNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoTVNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoTVNormal.TabIndex = 1;
             this.rdoTVNormal.TabStop = true;
             this.rdoTVNormal.Text = "သင့်";
@@ -1283,7 +1270,7 @@
             this.rdoTVWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoTVWorse.Location = new System.Drawing.Point(510, 3);
             this.rdoTVWorse.Name = "rdoTVWorse";
-            this.rdoTVWorse.Size = new System.Drawing.Size(41, 24);
+            this.rdoTVWorse.Size = new System.Drawing.Size(40, 23);
             this.rdoTVWorse.TabIndex = 2;
             this.rdoTVWorse.TabStop = true;
             this.rdoTVWorse.Text = "ညံ့";
@@ -1305,7 +1292,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 20);
+            this.label12.Size = new System.Drawing.Size(97, 19);
             this.label12.TabIndex = 92;
             this.label12.Text = "(ဂ) PB Board";
             // 
@@ -1315,7 +1302,7 @@
             this.rdoPBBoardGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoPBBoardGood.Location = new System.Drawing.Point(107, 2);
             this.rdoPBBoardGood.Name = "rdoPBBoardGood";
-            this.rdoPBBoardGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoPBBoardGood.Size = new System.Drawing.Size(65, 23);
             this.rdoPBBoardGood.TabIndex = 0;
             this.rdoPBBoardGood.TabStop = true;
             this.rdoPBBoardGood.Text = "ကောင်း";
@@ -1327,7 +1314,7 @@
             this.rdoPBBoardNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoPBBoardNormal.Location = new System.Drawing.Point(334, 3);
             this.rdoPBBoardNormal.Name = "rdoPBBoardNormal";
-            this.rdoPBBoardNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoPBBoardNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoPBBoardNormal.TabIndex = 1;
             this.rdoPBBoardNormal.TabStop = true;
             this.rdoPBBoardNormal.Text = "သင့်";
@@ -1339,7 +1326,7 @@
             this.rdoPBBoardWrose.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoPBBoardWrose.Location = new System.Drawing.Point(510, 3);
             this.rdoPBBoardWrose.Name = "rdoPBBoardWrose";
-            this.rdoPBBoardWrose.Size = new System.Drawing.Size(41, 24);
+            this.rdoPBBoardWrose.Size = new System.Drawing.Size(40, 23);
             this.rdoPBBoardWrose.TabIndex = 2;
             this.rdoPBBoardWrose.TabStop = true;
             this.rdoPBBoardWrose.Text = "ညံ့";
@@ -1361,7 +1348,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(3, 6);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 20);
+            this.label13.Size = new System.Drawing.Size(89, 19);
             this.label13.TabIndex = 92;
             this.label13.Text = "(ခ) Die Cut";
             // 
@@ -1371,7 +1358,7 @@
             this.rdoDieCutGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoDieCutGood.Location = new System.Drawing.Point(107, 2);
             this.rdoDieCutGood.Name = "rdoDieCutGood";
-            this.rdoDieCutGood.Size = new System.Drawing.Size(70, 24);
+            this.rdoDieCutGood.Size = new System.Drawing.Size(65, 23);
             this.rdoDieCutGood.TabIndex = 0;
             this.rdoDieCutGood.TabStop = true;
             this.rdoDieCutGood.Text = "ကောင်း";
@@ -1383,7 +1370,7 @@
             this.rdoDieCutNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoDieCutNormal.Location = new System.Drawing.Point(334, 3);
             this.rdoDieCutNormal.Name = "rdoDieCutNormal";
-            this.rdoDieCutNormal.Size = new System.Drawing.Size(50, 24);
+            this.rdoDieCutNormal.Size = new System.Drawing.Size(48, 23);
             this.rdoDieCutNormal.TabIndex = 1;
             this.rdoDieCutNormal.TabStop = true;
             this.rdoDieCutNormal.Text = "သင့်";
@@ -1395,7 +1382,7 @@
             this.rdoDieCutWrose.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoDieCutWrose.Location = new System.Drawing.Point(510, 3);
             this.rdoDieCutWrose.Name = "rdoDieCutWrose";
-            this.rdoDieCutWrose.Size = new System.Drawing.Size(41, 24);
+            this.rdoDieCutWrose.Size = new System.Drawing.Size(40, 23);
             this.rdoDieCutWrose.TabIndex = 2;
             this.rdoDieCutWrose.TabStop = true;
             this.rdoDieCutWrose.Text = "ညံ့";
@@ -1406,15 +1393,95 @@
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(27, 26);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(239, 20);
+            this.label26.Size = new System.Drawing.Size(220, 19);
             this.label26.TabIndex = 94;
             this.label26.Text = "(9) ကြော်ငြာအပေါ်လူကြီးမင်းမှထင်မြင်မှု";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rdoCarGood);
+            this.groupBox2.Controls.Add(this.rdoCarNormal);
+            this.groupBox2.Controls.Add(this.rdoCarWorse);
+            this.groupBox2.Location = new System.Drawing.Point(62, 134);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(538, 40);
+            this.groupBox2.TabIndex = 108;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ကား";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rdoInverterGood);
+            this.groupBox3.Controls.Add(this.rdoInverterNormal);
+            this.groupBox3.Controls.Add(this.rdoInverterWorse);
+            this.groupBox3.Location = new System.Drawing.Point(62, 179);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(538, 48);
+            this.groupBox3.TabIndex = 109;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Inverter";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.radioButton1);
+            this.panel5.Controls.Add(this.radioButton2);
+            this.panel5.Controls.Add(this.radioButton3);
+            this.panel5.Location = new System.Drawing.Point(66, 420);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(534, 29);
+            this.panel5.TabIndex = 110;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.Location = new System.Drawing.Point(65, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(65, 23);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "ကောင်း";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton2.Location = new System.Drawing.Point(269, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(48, 23);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "သင့်";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton3.Location = new System.Drawing.Point(470, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(40, 23);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "ညံ့";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 398);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(572, 19);
+            this.label5.TabIndex = 111;
+            this.label5.Text = "(5) ကျွန်တော်များ၏ ကုမ္ပဏီမှတိုက်ရိုက်ကုန်ပစ္စည်းဖြန့်ဖြူးမှုနှင့် ပေးပို့နိုင်မှ" +
+                "ုအပေါ်တွင် လူကြီးမင်းတို့၏ ထင်မြင်မှု";
+            // 
             // frmToyoBatterySurvey
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 383);
+            this.ClientSize = new System.Drawing.Size(937, 711);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -1439,12 +1506,8 @@
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.second.ResumeLayout(false);
@@ -1467,6 +1530,12 @@
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1482,7 +1551,6 @@
         private System.Windows.Forms.TabControl ToyoTab;
         private System.Windows.Forms.TabPage first;
         private System.Windows.Forms.TabPage second;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.RadioButton rdoInverterGood;
         private System.Windows.Forms.RadioButton rdoInverterNormal;
         private System.Windows.Forms.RadioButton rdoInverterWorse;
@@ -1490,7 +1558,6 @@
         private System.Windows.Forms.RadioButton rdoDesignGood;
         private System.Windows.Forms.RadioButton rdoDesignNormal;
         private System.Windows.Forms.RadioButton rdoDesignWrose;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RadioButton rdoCarGood;
         private System.Windows.Forms.RadioButton rdoCarNormal;
         private System.Windows.Forms.RadioButton rdoCarWorse;
@@ -1584,5 +1651,12 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtOtherSuggestion;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
