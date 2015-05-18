@@ -60,13 +60,13 @@ namespace PTIC.Marketing.Survey
             rdoEmpNormal.Checked = false;
             rdoEmpWrose.Checked = false;
             rdoExpensive.Checked = false;
-            rdoFlagLineGood.Checked = false;
-            rdoFlagLineNormal.Checked = false;
-            rdoFlagLineWrose.Checked = false;
-            rdoNormal.Checked = false;
-            rdoPBBoardGood.Checked = false;
-            rdoPBBoardNormal.Checked = false;
-            rdoPBBoardWrose.Checked = false;
+            //rdoFlagLineGood.Checked = false;
+            //rdoFlagLineNormal.Checked = false;
+            //rdoFlagLineWrose.Checked = false;
+            //rdoNormal.Checked = false;
+            //rdoPBBoardGood.Checked = false;
+            //rdoPBBoardNormal.Checked = false;
+            //rdoPBBoardWrose.Checked = false;
             txtAddress.Text = string.Empty;
             txtSuggestion.Text = string.Empty;
         }
@@ -127,17 +127,17 @@ namespace PTIC.Marketing.Survey
                                 rdoDieCutWrose.Checked = (bool)DataTypeParser.Parse(row["Ans3"], typeof(bool), false);
                                 break;
 
-                            case 7:
-                                rdoPBBoardGood.Checked = (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
-                                rdoPBBoardNormal.Checked = (bool)DataTypeParser.Parse(row["Ans2"], typeof(bool), false);
-                                rdoPBBoardWrose.Checked = (bool)DataTypeParser.Parse(row["Ans3"], typeof(bool), false);
-                                break;
+                            //case 7:
+                            //    rdoPBBoardGood.Checked = (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
+                            //    rdoPBBoardNormal.Checked = (bool)DataTypeParser.Parse(row["Ans2"], typeof(bool), false);
+                            //    rdoPBBoardWrose.Checked = (bool)DataTypeParser.Parse(row["Ans3"], typeof(bool), false);
+                            //    break;
 
-                            case 8:
-                                rdoFlagLineGood.Checked = (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
-                                rdoFlagLineNormal.Checked = (bool)DataTypeParser.Parse(row["Ans2"], typeof(bool), false);
-                                rdoFlagLineWrose.Checked = (bool)DataTypeParser.Parse(row["Ans3"], typeof(bool), false);
-                                break;
+                            //case 8:
+                            //    rdoFlagLineGood.Checked = (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
+                            //    rdoFlagLineNormal.Checked = (bool)DataTypeParser.Parse(row["Ans2"], typeof(bool), false);
+                            //    rdoFlagLineWrose.Checked = (bool)DataTypeParser.Parse(row["Ans3"], typeof(bool), false);
+                            //    break;
                         }
 
                         index++;
@@ -187,106 +187,106 @@ namespace PTIC.Marketing.Survey
                 OtherSuggestion = (string)DataTypeParser.Parse(string.Empty, typeof(string), string.Empty)
             };
 
-            for(int i=1; i < 10;i++)
-            {
-                if (i == 1)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCycleGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoCycle6.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoCycle3.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = 1;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if(i ==2)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();                    
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCheap.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoExpensive.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if(i==3)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();                   
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDesignGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDesignNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDesignWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 4)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDistributeGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDistributeNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDistributeWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 5)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                  _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoEmpGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoEmpNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoEmpWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 6)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                   _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoComGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoComNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoComWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 7)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                   _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDieCutGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDieCutNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDieCutWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 8)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoPBBoardGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoPBBoardNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoPBBoardWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 9)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                   _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoFlagLineGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoFlagLineNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoFlagLineWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }                
-            }
+            //for(int i=1; i < 10;i++)
+            //{
+            //    if (i == 1)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            //        _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCycleGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoCycle6.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoCycle3.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = 1;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if(i ==2)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();                    
+            //        _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCheap.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoExpensive.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if(i==3)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();                   
+            //        _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDesignGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDesignNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDesignWrose.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if (i == 4)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            //        _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDistributeGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDistributeNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDistributeWrose.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if (i == 5)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            //      _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoEmpGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoEmpNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoEmpWrose.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if (i == 6)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            //       _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoComGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoComNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoComWrose.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if (i == 7)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            //       _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDieCutGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDieCutNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDieCutWrose.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if (i == 8)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            //        _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoPBBoardGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoPBBoardNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoPBBoardWrose.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //    else if (i == 9)
+            //    {
+            //        RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            //       _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoFlagLineGood.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoFlagLineNormal.Checked, typeof(bool), false);
+            //        _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoFlagLineWrose.Checked, typeof(bool), false);
+            //        _retailerAnswer.QuestionNo = i;
+            //        _retailerAnswerList.Add(_retailerAnswer);
+            //    }                
+            //}
 
-            if (_answerForm.CustomerID != -1)
-            {
-                affectedRows = new RetailerAnswerBL().Add(_answerForm, _retailerSuggestion, _retailerAnswerList);
-            }
-            else
-            {
-                MessageBox.Show("Customer ရွေးပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (_answerForm.CustomerID != -1)
+            //{
+            //    affectedRows = new RetailerAnswerBL().Add(_answerForm, _retailerSuggestion, _retailerAnswerList);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Customer ရွေးပါ။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
-            if (affectedRows > 0)
-            {
-                ToastMessageBox.Show(Resource.msgSuccessfullySaved);
-                 Clear();
-            }
+            //if (affectedRows > 0)
+            //{
+            //    ToastMessageBox.Show(Resource.msgSuccessfullySaved);
+            //     Clear();
+            //}
         }
         #endregion
 
