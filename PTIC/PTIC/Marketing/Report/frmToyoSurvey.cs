@@ -19,8 +19,9 @@ namespace PTIC.Marketing.Report
 
         private void frmToyoSurvey_Load(object sender, EventArgs e)
         {
-            string templateSql = @"SELECT CR.CusName,CR.Region,AF.QuestionFormID,Q.Question,SQ.SubQuestion,Convert(int,Ans1)*3 as Ans1,Convert(int,Ans2)*2 as Ans2,Convert(int,Ans3) as Ans3
-                                    FROM AnswerForm AF 
+            string templateSql = @"SELECT CR.CusName,CR.Region,AF.QuestionFormID,Q.Question,SQ.SubQuestion,Convert(int,Ans1)*3 as Ans1,Convert(int,Ans2)*2 as Ans2,Convert(int,Ans3) as Ans3,sq.Answer1,SQ.Answer2,SQ.Answer3,RS.Suggestion,RS.OtherSuggestion
+                                    FROM AnswerForm AF INNER JOIN RetailerSuggestion RS
+                                    ON AF.ID=RS.AnswerFormID
                                     INNER JOIN RetailerAnswer RA
                                     ON AF.ID=RA.AnswerFormID
                                     INNER JOIN tblQuestionNo Q
