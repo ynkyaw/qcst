@@ -12,7 +12,7 @@ using PTIC.Util;
 
 namespace PTIC.Marketing.Survey
 {
-     public partial class frmToyoBatterySurvey : Form
+    public partial class frmToyoBatterySurvey : Form
     {
         /// <summary>
         /// DataTable for Customer
@@ -75,7 +75,7 @@ namespace PTIC.Marketing.Survey
                                 break;
 
                             case 5:
-                                 rdoDistributeGood.Checked= (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
+                                rdoDistributeGood.Checked = (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
                                 rdoDistributeNormal.Checked = (bool)DataTypeParser.Parse(row["Ans2"], typeof(bool), false);
                                 rdoDistributeWorse.Checked = (bool)DataTypeParser.Parse(row["Ans3"], typeof(bool), false);
                                 break;
@@ -129,7 +129,7 @@ namespace PTIC.Marketing.Survey
                                 break;
 
                             case 14:
-                                rdoContactGood.Checked= (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
+                                rdoContactGood.Checked = (bool)DataTypeParser.Parse(row["Ans1"], typeof(bool), false);
                                 rdoContactNormal.Checked = (bool)DataTypeParser.Parse(row["Ans2"], typeof(bool), false);
                                 rdoContactWorse.Checked = (bool)DataTypeParser.Parse(row["Ans3"], typeof(bool), false);
                                 break;
@@ -243,6 +243,7 @@ namespace PTIC.Marketing.Survey
         private void Save()
         {
             int affectedRows = -1;
+            _retailerAnswerList = new List<RetailerAnswer>();
 
             AnswerForm _answerForm = new AnswerForm()
             {
@@ -256,163 +257,220 @@ namespace PTIC.Marketing.Survey
                 Suggestion = (string)DataTypeParser.Parse(txtSuggestion.Text, typeof(string), string.Empty),
                 OtherSuggestion = (string)DataTypeParser.Parse(txtOtherSuggestion.Text, typeof(string), string.Empty)
             };
+            int questNo = 1;
+            int subQuestionNo = 1;
 
-            for (int i = 1; i < 18; i++)
-            {
-                if (i == 1)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCarGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoCarNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoCarWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 2)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoInverterGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoInverterNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoInverterWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 3)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCheap.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoExpensive.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 4)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDesignGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDesignNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDesignWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 5)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDistributeGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDistributeNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDistributeWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 6)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoWranGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoWranNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoWranWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 7)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoResaleGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoResaleNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoResaleWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 8)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoPresentGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoPresentNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoPresentWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 9)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoEmpGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoEmpNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoEmpWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 10)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoTVGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoTVNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoTVWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 11)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDieCutGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDieCutNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDieCutWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 12)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoPBBoardGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoPBBoardNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoPBBoardWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 13)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoFlagLineGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoFlagLineNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoFlagLineWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 14)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoContactGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoContactNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoContactWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 15)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoTranTimeGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoTranTimeNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoTranTimeWorse.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 16)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoTranQtyGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoTranQtyNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoTranQtyWrose.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-                else if (i == 17)
-                {
-                    RetailerAnswer _retailerAnswer = new RetailerAnswer();
-                    _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoInfromGood.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoInformNormal.Checked, typeof(bool), false);
-                    _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoInformLittle.Checked, typeof(bool), false);
-                    _retailerAnswer.QuestionNo = i;
-                    _retailerAnswerList.Add(_retailerAnswer);
-                }
-            }
+            //for (int i = 1; i < 18; i++)
+            //{
+            //    if (i == 1)
+            //    {
+            RetailerAnswer _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCarGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoCarNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoCarWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo;
+            _retailerAnswer.SubQuestionNo = subQuestionNo++;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 2)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoInverterGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoInverterNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoInverterWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            subQuestionNo = 1;
+            _retailerAnswerList.Add(_retailerAnswer);
+            ////}
+            //else if (i == 3)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoCheap.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoExpensive.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 4)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDesignGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDesignNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDesignWrose.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDistributeGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDistributeNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDistributeWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDeliveryGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDeliveryNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDeliveryWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 5)
+            //{
+
+            //}
+            //else if (i == 6)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoWranGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoWranNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoWranWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 7)
+            //{
+            //    RetailerAnswer 
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoResaleGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoResaleNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoResaleWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoWarrentyGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoWarrentyNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoWarrentyWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 8)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoPresentGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoPresentNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoPresentWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+
+            //End of Page 1
+            //}
+            //else if (i == 9)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoEmpGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoEmpNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoEmpWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 10)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoTVGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoTVNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoTVWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo;
+            _retailerAnswer.SubQuestionNo = subQuestionNo++;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 11)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoDieCutGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoDieCutNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoDieCutWrose.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo;
+            _retailerAnswer.SubQuestionNo = subQuestionNo++;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 12)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoPBBoardGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoPBBoardNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoPBBoardWrose.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo;
+            _retailerAnswer.SubQuestionNo = subQuestionNo++;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 13)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoFlagLineGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoFlagLineNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoFlagLineWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo;
+            _retailerAnswer.SubQuestionNo = subQuestionNo++;
+            _retailerAnswerList.Add(_retailerAnswer);
+
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoJBGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoJBNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoJBWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            subQuestionNo = 1;
+            _retailerAnswerList.Add(_retailerAnswer);
+
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoContactGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoContactNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoContactWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 15)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoTranTimeGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoTranTimeNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoTranTimeWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo;
+            _retailerAnswer.SubQuestionNo = subQuestionNo++;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 16)
+            //{
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoTranQtyGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoTranQtyNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoTranQtyWrose.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            subQuestionNo = 1;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //}
+            //else if (i == 17)
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoPaymentGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoPaymentNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoPaymentWorse.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //{
+
+            _retailerAnswer = new RetailerAnswer();
+            _retailerAnswer.Ans1 = (bool)DataTypeParser.Parse(rdoInfromGood.Checked, typeof(bool), false);
+            _retailerAnswer.Ans2 = (bool)DataTypeParser.Parse(rdoInformNormal.Checked, typeof(bool), false);
+            _retailerAnswer.Ans3 = (bool)DataTypeParser.Parse(rdoInformLittle.Checked, typeof(bool), false);
+            _retailerAnswer.QuestionNo = questNo++;
+            _retailerAnswer.SubQuestionNo = subQuestionNo;
+            _retailerAnswerList.Add(_retailerAnswer);
+            //    }
+            //}
 
             if (!rdoCarGood.Checked && !rdoCarNormal.Checked && !rdoCarWorse.Checked && !rdoCheap.Checked && !rdoContactGood.Checked &&
                 !rdoContactNormal.Checked && !rdoContactWorse.Checked && !rdoDesignGood.Checked && !rdoDesignNormal.Checked && !rdoDesignWrose.Checked &&
@@ -422,7 +480,7 @@ namespace PTIC.Marketing.Survey
                                !rdoInverterNormal.Checked && !rdoInverterWorse.Checked && !rdoNormal.Checked && !rdoPBBoardGood.Checked && !rdoPBBoardNormal.Checked && !rdoPBBoardWrose.Checked &&
                                    !rdoPresentGood.Checked && !rdoPresentNormal.Checked && !rdoPresentWorse.Checked && !rdoResaleGood.Checked && !rdoResaleNormal.Checked && !rdoResaleWorse.Checked && !rdoTranQtyGood.Checked &&
                                        !rdoTranQtyNormal.Checked && !rdoTranQtyWrose.Checked && !rdoTranTimeGood.Checked && !rdoTranTimeNormal.Checked && !rdoTranTimeWorse.Checked && !rdoTVGood.Checked && !rdoTVNormal.Checked &&
-                                           !rdoTVWorse.Checked && !rdoWranGood.Checked && !rdoWranNormal.Checked && !rdoWranWorse.Checked )
+                                           !rdoTVWorse.Checked && !rdoWranGood.Checked && !rdoWranNormal.Checked && !rdoWranWorse.Checked)
             {
                 MessageBox.Show("အနည်းဆုံး မေးခွန်းတစ်ခုဖြေရန်လိုအပ်ပါသည်။", "သတိပေးချက်", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -488,6 +546,8 @@ namespace PTIC.Marketing.Survey
             int i = s.LastIndexOf(',');
             s = s.Remove(i) + "။";
             txtAddress.Text = s;
-        }      
+        }
+
+        
     }
 }

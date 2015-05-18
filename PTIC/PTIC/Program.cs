@@ -41,7 +41,7 @@ namespace PTIC.VC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new PTIC.Marketing.Report.frmYearlyCustomerComplainSummaryReport());
+            Application.Run(new PTIC.Marketing.Report.frmToyoSurvey());
 
             using (Mutex mutex = new Mutex(false, "PTIC"))
             {
