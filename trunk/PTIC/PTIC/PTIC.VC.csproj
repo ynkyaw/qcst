@@ -501,6 +501,12 @@
     <Compile Include="Marketing\Report\frmMonthlyCustomerComplainSummary.Designer.cs">
       <DependentUpon>frmMonthlyCustomerComplainSummary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marketing\Report\frmToyoSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Report\frmToyoSurvey.Designer.cs">
+      <DependentUpon>frmToyoSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marketing\Survey\frmAcidAnswerList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1630,7 +1636,11 @@
     <EmbeddedResource Include="Marketing\Report\frmMonthlyCustomerComplainSummary.resx">
       <DependentUpon>frmMonthlyCustomerComplainSummary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Report\frmToyoSurvey.resx">
+      <DependentUpon>frmToyoSurvey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Marketing\Report\MonthlyCustomerComplain.rdlc" />
+    <EmbeddedResource Include="Marketing\Report\ToyoSurvey.rdlc" />
     <EmbeddedResource Include="Marketing\Survey\frmAcidAnswerList.resx">
       <DependentUpon>frmAcidAnswerList.cs</DependentUpon>
     </EmbeddedResource>

@@ -116,6 +116,9 @@ namespace PTIC.Marketing.DA
 
                     cmd.Parameters.AddWithValue("@p_QuestionNo", newRetailerAnswer.QuestionNo);
                     cmd.Parameters["@p_QuestionNo"].Direction = ParameterDirection.Input;
+
+                    cmd.Parameters.AddWithValue("@p_SubQuestionNo", newRetailerAnswer.SubQuestionNo);
+                    cmd.Parameters["@p_SubQuestionNo"].Direction = ParameterDirection.Input;
                                        
                     cmd.ExecuteNonQuery();
                     // clear parameters of each usp_RetailerAnswerInsert

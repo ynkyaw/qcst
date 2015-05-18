@@ -14,6 +14,7 @@ namespace PTIC.Marketing.Entities
         public bool Ans2 { get; set; }
         public bool Ans3 { get; set; }
         public int QuestionNo { get; set; }
+        public int SubQuestionNo { get; set; }
         public DateTime DateAdded { get; set; }
         public DateTime LastModified { get; set; }
         public bool IsDeleted { get; set; }
