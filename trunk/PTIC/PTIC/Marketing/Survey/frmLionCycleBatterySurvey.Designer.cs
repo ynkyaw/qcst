@@ -29,11 +29,34 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.radioButton15 = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radioButton16 = new System.Windows.Forms.RadioButton();
+            this.radioButton17 = new System.Windows.Forms.RadioButton();
+            this.radioButton18 = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdoDieCutGood = new System.Windows.Forms.RadioButton();
+            this.rdoDieCutWrose = new System.Windows.Forms.RadioButton();
+            this.rdoDieCutNormal = new System.Windows.Forms.RadioButton();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtSuggestion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.rdoDieCutGood = new System.Windows.Forms.RadioButton();
-            this.rdoDieCutNormal = new System.Windows.Forms.RadioButton();
-            this.rdoDieCutWrose = new System.Windows.Forms.RadioButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.rdoComGood = new System.Windows.Forms.RadioButton();
             this.rdoComNormal = new System.Windows.Forms.RadioButton();
@@ -76,39 +99,46 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSetup = new System.Windows.Forms.Label();
             this.lblHeaderPCat = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.label19 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.rdoPaymentGood = new System.Windows.Forms.RadioButton();
+            this.rdoPaymentNormal = new System.Windows.Forms.RadioButton();
+            this.rdoPaymentWorse = new System.Windows.Forms.RadioButton();
+            this.label32 = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.rdoInfromGood = new System.Windows.Forms.RadioButton();
+            this.rdoInformNormal = new System.Windows.Forms.RadioButton();
+            this.rdoInformLittle = new System.Windows.Forms.RadioButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.rdoTranTimeGood = new System.Windows.Forms.RadioButton();
+            this.rdoTranTimeNormal = new System.Windows.Forms.RadioButton();
+            this.rdoTranTimeWorse = new System.Windows.Forms.RadioButton();
+            this.rdoTranQtyGood = new System.Windows.Forms.RadioButton();
+            this.rdoTranQtyNormal = new System.Windows.Forms.RadioButton();
+            this.rdoTranQtyWrose = new System.Windows.Forms.RadioButton();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.rdoContactGood = new System.Windows.Forms.RadioButton();
+            this.rdoContactNormal = new System.Windows.Forms.RadioButton();
+            this.rdoContactWorse = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.panel2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -116,25 +146,27 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.groupBox5);
-            this.panel2.Controls.Add(this.groupBox6);
-            this.panel2.Controls.Add(this.groupBox4);
-            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.panel22);
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.panel21);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.panel18);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.panel14);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.panel13);
@@ -159,16 +191,324 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.groupBox4);
+            this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox3);
+            this.panel2.Controls.Add(this.groupBox5);
+            this.panel2.Controls.Add(this.groupBox6);
+            this.panel2.Controls.Add(this.groupBox7);
+            this.panel2.Controls.Add(this.groupBox8);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(934, 534);
+            this.panel2.Size = new System.Drawing.Size(772, 534);
             this.panel2.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.radioButton13);
+            this.groupBox5.Controls.Add(this.radioButton14);
+            this.groupBox5.Controls.Add(this.radioButton15);
+            this.groupBox5.Location = new System.Drawing.Point(49, 610);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(635, 38);
+            this.groupBox5.TabIndex = 97;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Flag Line";
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton13.Location = new System.Drawing.Point(145, 12);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(65, 23);
+            this.radioButton13.TabIndex = 0;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "ကောင်း";
+            this.radioButton13.UseVisualStyleBackColor = true;
+            // 
+            // radioButton14
+            // 
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton14.Location = new System.Drawing.Point(474, 12);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(40, 23);
+            this.radioButton14.TabIndex = 2;
+            this.radioButton14.TabStop = true;
+            this.radioButton14.Text = "ညံ့";
+            this.radioButton14.UseVisualStyleBackColor = true;
+            // 
+            // radioButton15
+            // 
+            this.radioButton15.AutoSize = true;
+            this.radioButton15.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton15.Location = new System.Drawing.Point(316, 12);
+            this.radioButton15.Name = "radioButton15";
+            this.radioButton15.Size = new System.Drawing.Size(48, 23);
+            this.radioButton15.TabIndex = 1;
+            this.radioButton15.TabStop = true;
+            this.radioButton15.Text = "သင့်";
+            this.radioButton15.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.radioButton16);
+            this.groupBox6.Controls.Add(this.radioButton17);
+            this.groupBox6.Controls.Add(this.radioButton18);
+            this.groupBox6.Location = new System.Drawing.Point(49, 646);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(635, 35);
+            this.groupBox6.TabIndex = 98;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Joint Banner";
+            // 
+            // radioButton16
+            // 
+            this.radioButton16.AutoSize = true;
+            this.radioButton16.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton16.Location = new System.Drawing.Point(145, 10);
+            this.radioButton16.Name = "radioButton16";
+            this.radioButton16.Size = new System.Drawing.Size(65, 23);
+            this.radioButton16.TabIndex = 0;
+            this.radioButton16.TabStop = true;
+            this.radioButton16.Text = "ကောင်း";
+            this.radioButton16.UseVisualStyleBackColor = true;
+            // 
+            // radioButton17
+            // 
+            this.radioButton17.AutoSize = true;
+            this.radioButton17.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton17.Location = new System.Drawing.Point(474, 10);
+            this.radioButton17.Name = "radioButton17";
+            this.radioButton17.Size = new System.Drawing.Size(40, 23);
+            this.radioButton17.TabIndex = 2;
+            this.radioButton17.TabStop = true;
+            this.radioButton17.Text = "ညံ့";
+            this.radioButton17.UseVisualStyleBackColor = true;
+            // 
+            // radioButton18
+            // 
+            this.radioButton18.AutoSize = true;
+            this.radioButton18.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton18.Location = new System.Drawing.Point(316, 10);
+            this.radioButton18.Name = "radioButton18";
+            this.radioButton18.Size = new System.Drawing.Size(48, 23);
+            this.radioButton18.TabIndex = 1;
+            this.radioButton18.TabStop = true;
+            this.radioButton18.Text = "သင့်";
+            this.radioButton18.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.radioButton10);
+            this.groupBox4.Controls.Add(this.radioButton11);
+            this.groupBox4.Controls.Add(this.radioButton12);
+            this.groupBox4.Location = new System.Drawing.Point(49, 511);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(635, 35);
+            this.groupBox4.TabIndex = 96;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "TV";
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton10.Location = new System.Drawing.Point(145, 11);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(65, 23);
+            this.radioButton10.TabIndex = 0;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "ကောင်း";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton11.Location = new System.Drawing.Point(474, 11);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(40, 23);
+            this.radioButton11.TabIndex = 2;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "ညံ့";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton12.Location = new System.Drawing.Point(316, 11);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(48, 23);
+            this.radioButton12.TabIndex = 1;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "သင့်";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rdoDieCutGood);
+            this.groupBox2.Controls.Add(this.rdoDieCutWrose);
+            this.groupBox2.Controls.Add(this.rdoDieCutNormal);
+            this.groupBox2.Location = new System.Drawing.Point(49, 543);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(635, 38);
+            this.groupBox2.TabIndex = 95;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Die Cut";
+            // 
+            // rdoDieCutGood
+            // 
+            this.rdoDieCutGood.AutoSize = true;
+            this.rdoDieCutGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoDieCutGood.Location = new System.Drawing.Point(145, 14);
+            this.rdoDieCutGood.Name = "rdoDieCutGood";
+            this.rdoDieCutGood.Size = new System.Drawing.Size(65, 23);
+            this.rdoDieCutGood.TabIndex = 0;
+            this.rdoDieCutGood.TabStop = true;
+            this.rdoDieCutGood.Text = "ကောင်း";
+            this.rdoDieCutGood.UseVisualStyleBackColor = true;
+            // 
+            // rdoDieCutWrose
+            // 
+            this.rdoDieCutWrose.AutoSize = true;
+            this.rdoDieCutWrose.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoDieCutWrose.Location = new System.Drawing.Point(474, 14);
+            this.rdoDieCutWrose.Name = "rdoDieCutWrose";
+            this.rdoDieCutWrose.Size = new System.Drawing.Size(40, 23);
+            this.rdoDieCutWrose.TabIndex = 2;
+            this.rdoDieCutWrose.TabStop = true;
+            this.rdoDieCutWrose.Text = "ညံ့";
+            this.rdoDieCutWrose.UseVisualStyleBackColor = true;
+            // 
+            // rdoDieCutNormal
+            // 
+            this.rdoDieCutNormal.AutoSize = true;
+            this.rdoDieCutNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoDieCutNormal.Location = new System.Drawing.Point(316, 14);
+            this.rdoDieCutNormal.Name = "rdoDieCutNormal";
+            this.rdoDieCutNormal.Size = new System.Drawing.Size(48, 23);
+            this.rdoDieCutNormal.TabIndex = 1;
+            this.rdoDieCutNormal.TabStop = true;
+            this.rdoDieCutNormal.Text = "သင့်";
+            this.rdoDieCutNormal.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.radioButton4);
+            this.panel14.Controls.Add(this.radioButton5);
+            this.panel14.Controls.Add(this.radioButton6);
+            this.panel14.Location = new System.Drawing.Point(49, 462);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(635, 29);
+            this.panel14.TabIndex = 31;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton4.Location = new System.Drawing.Point(145, 3);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(65, 23);
+            this.radioButton4.TabIndex = 0;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "ကောင်း";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton5.Location = new System.Drawing.Point(316, 3);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(48, 23);
+            this.radioButton5.TabIndex = 1;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "သင့်";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton6.Location = new System.Drawing.Point(474, 3);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(40, 23);
+            this.radioButton6.TabIndex = 2;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "ညံ့";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(45, 440);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(305, 19);
+            this.label19.TabIndex = 32;
+            this.label19.Text = "(8) အာမခံ မပါသည့်အပေါ်တွင် လူကြီးမင်း၏ထင်မြင်ချက်";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.radioButton1);
+            this.panel13.Controls.Add(this.radioButton2);
+            this.panel13.Controls.Add(this.radioButton3);
+            this.panel13.Location = new System.Drawing.Point(49, 298);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(635, 28);
+            this.panel13.TabIndex = 29;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.Location = new System.Drawing.Point(145, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(65, 23);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "ကောင်း";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton2.Location = new System.Drawing.Point(316, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(48, 23);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "သင့်";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton3.Location = new System.Drawing.Point(474, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(40, 23);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "ညံ့";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(45, 276);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(384, 19);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "(5) ပစ္စည်းလုံလောက်စွာအချိန်နှင့်တပြေးညီပေးပို့နိုင်မှုအပေါ်တွင် ထင်မြင်မှု";
             // 
             // txtSuggestion
             // 
-            this.txtSuggestion.Location = new System.Drawing.Point(145, 868);
+            this.txtSuggestion.Location = new System.Drawing.Point(49, 963);
             this.txtSuggestion.Multiline = true;
             this.txtSuggestion.Name = "txtSuggestion";
             this.txtSuggestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -178,47 +518,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(-6, 853);
+            this.label9.Location = new System.Drawing.Point(49, 940);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 19);
             this.label9.TabIndex = 94;
             this.label9.Text = "လူကြီးမင်း၏အကြံပြုမှု";
-            // 
-            // rdoDieCutGood
-            // 
-            this.rdoDieCutGood.AutoSize = true;
-            this.rdoDieCutGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDieCutGood.Location = new System.Drawing.Point(145, 15);
-            this.rdoDieCutGood.Name = "rdoDieCutGood";
-            this.rdoDieCutGood.Size = new System.Drawing.Size(65, 23);
-            this.rdoDieCutGood.TabIndex = 0;
-            this.rdoDieCutGood.TabStop = true;
-            this.rdoDieCutGood.Text = "ကောင်း";
-            this.rdoDieCutGood.UseVisualStyleBackColor = true;
-            // 
-            // rdoDieCutNormal
-            // 
-            this.rdoDieCutNormal.AutoSize = true;
-            this.rdoDieCutNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDieCutNormal.Location = new System.Drawing.Point(316, 15);
-            this.rdoDieCutNormal.Name = "rdoDieCutNormal";
-            this.rdoDieCutNormal.Size = new System.Drawing.Size(48, 23);
-            this.rdoDieCutNormal.TabIndex = 1;
-            this.rdoDieCutNormal.TabStop = true;
-            this.rdoDieCutNormal.Text = "သင့်";
-            this.rdoDieCutNormal.UseVisualStyleBackColor = true;
-            // 
-            // rdoDieCutWrose
-            // 
-            this.rdoDieCutWrose.AutoSize = true;
-            this.rdoDieCutWrose.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdoDieCutWrose.Location = new System.Drawing.Point(474, 15);
-            this.rdoDieCutWrose.Name = "rdoDieCutWrose";
-            this.rdoDieCutWrose.Size = new System.Drawing.Size(40, 23);
-            this.rdoDieCutWrose.TabIndex = 2;
-            this.rdoDieCutWrose.TabStop = true;
-            this.rdoDieCutWrose.Text = "ညံ့";
-            this.rdoDieCutWrose.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
@@ -500,7 +804,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Myanmar3", 12F);
-            this.label18.Location = new System.Drawing.Point(225, 28);
+            this.label18.Location = new System.Drawing.Point(174, 28);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(422, 22);
             this.label18.TabIndex = 61;
@@ -514,7 +818,7 @@
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtAddress);
-            this.groupBox1.Location = new System.Drawing.Point(53, 956);
+            this.groupBox1.Location = new System.Drawing.Point(49, 1027);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(757, 171);
             this.groupBox1.TabIndex = 59;
@@ -582,11 +886,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(503, 929);
+            this.label14.Location = new System.Drawing.Point(519, 985);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 19);
+            this.label14.Size = new System.Drawing.Size(0, 19);
             this.label14.TabIndex = 58;
-            this.label14.Text = "မန်နေဂျာ (ဈေးကွက်)";
             // 
             // label26
             // 
@@ -600,11 +903,12 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(530, 910);
+            this.label13.Location = new System.Drawing.Point(442, 974);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(320, 19);
+            this.label13.Size = new System.Drawing.Size(320, 38);
             this.label13.TabIndex = 37;
-            this.label13.Text = "ယခုကဲ့သို့ဖြေကြားပေးမှုအတွက် အထူးပင်ကျေးဇူးတင်ရှိပါသည်။";
+            this.label13.Text = "ယခုကဲ့သို့ဖြေကြားပေးမှုအတွက် အထူးပင်ကျေးဇူးတင်ရှိပါသည်။\r\nမန်နေဂျာ (ဈေးကွက်)";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -664,11 +968,59 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar3", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(242, 3);
+            this.label1.Location = new System.Drawing.Point(182, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(414, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "PROVEN TECHNOLOGY INDUSTRY CO.,LTD.";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton7);
+            this.groupBox3.Controls.Add(this.radioButton8);
+            this.groupBox3.Controls.Add(this.radioButton9);
+            this.groupBox3.Location = new System.Drawing.Point(49, 577);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(635, 35);
+            this.groupBox3.TabIndex = 96;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "PB Board";
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton7.Location = new System.Drawing.Point(145, 11);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(65, 23);
+            this.radioButton7.TabIndex = 0;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "ကောင်း";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton8.Location = new System.Drawing.Point(474, 11);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(40, 23);
+            this.radioButton8.TabIndex = 2;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "ညံ့";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton9.Location = new System.Drawing.Point(316, 11);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(48, 23);
+            this.radioButton9.TabIndex = 1;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "သင့်";
+            this.radioButton9.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -679,7 +1031,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 41);
+            this.panel1.Size = new System.Drawing.Size(772, 41);
             this.panel1.TabIndex = 10;
             // 
             // lblSetup
@@ -712,7 +1064,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 575);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(934, 56);
+            this.panel3.Size = new System.Drawing.Size(772, 56);
             this.panel3.TabIndex = 12;
             // 
             // btnSave
@@ -725,325 +1077,281 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // panel13
+            // panel22
             // 
-            this.panel13.Controls.Add(this.radioButton1);
-            this.panel13.Controls.Add(this.radioButton2);
-            this.panel13.Controls.Add(this.radioButton3);
-            this.panel13.Location = new System.Drawing.Point(49, 298);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(635, 28);
-            this.panel13.TabIndex = 29;
+            this.panel22.Controls.Add(this.rdoPaymentGood);
+            this.panel22.Controls.Add(this.rdoPaymentNormal);
+            this.panel22.Controls.Add(this.rdoPaymentWorse);
+            this.panel22.Location = new System.Drawing.Point(49, 854);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(635, 23);
+            this.panel22.TabIndex = 120;
             // 
-            // radioButton1
+            // rdoPaymentGood
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(145, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 23);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ကောင်း";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoPaymentGood.AutoSize = true;
+            this.rdoPaymentGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoPaymentGood.Location = new System.Drawing.Point(145, 3);
+            this.rdoPaymentGood.Name = "rdoPaymentGood";
+            this.rdoPaymentGood.Size = new System.Drawing.Size(65, 23);
+            this.rdoPaymentGood.TabIndex = 3;
+            this.rdoPaymentGood.TabStop = true;
+            this.rdoPaymentGood.Text = "ကောင်း";
+            this.rdoPaymentGood.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoPaymentNormal
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.Location = new System.Drawing.Point(316, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(48, 23);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "သင့်";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoPaymentNormal.AutoSize = true;
+            this.rdoPaymentNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoPaymentNormal.Location = new System.Drawing.Point(316, 3);
+            this.rdoPaymentNormal.Name = "rdoPaymentNormal";
+            this.rdoPaymentNormal.Size = new System.Drawing.Size(48, 23);
+            this.rdoPaymentNormal.TabIndex = 4;
+            this.rdoPaymentNormal.TabStop = true;
+            this.rdoPaymentNormal.Text = "သင့်";
+            this.rdoPaymentNormal.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdoPaymentWorse
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton3.Location = new System.Drawing.Point(474, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(40, 23);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "ညံ့";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdoPaymentWorse.AutoSize = true;
+            this.rdoPaymentWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoPaymentWorse.Location = new System.Drawing.Point(474, 3);
+            this.rdoPaymentWorse.Name = "rdoPaymentWorse";
+            this.rdoPaymentWorse.Size = new System.Drawing.Size(40, 23);
+            this.rdoPaymentWorse.TabIndex = 5;
+            this.rdoPaymentWorse.TabStop = true;
+            this.rdoPaymentWorse.Text = "ညံ့";
+            this.rdoPaymentWorse.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // label32
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(45, 276);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(384, 19);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "(5) ပစ္စည်းလုံလောက်စွာအချိန်နှင့်တပြေးညီပေးပို့နိုင်မှုအပေါ်တွင် ထင်မြင်မှု";
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(45, 832);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(296, 19);
+            this.label32.TabIndex = 121;
+            this.label32.Text = "(12) ကုမ္ပဏီ သို့ငွေပေးချေမှုပုံစံ အပေါ်ကျေနပ် နှစ်သိမ့်မှု";
             // 
-            // panel14
+            // panel21
             // 
-            this.panel14.Controls.Add(this.radioButton4);
-            this.panel14.Controls.Add(this.radioButton5);
-            this.panel14.Controls.Add(this.radioButton6);
-            this.panel14.Location = new System.Drawing.Point(49, 462);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(635, 29);
-            this.panel14.TabIndex = 31;
+            this.panel21.Controls.Add(this.rdoInfromGood);
+            this.panel21.Controls.Add(this.rdoInformNormal);
+            this.panel21.Controls.Add(this.rdoInformLittle);
+            this.panel21.Location = new System.Drawing.Point(49, 908);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(635, 29);
+            this.panel21.TabIndex = 118;
             // 
-            // radioButton4
+            // rdoInfromGood
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton4.Location = new System.Drawing.Point(145, 3);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(65, 23);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "ကောင်း";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdoInfromGood.AutoSize = true;
+            this.rdoInfromGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoInfromGood.Location = new System.Drawing.Point(144, 3);
+            this.rdoInfromGood.Name = "rdoInfromGood";
+            this.rdoInfromGood.Size = new System.Drawing.Size(66, 23);
+            this.rdoInfromGood.TabIndex = 0;
+            this.rdoInfromGood.TabStop = true;
+            this.rdoInfromGood.Text = "မြန်ဆန်";
+            this.rdoInfromGood.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rdoInformNormal
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton5.Location = new System.Drawing.Point(316, 3);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(48, 23);
-            this.radioButton5.TabIndex = 1;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "သင့်";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdoInformNormal.AutoSize = true;
+            this.rdoInformNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoInformNormal.Location = new System.Drawing.Point(295, 3);
+            this.rdoInformNormal.Name = "rdoInformNormal";
+            this.rdoInformNormal.Size = new System.Drawing.Size(69, 23);
+            this.rdoInformNormal.TabIndex = 1;
+            this.rdoInformNormal.TabStop = true;
+            this.rdoInformNormal.Text = "သင့်တင့်";
+            this.rdoInformNormal.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdoInformLittle
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton6.Location = new System.Drawing.Point(474, 3);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(40, 23);
-            this.radioButton6.TabIndex = 2;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "ညံ့";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rdoInformLittle.AutoSize = true;
+            this.rdoInformLittle.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoInformLittle.Location = new System.Drawing.Point(447, 3);
+            this.rdoInformLittle.Name = "rdoInformLittle";
+            this.rdoInformLittle.Size = new System.Drawing.Size(67, 23);
+            this.rdoInformLittle.TabIndex = 2;
+            this.rdoInformLittle.TabStop = true;
+            this.rdoInformLittle.Text = "နည်းပါး";
+            this.rdoInformLittle.UseVisualStyleBackColor = true;
             // 
-            // label19
+            // label21
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(45, 440);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(305, 19);
-            this.label19.TabIndex = 32;
-            this.label19.Text = "(8) အာမခံ မပါသည့်အပေါ်တွင် လူကြီးမင်း၏ထင်မြင်ချက်";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(45, 886);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(292, 19);
+            this.label21.TabIndex = 123;
+            this.label21.Text = "(13) ကုမ္ပဏီမှ Customer များသို့သတင်းပေးထိတွေ့မှု";
             // 
-            // groupBox2
+            // rdoTranTimeGood
             // 
-            this.groupBox2.Controls.Add(this.rdoDieCutGood);
-            this.groupBox2.Controls.Add(this.rdoDieCutWrose);
-            this.groupBox2.Controls.Add(this.rdoDieCutNormal);
-            this.groupBox2.Location = new System.Drawing.Point(49, 560);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(635, 44);
-            this.groupBox2.TabIndex = 95;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Die Cut";
+            this.rdoTranTimeGood.AutoSize = true;
+            this.rdoTranTimeGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoTranTimeGood.Location = new System.Drawing.Point(144, 10);
+            this.rdoTranTimeGood.Name = "rdoTranTimeGood";
+            this.rdoTranTimeGood.Size = new System.Drawing.Size(66, 23);
+            this.rdoTranTimeGood.TabIndex = 0;
+            this.rdoTranTimeGood.TabStop = true;
+            this.rdoTranTimeGood.Text = "မြန်ဆန်";
+            this.rdoTranTimeGood.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // rdoTranTimeNormal
             // 
-            this.groupBox3.Controls.Add(this.radioButton7);
-            this.groupBox3.Controls.Add(this.radioButton8);
-            this.groupBox3.Controls.Add(this.radioButton9);
-            this.groupBox3.Location = new System.Drawing.Point(49, 606);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(635, 44);
-            this.groupBox3.TabIndex = 96;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "PB Board";
+            this.rdoTranTimeNormal.AutoSize = true;
+            this.rdoTranTimeNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoTranTimeNormal.Location = new System.Drawing.Point(230, 10);
+            this.rdoTranTimeNormal.Name = "rdoTranTimeNormal";
+            this.rdoTranTimeNormal.Size = new System.Drawing.Size(134, 23);
+            this.rdoTranTimeNormal.TabIndex = 1;
+            this.rdoTranTimeNormal.TabStop = true;
+            this.rdoTranTimeNormal.Text = "သတ်မှတ်ချိန်ရောက်ရှိ";
+            this.rdoTranTimeNormal.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // rdoTranTimeWorse
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton7.Location = new System.Drawing.Point(145, 15);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(65, 23);
-            this.radioButton7.TabIndex = 0;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "ကောင်း";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.rdoTranTimeWorse.AutoSize = true;
+            this.rdoTranTimeWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoTranTimeWorse.Location = new System.Drawing.Point(434, 10);
+            this.rdoTranTimeWorse.Name = "rdoTranTimeWorse";
+            this.rdoTranTimeWorse.Size = new System.Drawing.Size(80, 23);
+            this.rdoTranTimeWorse.TabIndex = 2;
+            this.rdoTranTimeWorse.TabStop = true;
+            this.rdoTranTimeWorse.Text = "နှောက်နှေး";
+            this.rdoTranTimeWorse.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // rdoTranQtyGood
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton8.Location = new System.Drawing.Point(474, 15);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(40, 23);
-            this.radioButton8.TabIndex = 2;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "ညံ့";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.rdoTranQtyGood.AutoSize = true;
+            this.rdoTranQtyGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoTranQtyGood.Location = new System.Drawing.Point(146, 11);
+            this.rdoTranQtyGood.Name = "rdoTranQtyGood";
+            this.rdoTranQtyGood.Size = new System.Drawing.Size(64, 23);
+            this.rdoTranQtyGood.TabIndex = 0;
+            this.rdoTranQtyGood.TabStop = true;
+            this.rdoTranQtyGood.Text = "မှန်ကန်";
+            this.rdoTranQtyGood.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // rdoTranQtyNormal
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton9.Location = new System.Drawing.Point(316, 15);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(48, 23);
-            this.radioButton9.TabIndex = 1;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "သင့်";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.rdoTranQtyNormal.AutoSize = true;
+            this.rdoTranQtyNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoTranQtyNormal.Location = new System.Drawing.Point(294, 11);
+            this.rdoTranQtyNormal.Name = "rdoTranQtyNormal";
+            this.rdoTranQtyNormal.Size = new System.Drawing.Size(70, 23);
+            this.rdoTranQtyNormal.TabIndex = 1;
+            this.rdoTranQtyNormal.TabStop = true;
+            this.rdoTranQtyNormal.Text = "မှားယွင်း";
+            this.rdoTranQtyNormal.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // rdoTranQtyWrose
             // 
-            this.groupBox4.Controls.Add(this.radioButton10);
-            this.groupBox4.Controls.Add(this.radioButton11);
-            this.groupBox4.Controls.Add(this.radioButton12);
-            this.groupBox4.Location = new System.Drawing.Point(49, 516);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(635, 44);
-            this.groupBox4.TabIndex = 96;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "TV";
+            this.rdoTranQtyWrose.AutoSize = true;
+            this.rdoTranQtyWrose.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoTranQtyWrose.Location = new System.Drawing.Point(446, 11);
+            this.rdoTranQtyWrose.Name = "rdoTranQtyWrose";
+            this.rdoTranQtyWrose.Size = new System.Drawing.Size(68, 23);
+            this.rdoTranQtyWrose.TabIndex = 2;
+            this.rdoTranQtyWrose.TabStop = true;
+            this.rdoTranQtyWrose.Text = "လုံးဝမပို့";
+            this.rdoTranQtyWrose.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // label20
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton10.Location = new System.Drawing.Point(145, 15);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(65, 23);
-            this.radioButton10.TabIndex = 0;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "ကောင်း";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(45, 738);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(242, 19);
+            this.label20.TabIndex = 122;
+            this.label20.Text = "(11) Order မှာယူပြီးကုမ္ပဏီမှပစ္စည်းပေးပို့မှု";
             // 
-            // radioButton11
+            // panel18
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton11.Location = new System.Drawing.Point(474, 15);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(40, 23);
-            this.radioButton11.TabIndex = 2;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "ညံ့";
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.panel18.Controls.Add(this.rdoContactGood);
+            this.panel18.Controls.Add(this.rdoContactNormal);
+            this.panel18.Controls.Add(this.rdoContactWorse);
+            this.panel18.Location = new System.Drawing.Point(49, 707);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(635, 24);
+            this.panel18.TabIndex = 115;
             // 
-            // radioButton12
+            // rdoContactGood
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton12.Location = new System.Drawing.Point(316, 15);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(48, 23);
-            this.radioButton12.TabIndex = 1;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "သင့်";
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.rdoContactGood.AutoSize = true;
+            this.rdoContactGood.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoContactGood.Location = new System.Drawing.Point(157, 3);
+            this.rdoContactGood.Name = "rdoContactGood";
+            this.rdoContactGood.Size = new System.Drawing.Size(53, 23);
+            this.rdoContactGood.TabIndex = 0;
+            this.rdoContactGood.TabStop = true;
+            this.rdoContactGood.Text = "လွယ်";
+            this.rdoContactGood.UseVisualStyleBackColor = true;
             // 
-            // groupBox5
+            // rdoContactNormal
             // 
-            this.groupBox5.Controls.Add(this.radioButton13);
-            this.groupBox5.Controls.Add(this.radioButton14);
-            this.groupBox5.Controls.Add(this.radioButton15);
-            this.groupBox5.Location = new System.Drawing.Point(49, 651);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(635, 44);
-            this.groupBox5.TabIndex = 97;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Flag Line";
+            this.rdoContactNormal.AutoSize = true;
+            this.rdoContactNormal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoContactNormal.Location = new System.Drawing.Point(316, 2);
+            this.rdoContactNormal.Name = "rdoContactNormal";
+            this.rdoContactNormal.Size = new System.Drawing.Size(48, 23);
+            this.rdoContactNormal.TabIndex = 1;
+            this.rdoContactNormal.TabStop = true;
+            this.rdoContactNormal.Text = "သင့်";
+            this.rdoContactNormal.UseVisualStyleBackColor = true;
             // 
-            // radioButton13
+            // rdoContactWorse
             // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton13.Location = new System.Drawing.Point(145, 15);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(65, 23);
-            this.radioButton13.TabIndex = 0;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "ကောင်း";
-            this.radioButton13.UseVisualStyleBackColor = true;
+            this.rdoContactWorse.AutoSize = true;
+            this.rdoContactWorse.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdoContactWorse.Location = new System.Drawing.Point(458, 2);
+            this.rdoContactWorse.Name = "rdoContactWorse";
+            this.rdoContactWorse.Size = new System.Drawing.Size(56, 23);
+            this.rdoContactWorse.TabIndex = 2;
+            this.rdoContactWorse.TabStop = true;
+            this.rdoContactWorse.Text = "ခက်ခဲ";
+            this.rdoContactWorse.UseVisualStyleBackColor = true;
             // 
-            // radioButton14
+            // label8
             // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton14.Location = new System.Drawing.Point(474, 15);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(40, 23);
-            this.radioButton14.TabIndex = 2;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "ညံ့";
-            this.radioButton14.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(45, 684);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(234, 19);
+            this.label8.TabIndex = 119;
+            this.label8.Text = "(10) ကုမ္ပဏီသို့အလွယ်တကူဆက်သွယ်နိုင်မှု";
             // 
-            // radioButton15
+            // groupBox7
             // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton15.Location = new System.Drawing.Point(316, 15);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(48, 23);
-            this.radioButton15.TabIndex = 1;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "သင့်";
-            this.radioButton15.UseVisualStyleBackColor = true;
+            this.groupBox7.Controls.Add(this.rdoTranTimeGood);
+            this.groupBox7.Controls.Add(this.rdoTranTimeWorse);
+            this.groupBox7.Controls.Add(this.rdoTranTimeNormal);
+            this.groupBox7.Location = new System.Drawing.Point(49, 758);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(635, 35);
+            this.groupBox7.TabIndex = 99;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "(က) အချိန်";
             // 
-            // groupBox6
+            // groupBox8
             // 
-            this.groupBox6.Controls.Add(this.radioButton16);
-            this.groupBox6.Controls.Add(this.radioButton17);
-            this.groupBox6.Controls.Add(this.radioButton18);
-            this.groupBox6.Location = new System.Drawing.Point(49, 698);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(635, 44);
-            this.groupBox6.TabIndex = 98;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Joint Banner";
-            // 
-            // radioButton16
-            // 
-            this.radioButton16.AutoSize = true;
-            this.radioButton16.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton16.Location = new System.Drawing.Point(145, 15);
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(65, 23);
-            this.radioButton16.TabIndex = 0;
-            this.radioButton16.TabStop = true;
-            this.radioButton16.Text = "ကောင်း";
-            this.radioButton16.UseVisualStyleBackColor = true;
-            // 
-            // radioButton17
-            // 
-            this.radioButton17.AutoSize = true;
-            this.radioButton17.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton17.Location = new System.Drawing.Point(474, 15);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(40, 23);
-            this.radioButton17.TabIndex = 2;
-            this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "ညံ့";
-            this.radioButton17.UseVisualStyleBackColor = true;
-            // 
-            // radioButton18
-            // 
-            this.radioButton18.AutoSize = true;
-            this.radioButton18.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton18.Location = new System.Drawing.Point(316, 15);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(48, 23);
-            this.radioButton18.TabIndex = 1;
-            this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "သင့်";
-            this.radioButton18.UseVisualStyleBackColor = true;
+            this.groupBox8.Controls.Add(this.rdoTranQtyGood);
+            this.groupBox8.Controls.Add(this.rdoTranQtyWrose);
+            this.groupBox8.Controls.Add(this.rdoTranQtyNormal);
+            this.groupBox8.Location = new System.Drawing.Point(49, 794);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(635, 35);
+            this.groupBox8.TabIndex = 124;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "(ခ) အရည်အတွက်";
             // 
             // frmLionCycleBatterySurvey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 631);
+            this.ClientSize = new System.Drawing.Size(772, 631);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -1053,6 +1361,18 @@
             this.Text = "Lion Cycle Battery Survey";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -1067,23 +1387,21 @@
             this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1170,5 +1488,29 @@
         private System.Windows.Forms.RadioButton radioButton16;
         private System.Windows.Forms.RadioButton radioButton17;
         private System.Windows.Forms.RadioButton radioButton18;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.RadioButton rdoPaymentGood;
+        private System.Windows.Forms.RadioButton rdoPaymentNormal;
+        private System.Windows.Forms.RadioButton rdoPaymentWorse;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.RadioButton rdoInfromGood;
+        private System.Windows.Forms.RadioButton rdoInformNormal;
+        private System.Windows.Forms.RadioButton rdoInformLittle;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.RadioButton rdoContactGood;
+        private System.Windows.Forms.RadioButton rdoContactNormal;
+        private System.Windows.Forms.RadioButton rdoContactWorse;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RadioButton rdoTranTimeGood;
+        private System.Windows.Forms.RadioButton rdoTranTimeWorse;
+        private System.Windows.Forms.RadioButton rdoTranTimeNormal;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.RadioButton rdoTranQtyGood;
+        private System.Windows.Forms.RadioButton rdoTranQtyWrose;
+        private System.Windows.Forms.RadioButton rdoTranQtyNormal;
     }
 }
