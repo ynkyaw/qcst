@@ -104,6 +104,7 @@ namespace PTIC.ReportViewer
 
             ReportBL reporter = new ReportBL();
             DataTable dt = reporter.GetSalesQOB1(brand,startDate, endDate);
+            if (dt == null) return;
             if (dt.Rows.Count < 1) 
             {
                 reportViewer.Clear();

@@ -33,28 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTelemarketingLog = new System.Windows.Forms.DataGridView();
-            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDetailCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDetailEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarketedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTown = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTownship = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelemarketingDetail = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colIsMarketed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarketingType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarketingPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colmarketingDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTownshipID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSetup = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -68,6 +46,29 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.pnlFilt = new System.Windows.Forms.Panel();
             this.lblFilter = new System.Windows.Forms.Label();
+            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDetailCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDetailEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarketedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTown = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTownship = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContactPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCusPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelemarketingDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colIsMarketed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarketingType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarketingPlanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmarketingDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTownshipID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelemarketingLog)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -100,6 +101,7 @@
             this.colCusType,
             this.colCustomerType,
             this.colCusName,
+            this.colContactPerson,
             this.colCusPhone,
             this.colEmpName,
             this.colTelemarketingDetail,
@@ -124,188 +126,6 @@
             this.dgvTelemarketingLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelemarketingLog_CellContentClick);
             this.dgvTelemarketingLog.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvTelemarketingLog_DataBindingComplete);
             this.dgvTelemarketingLog.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvTelemarketingLog_RowPostPaint);
-            // 
-            // colNo
-            // 
-            this.colNo.HeaderText = "စဉ်";
-            this.colNo.Name = "colNo";
-            this.colNo.ReadOnly = true;
-            this.colNo.Width = 30;
-            // 
-            // colDetailCusID
-            // 
-            this.colDetailCusID.DataPropertyName = "DetailCusID";
-            this.colDetailCusID.HeaderText = "DetailCusID";
-            this.colDetailCusID.Name = "colDetailCusID";
-            this.colDetailCusID.ReadOnly = true;
-            this.colDetailCusID.Visible = false;
-            // 
-            // colDetailEmpID
-            // 
-            this.colDetailEmpID.DataPropertyName = "DetailEmpID";
-            this.colDetailEmpID.HeaderText = "DetailEmpID";
-            this.colDetailEmpID.Name = "colDetailEmpID";
-            this.colDetailEmpID.ReadOnly = true;
-            this.colDetailEmpID.Visible = false;
-            // 
-            // colPlanDate
-            // 
-            this.colPlanDate.DataPropertyName = "PlanDate";
-            dataGridViewCellStyle2.Format = "dd-MMM-yyyy";
-            this.colPlanDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colPlanDate.HeaderText = "ဆက်သွယ်ရမည့်နေ့";
-            this.colPlanDate.Name = "colPlanDate";
-            this.colPlanDate.ReadOnly = true;
-            this.colPlanDate.Width = 110;
-            // 
-            // colMarketedDate
-            // 
-            this.colMarketedDate.DataPropertyName = "MarketedDate";
-            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
-            this.colMarketedDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colMarketedDate.HeaderText = "ဆက်သွယ်သည့်နေ့";
-            this.colMarketedDate.Name = "colMarketedDate";
-            this.colMarketedDate.ReadOnly = true;
-            this.colMarketedDate.Width = 110;
-            // 
-            // colTown
-            // 
-            this.colTown.DataPropertyName = "Town";
-            this.colTown.HeaderText = "မြို့";
-            this.colTown.Name = "colTown";
-            this.colTown.ReadOnly = true;
-            // 
-            // colTownship
-            // 
-            this.colTownship.DataPropertyName = "Township";
-            this.colTownship.HeaderText = "မြို့နယ်";
-            this.colTownship.Name = "colTownship";
-            this.colTownship.ReadOnly = true;
-            this.colTownship.Width = 120;
-            // 
-            // colCusType
-            // 
-            this.colCusType.DataPropertyName = "CusType";
-            this.colCusType.HeaderText = "Customer Type";
-            this.colCusType.Name = "colCusType";
-            this.colCusType.ReadOnly = true;
-            this.colCusType.Visible = false;
-            this.colCusType.Width = 130;
-            // 
-            // colCustomerType
-            // 
-            this.colCustomerType.DataPropertyName = "CusTypeName";
-            this.colCustomerType.HeaderText = "Customer အမျိုးအစား";
-            this.colCustomerType.Name = "colCustomerType";
-            this.colCustomerType.ReadOnly = true;
-            this.colCustomerType.Width = 130;
-            // 
-            // colCusName
-            // 
-            this.colCusName.DataPropertyName = "CusName";
-            this.colCusName.HeaderText = "Customer အမည်";
-            this.colCusName.Name = "colCusName";
-            this.colCusName.ReadOnly = true;
-            this.colCusName.Width = 200;
-            // 
-            // colCusPhone
-            // 
-            this.colCusPhone.DataPropertyName = "Phone1";
-            this.colCusPhone.HeaderText = "ဖုန်းနံပါတ်";
-            this.colCusPhone.Name = "colCusPhone";
-            this.colCusPhone.ReadOnly = true;
-            this.colCusPhone.Width = 200;
-            // 
-            // colEmpName
-            // 
-            this.colEmpName.DataPropertyName = "EmpName";
-            this.colEmpName.HeaderText = "ဆက်သွယ်သည့် ဝန်ထမ်းအမည်";
-            this.colEmpName.Name = "colEmpName";
-            this.colEmpName.ReadOnly = true;
-            this.colEmpName.Width = 180;
-            // 
-            // colTelemarketingDetail
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "ထည့်မည်";
-            this.colTelemarketingDetail.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colTelemarketingDetail.HeaderText = "ဆက်သွယ်မှု မှတ်တမ်း";
-            this.colTelemarketingDetail.Name = "colTelemarketingDetail";
-            this.colTelemarketingDetail.ReadOnly = true;
-            this.colTelemarketingDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTelemarketingDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colTelemarketingDetail.Width = 90;
-            // 
-            // colIsMarketed
-            // 
-            this.colIsMarketed.DataPropertyName = "IsMarketed";
-            this.colIsMarketed.HeaderText = "ဆက်သွယ်ပြီး/မပြီး";
-            this.colIsMarketed.Name = "colIsMarketed";
-            this.colIsMarketed.ReadOnly = true;
-            this.colIsMarketed.Width = 60;
-            // 
-            // colRemark
-            // 
-            this.colRemark.DataPropertyName = "Remark";
-            this.colRemark.HeaderText = "မှတ်ချက်";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.DataPropertyName = "Status";
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Visible = false;
-            // 
-            // colMarketingType
-            // 
-            this.colMarketingType.DataPropertyName = "MarketingType";
-            this.colMarketingType.HeaderText = "Marketing Type";
-            this.colMarketingType.Name = "colMarketingType";
-            this.colMarketingType.ReadOnly = true;
-            this.colMarketingType.Visible = false;
-            // 
-            // colMarketingPlanID
-            // 
-            this.colMarketingPlanID.DataPropertyName = "MarketingPlanID";
-            this.colMarketingPlanID.HeaderText = "TelemarketingPlanID";
-            this.colMarketingPlanID.Name = "colMarketingPlanID";
-            this.colMarketingPlanID.ReadOnly = true;
-            this.colMarketingPlanID.Visible = false;
-            // 
-            // colmarketingDetailID
-            // 
-            this.colmarketingDetailID.DataPropertyName = "MarketingDetailID";
-            this.colmarketingDetailID.HeaderText = "MarketingDetailID";
-            this.colmarketingDetailID.Name = "colmarketingDetailID";
-            this.colmarketingDetailID.ReadOnly = true;
-            this.colmarketingDetailID.Visible = false;
-            // 
-            // colTownshipID
-            // 
-            this.colTownshipID.DataPropertyName = "TownshipID";
-            this.colTownshipID.HeaderText = "TownshipID";
-            this.colTownshipID.Name = "colTownshipID";
-            this.colTownshipID.ReadOnly = true;
-            this.colTownshipID.Visible = false;
-            // 
-            // colEmpID
-            // 
-            this.colEmpID.DataPropertyName = "EmpID";
-            this.colEmpID.HeaderText = "EmpID";
-            this.colEmpID.Name = "colEmpID";
-            this.colEmpID.ReadOnly = true;
-            this.colEmpID.Visible = false;
-            // 
-            // colCusID
-            // 
-            this.colCusID.DataPropertyName = "CusID";
-            this.colCusID.HeaderText = "CusID";
-            this.colCusID.Name = "colCusID";
-            this.colCusID.ReadOnly = true;
-            this.colCusID.Visible = false;
             // 
             // lblSetup
             // 
@@ -449,6 +269,195 @@
             this.lblFilter.Text = "▲ Hide Advance Search";
             this.lblFilter.Click += new System.EventHandler(this.lblFilter_Click);
             // 
+            // colNo
+            // 
+            this.colNo.HeaderText = "စဉ်";
+            this.colNo.Name = "colNo";
+            this.colNo.ReadOnly = true;
+            this.colNo.Width = 30;
+            // 
+            // colDetailCusID
+            // 
+            this.colDetailCusID.DataPropertyName = "DetailCusID";
+            this.colDetailCusID.HeaderText = "DetailCusID";
+            this.colDetailCusID.Name = "colDetailCusID";
+            this.colDetailCusID.ReadOnly = true;
+            this.colDetailCusID.Visible = false;
+            // 
+            // colDetailEmpID
+            // 
+            this.colDetailEmpID.DataPropertyName = "DetailEmpID";
+            this.colDetailEmpID.HeaderText = "DetailEmpID";
+            this.colDetailEmpID.Name = "colDetailEmpID";
+            this.colDetailEmpID.ReadOnly = true;
+            this.colDetailEmpID.Visible = false;
+            // 
+            // colPlanDate
+            // 
+            this.colPlanDate.DataPropertyName = "PlanDate";
+            dataGridViewCellStyle2.Format = "dd-MMM-yyyy";
+            this.colPlanDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colPlanDate.HeaderText = "ဆက်သွယ်ရမည့်နေ့";
+            this.colPlanDate.Name = "colPlanDate";
+            this.colPlanDate.ReadOnly = true;
+            this.colPlanDate.Width = 110;
+            // 
+            // colMarketedDate
+            // 
+            this.colMarketedDate.DataPropertyName = "MarketedDate";
+            dataGridViewCellStyle3.Format = "dd-MMM-yyyy";
+            this.colMarketedDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colMarketedDate.HeaderText = "ဆက်သွယ်သည့်နေ့";
+            this.colMarketedDate.Name = "colMarketedDate";
+            this.colMarketedDate.ReadOnly = true;
+            this.colMarketedDate.Width = 110;
+            // 
+            // colTown
+            // 
+            this.colTown.DataPropertyName = "Town";
+            this.colTown.HeaderText = "မြို့";
+            this.colTown.Name = "colTown";
+            this.colTown.ReadOnly = true;
+            // 
+            // colTownship
+            // 
+            this.colTownship.DataPropertyName = "Township";
+            this.colTownship.HeaderText = "မြို့နယ်";
+            this.colTownship.Name = "colTownship";
+            this.colTownship.ReadOnly = true;
+            this.colTownship.Width = 120;
+            // 
+            // colCusType
+            // 
+            this.colCusType.DataPropertyName = "CusType";
+            this.colCusType.HeaderText = "Customer Type";
+            this.colCusType.Name = "colCusType";
+            this.colCusType.ReadOnly = true;
+            this.colCusType.Visible = false;
+            this.colCusType.Width = 130;
+            // 
+            // colCustomerType
+            // 
+            this.colCustomerType.DataPropertyName = "CusTypeName";
+            this.colCustomerType.HeaderText = "Customer အမျိုးအစား";
+            this.colCustomerType.Name = "colCustomerType";
+            this.colCustomerType.ReadOnly = true;
+            this.colCustomerType.Width = 130;
+            // 
+            // colCusName
+            // 
+            this.colCusName.DataPropertyName = "CusName";
+            this.colCusName.HeaderText = "Customer အမည်";
+            this.colCusName.Name = "colCusName";
+            this.colCusName.ReadOnly = true;
+            this.colCusName.Width = 200;
+            // 
+            // colContactPerson
+            // 
+            this.colContactPerson.DataPropertyName = "ConPersonName";
+            this.colContactPerson.HeaderText = "Contact Person";
+            this.colContactPerson.Name = "colContactPerson";
+            this.colContactPerson.ReadOnly = true;
+            // 
+            // colCusPhone
+            // 
+            this.colCusPhone.DataPropertyName = "Phone1";
+            this.colCusPhone.HeaderText = "ဖုန်းနံပါတ်";
+            this.colCusPhone.Name = "colCusPhone";
+            this.colCusPhone.ReadOnly = true;
+            this.colCusPhone.Width = 200;
+            // 
+            // colEmpName
+            // 
+            this.colEmpName.DataPropertyName = "EmpName";
+            this.colEmpName.HeaderText = "ဆက်သွယ်သည့် ဝန်ထမ်းအမည်";
+            this.colEmpName.Name = "colEmpName";
+            this.colEmpName.ReadOnly = true;
+            this.colEmpName.Width = 180;
+            // 
+            // colTelemarketingDetail
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "ထည့်မည်";
+            this.colTelemarketingDetail.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colTelemarketingDetail.HeaderText = "ဆက်သွယ်မှု မှတ်တမ်း";
+            this.colTelemarketingDetail.Name = "colTelemarketingDetail";
+            this.colTelemarketingDetail.ReadOnly = true;
+            this.colTelemarketingDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTelemarketingDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colTelemarketingDetail.Width = 90;
+            // 
+            // colIsMarketed
+            // 
+            this.colIsMarketed.DataPropertyName = "IsMarketed";
+            this.colIsMarketed.HeaderText = "ဆက်သွယ်ပြီး/မပြီး";
+            this.colIsMarketed.Name = "colIsMarketed";
+            this.colIsMarketed.ReadOnly = true;
+            this.colIsMarketed.Width = 60;
+            // 
+            // colRemark
+            // 
+            this.colRemark.DataPropertyName = "Remark";
+            this.colRemark.HeaderText = "မှတ်ချက်";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "Status";
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Visible = false;
+            // 
+            // colMarketingType
+            // 
+            this.colMarketingType.DataPropertyName = "MarketingType";
+            this.colMarketingType.HeaderText = "Marketing Type";
+            this.colMarketingType.Name = "colMarketingType";
+            this.colMarketingType.ReadOnly = true;
+            this.colMarketingType.Visible = false;
+            // 
+            // colMarketingPlanID
+            // 
+            this.colMarketingPlanID.DataPropertyName = "MarketingPlanID";
+            this.colMarketingPlanID.HeaderText = "TelemarketingPlanID";
+            this.colMarketingPlanID.Name = "colMarketingPlanID";
+            this.colMarketingPlanID.ReadOnly = true;
+            this.colMarketingPlanID.Visible = false;
+            // 
+            // colmarketingDetailID
+            // 
+            this.colmarketingDetailID.DataPropertyName = "MarketingDetailID";
+            this.colmarketingDetailID.HeaderText = "MarketingDetailID";
+            this.colmarketingDetailID.Name = "colmarketingDetailID";
+            this.colmarketingDetailID.ReadOnly = true;
+            this.colmarketingDetailID.Visible = false;
+            // 
+            // colTownshipID
+            // 
+            this.colTownshipID.DataPropertyName = "TownshipID";
+            this.colTownshipID.HeaderText = "TownshipID";
+            this.colTownshipID.Name = "colTownshipID";
+            this.colTownshipID.ReadOnly = true;
+            this.colTownshipID.Visible = false;
+            // 
+            // colEmpID
+            // 
+            this.colEmpID.DataPropertyName = "EmpID";
+            this.colEmpID.HeaderText = "EmpID";
+            this.colEmpID.Name = "colEmpID";
+            this.colEmpID.ReadOnly = true;
+            this.colEmpID.Visible = false;
+            // 
+            // colCusID
+            // 
+            this.colCusID.DataPropertyName = "CusID";
+            this.colCusID.HeaderText = "CusID";
+            this.colCusID.Name = "colCusID";
+            this.colCusID.ReadOnly = true;
+            this.colCusID.Visible = false;
+            // 
             // frmTeleMarketingLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -498,6 +507,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCusType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCusName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContactPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCusPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmpName;
         private System.Windows.Forms.DataGridViewButtonColumn colTelemarketingDetail;

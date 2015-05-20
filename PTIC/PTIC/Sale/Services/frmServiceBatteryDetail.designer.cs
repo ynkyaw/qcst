@@ -2614,8 +2614,8 @@
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageFact);
-            this.tabControl.Controls.Add(this.tabPageSvcFunction);
             this.tabControl.Controls.Add(this.tabPageTransferReturn);
+            this.tabControl.Controls.Add(this.tabPageSvcFunction);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
