@@ -138,6 +138,25 @@ namespace PTIC.Sale.Report
                                             GROUP BY SD.ProductID,P.ProductName) AS TT
                                             PIVOT (SUM(TOTALQTY) FOR ProductName IN ({1}))AS TESTING
                                             )";
+
+            string companyTemplate = @" (SELECT Col,{1},{3}
+                                            FROM (
+                                            SELECT 'Company'+(case when SaleType IS null then ' Cash' else '' end) as Col ,P.ProductName,SUM(SD.Qty ) TOTALQTY
+                                            FROM Invoice I INNER JOIN SalesDetail SD
+                                            ON I.ID=SD.InvoiceID
+                                            INNER JOIN Product P
+                                            ON SD.ProductID=P.ID
+                                            Inner Join Customer C
+                                            ON C.ID=i.CusID
+                                            {0}
+                                            AND (SaleType IS NULL OR SaleType=0)
+                                            and c.CusType={2}
+                                            GROUP BY SD.ProductID,P.ProductName,SaleType) AS TT
+                                            PIVOT (SUM(TOTALQTY) FOR ProductName IN ({1}))AS TESTING
+                                            )";
+
+
+            
             string ygnRegTemplate = @" (SELECT Col,{1},{2}
                                             FROM (
                                             SELECT '{4}' AS Col ,P.ProductName,SUM(SD.Qty ) TOTALQTY
@@ -212,6 +231,19 @@ namespace PTIC.Sale.Report
                                             and c.CusType={2}
                                             and ProductName IN ({1})";
 
+            string companyTotalSql = @"SELECT SUM(SD.Qty*sd.SalePrice ) Amt
+                                            FROM Invoice I INNER JOIN SalesDetail SD
+                                            ON I.ID=SD.InvoiceID
+                                            INNER JOIN Product P
+                                            ON SD.ProductID=P.ID
+                                            Inner Join Customer C
+                                            ON C.ID=i.CusID
+                                            {0}
+                                            AND (SaleType IS NULL OR SaleType=0)
+                                            and c.CusType={2}
+                                            and ProductName IN ({1})
+                                            Group By I.SaleType";
+
             
 
             #endregion
@@ -220,14 +252,14 @@ namespace PTIC.Sale.Report
             DataTable consignment = new BaseDAO().SelectByQuery(string.Format(consignmentTemplate, conditionalSql, productList, productListTotal));
             DataTable reg = new BaseDAO().SelectByQuery(string.Format(ygnRegTemplate, conditionalSql, productList, productListTotal, "<>", "Regional"));
             DataTable wareHouse = new BaseDAO().SelectByQuery(string.Format(warehouseTemplate, conditionalSql, productList, productListTotal));
-            DataTable company = new BaseDAO().SelectByQuery(string.Format(companyGovTemplate, conditionalSql, productList, 3, productListTotal));
+            DataTable company = new BaseDAO().SelectByQuery(string.Format(companyTemplate, conditionalSql, productList, 3, productListTotal));
             DataTable gov = new BaseDAO().SelectByQuery(string.Format(companyGovTemplate, conditionalSql, productList, 4, productListTotal));
 
             DataTable yangonAmt = new BaseDAO().SelectByQuery(string.Format(ygnTotalSql, conditionalSql, productListForCalTotal, "="));
             DataTable consignmentAmt = new BaseDAO().SelectByQuery(string.Format(congTotalSql, conditionalSql, productListForCalTotal, productListTotal));
             DataTable regAmt = new BaseDAO().SelectByQuery(string.Format(ygnTotalSql, conditionalSql, productListForCalTotal, "<>"));
             DataTable wareHouseAmt = new BaseDAO().SelectByQuery(string.Format(warehouseTotalSql, conditionalSql, productListForCalTotal));
-            DataTable companyAmt = new BaseDAO().SelectByQuery(string.Format(companyGoveTotalSql, conditionalSql, productListForCalTotal, 3));
+            DataTable companyAmt = new BaseDAO().SelectByQuery(string.Format(companyTotalSql, conditionalSql, productListForCalTotal, 3));
             DataTable govAmt = new BaseDAO().SelectByQuery(string.Format(companyGoveTotalSql, conditionalSql, productListForCalTotal, 4, productListTotal));
 
             AddingAmount(yangon, yangonAmt);
@@ -299,7 +331,7 @@ namespace PTIC.Sale.Report
                    if (dt.Rows[j][i] != null && dt.Rows[j][i] != DBNull.Value) 
                    {
                        if(i!=dt.Columns.Count-1)
-                           dr[i] = ((int)dr[i] + (int)dt.Rows[j][i]);
+                           dr[i] = ((decimal)dr[i] + (decimal)dt.Rows[j][i]);
                        else
                            dr[i] = (decimal.Parse(dr[i]+string.Empty) + decimal.Parse(dt.Rows[j][i]+string.Empty))+string.Empty;
                    }

@@ -153,7 +153,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 57);
             this.button1.TabIndex = 43;
-            this.button1.Text = "Monthly Company Sales ";
+            this.button1.Text = "Monthly Sales\r\n Report";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -163,7 +163,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 57);
             this.button2.TabIndex = 44;
-            this.button2.Text = "Daily Sales ";
+            this.button2.Text = "Daily Sales  \r\nReport";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

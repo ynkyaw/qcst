@@ -36,6 +36,7 @@
             this.btnAcid = new System.Windows.Forms.Button();
             this.btnSurveyQuestionList = new System.Windows.Forms.Button();
             this.btnSurveyResult = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.lblSetup.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Bold);
             this.lblSetup.Location = new System.Drawing.Point(8, 10);
             this.lblSetup.Name = "lblSetup";
-            this.lblSetup.Size = new System.Drawing.Size(129, 20);
+            this.lblSetup.Size = new System.Drawing.Size(140, 19);
             this.lblSetup.TabIndex = 0;
             this.lblSetup.Text = "Survey Question";
             // 
@@ -69,7 +70,7 @@
             this.lblHeaderPCat.ForeColor = System.Drawing.Color.MediumBlue;
             this.lblHeaderPCat.Location = new System.Drawing.Point(143, 10);
             this.lblHeaderPCat.Name = "lblHeaderPCat";
-            this.lblHeaderPCat.Size = new System.Drawing.Size(140, 20);
+            this.lblHeaderPCat.Size = new System.Drawing.Size(142, 19);
             this.lblHeaderPCat.TabIndex = 45;
             this.lblHeaderPCat.Text = ">    Survey Forms";
             // 
@@ -113,7 +114,7 @@
             // 
             this.btnSurveyQuestionList.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSurveyQuestionList.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSurveyQuestionList.Location = new System.Drawing.Point(226, 61);
+            this.btnSurveyQuestionList.Location = new System.Drawing.Point(418, 61);
             this.btnSurveyQuestionList.Name = "btnSurveyQuestionList";
             this.btnSurveyQuestionList.Size = new System.Drawing.Size(172, 57);
             this.btnSurveyQuestionList.TabIndex = 35;
@@ -125,7 +126,7 @@
             // 
             this.btnSurveyResult.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSurveyResult.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSurveyResult.Location = new System.Drawing.Point(226, 142);
+            this.btnSurveyResult.Location = new System.Drawing.Point(418, 142);
             this.btnSurveyResult.Name = "btnSurveyResult";
             this.btnSurveyResult.Size = new System.Drawing.Size(172, 57);
             this.btnSurveyResult.TabIndex = 36;
@@ -133,11 +134,24 @@
             this.btnSurveyResult.UseVisualStyleBackColor = true;
             this.btnSurveyResult.Click += new System.EventHandler(this.btnSurveyResult_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Myanmar3", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(224, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 57);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Toyo Survey Result By Region";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmSurveyPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 303);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSurveyResult);
             this.Controls.Add(this.btnSurveyQuestionList);
             this.Controls.Add(this.btnAcid);
@@ -164,5 +178,6 @@
         private System.Windows.Forms.Button btnAcid;
         private System.Windows.Forms.Button btnSurveyQuestionList;
         private System.Windows.Forms.Button btnSurveyResult;
+        private System.Windows.Forms.Button button1;
     }
 }
