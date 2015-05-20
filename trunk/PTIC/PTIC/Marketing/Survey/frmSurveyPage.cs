@@ -46,5 +46,12 @@ namespace PTIC.Marketing.Survey
             UIManager.MdiChildOpenForm(typeof(frmSurveyResult));
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             UIManager.MdiChildOpenForm(typeof(PTIC.Marketing.Report.frmToyoSurvey));
+            this.Close();
+            
+        }
     }
 }
