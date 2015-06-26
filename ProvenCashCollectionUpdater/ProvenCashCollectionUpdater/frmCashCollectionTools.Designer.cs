@@ -58,6 +58,7 @@
             this.openFileDialog.DefaultExt = "csv";
             this.openFileDialog.FileName = "CashCollection.csv";
             this.openFileDialog.Filter = "CSV File|*.csv";
+            this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_FileOk);
             // 
             // txtFilePath
             // 
@@ -76,6 +77,7 @@
             this.btnBrowse.TabIndex = 2;
             this.btnBrowse.Text = "ဖိုင်ရွေးပါ";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // label2
             // 
@@ -140,6 +142,7 @@
             this.btnRunUpdate.TabIndex = 8;
             this.btnRunUpdate.Text = "Run  Update (အကုန်)";
             this.btnRunUpdate.UseVisualStyleBackColor = true;
+            this.btnRunUpdate.Click += new System.EventHandler(this.btnRunUpdate_Click);
             // 
             // frmCashCollectionTools
             // 
