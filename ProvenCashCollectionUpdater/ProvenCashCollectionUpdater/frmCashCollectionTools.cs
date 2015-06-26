@@ -14,6 +14,7 @@ namespace ProvenCashCollectionUpdater
         public frmCashCollectionTools()
         {
             InitializeComponent();
+
         }
     }
 }
