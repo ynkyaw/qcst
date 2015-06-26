@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ProvenCashCollectionUpdater
 {
-    public partial class Form1 : Form
+    public partial class frmCashCollectionTools : Form
     {
-        public Form1()
+        public frmCashCollectionTools()
         {
             InitializeComponent();
         }

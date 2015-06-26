@@ -1,6 +1,6 @@
 ﻿namespace ProvenCashCollectionUpdater
 {
-    partial class Form1
+    partial class frmCashCollectionTools
     {
         /// <summary>
         /// Required designer variable.
