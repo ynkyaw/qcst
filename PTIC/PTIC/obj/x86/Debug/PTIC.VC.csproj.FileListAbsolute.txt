@@ -1,2 +1,0 @@
-C:\Users\YanNaing\Desktop\To Home\AGL_PTIC_Project\PTIC_Sales_Alpha(1.0.1)\PTIC\bin\Debug\PTIC.exe.config
-C:\Users\YanNaing\Desktop\To Home\AGL_PTIC_Project\PTIC_Sales_Alpha(1.0.1)\PTIC\obj\x86\Debug\PTIC.VC.csproj.ResolveComReference.cache
