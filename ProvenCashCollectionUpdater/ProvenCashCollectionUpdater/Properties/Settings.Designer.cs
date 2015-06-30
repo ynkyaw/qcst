@@ -49,5 +49,17 @@ namespace ProvenCashCollectionUpdater.Properties {
                 return ((string)(this["MS0003"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=YAN-PC\\SQL2008R2;Initial Catalog=Proven;User ID=sa;Password=2008")]
+        public string DbConnStr {
+            get {
+                return ((string)(this["DbConnStr"]));
+            }
+            set {
+                this["DbConnStr"] = value;
+            }
+        }
     }
 }
