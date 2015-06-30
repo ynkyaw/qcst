@@ -73,13 +73,38 @@ namespace ProvenCashCollectionUpdater.Properties {
         ///AND I.SaleType=0
         ///AND I.Paid=0
         ///GROUP BY I.ID
-        ///HAVING SUM(I2.BalanceAmt)&gt; {1}
+        ///HAVING SUM(I2.BalanceAmt)&gt;= {1}
         ///) AS BAL
         ///ORDER BY ID DESC.
         /// </summary>
         internal static string InvoiceSelectQuery {
             get {
                 return ResourceManager.GetString("InvoiceSelectQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPDATE Invoice
+        ///SET Paid=1,LastModified=GETDATE()
+        ///WHERE ID = {0}.
+        /// </summary>
+        internal static string UpdateInvoiceFullPaid {
+            get {
+                return ResourceManager.GetString("UpdateInvoiceFullPaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO [Payment]([InvoiceID],[PayType],[CashReceiptType],[BankID],
+        ///			[SalesPersonID],[ReceiptNo],[PayDate],[TotalAmt],[CommDisAmt],
+        ///			[OtherAmt],[NetAmt],[PaidAmt],[BalanceAmt],[IsMain],[IsDevice]
+        ///           ,[DateAdded],[LastModified],[IsDeleted])
+        ///     VALUES({0},0,0,null,1,&apos;RNUPDATER&apos;,GETDATE(),0,0,0,0,{1},NULL,NULL,NULL
+        ///           ,GETDATE(),GETDATE(),0).
+        /// </summary>
+        internal static string UpdateInvoicePartial {
+            get {
+                return ResourceManager.GetString("UpdateInvoicePartial", resourceCulture);
             }
         }
         

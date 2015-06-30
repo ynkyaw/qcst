@@ -130,9 +130,22 @@ WHERE I.CusID= {0}
 AND I.SaleType=0
 AND I.Paid=0
 GROUP BY I.ID
-HAVING SUM(I2.BalanceAmt)&gt; {1}
+HAVING SUM(I2.BalanceAmt)&gt;= {1}
 ) AS BAL
 ORDER BY ID DESC</value>
+  </data>
+  <data name="UpdateInvoiceFullPaid" xml:space="preserve">
+    <value>UPDATE Invoice
+SET Paid=1,LastModified=GETDATE()
+WHERE ID = {0}</value>
+  </data>
+  <data name="UpdateInvoicePartial" xml:space="preserve">
+    <value>INSERT INTO [Payment]([InvoiceID],[PayType],[CashReceiptType],[BankID],
+			[SalesPersonID],[ReceiptNo],[PayDate],[TotalAmt],[CommDisAmt],
+			[OtherAmt],[NetAmt],[PaidAmt],[BalanceAmt],[IsMain],[IsDevice]
+           ,[DateAdded],[LastModified],[IsDeleted])
+     VALUES({0},0,0,null,1,'RNUPDATER',GETDATE(),0,0,0,0,{1},NULL,NULL,NULL
+           ,GETDATE(),GETDATE(),0)</value>
   </data>
   <data name="UpdatePreviousInvoice" xml:space="preserve">
     <value>UPDATE Invoice

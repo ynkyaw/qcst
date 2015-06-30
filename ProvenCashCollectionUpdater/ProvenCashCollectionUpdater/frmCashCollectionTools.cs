@@ -177,15 +177,25 @@ namespace ProvenCashCollectionUpdater
                 {
                     string invoiceSelectQuery = rm.GetString("InvoiceSelectQuery");
                     string query = string.Format(invoiceSelectQuery, rec.CusID, rec.BalanceAmount);
-                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);
+                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.1
                     System.Data.SqlClient.SqlDataReader rd = cmd.ExecuteReader();
                     if (rd != null && rd.Read()) 
                     {
                         int invoiceId = (int)rd["ID"];
                         decimal balanceAmt = (decimal)rd["BALANCE_AMT"];
+                        rd.Close();
 
+                        string updateQuery = rm.GetString("UpdatePreviousInvoice");
+                        cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
+                        cmd.ExecuteNonQuery();
+                        if (balanceAmt > rec.BalanceAmount) //Partial
+                        {
 
-
+                        }
+                        else 
+                        {
+                        
+                        }
 
 
 
