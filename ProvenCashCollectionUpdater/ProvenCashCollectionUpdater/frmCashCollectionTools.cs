@@ -11,6 +11,14 @@ namespace ProvenCashCollectionUpdater
 {
     public partial class frmCashCollectionTools : Form
     {
+        #region Inner Class
+        protected class CustomerCreditBalanec 
+        {
+            public int CusID { get; set; }
+            public decimal BalanceAmount { get; set; }
+        }
+        #endregion
+
         public frmCashCollectionTools()
         {
             InitializeComponent();
@@ -26,7 +34,7 @@ namespace ProvenCashCollectionUpdater
 
         private void btnRunUpdate_Click(object sender, EventArgs e)
         {
-
+           new System.Threading.Thread(UpdateReciept).Start();
         }
 
         private void UpdateReciept() 
@@ -36,7 +44,10 @@ namespace ProvenCashCollectionUpdater
 
         private void openFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-
+            if (!String.IsNullOrEmpty(openFileDialog.FileName)) 
+            {
+            
+            }
         }
     }
 }
