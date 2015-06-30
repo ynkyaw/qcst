@@ -190,11 +190,15 @@ namespace ProvenCashCollectionUpdater
                         cmd.ExecuteNonQuery();
                         if (balanceAmt > rec.BalanceAmount) //Partial
                         {
-
+                            string updateQuery = rm.GetString("UpdatePreviousInvoice");
+                            cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
+                            cmd.ExecuteNonQuery();
                         }
                         else 
                         {
-                        
+                            string updateQuery = rm.GetString("UpdatePreviousInvoice");
+                            cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
+                            cmd.ExecuteNonQuery();
                         }
 
 
