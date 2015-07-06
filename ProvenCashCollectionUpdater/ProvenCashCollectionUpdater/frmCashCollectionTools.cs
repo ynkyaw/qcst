@@ -175,36 +175,52 @@ namespace ProvenCashCollectionUpdater
                 trans = conn.BeginTransaction();
                 foreach (CustomerCreditBalanec rec in recordList)
                 {
+                    this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog),"*********************************");
+                    this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Customer ID \t : "+rec.CusID);
+                    this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Balance Amount \t : " + rec.CusID);
+                    this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "*********************************");
+
+                    this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Getting Invoice List");
+                    
                     string invoiceSelectQuery = rm.GetString("InvoiceSelectQuery");
                     string query = string.Format(invoiceSelectQuery, rec.CusID, rec.BalanceAmount);
                     System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.1
                     System.Data.SqlClient.SqlDataReader rd = cmd.ExecuteReader();
                     if (rd != null && rd.Read()) 
-                    {
+                    {   
                         int invoiceId = (int)rd["ID"];
+                        this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Invoice Found! "+invoiceId);
                         decimal balanceAmt = (decimal)rd["BALANCE_AMT"];
                         rd.Close();
 
                         string updateQuery = rm.GetString("UpdatePreviousInvoice");
+                        query = string.Format(updateQuery, invoiceId);
+                        this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Previous Invoice!");
                         cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
-                        cmd.ExecuteNonQuery();
+                        int updatedCnt = cmd.ExecuteNonQuery();
+                        this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Success! "+updatedCnt);
+
                         if (balanceAmt > rec.BalanceAmount) //Partial
                         {
-                            string updateQuery = rm.GetString("UpdatePreviousInvoice");
+                            this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice as Partial Paid!");
+                            string UpdateInvoicePartial = rm.GetString("UpdateInvoicePartial");
+                            query = string.Format(UpdateInvoicePartial, invoiceId);
                             cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
                             cmd.ExecuteNonQuery();
+                            this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice Success!");
                         }
                         else 
                         {
-                            string updateQuery = rm.GetString("UpdatePreviousInvoice");
+                            this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice as Full Paid!");
+                            string UpdateInvoiceFullPaid = rm.GetString("UpdateInvoiceFullPaid");
+                            query = string.Format(UpdateInvoiceFullPaid, invoiceId);
                             cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
                             cmd.ExecuteNonQuery();
+                            this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice Success!");
                         }
-
-
-
                     }
-
+                    this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "============================================");
+                    this.Invoke(new CrossThreadInvoker(ProgressIncrease));
 
                 }
             }
@@ -219,6 +235,21 @@ namespace ProvenCashCollectionUpdater
 
             }
         }
+
+        private void ProgressIncrease() 
+        {
+            Progress.Value++;
+        }
+
+        private void AppendTextToLog(string text) 
+        {
+            rtxtLog.AppendText(text+"\n");
+        }
+
+        public delegate void CrossThreadInvoker();
+        public delegate void CrossThreadInvokerParam1(string objStr);
+
+
 
         #endregion
     }
