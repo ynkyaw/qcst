@@ -189,13 +189,17 @@ namespace ProvenCashCollectionUpdater
                     if (rd != null && rd.Read()) 
                     {   
                         int invoiceId = (int)rd["ID"];
+
                         this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Invoice Found! "+invoiceId);
+
                         decimal balanceAmt = (decimal)rd["BALANCE_AMT"];
                         rd.Close();
 
                         string updateQuery = rm.GetString("UpdatePreviousInvoice");
                         query = string.Format(updateQuery, invoiceId);
+
                         this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Previous Invoice!");
+
                         cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
                         int updatedCnt = cmd.ExecuteNonQuery();
                         this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Success! "+updatedCnt);
@@ -203,22 +207,27 @@ namespace ProvenCashCollectionUpdater
                         if (balanceAmt > rec.BalanceAmount) //Partial
                         {
                             this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice as Partial Paid!");
+
                             string UpdateInvoicePartial = rm.GetString("UpdateInvoicePartial");
                             query = string.Format(UpdateInvoicePartial, invoiceId);
                             cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
                             cmd.ExecuteNonQuery();
+
                             this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice Success!");
                         }
                         else 
                         {
                             this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice as Full Paid!");
+
                             string UpdateInvoiceFullPaid = rm.GetString("UpdateInvoiceFullPaid");
                             query = string.Format(UpdateInvoiceFullPaid, invoiceId);
                             cmd = new System.Data.SqlClient.SqlCommand(query, conn, trans);//1.2
                             cmd.ExecuteNonQuery();
+
                             this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "Updating Invoice Success!");
                         }
                     }
+
                     this.Invoke(new CrossThreadInvokerParam1(AppendTextToLog), "============================================");
                     this.Invoke(new CrossThreadInvoker(ProgressIncrease));
 
